@@ -1,0 +1,18 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:m0="urn:gov:hhs:fha:nhinc:adapter:fact">
+  <SOAP-ENV:Body>
+    <m:GetMedicationFacts xmlns:m="urn:gov:hhs:fha:nhinc:adapter:factservice">
+      <m0:FactsQueryRequest>
+        <m0:queryId>20091221011010.005</m0:queryId>
+        <m0:senderId>1.1</m0:senderId>
+        <m0:interactionId>QUPC_IN043100UV</m0:interactionId>
+        <m0:triggerEventCode>QUPC_TE043100UV01</m0:triggerEventCode>
+        <m0:careRecordPayload>
+          <m0:patientId>7</m0:patientId>
+          <m0:careProvisionCode>HISTMEDLIST</m0:careProvisionCode>
+          <m0:careRecordStartTimePeriod>20090101</m0:careRecordStartTimePeriod>
+          <m0:careRecordEndTimePeriod>20091230</m0:careRecordEndTimePeriod>
+        </m0:careRecordPayload>
+      </m0:FactsQueryRequest>
+    </m:GetMedicationFacts>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

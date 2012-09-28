@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Address Book Manager WSDL
+-->
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+   xmlns="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+   xmlns:addrbook="urn:gov:hhs:fha:nhinc:common:addrbook"
+   name="AddressBookManager"
+   targetNamespace="urn:gov:hhs:fha:nhinc:addrservice"
+   xmlns:tns="urn:gov:hhs:fha:nhinc:addrservice">
+  <documentation>Address Book Manager</documentation>
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="urn:gov:hhs:fha:nhinc:common:addrbook"
+                  schemaLocation="../schemas/nhinc/common/AddressBook.xsd"/>
+    </xsd:schema>
+  </types>
+  
+  <message name="GetAllAddrRequestMessage">
+    <part name="GetAllAddrRequest"
+          element="addrbook:GetAllAddrRequest"/>
+  </message>
+  <message name="GetSummariesResponseMessage">
+    <part name="GetSummariesResponse"
+          element="addrbook:GetSummariesResponse"/>
+  </message>
+
+  <message name="SearchAddrRequestMessage">
+    <part name="SearchAddrRequest"
+          element="addrbook:SearchAddrRequest"/>
+  </message>
+
+  <message name="GetContactDetailsRequestMessage">
+    <part name="GetContactDetailsRequest"
+          element="addrbook:GetContactDetailsRequest"/>
+  </message>
+  <message name="GetContactDetailsResponseMessage">
+    <part name="GetContactDetailsResponse"
+          element="addrbook:GetContactDetailsResponse"/>
+  </message>
+
+  <portType name="AddressBookManagerPortType">
+    <operation name="GetAllAddr">
+      <input name="GetAllAddrRequest"
+             message="tns:GetAllAddrRequestMessage" />
+      <output name="GetAllAddrResponse"
+              message="tns:GetSummariesResponseMessage" />
+    </operation>
+    <operation name="SearchAddr">
+      <input name="SearchAddrRequest"
+             message="tns:SearchAddrRequestMessage" />
+      <output name="SearchAddrResponse"
+              message="tns:GetSummariesResponseMessage" />
+    </operation>
+    <operation name="GetContactDetails">
+      <input name="GetContactDetailsRequest"
+             message="tns:GetContactDetailsRequestMessage" />
+      <output name="GetContactDetailsResponse"
+              message="tns:GetContactDetailsResponseMessage" />
+    </operation>
+  </portType>
+  
+  <binding name="AddressBookManagerBindingSoap11" type="tns:AddressBookManagerPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="GetAllAddr">
+      <soap:operation soapAction="urn:GetAllAddr"/>
+      <input name="GetAllAddrRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="GetAllAddrResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="SearchAddr">
+      <soap:operation soapAction="urn:SearchAddr"/>
+      <input name="SearchAddrRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="SearchAddrResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetContactDetails">
+      <soap:operation soapAction="urn:GetContactDetails"/>
+      <input name="GetContactDetailsRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="GetContactDetailsResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  
+  <service name="AddressBookManager">
+    <port name="AddressBookManagerPortSoap11"
+          binding="tns:AddressBookManagerBindingSoap11">
+      <soap:address 
+         location="http://localhost:${HttpDefaultPort}/AddressBookManager/AddressBookService" />
+    </port>
+  </service>
+  <plnk:partnerLinkType name="AddressBookManager">
+    <!-- A partner link type is automatically generated when a new port type is added. 
+         Partner link types are used by BPEL processes. In a BPEL process, a partner 
+         link represents the interaction between the BPEL process and a partner service. 
+         Each partner link is associated with a partner link type. A partner link type 
+         characterizes the conversational relationship between two services. The 
+         partner link type can have one or two roles.-->
+    <plnk:role name="AddressBookManagerPortTypeRole"
+               portType="tns:AddressBookManagerPortType"/>
+  </plnk:partnerLinkType>
+  
+</definitions>

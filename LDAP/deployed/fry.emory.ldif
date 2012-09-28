@@ -1,0 +1,115 @@
+version: 1
+dn: cn=fry.emory,ou=people,dc=socraticgrid,dc=org
+objectClass: person
+objectClass: kmr-orgPerson
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+businessCategory: patient
+carLicense: CA12345
+cn: fry.emory
+departmentNumber: 123.4567.12.3444
+destinationIndicator: 1234.1234.2.34.12.34.1234
+displayName: Emory A Fry, MD
+employeeNumber: 21777989-09
+employeeType: md
+facsimileTelephoneNumber: 619-555-9999
+gender: M
+givenName: Emory
+homePhone: 858-268-1232
+homePostalAddress: 4911 Mt Elbrus Drive$San Diego, CA 92117
+initials: eaf
+l: San Diego
+labeledURI: www.homewebpage.com
+mail: eafry@gmx.com
+manager: cn=fry.emory
+mobile: 858-395-7317
+ou: dn=123
+pager: 619-999-999
+photo:: /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAW
+ IB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8
+ lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wAARCA
+ BiAH0DASIAAhEBAxEB/8QAHAABAAIDAQEBAAAAAAAAAAAAAAcIBAUGAQMC/8QAQRAAAQQBAgMFB
+ QQGCAcAAAAAAQACAwQRBSEGEjEHE0FRYRQicYGRCDJCoRUjUrHC0RYkNDZDY4KycnN0krPS8P/E
+ ABoBAQACAwEAAAAAAAAAAAAAAAACBAEDBQb/xAAsEQACAQMDAgMIAwAAAAAAAAAAAQIDBBEFITE
+ SMgZRoRMiQWFxgdHxkcHw/9oADAMBAAIRAxEAPwCcEREAREQBeL1RH24cby6bC3hzSpTHZsR89u
+ VhwWRnYMB8C7fPp/xIDa8Xdr+iaFYkp6dE/VLcZw/unhkTD4gvwcn4A/FcrX7ebPfH2jh+Aw56R
+ 2yHD6twfyUOEbY6LwfQBRyZwWZ0vtb4Qu1Wy2L76Mp2dBYidzNPxaCCPXK7DStV0/WKotaXdgtw
+ E47yGQOAPkcdD6KpeqcPanpOn0r96uWQXWkx+bcdA4eBI94eh9Csngzim9wnrMWoUXOdGSBYgzh
+ szPFp9fI+B+eYwqxqLMXlGXFrktuix9Pu19SoV71OQSV7EbZY3jxaRkLIWwiEREAREQBERAEREA
+ PRVU7R5hb7Rda9onbE32wxmSTJDGtaG5wN9gOgVq1XvUNIju9u9urPYhrRmx3zpJWtcCO5D8Yds
+ Sc+O3jvjBjPPS8cmVycXpHCWt60/OnafYNcuPLPO3umY8yTt8hlSNw1wJonD8sdrX79SxeaQWRy
+ SNZFGfQOOXH1P0XTx1KWjWr9mpSYTFWfIyb2eOGR7Wlw3MYDS1xblrsdM7bb+apw/U0uhNZ010M
+ 1tsb5rDq1SBkXu4Lmc7W87HOyQ0kuOQV5+u766nUoxfSo4zjl5Wef0Wo+zglJ75PeMtNj17hW9X
+ j5ZXGIywOaQffb7zSD64x8CVXXO4I6OVn9MhkZVZ39dkMriTI1jA0E564BIH1PxVZ7kbYrk8TCC
+ 2OVzWkHIIBIC0+HajxUpZ2TT/n9ErtcSLBdgWrOu8ITUJXZfp9lzGjyjeOcfmXj5KTFB32cpyL+
+ u187Oigfj4F4/iU4r1CKQREQBERAEREAREQBVo7bIn1+0e3KxxY+SKCVrm7EHkDcg+fudVZdV7+
+ 0JDycY0pgNpaDRn1bI/8AmFhhG/4X0fStZ0GO93Dvb7LGTSzTxP5efyAJw5mQRgE5BOSCVthw0y
+ xJCLvdirAMNggkkAI2IGcghoIBDd8EDGMKOtD48uQ6fFSilr0468McTGkM6NaBzAv8Sckg59MdT
+ Juk3dY1KlVnmpw0eYh0okc5zngHflZgcoI3BJyM9CvEXqvLacm54Tfn/vTODrQpwcIvGT9nhzSG
+ gu/R4mIGQ18jnF3p7zsfVV41J/ealceBgOsSHGMYy4+HgrNTytrwSTv2bEwvJ9AMqrpcZDzu6u3
+ PxKveHZTm6jk88f2V7tJYwSp9niXl4p1KL9ujzf8AbI3/ANlP6rd2E2O44/jjP+PUmj/2u/hVkV
+ 6lFFhERZAREQBERAEREAUIfaOgAt6DYA3dHPGdvIxkf7ipvUMfaPcO50BviX2D8sR/zCMEJFT72
+ aanJqfCVYWCTPVJrv5upDQC0n/SWqEIqYbA+Wce9yEhp/Dt4+q6PhviPUtBZY/R8kXJYfzPZNHz
+ DIyARgjG2PoqWqaRUvLbph3p5WfUlRu406mXwSrx/d9g4O1WUHDnwGFvxeQz+JV5Jxj4rruLeLt
+ X1nTxTuyw9yZGuLIoQ3OM4ySSevquQf8Ad+Y/eq+l6dUsKThVx1N52NtWvGs+qPB13ZPZFXtE0R
+ 5OA+Z0Z/1Rub+8hWnVQOE7IpcU6PZJwIr0Dj8O8bn8sq366iNLCIiyYCIiAIiIAiIgCjrtB0GHi
+ finS4rTiaWmQySTNY7Be+Qt5W5G42Zk+OMeeVIFuxHUqzWZjiKFjpHnyAGT+QXFsfPDRmtzRGS3
+ IH2JI27kvIzyDzxgMHoAuPrN7K2oKNN4lLZfLzZYt6anLL4RC/H1TS6WtP0/RWyMjbyxzB0heBJ
+ 1IaTk7DGdzvnpjfQ1Q/uciTG5BDm5xv8AJdJqXCOu+01Z2sj1H2gSzOlpuLwXbF2cgYOSdup38l
+ zjmOZNNVc1zXd4S9rgQWjxBB3BzkfNd3TatKVGMY1OtpYbzv8AnnJz7iMlJtxwjCmLpoHzP/aHL
+ tjbcfy/+KxJPuFbypp1rUxbr0oHTSxsfM5rfBrCST+WB5kgLX09Mv6iHChRtWsA57iFz/3BQuak
+ Iz3ktlv6m2im48GMHmM940+833h8QrnVZm2K0U7PuyMDx8CMqtXAvZhqvFJfNYf+j6EMpikkljd
+ 3jyPvBjTjp0JJ2PnghWToVI6FGvThLjHXibEwuOThoAGfXZQRsPuiIsmAiIgCIiAIiIDG1Oo2/p
+ 1qm5xY2xC+IuAzjmBGfzXKtmeyb2a63uLnjGej/MsP4m+o+eDsuzXLdp07K/A2rPexji6IRs5gD
+ yue4MBGfEc2crnahpkL+MU3hrh/U20q7pZfwNVaA06d11u1d5/rTfBv+b8vxem/4d/hrXDWka4R
+ JeqgzcuBPE4sfjyyOo9DkKHIdZ1WBgZBql+Nng1tqTA+WVu+BuPbOm1xU1UPtUWPcyN7d5IWg7D
+ f7zR5dR4Z2C5Ffw5fWq9rQnmS8sp4NsL6jU92SwvmSBwxwrU4bnuSU7E8rbXJls3KS3l5vEAZzz
+ Lc2XygR16gBtTu7uBpGQHeLj6NGXH4Y6kLTz8ZaBFp7rrNRimaBtDGf1rj5chwQfjgDxUdf0z1I
+ 8U1dedlvsz/ANXWY73REfvM9S4dT546YAFXT9Ku9SuXVuE8LlvZvHw/JtrXNKhBRh9ixNCpHQpQ
+ VIc93CwMaXHc4HU+p6lZC+NOzDdqQ2q0gfBPG2SN4/E0jIP0K+y9kUAiIgCIiAIiIAiIgC4jtk/uJa/6iD/yNRFOn3r6kZ9rIB8liaZ/Z3/81370RdR96+5RXazK8V6iLYRLEdlLnO4B0rmJOBKBk9AJXgD6LrURcaXczox4QREUTIREQH//2Q==
+postalAddress: 4920 Mt Elbrus Drive$San Diego, CA 92117
+postalCode: 92117
+preferredContactMethod: homePhone
+preferredDeliveryMethod: physical
+preferredLanguage: English
+registeredAddress: Naval Health Research Center$140 Sylvester Rd$San Diego, CA 92126
+roomNumber: A3
+secretary: cn=fry.emory
+sn: fry
+st: CA
+street: 4920 Mt Elbrus Drive
+telephoneNumber: 619-553-8464
+title: Mr.
+uid: 456
+userPassword:: e1NTSEF9SU5wQnluK2tteWg0UjlTbEpGb05SZFpjWW84QXpCWWRBQS9ZWkE9P
+ Q==
+
+dn: cn=CA.MedicalLicense,cn=fry.emory,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-document
+objectClass: document
+objectClass: top
+cn: CA.MedicalLicense
+description: Physician and Surgeon
+documentExpirationTime: 20110930002323.687Z
+documentIdentifier: G 77967
+documentLocation: California
+documentPublisher: California Medical License Board
+documentStatus: renewed & current
+documentTitle: Medical License
+
+dn: cn=PMR.Account,cn=fry.emory,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-account
+objectClass: top
+cn: PMR.Account
+description: Account for PMR portal
+uid: eafry
+
+dn: cn=RPMS.Account,cn=fry.emory,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-account
+objectClass: top
+cn: RPMS.Account
+uid: eafry
+userPassword:: e1NTSEF9dXlJWmZlUERWODVock9wdjJzRlVPbTJhcDNRNUhHRWdpcWRUOWc9P
+ Q==
+

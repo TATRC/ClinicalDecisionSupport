@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:gov:hhs:fha:nhinc:kmr:kmtypes" elementFormDefault="qualified">
+	<xsd:include schemaLocation="./KMR_base.xsd"/>
+   <xsd:include schemaLocation="./ReferenceData_base.xsd"/>
+	<!-- ============================================================
+    REQUEST BY MULTI PARAMS base TYPE
+
+    All fields, unless otherwise indicated, are implemented as an AND filter.
+
+    kmId - as an IN filter
+    kmDescription - as a LIKE filter
+    kmKeywords - as a LIKE filter
+    ============================================================ -->
+	<xsd:complexType name="KmByParamsType">
+		<xsd:sequence>
+			<xsd:element name="createdByAuthorID" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="createdByAuthorName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="createdTimestamp" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="isCheckedOut" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="kmDescription" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="kmId" type="xsd:int" minOccurs="0"/>
+			<xsd:element name="kmKeywords" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="kmName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="kmOrganizationLevel" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="kmType" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="lastModifiedByAuthorID" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="lastModifiedByAuthorName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="lastModifiedTimestamp" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="latestVersionNum" type="xsd:int" minOccurs="0"/>
+			<xsd:element name="originInstitution" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="parentKMId" type="xsd:int" minOccurs="0"/>
+			<xsd:element name="productionVersionNum" type="xsd:int" minOccurs="0"/>
+			<xsd:element name="validationStatus" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Specialty" type="kmr:KM_Specialty_SimpleType" minOccurs="0"/>
+			<xsd:element name="Fact" type="kmr:KMV_FactDependency_SimpleType" minOccurs="0"/>
+			<xsd:element name="PopulationDependency" type="kmr:KMV_PopulationDependency_SimpleType" minOccurs="0"/>
+			<xsd:element name="Inference" type="kmr:KMV_InferenceEngineDependency_SimpleType" minOccurs="0"/>
+			<xsd:element name="Task" type="kmr:KMV_TaskDependency_SimpleType" minOccurs="0"/>
+			<xsd:element name="ACL" type="kmr:ACL_SimpleType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ============================================================
+    REQUEST BY MULTI PARAMS TYPE
+    ============================================================ -->
+	<xsd:complexType name="MultiParamsRequestType">
+		<xsd:sequence>
+			<xsd:element name="requestReference" type="kmr:RequestRefType"/>
+			<xsd:element name="km" type="kmr:KmByParamsType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="KmRequestType">
+		<xsd:sequence>
+			<xsd:element name="request" type="kmr:MultiParamsRequestType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ============================================================
+    REQUEST for IMPORT TYPE
+    ============================================================ -->
+	<xsd:complexType name="KmsListType">
+		<xsd:sequence>
+			<xsd:element name="km" type="kmr:KmFullResponse" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ImportRequestType">
+		<xsd:sequence>
+			<xsd:element name="requestReference" type="kmr:RequestRefType"/>
+			<xsd:element name="ACL" type="kmr:ACL_SimpleType"/>
+			<xsd:element name="importFilename" type="xsd:string"/>
+			<xsd:element name="kms" type="kmr:KmsListType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="KmImportRequestType">
+		<xsd:sequence>
+			<xsd:element name="request" type="kmr:ImportRequestType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- ============================================================
+    REQUEST for INSERT/UPDATE TYPE
+    ============================================================ >
+	<xsd:complexType name="KmInsertRequestType">
+		<xsd:sequence>
+			<xsd:element name="request" type="kmr:ImportRequestType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="KmUpdateRequestType">
+		<xsd:sequence>
+			<xsd:element name="request" type="kmr:ImportRequestType"/>
+		</xsd:sequence>
+	</xsd:complexType-->
+
+   <!-- ============================================================
+    REQUEST BY ID ONLY TYPE - possibly a list of Ids
+    ============================================================ -->
+	<xsd:complexType name="KmIdType">
+		<xsd:sequence>
+			<xsd:element name="kmId" type="xsd:int" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="KmByIdRequestListType">
+		<xsd:sequence>
+			<xsd:element name="requestReference" type="kmr:RequestRefType"/>
+			<xsd:element name="ACL" type="kmr:ACL_SimpleType"/>
+			<xsd:element name="kms" type="kmr:KmIdType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="KmIdSearchRequestType">
+		<xsd:sequence>
+			<xsd:element name="request" type="kmr:KmByIdRequestListType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- ============================================================
+    REQUEST for REFERENCE DATA
+
+    The total records returned WILL ALWAYS be a total of 20.
+
+    LookupReference
+      * Can be:   orglevel
+                  kmstatus
+                  tasktype
+                  specialtyscheme
+                  specialtycode
+                  facttype
+                  factscheme
+                  factcode
+                  tasktype
+                  demographicscheme
+                  demographiccode
+
+    StartingRecNumber (DEFAULT=0)
+      * is the starting row number (non-inclusive), that will be returned.
+        This means that if StartingRecNumber=2, then the matching records to be
+        returned will start from row number 3, and the last record to be
+        returned will be row number 23.
+
+    PartialValue (OPTIONAL)
+      * For facttype , this will be wildcard checked against the facttype field.
+      * For factscheme , this will be wildcard checked against the schemename field.
+      * For factcode , this will be wildcard checked against the concept_code field.
+      * For demographicscheme , this will be wildcard checked against the schemename field.
+      * For demographiccode , this will be wildcard checked against the concept_code field.
+      
+    ============================================================ 
+	<xsd:complexType name="LookupRefType">
+		<xsd:sequence>
+         <xsd:element name="PartialValue" type="xsd:string"/>
+		</xsd:sequence>
+      <xsd:attribute name="ReferenceType" type="xsd:string" use="required" />
+      <xsd:attribute name="StartingRecNumber" type="xsd:int" default="0" use="optional" />
+	</xsd:complexType>
+	<xsd:complexType name="KmRefDataRequestListType">
+		<xsd:sequence>
+			<xsd:element name="LookupReference" type="kmr:LookupRefType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="KmRefDataRequestType">
+		<xsd:sequence>
+			<xsd:element name="request" type="kmr:KmRefDataRequestListType"/>
+		</xsd:sequence>
+      <xsd:attribute name="MaxRecordsToShow" type="xsd:int" default="20" use="optional" />
+	</xsd:complexType>
+   -->
+
+	<!-- ===========================================
+                     RESPONSEs
+        =========================================== -->
+
+	<!-- ============================================================
+    RESPONSE for KM with Meta RESPONSE TYPE (workbench) 
+    ============================================================ -->
+	<xsd:complexType name="KmMetaResponse">
+		<xsd:sequence>
+			<xsd:element name="id" type="xsd:int"/>
+			<xsd:element name="title" type="xsd:string"/>
+			<xsd:element name="summary" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="created" type="xsd:string"/>
+			<xsd:element name="updated" type="xsd:string"/>
+			<xsd:element name="type" type="xsd:string"/>
+			<xsd:element name="authorId" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="authorName" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+   <xsd:complexType name="KmMetaResponseListType">
+		<xsd:sequence>
+			<xsd:element name="km" type="kmr:KmMetaResponse" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+   <xsd:complexType name="KmMetaResponseType">
+		<xsd:sequence>
+			<xsd:element name="requestReference" type="kmr:RequestRefType"/>
+			<xsd:element name="responseList" type="kmr:KmMetaResponseListType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- ============================================================
+    RESPONSE for Latest Logic RESPONSE TYPE (workbench)
+    ============================================================ -->
+	<xsd:complexType name="KmLatestLogicResponse">
+		<xsd:sequence>
+			<xsd:element name="id" type="xsd:int"/>
+			<xsd:element name="Logic_IntermediateForm" type="xsd:string"/>
+			<xsd:element name="Logic_NativeForm" type="xsd:string"/>
+			<xsd:element name="Logic_BinaryForm" type="xsd:base64Binary"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+   <xsd:complexType name="KmLatestLogicResponseListType">
+		<xsd:sequence>
+			<xsd:element name="km" type="kmr:KmLatestLogicResponse" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+   <xsd:complexType name="KmLatestLogicResponseType">
+		<xsd:sequence>
+			<xsd:element name="requestReference" type="kmr:RequestRefType"/>
+			<xsd:element name="responseList" type="kmr:KmLatestLogicResponseListType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- ============================================================
+    FULL RESPONSE base TYPE
+    ============================================================ -->
+	<xsd:complexType name="KmFullResponse">
+		<xsd:sequence>
+			<xsd:element name="kmId" type="xsd:int"/>
+			<xsd:element name="kmName" type="xsd:string"/>
+			<xsd:element name="kmDescription" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="kmKeywords" type="xsd:string"/>
+			<xsd:element name="kmOrganizationLevel" type="xsd:string"/>
+			<xsd:element name="kmType" type="xsd:string"/>
+			<xsd:element name="lastModifiedByAuthorID" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="lastModifiedByAuthorName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="lastModifiedTimestamp" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="createdByAuthorID" type="xsd:string"/>
+			<xsd:element name="createdByAuthorName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="createdTimestamp" type="xsd:string"/>
+			<xsd:element name="isCheckedOut" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="originInstitution" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="parentKMId" type="xsd:int" minOccurs="0"/>
+			<xsd:element name="latestVersionNum" type="xsd:int"/>
+			<xsd:element name="productionVersionNum" type="xsd:int" minOccurs="0"/>
+			<xsd:element name="validationStatus" type="xsd:string"/>
+			<xsd:element name="SpecialtyList" type="kmr:SpecialtyListType"/>
+			<xsd:element name="KmVersionList" type="kmr:KmVersionListType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- RESPONSE LIST TYPE -->
+	<xsd:complexType name="ResponseListType">
+		<xsd:sequence>
+			<!-- Allowable list of km record(s) -->
+			<xsd:element name="km" type="kmr:KmFullResponse" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- RESPONSE Request Reference info type -->
+	<xsd:complexType name="RequestRefType">
+		<xsd:sequence>
+			<xsd:element name="requestId" type="xsd:string"/>
+			<xsd:element name="requestDate" type="xsd:string"/>
+			<xsd:element name="responseDate" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ============================================================
+    RESPONSE for FULL RESPONSE TYPE (workbench)
+    ============================================================ -->
+	<xsd:complexType name="KmResponseType">
+		<xsd:sequence>
+			<xsd:element name="requestReference" type="kmr:RequestRefType"/>
+			<xsd:element name="responseList" type="kmr:ResponseListType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ============================================================
+    RESPONSE for RUNTIME TYPE (runtime)
+    ============================================================ -->
+	<xsd:complexType name="KmResponseType_runtime">
+		<xsd:sequence>
+			<xsd:element name="requestReference" type="kmr:RequestRefType"/>
+			<xsd:element name="responseList" type="kmr:ResponseListType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ============================================================
+    RESPONSE for EXPORT - Find all KM_IDs per KM/Rule Dependencies (export pass 1)
+    ============================================================ -->
+	<xsd:complexType name="FindKmIdsResponseListType">
+		<xsd:sequence>
+			<xsd:element name="kms" type="kmr:KmIdType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FindKmIdsResponseType">
+		<xsd:sequence>
+			<xsd:element name="requestReference" type="kmr:RequestRefType"/>
+			<xsd:element name="response" type="kmr:FindKmIdsResponseListType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ============================================================
+    RESPONSE for EXPORT - Find all KMs per KM_IDs   (export pass 2)
+    ============================================================ -->
+	<xsd:complexType name="ExportResponseListType">
+		<xsd:sequence>
+			<xsd:element name="km" type="kmr:KmFullResponse" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="KmIdSearchResponseType">
+		<xsd:sequence>
+			<xsd:element name="exportFilename" type="xsd:string"/>
+			<xsd:element name="requestReference" type="kmr:RequestRefType"/>
+			<xsd:element name="responseList" type="kmr:ExportResponseListType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ============================================================
+    RESPONSE for IMPORT  and ACK base TYPE
+    ============================================================ -->
+	<xsd:complexType name="ImportAckType">
+		<xsd:sequence>
+			<xsd:element name="kmId" type="xsd:int"/>
+			<xsd:element name="kmName" type="xsd:string"/>
+			<xsd:element name="importStatus" type="xsd:string"/>
+			<xsd:element name="Description" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ImportResponseListType">
+		<xsd:sequence>
+			<xsd:element name="km" type="kmr:ImportAckType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="KmResponseType_importAck">
+		<xsd:sequence>
+			<xsd:element name="importFilename" type="xsd:string"/>
+			<xsd:element name="requestReference" type="kmr:RequestRefType"/>
+			<xsd:element name="ackList" type="kmr:ImportResponseListType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- ============================================================
+    RESPONSE for REFERENCE DATA request
+    ============================================================
+	<xsd:complexType name="KmRefDataType">
+		<xsd:sequence>
+         <xsd:element name="id" type="xsd:int"/>
+			<xsd:element name="name" type="xsd:string"/>
+			<xsd:element name="descr" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+   <xsd:complexType name="KmRefDataListType">
+		<xsd:sequence>
+			<xsd:element name="refData" type="kmr:KmRefDataType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+      <xsd:attribute name="refDataType" type="xsd:string" use="required"/>
+	</xsd:complexType>
+
+   <xsd:complexType name="KmReferencesListType">
+		<xsd:sequence>
+			<xsd:element name="reference" type="kmr:KmRefDataListType"  minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+   <xsd:complexType name="KmRefDataReponseListType">
+		<xsd:sequence>
+			<xsd:element name="responseList" type="kmr:KmReferencesListType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+   -->
+   
+	<!-- ============================================================
+    REQUEST/RESPONSE Types
+    ============================================================ -->
+
+   <!-- (*) REFERENCE -->
+	<xsd:element name="GetRefDataRequest" type="kmr:ReferenceData.RefRequestType"/>
+	<xsd:element name="GetRefDataResponse" type="kmr:ReferenceData.RefResponseType"/>
+
+   <!-- WORKBENCH: Params in , KMs out -->
+	<xsd:element name="KmRecordRequest" type="kmr:KmRequestType"/>
+	<xsd:element name="KmRecordResponse" type="kmr:KmResponseType"/>
+
+   <!-- WORKBENCH: KM_IDs in, KM_IDs + metadata (not Rule Dependencies) out -->
+   <xsd:element name="GetKmMetaRequest" type="kmr:KmIdSearchRequestType"/>
+   <xsd:element name="GetKmMetaResponse" type="kmr:KmMetaResponseType"/>
+
+	<!-- WORKBENCH: KM_IDs in, latest native LOGICs out -->
+	<xsd:element name="GetKmLatestLogicRequest" type="kmr:KmIdSearchRequestType"/>
+	<xsd:element name="GetKmLatestLogicResponse" type="kmr:KmLatestLogicResponseType"/>
+
+   <!-- RUNTIME DISCOVERY: Params in , LOGICs out -->
+	<xsd:element name="KmRuntimeRecordRequest" type="kmr:KmRequestType"/>
+	<xsd:element name="KmRuntimeRecordResponse" type="kmr:KmResponseType"/>
+
+	<!-- (*) WORKBENCH/EXPORT 1st pass:
+               Params in (WRKBench actual use is no filters)
+               KM_IDs out
+   -->
+	<xsd:element name="FindKmIdsRequest" type="kmr:KmRequestType"/>
+	<xsd:element name="FindKmIdsResponse" type="kmr:FindKmIdsResponseType"/>
+
+	<!-- EXPORT 2nd pass: KM_IDs in , (KMs or FILEname out) -->
+	<xsd:element name="KmIdSearchRequest" type="kmr:KmIdSearchRequestType"/>
+	<xsd:element name="KmIdSearchResponse" type="kmr:KmIdSearchResponseType"/>
+   
+	<!-- IMPORT: (KMs or FILEname in) , ACK out >
+	<xsd:element name="KmImportRequest" type="kmr:KmImportRequestType"/>
+	<xsd:element name="KmImportAckResponse" type="kmr:KmResponseType_importAck"/-->
+
+	<!-- INSERT (KMs or FILEname in) , ACK out -->
+	<xsd:element name="KmInsertRequest" type="kmr:KmImportRequestType"/>
+	<xsd:element name="KmInsertAckResponse" type="kmr:KmResponseType_importAck"/>
+
+	<!-- UPDATE (KMs or FILEname in) , ACK out -->
+	<xsd:element name="KmUpdateRequest" type="kmr:KmImportRequestType"/>
+	<xsd:element name="KmUpdateAckResponse" type="kmr:KmResponseType_importAck"/>
+
+</xsd:schema>

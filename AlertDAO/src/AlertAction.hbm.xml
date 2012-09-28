@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="gov.hhs.fha.nhinc.alertmanager.model">
+  <class name="AlertAction" table="alertaction">
+    <id column="AA_ActionID" name="actionId" type="long">
+      <generator class="increment"/>
+    </id>
+    <property column="UserID" length="100" name="userId" type="string"/>
+    <property column="UserName" length="100" name="userName" type="string"/>
+    <property column="UserProvider" length="100" name="userProvider" not-null="true" type="boolean"/>
+    <property column="Name" length="50" name="actionName" not-null="false" type="string"/>
+    <property column="Message" length="255" name="message" not-null="false" type="string"/>
+    <property column="Timestamp" name="actionTimestamp" not-null="true" type="timestamp"/>
+    <many-to-one column="AT_TicketID" lazy="false" name="ticket" not-null="true"/>
+  </class>
+</hibernate-mapping>

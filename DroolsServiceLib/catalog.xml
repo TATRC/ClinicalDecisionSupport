@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/E:/Workspaces/Netbeans6.7.1/NHINC/Current/Product/Production/KMR/Interfaces/src/wsdl/KService.wsdl" uri="xml-resources/web-service-references/KService/wsdl/KService.wsdl"/>
+</catalog>

@@ -1,0 +1,91 @@
+<?xml version="1.0" ?>
+<hl7:CareRecord_QUPC_IN043200UV01Message xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+  <hl7:response>
+    <hl7:id extension="e07a40d1-6d30-3bb9-894e-3b6390f8d155"/>
+    <hl7:creationTime value="20100828000032.571-0700"/>
+    <hl7:interactionId extension="PRPA_IN900300UV02"/>
+    <hl7:processingCode code="P"/>
+    <hl7:processingModeCode code="R"/>
+    <hl7:acceptAckCode code="RCV"/>
+    <hl7:receiver typeCode="RCV">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+        <hl7:telecom value="http://localhost:8080/NhinConnect/CommonDataLayerService"/>
+      </hl7:device>
+    </hl7:receiver>
+    <hl7:sender typeCode="SND">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+      </hl7:device>
+    </hl7:sender>
+    <hl7:controlActProcess moodCode="EVN" classCode="CACT">
+      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CS" code="QUPC_TE043200UV01"/>
+      <hl7:priorityCode code="R"/>
+      <hl7:subject typeCode="SUBJ">
+        <hl7:registrationEvent moodCode="EVN" classCode="REG">
+          <hl7:statusCode code="completed"/>
+          <hl7:custodian typeCode="CST">
+            <hl7:assignedEntity classCode="ASSIGNED">
+              <hl7:id assigningAuthorityName="OpenRPMS" root="2.16.840.1.113883.3.274"/>
+            </hl7:assignedEntity>
+          </hl7:custodian>
+          <hl7:subject2 typeCode="SUBJ">
+            <hl7:careProvisionEvent moodCode="EVN" classCode="PCPR">
+              <hl7:recordTarget typeCode="RCT">
+                <hl7:patient classCode="PAT">
+                  <hl7:id extension="14400" root="2.16.840.1.113883.3.200"/>
+                  <hl7:statusCode code="normal"/>
+                  <hl7:patientPerson determinerCode="INSTANCE" classCode="PSN">
+                    <hl7:name use="L">
+                      <hl7:family>REANO</hl7:family>
+                      <hl7:given>JOSEPH</hl7:given>
+                      <hl7:given>MICHAEL</hl7:given>
+                    </hl7:name>
+                    <hl7:administrativeGenderCode displayName="MALE" code="M"/>
+                    <hl7:birthTime value="19471023000000-0800"/>
+                  </hl7:patientPerson>
+                </hl7:patient>
+              </hl7:recordTarget>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="1"/>
+                <hl7:substanceAdministration negationInd="false" moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="195758"/>
+                  <hl7:code codeSystemName="ActCode" codeSystem="2.16.840.1.113883.5.4" code="IMMUNIZ"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS" value="20030725000000-0700"/>
+                  <hl7:approachSiteCode displayName="Right Deltoid IM" code="UNK"/>
+                  <hl7:doseQuantity value="0.5"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:medication classCode="ADMM">
+                      <hl7:administerableMedicine determinerCode="INSTANCE" classCode="MMAT">
+                        <hl7:code displayName="PNEUMOCOCCAL" codeSystem="CVX" code="33"/>
+                        <hl7:desc>PNEUMOVAX 23</hl7:desc>
+                        <hl7:lotNumberText>1035F</hl7:lotNumberText>
+                      </hl7:administerableMedicine>
+                    </hl7:medication>
+                  </hl7:consumable>
+                  <hl7:performer typeCode="PRF">
+                    <hl7:assignedEntity1 classCode="ASSIGNED">
+                      <hl7:assignedPerson determinerCode="INSTANCE" classCode="PSN">
+                        <hl7:name use="L">
+                          <hl7:given>JEFFREY</hl7:given>
+                          <hl7:family>WILSON</hl7:family>
+                        </hl7:name>
+                      </hl7:assignedPerson>
+                    </hl7:assignedEntity1>
+                  </hl7:performer>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+            </hl7:careProvisionEvent>
+          </hl7:subject2>
+        </hl7:registrationEvent>
+      </hl7:subject>
+      <hl7:queryAck>
+        <hl7:queryId extension="20090920011010.005"/>
+        <hl7:statusCode code="deliveredResponse"/>
+        <hl7:queryResponseCode code="OK"/>
+        <hl7:resultTotalQuantity value="1"/>
+      </hl7:queryAck>
+    </hl7:controlActProcess>
+  </hl7:response>
+</hl7:CareRecord_QUPC_IN043200UV01Message>

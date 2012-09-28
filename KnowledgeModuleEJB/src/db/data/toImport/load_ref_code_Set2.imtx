@@ -1,0 +1,149 @@
+<dw_import source_type="0" use_data_loader="true">
+  <defaults directory="C:\DSS\KMR\REFDATA\toImport\" column_headers="true" encoding="0" empty_targets="false" xml_data_location="0" xpath="/">
+    <csv_options/>
+    <data_formats/>
+  </defaults>
+  <connection host="nhinint04.asu.edu" port="5432" login="postgres" password="]O#Q]NCYZ^L~" database="poem" client_encoding="">
+    <ssh_secure secure="false" port="22" use_ssh_key_based_auth="false"/>
+    <http_tunnel tunneling="false" url="">
+      <http_proxy_server use_proxy="false" port="8080"/>
+      <http_authentication/>
+    </http_tunnel>
+  </connection>
+  <items>
+
+	 <!-- ========================================= TASKS ====================================== -->
+    <item target="public.ref_taxonomy_code" file_name="C:\DSS\KMR\REFDATA\toImport\KMR_Taxonomy_Set2.xls" data_source="KMR_Tasks" delimiter="44" quote_char="&quot;" encoding="0" column_headers="true" xml_data_location="0" empty_target="false">
+      <data_formats/>
+      <columns>
+        <column name="concept_code" map="[KMR_Tasks]A-COLFINISH;"/>
+        <column name="concept_name" map="[KMR_Tasks]B-COLFINISH;"/>
+        <column name="preferred_concept_name" map="[KMR_Tasks]C-COLFINISH;"/>
+        <column name="preferred_alternate_code" map="[KMR_Tasks]D-COLFINISH;"/>
+        <column name="code_system_oid" map="[KMR_Tasks]E-COLFINISH;"/>
+        <column name="code_system_name" map="[KMR_Tasks]F-COLFINISH;"/>
+        <column name="code_system_code" map="[KMR_Tasks]G-COLFINISH;"/>
+        <column name="code_system_version" map="[KMR_Tasks]H-COLFINISH;"/>
+        <column name="hl7_table_0396_code" map="[KMR_Tasks]I-COLFINISH;"/>
+        <column name="source_filename" map="[KMR_Tasks]J-COLFINISH;"/>
+        <column name="dictionary_id" map="[KMR_Tasks]K-COLFINISH;"/>
+        <column name="disable" map="[KMR_Tasks]L-COLFINISH;"/>
+      </columns>
+    </item>
+	 <!-- ========================================= TASK QUALIFIER ================================= -->
+    <item target="public.ref_taxonomy_code" file_name="C:\DSS\KMR\REFDATA\toImport\KMR_Taxonomy_Set2.xls" data_source="KMR_Task_Qualifier" delimiter="44" quote_char="&quot;" encoding="0" column_headers="true" xml_data_location="0" empty_target="false">
+      <data_formats/>
+      <columns>
+        <column name="concept_code" map="[KMR_Task_Qualifier]A-COLFINISH;"/>
+        <column name="concept_name" map="[KMR_Task_Qualifier]B-COLFINISH;"/>
+        <column name="preferred_concept_name" map="[KMR_Task_Qualifier]C-COLFINISH;"/>
+        <column name="preferred_alternate_code" map="[KMR_Task_Qualifier]D-COLFINISH;"/>
+        <column name="code_system_oid" map="[KMR_Task_Qualifier]E-COLFINISH;"/>
+        <column name="code_system_name" map="[KMR_Task_Qualifier]F-COLFINISH;"/>
+        <column name="code_system_code" map="[KMR_Task_Qualifier]G-COLFINISH;"/>
+        <column name="code_system_version" map="[KMR_Task_Qualifier]H-COLFINISH;"/>
+        <column name="hl7_table_0396_code" map="[KMR_Task_Qualifier]I-COLFINISH;"/>
+        <column name="source_filename" map="[KMR_Task_Qualifier]J-COLFINISH;"/>
+        <column name="dictionary_id" map="[KMR_Task_Qualifier]K-COLFINISH;"/>
+        <column name="disable" map="[KMR_Task_Qualifier]L-COLFINISH;"/>
+      </columns>
+    </item>
+	<!-- ========================================= COGNITIVE =============================== -->
+    <item target="public.ref_taxonomy_code" file_name="C:\DSS\KMR\REFDATA\toImport\KMR_Taxonomy_Set2.xls" data_source="KMR_Cognitive_Technique" delimiter="44" quote_char="&quot;" encoding="0" column_headers="true" xml_data_location="0" empty_target="false">
+      <data_formats/>
+      <columns>
+        <column name="concept_code" map="[KMR_Cognitive_Technique]A-COLFINISH;"/>
+        <column name="concept_name" map="[KMR_Cognitive_Technique]B-COLFINISH;"/>
+        <column name="preferred_concept_name" map="[KMR_Cognitive_Technique]C-COLFINISH;"/>
+        <column name="preferred_alternate_code" map="[KMR_Cognitive_Technique]D-COLFINISH;"/>
+        <column name="code_system_oid" map="[KMR_Cognitive_Technique]E-COLFINISH;"/>
+        <column name="code_system_name" map="[KMR_Cognitive_Technique]F-COLFINISH;"/>
+        <column name="code_system_code" map="[KMR_Cognitive_Technique]G-COLFINISH;"/>
+        <column name="code_system_version" map="[KMR_Cognitive_Technique]H-COLFINISH;"/>
+        <column name="hl7_table_0396_code" map="[KMR_Cognitive_Technique]I-COLFINISH;"/>
+        <column name="source_filename" map="[KMR_Cognitive_Technique]J-COLFINISH;"/>
+        <column name="dictionary_id" map="[KMR_Cognitive_Technique]K-COLFINISH;"/>
+        <column name="disable" map="[KMR_Cognitive_Technique]L-COLFINISH;"/>
+      </columns>
+    </item>
+	 <!-- ========================================= KM TYPE ==================================== -->
+    <item target="public.ref_taxonomy_code" file_name="C:\DSS\KMR\REFDATA\toImport\KMR_Taxonomy_Set2.xls" data_source="KMR_Clinical_Objective" delimiter="44" quote_char="&quot;" encoding="0" column_headers="true" xml_data_location="0" empty_target="false">
+      <data_formats/>
+      <columns>
+        <column name="concept_code" map="[KMR_Clinical_Objective]A-COLFINISH;"/>
+        <column name="concept_name" map="[KMR_Clinical_Objective]B-COLFINISH;"/>
+        <column name="preferred_concept_name" map="[KMR_Clinical_Objective]C-COLFINISH;"/>
+        <column name="preferred_alternate_code" map="[KMR_Clinical_Objective]D-COLFINISH;"/>
+        <column name="code_system_oid" map="[KMR_Clinical_Objective]E-COLFINISH;"/>
+        <column name="code_system_name" map="[KMR_Clinical_Objective]F-COLFINISH;"/>
+        <column name="code_system_code" map="[KMR_Clinical_Objective]G-COLFINISH;"/>
+        <column name="code_system_version" map="[KMR_Clinical_Objective]H-COLFINISH;"/>
+        <column name="hl7_table_0396_code" map="[KMR_Clinical_Objective]I-COLFINISH;"/>
+        <column name="source_filename" map="[KMR_Clinical_Objective]J-COLFINISH;"/>
+        <column name="dictionary_id" map="[KMR_Clinical_Objective]K-COLFINISH;"/>
+        <column name="disable" map="[KMR_Clinical_Objective]L-COLFINISH;"/>
+      </columns>
+    </item>
+	 <!-- ========================================= AGERANGE ====================================== -->
+    <item target="public.ref_taxonomy_code" file_name="C:\DSS\KMR\REFDATA\toImport\KMR_Taxonomy_Set2.xls" data_source="KMR_Age_Range" delimiter="44" quote_char="&quot;" encoding="0" column_headers="true" xml_data_location="0" empty_target="false">
+      <data_formats/>
+      <columns>
+        <column name="concept_code" map="[KMR_Age_Range]A-COLFINISH;"/>
+        <column name="concept_name" map="[KMR_Age_Range]B-COLFINISH;"/>
+        <column name="preferred_concept_name" map="[KMR_Age_Range]C-COLFINISH;"/>
+        <column name="preferred_alternate_code" map="[KMR_Age_Range]D-COLFINISH;"/>
+        <column name="code_system_oid" map="[KMR_Age_Range]E-COLFINISH;"/>
+        <column name="code_system_name" map="[KMR_Age_Range]F-COLFINISH;"/>
+        <column name="code_system_code" map="[KMR_Age_Range]G-COLFINISH;"/>
+        <column name="code_system_version" map="[KMR_Age_Range]H-COLFINISH;"/>
+        <column name="hl7_table_0396_code" map="[KMR_Age_Range]I-COLFINISH;"/>
+        <column name="source_filename" map="[KMR_Age_Range]J-COLFINISH;"/>
+        <column name="dictionary_id" map="[KMR_Age_Range]K-COLFINISH;"/>
+        <column name="disable" map="[KMR_Age_Range]L-COLFINISH;"/>
+      </columns>
+    </item>	 
+	 <!-- ========================================= SOURCE/ORIGINATING INSTITUTION TYPE =========== -->
+    <item target="public.ref_taxonomy_code" file_name="C:\DSS\KMR\REFDATA\toImport\KMR_Taxonomy_Set2.xls" data_source="KMR_Originating_Institution_Typ" delimiter="44" quote_char="&quot;" encoding="0" column_headers="true" xml_data_location="0" empty_target="false">
+      <data_formats/>
+      <columns>
+        <column name="concept_code" map="[KMR_Originating_Institution_Typ]A-COLFINISH;"/>
+        <column name="concept_name" map="[KMR_Originating_Institution_Typ]B-COLFINISH;"/>
+        <column name="preferred_concept_name" map="[KMR_Originating_Institution_Typ]C-COLFINISH;"/>
+        <column name="preferred_alternate_code" map="[KMR_Originating_Institution_Typ]D-COLFINISH;"/>
+        <column name="code_system_oid" map="[KMR_Originating_Institution_Typ]E-COLFINISH;"/>
+        <column name="code_system_name" map="[KMR_Originating_Institution_Typ]F-COLFINISH;"/>
+        <column name="code_system_code" map="[KMR_Originating_Institution_Typ]G-COLFINISH;"/>
+        <column name="code_system_version" map="[KMR_Originating_Institution_Typ]H-COLFINISH;"/>
+        <column name="hl7_table_0396_code" map="[KMR_Originating_Institution_Typ]I-COLFINISH;"/>
+        <column name="source_filename" map="[KMR_Originating_Institution_Typ]J-COLFINISH;"/>
+        <column name="dictionary_id" map="[KMR_Originating_Institution_Typ]K-COLFINISH;"/>
+        <column name="disable" map="[KMR_Originating_Institution_Typ]L-COLFINISH;"/>
+      </columns>
+    </item>    
+	 <!-- ========================================= CARE FACILITY ================================= -->
+    <item target="public.ref_taxonomy_code" file_name="C:\DSS\KMR\REFDATA\toImport\KMR_Taxonomy_Set2.xls" data_source="KMR_CareFacilityType" delimiter="44" quote_char="&quot;" encoding="0" column_headers="true" xml_data_location="0" empty_target="false">
+      <data_formats/>
+      <columns>
+        <column name="concept_code" map="[KMR_CareFacilityType]A-COLFINISH;"/>
+        <column name="concept_name" map="[KMR_CareFacilityType]B-COLFINISH;"/>
+        <column name="preferred_concept_name" map="[KMR_CareFacilityType]C-COLFINISH;"/>
+        <column name="preferred_alternate_code" map="[KMR_CareFacilityType]D-COLFINISH;"/>
+        <column name="code_system_oid" map="[KMR_CareFacilityType]E-COLFINISH;"/>
+        <column name="code_system_name" map="[KMR_CareFacilityType]F-COLFINISH;"/>
+        <column name="code_system_code" map="[KMR_CareFacilityType]G-COLFINISH;"/>
+        <column name="code_system_version" map="[KMR_CareFacilityType]H-COLFINISH;"/>
+        <column name="hl7_table_0396_code" map="[KMR_CareFacilityType]I-COLFINISH;"/>
+        <column name="source_filename" map="[KMR_CareFacilityType]J-COLFINISH;"/>
+        <column name="dictionary_id" map="[KMR_CareFacilityType]K-COLFINISH;"/>
+        <column name="disable" map="[KMR_CareFacilityType]L-COLFINISH;"/>
+      </columns>
+    </item>
+	 <!-- =========================================  ====================================== -->
+
+
+  </items>
+  <engine_options>
+    <replacements/>
+    <options error_log_file_name="C:\DSS\KMR\REFDATA\toImport\logs\load_ref_code_Set2.log"/>
+  </engine_options>
+</dw_import>

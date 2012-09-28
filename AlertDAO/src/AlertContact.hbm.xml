@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="gov.hhs.fha.nhinc.alertmanager.model">
+  <class name="AlertContact" table="alertcontact">
+    <id column="AT_ContactID" name="contactId" type="long">
+      <generator class="increment"/>
+    </id>
+    <property column="Method" length="50" name="method" type="string"/>
+    <property column="ProviderID" length="100" name="providerId" type="string"/>
+    <property column="ProviderName" length="100" name="providerName" type="string"/>
+    <property column="ProviderLDAP" length="100" name="providerLdap" type="string"/>
+    <property column="ClinicID" length="50" name="clinicId" type="string"/>
+    <property column="OrganizationID" length="50" name="organizationId" type="string"/>
+    <property column="Role" length="100" name="role" type="string"/>
+    <property column="Location" length="100" name="location" type="string"/>
+    <many-to-one column="AT_TicketID" lazy="false" name="ticket" not-null="true"/>
+  </class>
+</hibernate-mapping>

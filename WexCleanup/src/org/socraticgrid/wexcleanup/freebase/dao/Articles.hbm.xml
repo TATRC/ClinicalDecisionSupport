@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 6, 2010 5:46:31 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="org.socraticgrid.wexcleanup.freebase.dao.Articles" schema="public" table="articles">
+    <id name="wpid" type="int">
+      <column name="wpid"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="name" type="string">
+      <column name="name" not-null="true"/>
+    </property>
+    <property name="updated" type="timestamp">
+      <column length="29" name="updated" not-null="true"/>
+    </property>
+    <property name="xml" type="org.socraticgrid.hibernate.PostgresXML">
+      <column name="xml"/>
+    </property>
+    <property name="text" type="string">
+      <column name="text"/>
+    </property>
+  </class>
+</hibernate-mapping>

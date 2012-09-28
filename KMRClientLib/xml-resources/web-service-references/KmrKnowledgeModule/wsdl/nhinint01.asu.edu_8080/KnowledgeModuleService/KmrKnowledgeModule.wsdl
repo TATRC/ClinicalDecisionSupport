@@ -1,0 +1,255 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.6-hudson-317-. -->
+<wsdl:definitions xmlns:tns="urn:gov:hhs:fha:nhinc:kmr:knowledgemodule" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes" xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" name="KnowledgeModuleService" targetNamespace="urn:gov:hhs:fha:nhinc:kmr:knowledgemodule">
+  <wsdl:documentation>
+     WSDL for Knowledge Module Service Consumer, receiving request for data
+  </wsdl:documentation>
+  
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:gov:hhs:fha:nhinc:kmr:knowledgemodule">
+      <xsd:import namespace="urn:gov:hhs:fha:nhinc:kmr:kmtypes" schemaLocation="http://nhinint01.asu.edu:8080/KnowledgeModuleService/KmrKnowledgeModule?xsd=2" />
+    </xsd:schema>
+  </wsdl:types>
+
+   <!-- =======================================
+            Define XSD element reference
+        ======================================= -->
+    <!-- REFERENCE DATA -->
+  <wsdl:message name="GetKmRefDataRequest">
+    <wsdl:part name="param0" element="kmr:GetRefDataRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetKmRefDataResponse">
+    <wsdl:part name="output" element="kmr:GetRefDataResponse" />
+  </wsdl:message>
+
+    <!-- WORKBENCH -->
+  <wsdl:message name="GetKmRequest">
+    <wsdl:part name="param0" element="kmr:KmRecordRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetKmResponse">
+    <wsdl:part name="output" element="kmr:KmRecordResponse" />
+  </wsdl:message>
+
+    <!-- WORKBENCH: Getting a List of KM_IDs -->
+  <wsdl:message name="GetKmMetaRequest">
+    <wsdl:part name="param0" element="kmr:GetKmMetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetKmMetaResponse">
+    <wsdl:part name="output" element="kmr:GetKmMetaResponse" />
+  </wsdl:message>
+
+    <!-- WORKBENCH: Getting a Latest Native Logic of KM_ID -->
+  <wsdl:message name="GetKmLatestLogicRequest">
+    <wsdl:part name="param0" element="kmr:GetKmLatestLogicRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetKmLatestLogicResponse">
+    <wsdl:part name="output" element="kmr:GetKmLatestLogicResponse" />
+  </wsdl:message>
+
+    <!-- RUNTIME -->
+  <wsdl:message name="GetRuntimeKmRequest">
+    <wsdl:part name="param0" element="kmr:KmRuntimeRecordRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetRuntimeKmResponse">
+    <wsdl:part name="output" element="kmr:KmRuntimeRecordResponse" />
+  </wsdl:message>
+
+    <!-- EXPORT 1st Pass -->
+  <wsdl:message name="FindKmIdsRequest">
+    <wsdl:part name="param0" element="kmr:FindKmIdsRequest" />
+  </wsdl:message>
+  <wsdl:message name="FindKmIdsResponse">
+    <wsdl:part name="output" element="kmr:FindKmIdsResponse" />
+  </wsdl:message>
+
+    <!-- EXPORT 2nd Pass -->
+  <wsdl:message name="GetKmByIdRequest">
+    <wsdl:part name="param0" element="kmr:KmIdSearchRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetKmByIdResponse">
+    <wsdl:part name="output" element="kmr:KmIdSearchResponse" />
+  </wsdl:message>
+    
+    <!-- IMPORT -->
+
+    <!--wsdl:message name="ImportRequest">
+        <wsdl:part name="param0" element="kmr:KmImportRequest"/>
+    </wsdl:message>
+    <wsdl:message name="ImportAckResponse">
+        <wsdl:part name="output" element="kmr:KmImportAckResponse"/>
+    </wsdl:message-->
+  <wsdl:message name="InsertRequest">
+    <wsdl:part name="param0" element="kmr:KmInsertRequest" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRequest">
+    <wsdl:part name="param0" element="kmr:KmUpdateRequest" />
+  </wsdl:message>
+  <wsdl:message name="InsertAckResponse">
+    <wsdl:part name="output" element="kmr:KmInsertAckResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAckResponse">
+    <wsdl:part name="output" element="kmr:KmUpdateAckResponse" />
+  </wsdl:message>
+
+   <!-- ======================================================
+            Define Port types
+        ====================================================== -->
+  <wsdl:portType name="KnowledgeModulePortType">
+    <wsdl:operation name="GetKmRefData">
+      <wsdl:input message="tns:GetKmRefDataRequest" />
+      <wsdl:output message="tns:GetKmRefDataResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKmByParams">
+      <wsdl:input message="tns:GetKmRequest" />
+      <wsdl:output message="tns:GetKmResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKmMeta">
+      <wsdl:input message="tns:GetKmMetaRequest" />
+      <wsdl:output message="tns:GetKmMetaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKmLatestLogic">
+      <wsdl:input message="tns:GetKmLatestLogicRequest" />
+      <wsdl:output message="tns:GetKmLatestLogicResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="FindKmId">
+      <wsdl:input message="tns:FindKmIdsRequest" />
+      <wsdl:output message="tns:FindKmIdsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKmById">
+      <wsdl:input message="tns:GetKmByIdRequest" />
+      <wsdl:output message="tns:GetKmByIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKmByParams_runtime">
+      <wsdl:input message="tns:GetRuntimeKmRequest" />
+      <wsdl:output message="tns:GetRuntimeKmResponse" />
+    </wsdl:operation>
+        <!--wsdl:operation name="ImportKms">
+            <wsdl:input message="tns:ImportRequest"/>
+            <wsdl:output message="tns:ImportAckResponse"/>
+        </wsdl:operation-->
+    <wsdl:operation name="InsertKms">
+      <wsdl:input message="tns:InsertRequest" />
+      <wsdl:output message="tns:InsertAckResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateKms">
+      <wsdl:input message="tns:UpdateRequest" />
+      <wsdl:output message="tns:UpdateAckResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+
+   <!-- ======================================================
+            Define Bindings to IMPL class method call
+        ====================================================== -->
+
+  <wsdl:binding name="KnowledgeModulePortTypeBinding" type="tns:KnowledgeModulePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+
+    <wsdl:operation name="GetKmRefData">
+      <soap:operation soapAction="urn:GetKmRefData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="GetKmByParams">
+      <soap:operation soapAction="urn:GetKmByParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="GetKmMeta">
+      <soap:operation soapAction="urn:GetKmMeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="GetKmLatestLogic">
+      <soap:operation soapAction="urn:GetKmLatestLogic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="FindKmId">
+      <soap:operation soapAction="urn:FindKmId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="GetKmById">
+      <soap:operation soapAction="urn:GetKmById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="GetKmByParams_runtime">
+      <soap:operation soapAction="urn:RuntimeDiscovery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+
+        <!--wsdl:operation name="ImportKms">
+            <soap:operation soapAction="urn:ImportKms" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation-->
+    <wsdl:operation name="InsertKms">
+      <soap:operation soapAction="urn:InsertKms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateKms">
+      <soap:operation soapAction="urn:UpdateKms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+
+
+  </wsdl:binding>
+
+   <!-- ======================================================
+            Define Service
+        ====================================================== -->
+  <wsdl:service name="KnowledgeModuleService">
+    <wsdl:port name="KnowledgeModulePort" binding="tns:KnowledgeModulePortTypeBinding">
+      <soap:address location="http://nhinint01.asu.edu:8080/KnowledgeModuleService/KmrKnowledgeModule" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

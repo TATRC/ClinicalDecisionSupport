@@ -1,0 +1,191 @@
+<?xml version="1.0" ?>
+<hl7:CareRecord_QUPC_IN043200UV01Message xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+  <hl7:response>
+    <hl7:id extension="beee9a98-4558-3fcf-a3f6-54e5b0d00c09"/>
+    <hl7:creationTime value="20100629200539.438-0700"/>
+    <hl7:interactionId extension="PRPA_IN900300UV02"/>
+    <hl7:processingCode code="P"/>
+    <hl7:processingModeCode code="R"/>
+    <hl7:acceptAckCode code="RCV"/>
+    <hl7:receiver typeCode="RCV">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+        <hl7:telecom value="http://localhost:8080/NhinConnect/CommonDataLayerService"/>
+      </hl7:device>
+    </hl7:receiver>
+    <hl7:sender typeCode="SND">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+      </hl7:device>
+    </hl7:sender>
+    <hl7:controlActProcess moodCode="EVN" classCode="CACT">
+      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CS" code="QUPC_TE043200UV01"/>
+      <hl7:priorityCode code="R"/>
+      <hl7:subject typeCode="SUBJ">
+        <hl7:registrationEvent moodCode="EVN" classCode="REG">
+          <hl7:statusCode code="active"/>
+          <hl7:custodian typeCode="CST">
+            <hl7:assignedEntity classCode="ASSIGNED">
+              <hl7:id assigningAuthorityName="OpenRPMS" root="2.16.840.1.113883.3.274"/>
+            </hl7:assignedEntity>
+          </hl7:custodian>
+          <hl7:subject2 typeCode="SUBJ">
+            <hl7:careProvisionEvent moodCode="EVN" classCode="PCPR">
+              <hl7:recordTarget typeCode="RCT">
+                <hl7:patient classCode="PAT">
+                  <hl7:id extension="14484" root="2.16.840.1.113883.3.200"/>
+                  <hl7:statusCode code="normal"/>
+                  <hl7:patientPerson determinerCode="INSTANCE" classCode="PSN">
+                    <hl7:name use="L">
+                      <hl7:family>SMITH</hl7:family>
+                      <hl7:given>BENINA</hl7:given>
+                      <hl7:given>J</hl7:given>
+                    </hl7:name>
+                    <hl7:administrativeGenderCode displayName="FEMALE" code="F"/>
+                    <hl7:birthTime value="19560622000000-0700"/>
+                  </hl7:patientPerson>
+                </hl7:patient>
+              </hl7:recordTarget>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="1"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <hl7:id extension="76428"/>
+                  <hl7:code displayName="Problem" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="55607006"/>
+                  <hl7:text>ELEVATED TRANAMINASES 8/02</hl7:text>
+                  <hl7:statusCode code="active"/>
+                  <hl7:effectiveTime nullFlavor="UNK"/>
+                  <hl7:effectiveTime nullFlavor="UNK"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD" displayName="ELEVATED TRANAMINASES 8/02" code="UNK"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="2"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <hl7:id extension="76431"/>
+                  <hl7:code displayName="Problem" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="55607006"/>
+                  <hl7:text>POLYCYTHEMIA 4/01</hl7:text>
+                  <hl7:statusCode code="active"/>
+                  <hl7:effectiveTime nullFlavor="UNK"/>
+                  <hl7:effectiveTime nullFlavor="UNK"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD" displayName="POLYCYTHEMIA 4/01" code="UNK"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="3"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <hl7:id extension="76433"/>
+                  <hl7:code displayName="Problem" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="55607006"/>
+                  <hl7:text>H PYLORI AB POSITIVE 8/05</hl7:text>
+                  <hl7:statusCode code="active"/>
+                  <hl7:effectiveTime nullFlavor="UNK"/>
+                  <hl7:effectiveTime nullFlavor="UNK"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD" displayName="H PYLORI AB POSITIVE 8/05" code="UNK"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="4"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <hl7:id extension="76434"/>
+                  <hl7:code displayName="Problem" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="55607006"/>
+                  <hl7:text>RHEUMATOID ARTHRITIS 2000</hl7:text>
+                  <hl7:statusCode code="active"/>
+                  <hl7:effectiveTime nullFlavor="UNK"/>
+                  <hl7:effectiveTime nullFlavor="UNK"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD" displayName="RHEUMATOID ARTHRITIS" codeSystemName="ICD9" codeSystem="2.16.840.1.113883.11.15931" code="714.0"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="5"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <hl7:id extension="76435"/>
+                  <hl7:code displayName="Problem" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="55607006"/>
+                  <hl7:text>RECURRENT MRSA SKIN INFECTIONS</hl7:text>
+                  <hl7:statusCode code="active"/>
+                  <hl7:effectiveTime nullFlavor="UNK"/>
+                  <hl7:effectiveTime nullFlavor="UNK"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD" displayName="RECURRENT MRSA SKIN INFECTIONS" code="UNK"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="6"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <hl7:id extension="80518"/>
+                  <hl7:code displayName="Problem" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="55607006"/>
+                  <hl7:text>PERFORATED R TM</hl7:text>
+                  <hl7:statusCode code="active"/>
+                  <hl7:effectiveTime nullFlavor="UNK"/>
+                  <hl7:effectiveTime nullFlavor="UNK"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD" displayName="PERFORAT TYMPAN MEMB NOS" codeSystemName="ICD9" codeSystem="2.16.840.1.113883.11.15931" code="384.20"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="7"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <hl7:id extension="85187"/>
+                  <hl7:code displayName="Problem" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="55607006"/>
+                  <hl7:text>HIGH RISK MEDICATION, PLAQUENIL WITHOUT MOCULOPATHY</hl7:text>
+                  <hl7:statusCode code="active"/>
+                  <hl7:effectiveTime value="20080722-0700"/>
+                  <hl7:effectiveTime nullFlavor="UNK"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD" displayName="L/T (CURRENT) USE - OTH MEDS" codeSystemName="ICD9" codeSystem="2.16.840.1.113883.11.15931" code="V58.69"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="8"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <hl7:id extension="85188"/>
+                  <hl7:code displayName="Problem" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="55607006"/>
+                  <hl7:text>GLAUCOMA SUSPECT</hl7:text>
+                  <hl7:statusCode code="active"/>
+                  <hl7:effectiveTime value="20080722-0700"/>
+                  <hl7:effectiveTime nullFlavor="UNK"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD" displayName="PREGLAUCOMA NOS" codeSystemName="ICD9" codeSystem="2.16.840.1.113883.11.15931" code="365.00"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="9"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <hl7:id extension="99859"/>
+                  <hl7:code displayName="Problem" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="55607006"/>
+                  <hl7:text>MIXED HEARING LOSS - BILATERAL</hl7:text>
+                  <hl7:statusCode code="active"/>
+                  <hl7:effectiveTime nullFlavor="UNK"/>
+                  <hl7:effectiveTime nullFlavor="UNK"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD" displayName="MIXED HEARING LOSS,BILAT" codeSystemName="ICD9" codeSystem="2.16.840.1.113883.11.15931" code="389.22"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="10"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:templateId root="2.16.840.1.113883.10.20.1.28"/>
+                  <hl7:id extension="101104"/>
+                  <hl7:code displayName="Problem" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="55607006"/>
+                  <hl7:text>Negative mammogram 6/12/09.  follow up in one year</hl7:text>
+                  <hl7:statusCode code="active"/>
+                  <hl7:effectiveTime nullFlavor="UNK"/>
+                  <hl7:effectiveTime nullFlavor="UNK"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD" displayName="ADMINISTRTVE ENCOUNT NEC" codeSystemName="ICD9" codeSystem="2.16.840.1.113883.11.15931" code="V68.89"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+            </hl7:careProvisionEvent>
+          </hl7:subject2>
+        </hl7:registrationEvent>
+      </hl7:subject>
+      <hl7:queryAck>
+        <hl7:queryId extension="8e42bb26-831a-46c9-8345-b361b5624cd7"/>
+        <hl7:statusCode code="deliveredResponse"/>
+        <hl7:queryResponseCode code="OK"/>
+        <hl7:resultTotalQuantity value="10"/>
+      </hl7:queryAck>
+    </hl7:controlActProcess>
+  </hl7:response>
+</hl7:CareRecord_QUPC_IN043200UV01Message>

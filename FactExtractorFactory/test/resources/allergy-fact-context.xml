@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+   <bean id="allergy.extractor" class="gov.hhs.fha.nhinc.adapter.fact.extractor.AllergiesFactExtractor">
+      <constructor-arg ref="Xpath"/>
+      <property name="factClassName" value="gov.hhs.fha.nhinc.adapter.fact.AllergyFact"/>
+      <property name="factProperties">
+         <map>
+            <entry key="AdverseEventDate">
+               <ref bean="fact.property.adverseeventdate"/>
+            </entry>
+            <entry key="AdverseEventType">
+               <ref bean="fact.property.adverseeventtype"/>
+            </entry>
+            <entry key="CodedProduct">
+               <ref bean="fact.property.codedproduct"/>
+            </entry>
+            <entry key="ArrayOfReactions">
+               <ref bean="fact.property.reactions"/>
+            </entry>
+            <entry key="ArrayOfSeverities">
+               <ref bean="fact.property.severities"/>
+            </entry>
+         </map>
+      </property>
+      <property name="allergyCountXpathExpression" value="count(//hl7:pertinentInformation3)"/>
+      <property name="allergyEventXpathExpression" 
+                value="/hl7:CareRecord_QUPC_IN043200UV01Response//hl7:careRecord/hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent//hl7:pertinentInformation3[xxx]"/>
+   </bean>
+
+   <bean id="fact.property.adverseeventdate" class="gov.hhs.fha.nhinc.adapter.fact.def.PropertyDefinition">
+      <property name="propertyName" value="AdverseEventDate"/>
+      <property name="propertyClassName" value="java.lang.String"/>
+      <property name="xpathExpression" value="hl7:observation[@classCode='OBS']/hl7:effectiveTime/@value"/>
+   </bean>
+
+   <!--
+      Property of type "code/label":
+      For this property type, "xpathExpression" will not be use.  Rather, we will use
+         "codeXpathExpression" to define the xpath expression for the "code" part of the property
+         "labelXpathExpression" to define the xpath expression for the "label" part of the property
+   -->
+   <bean id="fact.property.adverseeventtype" class="gov.hhs.fha.nhinc.adapter.fact.def.PropertyCodeLabelDefinition">
+      <property name="propertyName" value="AdverseEventType"/>
+      <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+      <property name="codeXpathExpression" value="hl7:observation[@classCode='OBS']/hl7:code/@code"/>
+      <property name="labelXpathExpression" value="hl7:observation[@classCode='OBS']/hl7:code/@displayName"/>
+   </bean>
+
+   <bean id="fact.property.codedproduct" class="gov.hhs.fha.nhinc.adapter.fact.def.PropertyCodeLabelDefinition">
+      <property name="propertyName" value="CodedProduct"/>
+      <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+      <property name="codeXpathExpression" 
+                value="hl7:observation/hl7:sourceOf/hl7:substanceAdministration/hl7:consumable/hl7:administerableMaterial/hl7:administerableMaterial/hl7:code/@code"/>
+      <property name="labelXpathExpression" 
+                value="hl7:observation/hl7:sourceOf/hl7:substanceAdministration/hl7:consumable/hl7:administerableMaterial/hl7:administerableMaterial/hl7:code/@displayName"/>
+   </bean>
+
+   <!--
+      Property of type "list":
+      For this property type
+         "propertyClassName" will represent the class type of the object within the list, not the list itself
+         "propertyName" will represent the name of the "list"
+   -->
+   <bean id="fact.property.reactions" class="gov.hhs.fha.nhinc.adapter.fact.def.PropertyCodeLabelListDefinition">
+      <property name="propertyName" value="ArrayOfReactions"/>
+      <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+      <property name="sizeXpathExpression" value="count(hl7:observation/hl7:sourceOf[@typeCode='MFST']/hl7:observation)"/>
+      <property name="codeXpathExpression" value="hl7:observation/hl7:sourceOf[@typeCode='MFST']/hl7:observation[xxx]/hl7:value/@code"/>
+      <property name="labelXpathExpression" value="hl7:observation/hl7:sourceOf[@typeCode='MFST']/hl7:observation[xxx]/hl7:value/@displayName"/>
+   </bean>
+
+   <bean id="fact.property.severities" class="gov.hhs.fha.nhinc.adapter.fact.def.PropertyCodeLabelListDefinition">
+      <property name="propertyName" value="ArrayOfSeverities"/>
+      <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+      <property name="sizeXpathExpression" value="count(hl7:observation/hl7:sourceOf[@typeCode='SUBJ']/hl7:observation)"/>
+      <property name="codeXpathExpression" value="hl7:observation/hl7:sourceOf[@typeCode='SUBJ']/hl7:observation[xxx]/hl7:value/@code"/>
+      <property name="labelXpathExpression" value="hl7:observation/hl7:sourceOf[@typeCode='SUBJ']/hl7:observation[xxx]/hl7:value/@displayName"/>
+   </bean>
+
+</beans>

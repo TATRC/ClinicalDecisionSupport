@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 23, 2010 3:53:17 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.socraticgrid.icd9wikiextractor.freebase.dao.EcsArticles" table="ecs_articles" schema="public">
+        <id name="wpid" type="int">
+            <column name="wpid" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" not-null="true" />
+        </property>
+        <property name="updated" type="timestamp">
+            <column name="updated" length="29" not-null="true" />
+        </property>
+        <property name="xml" type="serializable">
+            <column name="xml" />
+        </property>
+        <property name="text" type="string">
+            <column name="text" />
+        </property>
+    </class>
+</hibernate-mapping>

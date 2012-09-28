@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.6-hudson-317-. --><wsdl:definitions xmlns:tns="urn:mil:navy:med:dzreg:service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="urn:mil:navy:med:dzreg:types" xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" name="RegistriesService" targetNamespace="urn:mil:navy:med:dzreg:service">
+	<wsdl:documentation>
+     WSDL for Registries Service
+  </wsdl:documentation>
+	<wsdl:types>
+		<xsd:schema targetNamespace="urn:mil:navy:med:dzreg:service">
+			<xsd:import namespace="urn:mil:navy:med:dzreg:types" schemaLocation="http://nhinint01.asu.edu:8080/Registries/RegistriesService?xsd=1" />
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="GetRegistryProfileRequest">
+		<wsdl:part name="parameters" element="ns1:PersonRegistryProfileRequest" />
+	</wsdl:message>
+	<wsdl:message name="GetRegistryProfileResponse">
+		<wsdl:part name="parameters" element="ns1:PersonRegistryProfileResponse" />
+	</wsdl:message>
+	<wsdl:message name="RegisterProfileRequest">
+		<wsdl:part name="parameters" element="ns1:RegisterPersonRequest" />
+	</wsdl:message>
+	<wsdl:message name="RegisterProfileResponse">
+		<wsdl:part name="parameters" element="ns1:ResponseAck" />
+	</wsdl:message>	
+	<wsdl:message name="UnregisterProfileRequest">
+		<wsdl:part name="parameters" element="ns1:UnregisterPersonRequest" />
+	</wsdl:message>
+	<wsdl:message name="UnregisterProfileResponse">
+		<wsdl:part name="parameters" element="ns1:ResponseAck" />
+	</wsdl:message>		
+	<wsdl:portType name="RegistriesServicePortType">
+		<wsdl:operation name="GetRegistryProfile">
+			<wsdl:input message="tns:GetRegistryProfileRequest" />
+			<wsdl:output message="tns:GetRegistryProfileResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="Register">
+			<wsdl:input message="tns:RegisterProfileRequest" />
+			<wsdl:output message="tns:RegisterProfileResponse" />
+		</wsdl:operation>		
+		<wsdl:operation name="Unregister">
+			<wsdl:input message="tns:UnregisterProfileRequest" />
+			<wsdl:output message="tns:UnregisterProfileResponse" />
+		</wsdl:operation>		
+	</wsdl:portType>
+	<wsdl:binding name="RegistriesServicePortTypeBinding" type="tns:RegistriesServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="GetRegistryProfile">
+			<soap:operation soapAction="urn:GetRegistryProfile" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Register">
+			<soap:operation soapAction="urn:Register" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>		
+		<wsdl:operation name="Unregister">
+			<soap:operation soapAction="urn:Unregister" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>				
+	</wsdl:binding>
+	<wsdl:service name="RegistriesService">
+		<wsdl:port name="RegistriesServicePort" binding="tns:RegistriesServicePortTypeBinding">
+			<soap:address location="http://nhinint01.asu.edu:8080/Registries/RegistriesService" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

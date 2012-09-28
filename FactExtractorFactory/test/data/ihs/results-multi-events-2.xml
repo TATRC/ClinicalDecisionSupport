@@ -1,0 +1,251 @@
+<?xml version="1.0" ?>
+<hl7:CareRecord_QUPC_IN043200UV01Message xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+  <hl7:response>
+    <hl7:id extension="57f0751a-941c-3830-98bb-d28cfe229ad1"/>
+    <hl7:creationTime value="20100614103409.182"/>
+    <hl7:interactionId extension="PRPA_IN900300UV02"/>
+    <hl7:processingCode code="P"/>
+    <hl7:processingModeCode code="R"/>
+    <hl7:acceptAckCode code="RCV"/>
+    <hl7:receiver typeCode="RCV">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+        <hl7:telecom value="http://localhost:8080/NhinConnect/CommonDataLayerService"/>
+      </hl7:device>
+    </hl7:receiver>
+    <hl7:sender typeCode="SND">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+      </hl7:device>
+    </hl7:sender>
+    <hl7:controlActProcess moodCode="EVN" classCode="CACT">
+      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CS" code="QUPC_TE043200UV01"/>
+      <hl7:priorityCode code="R"/>
+      <hl7:subject typeCode="SUBJ">
+        <hl7:registrationEvent moodCode="EVN" classCode="REG">
+          <hl7:statusCode code="completed"/>
+          <hl7:custodian typeCode="CST">
+            <hl7:assignedEntity classCode="ASSIGNED">
+              <hl7:id assigningAuthorityName="OpenRPMS" root="2.16.840.1.113883.3.274"/>
+            </hl7:assignedEntity>
+          </hl7:custodian>
+          <hl7:subject2 typeCode="SUBJ">
+            <hl7:careProvisionEvent moodCode="EVN" classCode="ENC">
+              <hl7:recordTarget typeCode="RCT">
+                <hl7:patient classCode="PAT">
+                  <hl7:id extension="53009" root="2.16.840.1.113883.3.200"/>
+                  <hl7:statusCode code="normal"/>
+                  <hl7:patientPerson determinerCode="INSTANCE" classCode="PSN">
+                    <hl7:name>
+                      <hl7:family>CHAVEZ</hl7:family>
+                      <hl7:given>BRENNA</hl7:given>
+                      <hl7:given>ASHLEY</hl7:given>
+                    </hl7:name>
+                    <hl7:administrativeGenderCode displayName="FEMALE" code="F"/>
+                    <hl7:birthTime value="20070325000000"/>
+                  </hl7:patientPerson>
+                </hl7:patient>
+              </hl7:recordTarget>
+              <hl7:inFulfillmentOf contextConductionInd="false">
+                <hl7:careProvisionRequestOrPromise>
+                  <hl7:id extension="30269.0"/>
+                </hl7:careProvisionRequestOrPromise>
+              </hl7:inFulfillmentOf>
+              <hl7:inFulfillmentOf contextConductionInd="false">
+                <hl7:careProvisionRequestOrPromise>
+                  <hl7:id extension="30268.0"/>
+                </hl7:careProvisionRequestOrPromise>
+              </hl7:inFulfillmentOf>
+              <hl7:reference>
+                <hl7:encounter>
+                  <hl7:id extension="SEP 08, 2009@08:30"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime value="20090908083000"/>
+                  <hl7:subject>
+                    <hl7:patient classCode="PAT">
+                      <hl7:id extension="53009" root="2.16.840.1.113883.3.200"/>
+                      <hl7:statusCode code="normal"/>
+                      <hl7:patientPerson determinerCode="INSTANCE" classCode="PSN">
+                        <hl7:name>
+                          <hl7:family>CHAVEZ</hl7:family>
+                          <hl7:given>BRENNA</hl7:given>
+                          <hl7:given>ASHLEY</hl7:given>
+                        </hl7:name>
+                        <hl7:administrativeGenderCode displayName="FEMALE" code="F"/>
+                        <hl7:birthTime value="20070325000000"/>
+                      </hl7:patientPerson>
+                    </hl7:patient>
+                  </hl7:subject>
+                  <hl7:location>
+                    <hl7:time value="20090908083000"/>
+                    <hl7:serviceDeliveryLocation>
+                      <hl7:serviceProviderOrganization>
+                        <hl7:name>
+                          <hl7:additionalLocator>
+                            <hl7:reference value="LABORATORY SERVICES"/>
+                          </hl7:additionalLocator>
+                        </hl7:name>
+                      </hl7:serviceProviderOrganization>
+                    </hl7:serviceDeliveryLocation>
+                  </hl7:location>
+                </hl7:encounter>
+              </hl7:reference>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="1"/>
+                <hl7:act>
+                  <hl7:id extension="QD 0900 254"/>
+                  <hl7:code displayName="LEAD,BLOOD-Q599" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" code="83655"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime value="20090908092204"/>
+                  <hl7:subject typeCode="SPC">
+                    <hl7:specimen classCode="SPEC">
+                      <hl7:id extension="7691760"/>
+                      <hl7:code displayName="Specimen Collection" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33882-2"/>
+                      <hl7:specimenNatural determinerCode="INSTANCE" classCode="PSN">
+                        <hl7:code>
+                          <hl7:originalText>
+                            <hl7:reference value="BLOOD"/>
+                          </hl7:originalText>
+                        </hl7:code>
+                      </hl7:specimenNatural>
+                    </hl7:specimen>
+                  </hl7:subject>
+                  <hl7:sourceOf typeCode="RSON">
+                    <hl7:observation>
+                      <hl7:code displayName="_LEAD,BLOOD" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" code="83655"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090908090400"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="MCG/DL" value="&lt;3"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="ENV.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="MCG/DL" value="&lt;10"/>
+                            <hl7:high unit="MCG/DL" value="10"/>
+                          </hl7:value>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="RSON">
+                    <hl7:observation>
+                      <hl7:code>
+                        <hl7:originalText>
+                          <hl7:reference value=" COLLECTION SAMPLE"/>
+                        </hl7:originalText>
+                      </hl7:code>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090908090400"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="CAPILLARY"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                </hl7:act>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="2"/>
+                <hl7:act>
+                  <hl7:id extension="HEMA 0908 11"/>
+                  <hl7:code>
+                    <hl7:originalText>
+                      <hl7:reference value="PEDS HGB SCREEN-SFIH"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime value="20090908092150"/>
+                  <hl7:subject typeCode="SPC">
+                    <hl7:specimen classCode="SPEC">
+                      <hl7:id extension="7691749"/>
+                      <hl7:code displayName="Specimen Collection" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33882-2"/>
+                      <hl7:specimenNatural determinerCode="INSTANCE" classCode="PSN">
+                        <hl7:code>
+                          <hl7:originalText>
+                            <hl7:reference value="BLOOD (EDTA)"/>
+                          </hl7:originalText>
+                        </hl7:code>
+                      </hl7:specimenNatural>
+                    </hl7:specimen>
+                  </hl7:subject>
+                  <hl7:sourceOf typeCode="RSON">
+                    <hl7:observation>
+                      <hl7:code displayName="HGB-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="718-7"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090908090400"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="g/dL" value="13.5"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="ENV.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="g/dL" value="11.8"/>
+                            <hl7:high unit="g/dL" value="15.9"/>
+                          </hl7:value>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="RSON">
+                    <hl7:observation>
+                      <hl7:code displayName="HCT-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="20570-8"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090908090400"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="%" value="39.1"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="ENV.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="%" value="35"/>
+                            <hl7:high unit="%" value="44"/>
+                          </hl7:value>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="RSON">
+                    <hl7:observation>
+                      <hl7:code displayName=" RDW" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="788-0"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090908090400"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="%" value="13.2"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="ENV.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="%" value="12"/>
+                            <hl7:high unit="%" value="16"/>
+                          </hl7:value>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="RSON">
+                    <hl7:observation>
+                      <hl7:code displayName=" MCV" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="787-2"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090908090400"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="fl" value="83.7"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="ENV.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="fl" value="83"/>
+                            <hl7:high unit="fl" value="99"/>
+                          </hl7:value>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                </hl7:act>
+              </hl7:pertinentInformation3>
+            </hl7:careProvisionEvent>
+          </hl7:subject2>
+        </hl7:registrationEvent>
+      </hl7:subject>
+      <hl7:queryAck>
+        <hl7:queryId extension="6858a017-39c1-4153-bbd4-eaedac72a0e7"/>
+        <hl7:statusCode code="deliveredResponse"/>
+        <hl7:queryResponseCode code="OK"/>
+        <hl7:resultTotalQuantity value="2"/>
+      </hl7:queryAck>
+    </hl7:controlActProcess>
+  </hl7:response>
+</hl7:CareRecord_QUPC_IN043200UV01Message>

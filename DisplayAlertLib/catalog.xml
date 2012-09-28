@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/AlertManager.wsdl" uri="xml-resources/web-service-references/AlertManager/wsdl/AlertManager.wsdl"/>
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/schemas/nhinc/common/Task.xsd" uri="xml-resources/web-service-references/AlertManager/schemas/nhinc/common/Task.xsd"/>
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/schemas/nhinc/adapter/Facts.xsd" uri="xml-resources/web-service-references/AlertManager/schemas/nhinc/adapter/Facts.xsd"/>
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/DisplayDataComponent.wsdl" uri="xml-resources/web-service-references/DisplayDataComponent/wsdl/DisplayDataComponent.wsdl"/>
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/schemas/nhinc/common/DisplayDataAggregator.xsd" uri="xml-resources/web-service-references/DisplayDataComponent/schemas/nhinc/common/DisplayDataAggregator.xsd"/>
+    <system systemId="file:/Z:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/AlertManager.wsdl" uri="xml-resources/web-service-references/AlertManager/wsdl/AlertManager.wsdl"/>
+    <system systemId="file:/Z:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/schemas/nhinc/common/Task.xsd" uri="xml-resources/web-service-references/AlertManager/schemas/nhinc/common/Task.xsd"/>
+    <system systemId="file:/Z:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/schemas/nhinc/adapter/Facts.xsd" uri="xml-resources/web-service-references/AlertManager/schemas/nhinc/adapter/Facts.xsd"/>
+    <system systemId="file:/Z:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/DisplayDataComponent.wsdl" uri="xml-resources/web-service-references/DisplayDataComponent/wsdl/DisplayDataComponent.wsdl"/>
+    <system systemId="file:/Z:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/schemas/nhinc/common/DisplayDataAggregator.xsd" uri="xml-resources/web-service-references/DisplayDataComponent/schemas/nhinc/common/DisplayDataAggregator.xsd"/>
+</catalog>

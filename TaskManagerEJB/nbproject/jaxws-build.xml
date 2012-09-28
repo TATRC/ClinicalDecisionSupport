@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xalan="http://xml.apache.org/xslt" xmlns:ejbjarproject2="http://www.netbeans.org/ns/j2ee-ejbjarproject/2" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSGEN SECTION
+                ===================
+            -->
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.dir}/wsimport/client"/>
+        <mkdir dir="${build.generated.dir}/wsimport/service"/>
+        <mkdir dir="${build.generated.dir}/wsimport/binaries"/>
+        <mkdir dir="${classes.dir}"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${j2ee.platform.wsimport.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-check-SendSMS" depends="wsimport-init">
+        <condition property="wsimport-client-SendSMS.notRequired">
+            <available file="${build.generated.dir}/wsimport/client/ca/smsgateway/sendsms/asmx/SendSMS.java"/>
+        </condition>
+    </target>
+    <target name="wsimport-client-SendSMS" depends="wsimport-init,wsimport-client-check-SendSMS" unless="wsimport-client-SendSMS.notRequired">
+        <property name="wsdl-SendSMS" location="${meta.inf}/xml-resources/web-service-references/SendSMS/wsdl/smsgateway.ca/SendSMS.asmx.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/wsimport/client" destdir="${build.generated.dir}/wsimport/binaries" wsdl="${wsdl-SendSMS}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="../../../META-INF/SendSMS.asmx.xml" xnocompile="true"/>
+    </target>
+    <target name="wsimport-client-clean-SendSMS" depends="-init-project">
+        <delete dir="${build.generated.dir}/wsimport/client/ca/smsgateway/sendsms/asmx"/>
+    </target>
+    <target name="wsimport-client-check-RegistriesService" depends="wsimport-init">
+        <condition property="wsimport-client-RegistriesService.notRequired">
+            <available file="${build.generated.dir}/wsimport/client/mil:navy:med:dzreg:service/RegistriesService.java"/>
+        </condition>
+    </target>
+    <target name="wsimport-client-RegistriesService" depends="wsimport-init,wsimport-client-check-RegistriesService" unless="wsimport-client-RegistriesService.notRequired">
+        <property name="wsdl-RegistriesService" location="${meta.inf}/xml-resources/web-service-references/RegistriesService/wsdl/nhinint01.asu.edu_8080/Registries/RegistriesService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/wsimport/client" destdir="${build.generated.dir}/wsimport/binaries" wsdl="${wsdl-RegistriesService}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://nhinint01.asu.edu:8080/Registries/RegistriesService?WSDL" xnocompile="true"/>
+    </target>
+    <target name="wsimport-client-clean-RegistriesService" depends="-init-project">
+        <delete dir="${build.generated.dir}/wsimport/client/mil:navy:med:dzreg:service"/>
+    </target>
+    <target name="wsimport-service-check-TaskManagerService" depends="wsimport-init">
+        <condition property="wsimport-service-TaskManagerService.notRequired">
+            <available file="${build.generated.dir}/wsimport/service/gov/hhs/fha/nhinc/taskmanager/TaskManager.java"/>
+        </condition>
+    </target>
+    <target name="wsimport-service-TaskManagerService" depends="wsimport-init,wsimport-service-check-TaskManagerService" unless="wsimport-service-TaskManagerService.notRequired">
+        <property name="service-wsdl-TaskManagerService" location="${meta.inf}/xml-resources/web-services/TaskManagerService/wsdl/TaskManager.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/wsimport/service" destdir="${build.generated.dir}/wsimport/binaries" wsdl="${service-wsdl-TaskManagerService}" catalog="catalog.xml" extension="true" verbose="true" xnocompile="true"/>
+        <property name="targetLocation-TaskManagerService" location="${meta.inf}/wsdl/TaskManagerService"/>
+        <property name="sourceLocation-TaskManagerService" location="${meta.inf}/xml-resources/web-services/TaskManagerService/wsdl/"/>
+        <copy todir="${targetLocation-TaskManagerService}">
+            <fileset dir="${sourceLocation-TaskManagerService}"/>
+        </copy>
+    </target>
+    <target name="wsimport-service-clean-TaskManagerService" depends="-init-project">
+        <delete dir="${build.generated.dir}/wsimport/service/gov/hhs/fha/nhinc/taskmanager"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-SendSMS, wsimport-client-RegistriesService"/>
+    <target name="wsimport-client-compile" depends="wsimport-client-generate">
+        <ejbjarproject2:javac srcdir="${build.generated.dir}/wsimport/client" classpath="${j2ee.platform.wsimport.classpath}:${javac.classpath}" destdir="${classes.dir}"/>
+        <copy todir="${classes.dir}">
+            <fileset dir="${build.generated.dir}/wsimport/binaries" includes="**/*.xml"/>
+        </copy>
+    </target>
+    <target name="wsimport-service-generate" depends="wsimport-service-TaskManagerService"/>
+    <target name="wsimport-service-compile" depends="wsimport-service-generate">
+        <ejbjarproject2:javac srcdir="${build.generated.dir}/wsimport/service" classpath="${j2ee.platform.wsimport.classpath}:${javac.classpath}" destdir="${classes.dir}"/>
+    </target>
+</project>

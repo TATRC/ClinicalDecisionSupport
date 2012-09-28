@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hl7:CareRecord_QUPC_IN043200UV01Message xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+   <hl7:response>
+				<!-- unique identifier for this response -->
+      <hl7:id extension="6858a017-39c1-4153-bbd4-eaedac72a0e7"/>
+				<!-- date/time this response is created -->
+      <hl7:creationTime value="20091221011010.005"/>
+				<!-- This interaction shall be default to "PRPA_IN900300UV02" (Care Record Query Response) -->
+      <hl7:interactionId extension="PRPA_IN900300UV02"/>
+      <hl7:processingCode code="P"/>
+      <hl7:processingModeCode code="R"/>
+      <hl7:acceptAckCode code="AL"/>
+      <hl7:receiver typeCode="RCV">
+         <hl7:device determinerCode="INSTANCE">
+            <hl7:id root="2.16.840.1.113883.3.200"/>
+            <hl7:telecom value="http://localhost:8080/NhinConnect/CommonDataLayerService"/>
+         </hl7:device>
+      </hl7:receiver>
+      <hl7:sender typeCode="SND">
+         <hl7:device determinerCode="INSTANCE">
+            <hl7:id root="2.16.840.1.113883.3.200"/>
+         </hl7:device>
+      </hl7:sender>
+      <hl7:controlActProcess classCode="CACT" moodCode="EVN">
+					<!-- This trigger event - shall be default to "QUPC_TE043200UV01" (Get Care Record Profile Response) -->
+         <hl7:code code="QUPC_TE043200UV01"/>
+					<!-- Default to “R” for routine -->
+         <hl7:priorityCode code="R"/>
+         <hl7:subject typeCode="SUBJ">
+            <hl7:registrationEvent classCode="REG" moodCode="EVN">
+               <hl7:statusCode code="completed"/>
+               <hl7:custodian typeCode="CST">
+                  <hl7:assignedEntity>
+                     <hl7:id root="2.16.840.1.113883.3.200"/>
+                     <hl7:assignedOrganization>
+                        <hl7:name>Department of Defense</hl7:name>
+                     </hl7:assignedOrganization>
+                  </hl7:assignedEntity>
+               </hl7:custodian>
+               <hl7:subject2 typeCode="SUBJ">
+                  <hl7:careProvisionEvent classCode="ENC" moodCode="EVN">
+									<!-- information about the patient -->
+                     <hl7:recordTarget typeCode="RCT">
+                        <hl7:patient classCode="PAT">
+                           <hl7:id extension="8237363" root="2.16.840.1.113883.3.200"/>
+                           <hl7:statusCode code="completed"/>
+                           <hl7:patientPerson classCode="PSN" determinerCode="INSTANCE">
+                              <hl7:name>
+                                 <hl7:given>SHAWN</hl7:given>
+                                 <hl7:given>N</hl7:given>
+                                 <hl7:family>JOHNSON</hl7:family>
+                              </hl7:name>
+                           </hl7:patientPerson>
+                        </hl7:patient>
+                     </hl7:recordTarget>
+									<!-- domain information requested -->
+                     <hl7:pertinentInformation3 typeCode="SUBJ" contextConductionInd="true">
+										<!-- Default classCode to “PROC” -->
+										<!-- Set moodCode to “INT” to indicated a planned procedure or EVN to describe a procedure that has already occurred -->
+                        <hl7:procedure classCode="PROC" moodCode="EVN">
+											<!-- unique identifier for the procedure (if available) -->
+                           <hl7:id extension="62754"/>
+											<!-- Current Procedure Terminology 4 (CPT-4) codes -->
+                           <hl7:code code="35207" codeSystem="2.16.840.1.113883.6.12" codeSystemName="C4" displayName="Repair blood vessel, direct; hand/finger"/>
+                           <hl7:text>Blood vessel repair direct hand or finger</hl7:text>
+											<!-- describes a procedure event, "completed", "active", "aborted", or "cancelled" -->
+                           <hl7:statusCode code="completed"/>
+											<!-- the time at which the procedure occurred when in “EVN” mood or the desired time of the procedure when in “INT” mood -->
+                           <hl7:effectiveTime value="20090805132452"/>
+                           <hl7:targetSiteCode code="72696002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="knee"/>
+											<!-- Name and other information for the person or organization performed or hosted the Procedure -->
+                           <hl7:performer typeCode="PRF">
+                              <hl7:assignedEntity1 classCode="ASSIGNED">
+                                 <hl7:addr use="WP">
+                                    <hl7:streetAddressLine>21 Dawn Road</hl7:streetAddressLine>
+                                    <hl7:city>Blue Bell</hl7:city>
+                                    <hl7:state>MA</hl7:state>
+                                    <hl7:postalCode>00000</hl7:postalCode>
+                                    <hl7:country>US</hl7:country>
+                                 </hl7:addr>
+                                 <hl7:telecom use="WP" value="tel:+1-888-345-8888"/>
+                                 <hl7:assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                                    <hl7:name>
+                                       <hl7:prefix>Dr</hl7:prefix>
+                                       <hl7:given>JOHN</hl7:given>
+                                       <hl7:given>R</hl7:given>
+                                       <hl7:family>LINCOLN</hl7:family>
+                                    </hl7:name>
+                                 </hl7:assignedPerson>
+                                 <hl7:representedOrganization>
+                                    <hl7:id root="2.16.840.1.113883.3.198"/>
+                                    <hl7:name>Department of Defense</hl7:name>
+                                 </hl7:representedOrganization>
+                              </hl7:assignedEntity1>
+                           </hl7:performer>
+                        </hl7:procedure>
+                     </hl7:pertinentInformation3>
+                  </hl7:careProvisionEvent>
+               </hl7:subject2>
+            </hl7:registrationEvent>
+         </hl7:subject>
+         <hl7:queryAck>
+            <!-- identifier that was used in the original query message -->
+            <hl7:queryId extension="6858a017-39c1-4153-bbd4-eaedac72a0e7"/>
+            <hl7:statusCode code="'deliveredResponse"/>
+            <hl7:queryResponseCode code="OK"/>
+         </hl7:queryAck>
+      </hl7:controlActProcess>
+   </hl7:response>
+</hl7:CareRecord_QUPC_IN043200UV01Message>

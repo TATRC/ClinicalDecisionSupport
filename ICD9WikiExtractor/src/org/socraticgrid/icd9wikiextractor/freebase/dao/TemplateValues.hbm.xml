@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 23, 2010 3:53:17 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.socraticgrid.icd9wikiextractor.freebase.dao.TemplateValues" table="template_values" schema="public">
+        <composite-id name="id" class="org.socraticgrid.icd9wikiextractor.freebase.dao.TemplateValuesId">
+            <key-property name="callId" type="long">
+                <column name="call_id" />
+            </key-property>
+            <key-property name="name" type="string">
+                <column name="name" />
+            </key-property>
+        </composite-id>
+        <property name="xml" type="serializable">
+            <column name="xml" />
+        </property>
+    </class>
+</hibernate-mapping>

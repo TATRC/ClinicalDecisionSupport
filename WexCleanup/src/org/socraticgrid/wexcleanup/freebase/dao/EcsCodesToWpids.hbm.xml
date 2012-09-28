@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 6, 2010 5:46:31 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="org.socraticgrid.wexcleanup.freebase.dao.EcsCodesToWpids" schema="public" table="ecs_codes_to_wpids">
+    <id name="id" type="int">
+      <column name="id"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="scheme" type="string">
+      <column name="scheme" not-null="true"/>
+    </property>
+    <property name="code" type="string">
+      <column name="code" not-null="true"/>
+    </property>
+    <property name="wpid" type="int">
+      <column name="wpid" not-null="true"/>
+    </property>
+    <property name="disable" type="java.lang.Boolean">
+      <column name="disable"/>
+    </property>
+  </class>
+</hibernate-mapping>

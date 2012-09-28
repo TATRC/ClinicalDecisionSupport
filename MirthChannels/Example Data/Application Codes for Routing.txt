@@ -1,0 +1,7 @@
+Sending Application Codes
+
+BCH  - Chem Lab
+RAD  - Radiology
+CON  - Consult
+BMI  - Mirocbiology
+BAP  - Pathology

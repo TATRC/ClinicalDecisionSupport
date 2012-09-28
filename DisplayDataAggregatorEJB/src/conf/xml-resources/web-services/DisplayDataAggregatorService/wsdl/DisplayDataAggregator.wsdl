@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Display Data Aggregator WSDL
+-->
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+   xmlns="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+   xmlns:dda="urn:gov:hhs:fha:nhinc:common:dda"
+   name="DisplayDataAggregator"
+   targetNamespace="urn:gov:hhs:fha:nhinc:aggregator"
+   xmlns:tns="urn:gov:hhs:fha:nhinc:aggregator">
+  <documentation>Display Data Aggregator</documentation>
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="urn:gov:hhs:fha:nhinc:common:dda"
+                  schemaLocation="../schemas/nhinc/common/DisplayDataAggregator.xsd"/>
+    </xsd:schema>
+  </types>
+  
+  <message name="UpdateInboxStatusRequestMessage">
+    <part name="UpdateInboxStatusRequest"
+          element="dda:UpdateInboxStatusRequest"/>
+  </message>
+  <message name="UpdateInboxStatusResponseMessage">
+    <part name="UpdateInboxStatusResponse"
+          element="dda:UpdateInboxStatusResponse"/>
+  </message>
+  <message name="GetAvailableSourcesRequestMessage">
+    <part name="GetAvailableSourcesRequest"
+          element="dda:GetAvailableSourcesRequest"/>
+  </message>
+  <message name="GetAvailableSourcesResponseMessage">
+    <part name="GetAvailableSourcesResponse"
+          element="dda:GetAvailableSourcesResponse"/>
+  </message>
+  <message name="GetDetailDataRequestMessage">
+    <part name="GetDetailDataRequest"
+          element="dda:GetDetailDataRequest"/>
+  </message>
+  <message name="GetDetailDataResponseMessage">
+    <part name="GetDetailDataResponse"
+          element="dda:GetDetailDataResponse"/>
+  </message>
+  <message name="GetSummaryDataRequestMessage">
+    <part name="GetSummaryDataRequest"
+          element="dda:GetSummaryDataRequest"/>
+  </message>
+  <message name="GetSummaryDataResponseMessage">
+    <part name="GetSummaryDataResponse"
+          element="dda:GetSummaryDataResponse"/>
+  </message>
+  <message name="GetDetailDataForUserRequestMessage">
+    <part name="GetDetailDataForUserRequest"
+          element="dda:GetDetailDataForUserRequest"/>
+  </message>
+  <message name="GetDetailDataForUserResponseMessage">
+    <part name="GetDetailDataForUserResponse"
+          element="dda:GetDetailDataForUserResponse"/>
+  </message>
+  <message name="GetSummaryDataForUserRequestMessage">
+    <part name="GetSummaryDataForUserRequest"
+          element="dda:GetSummaryDataForUserRequest"/>
+  </message>
+  <message name="GetSummaryDataForUserResponseMessage">
+    <part name="GetSummaryDataForUserResponse"
+          element="dda:GetSummaryDataForUserResponse"/>
+  </message>
+
+  <portType name="DisplayDataAggregatorPortType">
+    <operation name="UpdateInboxStatus">
+      <input name="UpdateInboxStatusRequest"
+             message="tns:UpdateInboxStatusRequestMessage" />
+      <output name="UpdateInboxStatusResponse"
+              message="tns:UpdateInboxStatusResponseMessage" />
+    </operation>
+    <operation name="GetAvailableSources">
+      <input name="GetAvailableSourcesRequest"
+             message="tns:GetAvailableSourcesRequestMessage" />
+      <output name="GetAvailableSourcesResponse"
+              message="tns:GetAvailableSourcesResponseMessage" />
+    </operation>
+    <operation name="GetDetailData">
+      <input name="GetDetailDataRequest"
+             message="tns:GetDetailDataRequestMessage" />
+      <output name="GetDetailDataResponse"
+              message="tns:GetDetailDataResponseMessage" />
+    </operation>
+    <operation name="GetSummaryData">
+      <input name="GetSummaryDataRequest"
+             message="tns:GetSummaryDataRequestMessage" />
+      <output name="GetSummaryDataResponse"
+              message="tns:GetSummaryDataResponseMessage" />
+    </operation>
+    <operation name="GetDetailDataForUser">
+      <input name="GetDetailDataForUserRequest"
+             message="tns:GetDetailDataForUserRequestMessage" />
+      <output name="GetDetailDataForUserResponse"
+              message="tns:GetDetailDataForUserResponseMessage" />
+    </operation>
+    <operation name="GetSummaryDataForUser">
+      <input name="GetSummaryDataForUserRequest"
+             message="tns:GetSummaryDataForUserRequestMessage" />
+      <output name="GetSummaryDataForUserResponse"
+              message="tns:GetSummaryDataForUserResponseMessage" />
+    </operation>
+  </portType>
+  
+  <binding name="DisplayDataAggregatorBindingSoap11" type="tns:DisplayDataAggregatorPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="UpdateInboxStatus">
+      <soap:operation soapAction="urn:UpdateInboxStatus"/>
+      <input name="UpdateInboxStatusRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="UpdateInboxStatusResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetAvailableSources">
+      <soap:operation soapAction="urn:GetAvailableSources"/>
+      <input name="GetAvailableSourcesRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="GetAvailableSourcesResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetDetailData">
+      <soap:operation soapAction="urn:GetDetailData"/>
+      <input name="GetDetailDataRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="GetDetailDataResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetSummaryData">
+      <soap:operation soapAction="urn:GetSummaryData"/>
+      <input name="GetSummaryDataRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="GetSummaryDataResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetDetailDataForUser">
+      <soap:operation soapAction="urn:GetDetailDataForUser"/>
+      <input name="GetDetailDataForUserRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="GetDetailDataForUserResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetSummaryDataForUser">
+      <soap:operation soapAction="urn:GetSummaryDataForUser"/>
+      <input name="GetSummaryDataForUserRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="GetSummaryDataForUserResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  
+  <service name="DisplayDataAggregator">
+    <port name="DisplayDataAggregatorPortSoap11"
+          binding="tns:DisplayDataAggregatorBindingSoap11">
+      <soap:address 
+         location="http://localhost:${HttpDefaultPort}/DisplayDataAggregator/DisplayDataAggregator_Service" />
+    </port>
+  </service>
+  <plnk:partnerLinkType name="DisplayDataAggregator">
+    <!-- A partner link type is automatically generated when a new port type is added. 
+         Partner link types are used by BPEL processes. In a BPEL process, a partner 
+         link represents the interaction between the BPEL process and a partner service. 
+         Each partner link is associated with a partner link type. A partner link type 
+         characterizes the conversational relationship between two services. The 
+         partner link type can have one or two roles.-->
+    <plnk:role name="DisplayDataAggregatorPortTypeRole"
+               portType="tns:DisplayDataAggregatorPortType"/>
+  </plnk:partnerLinkType>
+  
+</definitions>

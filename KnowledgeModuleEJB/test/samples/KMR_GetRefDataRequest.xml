@@ -1,0 +1,252 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <SOAP-ENV:Body>
+
+<!-- ============================ TASKS ================================= -->
+<!-- UNCOMMENT for USED Task Type request sample >
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="usedtasktype" MaxRecordsToShow="50" StartingRecNumber="0">
+            <Lookup_Type>
+               <CodeType></CodeType>
+            </Lookup_Type>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+-->
+<!-- UNCOMMENT for USED Task Schemes request sample 
+
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="usedtaskscheme" MaxRecordsToShow="50" StartingRecNumber="0">
+            <Lookup_System>
+               <CodeType></CodeType>
+               <CodeSystem></CodeSystem>
+            </Lookup_System>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+-->
+<!-- UNCOMMENT for USED Task Codes request sample 
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="usedtaskcode" MaxRecordsToShow="500" StartingRecNumber="0">
+            <Lookup_Code>
+               <CodeType></CodeType>
+               <CodeSystem></CodeSystem>
+               <ContentCode></ContentCode>
+            </Lookup_Code>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+
+-->
+
+<!-- ============================ DEMOGRPAHICS =========================== -->
+<!-- UNCOMMENT for all USED DEMOG TYPE request sample 
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="useddemogtype" MaxRecordsToShow="50" StartingRecNumber="0">
+            <Lookup_Type>
+               <CodeType>G</CodeType>
+            </Lookup_Type>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+-->
+<!-- UNCOMMENT for USED DEMOG SCOPE (acuity) request sample  
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="useddemogacuity" MaxRecordsToShow="50" StartingRecNumber="0">
+            <Lookup_Code>
+               <ContentCode>H</ContentCode>
+            </Lookup_Code>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+-->
+<!-- UNCOMMENT for USED DEMOG Status request sample  
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="useddemogstatus" MaxRecordsToShow="50" StartingRecNumber="0">
+            <Lookup_Code>
+               <ContentCode>O</ContentCode>
+            </Lookup_Code>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+-->
+<!-- UNCOMMENT for USED DEMOG type = GENDER request sample 
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="useddemogvalue" MaxRecordsToShow="50" StartingRecNumber="0">
+            <Lookup_Code>
+               <CodeType>GENDER</CodeType>
+               <ContentCode></ContentCode>
+            </Lookup_Code>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+-->
+<!-- UNCOMMENT for USED DEMOG type = AGERANGE request sample 
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="useddemogvalue" MaxRecordsToShow="50" StartingRecNumber="0">
+            <Lookup_Code>
+               <CodeType>AGERANGE</CodeType>
+               <ContentCode></ContentCode>
+            </Lookup_Code>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+-->
+<!--
+<GetRefDataRequest xmlns="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+   <Lookup MaxRecordsToShow="50" Reference="useddemogvalue" StartingRecNumber="0" xmlns="">
+      <Lookup_Code>
+         <CodeType>GENDER</CodeType>
+         <CodeSystem xsi:nil="true"/>
+         <ContentCode xsi:nil="true"/>
+      </Lookup_Code>
+   </Lookup>
+</GetRefDataRequest>
+-->
+
+
+<!-- UNCOMMENT for USED DEMOG Schemes request sample 
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="useddemogscheme" MaxRecordsToShow="50" StartingRecNumber="0">
+            <Lookup_System>
+               <CodeSystem></CodeSystem>
+            </Lookup_System>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+-->
+<!-- UNCOMMENT for USED DEMOG Codes request sample
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="useddemogcode" MaxRecordsToShow="500" StartingRecNumber="0">
+            <Lookup_Code>
+               <CodeSystem>C</CodeSystem>
+               <ContentCode></ContentCode>
+            </Lookup_Code>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+-->
+
+<!-- ============================ SPECIALTY ============================= -->
+<!-- UNCOMMENT for USED Specialty Schemes request sample
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="usedspecialtyscheme" MaxRecordsToShow="50" StartingRecNumber="0">
+            <Lookup_System>
+               <CodeSystem>H</CodeSystem>
+            </Lookup_System>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+-->
+
+<!-- UNCOMMENT for USED Specialty Codes request sample 
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="usedspecialtycode" MaxRecordsToShow="500" StartingRecNumber="0">
+            <Lookup_Code>
+               <CodeSystem></CodeSystem>
+               <ContentCode></ContentCode>
+            </Lookup_Code>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+-->
+
+<!-- ============================ FACTs ================================= -->
+<!-- UNCOMMENT for USED Fact Type request sample 
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="usedfacttype" MaxRecordsToShow="50" StartingRecNumber="0">
+            <Lookup_Type>
+               <CodeType></CodeType>
+            </Lookup_Type>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+-->
+<!-- UNCOMMENT for USED Fact Schemes request sample 
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="usedfactscheme" MaxRecordsToShow="50" StartingRecNumber="0">
+            <Lookup_System>
+               <CodeType>LAB</CodeType>
+               <CodeSystem></CodeSystem>
+            </Lookup_System>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+-->
+<!-- UNCOMMENT for USED Fact Codes request sample 
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="usedfactcode" MaxRecordsToShow="500" StartingRecNumber="0">
+            <Lookup_Code>
+               <CodeType></CodeType>
+               <ContentCode></ContentCode>
+            </Lookup_Code>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+
+-->
+
+<!-- ============================ KM TYPE ================================= -->
+<!-- UNCOMMENT for USED KM Type request sample
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="usedkmtype" MaxRecordsToShow="50" StartingRecNumber="0">
+            <Lookup_Code>
+               <ContentCode>D</ContentCode>
+            </Lookup_Code>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+-->
+<!-- ============================ KM ORG LEVEL ================================= -->
+<!-- UNCOMMENT for USED KM Validation Status request sample
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="usedorglevel" MaxRecordsToShow="50" StartingRecNumber="0">
+            <Lookup_Code>
+               <ContentCode></ContentCode>
+            </Lookup_Code>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+-->
+<!-- ============================ KM STATUS ================================= -->
+<!-- UNCOMMENT for USED KM Validation Status request sample -->
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="usedkmstatus" MaxRecordsToShow="50" StartingRecNumber="0">
+            <Lookup_Code>
+               <ContentCode></ContentCode>
+            </Lookup_Code>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+
+
+
+<!-- ================================================================
+            Sample Full Reference Request (for Authoring)
+     ================================================================ -->
+<!-- UNCOMMENT for Fact Type request sample 
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="facttype" MaxRecordsToShow="50" StartingRecNumber="0">           
+            <Lookup_Type>
+               <CodeType></CodeType>
+            </Lookup_Type>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+-->
+<!-- UNCOMMENT for Fact SCheme request sample 
+   CodeTypeId - is a required field that should contain the value from 
+               table ref_fact_type.factypeid, representing the fact type 
+               being queried.
+   CodeSystem - is an optional field that should contain the value from 
+               table ref_fact_scheme_type.factschemename, representing the fact  
+               code system (scheme) being queried.
+               The value provided in field will be search as a partial text
+               search, with the wildcard at the end of the given value.
+               If no value is given or the element <CodeSystem> id not given,
+               then 
+
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="factscheme" MaxRecordsToShow="50" StartingRecNumber="0">
+            <Lookup_System>
+               <CodeType>LAB</CodeType>
+               <CodeSystem></CodeSystem>
+            </Lookup_System>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+-->
+<!-- UNCOMMENT for Fact Code request sample 
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <Lookup Reference="factcode" MaxRecordsToShow="500" StartingRecNumber="0">
+            <Lookup_Code>
+               <CodeType>LAB</CodeType>
+               <CodeSystem></CodeSystem>
+               <ContentCode></ContentCode>
+            </Lookup_Code>
+         </Lookup>
+      </kmr:GetRefDataRequest>
+-->
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+

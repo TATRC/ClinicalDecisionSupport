@@ -1,0 +1,351 @@
+<com.webreach.mirth.model.Channel>
+  <id>9a8e3390-887d-4835-82f3-56895b29bb0b</id>
+  <name>CDS Router</name>
+  <description></description>
+  <enabled>true</enabled>
+  <version>1.8.2.4472</version>
+  <lastModified>
+    <time>1276813875139</time>
+    <timezone>America/Los_Angeles</timezone>
+  </lastModified>
+  <revision>23</revision>
+  <sourceConnector>
+    <name>sourceConnector</name>
+    <properties>
+      <property name="DataType">Channel Reader</property>
+    </properties>
+    <transformer>
+      <steps/>
+      <inboundProtocol>HL7V2</inboundProtocol>
+      <outboundProtocol>HL7V2</outboundProtocol>
+      <inboundProperties>
+        <property name="handleRepetitions">false</property>
+        <property name="stripNamespaces">true</property>
+        <property name="convertLFtoCR">true</property>
+        <property name="useStrictValidation">false</property>
+        <property name="useStrictParser">false</property>
+      </inboundProperties>
+      <outboundProperties>
+        <property name="handleRepetitions">false</property>
+        <property name="stripNamespaces">true</property>
+        <property name="convertLFtoCR">true</property>
+        <property name="useStrictValidation">false</property>
+        <property name="useStrictParser">false</property>
+      </outboundProperties>
+    </transformer>
+    <filter>
+      <rules/>
+    </filter>
+    <transportName>Channel Reader</transportName>
+    <mode>SOURCE</mode>
+    <enabled>true</enabled>
+  </sourceConnector>
+  <destinationConnectors>
+    <com.webreach.mirth.model.Connector>
+      <name>Destination 1</name>
+      <properties>
+        <property name="DataType">Channel Writer</property>
+        <property name="synchronised">0</property>
+        <property name="template">${message.encodedData}</property>
+        <property name="host">sink</property>
+      </properties>
+      <transformer>
+        <steps/>
+        <inboundTemplate>MSH|^~\&amp;|CHCS\LABCH|N00183|DATAGATE|3M|20070605103150.1-0400||ORU^R01|N00183-1143808|P|2.3|||||&#x0D;PID|1|^^^^^|411309^^^N00183^^N00183|20-390-71-8085^^^^FMPSSN~390718085^^^^SPONSSN~20^^^^FMP~A8085^^^^LNSPSSN~A8085^^^^LNSSN|AKE^ALBERT^^^^||19710113|M|^^^^^||1111 VIRGINIA DRIVE^^NEW YORK^NEW YORK^10111^^^||349-213-1234|319.600.0777|||No Preference|E411309|390-71-8085&#x0D;
+AL1|Id|Type|Code^Text^System|Severity|Reaction|20100616
+OBR|1|070605-00001^|070605 PCH 708|1868^SODIUM^^^^|STAT||20070605103100.2-0400|||^^^^^^^||||20070605103128.1-0400|72&amp;SERUM&amp;99LRP&amp;&amp;&amp;18||||||||||F&#x0D;NTE|1||PROVIDER: 11546 CENTER, SUPPORT &#x0D;NTE|2||PRIORITY:STAT&#x0D;NTE|3||SPECIMEN:SERUM&#x0D;NTE|4||DATE_ORDERED:20070605103100&#x0D;NTE|5||DATE_RESULTED:20070605103148.1-0400&#x0D;NTE|6||COLLECT_SAMPLE:BLOOD&#x0D;OBX|1|TX|1868-72^SODIUM^99LRT^^CH^||76|MMOL/L^^^^^|(137-148)|L*|||F&#x0D;NTE|1||DATE_RESULTED:20070605103148.1-0400&#x0D;</inboundTemplate>
+        <inboundProtocol>HL7V2</inboundProtocol>
+        <outboundProtocol>HL7V2</outboundProtocol>
+        <inboundProperties>
+          <property name="stripNamespaces">true</property>
+          <property name="convertLFtoCR">true</property>
+        </inboundProperties>
+        <outboundProperties>
+          <property name="handleRepetitions">false</property>
+          <property name="stripNamespaces">true</property>
+          <property name="convertLFtoCR">true</property>
+          <property name="useStrictValidation">false</property>
+          <property name="useStrictParser">false</property>
+        </outboundProperties>
+      </transformer>
+      <filter>
+        <rules>
+          <com.webreach.mirth.model.Rule>
+            <sequenceNumber>0</sequenceNumber>
+            <name>Fork Allergies if they exist</name>
+            <data class="map">
+              <entry>
+                <string>Script</string>
+                <string>var ddssmsgtype = messageObject.getType();
+var sendingapp = msg[&apos;MSH&apos;][&apos;MSH.3&apos;][&apos;MSH.3.1&apos;].toString();
+
+var allergies = msg[&apos;AL1&apos;];
+
+if (allergies != null) {
+	router.routeMessage(&apos;CDS Allergies&apos;, messageObject.getRawData());
+	return false;
+}
+return false;</string>
+              </entry>
+            </data>
+            <type>JavaScript</type>
+            <script>var ddssmsgtype = messageObject.getType();
+var sendingapp = msg[&apos;MSH&apos;][&apos;MSH.3&apos;][&apos;MSH.3.1&apos;].toString();
+
+var allergies = msg[&apos;AL1&apos;];
+
+if (allergies != null) {
+	router.routeMessage(&apos;CDS Allergies&apos;, messageObject.getRawData());
+	return false;
+}
+return false;</script>
+            <operator>NONE</operator>
+          </com.webreach.mirth.model.Rule>
+          <com.webreach.mirth.model.Rule>
+            <sequenceNumber>1</sequenceNumber>
+            <name>Route chem labs</name>
+            <data class="map">
+              <entry>
+                <string>Script</string>
+                <string>var ddssmsgtype = messageObject.getType();
+var sendingapp = msg[&apos;MSH&apos;][&apos;MSH.3&apos;][&apos;MSH.3.1&apos;].toString();
+
+if ((ddssmsgtype == &apos;ORU-R01&apos;) &amp;&amp; (sendingapp.indexOf(&apos;LAB&apos;) &gt; -1)) {
+	router.routeMessage(&apos;CDS Lab Results&apos;, messageObject.getRawData());
+	return true;
+}
+else if ((ddssmsgtype == &apos;ORU-R01&apos;) &amp;&amp; (sendingapp.indexOf(&apos;BCH&apos;) &gt; -1)) {
+	router.routeMessage(&apos;CDS Chem Labs&apos;, messageObject.getRawData());
+	return true;
+}
+else if ((ddssmsgtype == &apos;ORU-R01&apos;) &amp;&amp; (sendingapp.indexOf(&apos;RAD&apos;) &gt; -1)) {
+	router.routeMessage(&apos;CDS Radiology&apos;, messageObject.getRawData());
+	return true;
+}
+else if ((ddssmsgtype == &apos;ORU-R01&apos;) &amp;&amp; (sendingapp.indexOf(&apos;CON&apos;) &gt; -1)) {
+	router.routeMessage(&apos;CDS Consult&apos;, messageObject.getRawData());
+	return true;
+}
+else if ((ddssmsgtype == &apos;ORU-R01&apos;) &amp;&amp; (sendingapp.indexOf(&apos;BMI&apos;) &gt; -1)) {
+	router.routeMessage(&apos;CDS Microbiology&apos;, messageObject.getRawData());
+	return true;
+}
+else if ((ddssmsgtype == &apos;ORU-R01&apos;) &amp;&amp; (sendingapp.indexOf(&apos;BAP&apos;) &gt; -1)) {
+	router.routeMessage(&apos;CDS Pathology&apos;, messageObject.getRawData());
+	return true;
+}
+else {
+	return false;
+}</string>
+              </entry>
+            </data>
+            <type>JavaScript</type>
+            <script>var ddssmsgtype = messageObject.getType();
+var sendingapp = msg[&apos;MSH&apos;][&apos;MSH.3&apos;][&apos;MSH.3.1&apos;].toString();
+
+if ((ddssmsgtype == &apos;ORU-R01&apos;) &amp;&amp; (sendingapp.indexOf(&apos;LAB&apos;) &gt; -1)) {
+	router.routeMessage(&apos;CDS Lab Results&apos;, messageObject.getRawData());
+	return true;
+}
+else if ((ddssmsgtype == &apos;ORU-R01&apos;) &amp;&amp; (sendingapp.indexOf(&apos;BCH&apos;) &gt; -1)) {
+	router.routeMessage(&apos;CDS Chem Labs&apos;, messageObject.getRawData());
+	return true;
+}
+else if ((ddssmsgtype == &apos;ORU-R01&apos;) &amp;&amp; (sendingapp.indexOf(&apos;RAD&apos;) &gt; -1)) {
+	router.routeMessage(&apos;CDS Radiology&apos;, messageObject.getRawData());
+	return true;
+}
+else if ((ddssmsgtype == &apos;ORU-R01&apos;) &amp;&amp; (sendingapp.indexOf(&apos;CON&apos;) &gt; -1)) {
+	router.routeMessage(&apos;CDS Consult&apos;, messageObject.getRawData());
+	return true;
+}
+else if ((ddssmsgtype == &apos;ORU-R01&apos;) &amp;&amp; (sendingapp.indexOf(&apos;BMI&apos;) &gt; -1)) {
+	router.routeMessage(&apos;CDS Microbiology&apos;, messageObject.getRawData());
+	return true;
+}
+else if ((ddssmsgtype == &apos;ORU-R01&apos;) &amp;&amp; (sendingapp.indexOf(&apos;BAP&apos;) &gt; -1)) {
+	router.routeMessage(&apos;CDS Pathology&apos;, messageObject.getRawData());
+	return true;
+}
+else {
+	return false;
+}</script>
+            <operator>OR</operator>
+          </com.webreach.mirth.model.Rule>
+          <com.webreach.mirth.model.Rule>
+            <sequenceNumber>2</sequenceNumber>
+            <name>Route patient admits</name>
+            <data class="map">
+              <entry>
+                <string>Script</string>
+                <string>var ddssmsgtype = messageObject.getType();
+
+if (ddssmsgtype == &apos;ADT-A01&apos;) {
+	router.routeMessage(&apos;CDS Patient Admit&apos;, messageObject.getRawData());
+	return true;
+}
+else {
+	return false;
+}</string>
+              </entry>
+            </data>
+            <type>JavaScript</type>
+            <script>var ddssmsgtype = messageObject.getType();
+
+if (ddssmsgtype == &apos;ADT-A01&apos;) {
+	router.routeMessage(&apos;CDS Patient Admit&apos;, messageObject.getRawData());
+	return true;
+}
+else {
+	return false;
+}</script>
+            <operator>OR</operator>
+          </com.webreach.mirth.model.Rule>
+          <com.webreach.mirth.model.Rule>
+            <sequenceNumber>3</sequenceNumber>
+            <name>Route med order</name>
+            <data class="map">
+              <entry>
+                <string>Script</string>
+                <string>var ddssmsgtype = messageObject.getType();
+var sendingapp = msg[&apos;MSH&apos;][&apos;MSH.3&apos;][&apos;MSH.3.1&apos;].toString();
+
+if ((ddssmsgtype == &apos;ORM-O01&apos;) &amp;&amp; ((sendingapp.indexOf(&apos;MED&apos;) &gt; -1) || (sendingapp.indexOf(&apos;IV&apos;) &gt; -1))) {
+	router.routeMessage(&apos;CDS Med Order&apos;, messageObject.getRawData());
+	return true;
+}
+else if (ddssmsgtype == &apos;OMP-O01&apos;)  {
+	router.routeMessage(&apos;CDS Med Order&apos;, messageObject.getRawData());
+	return true;
+}
+else if (ddssmsgtype == &apos;RDE-O01&apos;) {
+	router.routeMessage(&apos;CDS Med Order Encoded&apos;, messageObject.getRawData());
+	return true;
+}
+else {
+	return false;
+}</string>
+              </entry>
+            </data>
+            <type>JavaScript</type>
+            <script>var ddssmsgtype = messageObject.getType();
+var sendingapp = msg[&apos;MSH&apos;][&apos;MSH.3&apos;][&apos;MSH.3.1&apos;].toString();
+
+if ((ddssmsgtype == &apos;ORM-O01&apos;) &amp;&amp; ((sendingapp.indexOf(&apos;MED&apos;) &gt; -1) || (sendingapp.indexOf(&apos;IV&apos;) &gt; -1))) {
+	router.routeMessage(&apos;CDS Med Order&apos;, messageObject.getRawData());
+	return true;
+}
+else if (ddssmsgtype == &apos;OMP-O01&apos;)  {
+	router.routeMessage(&apos;CDS Med Order&apos;, messageObject.getRawData());
+	return true;
+}
+else if (ddssmsgtype == &apos;RDE-O01&apos;) {
+	router.routeMessage(&apos;CDS Med Order Encoded&apos;, messageObject.getRawData());
+	return true;
+}
+else {
+	return false;
+}</script>
+            <operator>OR</operator>
+          </com.webreach.mirth.model.Rule>
+          <com.webreach.mirth.model.Rule>
+            <sequenceNumber>4</sequenceNumber>
+            <name>Route med dispense</name>
+            <data class="map">
+              <entry>
+                <string>Script</string>
+                <string>var ddssmsgtype = messageObject.getType();
+var sendingapp = msg[&apos;MSH&apos;][&apos;MSH.3&apos;][&apos;MSH.3.1&apos;].toString();
+
+if ((ddssmsgtype == &apos;RDS-O01&apos;) &amp;&amp; (sendingapp.indexOf(&apos;MED&apos;) == -1) &amp;&amp; (sendingapp.indexOf(&apos;IV&apos;) == -1)) {
+	router.routeMessage(&apos;CDS Med Dispense&apos;, messageObject.getRawData());
+	return true;
+}
+else {
+	return false;
+}</string>
+              </entry>
+            </data>
+            <type>JavaScript</type>
+            <script>var ddssmsgtype = messageObject.getType();
+var sendingapp = msg[&apos;MSH&apos;][&apos;MSH.3&apos;][&apos;MSH.3.1&apos;].toString();
+
+if ((ddssmsgtype == &apos;RDS-O01&apos;) &amp;&amp; (sendingapp.indexOf(&apos;MED&apos;) == -1) &amp;&amp; (sendingapp.indexOf(&apos;IV&apos;) == -1)) {
+	router.routeMessage(&apos;CDS Med Dispense&apos;, messageObject.getRawData());
+	return true;
+}
+else {
+	return false;
+}</script>
+            <operator>OR</operator>
+          </com.webreach.mirth.model.Rule>
+          <com.webreach.mirth.model.Rule>
+            <sequenceNumber>5</sequenceNumber>
+            <name>Route Problems</name>
+            <data class="map">
+              <entry>
+                <string>Script</string>
+                <string>var ddssmsgtype = messageObject.getType();
+
+if ((ddssmsgtype == &apos;PPR-PC1&apos;)) {
+	router.routeMessage(&apos;CDS Problems&apos;, messageObject.getRawData());
+	return true;
+}
+else {
+	return false;
+}</string>
+              </entry>
+            </data>
+            <type>JavaScript</type>
+            <script>var ddssmsgtype = messageObject.getType();
+
+if ((ddssmsgtype == &apos;PPR-PC1&apos;)) {
+	router.routeMessage(&apos;CDS Problems&apos;, messageObject.getRawData());
+	return true;
+}
+else {
+	return false;
+}</script>
+            <operator>OR</operator>
+          </com.webreach.mirth.model.Rule>
+          <com.webreach.mirth.model.Rule>
+            <sequenceNumber>6</sequenceNumber>
+            <name>New Rule</name>
+            <data class="map">
+              <entry>
+                <string>Script</string>
+                <string>return true;</string>
+              </entry>
+            </data>
+            <type>JavaScript</type>
+            <script>return true;</script>
+            <operator>AND</operator>
+          </com.webreach.mirth.model.Rule>
+        </rules>
+      </filter>
+      <transportName>Channel Writer</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+    </com.webreach.mirth.model.Connector>
+  </destinationConnectors>
+  <properties>
+    <property name="initialState">started</property>
+    <property name="synchronous">true</property>
+    <property name="store_messages">true</property>
+    <property name="encryptData">false</property>
+    <property name="transactional">false</property>
+    <property name="max_message_age">2</property>
+    <property name="dont_store_filtered">false</property>
+    <property name="error_messages_only">false</property>
+  </properties>
+  <preprocessingScript>// Modify the message variable below to pre process data
+return message;</preprocessingScript>
+  <postprocessingScript>// This script executes once after a message has been processed
+return;</postprocessingScript>
+  <deployScript>// This script executes once when the mule engine is started
+// You only have access to the globalMap here to persist data
+return;</deployScript>
+  <shutdownScript>// This script executes once when the mule engine is stopped
+// You only have access to the globalMap here to persist data
+return;</shutdownScript>
+</com.webreach.mirth.model.Channel>

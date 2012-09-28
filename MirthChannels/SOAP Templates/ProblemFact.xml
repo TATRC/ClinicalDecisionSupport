@@ -1,0 +1,141 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dss="http://dss.kmr.socraticgrid.org/" xmlns:urn="urn:gov:hhs:fha:nhinc:adapter:fact">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <dss:storeProblemFactEvent><!--Zero or more repetitions:-->
+         <fact>
+            <!--Optional:-->
+            <!--type: string-->
+            <urn:primaryKey>gero et</urn:primaryKey>
+            <!--type: boolean-->
+            <urn:historical>true</urn:historical>
+            <!--1 or more repetitions:-->
+            <urn:id>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>aeoliam venit</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>ventos tempestatesque</urn:codeSystemName>
+               <!--type: string-->
+               <urn:value>temperat iras</urn:value>
+               <!--Optional:-->
+               <!--type: boolean-->
+               <urn:displayable>false</urn:displayable>
+            </urn:id>
+            <urn:patientId>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>circum claustra</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>nimborum in</urn:codeSystemName>
+               <!--type: string-->
+               <urn:value>foedere certo</urn:value>
+               <!--Optional:-->
+               <!--type: boolean-->
+               <urn:displayable>false</urn:displayable>
+            </urn:patientId>
+            <urn:problemType>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>sceptra tenens</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>turbine corripuit scopuloque</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>flammato secum dea</urn:code>
+               <!--type: string-->
+               <urn:label>profundum quippe ferant</urn:label>
+            </urn:problemType>
+            <urn:codedProblem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>nubibus ignem disiecitque</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>ac vinclis et</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>rapidum iaculata e</urn:code>
+               <!--type: string-->
+               <urn:label>caelumque profundum</urn:label>
+            </urn:codedProblem>
+            <!--type: string-->
+            <urn:freeTextProblem>circum claustra</urn:freeTextProblem>
+            <!--type: string-->
+            <urn:problemDate>coniunx una</urn:problemDate>
+            <!--type: string-->
+            <urn:resolutionDate>arce sceptra</urn:resolutionDate>
+            <urn:codedProblemStatus>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>arce sceptra</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>circum claustra fremunt</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>certo et premere</urn:code>
+               <!--type: string-->
+               <urn:label>et montis</urn:label>
+            </urn:codedProblemStatus>
+            <!--type: int-->
+            <urn:diagnosisPriority>3</urn:diagnosisPriority>
+            <!--type: int-->
+            <urn:onsetAge>3</urn:onsetAge>
+            <!--Zero or more repetitions:-->
+            <urn:treatingProvider>
+               <!--type: string-->
+               <urn:firstName>feta furentibus</urn:firstName>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:middleName>sed pater</urn:middleName>
+               <!--type: string-->
+               <urn:familyName>talia flammato secum</urn:familyName>
+               <!--Optional:-->
+               <urn:prefix>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystem>austris aeoliam</urn:codeSystem>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystemName>sciret dare</urn:codeSystemName>
+                  <!--type: string-->
+                  <urn:code>dare iussus</urn:code>
+                  <!--type: string-->
+                  <urn:label>bella gero</urn:label>
+               </urn:prefix>
+               <!--Optional:-->
+               <urn:suffix>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystem>dedit qui foedere</urn:codeSystem>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystemName>magno cum</urn:codeSystemName>
+                  <!--type: string-->
+                  <urn:code>ac terras</urn:code>
+                  <!--type: string-->
+                  <urn:label>regemque dedit</urn:label>
+               </urn:suffix>
+               <urn:nameType>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystem>infixit acuto</urn:codeSystem>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystemName>tenens mollitque animos</urn:codeSystemName>
+                  <!--type: string-->
+                  <urn:code>montis insuper</urn:code>
+                  <!--type: string-->
+                  <urn:label>habenas ipsa</urn:label>
+               </urn:nameType>
+            </urn:treatingProvider>
+            <!--Optional:-->
+            <!--type: string-->
+            <urn:causeOfDeath>mollitque animos</urn:causeOfDeath>
+            <!--Optional:-->
+            <!--type: int-->
+            <urn:ageAtDeath>3</urn:ageAtDeath>
+         </fact>
+      </dss:storeProblemFactEvent>
+   </soapenv:Body>
+</soapenv:Envelope>

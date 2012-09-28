@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 23, 2010 3:53:17 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.socraticgrid.icd9wikiextractor.freebase.dao.FreebaseMedDisease" table="freebase_med_disease" schema="public">
+        <id name="id" type="string">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" not-null="true" />
+        </property>
+        <property name="icd9" type="string">
+            <column name="icd_9" not-null="true" />
+        </property>
+        <property name="icd10" type="string">
+            <column name="icd_10" not-null="true" />
+        </property>
+        <property name="icdo" type="string">
+            <column name="icdo" not-null="true" />
+        </property>
+        <property name="diseasesDb" type="string">
+            <column name="diseases_db" not-null="true" />
+        </property>
+        <property name="medlinePlus" type="string">
+            <column name="medline_plus" not-null="true" />
+        </property>
+        <property name="emedicine" type="string">
+            <column name="emedicine" not-null="true" />
+        </property>
+        <property name="mesh" type="string">
+            <column name="mesh" not-null="true" />
+        </property>
+        <property name="omim" type="string">
+            <column name="omim" not-null="true" />
+        </property>
+        <property name="symptoms" type="string">
+            <column name="symptoms" length="2550" not-null="true" />
+        </property>
+        <property name="affiliatedDiseases" type="string">
+            <column name="affiliated_diseases" length="25500" not-null="true" />
+        </property>
+        <property name="treatments" type="string">
+            <column name="treatments" length="2550" not-null="true" />
+        </property>
+        <property name="preventionFactors" type="string">
+            <column name="prevention_factors" length="2550" not-null="true" />
+        </property>
+        <property name="trials" type="string">
+            <column name="trials" length="2550" not-null="true" />
+        </property>
+        <property name="includesDiseases" type="string">
+            <column name="includes_diseases" length="25500" not-null="true" />
+        </property>
+        <property name="parentDisease" type="string">
+            <column name="parent_disease" length="2550" not-null="true" />
+        </property>
+        <property name="causes" type="string">
+            <column name="causes" length="2550" not-null="true" />
+        </property>
+        <property name="medicalSpecialties" type="string">
+            <column name="medical_specialties" length="2550" not-null="true" />
+        </property>
+        <property name="riskFactors" type="string">
+            <column name="risk_factors" length="2550" not-null="true" />
+        </property>
+        <property name="stages" type="string">
+            <column name="stages" length="2550" not-null="true" />
+        </property>
+        <property name="survivalRates" type="string">
+            <column name="survival_rates" length="2550" not-null="true" />
+        </property>
+        <property name="notablePeopleWithThisCondition" type="string">
+            <column name="notable_people_with_this_condition" length="25500" not-null="true" />
+        </property>
+        <property name="tests" type="string">
+            <column name="tests" length="2550" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

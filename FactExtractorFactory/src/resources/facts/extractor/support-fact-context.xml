@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+  
+  <bean id="patient.support.extractor" class="gov.hhs.fha.nhinc.adapter.fact.extractor.SupportFactExtractor" scope="prototype">
+    <constructor-arg ref="Xpath"/>
+    <property name="factsCountXpath" value="count(hl7:patientPerson/hl7:contactParty)"/>
+    <property name="factBaseXpath" value="hl7:patientPerson/hl7:contactParty[#contact#]"/>
+    <property name="contactTypeXpath" value="hl7:patientPerson/hl7:contactParty[#contact#]/@classCode"/>
+    <property name="factIndexCharset" value="#contact#"/>
+    <property name="factClassName" value="gov.hhs.fha.nhinc.adapter.fact.SupportContactFactType"/>
+    <property name="factProperties">
+      <map>
+        <entry key="SourceSystem">
+          <ref bean="demographics.SourceSystem"/>
+        </entry>
+        <entry key="CodedRelationship">
+          <ref bean="patient.support.CodedRelationship"/>
+        </entry>
+        <entry key="OtherName">
+          <ref bean="patient.support.OtherName"/>
+        </entry>
+        <entry key="Telecom">
+          <ref bean="patient.support.Telecom"/>
+        </entry>
+        <entry key="Address">
+          <ref bean="patient.support.Address"/>
+        </entry>
+        <entry key="DateOfBirth">
+          <ref bean="patient.support.DateOfBirth"/>
+        </entry>
+        <entry key="Gender">
+          <ref bean="patient.support.Gender"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="patient.support.CodedRelationship" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="CodedRelationship"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:code/@code"/>
+    <property name="labelXpath" value="hl7:code/@displayName"/>
+    <property name="codeSystemXpath" value="hl7:code/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="hl7:code/@codeSystemName"/>
+  </bean>
+
+  <bean id="patient.support.OtherName" class="gov.hhs.fha.nhinc.adapter.fact.def.ComplexListPropertyDefinition">
+    <property name="propertyName" value="OtherName"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.NameFactType"/>
+    <property name="indexRef" value="#names#"/>
+    <property name="listSizeXpath" value="count(hl7:contactPerson/hl7:name)"/>
+    <property name="objectProperties">
+      <map>
+        <entry key="NameType">
+          <ref bean="patient.support.OtherName.NameType"/>
+        </entry>
+        <entry key="FamilyName">
+          <ref bean="patient.support.OtherName.FamilyName"/>
+        </entry>
+        <entry key="FirstName">
+          <ref bean="patient.support.OtherName.FirstName"/>
+        </entry>
+        <entry key="MiddleName">
+          <ref bean="patient.support.OtherName.MiddleName"/>
+        </entry>
+        <entry key="Suffix">
+          <ref bean="patient.support.OtherName.Suffix"/>
+        </entry>
+        <entry key="Prefix">
+          <ref bean="patient.support.OtherName.Prefix"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="patient.support.OtherName.NameType" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="NameType"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:contactPerson/hl7:name[#names#]/@use"/>
+  </bean>
+
+  <bean id="patient.support.OtherName.FamilyName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FamilyName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:contactPerson/hl7:name[#names#]/hl7:family/text()"/>
+  </bean>
+
+  <bean id="patient.support.OtherName.FirstName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FirstName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:contactPerson/hl7:name[#names#]/hl7:given[1]/text()"/>
+  </bean>
+
+  <bean id="patient.support.OtherName.MiddleName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="MiddleName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:contactPerson/hl7:name[#names#]/hl7:given[2]/text()"/>
+  </bean>
+
+  <bean id="patient.support.OtherName.Suffix" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="Suffix"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:contactPerson/hl7:name[#names#]/hl7:suffix"/>
+  </bean>
+
+  <bean id="patient.support.OtherName.Prefix" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="Prefix"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:contactPerson/hl7:name[#names#]/hl7:prefix"/>
+  </bean>
+
+  <bean id="patient.support.DateOfBirth" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="DateOfBirth"/>
+    <property name="propertyClassName" value="java.util.Date"/>
+    <property name="propertyXpath" value="hl7:contactPerson/hl7:birthTime/@value"/>
+  </bean>
+
+  <bean id="patient.support.Gender" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="Gender"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:contactPerson/hl7:administrativeGenderCode/@code"/>
+    <property name="labelXpath" value="hl7:contactPerson/hl7:administrativeGenderCode/@displayName"/>
+    <property name="codeSystemXpath" value="hl7:contactPerson/hl7:administrativeGenderCode/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="hl7:contactPerson/hl7:administrativeGenderCode/@codeSystemName"/>
+  </bean>
+  
+  <bean id="patient.support.Address" class="gov.hhs.fha.nhinc.adapter.fact.def.ComplexListPropertyDefinition">
+    <property name="propertyName" value="Address"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.AddressFactType"/>
+    <property name="indexRef" value="#addr#"/>
+    <property name="listSizeXpath" value="count(hl7:addr)"/>
+    <property name="objectProperties">
+      <map>
+        <entry key="AddressType">
+          <ref bean="patient.support.Address.AddressType"/>
+        </entry>
+        <entry key="StreetAddress">
+          <ref bean="patient.support.Address.StreetAddress"/>
+        </entry>
+        <entry key="City">
+          <ref bean="patient.support.Address.City"/>
+        </entry>
+        <entry key="State">
+          <ref bean="patient.support.Address.State"/>
+        </entry>
+        <entry key="PostalCode">
+          <ref bean="patient.support.Address.PostalCode"/>
+        </entry>
+        <entry key="Country">
+          <ref bean="patient.support.Address.Country"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="patient.support.Address.AddressType" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="AddressType"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath"
+                value="hl7:addr[#addr#]/@use"/>
+  </bean>
+
+  <bean id="patient.support.Address.StreetAddress" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="StreetAddress"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:addr[#addr#]/hl7:streetAddressLine"/>
+  </bean>
+
+  <bean id="patient.support.Address.City" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="City"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:addr[#addr#]/hl7:city"/>
+  </bean>
+
+  <bean id="patient.support.Address.State" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="State"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:addr[#addr#]/hl7:state"/>
+  </bean>
+
+  <bean id="patient.support.Address.PostalCode" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="PostalCode"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:addr[#addr#]/hl7:postalCode"/>
+  </bean>
+
+  <bean id="patient.support.Address.Country" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="Country"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:addr[#addr#]/hl7:country"/>
+  </bean>
+
+  <bean id="patient.support.Telecom" class="gov.hhs.fha.nhinc.adapter.fact.def.ComplexListPropertyDefinition">
+    <property name="propertyName" value="Telecom"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.TelecomFactType"/>
+    <property name="indexRef" value="#telecom#"/>
+    <property name="listSizeXpath" value="count(hl7:telecom)"/>
+    <property name="objectProperties">
+      <map>
+        <entry key="TelecomType">
+          <ref bean="patient.support.Telecom.TelecomType"/>
+        </entry>
+        <entry key="Value">
+          <ref bean="patient.support.Telecom.Value"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="patient.support.Telecom.TelecomType" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="TelecomType"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:telecom[#telecom#]/@use"/>
+  </bean>
+
+  <bean id="patient.support.Telecom.Value" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="Value"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:telecom[#telecom#]/@value"/>
+  </bean>
+</beans>

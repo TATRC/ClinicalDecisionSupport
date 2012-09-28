@@ -1,0 +1,17 @@
+<!-- Example task for insertion into database for TaskLoader util. -->
+<TaskType>
+  <name>Alert Handler A</name>
+  <description>Alert Provider A</description>
+  <specifications>
+    <Specification>
+      <name>taskMethod</name>
+      <value>queue</value>
+      <taskType reference="../../.."/>
+    </Specification>
+    <Specification>
+      <name>taskQueueName</name>
+      <value>jms/TestQueue</value>
+      <taskType reference="../../.."/>
+    </Specification>
+  </specifications>
+</TaskType>

@@ -1,0 +1,607 @@
+<?xml version="1.0" ?>
+<hl7:CareRecord_QUPC_IN043200UV01Message xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+  <hl7:response>
+    <hl7:id extension="ed907ee0-c76a-313c-b6f9-985f90e43a3d"/>
+    <hl7:creationTime value="20100712094744.415-0700"/>
+    <hl7:interactionId extension="PRPA_IN900300UV02"/>
+    <hl7:processingCode code="P"/>
+    <hl7:processingModeCode code="R"/>
+    <hl7:acceptAckCode code="RCV"/>
+    <hl7:receiver typeCode="RCV">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+        <hl7:telecom value="http://localhost:8080/NhinConnect/CommonDataLayerService"/>
+      </hl7:device>
+    </hl7:receiver>
+    <hl7:sender typeCode="SND">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+      </hl7:device>
+    </hl7:sender>
+    <hl7:controlActProcess moodCode="EVN" classCode="CACT">
+      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CS" code="QUPC_TE043200UV01"/>
+      <hl7:priorityCode code="R"/>
+      <hl7:subject typeCode="SUBJ">
+        <hl7:registrationEvent moodCode="EVN" classCode="REG">
+          <hl7:statusCode code="active"/>
+          <hl7:custodian typeCode="CST">
+            <hl7:assignedEntity classCode="ASSIGNED">
+              <hl7:id assigningAuthorityName="OpenRPMS" root="2.16.840.1.113883.3.274"/>
+            </hl7:assignedEntity>
+          </hl7:custodian>
+          <hl7:subject2 typeCode="SUBJ">
+            <hl7:careProvisionEvent moodCode="EVN" classCode="ENC">
+              <hl7:recordTarget typeCode="RCT">
+                <hl7:patient classCode="PAT">
+                  <hl7:id extension="14484" root="2.16.840.1.113883.3.200"/>
+                  <hl7:statusCode code="normal"/>
+                  <hl7:patientPerson determinerCode="INSTANCE" classCode="PSN">
+                    <hl7:name use="L">
+                      <hl7:family>SMITH</hl7:family>
+                      <hl7:given>BENINA</hl7:given>
+                      <hl7:given>J</hl7:given>
+                    </hl7:name>
+                    <hl7:administrativeGenderCode displayName="FEMALE" code="F"/>
+                    <hl7:birthTime value="19560622000000-0700"/>
+                  </hl7:patientPerson>
+                </hl7:patient>
+              </hl7:recordTarget>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="1"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="TONOMETRY" code="3992448">
+                    <hl7:originalText>
+                      <hl7:reference value="TONOMETRY"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>TONOMETRY</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="R13/L13"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="2"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="PAIN" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="52500-6">
+                    <hl7:originalText>
+                      <hl7:reference value="PAIN"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>PAIN</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="0"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="3"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="VISION CORRECTED" code="3996874">
+                    <hl7:originalText>
+                      <hl7:reference value="VISION CORRECTED"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>VISION CORRECTED</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="20/20"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="4"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="PAIN" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="52500-6">
+                    <hl7:originalText>
+                      <hl7:reference value="PAIN"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>PAIN</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="6"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="5"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="BODY TEMPERATURE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="8310-5">
+                    <hl7:originalText>
+                      <hl7:reference value="TEMPERATURE"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>TEMPERATURE</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="97.7"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="6"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="OXYGEN SATURATION" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2710-2">
+                    <hl7:originalText>
+                      <hl7:reference value="O2 SATURATION"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>O2 SATURATION</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="98"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="7"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="Blood pressure systolic &amp; diastolic" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="55284-4">
+                    <hl7:originalText>
+                      <hl7:reference value="BLOOD PRESSURE"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>BLOOD PRESSURE</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="147/80"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="8"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="RESPIRATION RATE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="9279-1">
+                    <hl7:originalText>
+                      <hl7:reference value="RESPIRATIONS"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>RESPIRATIONS</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="18"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="9"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="HEART BEAT" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="8867-4">
+                    <hl7:originalText>
+                      <hl7:reference value="PULSE"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>PULSE</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="63"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="10"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="BODY WEIGHT (MEASURED)" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="3141-9">
+                    <hl7:originalText>
+                      <hl7:reference value="WEIGHT"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>WEIGHT</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="174.1651854"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="11"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="PAIN" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="52500-6">
+                    <hl7:originalText>
+                      <hl7:reference value="PAIN"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>PAIN</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="0"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="12"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="VISION CORRECTED" code="4045921">
+                    <hl7:originalText>
+                      <hl7:reference value="VISION CORRECTED"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>VISION CORRECTED</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="15/15"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="13"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="TONOMETRY" code="4045922">
+                    <hl7:originalText>
+                      <hl7:reference value="TONOMETRY"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>TONOMETRY</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="R16/L18"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="14"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="BODY HEIGHT (MEASURED)" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="8302-2">
+                    <hl7:originalText>
+                      <hl7:reference value="HEIGHT"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>HEIGHT</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="62.9921259842519685"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="15"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="BODY WEIGHT (MEASURED)" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="3141-9">
+                    <hl7:originalText>
+                      <hl7:reference value="WEIGHT"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>WEIGHT</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="176.81073252"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="16"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="PAIN" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="52500-6">
+                    <hl7:originalText>
+                      <hl7:reference value="PAIN"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>PAIN</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="6"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="17"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="BODY TEMPERATURE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="8310-5">
+                    <hl7:originalText>
+                      <hl7:reference value="TEMPERATURE"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>TEMPERATURE</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="97"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="18"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="OXYGEN SATURATION" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2710-2">
+                    <hl7:originalText>
+                      <hl7:reference value="O2 SATURATION"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>O2 SATURATION</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="97"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="19"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="Blood pressure systolic &amp; diastolic" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="55284-4">
+                    <hl7:originalText>
+                      <hl7:reference value="BLOOD PRESSURE"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>BLOOD PRESSURE</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="160/81"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="20"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="RESPIRATION RATE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="9279-1">
+                    <hl7:originalText>
+                      <hl7:reference value="RESPIRATIONS"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>RESPIRATIONS</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="20"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="21"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="HEART BEAT" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="8867-4">
+                    <hl7:originalText>
+                      <hl7:reference value="PULSE"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>PULSE</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="76"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="22"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="BODY TEMPERATURE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="8310-5">
+                    <hl7:originalText>
+                      <hl7:reference value="TEMPERATURE"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>TEMPERATURE</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="97.2"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="23"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="Blood pressure systolic &amp; diastolic" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="55284-4">
+                    <hl7:originalText>
+                      <hl7:reference value="BLOOD PRESSURE"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>BLOOD PRESSURE</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="151/88"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="24"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="HEART BEAT" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="8867-4">
+                    <hl7:originalText>
+                      <hl7:reference value="PULSE"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>PULSE</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="72"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="25"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="RESPIRATION RATE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="9279-1">
+                    <hl7:originalText>
+                      <hl7:reference value="RESPIRATIONS"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>RESPIRATIONS</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="20"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="26"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="OXYGEN SATURATION" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2710-2">
+                    <hl7:originalText>
+                      <hl7:reference value="O2 SATURATION"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>O2 SATURATION</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="97"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="27"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="BODY WEIGHT (MEASURED)" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="3141-9">
+                    <hl7:originalText>
+                      <hl7:reference value="WEIGHT"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>WEIGHT</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="180"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="28"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="BODY TEMPERATURE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="8310-5">
+                    <hl7:originalText>
+                      <hl7:reference value="TEMPERATURE"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>TEMPERATURE</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="97.6"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="29"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="Blood pressure systolic &amp; diastolic" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="55284-4">
+                    <hl7:originalText>
+                      <hl7:reference value="BLOOD PRESSURE"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>BLOOD PRESSURE</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="128/80"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="30"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="HEART BEAT" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="8867-4">
+                    <hl7:originalText>
+                      <hl7:reference value="PULSE"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>PULSE</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="84"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="31"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="RESPIRATION RATE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="9279-1">
+                    <hl7:originalText>
+                      <hl7:reference value="RESPIRATIONS"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>RESPIRATIONS</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="24"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="32"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="OXYGEN SATURATION" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2710-2">
+                    <hl7:originalText>
+                      <hl7:reference value="O2 SATURATION"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>O2 SATURATION</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="96"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="33"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="BODY WEIGHT (MEASURED)" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="3141-9">
+                    <hl7:originalText>
+                      <hl7:reference value="WEIGHT"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>WEIGHT</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="180.5"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="34"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="BODY TEMPERATURE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="8310-5">
+                    <hl7:originalText>
+                      <hl7:reference value="TEMPERATURE"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>TEMPERATURE</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="97.8"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="35"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="Blood pressure systolic &amp; diastolic" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="55284-4">
+                    <hl7:originalText>
+                      <hl7:reference value="BLOOD PRESSURE"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>BLOOD PRESSURE</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="144/81"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="36"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="HEART BEAT" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="8867-4">
+                    <hl7:originalText>
+                      <hl7:reference value="PULSE"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>PULSE</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="70"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="37"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="RESPIRATION RATE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="9279-1">
+                    <hl7:originalText>
+                      <hl7:reference value="RESPIRATIONS"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>RESPIRATIONS</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="16"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="38"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="OXYGEN SATURATION" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2710-2">
+                    <hl7:originalText>
+                      <hl7:reference value="O2 SATURATION"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>O2 SATURATION</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="97"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="39"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="BODY WEIGHT (MEASURED)" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="3141-9">
+                    <hl7:originalText>
+                      <hl7:reference value="WEIGHT"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>WEIGHT</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="180"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="40"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="PAIN" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="52500-6">
+                    <hl7:originalText>
+                      <hl7:reference value="PAIN"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>PAIN</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="0"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="41"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="VISION CORRECTED" code="4140335">
+                    <hl7:originalText>
+                      <hl7:reference value="VISION CORRECTED"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>VISION CORRECTED</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="20/20"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="42"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:code displayName="TONOMETRY" code="4140336">
+                    <hl7:originalText>
+                      <hl7:reference value="TONOMETRY"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:text>TONOMETRY</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="R16/L16"/>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+            </hl7:careProvisionEvent>
+          </hl7:subject2>
+        </hl7:registrationEvent>
+      </hl7:subject>
+      <hl7:queryAck>
+        <hl7:queryId extension="6858a017-39c1-4153-bbd4-eaedac72a0e7"/>
+        <hl7:statusCode code="deliveredResponse"/>
+        <hl7:queryResponseCode code="OK"/>
+        <hl7:resultTotalQuantity value="42"/>
+      </hl7:queryAck>
+    </hl7:controlActProcess>
+  </hl7:response>
+</hl7:CareRecord_QUPC_IN043200UV01Message>

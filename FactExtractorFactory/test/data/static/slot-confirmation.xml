@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hl7:SlotResponse_Message xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+  <hl7:SlotConfirmation_PRSC_IN030102UVMessage>
+    <hl7:message>
+      <hl7:id extension="8e42bb26-831a-46c9-8345-b361b5624cd7"/>
+      <hl7:creationTime value="20100519184407-0700"/>
+      <hl7:interactionId extension="PRSC_IN030102UV"/>
+      <hl7:processingCode code="R"/>
+      <hl7:processingModeCode/>
+      <hl7:acceptAckCode code="NE"/>
+      <hl7:receiver typeCode="RCV">
+        <hl7:device determinerCode="INSTANCE" classCode="DEV">
+          <hl7:id extension="Common Data Layer Service"/>
+        </hl7:device>
+      </hl7:receiver>
+      <hl7:sender typeCode="SND">
+        <hl7:device determinerCode="INSTANCE" classCode="DEV">
+          <hl7:id extension="Adapter Assembly Service"/>
+        </hl7:device>
+      </hl7:sender>
+      <hl7:controlActProcess classCode="CACT" moodCode="EVN">
+        <hl7:id extension="8e42bb26-831a-46c9-8345-b361b5624cd7"/>
+        <hl7:code code="PRSC_TE030200UV"/>
+        <hl7:subject typeCode="SUBJ">
+          <hl7:appointment classCode="ACT" moodCode="APT">
+            <hl7:id extension="appt-id"/>
+								<!-- appointment type -->
+            <hl7:code code="EST" displayName="ESTABLISHED/FOLLOW UP APPT" codeSystem="2.16.840.1.113883.3.200" codeSystemName="ICDB"/>
+								<!-- reason for this appointment -->
+            <hl7:text>S/T/HEADACHES, CONGESTION, SORE THROAT</hl7:text>
+								<!-- appointment status code -->
+            <hl7:statusCode code="Active"/>
+								<!-- The time constraints of this slot -->
+            <hl7:effectiveTime value="20100812093000"/>
+            <hl7:effectiveTime value="20100812100000"/>
+								<!-- Identify the patient or patient(s) for group appointments  -->
+            <hl7:subject typeCode="SBJ">
+              <hl7:modeCode code="PHYSICAL" displayName="Physical Presence" codeSystem="2.16.840.1.113883.5.1064" codeSystemName="ParticipationMode"/>
+              <hl7:patient classCode="PAT">
+                <hl7:id/>
+                <hl7:addr/>
+                <hl7:patientPerson classCode="PSN">
+                  <hl7:id extension="PAT123" root="2.16.840.1.113883.3.200"/>
+                  <hl7:name use="L">
+                    <hl7:family>Stanton</hl7:family>
+                    <hl7:given>John</hl7:given>
+                  </hl7:name>
+                  <hl7:administrativeGenderCode code="M" displayName="Male" codeSystem="2.16.840.1.113883.1.11.1" codeSystemName="AdministrativeGender"/>
+                  <hl7:birthTime value="19550929"/>
+                </hl7:patientPerson>
+              </hl7:patient>
+            </hl7:subject>
+								<!-- Identify the performer resource associated with or reserved for this appointment -->
+            <hl7:performer typeCode="PRF">
+              <hl7:time>
+                <hl7:low value="20100812093000"/>
+                <hl7:high value="20100812100000"/>
+              </hl7:time>
+              <hl7:modeCode code="PHYSICAL" displayName="Physical Presence" codeSystem="2.16.840.1.113883.5.1064" codeSystemName="ParticipationMode"/>
+              <hl7:performInd value="true"/>
+              <hl7:assignedPerson classCode="ASSIGNED">
+                <hl7:id extension="performer-id"/>
+                <hl7:telecom use="WP" value="tel:+1-888-888-8888"/>
+                <hl7:assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                  <hl7:name use="L">
+                    <hl7:family>JACKSON</hl7:family>
+                    <hl7:given>SHARON</hl7:given>
+                    <hl7:prefix>DR.</hl7:prefix>
+                  </hl7:name>
+                </hl7:assignedPerson>
+              </hl7:assignedPerson>
+            </hl7:performer>
+								<!-- Identify the person who originated this appointment and who must confirm changes or substitutions. -->
+            <hl7:author typeCode="AUT">
+              <hl7:assignedPerson classCode="ASSIGNED">
+                <hl7:id extension="author-id"/>
+                <hl7:assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                  <hl7:name use="L">
+                    <hl7:family>SMITH</hl7:family>
+                    <hl7:given>ANDY</hl7:given>
+                    <hl7:prefix>DR.</hl7:prefix>
+                  </hl7:name>
+                </hl7:assignedPerson>
+                <hl7:representedOrganization classCode="ORG" determinerCode="INSTANCE">
+                  <hl7:id root="2.16.840.1.113883.3.200"/>
+                  <hl7:name>Department of Defense</hl7:name>
+                </hl7:representedOrganization>
+              </hl7:assignedPerson>
+            </hl7:author>
+								<!-- Identify the location resource associated with or reserved for this appointment. -->
+            <hl7:location typeCode="LOC">
+              <hl7:time>
+                <hl7:low value="20100812093000"/>
+                <hl7:high value="20100812100000"/>
+              </hl7:time>
+              <hl7:performInd value="true"/>
+              <hl7:serviceDeliveryLocation classCode="SDLOC">
+                <hl7:id extension="clinic-id"/>
+                <hl7:code code="FMC" displayName="Family medicine clinic" codeSystem="2.16.840.1.113883.5.111" codeSystemName="RoleCode">
+                  <hl7:originalText>ADULT FAMILY CARE CLINIC</hl7:originalText>
+                </hl7:code>
+                <hl7:location classCode="PLC" determinerCode="INSTANCE">
+                  <hl7:name>Naval Medical Center San Diego</hl7:name>
+                </hl7:location>
+                <hl7:serviceProviderOrganization classCode="ORG" determinerCode="INSTANCE">
+                  <hl7:id root="2.16.840.1.113883.3.200"/>
+                  <hl7:name>Department of Defense</hl7:name>
+                </hl7:serviceProviderOrganization>
+              </hl7:serviceDeliveryLocation>
+            </hl7:location>
+								<!-- Identify the order associated with this appointment. -->
+            <hl7:referencedOrder typeCode="OREF">
+              <hl7:actOrder classCode="ACT" moodCode="RQO">
+                <hl7:id extension="ORDER-NUM"/>
+              </hl7:actOrder>
+            </hl7:referencedOrder>
+								<!-- Identify the appointment request associated with this confirmation. -->
+            <hl7:scheduleRequest typeCode="SCH">
+              <hl7:actAppointmentRequest classCode="ACT" moodCode="ARQ">
+										<!-- The unique identifer of the appointment request act. -->
+                <hl7:id extension="6858a017-39c1-4153-bbd4-eaedac72a0e7"/>
+              </hl7:actAppointmentRequest>
+            </hl7:scheduleRequest>
+								<!-- Information about the requested schedule -->
+            <hl7:reference typeCode="REFR">
+              <hl7:schedule classCode="ACT" moodCode="SLOT">
+                <hl7:id extension="schedule-id"/>
+              </hl7:schedule>
+            </hl7:reference>
+          </hl7:appointment>
+        </hl7:subject>
+      </hl7:controlActProcess>
+    </hl7:message>
+  </hl7:SlotConfirmation_PRSC_IN030102UVMessage>
+</hl7:SlotResponse_Message>

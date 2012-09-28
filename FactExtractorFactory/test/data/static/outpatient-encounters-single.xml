@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hl7:FindEncounters_PRPA_IN900350UV02Message xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+   <hl7:message>
+      <hl7:id extension="6858a017-39c1-4153-bbd4-eaedac72a0e7"/>
+      <hl7:creationTime value="20100519184407-0700"/>
+      <hl7:interactionId extension="PRPA_IN900350UV02"/>
+      <hl7:processingCode code="P"/>
+      <hl7:processingModeCode code="R"/>
+      <hl7:acceptAckCode code="AL"/>
+      <hl7:receiver typeCode="RCV">
+         <hl7:device determinerCode="INSTANCE">
+            <hl7:id root="2.16.840.1.113883.3.200"/>
+            <hl7:telecom value="http://localhost:8080/NhinConnect/CommonDataLayerService"/>
+         </hl7:device>
+      </hl7:receiver>
+      <hl7:sender typeCode="SND">
+         <hl7:device determinerCode="INSTANCE">
+            <hl7:id root="2.16.840.1.113883.3.200"/>
+         </hl7:device>
+      </hl7:sender>
+      <hl7:controlActProcess moodCode="EVN" classCode="CACT">
+         <hl7:code code="PRPA_TE900350UV02"/>
+         <hl7:subject contextConductionInd="true" typeCode="SUBJ">
+            <hl7:encounterEvent moodCode="EVN" classCode="ENC">
+               <hl7:id extension="2750"/>
+               <hl7:code displayName="Ambulatory Encounter" codeSystemName="ActEncounterCode" code="AMB"/>
+               <hl7:statusCode code="active"/>
+               <hl7:effectiveTime>
+                  <hl7:low value="20091020131010.005"/>
+                  <hl7:high value="20091020141010.010"/>
+               </hl7:effectiveTime>
+               <hl7:subject typeCode="SBJ">
+                  <hl7:patient classCode="PAT">
+                     <hl7:id extension="11428"/>
+                  </hl7:patient>
+               </hl7:subject>
+               <hl7:responsibleParty typeCode="RESP">
+                  <hl7:time value="20091020"/>
+                  <hl7:assignedOrganization classCode="ASSIGNED">
+                     <hl7:id extension="CLINIC-AA"/>
+                     <hl7:assignedOrganization determinerCode="INSTANCE" classCode="ORG">
+                        <hl7:name>INTERNAL MEDICINE CLINIC</hl7:name>
+                     </hl7:assignedOrganization>
+                  </hl7:assignedOrganization>
+               </hl7:responsibleParty>
+               <hl7:admitter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+               <hl7:attender typeCode="ATND">
+                  <hl7:time value="20091020"/>
+                  <hl7:assignedPerson classCode="ASSIGNED">
+                     <hl7:id extension="PROV2"/>
+                     <hl7:assignedPerson>
+                        <hl7:name use="L">
+                           <hl7:family>Samson</hl7:family>
+                           <hl7:given>Joe</hl7:given>
+                           <hl7:prefix>Dr</hl7:prefix>
+                        </hl7:name>
+                     </hl7:assignedPerson>
+                  </hl7:assignedPerson>
+               </hl7:attender>
+            </hl7:encounterEvent>
+         </hl7:subject>
+         <hl7:queryAck>
+            <hl7:queryId extension="2c748172-7cc2-4902-8af0-23A105c4401b"/>
+            <hl7:statusCode code="deliveredResponse"/>
+            <hl7:queryResponseCode code="OK"/>
+         </hl7:queryAck>
+      </hl7:controlActProcess>
+   </hl7:message>
+</hl7:FindEncounters_PRPA_IN900350UV02Message>

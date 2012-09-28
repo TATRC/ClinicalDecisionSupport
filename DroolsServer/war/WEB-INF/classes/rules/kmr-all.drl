@@ -1,0 +1,81 @@
+#created on: Jun 23, 2010
+package gov.hhs.fha.nhinc.kmr
+
+import gov.hhs.fha.nhinc.adapter.fact.FactType;
+import gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair;
+import gov.hhs.fha.nhinc.kmr.InclusionTable;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PatientCohort;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PopulationRegistriesType;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PopulationType;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PreferencesType;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PreferenceType;
+
+import gov.hhs.fha.nhinc.adapter.fact.AppointmentFactType;
+import gov.hhs.fha.nhinc.adapter.fact.ProblemFactType;
+import gov.hhs.fha.nhinc.adapter.fact.ProcedureFactType;
+import gov.hhs.fha.nhinc.adapter.fact.ResultFactType;
+
+
+
+
+declare AppointmentFactType
+  @role(event)
+  @timestamp(startDateTime)
+end 
+
+declare ProblemFactType
+  @role(event)
+  @timestamp(problemDate)
+end
+
+declare ProcedureFactType
+  @role(event)
+  @timestamp(procedureDate)
+end
+
+declare ResultFactType
+  @role(event)
+  @timestamp(resultDate)
+end
+
+rule "Set Historic Flag"
+	salience -100
+    when
+        $fact: FactType(historical==false)
+    then
+        $fact.setHistorical(true);
+        update($fact);
+        System.out.println($fact.getClass().getName() + " fact updated to historical");
+end
+
+rule "PatientCohort"
+    when
+        $fact: PatientCohort($patientId: patientId, $preferences: preferences, $registries: populationRegistries)
+    then
+        System.out.println("rule PatientCohort: PatientCohort fact received - patientId: " + $patientId);
+        System.out.println("rule PatientCohort: Age classification: " + $fact.getAgeClassification());
+        System.out.println("rule PatientCohort: AdmissionStatus: " + $fact.getAdmissionStatus());
+        System.out.println("rule PatientCohort: Gender: " + $fact.getGender());
+        System.out.println("rule PatientCohort: PCM: " + $fact.getPrimaryCareManagerId());
+        System.out.println("rule PatientCohort: Location: " + $fact.getPatientLocation());
+        System.out.println("rule PatientCohort: LocationId: " + $fact.getPatientLocationId());
+        System.out.println("rule PatientCohort: Preferences: " + $preferences.getPreferences().size());
+        System.out.println("rule PatientCohort: Populations: " + $registries.getPopulations().size());
+end
+
+rule "Registered Diabetic"
+    when
+        $fact: PatientCohort(populationRegistries != null, populationRegistries.populations != null,
+        					$patientId: patientId, $preferences: preferences,
+        					$populations: populationRegistries.populations)
+        exists( PopulationType ( code == "1", status==true ) from $populations )
+    then
+        System.out.println("rule Registered Diabetic: " + $patientId + " is registered as diabetic");
+end
+
+rule "InclusionTable"
+    when
+        $fact: InclusionTable($domain: domain, $type: inclusionType, $codes: codes)
+    then
+        System.out.println("Inclusion table received: Domain: " + $domain + " Type: " + $type + " Codes: " + $codes.size());
+end

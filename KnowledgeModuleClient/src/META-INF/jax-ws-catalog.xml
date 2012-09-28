@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://nhindev04.asu.edu:8080/KnowledgeModuleService/KmrKnowledgeModule?wsdl" uri="wsdl/nhindev04.asu.edu_8080/KnowledgeModuleService/KmrKnowledgeModule.wsdl"/>
+    <system systemId="http://nhindev04.asu.edu:8080/KnowledgeModuleService/KmrKnowledgeModule?xsd=2" uri="wsdl/nhindev04.asu.edu_8080/KnowledgeModuleService/KmrKnowledgeModule.xsd_2.xsd"/>
+    <system systemId="http://nhindev04.asu.edu:8080/KnowledgeModuleService/KmrKnowledgeModule?xsd=1" uri="wsdl/nhindev04.asu.edu_8080/KnowledgeModuleService/KmrKnowledgeModule.xsd_1.xsd"/>
+</catalog>
+
+
+

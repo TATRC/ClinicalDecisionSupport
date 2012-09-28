@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Address Book Manager WSDL
+-->
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+   xmlns="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+   xmlns:account="urn:gov:hhs:fha:nhinc:common:account"
+   name="AccountManager"
+   targetNamespace="urn:gov:hhs:fha:nhinc:acctmgr"
+   xmlns:tns="urn:gov:hhs:fha:nhinc:acctmgr">
+  <documentation>Account Manager</documentation>
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="urn:gov:hhs:fha:nhinc:common:account"
+                  schemaLocation="../schemas/nhinc/common/Account.xsd"/>
+    </xsd:schema>
+  </types>
+  
+  <message name="CreateAccountRequestMessage">
+    <part name="CreateAccountRequest"
+          element="account:CreateAccountRequest"/>
+  </message>
+  <message name="CreateAccountResponseMessage">
+    <part name="CreateAccountResponse"
+          element="account:CreateAccountResponse"/>
+  </message>
+
+  <message name="UpdateAccountRequestMessage">
+    <part name="UpdateAccountRequest"
+          element="account:UpdateAccountRequest"/>
+  </message>
+  <message name="UpdateAccountResponseMessage">
+    <part name="UpdateAccountResponse"
+          element="account:UpdateAccountResponse"/>
+  </message>
+
+  <portType name="AccountManagerPortType">
+    <operation name="CreateAccount">
+      <input name="CreateAccountRequest"
+             message="tns:CreateAccountRequestMessage" />
+      <output name="CreateAccountResponse"
+              message="tns:CreateAccountResponseMessage" />
+    </operation>
+    <operation name="UpdateAccount">
+      <input name="UpdateAccountRequest"
+             message="tns:UpdateAccountRequestMessage" />
+      <output name="UpdateAccountResponse"
+              message="tns:UpdateAccountResponseMessage" />
+    </operation>
+  </portType>
+  
+  <binding name="AccountManagerBindingSoap11" type="tns:AccountManagerPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="CreateAccount">
+      <soap:operation soapAction="urn:CreateAccount"/>
+      <input name="CreateAccountRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="CreateAccountResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="UpdateAccount">
+      <soap:operation soapAction="urn:UpdateAccount"/>
+      <input name="UpdateAccountRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="UpdateAccountResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  
+  <service name="AccountManager">
+    <port name="AccountManagerPortSoap11"
+          binding="tns:AccountManagerBindingSoap11">
+      <soap:address 
+         location="http://localhost:${HttpDefaultPort}/AccountManager/AccountService" />
+    </port>
+  </service>
+  <plnk:partnerLinkType name="AccountManager">
+    <!-- A partner link type is automatically generated when a new port type is added. 
+         Partner link types are used by BPEL processes. In a BPEL process, a partner 
+         link represents the interaction between the BPEL process and a partner service. 
+         Each partner link is associated with a partner link type. A partner link type 
+         characterizes the conversational relationship between two services. The 
+         partner link type can have one or two roles.-->
+    <plnk:role name="AccountManagerPortTypeRole"
+               portType="tns:AccountManagerPortType"/>
+  </plnk:partnerLinkType>
+  
+</definitions>

@@ -1,0 +1,73 @@
+MSH|^~\&|CHCS\LABAP|N00183|DATAGATE|3M|20070606133718.1-0400||ORU^R01|N00183-1143840|P|2.3|||||
+PID|1|^^^^^|6221659^^^N00183^^N00183|20-500-10-1009^^^^FMPSSN~500101009^^^^SPONSSN~20^^^^FMP~T1009^^^^LNSPSSN~T1009^^^^LNSSN|TEXAS^LAB^^^^||19700109|F|^^^^^||123 St^^AUSTIN^TEXAS^78702^^^||||||No Preference|E6221659|500-10-1009|^|||||||4105^USA ACTIVE DUTY OFFICER^^A11.1^^
+ORC|RE||||CERTIFY
+OBR|1|070606-00007^|^|P3152^AUTOPSY^^^^|STAT||20070606000100.4-0400||^|^^^^^^^||^^^^^|||8232&HEAD&99LRP&&&238|52496^FRECHETTE^GEORGE^^^^^|||||||||CERTIFY
+OBX|1|ST|||Procedure:AUTOPSY||||||
+OBX|2|ST|||Order #:070606-00007||||||
+OBX|3|ST|||Provider:52496 FRECHETTE, GEORGE ||||||
+OBX|4|ST|||Ordered Date:20070606130700||||||
+OBX|4|ST|||Priority:STAT||||||
+OBX|6|ST|||Specimen:HEAD||||||
+OBX|7|ST|||Resulted Date:20070606133710.1-0400||||||
+OBX|8|FT|||070606 PAU 69       Col: 06Jun07                        BODY(HEAD)||||||
+OBX|9|FT|||                           Hcp: FRECHETTE,GEORGE             Req Loc: PAIN MAN||||||
+OBX|10|FT|||                                  AUTOPSY                    C:MPF06Jun07@1337||||||
+OBX|11|FT|||Autopsy Type: HEAD||||||
+OBX|12|FT|||Order Comment(s):||||||
+OBX|13|FT|||Lips and cheeks only to determine why the patient had this big smile.||||||
+OBX|14|FT|||\.br\\.br\||||||
+OBX|15|FT|||Date/Time of Death: 22 Apr 2007@0000||||||
+OBX|16|FT|||Date/Time Req: 06 Jun 2007@1306||||||
+OBX|17|FT|||Date/Time of Autopsy: 06 Jun 2007@0000||||||
+OBX|18|FT|||Cause of Death:||||||
+OBX|19|FT|||Automobile accident||||||
+OBX|20|FT|||Manner of Death: Suicide||||||
+OBX|21|FT|||\.br\\.br\||||||
+OBX|22|FT|||Final Summary:||||||
+OBX|23|FT|||Died happy.||||||
+OBX|24|FT|||\.br\\.br\||||||
+OBX|25|FT|||Diagnosis Comment(s):||||||
+OBX|26|FT|||None||||||
+OBX|27|FT|||\.br\\.br\||||||
+OBX|28|FT|||Staff Pathologist(s):||||||
+OBX|29|FT|||FRECHETTE,GEORGE||||||
+OBX|30|FT|||\.br\\.br\||||||
+OBX|31|FT|||Resident Pathologist(s):||||||
+OBX|32|FT|||FITCH,MICHAEL P||||||
+OBX|33|FT|||\.br\\.br\||||||
+OBX|34|FT|||-----------------------------------------------------------------------------||||||
+OBX|35|FT|||Microscopic Diagnosis:||||||
+OBX|36|FT|||A1: FACE||||||
+OBX|37|FT|||This is the actual diagnosis text.||||||
+OBX|38|FT|||\.br\\.br\||||||
+OBX|39|FT|||Frozen lips and facial cheeks consistent with frostbite, but smile remains||||||
+OBX|40|FT|||noteworthy.||||||
+OBX|41|FT|||\.br\\.br\||||||
+OBX|42|FT|||Microscopic Description:||||||
+OBX|43|FT|||Lots of lip balm consistent with Chap Stick.||||||
+OBX|44|FT|||\.br\\.br\||||||
+OBX|45|FT|||Postmortem Interval:||||||
+OBX|46|FT|||45 day(s) 0 hour(s)||||||
+OBX|47|FT|||\.br\\.br\||||||
+OBX|48|FT|||Gross Examination:||||||
+OBX|49|FT|||Smile evident when specimen thawed and muscles for forming smile very||||||
+OBX|50|FT|||well developed probably from smiling a lot in life. Shopping excessively will||||||
+OBX|51|FT|||do that.||||||
+OBX|52|FT|||\.br\\.br\||||||
+OBX|53|FT|||Clinical Diagnosis:||||||
+OBX|54|FT|||Fun loving person.||||||
+OBX|55|FT|||\.br\\.br\||||||
+OBX|56|FT|||Clinical History:||||||
+OBX|57|FT|||History of drug dependence (hemp in its dry form and keflex) as well as||||||
+OBX|58|FT|||excessive bad habits ( shopping, gift giving, etc. ).||||||
+OBX|59|FT|||\.br\\.br\||||||
+OBX|60|FT|||Special Lab Studies:||||||
+OBX|61|FT|||None.||||||
+OBX|62|FT|||\.br\\.br\||||||
+OBX|63|FT|||Log-in Comment:||||||
+OBX|64|FT|||None at this time - specimen frozen.||||||
+OBX|65|FT|||\.br\\.br\||||||
+OBX|66|FT|||SNOMED Code:||||||
+OBX|67|FT|||M-3709770A1:  FROSTBITE||||||
+OBX|68|FT|||\.br\\.br\||||||
+OBX|69|FT|||\.br\\.br\||||||

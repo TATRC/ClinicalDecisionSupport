@@ -1,0 +1,292 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.6-hudson-317-. --><xs:schema xmlns:tns="urn:gov:hhs:fha:nhinc:adapter:fact" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="urn:gov:hhs:fha:nhinc:adapter:fact">
+
+<xs:element name="FactQueryResponse" type="tns:FactQueryResponseType" />
+
+<xs:element name="FactsQueryRequest" type="tns:FactQueryRequestType" />
+
+<xs:complexType name="FactQueryRequestType">
+<xs:sequence>
+<xs:element name="queryId" type="xs:string" />
+<xs:element name="senderId" type="xs:string" />
+<xs:element name="interactionId" type="xs:string" />
+<xs:element name="triggerEventCode" type="xs:string" />
+<xs:element name="patientId" type="xs:string" />
+<xs:element name="careProvisionCode" type="xs:string" />
+<xs:element name="careRecordStartTimePeriod" type="xs:string" nillable="true" />
+<xs:element name="careRecordEndTimePeriod" type="xs:string" nillable="true" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="FactQueryResponseType">
+<xs:sequence>
+<xs:choice minOccurs="0" maxOccurs="unbounded">
+<xs:element name="problemFact" type="tns:ProblemFactType" nillable="true" />
+<xs:element name="medicationFact" type="tns:MedicationFactType" nillable="true" />
+<xs:element name="allergyFact" type="tns:AllergyFactType" nillable="true" />
+<xs:element name="testResultFact" type="tns:ResultFactType" nillable="true" />
+<xs:element name="personFact" type="tns:PersonFactType" nillable="true" />
+<xs:element name="supportContactFact" type="tns:SupportSourceFactType" nillable="true" />
+</xs:choice>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ProblemFactType">
+<xs:complexContent>
+<xs:extension base="tns:FactType">
+<xs:sequence>
+<xs:element name="patientId" type="tns:ValueType" />
+<xs:element name="problemType" type="tns:CodeLabelPair" />
+<xs:element name="codedProblem" type="tns:CodeLabelPair" />
+<xs:element name="freeTextProblem" type="xs:string" minOccurs="0" />
+<xs:element name="problemDate" type="xs:dateTime" />
+<xs:element name="resolutionDate" type="xs:dateTime" />
+<xs:element name="codedProblemStatus" type="tns:CodeLabelPair" />
+<xs:element name="diagnosisPriority" type="xs:int" minOccurs="0" />
+<xs:element name="onsetAge" type="xs:int" minOccurs="0" />
+<xs:element name="treatingProvider" type="tns:NameFactType" minOccurs="0" maxOccurs="unbounded" />
+<xs:element name="causeOfDeath" type="xs:string" minOccurs="0" />
+<xs:element name="ageAtDeath" type="xs:int" minOccurs="0" />
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="FactType" abstract="true">
+<xs:sequence>
+<xs:element name="primaryKey" type="xs:string" minOccurs="0" />
+<xs:element name="factHash" type="xs:string" minOccurs="0" />
+<xs:element name="idHash" type="xs:string" minOccurs="0" />
+<xs:element name="historical" type="xs:boolean" />
+<xs:element name="id" type="tns:ValueType" maxOccurs="unbounded" />
+<xs:element name="sourceSystem" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ValueType">
+<xs:complexContent>
+<xs:extension base="tns:CodeSystemPair">
+<xs:sequence>
+<xs:element name="value" type="xs:string" />
+<xs:element name="displayable" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="CodeSystemPair">
+<xs:sequence>
+<xs:element name="codeSystem" type="xs:string" minOccurs="0" />
+<xs:element name="codeSystemName" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CodeLabelPair">
+<xs:complexContent>
+<xs:extension base="tns:CodeSystemPair">
+<xs:sequence>
+<xs:element name="code" type="xs:string" />
+<xs:element name="label" type="xs:string" />
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="NameFactType">
+<xs:sequence>
+<xs:element name="firstName" type="xs:string" />
+<xs:element name="middleName" type="xs:string" minOccurs="0" />
+<xs:element name="familyName" type="xs:string" />
+<xs:element name="prefix" type="tns:CodeLabelPair" minOccurs="0" />
+<xs:element name="suffix" type="tns:CodeLabelPair" minOccurs="0" />
+<xs:element name="nameType" type="tns:CodeLabelPair" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ResultFactType">
+<xs:complexContent>
+<xs:extension base="tns:FactType">
+<xs:sequence>
+<xs:element name="patientId" type="tns:ValueType" />
+<xs:element name="specimenDate" type="xs:dateTime" />
+<xs:element name="specimen" type="xs:string" />
+<xs:element name="resultDate" type="xs:dateTime" />
+<xs:element name="codedTestType" type="tns:CodeLabelPair" />
+<xs:element name="freeTextTestType" type="xs:string" minOccurs="0" />
+<xs:element name="resultStatus" type="xs:string" />
+<xs:element name="resultValue" type="tns:ValueUnitPair" />
+<xs:element name="resultFreeText" type="xs:string" minOccurs="0" />
+<xs:element name="codedResultInterpretation" type="tns:CodeLabelPair" minOccurs="0" />
+<xs:element name="lowReferenceRange" type="tns:ValueUnitPair" />
+<xs:element name="hiReferenceRange" type="tns:ValueUnitPair" />
+<xs:element name="codedRefRangeInterpretationCode" type="tns:CodeLabelPair" minOccurs="0" />
+<xs:element name="refRangePrecondition" type="tns:PreConditionFactType" minOccurs="0" maxOccurs="unbounded" />
+<xs:element name="codedPanelType" type="tns:CodeLabelPair" />
+<xs:element name="freeTextPanelType" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="ValueUnitPair">
+<xs:sequence>
+<xs:element name="value" type="xs:string" />
+<xs:element name="unit" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="PreConditionFactType">
+<xs:sequence>
+<xs:element name="codedCriterionCode" type="tns:CodeLabelPair" />
+<xs:element name="codedCriterionValue" type="tns:CodeLabelPair" />
+<xs:element name="criterionLowValue" type="tns:ValueUnitPair" />
+<xs:element name="criterionHiValue" type="tns:ValueUnitPair" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="PersonFactType">
+<xs:complexContent>
+<xs:extension base="tns:FactType">
+<xs:sequence>
+<xs:element name="legalName" type="tns:NameFactType" />
+<xs:element name="otherName" type="tns:NameFactType" minOccurs="0" maxOccurs="unbounded" />
+<xs:element name="motherMaidenName" type="xs:string" minOccurs="0" />
+<xs:element name="dateOfBirth" type="xs:dateTime" />
+<xs:element name="gender" type="tns:CodeLabelPair" />
+<xs:element name="maritalStatus" type="tns:CodeLabelPair" minOccurs="0" />
+<xs:element name="race" type="tns:CodeLabelPair" minOccurs="0" />
+<xs:element name="ethnic" type="tns:CodeLabelPair" minOccurs="0" />
+<xs:element name="language" type="tns:CodeLabelPair" minOccurs="0" maxOccurs="unbounded" />
+<xs:element name="telecom" type="tns:TelecomFactType" minOccurs="0" maxOccurs="unbounded" />
+<xs:element name="multipleBirthInd" type="xs:boolean" minOccurs="0" />
+<xs:element name="birthOrder" type="xs:int" minOccurs="0" />
+<xs:element name="age" type="tns:ValueUnitPair" />
+<xs:element name="birthPlace" type="xs:string" minOccurs="0" />
+<xs:element name="accountNumber" type="xs:string" minOccurs="0" />
+<xs:element name="address" type="tns:AddressFactType" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="TelecomFactType">
+<xs:sequence>
+<xs:element name="value" type="xs:string" />
+<xs:element name="telecomType" type="tns:CodeLabelPair" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AddressFactType">
+<xs:sequence>
+<xs:element name="streetAddress" type="xs:string" minOccurs="0" />
+<xs:element name="city" type="xs:string" minOccurs="0" />
+<xs:element name="state" type="xs:string" minOccurs="0" />
+<xs:element name="postalCode" type="xs:string" minOccurs="0" />
+<xs:element name="country" type="xs:string" minOccurs="0" />
+<xs:element name="addressType" type="tns:CodeLabelPair" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="MedicationFactType">
+<xs:complexContent>
+<xs:extension base="tns:FactType">
+<xs:sequence>
+<xs:element name="patientId" type="tns:ValueType" />
+<xs:element name="freeTextProductName" type="xs:string" />
+<xs:element name="freeTextBrandName" type="xs:string" minOccurs="0" />
+<xs:element name="codedProductName" type="tns:CodeLabelPair" />
+<xs:element name="codedBrandName" type="tns:CodeLabelPair" minOccurs="0" />
+<xs:element name="drugManufacturer" type="xs:string" minOccurs="0" />
+<xs:element name="productConcentration" type="xs:string" minOccurs="0" />
+<xs:element name="codedTypeOfMedication" type="tns:CodeLabelPair" />
+<xs:element name="codedStatusOfMedication" type="tns:CodeLabelPair" />
+<xs:element name="sigFreeText" type="xs:string" minOccurs="0" />
+<xs:element name="codedSigRoute" type="tns:CodeLabelPair" minOccurs="0" />
+<xs:element name="sigDose" type="tns:ValueUnitPair" minOccurs="0" />
+<xs:element name="sigMedicationStopped" type="xs:string" minOccurs="0" />
+<xs:element name="freeTextIndication" type="xs:string" minOccurs="0" />
+<xs:element name="patientInstructions" type="xs:string" minOccurs="0" />
+<xs:element name="reaction" type="xs:string" minOccurs="0" />
+<xs:element name="sigCodedVehicle" type="tns:CodeLabelPair" minOccurs="0" maxOccurs="unbounded" />
+<xs:element name="sigDoseIndicator" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+<xs:element name="order" type="tns:OrderFactType" />
+<xs:element name="fulfillment" type="tns:FulfillmentFactType" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="OrderFactType">
+<xs:sequence>
+<xs:element name="orderNumber" type="xs:string" />
+<xs:element name="fills" type="xs:int" />
+<xs:element name="reFills" type="xs:int" minOccurs="0" />
+<xs:element name="quantityOrdered" type="tns:ValueUnitPair" />
+<xs:element name="orderExpirationDateTime" type="xs:dateTime" minOccurs="0" />
+<xs:element name="orderDateTime" type="xs:dateTime" />
+<xs:element name="orderingProvider" type="tns:NameFactType" minOccurs="0" />
+<xs:element name="fulfillmentInstructions" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="FulfillmentFactType">
+<xs:sequence>
+<xs:element name="prescriptionNumber" type="xs:string" />
+<xs:element name="dispensingPharmacy" type="xs:string" minOccurs="0" />
+<xs:element name="dispensingPharmacyLocation" type="xs:string" minOccurs="0" />
+<xs:element name="dispenseDate" type="xs:dateTime" />
+<xs:element name="quantityDispensed" type="tns:ValueUnitPair" />
+<xs:element name="fillNumber" type="xs:int" />
+<xs:element name="fillStatus" type="tns:CodeLabelPair" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AllergyFactType">
+<xs:complexContent>
+<xs:extension base="tns:FactType">
+<xs:sequence>
+<xs:element name="patientId" type="tns:ValueType" />
+<xs:element name="adverseEventType" type="tns:CodeLabelPair" />
+<xs:element name="codedProduct" type="tns:CodeLabelPair" />
+<xs:element name="freeTextProduct" type="xs:string" />
+<xs:element name="adverseEventDate" type="xs:dateTime" />
+<xs:element name="reaction" type="tns:ReactionFactType" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="ReactionFactType">
+<xs:complexContent>
+<xs:extension base="tns:FactType">
+<xs:sequence>
+<xs:element name="codedReaction" type="tns:CodeLabelPair" />
+<xs:element name="textedReaction" type="xs:string" minOccurs="0" />
+<xs:element name="severity" type="tns:SeverityFactType" minOccurs="0" />
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="SeverityFactType">
+<xs:sequence>
+<xs:element name="codedSeverity" type="tns:CodeLabelPair" />
+<xs:element name="textedSeverity" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SupportSourceFactType">
+<xs:complexContent>
+<xs:extension base="tns:FactType">
+<xs:sequence>
+<xs:element name="contactOfPatient" type="tns:ValueType" />
+<xs:element name="codedContactType" type="tns:CodeLabelPair" />
+<xs:element name="codedRelationship" type="tns:CodeLabelPair" />
+<xs:element name="legalName" type="tns:NameFactType" />
+<xs:element name="otherName" type="tns:NameFactType" minOccurs="0" maxOccurs="unbounded" />
+<xs:element name="telecom" type="tns:TelecomFactType" minOccurs="0" maxOccurs="unbounded" />
+<xs:element name="address" type="tns:AddressFactType" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+</xs:schema>

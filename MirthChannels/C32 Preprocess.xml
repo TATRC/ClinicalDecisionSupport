@@ -1,0 +1,826 @@
+<com.webreach.mirth.model.Channel>
+  <id>b74c2f3a-411d-4ea6-a40d-671cef385b61</id>
+  <name>C32 Preprocess</name>
+  <description></description>
+  <enabled>true</enabled>
+  <version>1.8.2.4472</version>
+  <lastModified>
+    <time>1278618729642</time>
+    <timezone>America/Los_Angeles</timezone>
+  </lastModified>
+  <revision>10</revision>
+  <sourceConnector>
+    <name>sourceConnector</name>
+    <properties>
+      <property name="DataType">Channel Reader</property>
+    </properties>
+    <transformer>
+      <steps/>
+      <inboundProtocol>XML</inboundProtocol>
+      <outboundProtocol>XML</outboundProtocol>
+    </transformer>
+    <filter>
+      <rules/>
+    </filter>
+    <transportName>Channel Reader</transportName>
+    <mode>SOURCE</mode>
+    <enabled>true</enabled>
+  </sourceConnector>
+  <destinationConnectors>
+    <com.webreach.mirth.model.Connector>
+      <name>C32 Demographics</name>
+      <properties>
+        <property name="DataType">Channel Writer</property>
+        <property name="synchronised">0</property>
+        <property name="template">${message.encodedData}</property>
+        <property name="host">9678fff6-f955-4218-a434-8bdfec5c70b1</property>
+      </properties>
+      <transformer>
+        <steps>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>0</sequenceNumber>
+            <name>GetCommonProperties</name>
+            <script>//In the future we scan for the common elements that we would normally use
+globalMap.put(&quot;PrimaryId&quot;,msg[&apos;recordTarget&apos;][&apos;patientRole&apos;][&apos;id&apos;][0][&apos;@extension&apos;].toString());</script>
+            <type>JavaScript</type>
+            <data class="map">
+              <entry>
+                <string>Script</string>
+                <string>//In the future we scan for the common elements that we would normally use
+globalMap.put(&quot;PrimaryId&quot;,msg[&apos;recordTarget&apos;][&apos;patientRole&apos;][&apos;id&apos;][0][&apos;@extension&apos;].toString());</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>1</sequenceNumber>
+            <name>PatientIEN</name>
+            <script>var mapping;try { mapping = msg[&apos;recordTarget&apos;][&apos;patientRole&apos;][&apos;id&apos;][0][&apos;@extension&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;PatientIEN&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>PatientIEN</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;recordTarget&apos;][&apos;patientRole&apos;][&apos;id&apos;][0][&apos;@extension&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>2</sequenceNumber>
+            <name>recordtarget_patientrole_patient_name_given</name>
+            <script>var mapping;try { mapping = msg[&apos;recordTarget&apos;][&apos;patientRole&apos;][&apos;patient&apos;][&apos;name&apos;][&apos;given&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;recordtarget_patientrole_patient_name_given&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>recordtarget_patientrole_patient_name_given</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;recordTarget&apos;][&apos;patientRole&apos;][&apos;patient&apos;][&apos;name&apos;][&apos;given&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>3</sequenceNumber>
+            <name>recordtarget_patientrole_patient_name_family</name>
+            <script>var mapping;try { mapping = msg[&apos;recordTarget&apos;][&apos;patientRole&apos;][&apos;patient&apos;][&apos;name&apos;][&apos;family&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;recordtarget_patientrole_patient_name_family&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>recordtarget_patientrole_patient_name_family</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;recordTarget&apos;][&apos;patientRole&apos;][&apos;patient&apos;][&apos;name&apos;][&apos;family&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>4</sequenceNumber>
+            <name>recordtarget_patientrole_patient_administrativegendercode_attCode</name>
+            <script>var mapping;try { mapping = msg[&apos;recordTarget&apos;][&apos;patientRole&apos;][&apos;patient&apos;][&apos;administrativeGenderCode&apos;][&apos;@code&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;recordtarget_patientrole_patient_administrativegendercode_attCode&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>recordtarget_patientrole_patient_administrativegendercode_attCode</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;recordTarget&apos;][&apos;patientRole&apos;][&apos;patient&apos;][&apos;administrativeGenderCode&apos;][&apos;@code&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>5</sequenceNumber>
+            <name>recordtarget_patientrole_patient_administrativegendercode_attCodesystem</name>
+            <script>var mapping;try { mapping = msg[&apos;recordTarget&apos;][&apos;patientRole&apos;][&apos;patient&apos;][&apos;administrativeGenderCode&apos;][&apos;@codeSystem&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;recordtarget_patientrole_patient_administrativegendercode_attCodesystem&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>recordtarget_patientrole_patient_administrativegendercode_attCodesystem</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;recordTarget&apos;][&apos;patientRole&apos;][&apos;patient&apos;][&apos;administrativeGenderCode&apos;][&apos;@codeSystem&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>6</sequenceNumber>
+            <name>recordtarget_patientrole_patient_administrativegendercode_attDisplayname</name>
+            <script>var mapping;try { mapping = msg[&apos;recordTarget&apos;][&apos;patientRole&apos;][&apos;patient&apos;][&apos;administrativeGenderCode&apos;][&apos;@displayName&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;recordtarget_patientrole_patient_administrativegendercode_attDisplayname&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>recordtarget_patientrole_patient_administrativegendercode_attDisplayname</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;recordTarget&apos;][&apos;patientRole&apos;][&apos;patient&apos;][&apos;administrativeGenderCode&apos;][&apos;@displayName&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>7</sequenceNumber>
+            <name>recordtarget_patientrole_patient_birthtime_attValue</name>
+            <script>var mapping;try { mapping = msg[&apos;recordTarget&apos;][&apos;patientRole&apos;][&apos;patient&apos;][&apos;birthTime&apos;][&apos;@value&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;recordtarget_patientrole_patient_birthtime_attValue&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>recordtarget_patientrole_patient_birthtime_attValue</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;recordTarget&apos;][&apos;patientRole&apos;][&apos;patient&apos;][&apos;birthTime&apos;][&apos;@value&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+        </steps>
+        <inboundTemplate>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;CCD_DoD.xsl&quot;?&gt;
+&lt;ClinicalDocument classCode=&quot;DOCCLIN&quot; xmlns=&quot;urn:hl7-org:v3&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;urn:hl7-org:v3 C:\projects\NHINC\Current\Product\Production\Common\Interfaces\src\schemas\HL7V3\multicacheschemas\CDA.xsd&quot;&gt;
+	&lt;typeId extension=&quot;POCD_HD000040&quot; root=&quot;2.16.840.1.113883.1.3&quot;/&gt;
+	&lt;templateId root=&quot;2.16.840.1.113883.10.20.1&quot;/&gt;
+	&lt;templateId root=&quot;2.16.840.1.113883.3.88.11.32.1&quot;/&gt;
+	&lt;id extension=&quot;fb910f17-d70c-47b8-956d-eb5937a4f1bf&quot;/&gt;
+	&lt;code displayName=&quot;SUMMARIZATION OF EPISODE NOTE&quot; codeSystemName=&quot;LOINC&quot; codeSystem=&quot;2.16.840.1.113883.6.1&quot; code=&quot;34133-9&quot;/&gt;
+	&lt;effectiveTime value=&quot;20100114121121-0500&quot;/&gt;
+	&lt;confidentialityCode displayName=&quot;Normal&quot; codeSystem=&quot;2.16.840.1.113883.5.25&quot; code=&quot;N&quot;/&gt;
+	&lt;languageCode code=&quot;EN-US&quot;/&gt;
+	&lt;recordTarget&gt;
+		&lt;patientRole&gt;
+			&lt;id extension=&quot;40056&quot; root=&quot;2.16.840.1.113883.3.42&quot;/&gt;
+			&lt;id displayable=&quot;false&quot; extension=&quot;356064930&quot; root=&quot;2.16.840.1.113883.4.1&quot;/&gt;
+			&lt;addr use=&quot;H&quot;&gt;
+				&lt;streetAddressLine&gt;POB 891&lt;/streetAddressLine&gt;
+				&lt;city&gt;ESPANOLA&lt;/city&gt;
+				&lt;state&gt;NEW MEXICO&lt;/state&gt;
+				&lt;postalCode&gt;87532&lt;/postalCode&gt;
+				&lt;country&gt;US&lt;/country&gt;
+			&lt;/addr&gt;
+			&lt;addr use=&quot;W&quot;&gt;
+				&lt;streetAddressLine&gt;Work Ave&lt;/streetAddressLine&gt;
+				&lt;city&gt;ESPANOLA&lt;/city&gt;
+				&lt;state&gt;NEW MEXICO&lt;/state&gt;
+				&lt;postalCode&gt;87532&lt;/postalCode&gt;
+				&lt;country&gt;US&lt;/country&gt;
+			&lt;/addr&gt;
+			&lt;telecom use=&quot;HP&quot; value=&quot;555-555-9773&quot;/&gt;
+			&lt;telecom use=&quot;WP&quot; value=&quot;555-555-9771&quot;/&gt;
+			&lt;patient&gt;
+				&lt;name use=&quot;L&quot;&gt;
+					&lt;given&gt;BARBARA&lt;/given&gt;
+					&lt;given&gt;FAYE&lt;/given&gt;
+					&lt;family&gt;SMITH&lt;/family&gt;
+				&lt;/name&gt;
+				&lt;name use=&quot;P&quot;&gt;
+					&lt;prefix use=&quot;AC&quot;&gt;Dr.&lt;/prefix&gt;
+					&lt;given quailifier=&quot;CL&quot;&gt;BABS&lt;/given&gt;
+					&lt;family qualifier=&quot;BR&quot;&gt;SMITH&lt;/family&gt;
+				&lt;/name&gt;
+				&lt;name use=&quot;BR&quot;&gt;
+					&lt;given&gt;BARBARA&lt;/given&gt;
+					&lt;given&gt;ANN&lt;/given&gt;
+					&lt;family&gt;FAYE&lt;/family&gt;
+				&lt;/name&gt;
+				&lt;administrativeGenderCode codeSystem=&quot;2.16.840.1.113883.5.1&quot; code=&quot;F&quot; displayName=&quot;FEMALE&quot;/&gt;
+				&lt;maritalStatusCode code=&apos;M&apos; displayName=&apos;Married&apos; codeSystem=&apos;2.16.840.1.113883.5.2&apos; codeSystemName=&apos;MaritalStatusCode&apos;/&gt;
+				&lt;raceCode code=&apos;1004-1&apos; displayName=&apos;American Indian&apos; codeSystem=&apos;2.16.840.1.113883.6.238&apos; codeSystemName=&apos;CDC Race and Ethnicity&apos;/&gt;
+				&lt;ethnicityCode code=&apos;2178-2&apos; displayName=&apos;Latin American&apos; codeSystem=&apos;2.16.840.1.113883.6.238&apos; codeSystemName=&apos;CDC Race and Ethnicity&apos;/&gt;
+				&lt;languageCommunication&gt;
+					&lt;templateId root=&apos;2.16.840.1.113883.3.88.11.83.2&apos;/&gt;
+					&lt;templateId root=&apos;1.3.6.1.4.1.19376.1.5.3.1.2.1&apos;/&gt;
+					&lt;languageCode code=&apos;en-US&apos; /&gt;
+					&lt;modeCode code=&apos;RWR&apos; displayName=&apos;Recieve Written&apos;
+					codeSystem=&apos;2.16.840.1.113883.5.60&apos; codeSystemName=&apos;LanguageAbilityMode&apos;/&gt;
+					&lt;preferenceInd value=&apos;true&apos;/&gt;
+				&lt;/languageCommunication&gt;
+				&lt;birthTime value=&quot;19980713000000-0700&quot;/&gt;
+			&lt;/patient&gt;
+		&lt;/patientRole&gt;
+	&lt;/recordTarget&gt;
+	&lt;author&gt;
+		&lt;time value=&quot;20100114121121-0500&quot;/&gt;
+		&lt;assignedAuthor&gt;
+			&lt;id root=&quot;2.16.840.1.113883.3.198&quot;/&gt;
+			&lt;assignedAuthoringDevice&gt;
+				&lt;softwareName&gt;AHLTA&lt;/softwareName&gt;
+			&lt;/assignedAuthoringDevice&gt;
+			&lt;representedOrganization&gt;
+				&lt;id root=&quot;2.16.840.1.113883.3.198&quot;/&gt;
+				&lt;name&gt;Department of Defense&lt;/name&gt;
+			&lt;/representedOrganization&gt;
+		&lt;/assignedAuthor&gt;
+	&lt;/author&gt;
+	&lt;informant&gt;
+		&lt;assignedEntity&gt;
+			&lt;id root=&quot;2.16.840.1.113883.3.198&quot;/&gt;
+			&lt;representedOrganization&gt;
+				&lt;id root=&quot;2.16.840.1.113883.3.198&quot;/&gt;
+				&lt;name&gt;Department of Defense&lt;/name&gt;
+			&lt;/representedOrganization&gt;
+		&lt;/assignedEntity&gt;
+	&lt;/informant&gt;
+	&lt;custodian&gt;
+		&lt;assignedCustodian&gt;
+			&lt;representedCustodianOrganization&gt;
+				&lt;id root=&quot;2.16.840.1.113883.3.198&quot;/&gt;
+				&lt;name&gt;Department of Defense&lt;/name&gt;
+			&lt;/representedCustodianOrganization&gt;
+		&lt;/assignedCustodian&gt;
+	&lt;/custodian&gt;
+	&lt;participant typeCode=&quot;IND&quot;&gt;
+		&lt;templateId root=&quot;2.16.840.1.113883.3.88.11.32.3&quot;/&gt;
+		&lt;time value=&quot;20100617015109&quot;/&gt;
+		&lt;associatedEntity classCode=&quot;ECON&quot;&gt;
+			&lt;code displayName=&quot;ECON&quot; code=&quot;UNK&quot;&gt;
+				&lt;originalText&gt;Emergency Contact&lt;/originalText&gt;
+			&lt;/code&gt;
+			&lt;associatedPerson&gt;
+				&lt;name use=&quot;L&quot;&gt;
+					&lt;given&gt;AGATHA ANN&lt;/given&gt;
+					&lt;family&gt;SMITH&lt;/family&gt;
+				&lt;/name&gt;
+			&lt;/associatedPerson&gt;
+		&lt;/associatedEntity&gt;
+	&lt;/participant&gt;
+	&lt;component&gt;
+		&lt;structuredBody&gt;
+			&lt;component&gt;
+				&lt;section&gt;
+					&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.2&quot;/&gt;
+					&lt;code codeSystem=&quot;2.16.840.1.113883.6.1&quot; code=&quot;48765-2&quot;/&gt;
+					&lt;title xmlns:ns3=&quot;urn:hl7-org:v3&quot;&gt;Allergies&lt;/title&gt;
+					&lt;text xmlns:ns3=&quot;urn:hl7-org:v3&quot;&gt;
+						&lt;content xmlns=&quot;urn:hl7-org:v3&quot; xmlns:ns2=&quot;urn:gov:hhs:fha:nhinc:common:nhinccommon&quot; ID=&quot;reaction-5&quot;&gt;Acute Interstitial Nephritis&lt;/content&gt;
+						&lt;content xmlns=&quot;urn:hl7-org:v3&quot; xmlns:ns2=&quot;urn:gov:hhs:fha:nhinc:common:nhinccommon&quot; ID=&quot;reaction-4&quot;&gt;Elevated blood pressure reading without diagnosis of hypertension&lt;/content&gt;
+						&lt;content xmlns=&quot;urn:hl7-org:v3&quot; xmlns:ns2=&quot;urn:gov:hhs:fha:nhinc:common:nhinccommon&quot; ID=&quot;reaction-1&quot;&gt;Head and neck swelling&lt;/content&gt;
+						&lt;content xmlns=&quot;urn:hl7-org:v3&quot; xmlns:ns2=&quot;urn:gov:hhs:fha:nhinc:common:nhinccommon&quot; ID=&quot;reaction-2&quot;&gt;Rash&lt;/content&gt;
+						&lt;content xmlns=&quot;urn:hl7-org:v3&quot; xmlns:ns2=&quot;urn:gov:hhs:fha:nhinc:common:nhinccommon&quot; ID=&quot;reaction-3&quot;&gt;Vomiting&lt;/content&gt;
+					&lt;/text&gt;
+					&lt;entry typeCode=&quot;DRIV&quot;&gt;
+						&lt;act moodCode=&quot;EVN&quot; classCode=&quot;ACT&quot;&gt;
+							&lt;templateId assigningAuthorityName=&quot;HITSP/C32&quot; root=&quot;2.16.840.1.113883.3.88.11.32.6&quot;/&gt;
+							&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.27&quot;/&gt;
+							&lt;code nullFlavor=&quot;NA&quot;/&gt;
+							&lt;entryRelationship typeCode=&quot;SUBJ&quot;&gt;
+								&lt;observation moodCode=&quot;EVN&quot; classCode=&quot;OBS&quot;&gt;
+									&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.18&quot;/&gt;
+									&lt;templateId assigningAuthorityName=&quot;IHE&quot; root=&quot;1.3.6.1.4.1.19376.1.5.3.1.4.5&quot;/&gt;
+									&lt;code xsi:type=&quot;CE&quot; displayName=&quot;Drug Allergy&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;/&gt;
+									&lt;effectiveTime&gt;
+										&lt;low value=&quot;20100112&quot;/&gt;
+									&lt;/effectiveTime&gt;
+									&lt;participant typeCode=&quot;CSM&quot;&gt;
+										&lt;participantRole classCode=&quot;MANU&quot;&gt;
+											&lt;playingEntity classCode=&quot;MMAT&quot;&gt;
+												&lt;name&gt;Cephalosporins&lt;/name&gt;
+											&lt;/playingEntity&gt;
+										&lt;/participantRole&gt;
+									&lt;/participant&gt;
+									&lt;entryRelationship inversionInd=&quot;true&quot; typeCode=&quot;MFST&quot;&gt;
+										&lt;observation moodCode=&quot;EVN&quot; classCode=&quot;OBS&quot;&gt;
+											&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.54&quot;/&gt;
+											&lt;code nullFlavor=&quot;UNK&quot;/&gt;
+											&lt;text&gt;
+												&lt;reference value=&quot;#reaction-1&quot;/&gt;
+											&lt;/text&gt;
+											&lt;statusCode code=&quot;completed&quot;/&gt;
+										&lt;/observation&gt;
+									&lt;/entryRelationship&gt;
+									&lt;entryRelationship inversionInd=&quot;true&quot; typeCode=&quot;MFST&quot;&gt;
+										&lt;observation moodCode=&quot;EVN&quot; classCode=&quot;OBS&quot;&gt;
+											&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.54&quot;/&gt;
+											&lt;code nullFlavor=&quot;UNK&quot;/&gt;
+											&lt;text&gt;
+												&lt;reference value=&quot;#reaction-2&quot;/&gt;
+											&lt;/text&gt;
+											&lt;statusCode code=&quot;completed&quot;/&gt;
+										&lt;/observation&gt;
+									&lt;/entryRelationship&gt;
+									&lt;entryRelationship inversionInd=&quot;true&quot; typeCode=&quot;MFST&quot;&gt;
+										&lt;observation moodCode=&quot;EVN&quot; classCode=&quot;OBS&quot;&gt;
+											&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.54&quot;/&gt;
+											&lt;code nullFlavor=&quot;UNK&quot;/&gt;
+											&lt;text&gt;
+												&lt;reference value=&quot;#reaction-3&quot;/&gt;
+											&lt;/text&gt;
+											&lt;statusCode code=&quot;completed&quot;/&gt;
+										&lt;/observation&gt;
+									&lt;/entryRelationship&gt;
+								&lt;/observation&gt;
+							&lt;/entryRelationship&gt;
+						&lt;/act&gt;
+					&lt;/entry&gt;
+					&lt;entry typeCode=&quot;DRIV&quot;&gt;
+						&lt;act moodCode=&quot;EVN&quot; classCode=&quot;ACT&quot;&gt;
+							&lt;templateId assigningAuthorityName=&quot;HITSP/C32&quot; root=&quot;2.16.840.1.113883.3.88.11.32.6&quot;/&gt;
+							&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.27&quot;/&gt;
+							&lt;code nullFlavor=&quot;NA&quot;/&gt;
+							&lt;entryRelationship typeCode=&quot;SUBJ&quot;&gt;
+								&lt;observation moodCode=&quot;EVN&quot; classCode=&quot;OBS&quot;&gt;
+									&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.18&quot;/&gt;
+									&lt;templateId assigningAuthorityName=&quot;IHE&quot; root=&quot;1.3.6.1.4.1.19376.1.5.3.1.4.5&quot;/&gt;
+									&lt;code xsi:type=&quot;CE&quot; displayName=&quot;Drug Allergy&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;/&gt;
+									&lt;effectiveTime&gt;
+										&lt;low value=&quot;20091230&quot;/&gt;
+									&lt;/effectiveTime&gt;
+									&lt;participant typeCode=&quot;CSM&quot;&gt;
+										&lt;participantRole classCode=&quot;MANU&quot;&gt;
+											&lt;playingEntity classCode=&quot;MMAT&quot;&gt;
+												&lt;name&gt;A/B-CAROTENE/C/BIOFL/B6/MN/ECH (A/B-CAROTENE/C/BIOFL/&lt;/name&gt;
+											&lt;/playingEntity&gt;
+										&lt;/participantRole&gt;
+									&lt;/participant&gt;
+									&lt;entryRelationship inversionInd=&quot;true&quot; typeCode=&quot;MFST&quot;&gt;
+										&lt;observation moodCode=&quot;EVN&quot; classCode=&quot;OBS&quot;&gt;
+											&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.54&quot;/&gt;
+											&lt;code nullFlavor=&quot;UNK&quot;/&gt;
+											&lt;text&gt;
+												&lt;reference value=&quot;#reaction-4&quot;/&gt;
+											&lt;/text&gt;
+											&lt;statusCode code=&quot;completed&quot;/&gt;
+										&lt;/observation&gt;
+									&lt;/entryRelationship&gt;
+								&lt;/observation&gt;
+							&lt;/entryRelationship&gt;
+						&lt;/act&gt;
+					&lt;/entry&gt;
+					&lt;entry typeCode=&quot;DRIV&quot;&gt;
+						&lt;act moodCode=&quot;EVN&quot; classCode=&quot;ACT&quot;&gt;
+							&lt;templateId assigningAuthorityName=&quot;HITSP/C32&quot; root=&quot;2.16.840.1.113883.3.88.11.32.6&quot;/&gt;
+							&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.27&quot;/&gt;
+							&lt;code nullFlavor=&quot;NA&quot;/&gt;
+							&lt;entryRelationship typeCode=&quot;SUBJ&quot;&gt;
+								&lt;observation moodCode=&quot;EVN&quot; classCode=&quot;OBS&quot;&gt;
+									&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.18&quot;/&gt;
+									&lt;templateId assigningAuthorityName=&quot;IHE&quot; root=&quot;1.3.6.1.4.1.19376.1.5.3.1.4.5&quot;/&gt;
+									&lt;code xsi:type=&quot;CE&quot; displayName=&quot;Drug Allergy&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;/&gt;
+									&lt;effectiveTime&gt;
+										&lt;low value=&quot;20091230&quot;/&gt;
+									&lt;/effectiveTime&gt;
+									&lt;participant typeCode=&quot;CSM&quot;&gt;
+										&lt;participantRole classCode=&quot;MANU&quot;&gt;
+											&lt;playingEntity classCode=&quot;MMAT&quot;&gt;
+												&lt;name&gt;PLACEBO (LACTOSE)&lt;/name&gt;
+											&lt;/playingEntity&gt;
+										&lt;/participantRole&gt;
+									&lt;/participant&gt;
+									&lt;entryRelationship inversionInd=&quot;true&quot; typeCode=&quot;MFST&quot;&gt;
+										&lt;observation moodCode=&quot;EVN&quot; classCode=&quot;OBS&quot;&gt;
+											&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.54&quot;/&gt;
+											&lt;code nullFlavor=&quot;UNK&quot;/&gt;
+											&lt;text&gt;
+												&lt;reference value=&quot;#reaction-5&quot;/&gt;
+											&lt;/text&gt;
+											&lt;statusCode code=&quot;completed&quot;/&gt;
+										&lt;/observation&gt;
+									&lt;/entryRelationship&gt;
+								&lt;/observation&gt;
+							&lt;/entryRelationship&gt;
+						&lt;/act&gt;
+					&lt;/entry&gt;
+				&lt;/section&gt;
+			&lt;/component&gt;
+			&lt;component&gt;
+				&lt;section&gt;
+					&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.11&quot;/&gt;
+					&lt;code codeSystem=&quot;2.16.840.1.113883.6.1&quot; code=&quot;11450-4&quot;/&gt;
+					&lt;title xmlns:ns3=&quot;urn:hl7-org:v3&quot;&gt;Problems&lt;/title&gt;
+					&lt;text xmlns:ns3=&quot;urn:hl7-org:v3&quot;&gt;
+						&lt;paragraph xmlns=&quot;urn:hl7-org:v3&quot; xmlns:ns2=&quot;urn:gov:hhs:fha:nhinc:common:nhinccommon&quot; ID=&quot;problem-4&quot;&gt;Normal heart&lt;/paragraph&gt;
+						&lt;paragraph xmlns=&quot;urn:hl7-org:v3&quot; xmlns:ns2=&quot;urn:gov:hhs:fha:nhinc:common:nhinccommon&quot; ID=&quot;problem-2&quot;&gt;Renal disorder&lt;/paragraph&gt;
+						&lt;paragraph xmlns=&quot;urn:hl7-org:v3&quot; xmlns:ns2=&quot;urn:gov:hhs:fha:nhinc:common:nhinccommon&quot; ID=&quot;problem-3&quot;&gt;The coronary arteries&lt;/paragraph&gt;
+						&lt;paragraph xmlns=&quot;urn:hl7-org:v3&quot; xmlns:ns2=&quot;urn:gov:hhs:fha:nhinc:common:nhinccommon&quot; ID=&quot;problem-1&quot;&gt;Psychiatric disorders&lt;/paragraph&gt;
+					&lt;/text&gt;
+					&lt;entry typeCode=&quot;DRIV&quot;&gt;
+						&lt;act moodCode=&quot;EVN&quot; classCode=&quot;ACT&quot;&gt;
+							&lt;templateId assigningAuthorityName=&quot;HITSP/C32&quot; root=&quot;2.16.840.1.113883.3.88.11.32.7&quot;/&gt;
+							&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.27&quot;/&gt;
+							&lt;code nullFlavor=&quot;NA&quot;/&gt;
+							&lt;effectiveTime&gt;
+								&lt;low value=&quot;20091230&quot;/&gt;
+							&lt;/effectiveTime&gt;
+							&lt;entryRelationship typeCode=&quot;SUBJ&quot;&gt;
+								&lt;observation moodCode=&quot;EVN&quot; classCode=&quot;OBS&quot;&gt;
+									&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.28&quot;/&gt;
+									&lt;code nullFlavor=&quot;NA&quot;/&gt;
+									&lt;text&gt;
+										&lt;reference value=&quot;#problem-1&quot;/&gt;
+									&lt;/text&gt;
+									&lt;statusCode code=&quot;completed&quot;/&gt;
+									&lt;value xsi:type=&quot;CD&quot; displayName=&quot;Psychiatric disorders&quot; codeSystemName=&quot;ICD9&quot; codeSystem=&quot;2.16.840.1.113883.11.15931&quot; code=&quot;300.9&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;/&gt;
+								&lt;/observation&gt;
+							&lt;/entryRelationship&gt;
+						&lt;/act&gt;
+					&lt;/entry&gt;
+					&lt;entry typeCode=&quot;DRIV&quot;&gt;
+						&lt;act moodCode=&quot;EVN&quot; classCode=&quot;ACT&quot;&gt;
+							&lt;templateId assigningAuthorityName=&quot;HITSP/C32&quot; root=&quot;2.16.840.1.113883.3.88.11.32.7&quot;/&gt;
+							&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.27&quot;/&gt;
+							&lt;code nullFlavor=&quot;NA&quot;/&gt;
+							&lt;effectiveTime&gt;
+								&lt;low value=&quot;20091230&quot;/&gt;
+							&lt;/effectiveTime&gt;
+							&lt;entryRelationship typeCode=&quot;SUBJ&quot;&gt;
+								&lt;observation moodCode=&quot;EVN&quot; classCode=&quot;OBS&quot;&gt;
+									&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.28&quot;/&gt;
+									&lt;code nullFlavor=&quot;NA&quot;/&gt;
+									&lt;text&gt;
+										&lt;reference value=&quot;#problem-2&quot;/&gt;
+									&lt;/text&gt;
+									&lt;statusCode code=&quot;completed&quot;/&gt;
+									&lt;value xsi:type=&quot;CD&quot; displayName=&quot;Renal disorder&quot; codeSystemName=&quot;ICD9&quot; codeSystem=&quot;2.16.840.1.113883.11.15931&quot; code=&quot;593.9&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;/&gt;
+								&lt;/observation&gt;
+							&lt;/entryRelationship&gt;
+						&lt;/act&gt;
+					&lt;/entry&gt;
+					&lt;entry typeCode=&quot;DRIV&quot;&gt;
+						&lt;act moodCode=&quot;EVN&quot; classCode=&quot;ACT&quot;&gt;
+							&lt;templateId assigningAuthorityName=&quot;HITSP/C32&quot; root=&quot;2.16.840.1.113883.3.88.11.32.7&quot;/&gt;
+							&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.27&quot;/&gt;
+							&lt;code nullFlavor=&quot;NA&quot;/&gt;
+							&lt;effectiveTime&gt;
+								&lt;low value=&quot;20091230&quot;/&gt;
+							&lt;/effectiveTime&gt;
+							&lt;entryRelationship typeCode=&quot;SUBJ&quot;&gt;
+								&lt;observation moodCode=&quot;EVN&quot; classCode=&quot;OBS&quot;&gt;
+									&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.28&quot;/&gt;
+									&lt;code nullFlavor=&quot;NA&quot;/&gt;
+									&lt;text&gt;
+										&lt;reference value=&quot;#problem-3&quot;/&gt;
+									&lt;/text&gt;
+									&lt;statusCode code=&quot;completed&quot;/&gt;
+									&lt;value xsi:type=&quot;CD&quot; displayName=&quot;The coronary arteries&quot; codeSystemName=&quot;ICD9&quot; codeSystem=&quot;2.16.840.1.113883.11.15931&quot; code=&quot;UNK&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;/&gt;
+								&lt;/observation&gt;
+							&lt;/entryRelationship&gt;
+						&lt;/act&gt;
+					&lt;/entry&gt;
+					&lt;entry typeCode=&quot;DRIV&quot;&gt;
+						&lt;act moodCode=&quot;EVN&quot; classCode=&quot;ACT&quot;&gt;
+							&lt;templateId assigningAuthorityName=&quot;HITSP/C32&quot; root=&quot;2.16.840.1.113883.3.88.11.32.7&quot;/&gt;
+							&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.27&quot;/&gt;
+							&lt;code nullFlavor=&quot;NA&quot;/&gt;
+							&lt;effectiveTime&gt;
+								&lt;low value=&quot;20091230&quot;/&gt;
+							&lt;/effectiveTime&gt;
+							&lt;entryRelationship typeCode=&quot;SUBJ&quot;&gt;
+								&lt;observation moodCode=&quot;EVN&quot; classCode=&quot;OBS&quot;&gt;
+									&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.28&quot;/&gt;
+									&lt;code nullFlavor=&quot;NA&quot;/&gt;
+									&lt;text&gt;
+										&lt;reference value=&quot;#problem-4&quot;/&gt;
+									&lt;/text&gt;
+									&lt;statusCode code=&quot;completed&quot;/&gt;
+									&lt;value xsi:type=&quot;CD&quot; displayName=&quot;Normal heart&quot; codeSystemName=&quot;ICD9&quot; codeSystem=&quot;2.16.840.1.113883.11.15931&quot; code=&quot;UNK&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;/&gt;
+								&lt;/observation&gt;
+							&lt;/entryRelationship&gt;
+						&lt;/act&gt;
+					&lt;/entry&gt;
+				&lt;/section&gt;
+			&lt;/component&gt;
+			&lt;component&gt;
+				&lt;section&gt;
+					&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.8&quot;/&gt;
+					&lt;code codeSystem=&quot;2.16.840.1.113883.6.1&quot; code=&quot;10160-0&quot;/&gt;
+					&lt;title xmlns:ns3=&quot;urn:hl7-org:v3&quot;&gt;Medications&lt;/title&gt;
+					&lt;entry typeCode=&quot;DRIV&quot;&gt;
+						&lt;substanceAdministration moodCode=&quot;EVN&quot; classCode=&quot;SBADM&quot;&gt;
+							&lt;templateId assigningAuthorityName=&quot;HITSP/C32&quot; root=&quot;2.16.840.1.113883.3.88.11.32.8&quot;/&gt;
+							&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.24&quot;/&gt;
+							&lt;statusCode code=&quot;Active&quot;/&gt;
+							&lt;effectiveTime xsi:type=&quot;IVL_TS&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+								&lt;low value=&quot;20091230&quot;/&gt;
+								&lt;high value=&quot;20100129&quot;/&gt;
+							&lt;/effectiveTime&gt;
+							&lt;routeCode displayName=&quot;Oral (PO, Peroral) route&quot; codeSystemName=&quot;3M&quot; code=&quot;67605&quot;/&gt;
+							&lt;consumable typeCode=&quot;CSM&quot;&gt;
+								&lt;manufacturedProduct classCode=&quot;MANU&quot;&gt;
+									&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.53&quot;/&gt;
+									&lt;templateId assigningAuthorityName=&quot;HITSP/C32&quot; root=&quot;2.16.840.1.113883.3.88.11.32.9&quot;/&gt;
+									&lt;manufacturedMaterial determinerCode=&quot;KIND&quot; classCode=&quot;MMAT&quot;&gt;
+										&lt;code displayName=&quot;Aspirin (Empirin Eq.) Tablet 325 mg Oral&quot; codeSystemName=&quot;NationalDrugCode&quot; codeSystem=&quot;2.16.840.1.113883.6.69&quot; code=&quot;17714-0010-10&quot;/&gt;
+										&lt;name&gt;Aspirin (Empirin Eq.) Tablet 325 mg Oral&lt;/name&gt;
+									&lt;/manufacturedMaterial&gt;
+								&lt;/manufacturedProduct&gt;
+							&lt;/consumable&gt;
+							&lt;entryRelationship typeCode=&quot;SUBJ&quot;&gt;
+								&lt;observation moodCode=&quot;EVN&quot; classCode=&quot;OBS&quot;&gt;
+									&lt;templateId assigningAuthorityName=&quot;HITSP/C32&quot; extension=&quot;2.16.840.1.113883.3.88.11.32.10&quot;/&gt;
+									&lt;code displayName=&quot;Prescription Drug&quot; codeSystemName=&quot;SNOMED CT&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; code=&quot;73639000&quot;/&gt;
+									&lt;statusCode code=&quot;completed&quot;/&gt;
+								&lt;/observation&gt;
+							&lt;/entryRelationship&gt;
+							&lt;entryRelationship typeCode=&quot;REFR&quot;&gt;
+								&lt;supply moodCode=&quot;EVN&quot; classCode=&quot;SPLY&quot;&gt;
+									&lt;templateId root=&quot;2.16.840.1.113883.10.20.1.34&quot;/&gt;
+									&lt;id extension=&quot;H10255318&quot; root=&quot;2.16.840.1.113883.3.42&quot;/&gt;
+									&lt;effectiveTime value=&quot;20091230&quot;/&gt;
+									&lt;performer&gt;
+										&lt;assignedEntity&gt;
+											&lt;id nullFlavor=&quot;UNK&quot;/&gt;
+											&lt;assignedPerson&gt;
+												&lt;name&gt;PROVIDER ORDER ENTER&lt;/name&gt;
+											&lt;/assignedPerson&gt;
+										&lt;/assignedEntity&gt;
+									&lt;/performer&gt;
+								&lt;/supply&gt;
+							&lt;/entryRelationship&gt;
+							&lt;entryRelationship typeCode=&quot;REFR&quot;&gt;
+								&lt;templateId assigningAuthorityName=&quot;HITSP/C32&quot; root=&quot;2.16.840.1.113883.3.88.1.11.32.11&quot;/&gt;
+								&lt;supply moodCode=&quot;INT&quot; classCode=&quot;SPLY&quot;&gt;
+									&lt;id extension=&quot;091230-00013&quot; root=&quot;2.16.840.1.113883.3.42&quot;/&gt;
+									&lt;effectiveTime value=&quot;20100129&quot;/&gt;
+									&lt;repeatNumber value=&quot;0&quot;/&gt;
+									&lt;author&gt;
+										&lt;time value=&quot;20091230&quot;/&gt;
+										&lt;assignedAuthor&gt;
+											&lt;id/&gt;
+											&lt;assignedPerson&gt;
+												&lt;name&gt;BEGIN ONE&lt;/name&gt;
+											&lt;/assignedPerson&gt;
+										&lt;/assignedAuthor&gt;
+									&lt;/author&gt;
+								&lt;/supply&gt;
+							&lt;/entryRelationship&gt;
+						&lt;/substanceAdministration&gt;
+					&lt;/entry&gt;
+					&lt;entry typeCode=&quot;DRIV&quot;&gt;
+						&lt;substanceAdministration moodCode=&quot;EVN&quot; classCode=&quot;SBADM&quot;&gt;
+							&lt;templateId assigningAuthorityName=&quot;HITSP/C32&quot; root=&quot;2.16.840.1.113883.3.88.11.32.8&quot;/&gt;
+							&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.24&quot;/&gt;
+							&lt;statusCode code=&quot;Active&quot;/&gt;
+							&lt;effectiveTime xsi:type=&quot;IVL_TS&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+								&lt;low value=&quot;20091230&quot;/&gt;
+								&lt;high value=&quot;20100105&quot;/&gt;
+							&lt;/effectiveTime&gt;
+							&lt;routeCode displayName=&quot;Oral (PO, Peroral) route&quot; codeSystemName=&quot;3M&quot; code=&quot;67605&quot;/&gt;
+							&lt;consumable typeCode=&quot;CSM&quot;&gt;
+								&lt;manufacturedProduct classCode=&quot;MANU&quot;&gt;
+									&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.53&quot;/&gt;
+									&lt;templateId assigningAuthorityName=&quot;HITSP/C32&quot; root=&quot;2.16.840.1.113883.3.88.11.32.9&quot;/&gt;
+									&lt;manufacturedMaterial determinerCode=&quot;KIND&quot; classCode=&quot;MMAT&quot;&gt;
+										&lt;code displayName=&quot;Acyclovir (Zovirax Eq.) Suspension 200 mg per 5 mL Oral&quot; codeSystemName=&quot;NationalDrugCode&quot; codeSystem=&quot;2.16.840.1.113883.6.69&quot; code=&quot;00173-0953-96&quot;/&gt;
+										&lt;name&gt;Acyclovir (Zovirax Eq.) Suspension 200 mg per 5 mL Oral&lt;/name&gt;
+									&lt;/manufacturedMaterial&gt;
+								&lt;/manufacturedProduct&gt;
+							&lt;/consumable&gt;
+							&lt;entryRelationship typeCode=&quot;SUBJ&quot;&gt;
+								&lt;observation moodCode=&quot;EVN&quot; classCode=&quot;OBS&quot;&gt;
+									&lt;templateId assigningAuthorityName=&quot;HITSP/C32&quot; extension=&quot;2.16.840.1.113883.3.88.11.32.10&quot;/&gt;
+									&lt;code displayName=&quot;Prescription Drug&quot; codeSystemName=&quot;SNOMED CT&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; code=&quot;73639000&quot;/&gt;
+									&lt;statusCode code=&quot;completed&quot;/&gt;
+								&lt;/observation&gt;
+							&lt;/entryRelationship&gt;
+							&lt;entryRelationship typeCode=&quot;REFR&quot;&gt;
+								&lt;supply moodCode=&quot;EVN&quot; classCode=&quot;SPLY&quot;&gt;
+									&lt;templateId root=&quot;2.16.840.1.113883.10.20.1.34&quot;/&gt;
+									&lt;id extension=&quot;H10255316&quot; root=&quot;2.16.840.1.113883.3.42&quot;/&gt;
+									&lt;effectiveTime value=&quot;20091230&quot;/&gt;
+									&lt;performer&gt;
+										&lt;assignedEntity&gt;
+											&lt;id nullFlavor=&quot;UNK&quot;/&gt;
+											&lt;assignedPerson&gt;
+												&lt;name&gt;PROVIDER ORDER ENTER&lt;/name&gt;
+											&lt;/assignedPerson&gt;
+										&lt;/assignedEntity&gt;
+									&lt;/performer&gt;
+								&lt;/supply&gt;
+							&lt;/entryRelationship&gt;
+							&lt;entryRelationship typeCode=&quot;REFR&quot;&gt;
+								&lt;templateId assigningAuthorityName=&quot;HITSP/C32&quot; root=&quot;2.16.840.1.113883.3.88.1.11.32.11&quot;/&gt;
+								&lt;supply moodCode=&quot;INT&quot; classCode=&quot;SPLY&quot;&gt;
+									&lt;id extension=&quot;091230-00011&quot; root=&quot;2.16.840.1.113883.3.42&quot;/&gt;
+									&lt;effectiveTime value=&quot;20100105&quot;/&gt;
+									&lt;repeatNumber value=&quot;0&quot;/&gt;
+									&lt;author&gt;
+										&lt;time value=&quot;20091230&quot;/&gt;
+										&lt;assignedAuthor&gt;
+											&lt;id/&gt;
+											&lt;assignedPerson&gt;
+												&lt;name&gt;BEGIN ONE&lt;/name&gt;
+											&lt;/assignedPerson&gt;
+										&lt;/assignedAuthor&gt;
+									&lt;/author&gt;
+								&lt;/supply&gt;
+							&lt;/entryRelationship&gt;
+						&lt;/substanceAdministration&gt;
+					&lt;/entry&gt;
+					&lt;entry typeCode=&quot;DRIV&quot;&gt;
+						&lt;substanceAdministration moodCode=&quot;EVN&quot; classCode=&quot;SBADM&quot;&gt;
+							&lt;templateId assigningAuthorityName=&quot;HITSP/C32&quot; root=&quot;2.16.840.1.113883.3.88.11.32.8&quot;/&gt;
+							&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.24&quot;/&gt;
+							&lt;statusCode code=&quot;Active&quot;/&gt;
+							&lt;effectiveTime xsi:type=&quot;IVL_TS&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+								&lt;low value=&quot;20091230&quot;/&gt;
+								&lt;high value=&quot;20100129&quot;/&gt;
+							&lt;/effectiveTime&gt;
+							&lt;routeCode displayName=&quot;Oral (PO, Peroral) route&quot; codeSystemName=&quot;3M&quot; code=&quot;67605&quot;/&gt;
+							&lt;consumable typeCode=&quot;CSM&quot;&gt;
+								&lt;manufacturedProduct classCode=&quot;MANU&quot;&gt;
+									&lt;templateId assigningAuthorityName=&quot;CCD&quot; root=&quot;2.16.840.1.113883.10.20.1.53&quot;/&gt;
+									&lt;templateId assigningAuthorityName=&quot;HITSP/C32&quot; root=&quot;2.16.840.1.113883.3.88.11.32.9&quot;/&gt;
+									&lt;manufacturedMaterial determinerCode=&quot;KIND&quot; classCode=&quot;MMAT&quot;&gt;
+										&lt;code displayName=&quot;Pseudoephedrine Sulfate/Loratadine (Claritin-D 12 Hour Eq.) Tablet Controlled/Sustained Release 120-5 mg Oral&quot; codeSystemName=&quot;NationalDrugCode&quot; codeSystem=&quot;2.16.840.1.113883.6.69&quot; code=&quot;00085-0635-01&quot;/&gt;
+										&lt;name&gt;Pseudoephedrine Sulfate/Loratadine (Claritin-D 12 Hour Eq.) Tablet Controlled/Sustained Release 120-5 mg Oral&lt;/name&gt;
+									&lt;/manufacturedMaterial&gt;
+								&lt;/manufacturedProduct&gt;
+							&lt;/consumable&gt;
+							&lt;entryRelationship typeCode=&quot;SUBJ&quot;&gt;
+								&lt;observation moodCode=&quot;EVN&quot; classCode=&quot;OBS&quot;&gt;
+									&lt;templateId assigningAuthorityName=&quot;HITSP/C32&quot; extension=&quot;2.16.840.1.113883.3.88.11.32.10&quot;/&gt;
+									&lt;code displayName=&quot;Prescription Drug&quot; codeSystemName=&quot;SNOMED CT&quot; codeSystem=&quot;2.16.840.1.113883.6.96&quot; code=&quot;73639000&quot;/&gt;
+									&lt;statusCode code=&quot;completed&quot;/&gt;
+								&lt;/observation&gt;
+							&lt;/entryRelationship&gt;
+							&lt;entryRelationship typeCode=&quot;REFR&quot;&gt;
+								&lt;supply moodCode=&quot;EVN&quot; classCode=&quot;SPLY&quot;&gt;
+									&lt;templateId root=&quot;2.16.840.1.113883.10.20.1.34&quot;/&gt;
+									&lt;id extension=&quot;H10255317&quot; root=&quot;2.16.840.1.113883.3.42&quot;/&gt;
+									&lt;effectiveTime value=&quot;20091230&quot;/&gt;
+									&lt;performer&gt;
+										&lt;assignedEntity&gt;
+											&lt;id nullFlavor=&quot;UNK&quot;/&gt;
+											&lt;assignedPerson&gt;
+												&lt;name&gt;PROVIDER ORDER ENTER&lt;/name&gt;
+											&lt;/assignedPerson&gt;
+										&lt;/assignedEntity&gt;
+									&lt;/performer&gt;
+								&lt;/supply&gt;
+							&lt;/entryRelationship&gt;
+							&lt;entryRelationship typeCode=&quot;REFR&quot;&gt;
+								&lt;templateId assigningAuthorityName=&quot;HITSP/C32&quot; root=&quot;2.16.840.1.113883.3.88.1.11.32.11&quot;/&gt;
+								&lt;supply moodCode=&quot;INT&quot; classCode=&quot;SPLY&quot;&gt;
+									&lt;id extension=&quot;091230-00012&quot; root=&quot;2.16.840.1.113883.3.42&quot;/&gt;
+									&lt;effectiveTime value=&quot;20100129&quot;/&gt;
+									&lt;repeatNumber value=&quot;0&quot;/&gt;
+									&lt;author&gt;
+										&lt;time value=&quot;20091230&quot;/&gt;
+										&lt;assignedAuthor&gt;
+											&lt;id/&gt;
+											&lt;assignedPerson&gt;
+												&lt;name&gt;BEGIN ONE&lt;/name&gt;
+											&lt;/assignedPerson&gt;
+										&lt;/assignedAuthor&gt;
+									&lt;/author&gt;
+								&lt;/supply&gt;
+							&lt;/entryRelationship&gt;
+						&lt;/substanceAdministration&gt;
+					&lt;/entry&gt;
+				&lt;/section&gt;
+			&lt;/component&gt;
+		&lt;/structuredBody&gt;
+	&lt;/component&gt;
+&lt;/ClinicalDocument&gt;
+</inboundTemplate>
+        <outboundTemplate></outboundTemplate>
+        <inboundProtocol>XML</inboundProtocol>
+        <outboundProtocol>XML</outboundProtocol>
+        <inboundProperties>
+          <property name="stripNamespaces">false</property>
+        </inboundProperties>
+        <outboundProperties>
+          <property name="stripNamespaces">true</property>
+        </outboundProperties>
+      </transformer>
+      <filter>
+        <rules/>
+      </filter>
+      <transportName>Channel Writer</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+    </com.webreach.mirth.model.Connector>
+  </destinationConnectors>
+  <properties>
+    <property name="initialState">started</property>
+    <property name="synchronous">true</property>
+    <property name="store_messages">true</property>
+    <property name="encryptData">false</property>
+    <property name="transactional">false</property>
+    <property name="max_message_age">-1</property>
+    <property name="dont_store_filtered">false</property>
+    <property name="error_messages_only">false</property>
+  </properties>
+  <preprocessingScript>// Modify the message variable below to pre process data
+return message;</preprocessingScript>
+  <postprocessingScript>// This script executes once after a message has been processed
+return;</postprocessingScript>
+  <deployScript>// This script executes once when the mule engine is started
+// You only have access to the globalMap here to persist data
+return;</deployScript>
+  <shutdownScript>// This script executes once when the mule engine is stopped
+// You only have access to the globalMap here to persist data
+return;</shutdownScript>
+</com.webreach.mirth.model.Channel>

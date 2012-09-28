@@ -1,0 +1,506 @@
+<com.webreach.mirth.model.Channel>
+  <id>b383356d-ecb7-4dd7-8f7a-7193eb9bc563</id>
+  <name>CDS Problems</name>
+  <description></description>
+  <enabled>true</enabled>
+  <version>1.8.2.4472</version>
+  <lastModified>
+    <time>1278953828620</time>
+    <timezone>America/Los_Angeles</timezone>
+  </lastModified>
+  <revision>7</revision>
+  <sourceConnector>
+    <name>sourceConnector</name>
+    <properties>
+      <property name="DataType">Channel Reader</property>
+    </properties>
+    <transformer>
+      <steps/>
+      <inboundProtocol>HL7V2</inboundProtocol>
+      <outboundProtocol>HL7V2</outboundProtocol>
+    </transformer>
+    <filter>
+      <rules/>
+    </filter>
+    <transportName>Channel Reader</transportName>
+    <mode>SOURCE</mode>
+    <enabled>true</enabled>
+  </sourceConnector>
+  <destinationConnectors>
+    <com.webreach.mirth.model.Connector>
+      <name>Destination 1</name>
+      <properties>
+        <property name="method">storeProblemFactEvent</property>
+        <property name="wsdlUrl">http://nhinint01.asu.edu:8080/DecisionSupportService/EventHandlerService?wsdl</property>
+        <property name="attachmentNames">&lt;list/&gt;</property>
+        <property name="replyChannelId">sink</property>
+        <property name="definition">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</property>
+        <property name="attachmentContents">&lt;list/&gt;</property>
+        <property name="soapEnvelope">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:dss=&quot;http://dss.kmr.nhinc.fha.hhs.gov/&quot; xmlns:urn=&quot;urn:gov:hhs:fha:nhinc:adapter:fact&quot;&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+      &lt;dss:storeProblemFactEvent&gt;
+#foreach( $problem in $problems )
+         &lt;fact&gt;
+            &lt;urn:primaryKey&gt;$patientien&lt;/urn:primaryKey&gt;
+            &lt;urn:historical&gt;false&lt;/urn:historical&gt;
+            &lt;urn:id&gt;
+               &lt;urn:codeSystem&gt;Local&lt;/urn:codeSystem&gt;
+               &lt;urn:codeSystemName&gt;Local&lt;/urn:codeSystemName&gt;
+               &lt;urn:value&gt;$problem.id&lt;/urn:value&gt;
+               &lt;urn:displayable&gt;true&lt;/urn:displayable&gt;
+            &lt;/urn:id&gt;
+            &lt;urn:sourceSystem&gt;${message.source}&lt;/urn:sourceSystem&gt;
+            &lt;urn:patientId&gt;
+               &lt;urn:codeSystem&gt;IEN&lt;/urn:codeSystem&gt;
+               &lt;urn:codeSystemName&gt;&lt;/urn:codeSystemName&gt;
+               &lt;urn:value&gt;$patientien&lt;/urn:value&gt;
+               &lt;urn:displayable&gt;false&lt;/urn:displayable&gt;
+            &lt;/urn:patientId&gt;
+            &lt;urn:problemType&gt;
+               &lt;!--Optional:--&gt;
+               &lt;!--type: string--&gt;
+               &lt;urn:codeSystem&gt;$problem.classidcodesys&lt;/urn:codeSystem&gt;
+               &lt;!--Optional:--&gt;
+               &lt;!--type: string--&gt;
+               &lt;urn:codeSystemName&gt;$problem.classidcodesys&lt;/urn:codeSystemName&gt;
+               &lt;!--type: string--&gt;
+               &lt;urn:code&gt;$problem.classid&lt;/urn:code&gt;
+               &lt;!--type: string--&gt;
+               &lt;urn:label&gt;$problem.classtext&lt;/urn:label&gt;
+            &lt;/urn:problemType&gt;
+            &lt;urn:codedProblem&gt;
+               &lt;!--Optional:--&gt;
+               &lt;!--type: string--&gt;
+               &lt;urn:codeSystem&gt;$problem.idcodesystemid&lt;/urn:codeSystem&gt;
+               &lt;!--Optional:--&gt;
+               &lt;!--type: string--&gt;
+               &lt;urn:codeSystemName&gt;$problem.idcodesystemid&lt;/urn:codeSystemName&gt;
+               &lt;!--type: string--&gt;
+               &lt;urn:code&gt;$problem.idcode&lt;/urn:code&gt;
+               &lt;!--type: string--&gt;
+               &lt;urn:label&gt;$problem.idcodetext&lt;/urn:label&gt;
+            &lt;/urn:codedProblem&gt;
+            &lt;!--type: string--&gt;
+            &lt;urn:freeTextProblem&gt;$problem.text&lt;/urn:freeTextProblem&gt;
+            &lt;!--type: string--&gt;
+            &lt;urn:problemDate&gt;$problem.startdate&lt;/urn:problemDate&gt;
+            &lt;!--type: string--&gt;
+            &lt;urn:resolutionDate&gt;$problem.resolvedate&lt;/urn:resolutionDate&gt;
+            &lt;urn:codedProblemStatus&gt;
+               &lt;!--Optional:--&gt;
+               &lt;!--type: string--&gt;
+               &lt;urn:codeSystem&gt;$problem.confstatusidcodesys&lt;/urn:codeSystem&gt;
+               &lt;!--Optional:--&gt;
+               &lt;!--type: string--&gt;
+               &lt;urn:codeSystemName&gt;$problem.confstatusidcodesys&lt;/urn:codeSystemName&gt;
+               &lt;!--type: string--&gt;
+               &lt;urn:code&gt;$problem.confstatusid&lt;/urn:code&gt;
+               &lt;!--type: string--&gt;
+               &lt;urn:label&gt;$problem.confstatustext&lt;/urn:label&gt;
+            &lt;/urn:codedProblemStatus&gt;
+            &lt;!--type: int--&gt;
+            &lt;urn:diagnosisPriority&gt;$problem.probability&lt;/urn:diagnosisPriority&gt;
+            &lt;!--type: int--&gt;
+            &lt;urn:onsetAge&gt;$problem.ageatonset&lt;/urn:onsetAge&gt;
+            &lt;!--Zero or more repetitions:--&gt;
+            &lt;urn:treatingProvider&gt;
+               &lt;!--type: string--&gt;
+               &lt;urn:firstName&gt;&lt;/urn:firstName&gt;
+               &lt;!--Optional:--&gt;
+               &lt;!--type: string--&gt;
+               &lt;urn:middleName&gt;&lt;/urn:middleName&gt;
+               &lt;!--type: string--&gt;
+               &lt;urn:familyName&gt;&lt;/urn:familyName&gt;
+               &lt;!--Optional:--&gt;
+               &lt;urn:prefix&gt;
+                  &lt;!--Optional:--&gt;
+                  &lt;!--type: string--&gt;
+                  &lt;urn:codeSystem&gt;&lt;/urn:codeSystem&gt;
+                  &lt;!--Optional:--&gt;
+                  &lt;!--type: string--&gt;
+                  &lt;urn:codeSystemName&gt;&lt;/urn:codeSystemName&gt;
+                  &lt;!--type: string--&gt;
+                  &lt;urn:code&gt;&lt;/urn:code&gt;
+                  &lt;!--type: string--&gt;
+                  &lt;urn:label&gt;&lt;/urn:label&gt;
+               &lt;/urn:prefix&gt;
+               &lt;!--Optional:--&gt;
+               &lt;urn:suffix&gt;
+                  &lt;!--Optional:--&gt;
+                  &lt;!--type: string--&gt;
+                  &lt;urn:codeSystem&gt;&lt;/urn:codeSystem&gt;
+                  &lt;!--Optional:--&gt;
+                  &lt;!--type: string--&gt;
+                  &lt;urn:codeSystemName&gt;&lt;/urn:codeSystemName&gt;
+                  &lt;!--type: string--&gt;
+                  &lt;urn:code&gt;&lt;/urn:code&gt;
+                  &lt;!--type: string--&gt;
+                  &lt;urn:label&gt;&lt;/urn:label&gt;
+               &lt;/urn:suffix&gt;
+               &lt;urn:nameType&gt;
+                  &lt;!--Optional:--&gt;
+                  &lt;!--type: string--&gt;
+                  &lt;urn:codeSystem&gt;&lt;/urn:codeSystem&gt;
+                  &lt;!--Optional:--&gt;
+                  &lt;!--type: string--&gt;
+                  &lt;urn:codeSystemName&gt;&lt;/urn:codeSystemName&gt;
+                  &lt;!--type: string--&gt;
+                  &lt;urn:code&gt;&lt;/urn:code&gt;
+                  &lt;!--type: string--&gt;
+                  &lt;urn:label&gt;&lt;/urn:label&gt;
+               &lt;/urn:nameType&gt;
+            &lt;/urn:treatingProvider&gt;
+            &lt;!--Optional:--&gt;
+            &lt;!--type: string--&gt;
+            &lt;urn:causeOfDeath&gt;&lt;/urn:causeOfDeath&gt;
+            &lt;!--Optional:--&gt;
+            &lt;!--type: int--&gt;
+            &lt;urn:ageAtDeath&gt;$problam.ageatdeath&lt;/urn:ageAtDeath&gt;
+            &lt;urn:freeTextPanelType&gt;&lt;/urn:freeTextPanelType&gt;
+         &lt;/fact&gt;
+#end
+      &lt;/dss:storeProblemFactEvent&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;</property>
+        <property name="DataType">SOAP Sender</property>
+        <property name="serviceEndpoint">http://nhinint01.asu.edu:8080/DecisionSupportService/EventHandlerService</property>
+        <property name="usePersistentQueues">0</property>
+        <property name="rotateQueue">0</property>
+        <property name="soapActionURI"></property>
+        <property name="reconnectMillisecs">10000</property>
+        <property name="attachmentTypes">&lt;list/&gt;</property>
+        <property name="host">axis:http://nhinint01.asu.edu:8080/DecisionSupportService/EventHandlerService?method=storeProblemFactEvent</property>
+        <property name="soapGenerateEnvelope">1</property>
+      </properties>
+      <transformer>
+        <steps>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>0</sequenceNumber>
+            <name>InitializeArrays</name>
+            <script>channelMap.put(&apos;problems&apos;,new Array());</script>
+            <type>JavaScript</type>
+            <data class="map">
+              <entry>
+                <string>Script</string>
+                <string>channelMap.put(&apos;problems&apos;,new Array());</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>1</sequenceNumber>
+            <name>sendingapp</name>
+            <script>var mapping;try { mapping = msg[&apos;MSH&apos;][&apos;MSH.3&apos;][&apos;MSH.3.1&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;sendingapp&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>sendingapp</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;MSH&apos;][&apos;MSH.3&apos;][&apos;MSH.3.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>2</sequenceNumber>
+            <name>sendingfacilty</name>
+            <script>var mapping;try { mapping = msg[&apos;MSH&apos;][&apos;MSH.4&apos;][&apos;MSH.4.1&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;sendingfacilty&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>sendingfacilty</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;MSH&apos;][&apos;MSH.4&apos;][&apos;MSH.4.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>3</sequenceNumber>
+            <name>msgdatetime</name>
+            <script>var mapping;try { mapping = msg[&apos;MSH&apos;][&apos;MSH.7&apos;][&apos;MSH.7.1&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;msgdatetime&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>msgdatetime</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;MSH&apos;][&apos;MSH.7&apos;][&apos;MSH.7.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>4</sequenceNumber>
+            <name>patientien</name>
+            <script>var mapping;try { mapping = msg[&apos;PID&apos;][&apos;PID.3&apos;][&apos;PID.3.1&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;patientien&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>patientien</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;PID&apos;][&apos;PID.3&apos;][&apos;PID.3.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>5</sequenceNumber>
+            <name>patientlastname</name>
+            <script>var mapping;try { mapping = msg[&apos;PID&apos;][&apos;PID.5&apos;][&apos;PID.5.1&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;patientlastname&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>patientlastname</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;PID&apos;][&apos;PID.5&apos;][&apos;PID.5.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>6</sequenceNumber>
+            <name>patientfirstname</name>
+            <script>var mapping;try { mapping = msg[&apos;PID&apos;][&apos;PID.5&apos;][&apos;PID.5.2&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;patientfirstname&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>patientfirstname</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;PID&apos;][&apos;PID.5&apos;][&apos;PID.5.2&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>7</sequenceNumber>
+            <name>eventid</name>
+            <script>var mapping;try { mapping = msg[&apos;MSH&apos;][&apos;MSH.10&apos;][&apos;MSH.10.1&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;eventid&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>eventid</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;MSH&apos;][&apos;MSH.10&apos;][&apos;MSH.10.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>8</sequenceNumber>
+            <name>PRBProcess</name>
+            <script>var i=0;
+for each (seg in msg..OBX)
+{
+	   var problems = channelMap.get(&apos;problems&apos;);
+       var problem=new Object();
+	   problems[i] = problem;
+   
+       problem.id = seg[&apos;PRB.4&apos;][&apos;PRB.4.1&apos;].toString();
+	   problem.idcode = seg[&apos;PRB.3&apos;][&apos;PRB.3.1&apos;].toString();
+	   problem.idtext = seg[&apos;PRB.3&apos;][&apos;PRB.3.2&apos;].toString();
+	   problem.idcodesystemid = seg[&apos;PRB.3&apos;][&apos;PRB.3.3&apos;].toString();
+	   problem.classidcodesys = seg[&apos;PRB.10&apos;][&apos;PRB.10.3&apos;].toString();
+	   problem.classid = seg[&apos;PRB.10&apos;][&apos;PRB.10.1&apos;].toString();
+	   problem.classidtext = seg[&apos;PRB.10&apos;][&apos;PRB.10.2&apos;].toString();
+       problem.text  = msg[&apos;NTE&apos;][i][&apos;NTE.3&apos;][&apos;NTE.3.1&apos;].toString();
+	   problem.startdate = seg[&apos;PRB.16&apos;][&apos;PRB.16.1&apos;].toString();
+	   problem.resolvedate = seg[&apos;PRB.9&apos;][&apos;PRB.9.1&apos;].toString();
+	   problem.confstatusidcodesys = seg[&apos;PRB.13&apos;][&apos;PRB.13.3&apos;].toString();
+	   problem.confstatusid = seg[&apos;PRB.13&apos;][&apos;PRB.13.1&apos;].toString();
+	   problem.confstatustext = seg[&apos;PRB.13&apos;][&apos;PRB.13.2&apos;].toString();
+	   problem.probability = seg[&apos;PRB.20&apos;][&apos;PRB.20.1&apos;].toString();
+	   //TODO - Find ages
+	   problem.ageatonset=&quot;&quot;;
+	   problem.ageatdeath=&quot;&quot;;
+
+       i++;
+}
+channelMap.put(&apos;prb_seg_count&apos;, i);</script>
+            <type>JavaScript</type>
+            <data class="map">
+              <entry>
+                <string>Script</string>
+                <string>var i=0;
+for each (seg in msg..OBX)
+{
+	   var problems = channelMap.get(&apos;problems&apos;);
+       var problem=new Object();
+	   problems[i] = problem;
+   
+       problem.id = seg[&apos;PRB.4&apos;][&apos;PRB.4.1&apos;].toString();
+	   problem.idcode = seg[&apos;PRB.3&apos;][&apos;PRB.3.1&apos;].toString();
+	   problem.idtext = seg[&apos;PRB.3&apos;][&apos;PRB.3.2&apos;].toString();
+	   problem.idcodesystemid = seg[&apos;PRB.3&apos;][&apos;PRB.3.3&apos;].toString();
+	   problem.classidcodesys = seg[&apos;PRB.10&apos;][&apos;PRB.10.3&apos;].toString();
+	   problem.classid = seg[&apos;PRB.10&apos;][&apos;PRB.10.1&apos;].toString();
+	   problem.classidtext = seg[&apos;PRB.10&apos;][&apos;PRB.10.2&apos;].toString();
+       problem.text  = msg[&apos;NTE&apos;][i][&apos;NTE.3&apos;][&apos;NTE.3.1&apos;].toString();
+	   problem.startdate = seg[&apos;PRB.16&apos;][&apos;PRB.16.1&apos;].toString();
+	   problem.resolvedate = seg[&apos;PRB.9&apos;][&apos;PRB.9.1&apos;].toString();
+	   problem.confstatusidcodesys = seg[&apos;PRB.13&apos;][&apos;PRB.13.3&apos;].toString();
+	   problem.confstatusid = seg[&apos;PRB.13&apos;][&apos;PRB.13.1&apos;].toString();
+	   problem.confstatustext = seg[&apos;PRB.13&apos;][&apos;PRB.13.2&apos;].toString();
+	   problem.probability = seg[&apos;PRB.20&apos;][&apos;PRB.20.1&apos;].toString();
+	   //TODO - Find ages
+	   problem.ageatonset=&quot;&quot;;
+	   problem.ageatdeath=&quot;&quot;;
+
+       i++;
+}
+channelMap.put(&apos;prb_seg_count&apos;, i);</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+        </steps>
+        <inboundTemplate>MSH|^~\&amp;|7edit.com||7edit.com||20100616171147||PPR^PC1|MSG00001|P|2.6||||||WINDOWS-1252
+PID|||40056||SMITH^BARBARA^F||19601002|M||||||||||123456
+PV1|||NER|||||||GSU||||||||E||||||||||||||||||||||||||19951002174900|19951006
+PRB|ActionCode||ProbId1(eg ICD)^ProbText1^CodingSystem|Uniq ProblemId|||20100617144143|||ClassId^Class^CodeSystem|||statusid^status^Codesys|||20100617144250|Onset|^Problem Rank||75||^Prognosis1|||SensitivityId^Sensitivity^CodeSystem|SeverityCd^Servity^CodeSystem||MoodCode^Mode^CodeSystem
+NTE|||Comment (Free Test)
+OBX|||ObservationId^Test^CodingSystem||Observation Value|||||||||20100617143656||^Observer^Given^^^^^^^^^^^^^^^^20100617144115^20100617144122||||||MoodCd^Mood^CodingSystem|Perform Org Name^Type Code^Id Num
+ORC|ControlId|Placer Order Num|||OrderStatus||||||||||20100617143854||||||Organization||||||||TypeCode^Text^Code System
+PRB|||ProbId2^ProbText2|||||||||||||||^Problem Rank||||^Prognosis2
+NTE
+OBX|||ObservationId^Test^CodingSystem||Observation Value|||||||||20100617143656||^Observer^Given^^^^^^^^^^^^^^^^20100617144115^20100617144122||||||MoodCd^Mood^CodingSystem</inboundTemplate>
+        <outboundTemplate></outboundTemplate>
+        <inboundProtocol>HL7V2</inboundProtocol>
+        <outboundProtocol>HL7V2</outboundProtocol>
+        <inboundProperties>
+          <property name="handleRepetitions">false</property>
+          <property name="stripNamespaces">true</property>
+          <property name="convertLFtoCR">true</property>
+          <property name="useStrictValidation">false</property>
+          <property name="useStrictParser">false</property>
+        </inboundProperties>
+        <outboundProperties>
+          <property name="stripNamespaces">true</property>
+          <property name="convertLFtoCR">true</property>
+        </outboundProperties>
+      </transformer>
+      <filter>
+        <rules/>
+      </filter>
+      <transportName>SOAP Sender</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+    </com.webreach.mirth.model.Connector>
+  </destinationConnectors>
+  <properties>
+    <property name="initialState">started</property>
+    <property name="synchronous">true</property>
+    <property name="store_messages">true</property>
+    <property name="encryptData">false</property>
+    <property name="transactional">false</property>
+    <property name="max_message_age">-1</property>
+    <property name="dont_store_filtered">false</property>
+    <property name="error_messages_only">false</property>
+  </properties>
+  <preprocessingScript>// Modify the message variable below to pre process data
+return message;</preprocessingScript>
+  <postprocessingScript>// This script executes once after a message has been processed
+return;</postprocessingScript>
+  <deployScript>// This script executes once when the mule engine is started
+// You only have access to the globalMap here to persist data
+return;</deployScript>
+  <shutdownScript>// This script executes once when the mule engine is stopped
+// You only have access to the globalMap here to persist data
+return;</shutdownScript>
+</com.webreach.mirth.model.Channel>

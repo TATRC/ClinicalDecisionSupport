@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:ValidateAuthenticationInformationResponse xmlns:ns2="http://service.util.medsphere.org/">
+         <return>
+            <ErrorMessage>Could not log in: Not a valid ACCESS CODE/VERIFY CODE pair.</ErrorMessage>
+         </return>
+      </ns2:ValidateAuthenticationInformationResponse>
+   </S:Body>
+</S:Envelope>
+
+
+"file:/C:/DSS/KMR/MedSphereAuthWS/MSCAuthenticationService.wsdl" 

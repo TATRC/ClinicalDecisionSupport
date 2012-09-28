@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="EdContent" match-schema="public"/>
+  <type-mapping>
+        <sql-type jdbc-type="OTHER" hibernate-type="org.socraticgrid.hibernate.PostgresXML"/>
+  </type-mapping>
+  <table-filter match-name="ecs_icd9_wpids"/>
+  <table-filter match-name="ecs_section_alias"/>
+  <table-filter match-name="ecs_sections"/>
+  <table-filter match-name="ecs_candidate_wpids"/>
+  <table-filter match-name="ecs_articles"/>
+  <table-filter match-name="ecs_candidate_guid"/>
+  <table-filter match-name="ecs_codes_to_wpids"/>
+  <table-filter match-name="ecs_scheme_alias"/>
+</hibernate-reverse-engineering>

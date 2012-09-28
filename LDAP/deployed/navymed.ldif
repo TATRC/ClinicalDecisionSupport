@@ -1,0 +1,414 @@
+version: 1
+dn: o=navy medicine,dc=socraticgrid,dc=org
+objectClass: top
+objectClass: organization
+o: navy medicine
+
+dn: ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: navmedwest
+
+dn: ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: nmcsd
+
+dn: ou=administration,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: administration
+
+dn: ou=department,ou=administration,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+
+dn: ou=division,ou=department,ou=administration,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=department,ou=administration,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: ancillary services
+
+dn: ou=radiology,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: radiology
+
+dn: ou=division,ou=radiology,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=radiology,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=pathology,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: pathology
+
+dn: ou=division,ou=pathology,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=pathology,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=physical therapy,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: radiology
+ou: physical therapy
+
+dn: ou=division,ou=physical therapy,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=physical therapy,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=Copy of radiology,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: radiology
+ou: Copy of radiology
+
+dn: ou=division,ou=Copy of radiology,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=Copy of radiology,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=occupational,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: radiology
+ou: physical therapy
+ou: occupational
+
+dn: ou=division,ou=occupational,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=occupational,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=resources,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: resources
+
+dn: ou=finance,ou=resources,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: finance
+
+dn: ou=division,ou=finance,ou=resources,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=finance,ou=resources,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=purchasing,ou=resources,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: finance
+ou: purchasing
+
+dn: ou=division,ou=purchasing,ou=resources,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=purchasing,ou=resources,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=executive steering committee,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+description: Excutive leadership concil for the medical center.
+destinationIndicator: 12341.1234..2134.1234.1234
+l: 123.21341.43.1234.12.34.43
+ou: executive steering committee
+telephoneNumber: 888-888-3333
+
+dn: ou=graduate medical education,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: graduate medical education
+
+dn: ou=department,ou=graduate medical education,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+
+dn: ou=division,ou=department,ou=graduate medical education,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=department,ou=graduate medical education,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=information technology,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: directorate
+ou: information technology
+
+dn: ou=department,ou=information technology,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+
+dn: ou=division,ou=department,ou=information technology,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=department,ou=information technology,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: medical services
+
+dn: ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+businessCategory: department
+ou: pediatrics
+
+dn: ou=pediatric icu,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: pediatric icu
+
+dn: ou=medical director,ou=pediatric icu,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: medical director
+ou: medical director
+roleOccupant: uid=123,dc=people,dc=socraticgrid,dc=org
+
+dn: ou=neonatal icu,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: neonatal icu
+
+dn: ou=medical director,ou=neonatal icu,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: medical director
+ou: medical director
+roleOccupant: cn=fry.emory,dc=people,dc=socraticgrid,dc=org
+
+dn: ou=subspecialty,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: subspecialty
+
+dn: ou=cardiology,ou=subspecialty,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: cardiology
+
+dn: ou=clinic,ou=cardiology,ou=subspecialty,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=pulmonology,ou=subspecialty,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: pulmonology
+
+dn: ou=clinic,ou=pulmonology,ou=subspecialty,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=infectious disease,ou=subspecialty,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: infectious disease
+
+dn: ou=clinic,ou=infectious disease,ou=subspecialty,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=developmental  peds,ou=subspecialty,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: developmental  peds
+
+dn: ou=clinic,ou=developmental  peds,ou=subspecialty,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=genetics,ou=subspecialty,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: genetics
+
+dn: ou=clinic,ou=genetics,ou=subspecialty,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=general pediatrics,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+businessCategory: division
+ou: general pediatrics
+
+dn: ou=clinic,ou=general pediatrics,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=medical director,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: medical director
+ou: medical director
+roleOccupant: cn=fry.emory,dc=people,dc=socraticgrid,dc=org
+
+dn: ou=nursing,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: nursing
+
+dn: ou=department,ou=nursing,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+
+dn: ou=division,ou=department,ou=nursing,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=department,ou=nursing,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=quality management,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: quality management
+
+dn: ou=department,ou=quality management,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+
+dn: ou=division,ou=department,ou=quality management,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=department,ou=quality management,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=surgical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: surgical services
+
+dn: ou=department,ou=surgical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+
+dn: ou=division,ou=department,ou=surgical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=department,ou=surgical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=legal,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: legal
+
+dn: ou=department,ou=legal,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+
+dn: ou=division,ou=department,ou=legal,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=department,ou=legal,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=occupational health,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: occupational health
+
+dn: ou=department,ou=occupational health,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+
+dn: ou=division,ou=department,ou=occupational health,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=department,ou=occupational health,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+

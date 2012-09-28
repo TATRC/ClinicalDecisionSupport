@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/AlertedComponent.wsdl" uri="src/conf/xml-resources/web-service-references/AlertedComponent/wsdl/AlertedComponent.wsdl"/>
+    <system systemId="http://smsgateway.ca/SendSMS.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/SendSMS/wsdl/smsgateway.ca/SendSMS.asmx.wsdl"/>
+    <system systemId="http://nhindev01.asu.edu:8080/Registries/RegistriesService?WSDL" uri="src/conf/xml-resources/web-service-references/RegistriesService/wsdl/nhindev01.asu.edu_8080/Registries/RegistriesService.wsdl"/>
+    <system systemId="http://nhindev01.asu.edu:8080/Registries/RegistriesService?xsd=1" uri="src/conf/xml-resources/web-service-references/RegistriesService/wsdl/nhindev01.asu.edu_8080/Registries/RegistriesService.xsd_1.xsd"/>
+    <system systemId="http://nhinint01.asu.edu:8080/Registries/RegistriesService?WSDL" uri="src/conf/xml-resources/web-service-references/RegistriesService/wsdl/nhinint01.asu.edu_8080/Registries/RegistriesService.wsdl"/>
+    <system systemId="http://nhinint01.asu.edu:8080/Registries/RegistriesService?xsd=1" uri="src/conf/xml-resources/web-service-references/RegistriesService/wsdl/nhinint01.asu.edu_8080/Registries/RegistriesService.xsd_1.xsd"/>
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/TaskManager.wsdl" uri="src/conf/xml-resources/web-services/TaskManagerService/wsdl/TaskManager.wsdl"/>
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/schemas/nhinc/common/Task.xsd" uri="src/conf/xml-resources/web-services/TaskManagerService/schemas/nhinc/common/Task.xsd"/>
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/schemas/nhinc/adapter/Facts.xsd" uri="src/conf/xml-resources/web-services/TaskManagerService/schemas/nhinc/adapter/Facts.xsd"/>
+</catalog>

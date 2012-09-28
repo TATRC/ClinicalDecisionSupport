@@ -1,0 +1,715 @@
+dn: dc=socraticgrid,dc=org
+objectClass: domain
+objectClass: top
+dc: socraticgrid
+entryUUID: 91069eca-6450-3910-a226-3cda4b390a5b
+
+dn: dc=templates,dc=socraticgrid,dc=org
+objectClass: domain
+objectClass: top
+dc: templates
+entryUUID: c6bc4b86-7d2e-30c8-ac1b-82160dad6bac
+
+dn: dc=equipment,dc=templates,dc=socraticgrid,dc=org
+objectClass: domain
+objectClass: top
+dc: equipment
+entryUUID: df745c06-db8d-3654-976b-324226ae2c81
+
+dn: dc=facilities,dc=equipment,dc=templates,dc=socraticgrid,dc=org
+objectClass: domain
+objectClass: top
+dc: facilities
+entryUUID: 8f05ebe2-76a8-3dd6-9594-f2061cf3ddf5
+
+dn: dc=org units,dc=templates,dc=socraticgrid,dc=org
+objectClass: domain
+objectClass: top
+dc: org units
+entryUUID: ee1e78e7-d70b-35b4-b01b-462be60ec4e1
+
+dn: o=organization,dc=org units,dc=templates,dc=socraticgrid,dc=org
+objectClass: top
+objectClass: organization
+o: organization
+entryUUID: 224f25f2-74fc-306f-966c-d821d99fabaa
+
+dn: ou=directorate,o=organization,dc=org units,dc=templates,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: directorate
+entryUUID: f764c527-a3d2-378a-86cb-73f3ee1f5e41
+
+dn: ou=department,ou=directorate,o=organization,dc=org units,dc=templates,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+entryUUID: cc13a8d4-6fdf-3aa6-a64a-3063f09ad809
+
+dn: ou=division,ou=department,ou=directorate,o=organization,dc=org units,dc=templates,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+entryUUID: 23eb4c2d-b2fd-3203-9d41-bbfc424d7db6
+
+dn: ou=clinic,ou=division,ou=department,ou=directorate,o=organization,dc=org units,dc=templates,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+entryUUID: a008f8f0-9932-3587-8949-27839c95554f
+
+dn: dc=roles,dc=templates,dc=socraticgrid,dc=org
+objectClass: domain
+objectClass: top
+dc: roles
+entryUUID: 2e5a2e65-44f4-3b14-bd96-420a28e6acc7
+
+dn: ou=role,dc=roles,dc=templates,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: role
+ou: role
+entryUUID: 785177e1-801d-3f0a-a255-054e242b247c
+
+dn: dc=locations,dc=templates,dc=socraticgrid,dc=org
+objectClass: domain
+objectClass: top
+dc: locations
+entryUUID: fdb2594a-401e-36e4-a9f9-43dd6482d781
+
+dn: ou=campus,dc=locations,dc=templates,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: campus
+entryUUID: 69bd62b1-34dd-37c5-ada4-927cfecbdb15
+
+dn: ou=building,ou=campus,dc=locations,dc=templates,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: building
+entryUUID: 479ab26a-4bac-3557-bde8-3303d5510347
+
+dn: ou=floor,ou=building,ou=campus,dc=locations,dc=templates,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: floor
+entryUUID: 189bf3c8-d8da-37a1-b99f-43a0a893a553
+
+dn: ou=area,ou=floor,ou=building,ou=campus,dc=locations,dc=templates,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: area
+entryUUID: 11144684-04ed-3511-a522-91ae82a26602
+
+dn: ou=room,ou=area,ou=floor,ou=building,ou=campus,dc=locations,dc=templates,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: room
+entryUUID: 9c218d91-6c48-31b0-a70a-711070459d6d
+
+dn: ou=equipment,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: equipment
+entryUUID: 73938fff-8da3-3cd0-bbbf-70de2d09026f
+
+dn: cn=abgmonitor,ou=equipment,dc=socraticgrid,dc=org
+objectClass: device
+objectClass: top
+description:: QXJ0ZXJpYWwgQmxvb2QgR2FzIE1hY2hpbmUg
+cn: abgmonitor
+ou: neontal icu
+entryUUID: 9caad80e-df93-392c-88f4-594545910375
+
+dn: ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: business units
+entryUUID: 81dc3156-3123-3d93-becc-d5e829fe2211
+
+dn: o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: top
+objectClass: organization
+o: medical center
+entryUUID: 8f25e3ca-d908-36e1-8f13-ca03595f727d
+
+dn: ou=quality management,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: quality management
+entryUUID: 6b4f3b87-b19f-32ea-b84b-1b22e0912f55
+
+dn: ou=department,ou=quality management,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+entryUUID: 5e48035d-9e07-3bf7-a7fc-370aa8900874
+
+dn: ou=division,ou=department,ou=quality management,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+entryUUID: cd5cd973-b165-3aa1-be06-5fb22b9ba1a4
+
+dn: ou=clinic,ou=division,ou=department,ou=quality management,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+entryUUID: 122ab355-c3a8-395f-80b1-55bb3e0c60c1
+
+dn: ou=surgical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: surgical services
+entryUUID: 77bee996-ecad-3484-b256-ea20e1d30b77
+
+dn: ou=department,ou=surgical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+entryUUID: 1d292773-a8ec-3fa0-94f2-13d58494376e
+
+dn: ou=division,ou=department,ou=surgical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+entryUUID: 24cf9379-a24f-3712-bcde-eab3a7c8d614
+
+dn: ou=clinic,ou=division,ou=department,ou=surgical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+entryUUID: 88344051-cc95-3e7e-b1af-f8e7b90d5a55
+
+dn: ou=nursing,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: nursing
+entryUUID: 3432f6da-70ce-387f-af7e-f80aab9d57e3
+
+dn: ou=department,ou=nursing,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+entryUUID: 1cf2e7b2-35ec-309f-99b8-d91aaf6eb0cb
+
+dn: ou=division,ou=department,ou=nursing,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+entryUUID: 92670d6a-4e64-3d42-a03b-8a805c115f1c
+
+dn: ou=clinic,ou=division,ou=department,ou=nursing,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+entryUUID: cee7e5ab-95e7-347c-8a68-9bd7e792fb8f
+
+dn: ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: medical services
+entryUUID: 141158c9-1b7c-3560-a226-2e4cb0de5d76
+
+dn: ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+businessCategory: department
+ou: pediatrics
+entryUUID: b5c7887c-6e2e-3ae3-945e-ddf3e0213451
+
+dn: ou=pediatric icu,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: pediatric icu
+entryUUID: 868b676c-f697-3aa5-9c10-ad2b333fa513
+
+dn: ou=medical director,ou=pediatric icu,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: medical director
+roleOccupant: uid=123,dc=people,dc=socraticgrid,dc=org
+ou: medical director
+entryUUID: f18188bd-cf3b-373f-9142-3c80678a8c98
+
+dn: ou=neonatal icu,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: neonatal icu
+entryUUID: 9af0fd0a-5c37-348c-aac8-ee76fd30c8de
+
+dn: ou=medical director,ou=neonatal icu,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: medical director
+roleOccupant: cn=fry.emory,dc=people,dc=socraticgrid,dc=org
+ou: medical director
+entryUUID: 25e23788-e5e9-3679-be06-67d24e486529
+
+dn: ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: subspecialty
+entryUUID: 402e0f2a-9a91-378c-bd39-2200c1065f44
+
+dn: ou=cardiology,ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: cardiology
+entryUUID: 5c731ea0-8966-3df7-94d2-5d182c31b7bd
+
+dn: ou=clinic,ou=cardiology,ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+entryUUID: 192c8014-6067-3837-9cdb-e190bcd50771
+
+dn: ou=pulmonology,ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: pulmonology
+entryUUID: da2d86e2-c027-362c-b6d3-e20829df8934
+
+dn: ou=clinic,ou=pulmonology,ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+entryUUID: 19d19e7c-fa4a-384f-8718-6c6018b8fc22
+
+dn: ou=infectious disease,ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: infectious disease
+entryUUID: b1e8ec80-ffaa-318c-b2f8-4048ced545ac
+
+dn: ou=clinic,ou=infectious disease,ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+entryUUID: 5bb6d09b-d97b-3d6b-a7dd-165e09af0533
+
+dn: ou=developmental  peds,ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: developmental  peds
+entryUUID: c02bbf18-7d57-3543-a594-b9302e7cb5d9
+
+dn: ou=clinic,ou=developmental  peds,ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+entryUUID: 53ba4b7d-3141-3fcd-bcef-4a2a27b5acb7
+
+dn: ou=genetics,ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: genetics
+entryUUID: e711b3a1-90e6-37db-afd4-cc4facc29fdf
+
+dn: ou=clinic,ou=genetics,ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+entryUUID: bdf5ec8a-2c99-3866-abec-b214cb0a69b5
+
+dn: ou=general pediatrics,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+businessCategory: division
+ou: general pediatrics
+entryUUID: 104d57fe-f600-37bf-b308-9e437552380a
+
+dn: ou=clinic,ou=general pediatrics,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+entryUUID: bfa04a9b-516f-3c7f-b77c-0ac9fe0a88c2
+
+dn: ou=medical director,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: medical director
+roleOccupant: cn=fry.emory,dc=people,dc=socraticgrid,dc=org
+ou: medical director
+entryUUID: f70d7a4a-1fa5-32ae-90a2-bbb4c5cf63ea
+
+dn: ou=information technology,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: directorate
+ou: information technology
+entryUUID: d4ae8628-a024-34df-bca5-37e814c3c55a
+
+dn: ou=department,ou=information technology,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+entryUUID: 08a3a8be-5de2-37ad-909d-f941769fcf4f
+
+dn: ou=division,ou=department,ou=information technology,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+entryUUID: 12ad8955-c397-3bf8-88ea-43d833b2f8c2
+
+dn: ou=clinic,ou=division,ou=department,ou=information technology,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+entryUUID: 7f5d4a76-8fa8-3bdd-be96-cc589400ee60
+
+dn: ou=education-training,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: education-training
+entryUUID: 8e1471c9-d3d3-39f8-8809-93d82ab3438e
+
+dn: ou=department,ou=education-training,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+entryUUID: cb116c74-540e-3615-a95c-0cd6066307bf
+
+dn: ou=division,ou=department,ou=education-training,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+entryUUID: f35dbb5b-a138-3cd8-9e27-34cc14a8f23c
+
+dn: ou=clinic,ou=division,ou=department,ou=education-training,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+entryUUID: 47812185-0507-3553-8f14-b4b2c8cc7255
+
+dn: ou=ancillary services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: ancillary services
+entryUUID: 976905ef-ad36-34e8-82ec-2f674451d2f8
+
+dn: ou=department,ou=ancillary services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+entryUUID: f0612cb0-6975-3443-9904-e48647f434c4
+
+dn: ou=division,ou=department,ou=ancillary services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+entryUUID: fb545695-9097-36b9-8cd5-9ff34bf3c103
+
+dn: ou=clinic,ou=division,ou=department,ou=ancillary services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+entryUUID: 3ffbbcfe-32a6-3ae3-8f05-f5999f614268
+
+dn: ou=administration,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: administration
+entryUUID: 3a555343-95e8-3a64-a84c-0c52ec42a82d
+
+dn: ou=department,ou=administration,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+entryUUID: d4f50c9b-4a9e-3922-9324-acd655204be6
+
+dn: ou=division,ou=department,ou=administration,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+entryUUID: 12b9318d-a38a-35a1-b720-b08d3b1147ed
+
+dn: ou=clinic,ou=division,ou=department,ou=administration,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+entryUUID: 21e3bd72-2a0c-3094-bc6d-f963ef28e101
+
+dn: ou=human resources,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: human resources
+entryUUID: 56dcbe23-b110-3ebc-9d55-f26314901e77
+
+dn: ou=department,ou=human resources,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+entryUUID: 28a3e2ce-a5c9-3627-82c1-b31906ea1a4a
+
+dn: ou=division,ou=department,ou=human resources,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+entryUUID: 5a08b3c7-0682-33d0-9fed-4e59cdcc2757
+
+dn: ou=clinic,ou=division,ou=department,ou=human resources,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+entryUUID: 848c397f-50eb-3b08-9f80-8f8ccb5bb330
+
+dn: ou=executive steering committee,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+description: Excutive leadership concil for the medical center.
+telephoneNumber: 888-888-3333
+ou: executive steering committee
+l: 123.21341.43.1234.12.34.43
+destinationIndicator: 12341.1234..2134.1234.1234
+entryUUID: 917ef275-0e60-3513-99eb-4995a9d6400e
+
+dn: ou=people,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: people
+entryUUID: aaaa5770-bc35-39dd-ba5e-ce8a7e695a9c
+
+dn: cn=fry.emory,ou=people,dc=socraticgrid,dc=org
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: kmr-person
+objectClass: top
+registeredAddress: Naval Health Research Center$140 Sylvester Rd$San Diego, CA 92126
+facsimileTelephoneNumber: 619-555-9999
+preferredDeliveryMethod: physical
+destinationIndicator: 1234.1234.2.34.12.34.1234
+labeledURI: www.homewebpage.com
+initials: eaf
+homePostalAddress: 4911 Mt Elbrus Drive$San Diego, CA 92117
+givenName: Emory
+telephoneNumber: 619-553-8464
+providerTaxonomy: 2080N0001X
+manager: cn=fry.emory
+locationCode: 123.5444.99867.77754.45454
+preferredContactMethod: email
+displayName: Emory A Fry, MD
+npi: 1821069006
+orgCode: 123.4567.12.3444
+postalAddress: 4920 Mt Elbrus Drive$San Diego, CA 92117
+gender: Male
+postalCode: 92117
+languages: English$French$German
+title: Mr.
+uid: 456
+businessCategory: patient
+userPassword: {SSHA}INpByn+kmyh4R9SlJFoNRdZcYo8AzBYdAA/YZA==
+departmentNumber: 123.4567.12.3444
+carLicense: CA12345
+employeeType: md
+preferredLanguage: English
+employeeNumber: 21777989-09
+pager: 619-999-999
+mobile: 858-395-7317
+cn: fry.emory
+sn: fry
+street: 4920 Mt Elbrus Drive
+homePhone: 858-268-1232
+roomNumber: A3
+secretary: cn=fry.emory
+l: San Diego
+mail: eafry@gmx.com
+ou: dn=123
+st: CA
+photo:: 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
+entryUUID: 59659107-610b-3cfd-a9d4-5c35543226d2
+modifyTimestamp: 20100622224303Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: ou=roles,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: roles
+ou: roles
+entryUUID: ccd5e967-f6ca-3cdd-8360-63f11756f5b4
+
+dn: ou=neonatal icu,ou=roles,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: attending
+ou: neonatal icu
+entryUUID: 1945bfdf-0b04-3c84-8337-95d9805e43fb
+
+dn: ou=charge nurse,ou=roles,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+description: charge nurse
+cn: charge nurse
+telephoneNumber: 619-888-9090
+roleOccupant: cn=fry.emory
+ou: charge nurse
+destinationIndicator: 123.2234.2342.34.4234.
+entryUUID: 88f31713-990b-3bd3-9892-b4a6e974e24a
+
+dn: ou=division head,ou=roles,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: division head
+ou: division head
+entryUUID: 87f45191-289d-3a1f-8d12-f6828a472728
+
+dn: ou=nurse,ou=roles,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: nurse
+ou: nurse
+entryUUID: 3896d60f-f27e-3a14-8fc7-978dbbb70aa6
+
+dn: ou=physical therapist,ou=roles,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: physical therapist
+ou: physical therapist
+entryUUID: 6c3d7afe-d461-32eb-b0b0-1eb19fc3c3be
+
+dn: ou=physician,ou=roles,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: physician
+ou: physician
+entryUUID: 5f3eb533-e069-35f5-a2b8-93fc3982afea
+
+dn: ou=supervisor,ou=roles,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: supervisor
+ou: supervisor
+entryUUID: ec75dad5-055e-3694-aeca-cc892e69e516
+
+dn: ou=medical director,ou=roles,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: attending
+ou: medical director
+entryUUID: 60f98373-48a1-329d-bb0c-194764743cc0
+
+dn: cn=nicu medical director,ou=medical director,ou=roles,dc=socraticgrid,dc=org
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: top
+cn: nicu medical director
+sn: nicu medical director
+ou: neonatal icu
+entryUUID: 8b501cc8-28be-3dd7-b2f4-da0d2b959cf1
+
+dn: ou=locations,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: locations
+entryUUID: 666ce552-8a2f-3908-8c3d-71604939506e
+
+dn: ou=campus,ou=locations,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: campus
+entryUUID: c8f581c9-8115-322f-a2d9-310d6d4fcbee
+
+dn: ou=building,ou=campus,ou=locations,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: building
+entryUUID: ad835c83-50e0-352d-baf2-29cbee13a525
+
+dn: ou=floor,ou=building,ou=campus,ou=locations,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: floor
+entryUUID: 1a026cf1-66e3-39cd-bfc5-c1146832d173
+
+dn: ou=area,ou=floor,ou=building,ou=campus,ou=locations,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: area
+entryUUID: 1d8fd0ad-ac9c-36b9-9e55-55841aa9be19
+
+dn: ou=room,ou=area,ou=floor,ou=building,ou=campus,ou=locations,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: room
+entryUUID: 7d9a0478-f9c7-3969-9915-6c6242bbd305
+
+dn: cn=CA.MedicalLicense,cn=fry.emory,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-document
+objectClass: document
+objectClass: top
+documentPublisher: California Medical License Board
+documentExpirationTime: 20110930002323.687Z
+description: Physician and Surgeon
+cn: CA.MedicalLicense
+documentLocation: California
+documentTitle: Medical License
+documentStatus: renewed & current
+documentIdentifier: G 77967
+entryUUID: 4d3a2889-66c3-48f7-a656-30336acb1533
+createTimestamp: 20100618065348Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+modifyTimestamp: 20100618180819Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: cn=PMR.Account,cn=fry.emory,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-account
+objectClass: top
+description: Account for PMR portal
+uid: eafry
+cn: PMR.Account
+entryUUID: 7c6e54ab-b46a-4531-9a47-65241b20c992
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+createTimestamp: 20100618170729Z
+modifyTimestamp: 20100618170800Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: cn=RPMS.Account,cn=fry.emory,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-account
+objectClass: top
+userPassword: {SSHA}uyIZfePDV85hrOpv2sFUOm2ap3Q5HGEgiqdT9g==
+uid: eafry
+cn: RPMS.Account
+entryUUID: 266af8ca-2918-42d6-b7f7-6ebc7eefc9c2
+pwdChangedTime: 20100618171030.521Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+createTimestamp: 20100618170841Z
+modifyTimestamp: 20100618171030Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: cn=pham.kim,ou=people,dc=socraticgrid,dc=org
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: kmr-person
+objectClass: top
+userPassword: {SSHA}RqreB1AA40YFxMCPloANN7y+aK1873yGSEvptg==
+cn: pham.kim
+sn: Pham
+entryUUID: 09ca5ed4-0cb4-4e2d-9844-e505fec920a8
+pwdChangedTime: 20100618171013.501Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+createTimestamp: 20100618171002Z
+modifyTimestamp: 20100618171013Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+
+dn: cn=lfr.bruno,ou=people,dc=socraticgrid,dc=org
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: kmr-person
+objectClass: top
+userPassword: {SSHA}MYbWpe4Mdx7ZLqNyd5xOkR2JhwWyEOr7Zp8cVQ==
+givenName: Bruno
+title: Administrator
+uid: 10162
+cn: lfr.bruno
+sn: Lfr
+entryUUID: efade144-20bd-4da9-a253-1aa2aba95310
+pwdChangedTime: 20100627171642.490Z
+creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
+createTimestamp: 20100627165054Z
+modifyTimestamp: 20100627171642Z
+modifiersName: cn=Directory Manager,cn=Root DNs,cn=config
+

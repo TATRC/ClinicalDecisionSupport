@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hl7:ProviderDetails_PRPM_IN306011UV01Response xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+	<hl7:response>
+		<hl7:id extension="6858a017-39c1-4153-bbd4-eaedac72a0e7"/>
+		<hl7:creationTime value="20101114001103-0800"/>
+		<hl7:interactionId extension="PRPM_IN306011UV01"/>
+		<hl7:processingCode code="P"/>
+		<hl7:processingModeCode code="R"/>
+		<hl7:acceptAckCode code="AL"/>
+		<hl7:receiver typeCode="RCV">
+			<hl7:device determinerCode="INSTANCE">
+				<hl7:id root="2.16.840.1.113883.3.200"/>
+				<hl7:telecom value="http://localhost:8080/NhinConnect/CommonDataLayerService"/>
+			</hl7:device>
+		</hl7:receiver>
+		<hl7:sender typeCode="SND">
+			<hl7:device determinerCode="INSTANCE">
+				<hl7:id root="2.16.840.1.113883.3.200"/>
+			</hl7:device>
+		</hl7:sender>
+		<hl7:controlActProcess moodCode="EVN" classCode="CACT">
+			<hl7:code code="PRPM_TE306110UV01"/>
+			<hl7:priorityCode code="R"/>
+			<hl7:subject typeCode="SUBJ">
+				<hl7:registrationEvent moodCode="EVN" classCode="REG">
+					<hl7:statusCode code="active"/>
+					<hl7:subject1 typeCode="SBJ">
+						<hl7:healthCareProvider classCode="PROV">
+							<hl7:id extension="19867" root="2.16.840.1.113883.3.200"/>
+							<hl7:code displayName="Family Medicine" codeSystemName="Health Care Provider Taxonomy" codeSystem="2.16.840.1.113883.3.88.12.3221.4" code="207Q00000X"/>
+							<hl7:telecom use="WP" value="1-999-999-9998"/>
+							<hl7:healthCarePrincipalPerson determinerCode="INSTANCE" classCode="PSN">
+								<hl7:name use="L">
+									<hl7:family>SMITHSON</hl7:family>
+									<hl7:given>BOB</hl7:given>
+									<hl7:prefix>Dr</hl7:prefix>
+								</hl7:name>
+								<hl7:administrativeGenderCode displayName="Male" code="M"/>
+                                <hl7:asAffiliate classCode="AFFL">
+                                    <hl7:code nullFlavor="UNK"/>
+                                    <hl7:effectiveTime nullFlavor="UNK"/>
+                                    <hl7:affiliatedPrincipalOrganization classCode="ORG" determinerCode="INSTANCE">
+                                    <hl7:id extension="clinic-ien-#"/>
+                                    <hl7:name>PULMONARY CLINIC</hl7:name>
+                                    </hl7:affiliatedPrincipalOrganization>
+                                </hl7:asAffiliate>
+								<hl7:languageCommunication>
+									<hl7:languageCode code="EN-US"/>
+								</hl7:languageCommunication>
+							</hl7:healthCarePrincipalPerson>
+							<hl7:issuingOrganization determinerCode="INSTANCE" classCode="ORG">
+								<hl7:name>NMC Portmouth</hl7:name>
+							</hl7:issuingOrganization>
+						</hl7:healthCareProvider>
+					</hl7:subject1>
+					<hl7:custodian contextControlCode="AN" typeCode="CST">
+						<hl7:assignedEntity classCode="ASSIGNED">
+							<hl7:id root="2.16.840.1.113883.3.200"/>
+							<hl7:assignedOrganization determinerCode="INSTANCE" classCode="ORG">
+								<hl7:name>Department of Defense</hl7:name>
+							</hl7:assignedOrganization>
+						</hl7:assignedEntity>
+					</hl7:custodian>
+				</hl7:registrationEvent>
+			</hl7:subject>
+			<hl7:subject typeCode="SUBJ">
+				<hl7:registrationEvent moodCode="EVN" classCode="REG">
+					<hl7:statusCode code="active"/>
+					<hl7:subject1 typeCode="SBJ">
+						<hl7:healthCareProvider classCode="PROV">
+							<hl7:id extension="200912" root="2.16.840.1.113883.3.200"/>
+							<hl7:code displayName="Emergency Medicine" codeSystemName="Health Care Provider Taxonomy" codeSystem="2.16.840.1.113883.3.88.12.3221.4" code="207PH0000X"/>
+							<hl7:telecom use="WP" value="1-999-999-9998"/>
+							<hl7:healthCarePrincipalPerson determinerCode="INSTANCE" classCode="PSN">
+								<hl7:name use="L">
+									<hl7:family>SMITHSON</hl7:family>
+									<hl7:given>ANDREW</hl7:given>
+									<hl7:prefix>Dr</hl7:prefix>
+								</hl7:name>
+								<hl7:administrativeGenderCode displayName="Male" code="M"/>
+                                <hl7:asAffiliate classCode="AFFL">
+                                    <hl7:code nullFlavor="UNK"/>
+                                    <hl7:effectiveTime nullFlavor="UNK"/>
+                                    <hl7:affiliatedPrincipalOrganization classCode="ORG" determinerCode="INSTANCE">
+                                    <hl7:id extension="clinic-ien-#"/>
+                                    <hl7:name>PULMONARY CLINIC</hl7:name>
+                                    </hl7:affiliatedPrincipalOrganization>
+                                </hl7:asAffiliate>
+								<hl7:languageCommunication>
+									<hl7:languageCode code="EN-US"/>
+								</hl7:languageCommunication>
+							</hl7:healthCarePrincipalPerson>
+							<hl7:issuingOrganization determinerCode="INSTANCE" classCode="ORG">
+								<hl7:name>NMC Portmouth</hl7:name>
+							</hl7:issuingOrganization>
+						</hl7:healthCareProvider>
+					</hl7:subject1>
+					<hl7:custodian contextControlCode="AN" typeCode="CST">
+						<hl7:assignedEntity classCode="ASSIGNED">
+							<hl7:id root="2.16.840.1.113883.3.200"/>
+							<hl7:assignedOrganization determinerCode="INSTANCE" classCode="ORG">
+								<hl7:name>Department of Defense</hl7:name>
+							</hl7:assignedOrganization>
+						</hl7:assignedEntity>
+					</hl7:custodian>
+				</hl7:registrationEvent>
+			</hl7:subject>
+			<hl7:queryAck>
+				<hl7:queryId extension="6858a017-39c1-4153-bbd4-eaedac72a0e7" root="2.16.840.1.113883.3.198"/>
+				<hl7:statusCode code="deliveredResponse"/>
+				<hl7:queryResponseCode code="OK"/>
+				<hl7:resultTotalQuantity value="2"/>
+			</hl7:queryAck>
+		</hl7:controlActProcess>
+	</hl7:response>
+</hl7:ProviderDetails_PRPM_IN306011UV01Response>

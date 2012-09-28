@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="EventHandler">
+      <implementation-class>gov.hhs.fha.nhinc.kmr.dss.EventHandler</implementation-class>
+    </service>
+    <service name="FactUtil">
+      <implementation-class>gov.hhs.fha.nhinc.kmr.dss.FactUtil</implementation-class>
+    </service>
+    <service name="Session">
+      <implementation-class>gov.hhs.fha.nhinc.kmr.dss.Session</implementation-class>
+    </service>
+  </services>
+  <clients/>
+</jax-ws>

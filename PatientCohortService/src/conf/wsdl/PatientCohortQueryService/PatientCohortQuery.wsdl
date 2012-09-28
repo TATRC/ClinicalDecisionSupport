@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Patient Cohort Query WSDL
+  -->
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+   xmlns="http://schemas.xmlsoap.org/wsdl/" 
+   xmlns:tns="urn:gov:hhs:fha:nhinc:kmr:patientcohort"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+   xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:patientcohort"
+   xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+   name="PatientCohort" 
+   targetNamespace="urn:gov:hhs:fha:nhinc:kmr:patientcohort">
+  <documentation>Patient Cohort Service</documentation>
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="urn:gov:hhs:fha:nhinc:kmr:patientcohort"
+                  schemaLocation="../schemas/nhinc/kmr/cohort.xsd"/>
+    </xsd:schema>
+  </types>
+  
+  <message name="PatientCohortQueryRequestMessage">
+    <part name="CohortQueryRequest" element="kmr:PatientCohortQueryRequest"/>
+  </message>
+
+  <message name="PatientCohortQueryResponseMessage">
+    <part name="CohortQueryResponse" element="kmr:PatientCohortQueryResponse"/>
+  </message>
+  
+  <portType name="PatientCohortQueryPortType">
+    <operation name="PatientCohortQuery">
+      <input name="tns:PatientCohortQueryRequest" message="tns:PatientCohortQueryRequestMessage" />
+      <output name="tns:PatientCohortQueryResponse" message="tns:PatientCohortQueryResponseMessage" />
+    </operation>
+  </portType>
+  
+  <binding name="PatientCohortQueryBindingSoap" type="tns:PatientCohortQueryPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="PatientCohortQuery">
+      <soap:operation soapAction="urn:PatientCohortQuery"/>
+      <input name="PatientCohortQueryRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="tns:PatientCohortQueryResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+
+  </binding>
+  
+  <service name="PatientCohortQuery">
+    <port name="PatientCohortQueryPortSoap" 
+          binding="tns:PatientCohortQueryBindingSoap">
+      <soap:address 
+         location="http://localhost:${HttpDefaultPort}/KMR/PatientCohortQuery" />
+    </port>
+  </service>
+  
+  <plnk:partnerLinkType name="PatientCohortQuery">
+    <!-- A partner link type is automatically generated when a new port type is added. 
+         Partner link types are used by BPEL processes. In a BPEL process, a partner 
+         link represents the interaction between the BPEL process and a partner service. 
+         Each partner link is associated with a partner link type. A partner link type 
+         characterizes the conversational relationship between two services. The 
+         partner link type can have one or two roles.-->
+    <plnk:role name="PatientCohortQueryPortTypeRole" 
+               portType="tns:PatientCohortQueryPortType"/>
+  </plnk:partnerLinkType>
+  
+</definitions>

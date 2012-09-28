@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="gov.hhs.fha.nhinc.account.model">
+  <class name="gov.hhs.fha.nhinc.account.model.PatientProviderItem" table="patient_provider">
+    <id column="PATIENTPROVIDER_ID" name="patientProviderId" type="long">
+      <generator class="increment"/>
+    </id>
+    <property column="Patient_ID" length="50" name="patientId" not-null="true" type="long"/>
+    <property column="Provider_ID" length="50" name="providerId" not-null="true" type="string"/>
+    <property column="Last_Updated" name="lastUpdated" not-null="true" type="timestamp"/>
+    <property column="Status" length="50" name="status" not-null="true" type="string"/>
+    <property column="Create_Date_Time" name="createDateTime" not-null="true" type="timestamp"/>
+    <property column="Token" length="256" name="token" not-null="false" type="string"/>
+  </class>
+</hibernate-mapping>

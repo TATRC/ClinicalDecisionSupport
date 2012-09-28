@@ -1,0 +1,886 @@
+package himss;
+
+
+import com.thoughtworks.xstream.XStream;
+
+
+import gov.hhs.fha.nhinc.adapter.fact.AppointmentFactType;
+import gov.hhs.fha.nhinc.adapter.fact.ProblemFactType;
+import gov.hhs.fha.nhinc.adapter.fact.ProcedureFactType;
+import gov.hhs.fha.nhinc.adapter.fact.ResultFactType;
+import gov.hhs.fha.nhinc.adapter.fact.PersonFactType;
+import gov.hhs.fha.nhinc.adapter.fact.MedicationFactType;
+import gov.hhs.fha.nhinc.adapter.fact.AllergyFactType;
+
+
+import gov.hhs.fha.nhinc.kmr.patientcohort.PopulationType;
+import gov.hhs.fha.nhinc.adapter.fact.FactType;
+import gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair;
+import gov.hhs.fha.nhinc.kmr.InclusionTable;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PatientCohort;
+
+
+import gov.hhs.fha.nhinc.alertpayload.Action;
+import gov.hhs.fha.nhinc.alertpayload.ActionParam;
+import gov.hhs.fha.nhinc.alertpayload.PayloadMeta;
+import gov.hhs.fha.nhinc.alertpayload.Recommendation;
+import gov.hhs.fha.nhinc.common.task.ContactDetails;
+import gov.hhs.fha.nhinc.common.task.DestinationContext;
+import gov.hhs.fha.nhinc.common.task.RuleContext;
+
+import gov.hhs.fha.nhinc.kmr.TaskManagerHelper;
+
+
+import gov.hhs.fha.nhinc.common.task.ContactDetails;
+import gov.hhs.fha.nhinc.common.task.DestinationContext;
+import gov.hhs.fha.nhinc.common.task.PatientContext;
+import gov.hhs.fha.nhinc.common.task.RegisterPersonDiseaseRequestType;
+import gov.hhs.fha.nhinc.common.task.RuleContext;
+import gov.hhs.fha.nhinc.common.task.ScheduleApptRequestType;
+import gov.hhs.fha.nhinc.common.task.SendMailTaskRequestType;
+import gov.hhs.fha.nhinc.common.task.StartTaskFromRuleRequestType;
+import gov.hhs.fha.nhinc.common.task.TaskManagerResponseType;
+import gov.hhs.fha.nhinc.common.task.UnRegisterPersonDiseaseRequestType;
+
+
+
+import gov.hhs.fha.nhinc.taskmanager.TaskManager;
+import gov.hhs.fha.nhinc.taskmanager.TaskManagerPortType;
+import javax.xml.ws.BindingProvider;
+
+
+
+global gov.hhs.fha.nhinc.kmr.TaskManagerHelper tmHelper;
+
+
+
+declare AppointmentFactType
+  @role(event)
+  @timestamp(startDateTime)
+end 
+
+declare ProblemFactType
+  @role(event)
+  @timestamp(problemDate)
+end
+
+declare ProcedureFactType
+  @role(event)
+  @timestamp(procedureDate)
+end
+
+declare ResultFactType
+  @role(event)
+  @timestamp(resultDate)
+end
+
+
+
+declare Marker
+	obj : Object	
+end
+
+
+
+
+function void sendAlert(String subject, String priority, String recipientList, String escalationList, int escalationMinutes, String escalationMethod, String payload, TaskManagerHelper tmHelper) {
+ DestinationContext destination = null;
+ try {
+      if (!(recipientList.isEmpty())) {
+       destination = new DestinationContext();
+         ContactDetails contact = new ContactDetails();
+       contact.setProvider(recipientList);
+        destination.getProviders().add(contact);
+        ContactDetails escalationContact = new ContactDetails();
+ 
+         if (!(recipientList.isEmpty())) {
+         escalationContact.setMethod(escalationMethod);
+          escalationContact.setProvider(escalationList);
+          destination.getEscalationProviders().add(escalationContact);
+          destination.setEscalationMinutes(escalationMinutes);
+         }
+       }
+       Recommendation recommendation = new Recommendation();
+       recommendation.setBody(payload);
+      PayloadMeta meta = new PayloadMeta();
+      meta.setType("MedAlert");
+      recommendation.setMetadata(meta);
+      
+      
+       Action action = new Action();
+       action.setActionId("aid1");
+       action.setName("Accept");              
+       recommendation.getActions().add(action);
+       
+       Action action2 = new Action();
+       action2.setActionId("aid2");
+       action2.setName("Reject");              
+       recommendation.getActions().add(action2);
+       
+       if (! "-1".equals(recipientList)) {
+       		Action action3 = new Action();
+       		action3.setActionId("aid3");
+       		action3.setName("Hold");              
+       		recommendation.getActions().add(action3);
+       		
+       		if (escalationMinutes >= 0) {
+       			Action action4 = new Action();
+       			action4.setActionId("aid4");
+      	 		action4.setName("Escalate");              
+       			recommendation.getActions().add(action4);       
+       		}	
+       }
+       tmHelper.sendAlert(subject, priority, destination, recommendation, null);
+     } catch (Exception ex) {
+       ex.printStackTrace();
+     }
+}
+
+
+
+
+function void sendTODO(String subject, String payload, String provider, java.util.Date deliveryDate, PersonFactType patient)
+{
+   TaskManagerResponseType res = null;
+ try { 
+     StartTaskFromRuleRequestType request = new StartTaskFromRuleRequestType();
+       request.setTaskID("14");
+       request.setSubject(subject);
+       request.setPriority("5");
+	   request.setMessage(payload);
+ 		
+ 		DestinationContext destination = new DestinationContext();
+        		ContactDetails contact = new ContactDetails();
+        			contact.setProvider(provider);
+        	destination.getProviders().add(contact);	
+        	        	
+        		java.util.GregorianCalendar c = new java.util.GregorianCalendar();
+					c.setTime(deliveryDate);
+				javax.xml.datatype.XMLGregorianCalendar date = javax.xml.datatype.DatatypeFactory.newInstance().newXMLGregorianCalendar(c);        	
+        	destination.setDeliveryDate(date);
+ 		
+ 	 	request.setDestination(destination);
+ 
+ 
+     if (patient != null) {
+        PatientContext patContext = new PatientContext();
+         patContext.setPatientUnitNumber(patient.getPrimaryKey());
+         patContext.setPatientSex(patient.getGender().getLabel());
+         patContext.setPatientName(patient.getLegalName().getFirstName() + " " + patient.getLegalName().getFamilyName());
+        request.setPatient(patContext);
+      }
+ 
+
+      TaskManager service = new TaskManager();
+      TaskManagerPortType port = service.getTaskManagerPortSoap11();
+       ((BindingProvider)port).getRequestContext().put("javax.xml.ws.service.endpoint.address", "http://nhinint01.asu.edu:8080/TaskManager/TaskManagerService");
+       res = port.startTaskFromRule(request);
+      System.out.println("sendTODO: Task manager alert response = " + res.getTicket());
+     } catch (Exception ex) {
+       ex.printStackTrace();
+     }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+	Check for Diabetes on Appointment
+	This rule should be triggered by an appointment 
+	It checks whether the patient is enlisted in the diabetes registry
+*/ 
+rule "#UC1 - Gestational Diabetes"
+	when
+				
+		//* on appointment *//
+		$trigger_app : AppointmentFactType(
+			historical == false, 
+			$pidval : patientId.value,			// --> a patient  
+			$patientName : patient, 
+			$providerName : performer,			// --> comes in and sees the provider
+			$t0 : startDateTime )				// --> at some point in time. this triggers...
+		
+		//* for a patient -- implicit as the session is per-patient*//
+		// $person : PersonFactType( )
+		$cohort: PatientCohort( 
+				$pid : patientId,
+				$pcm : primaryCareManagerId,  
+				populationRegistries != null, $pops : populationRegistries.populations != null
+			)
+		
+		//* not registered as diabetic *// 
+		// code 1 for "diabetic" 
+		not( PopulationType ( code == "1", status == true ) from $pops )
+		
+		//* a gestational diabetes problem/diagnosis is reported *//		
+	    $diabDiag: ProblemFactType( 
+	    		historical == true,
+	    		codedProblem != null, $diagCode : codedProblem.code,
+        		codedProblem.code == "648.8" || == "648.80" || == "648.81" 
+        					   || == "648.82" || == "648.83" || == "648.84",  	
+        		this before[0,720d] $trigger_app )
+		
+		//* there has been a C-sec delivery more than 6 weeks ago | i.e. more than 42 days before now's appointment *//
+        $delivery: ProcedureFactType( 
+				historical == true,	
+				procedureType != null, procedureType.code == "59618",				  	
+			    this before[42d] $trigger_app )
+						
+		//* and there was an abnormal fasting glucose result after 6 weeks from delivery *//
+		Number( intValue == 1 ) from accumulate (
+				$fastGlucResult : ResultFactType(
+					historical==true,                                  
+					codedTestType!=null, codedTestType.code == "1558-6", 								                                
+              		resultValue.floatValue > 125,
+               		this after[42d] $delivery ),
+               	count($fastGlucResult)
+        )
+                                 			
+	then
+		System.err.println(">>>>>>>>>>> RULE UC HIMSS 1 has been triggered by the appointment  " + $trigger_app );
+		
+		//to provider
+		sendAlert("Fasting Glucose Recommendation", "Critical", "cn=provider.joe", "cn=provider.joe", 2, 
+						"SMS","<html>Patient " + tmHelper.getPatientName() + " is a gestational diabetic with an abnormal fasting glucose a minimum of six weeks after delivery. She meets criteria for a repeat evaluation. It is recommended that she obtain a second fasting glucose prior to her appointment. If you accept this recommendation, a signed order for this test will be submitted on your behalf.</html>", tmHelper);
+							
+		//to patient					
+		//
+		sendAlert("Fasting Glucose Recommendation", "Critical", "-1", "2122", 4, 
+							"SMS","<html>Dear " + tmHelper.getPatientName() + "<br/>An evaluation of your past medical history reveals that you has been diagnosed as a gestational diabetic and that you demonstrated an abnormal fasting glucose after your recent delivery. It is recommended that you obtain a second fasting glucose prior to your next appointment appointment. Levels vary according to the laboratory, but in general up to 100 milligrams per deciliter (mg/dL) are considered normal for a fasting blood glucose test. Persons with levels between 100 and 125 mg/dL have impaired fasting glucose, or prediabetes.  Greater-than-normal blood glucose levels (hyperglycemia) may be a sign of diabetes. To prepare for a fasting glucose blood test, you should NOT eat or drink for 8 hours before the test. Please acknowledge acceptance of this recommedation.</html> ", tmHelper);					
+				
+end
+
+
+
+
+
+
+
+
+
+/**
+	Check for Diabetes on Appointment
+	This rule should be triggered by an appointment 
+	It checks whether the patient is enlisted in the diabetes registry
+*/ 
+rule "Diabetes Diagnosis"
+	when
+		
+		$fastGlucResult : ResultFactType(
+				historical==false,                                  
+				codedTestType!=null, codedTestType.code == "1558-6", 								                                
+              	resultValue.floatValue > 125,
+              	$t0 : resultDate )
+        				
+		//* for a patient -- implicit as the session is per-patient*//
+		// $person : PersonFactType( )
+		$cohort: PatientCohort( 				
+				$pcm : primaryCareManagerId,  
+				populationRegistries != null, $pops : populationRegistries.populations != null,
+				$status : admissionStatus 
+			)
+		
+		//* not registered as diabetic *// 
+		// code 1 for "diabetic" 
+		not( PopulationType ( code == "1", status == true ) from $pops )
+		
+		//* a gestational diabetes problem/diagnosis is reported *//		
+	    $diabDiag: ProblemFactType( 
+	    		historical == true,
+	    		codedProblem != null, $diagCode : codedProblem.code,
+        		codedProblem.code == "648.8" || == "648.80" || == "648.81" 
+        					   || == "648.82" || == "648.83" || == "648.84" )  	
+        
+		
+		//* there has been a C-sec delivery more than 6 weeks ago | i.e. more than 42 days before now's appointment *//
+        $delivery: ProcedureFactType( 
+				historical == true,	
+				procedureType != null, procedureType.code == "59618" )
+						
+		//* now we have two abnormal fasting glucoses *//
+		Number( intValue >= 2 ) from accumulate (
+				 $r : ResultFactType( codedTestType!=null, codedTestType.code == "1558-6", 								                                
+              					 resultValue.floatValue > 125.0, 
+               					 this after[42d] $delivery ),
+               	 count($r)
+              )
+               					
+                         			
+	then
+		System.err.println("@@@@@@@@@@@@@@@@@@@ò RULE UC22 HIMSS 2 Diab Diagnosist  " );
+		
+		//to provider					
+		sendAlert("Diagnosis of Diabetes", "Critical", "cn=provider.joe", null, -1, 
+							null,"<html>Patient " + tmHelper.getPatientName() + " has met criteria for the diagnosis of diabetes.</html>", tmHelper);
+							
+		
+		PopulationType pop = new PopulationType();
+			pop.setStatus(true);
+			pop.setCode("1");
+		((java.util.Collection)$pops).add( pop );
+		insert(pop);
+				
+		ProblemFactType diag = new ProblemFactType();
+			diag.setFactHash("vbvxcvbxc");
+			diag.setIdHash("vhghnhd");
+			diag.setProblemDate($t0);			
+			diag.setHistorical(false);
+				CodeLabelPair clp2 = new CodeLabelPair();
+				clp2.setCode("250");			
+			diag.setCodedProblem(clp2);
+		insert(diag);
+		
+		insert (new PatientTrigger());
+end
+
+
+
+
+
+
+
+declare	PatientAlert
+	cause : String  @key
+end
+
+declare PatientTrigger
+	cause : String
+end
+
+
+
+rule "Renal panel for diab patients"
+when
+	$diag: ProblemFactType(
+				historical == false,
+				codedProblem.code == "250" )
+	$patient : PersonFactType( )		
+	$cohort: PatientCohort( 
+				$pid : patientId,
+				$pcm : primaryCareManagerId  
+			)						
+	not ( ResultFactType(
+				historical==true,                                  
+				codedPanelType!=null, codedPanelType.code == "24362-6", 								                                
+              	this before[0,360d] $diag ) )			
+then
+		System.err.println("@@@@@@@@@@@@@@@@@@@ò RULE UC22 Need renal panel  " );
+		
+		//to provider					
+		sendAlert("Diabetic Renal Panel Recommendation", "Critical", "cn=provider.joe", "2122", 2, 
+							"SMS","<html>Patient " + tmHelper.getPatientName() + " has a diagnosis of diabetes. Kidney function should be monitored at least every 12 months. An evaluation of her past medical history suggests that a renal panel is overdue.If you accept this recommendation, a signed order for this test will be submitted on your behalf.</html>", tmHelper);	
+		
+		sendTODO("Diabetic Renal Panel Recommendation",
+				 "<html>An evaluation of your past medical history suggests that a renal panel exam is overdue.</html>",
+				 "cn=doe.jane",
+				 new java.util.Date(),
+				 $patient);
+
+		insert( new PatientAlert("Renal panel") );		
+end
+
+
+rule "Chemistry panel for diab patients"
+when
+	$diag: ProblemFactType(
+				historical == false,
+				codedProblem.code == "250" )
+	$patient : PersonFactType( )		
+	$cohort: PatientCohort( 
+				$pid : patientId,
+				$pcm : primaryCareManagerId  
+			)	
+	not ( ResultFactType(
+				historical==true,                                  
+				codedPanelType!=null, codedPanelType.code == "24326-1", 								                                
+              	this before[0,360d] $diag ) )			
+then
+		System.err.println("@@@@@@@@@@@@@@@@@@@ò RULE UC22 Need chemistry panel  " );
+		
+		//to provider					
+		sendAlert("Diabetic Chemistry Panel Recommendation", "Critical", "cn=provider.joe", "2122", 2, 
+							"SMS","<html>Patient " + tmHelper.getPatientName() + " has a diagnosis of diabetes. Blood chemistry should be monitored at least every 12 months. An evaluation of her past medical history suggests that a chemistry panel is overdue.If you accept this recommendation, a signed order for this test will be submitted on your behalf.</html>", tmHelper);	
+		
+
+		sendTODO("Diabetic Chemistry Panel Recommendation",
+				 "<html>An evaluation of your past medical history suggests that a chemistry panel exam is overdue.</html>",
+				 "cn=doe.jane",
+				 new java.util.Date(),
+				 $patient);
+
+					
+		insert( new PatientAlert("Chemistry Panel") );
+end
+
+rule "Retinal panel for diab patients"
+when
+	$diag: ProblemFactType(
+				historical == false,
+				codedProblem.code == "250" )
+	$patient : PersonFactType( )		
+	$cohort: PatientCohort( 
+				$pid : patientId,
+				$pcm : primaryCareManagerId  
+			)	
+	not ( ResultFactType(
+				historical==true,                                 
+				// NEED RETINAL EXAM CODE	 
+				codedPanelType!=null, codedPanelType.code == "67101", 								                                
+              	this before[0,360d] $diag ) )			
+then
+		System.err.println("@@@@@@@@@@@@@@@@@@@ò RULE UC22 Need retinal panel  " );
+		//to provider					
+		sendAlert("Diabetic Retinal Exam Recommendation", "Critical", "cn=provider.joe", "2122", 2, 
+							"SMS","<html>Patient " + tmHelper.getPatientName() + " has a diagnosis of diabetes. Retinal health should be monitored at least every 12 months. An evaluation of her past medical history suggests that a retinal exam is overdue.If you accept this recommendation, a signed order for this test will be submitted on your behalf.</html>", tmHelper);
+		
+
+		sendTODO("Diabetic Retinal Panel Recommendation",
+				 "<html>An evaluation of your past medical history suggests that a retinal exam is overdue.</html>",
+				 "cn=doe.jane",
+				 new java.util.Date(),
+				 $patient);
+
+		insert( new PatientAlert("Retinal Panel") );	
+end
+
+
+
+rule "Foot exam for diab patients"
+when
+	$diag: ProblemFactType(
+				historical == false,
+				codedProblem.code == "250", 
+				$now : problemDate )
+	$patient : PersonFactType( )			
+	$cohort: PatientCohort( 
+				$pid : patientId,
+				$pcm : primaryCareManagerId  
+			)	
+	not ( ResultFactType(
+				historical==true,                                  				
+				codedTestType!=null, codedTestType.code == "99211", 								                                
+              	this before[0,360d] $diag ) )		
+then
+		System.err.println("@@@@@@@@@@@@@@@@@@@ò RULE UC22 Need foot exam  " );
+	//to provider					
+		sendAlert("Diabetic Foot Exam Recommendation", "Critical", "cn=provider.joe", "2122", 2, 
+							"SMS","<html>Patient " + tmHelper.getPatientName() + " has a diagnosis of diabetes. A diabetic foot exam should be conducted at least every 12 months. An evaluation of her past medical history suggests that a diabetic foot exam is overdue.If you accept this recommendation, a signed order for this test will be submitted on your behalf.</html>", tmHelper);
+		
+		sendTODO("Diabetic Foot Exam Recommendation",
+				 "<html>An evaluation of your past medical history suggests that a diabetic foot exam is overdue.</html>",
+				 "cn=doe.jane",
+				 new java.util.Date(),
+				 $patient);
+
+
+		insert( new PatientAlert("Foot Exam") );						
+end
+
+
+
+
+rule "Last HG_1"
+when
+	$diag: ProblemFactType(
+				historical == false,
+				codedProblem.code == "250" )
+	$patient : PersonFactType( )		
+	$cohort: PatientCohort( 
+				$pid : patientId,
+				$pcm : primaryCareManagerId  
+			)					
+	Number( $tl: longValue ) from accumulate ( 
+			ResultFactType(
+				historical==true,                                  
+				codedTestType!=null, codedTestType.code == "4548-4", 								                                
+              	$dx : resultDate.time
+            ),
+            max($dx)
+    )	
+    $last : ResultFactType(
+				historical==true,                                  
+				codedTestType!=null, codedTestType.code == "4548-4",
+				$rd : resultDate,  								                                
+              	resultDate.time == $tl,
+              	$x : resultValue.floatValue > 6.5,
+              	this before[0,90d] $diag )    		
+then
+
+		System.err.print("@@@@@@@@@@@@@@@@@@@ò RULE UC22 2 Last HG on  " + $rd + " for " + $x );
+		java.util.Date scheDate = new java.util.Date($tl+7776000000L);
+		System.err.println(" --- have HemGlob again on " + scheDate);
+		
+		//to provider					
+		sendAlert("HgA1c Recommendation", "Critical", "cn=provider.joe", "2122", 6, 
+							"SMS","<html>Patient " + tmHelper.getPatientName() + " has a diagnosis of diabetes. The last know HgA1C was greater than 6.5%. It is recommendsted the HgA1C be repeated on or around" + scheDate + "If you accept this recommendation, a signed order for this test will be submitted on your behalf.</html>", tmHelper);
+		
+		sendTODO("HgA1c Recommendation Recommendation",
+				 "<html>The last know HgA1C was greater than 6.5%. It is recommendsted the HgA1C be repeated on or around" + scheDate+"</html>",
+				 "cn=doe.jane",
+				 new java.util.Date(),
+				 $patient);
+	
+		
+		insert( new PatientAlert("Hemoglobin A1C") );						
+end
+
+
+
+
+
+
+rule "Last HG_3"
+
+when
+	$diag: ProblemFactType(
+				historical == false,
+				codedProblem.code == "250" )
+	$patient : PersonFactType( )		
+	$cohort: PatientCohort( 
+				$pid : patientId,
+				$pcm : primaryCareManagerId  
+			)				
+	Number( $tl: longValue ) from accumulate ( 
+			ResultFactType(
+				historical==true,                                  
+				codedTestType!=null, codedTestType.code == "4548-4", 								                                
+              	$dx : resultDate.time ),
+            max($dx)
+    )	
+    $last : ResultFactType(
+				historical==true,                                  
+				codedTestType!=null, codedTestType.code == "4548-4",
+				$rd : resultDate,  								                                
+              	resultDate.time == $tl,
+              	$x : resultValue.floatValue <= 6.5,
+              	this before[0,180d] $diag )    		
+then
+
+		System.err.print("@@@@@@@@@@@@@@@@@@@ò RULE UC22 3 Last HG on  " + $rd + " for " + $x );
+		java.util.Date scheDate = new java.util.Date($tl+2*7776000000L);
+		System.err.println(" --- have HemGlob again on " + scheDate);
+		//to provider					
+		sendAlert("HgA1c Recommendation", "Critical", "cn=provider.joe", "2122", 6, 
+							"SMS","<html>Patient " + tmHelper.getPatientName() + " has a diagnosis of diabetes. The last know HgA1C was less than 6.5%. It is recommendsted the HgA1C be repeated on or around" + scheDate + "If you accept this recommendation, a signed order for this test will be submitted on your behalf.</html>", tmHelper);
+
+			sendTODO("HgA1c Recommendation Recommendation",
+				 "<html>The last know HgA1C was less than 6.5%. It is recommendsted the HgA1C be repeated on or around" + scheDate+"</html>",
+				 "cn=doe.jane",
+				 new java.util.Date(),
+				 $patient);
+	
+
+		insert( new PatientAlert("Hemoglobin A1C") );
+end
+
+
+rule "Last HG_2+4"
+
+when
+	$diag: ProblemFactType(
+				historical == false,
+				codedProblem.code == "250",
+				$now : problemDate )
+	$patient : PersonFactType( )		
+	$cohort: PatientCohort( 
+				$pid : patientId,
+				$pcm : primaryCareManagerId  
+			)	
+	Number( $tl: longValue ) from accumulate ( 
+			ResultFactType(
+				historical==true,                                  
+				codedTestType!=null, codedTestType.code == "4548-4", 								                                
+              	$dx : resultDate.time ),
+            max($dx)
+    )	
+    $last : ResultFactType(
+				historical==true,                                  
+				codedTestType!=null, codedTestType.code == "4548-4",
+				$rd : resultDate,  								                                
+              	resultDate.time == $tl,
+              	
+              	(
+              		(resultValue.floatValue <= 6.5 && this not before[0,180d] $diag)
+              		||
+              		(resultValue.floatValue >  6.5 && this not before[0,90d] $diag)
+              	) 
+    )    		
+then
+
+		System.err.print("@@@@@@@@@@@@@@@@@@@ò RULE UC22 4 Last HG on  " + $rd  );
+		System.err.println(" --- have HemGlob again on " + $now);
+		//to provider					
+		sendAlert("HgA1c Recommendation", "Critical", "cn=provider.joe", "2122", 6, 
+							"SMS","<html>Patient " + tmHelper.getPatientName() + " has a diagnosis of diabetes. It is recommended that a HgA1C be obtained. If you accept this recommendation, a signed order for this test will be submitted on your behalf.</html>", tmHelper);
+		
+		
+			sendTODO("HgA1c Recommendation Recommendation",
+				 "<html>It is recommended that a HgA1C be obtained.</html>",
+				 "cn=doe.jane",
+				 new java.util.Date(),
+				 $patient);
+	
+
+
+		insert( new PatientAlert("Hemoglobin A1C") );	
+end
+
+
+
+
+
+rule "No HG"
+when
+	$diag: ProblemFactType(
+				historical == false,
+				codedProblem.code == "250",
+				$now : problemDate )
+	$patient : PersonFactType( )		
+	$cohort: PatientCohort( 
+				$pid : patientId,
+				$pcm : primaryCareManagerId  
+			)	
+	not		ResultFactType(
+				historical==true,                                  
+				codedTestType!=null, codedTestType.code == "4548-4", 								                                
+              	$dx : resultDate.time ) 		
+then
+
+		System.err.print("@@@@@@@@@@@@@@@@@@@ò RULE UC22 5 Last HG on"  );
+		System.err.println(" --- have HeGlob again on " + $now);
+		
+		//to provider					
+		sendAlert("HgA1c Recommendation", "Critical", "cn=provider.joe", "2122", 6, 
+							"SMS","<html>Patient " + tmHelper.getPatientName() + " has a diagnosis of diabetes. It is recommended that a baseline HgA1C be obtained. If you accept this recommendation, a signed order for this test will be submitted on your behalf.</html>", tmHelper);
+		
+		sendTODO("HgA1c Recommendation Recommendation",
+				 "<html>It is recommended that a HgA1C be obtained.</html>",
+				 "cn=doe.jane",
+				 new java.util.Date(),
+				 $patient);	
+
+		insert( new PatientAlert("Hemoglobin A1C") );
+end
+
+
+
+
+rule "Alert patient"
+salience -1
+when
+	$tests : String() from accumulate (
+		 PatientAlert( $s : cause )
+		 init( String out = ""; ),
+		 action( out += $s + ","; ),
+		 result( out )	
+	)	 
+	$tr: PatientTrigger()	
+then
+		System.err.println("############################   Alerting patient" + $tests);
+		//to patient, just once
+		sendAlert("Further Diabetes Testing Required", "Critical", "-1", null, -1, 
+							"SMS", "<html>Dear " + tmHelper.getPatientName() + "<br/> As we discussed might be required, the results of your recent diabetes testing warrent additional evaluations. I have ordered the following: <br/>" + $tests + "<br/> You will be contacted within the next 24 hours by our Clinic Manager who will discuss in detail these recommendations and to answer any questions you may have immediately.</html>", tmHelper);	
+		retract($tr);
+end
+
+
+
+rule "CleanAlert"
+salience -99
+when
+	$pa : PatientAlert()
+then
+	retract($pa);
+end
+
+
+
+
+
+
+
+
+
+rule "Ischemic stroke"
+when
+	
+	//* a patient is diagnosed stroke *//
+	$stroke: ProblemFactType(
+				historical == false,
+				codedProblem.code == "436.00",
+				$date : problemDate )
+	$cohort: PatientCohort( 
+				$pid : patientId,
+				$pcm : primaryCareManagerId  
+			)	
+	//* while they are inpatients (simulated by an appointment which is actually an admission) *//
+	$admission : AppointmentFactType(
+			historical == true, 
+			$admissionDate : startDateTime,		
+			this before[0,2d] $stroke,		// the stroke happened recently
+			this before[0,120d] $stroke		// and the patient has not been in hospital for too long ** REDUNDANT HERE	 
+	)					
+	
+	//* the patient is NOT less than 18 years old *//
+	PersonFactType( age.floatValue >= 18 )
+	
+	//* Patient with t-PA therapy administered at this hospital or within 24 hours prior to arrival *//
+	not MedicationFactType(
+			historical == true,
+			codedProductName.code == "15202" || == "308351"
+				|| == "727838" || == "727383" || == "562130",			
+			this before[0,24h] $admission || this after $admission
+	  ) 
+	 
+	//* the patient has not been hospitalized for carotid surgery *// 
+	not ProcedureFactType(
+		historical == true,
+	 	// should be on the same date of the appointment
+	 	procedureDate == $admissionDate,
+	 	procedureType.code == "31573003" || == "209760000"
+	 			|| == "55493009" || == "25007007" || == "75538004"	 	 
+	)
+	
+	//* the patient is not allergic to anti-trombolitic drugs *//
+	not AllergyFactType(
+			historical == true,
+			adverseEventType.code == "294869008"
+	)
+	
+				
+then
+	System.err.print("@@@@@@@@@@@@@@@@@@@ò RULE UC3 "  );
+	
+//to provider					
+		sendAlert("Anti-Thrombolytic Therapy Recommendation", "Critical", "cn=provider.joe", "2122", 10, 
+							"SMS","<html>Patient " + tmHelper.getPatientName() + " has a diagnosis of ischemic stroke and qualifies for thrombolytic therapy. Evidence supports the need for this to be initiated within 48 hors. Please acknowledge acceptance of this recommedation.</html>", tmHelper);
+	
+end				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Crude, but will do for the demo */
+
+
+rule "Log"
+salience 1000
+when
+	$f : FactType( )
+	   
+then
+	System.out.println("Insert " + $f);
+end
+
+rule "Mark"
+salience 999
+when
+	$fact : FactType( historical == false )
+then
+	System.out.println("Marking " + $fact);
+	insert ( new Marker($fact) );			
+end
+
+rule "UnMark PFT"
+salience 999
+when
+	$m : Marker( $f : obj )
+	PersonFactType( this == $f )
+then
+	System.out.println("Oops unMarking " + $f);
+	retract( $m );			
+end
+
+
+rule "Cleanup"
+salience -20
+when
+	$death : ResultFactType(codedTestType!=null, historical==false, 
+                                codedTestType.code=="CLEANUP" 
+                                 ) 
+	$m : Marker( $o : obj != $death )	
+then
+	System.out.println("Removing " + $o);
+	retract($o);
+	retract($m);
+end
+
+
+rule "Cleanup Population Status"
+salience -10
+when
+	$death : ResultFactType( codedTestType!=null, historical==false, 
+                                codedTestType.code=="CLEANUP" 
+                                ) 
+	
+	$cohort: PatientCohort( 	 
+				populationRegistries != null, $pops : populationRegistries.populations != null
+			)
+	$pt : PopulationType( code == "1", status == true, this memberOf $pops ) 		
+then
+	retract($pt);
+	((java.util.List)$pops).remove($pt);
+end
+
+
+
+rule "Clear_Debug"
+when
+	$death : ResultFactType( codedTestType!=null, historical==false, 
+                                codedTestType.code=="CLEANUP" 
+                                ) 
+then 
+	System.out.println("CLEANUP FACT IS IS");
+end
+
+
+rule "Clear"
+salience -99
+when
+	$death : ResultFactType( codedTestType!=null, historical==false, 
+                                codedTestType.code=="CLEANUP" 
+                                ) 
+	$m : Marker( obj == $death )
+	not Marker( obj != $death )
+then 
+	System.out.println("Done with cleanup ");
+	retract($death);	
+	retract($m);
+end
+

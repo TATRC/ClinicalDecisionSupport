@@ -1,0 +1,103 @@
+package gov.hhs.fha.nhinc.kmr.drools.drl
+
+import gov.hhs.fha.nhinc.adapter.kmr.factobjects.LabResultFact;
+import gov.hhs.fha.nhinc.adapter.kmr.factobjects.BaseFact;
+import gov.hhs.fha.nhinc.adapter.kmr.ruleobjects.RuleExecutionResponse;
+import gov.hhs.fha.nhinc.adapter.kmr.utils.Conversion;
+import gov.hhs.fha.nhinc.adapter.kmr.ruleobjects.PlateletHistory;
+
+
+global RuleExecutionResponse execResponse
+global Conversion helper
+global PlateletHistory pHistory
+
+query "Lab Rule Results For Patient" (String patient, String obj)
+    qLab : RuleExecutionResponse(patientId == patient, objectId == obj)
+end
+
+rule "Platelets value greater than 40 and less than 120"
+    when
+        $lab : LabResultFact( labId == "1835-72", eval( helper.getInteger(value) > 40), eval( helper.getInteger(value) < 100), historical == false)
+    then
+        execResponse.setRuleId("1");
+        execResponse.setRuleName("Platelets Less Than 120 greater than 40");
+        execResponse.setMessage("Notify provider 10001 of abnormal result");
+        execResponse.setTaskId("5");
+        execResponse.setTaskType("Inbox");
+        execResponse.setCriticality("Abnormal");
+        execResponse.setPatientId($lab.getPatientId());
+        execResponse.setObjectId($lab.getLabId());
+        execResponse.setObjectValue($lab.getValue());
+        modify($lab) {
+            setHistorical(true);
+        }
+        System.out.println("PLATELET Rule 1 has fired");
+end
+
+rule "Platelets Less Than 40 Result History Less Than 5"
+    when
+        $lab : LabResultFact( labId == "1835-72", eval( helper.getInteger(value) < 40 ), historical == false, eval( pHistory.getResultCnt() < 4 ))
+    then
+        execResponse.setRuleId("2");
+        execResponse.setRuleName("Platelets Less Than 40");
+        execResponse.setMessage("Notify provider 10002 and escalate to provider 10003");
+        execResponse.setTaskId("6");
+        execResponse.setTaskType("Inbox");
+        execResponse.setCriticality("Critical");
+        execResponse.setPatientId($lab.getPatientId());
+        execResponse.setObjectId($lab.getLabId());
+        execResponse.setObjectValue($lab.getValue());
+        modify($lab) {
+            setHistorical(true);
+        }
+        System.out.println("PLATELET Rule 2 has fired");
+end
+
+rule "Platelets Less Than 40 Result History 5 or more Result greater than 10 percent of Baseline"
+    when
+        $lab : LabResultFact( labId == "1835-72", eval( helper.getInteger(value) < 40 ), historical == false, eval( pHistory.getResultCnt() > 3 ), eval( pHistory.isLessThan10PercentOfBaseline(value) == false) )
+    then
+        execResponse.setRuleId("3");
+        execResponse.setRuleName("Platelets Less Than 40");
+        execResponse.setMessage("Notify provider 10002 and escalate to provider 10003");
+        execResponse.setTaskId("6");
+        execResponse.setTaskType("Inbox");
+        execResponse.setCriticality("Critical");
+        execResponse.setPatientId($lab.getPatientId());
+        execResponse.setObjectId($lab.getLabId());
+        execResponse.setObjectValue($lab.getValue());
+        modify($lab) {
+            setHistorical(true);
+        }
+        System.out.println("PLATELET Rule 3 has fired");
+end
+
+rule "Platelets Less Than 40 Result History 5 or more Result less than 10 percent of Baseline"
+    when
+        $lab : LabResultFact( labId == "1835-72", eval( helper.getInteger(value) < 40 ), historical == false, eval( pHistory.getResultCnt() > 3 ), eval( pHistory.isLessThan10PercentOfBaseline(value) == true) )
+    then
+        execResponse.setRuleId("4");
+        execResponse.setRuleName("Platelets Less Than 40");
+        execResponse.setMessage("Notify provider 10003");
+        execResponse.setTaskId("7");
+        execResponse.setTaskType("Inbox");
+        execResponse.setCriticality("Critical");
+        execResponse.setPatientId($lab.getPatientId());
+        execResponse.setObjectId($lab.getLabId());
+        execResponse.setObjectValue($lab.getValue());
+        modify($lab) {
+            setHistorical(true);
+        }
+        System.out.println("PLATELET Rule 4 has fired");
+end
+
+rule "Update Platelet Summary Results"
+when
+    $lab : LabResultFact( labId == "1835-72", historical == true )
+then
+    pHistory.addResultValue($lab.getValue());
+    System.out.println("PLATELET Rule 5 COUNTS ADDED");
+end
+
+
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-AdapterFactService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/AdapterFactService"/>
+        <property name="wsdl-AdapterFactService" location="xml-resources/web-service-references/AdapterFactService/wsdl/nhinint01.asu.edu_8080/CommonDataLayerFactService/AdapterFactService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/AdapterFactService" destdir="${build.generated.dir}/jax-wsCache/AdapterFactService" wsdl="${wsdl-AdapterFactService}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://nhinint03.asu.edu:8080/CommonDataLayerFactService/AdapterFactService?WSDL" xnocompile="true">
+            <binding dir="xml-resources/web-service-references/AdapterFactService/bindings" includes="DateBinding.xml"/>
+            <depends file="${wsdl-AdapterFactService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/AdapterFactService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/AdapterFactService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-AdapterFactService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/AdapterFactService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/gov/hhs/fha/nhinc/adapter/factservice"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-AdapterFactService"/>
+</project>

@@ -1,0 +1,176 @@
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <SOAP-ENV:Body>
+      <m:KmInsertRequest xmlns:m="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <m:request>
+            <m:requestReference>
+               <m:requestId>209900</m:requestId>
+               <m:requestDate>2010-05-22T00:03:22.000-00:07</m:requestDate>
+               <!--m:responseDate>String</m:responseDate-->
+            </m:requestReference>
+            <m:ACL>
+               <!-- need UserId
+                         UserName -->
+               <User_OrganizationLevel>Local</User_OrganizationLevel>
+               <UR_Name>Providers-Physicians</UR_Name>
+               <AuthorId>89</AuthorId>
+            </m:ACL>
+            <m:importFilename>testImport1.xml</m:importFilename>
+            <m:kms>
+               <m:km>
+                  <m:kmId>9000</m:kmId>
+                  <m:kmName>bobKM</m:kmName>
+                  <m:kmDescription>String</m:kmDescription>
+                  <m:kmKeywords>String</m:kmKeywords>
+                  <m:kmOrganizationLevel>String</m:kmOrganizationLevel>
+                  <m:kmType>VALIDATION</m:kmType>
+                  <!--m:lastModifiedByAuthorID>89</m:lastModifiedByAuthorID>
+                  <m:lastModifiedByAuthorName>String</m:lastModifiedByAuthorName>
+                  <m:lastModifiedTimestamp>2010-05-22T00:03:22.000-00:07</m:lastModifiedTimestamp-->
+                  <m:createdByAuthorID>89</m:createdByAuthorID>
+                  <m:createdByAuthorName>http://getopenid.com/tia</m:createdByAuthorName>
+                  <m:createdTimestamp>2010-05-22T00:03:22.000-00:07</m:createdTimestamp>
+                  <m:isCheckedOut>false</m:isCheckedOut>
+                  <m:originInstitution>String</m:originInstitution>
+                  <m:parentKMId>0</m:parentKMId>
+                  <!--m:latestVersionNum>0</m:latestVersionNum-->
+                  <!--m:productionVersionNum>0</m:productionVersionNum-->
+                  <m:validationStatus>String</m:validationStatus>
+                  <m:SpecialtyList>
+                     <KM_Specialty>
+                        <TerminologyScheme>HL7</TerminologyScheme>
+                        <TerminologyCode>specialty scheme 1 code</TerminologyCode>
+                        <Comments>String</Comments>
+                     </KM_Specialty>
+                     <KM_Specialty>
+                        <TerminologyScheme>HL7</TerminologyScheme>
+                        <TerminologyCode>specialty scheme 2 code</TerminologyCode>
+                        <Comments>String</Comments>
+                     </KM_Specialty>
+                  </m:SpecialtyList>
+                  <m:KmVersionList>
+                     <kmVersion>
+                        <!--KM_VersionNum>0</KM_VersionNum-->
+                        <KMV_Name>bobKM KMV 1</KMV_Name>
+                        <!--CreatedBy_AuthorID>String</CreatedBy_AuthorID>
+                        <CreatedBy_AuthorName>String</CreatedBy_AuthorName>
+                        <CreatedTimestamp>2001-12-17T09:30:47.0Z</CreatedTimestamp>
+                        <LastModifiedTimestamp>2001-12-17T09:30:47.0Z</LastModifiedTimestamp>
+                        <ValidationStatus>String</ValidationStatus-->
+                        <AuthorComments>String</AuthorComments>
+                        <LMT_ID>0</LMT_ID>
+                        <Logic_IntermediateForm>String</Logic_IntermediateForm>
+                        <Logic_NativeForm>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</Logic_NativeForm>
+                        <Logic_BinaryForm>UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</Logic_BinaryForm>
+                        <FactSpecificationList>
+                           <KMV_FactDependency>
+                              <Type>String</Type>
+                              <Description>bobKM KMV 1 FACT 1</Description>
+                              <FactSpecification>
+                                 <TerminologyScheme>bobKM KMV 1 FACT 1 SCHEME</TerminologyScheme>
+                                 <TerminologyCode>bobKM KMV 1 FACT 1 CODE</TerminologyCode>
+                                 <Comments>String</Comments>
+                              </FactSpecification>
+                           </KMV_FactDependency>
+                           <KMV_FactDependency>
+                              <Type>String</Type>
+                              <Description>bobKM KMV 1 FACT 2</Description>
+                              <FactSpecification>
+                                 <TerminologyScheme>bobKM KMV 1 FACT 2 SCHEME a</TerminologyScheme>
+                                 <TerminologyCode>bobKM KMV 1 FACT 2 CODE</TerminologyCode>
+                                 <Comments>String</Comments>
+                              </FactSpecification>
+                              <FactSpecification>
+                                 <TerminologyScheme>bobKM KMV 1 FACT 2 SCHEME b</TerminologyScheme>
+                                 <TerminologyCode>bobKM KMV 1 FACT 2 CODE</TerminologyCode>
+                                 <Comments>String</Comments>
+                              </FactSpecification>
+                           </KMV_FactDependency>
+                        </FactSpecificationList>
+                        <PopulationDependencyList>
+                           <KMV_PopulationDependency>
+                              <PD_Status>String</PD_Status>
+                              <PD_Scope>String</PD_Scope>
+                              <PD_Name>POP1</PD_Name>
+                              <PD_Description>String</PD_Description>
+                              <PopulationSpecification>
+                                 <TerminologyScheme>String</TerminologyScheme>
+                                 <TerminologyCode>String</TerminologyCode>
+                                 <TerminologyValue>String</TerminologyValue>
+                                 <Comments>String</Comments>
+                              </PopulationSpecification>
+                           </KMV_PopulationDependency>
+                        </PopulationDependencyList>
+                        <InferenceList>
+                           <KMV_InferenceEngineDependency>
+                              <TerminologyScheme>String</TerminologyScheme>
+                              <TerminologyCode>String</TerminologyCode>
+                              <Comments>String</Comments>
+                           </KMV_InferenceEngineDependency>
+                        </InferenceList>
+                        <TaskList>
+                           <KMV_TaskDependency>
+                              <TD_Type>TASK1</TD_Type>
+                              <TT_Specification>
+                                 <TerminologyScheme>TASK1 SCHEME1</TerminologyScheme>
+                                 <TerminologyCode>TASK1 SCHEME1 CODE</TerminologyCode>
+                                 <Comments>String</Comments>
+                              </TT_Specification>
+                              <TT_Specification>
+                                 <TerminologyScheme>TASK1 SCHEME2</TerminologyScheme>
+                                 <TerminologyCode>TASK1 SCHEME2 CODE</TerminologyCode>
+                                 <Comments>String</Comments>
+                              </TT_Specification>
+                              <TT_Specification>
+                                 <TerminologyScheme>TASK1 SCHEME3</TerminologyScheme>
+                                 <TerminologyCode>TASK1 SCHEME3 CODE</TerminologyCode>
+                                 <Comments>String</Comments>
+                              </TT_Specification>
+                           </KMV_TaskDependency>
+                           <KMV_TaskDependency>
+                              <TD_Type>TASK2</TD_Type>
+                              <TT_Specification>
+                                 <TerminologyScheme>TASK2 SCHEME1</TerminologyScheme>
+                                 <TerminologyCode>TASK2 SCHEME1 CODE</TerminologyCode>
+                                 <Comments>String</Comments>
+                              </TT_Specification>
+                              <TT_Specification>
+                                 <TerminologyScheme>TASK2 SCHEME2</TerminologyScheme>
+                                 <TerminologyCode>TASK2 SCHEME2 CODE</TerminologyCode>
+                                 <Comments>String</Comments>
+                              </TT_Specification>
+                              <TT_Specification>
+                                 <TerminologyScheme>TASK2 SCHEME3</TerminologyScheme>
+                                 <TerminologyCode>TASK2 SCHEME3 CODE</TerminologyCode>
+                                 <Comments>String</Comments>
+                              </TT_Specification>
+                           </KMV_TaskDependency>
+                        </TaskList>
+                        <ACL_PermissionList>
+                           <ACL_Permission>
+                              <UR_Permission>RWX</UR_Permission>
+                              <UserRole>
+                                 <UR_Name>Providers-Physicians</UR_Name>
+                                 <UR_Description>Providers-Physicians +RWX</UR_Description>
+                              </UserRole>
+                           </ACL_Permission>
+                           <ACL_Permission>
+                              <UR_Permission>R</UR_Permission>
+                              <UserRole>
+                                 <UR_Name>External Domain Expert</UR_Name>
+                                 <UR_Description>External Domain Expert +R</UR_Description>
+                              </UserRole>
+                           </ACL_Permission>
+                        </ACL_PermissionList>
+
+
+                     </kmVersion>
+                     
+                  </m:KmVersionList>
+               </m:km>
+
+            </m:kms>
+         </m:request>
+      </m:KmInsertRequest>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

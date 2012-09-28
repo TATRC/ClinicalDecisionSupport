@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="freebase" match-schema="public"/>
+  <table-filter match-name="freebase_wpid"/>
+  <table-filter match-name="ecs_canidate_wpids"/>
+  <table-filter match-name="articles"/>
+  <table-filter match-name="ecs_icd9_wpids"/>
+  <table-filter match-name="template_values"/>
+  <table-filter match-name="sections"/>
+  <table-filter match-name="template_calls"/>
+  <table-filter match-name="redirects"/>
+  <table-filter match-name="ecs_articles"/>
+  <table-filter match-name="freebase_med_disease"/>
+  <table-filter match-name="freebase_med_icd_9"/>
+  <table-filter match-name="freebase_types"/>
+  <table-filter match-name="ecs_candidate_guid"/>
+</hibernate-reverse-engineering>

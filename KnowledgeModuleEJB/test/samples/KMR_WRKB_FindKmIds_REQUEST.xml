@@ -1,0 +1,12 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SOAP-ENV:Body>
+		<m:FindKmIdsRequest xmlns:m="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+			<m:request>
+            <m:requestReference>
+               <m:requestId>96</m:requestId>
+               <m:requestDate>2010-06-22T00:03:22.000-00:07</m:requestDate>
+            </m:requestReference>
+			</m:request>
+		</m:FindKmIdsRequest>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

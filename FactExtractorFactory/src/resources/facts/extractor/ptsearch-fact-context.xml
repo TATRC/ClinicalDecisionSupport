@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+  
+  <bean id="ptsearch.extractor" class="gov.hhs.fha.nhinc.adapter.fact.extractor.PersonFactExtractor" scope="prototype">
+    <constructor-arg ref="Xpath"/>
+    <property name="factClassName" value="gov.hhs.fha.nhinc.adapter.fact.PersonFactType"/>
+    <property name="patientsCountXpath" value="count(//hl7:FindPatients_PRPA_MT201310UVResponse/hl7:subject)"/>
+    <property name="factBaseXpath" value="//hl7:FindPatients_PRPA_MT201310UVResponse/hl7:subject[#person#]"/>
+    <property name="factIndexCharset" value="#person#"/>
+    <property name="supportExtractor" ref="patient.support.extractor"/>
+    <property name="factProperties">
+      <map>
+        <entry key="SourceSystem">
+          <ref bean="demographics.SourceSystem"/>
+        </entry>
+        <entry key="Id">
+          <ref bean="demographics.Id"/>
+        </entry>
+        <entry key="OtherName">
+          <ref bean="demographics.OtherName"/>
+        </entry>
+        <entry key="DateOfBirth">
+          <ref bean="demographics.DateOfBirth"/>
+        </entry>
+        <entry key="Gender">
+          <ref bean="demographics.Gender"/>
+        </entry>
+        <entry key="MaritalStatus">
+          <ref bean="demographics.MaritalStatus"/>
+        </entry>
+        <entry key="Race">
+          <ref bean="demographics.Race"/>
+        </entry>
+        <entry key="Ethnic">
+          <ref bean="demographics.Ethnic"/>
+        </entry>
+        <entry key="Language">
+          <ref bean="demographics.Language"/>
+        </entry>
+        <entry key="Telecom">
+          <ref bean="demographics.Telecom"/>
+        </entry>
+        <entry key="Address">
+          <ref bean="demographics.Address"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+</beans>

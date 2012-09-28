@@ -1,0 +1,347 @@
+package gov.hhs.fha.nhinc.kmr;
+
+global gov.hhs.fha.nhinc.kmr.TaskManagerHelper tmHelper;
+
+import gov.hhs.fha.nhinc.alertpayload.Action;
+import gov.hhs.fha.nhinc.alertpayload.ActionParam;
+import gov.hhs.fha.nhinc.alertpayload.PayloadMeta;
+import gov.hhs.fha.nhinc.alertpayload.Recommendation;
+import gov.hhs.fha.nhinc.common.task.ContactDetails;
+import gov.hhs.fha.nhinc.common.task.DestinationContext;
+import gov.hhs.fha.nhinc.common.task.RuleContext;
+import gov.hhs.fha.nhinc.adapter.fact.FactType;
+import gov.hhs.fha.nhinc.adapter.fact.NameFactType;
+import gov.hhs.fha.nhinc.adapter.fact.PersonFactType;
+import gov.hhs.fha.nhinc.adapter.fact.ResultFactType;
+import gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair;
+import gov.hhs.fha.nhinc.adapter.fact.ValueType;
+import gov.hhs.fha.nhinc.adapter.fact.ValueUnitPair;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PatientCohort;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PopulationRegistriesType;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PopulationType;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PreferencesType;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PreferenceType;
+import gov.hhs.fha.nhinc.kmr.TaskManagerHelper;
+
+rule "UC#1a: PLT LE 40 and Historical WBC LT 3.0"
+    when
+        pltFact: ResultFactType(codedTestType!=null, historical==false, 
+                                codedTestType.code=="26515-7", id!=null, 
+                                pltAccessionId: id, resultValue!=null, plt: resultValue,
+                                resultValue.floatValue <= 40 )
+        wbcFact: ResultFactType(codedTestType!=null, historical==true, 
+        						codedTestType.code=="6690-2", id!=null, 
+        						wbcAccessionId: id, id[0].value == pltAccessionId[0].value, 
+        					    resultValue!=null, wbc: resultValue,
+        					    resultValue.floatValue < 3 )
+    then
+        System.out.println("UC#1a: PLT LE 40 and Historical WBC LT 3.0 for " + tmHelper.getPatientName() + " PLT: " + plt.getValue() + " WBC: " + wbc.getValue());
+        DestinationContext destination = new DestinationContext();
+        ContactDetails contact = new ContactDetails();
+        contact.setProvider("cn=adam.adam,sn=Adam");
+        destination.getProviders().add(contact);
+        tmHelper.sendSMSRequest("UC#1a: PLT LE 40 and Historical WBC LT 3.0 for " + tmHelper.getPatientName() + " PLT: " + plt.getValue() + " WBC: " + wbc.getValue(), destination, null);
+end
+
+rule "UC#1b: WBC LT 3.0 and Historical PLT LE 40"
+    when
+        wbcFact: ResultFactType(codedTestType!=null, historical==false, 
+        						codedTestType.code=="6690-2", id!=null, 
+        						wbcAccessionId: id, resultValue!=null, wbc: resultValue,
+        					    resultValue.floatValue < 3 )
+        pltFact: ResultFactType(codedTestType!=null, historical==true, 
+                                codedTestType.code=="26515-7", id!=null, 
+                                pltAccessionId: id, id[0].value == wbcAccessionId[0].value, 
+                                resultValue!=null, plt: resultValue,
+                                resultValue.floatValue <= 40 )
+    then
+        System.out.println("UC#1b: WBC LT 3.0 and Historical PLT LE 40 for " + tmHelper.getPatientName() + " PLT: " + plt.getValue() + " WBC: " + wbc.getValue());
+        DestinationContext destination = new DestinationContext();
+        ContactDetails contact = new ContactDetails();
+        contact.setProvider("cn=adam.adam,sn=Adam");
+        destination.getProviders().add(contact);
+        tmHelper.sendSMSRequest("UC#1b: WBC LT 3.0 and Historical PLT LE 40 for " + tmHelper.getPatientName() + " PLT: " + plt.getValue() + " WBC: " + wbc.getValue(), destination, null);
+end
+
+rule "UC#2: PLT GT 40 and LE 80"
+    when
+        pltFact: ResultFactType(codedTestType!=null, historical==false, 
+                                codedTestType.code=="26515-7", id!=null, 
+                                pltAccessionId: id, resultValue!=null, plt: resultValue,
+                                resultValue.floatValue > 40, resultValue.floatValue <= 80 )
+    then
+        System.out.println("UC#2: PLT GT 40 and LE 80 for " + tmHelper.getPatientName() + " PLT: " + plt.getValue());
+        DestinationContext destination = new DestinationContext();
+        ContactDetails contact = new ContactDetails();
+        contact.setProvider("cn=adam.adam,sn=Adam");
+        destination.getProviders().add(contact);
+        ContactDetails escalationContact = new ContactDetails();
+        escalationContact.setMethod("Alert");
+        escalationContact.setProvider("cn=wilson.huyentrang,sn=Wilson");
+        destination.getEscalationProviders().add(escalationContact);
+        destination.setEscalationMinutes(3);
+        Recommendation recommendation = new Recommendation();
+        recommendation.setBody("<html>PLT GT 40 and PLT LE 80 for " + tmHelper.getPatientName() + "<br>PLT: " + plt.getValue() + "</html>");
+        PayloadMeta meta = new PayloadMeta();
+        meta.setType("MedAlert");
+        recommendation.setMetadata(meta);
+        Action action = new Action();
+        action.setActionId("aid1");
+        action.setName("Accept");
+        recommendation.getActions().add(action);
+        tmHelper.sendAlert("UC#2: PLT GT 40 and LE 80", "Critical", destination, recommendation, null);
+end
+
+rule "UC#3: PLT GT 80 and LE 120"
+    when
+        pltFact: ResultFactType(codedTestType!=null, historical==false, 
+                                codedTestType.code=="26515-7", id!=null, 
+                                pltAccessionId: id, resultValue!=null, plt: resultValue,
+                                resultValue.floatValue > 80, resultValue.floatValue <= 120 )
+    then
+        System.out.println("UC#3: PLT GT 80 and LE 120 for " + tmHelper.getPatientName() + " PLT: " + plt.getValue());
+        DestinationContext destination = new DestinationContext();
+        ContactDetails contact = new ContactDetails();
+        contact.setProvider("cn=adam.adam,sn=Adam");
+        destination.getProviders().add(contact);
+        Recommendation recommendation = new Recommendation();
+        recommendation.setBody("<html>UC#3: PLT GT 80 and LE 120 for " + tmHelper.getPatientName() + "<br>PLT: " + plt.getValue() + "</html>");
+        PayloadMeta meta = new PayloadMeta();
+        meta.setType("MedAlert");
+        recommendation.setMetadata(meta);
+        Action action = new Action();
+        action.setActionId("aid1");
+        action.setName("Accept");
+        recommendation.getActions().add(action);
+        tmHelper.sendAlert("UC#3: PLT GT 80 and LE 120", "Critical", destination, recommendation, null);
+end
+
+rule "UC#4: PLT LE 80 percent of 5pt average" 
+	dialect "mvel"
+    when
+        pltFact: ResultFactType(codedTestType!=null, 
+                                codedTestType.code=="26515-7", historical==false, 
+                                resultValue!=null, $newResult: resultValue)
+        $average : Number( floatValue > 0 && > ($newResult.floatValue/.8) ) from accumulate(
+        		ResultFactType(codedTestType!=null, codedTestType.code=="26515-7",
+        	               historical==true, resultValue!=null, 
+        	               plt : resultValue, key : specimenDate before pltFact.specimenDate ),
+        		averageLast( [5, key, plt.floatValue]) )
+    then
+        System.out.println("UC#4: PLT LE 80 percent of 5pt average for " + tmHelper.getPatientName() + " PLT: " + $newResult.getValue() + " AVG: " + $average);
+        DestinationContext destination = new DestinationContext();
+        ContactDetails contact = new ContactDetails();
+        contact.setProvider("cn=adam.adam,sn=Adam");
+        destination.getProviders().add(contact);
+        Recommendation recommendation = new Recommendation();
+        recommendation.setBody("<html>UC#4: PLT LE 80 percent of 5pt average for " + tmHelper.getPatientName() + "<br>PLT: " + $newResult.getValue() + "<br>AVG: " + $average + "</html>");
+        PayloadMeta meta = new PayloadMeta();
+        meta.setType("MedAlert");
+        recommendation.setMetadata(meta);
+        Action action = new Action();
+        action.setActionId("aid1");
+        action.setName("Accept");
+        recommendation.getActions().add(action);
+        tmHelper.sendAlert("UC#4: PLT LE 80 percent of 5pt average", "Critical", destination, recommendation, null);
+end
+
+rule "UC#5: PLT GT 300"
+    when
+        ResultFactType(codedTestType!=null, historical==false, 
+                       codedTestType.code=="26515-7", id!=null, 
+                       resultValue!=null, resultValue.floatValue > 300,
+                       $accessionId1: id, $resultValue1: resultValue)
+    then
+        System.out.println("UC#5: PLT GT 300 for " + tmHelper.getPatientName() + " PLT: " + $resultValue1);
+        String recipientList = "cn=adam.adam,sn=Adam";
+        String escalationMethod = "SMS";
+        String escalationList = "cn=wilson.huyentrang,sn=Wilson";
+        int escalationMinutes = 3;
+        String payload = "<html>UC#5: PLT GT 300 for <PATIENT_NAME> PLT: <RESULT_VALUE1></html>";
+        String valueList = $resultValue1.getValue();
+        tmHelper.sendAlert("UC#5: PLT GT 300", "Critical", recipientList,
+        				   escalationList, escalationMinutes, escalationMethod, payload, valueList);
+end
+
+rule "UC#6: PLT LE 80 percent of 30 day average"
+	dialect "mvel" 
+    when
+        pltFact: ResultFactType(codedTestType!=null, codedTestType.code=="26515-7",
+                                historical==false, resultValue!=null, $newResult: resultValue)
+        $average : Number( floatValue > 0 && > ($newResult.floatValue / .8) ) from accumulate(
+        	ResultFactType(codedTestType!=null, codedTestType.code=="26515-7",
+            historical==true, resultValue!=null, plt : resultValue, specimenDate before [0d, 30d] pltFact.specimenDate ),
+        		average( plt.floatValue ) )
+    then
+        System.out.println("UC#6: PLT LE 80 percent of 30 day average for " + tmHelper.getPatientName() + " PLT: " + $newResult.getValue() + " AVG: " + $average);
+        DestinationContext destination = new DestinationContext();
+        ContactDetails contact = new ContactDetails();
+        contact.setProvider("cn=adam.adam,sn=Adam");
+        destination.getProviders().add(contact);
+        Recommendation recommendation = new Recommendation();
+        recommendation.setBody("<html>UC#6: PLT LE 80 percent of 30 day average for " + tmHelper.getPatientName() + "<br>PLT: " + $newResult.getValue() + "<br>AVG: " + $average + "</html>");
+        PayloadMeta meta = new PayloadMeta();
+        meta.setType("MedAlert");
+        recommendation.setMetadata(meta);
+        Action action = new Action();
+        action.setActionId("aid1");
+        action.setName("Accept");
+        recommendation.getActions().add(action);
+        tmHelper.sendAlert("UC#6: PLT LE 80 percent of 30 day average", "Critical", destination, recommendation, null);
+end
+
+rule "UC#7: PLT GT 80 and LE 120"
+    when
+        pltFact: ResultFactType(codedTestType!=null, historical==false, 
+                                codedTestType.code=="26515-7", id!=null, 
+                                pltAccessionId: id, resultValue!=null, plt: resultValue,
+                                resultValue.floatValue > 80, resultValue.floatValue <= 120 )
+    then
+        System.out.println("UC#7: PLT GT 80 and LE 120 for " + tmHelper.getPatientName() + " PLT: " + plt.getValue());
+        DestinationContext destination = new DestinationContext();
+        ContactDetails contact = new ContactDetails();
+        contact.setRole("risk manager");
+        destination.getProviders().add(contact);
+        Recommendation recommendation = new Recommendation();
+        recommendation.setBody("<html>UC#7: PLT GT 80 and LE 120 for " + tmHelper.getPatientName() + "<br>PLT: " + plt.getValue() + "</html>");
+        PayloadMeta meta = new PayloadMeta();
+        meta.setType("MedAlert");
+        recommendation.setMetadata(meta);
+        Action action = new Action();
+        action.setActionId("aid1");
+        action.setName("Accept");
+        recommendation.getActions().add(action);
+        tmHelper.sendAlert("UC#7: PLT GT 80 and LE 120", "Critical", destination, recommendation, null);
+end
+
+rule "UC#8: PLT GT 300"
+    when
+        pltFact: ResultFactType(codedTestType!=null, historical==false, 
+                                codedTestType.code=="26515-7", id!=null, 
+                                pltAccessionId: id, resultValue!=null, plt: resultValue,
+                                resultValue.floatValue > 300 )
+        cohortFact: PatientCohort(patId: patientId, pcm: primaryCareManagerId)
+    then
+        System.out.println("UC#8: PLT GT 300 for " + tmHelper.getPatientName() + " PLT: " + plt.getValue());
+        DestinationContext destination = new DestinationContext();
+        ContactDetails contact = new ContactDetails();
+        contact.setProvider(pcm);
+        destination.getProviders().add(contact);
+        ContactDetails escalationContact = new ContactDetails();
+        escalationContact.setMethod("SMS");
+        escalationContact.setProvider("cn=wilson.huyentrang,sn=Wilson");
+        destination.getEscalationProviders().add(escalationContact);
+        destination.setEscalationMinutes(3);
+        Recommendation recommendation = new Recommendation();
+        recommendation.setBody("<html>UC#8: PLT GT 300 for " + tmHelper.getPatientName() + " PLT: " + plt.getValue() + "</html>");
+        PayloadMeta meta = new PayloadMeta();
+        meta.setType("MedAlert");
+        recommendation.setMetadata(meta);
+        Action action = new Action();
+        action.setActionId("aid1");
+        action.setName("Accept");
+        recommendation.getActions().add(action);
+        tmHelper.sendAlert("UC#8: PLT GT 300", "Critical", destination, recommendation, null);
+end
+
+rule "UC#9: PLT GT 80 and LE 120"
+    when
+        pltFact: ResultFactType(codedTestType!=null, historical==false, 
+                                codedTestType.code=="26515-7", id!=null, 
+                                pltAccessionId: id, resultValue!=null, plt: resultValue,
+                                resultValue.floatValue > 80, resultValue.floatValue <= 120 )
+    then
+        System.out.println("UC#9: PLT GT 80 and LE 120 for " + tmHelper.getPatientName() + " PLT: " + plt.getValue());
+        DestinationContext destination = new DestinationContext();
+        ContactDetails contact = new ContactDetails();
+        contact.setRole("charge nurse");
+        contact.setLocation("123");
+        destination.getProviders().add(contact);
+        Recommendation recommendation = new Recommendation();
+        recommendation.setBody("<html>UC#9: PLT GT 80 and LE 120 for " + tmHelper.getPatientName() + "<br>PLT: " + plt.getValue() + "</html>");
+        PayloadMeta meta = new PayloadMeta();
+        meta.setType("MedAlert");
+        recommendation.setMetadata(meta);
+        Action action = new Action();
+        action.setActionId("aid1");
+        action.setName("Accept");
+        recommendation.getActions().add(action);
+        tmHelper.sendAlert("UC#9: PLT GT 80 and LE 120", "Critical", destination, recommendation, null);
+end
+
+rule "UC#10: PLT GT 500 with Idiopathic Thrombocytosis"
+    when
+        pltFact: ResultFactType(codedTestType!=null, historical==false, 
+                                codedTestType.code=="26515-7", id!=null, 
+                                pltAccessionId: id, resultValue!=null, plt: resultValue,
+                                resultValue.floatValue > 500 )
+        cohortFact: PatientCohort(patId: patientId, pcm: primaryCareManagerId)
+    then
+        System.out.println("UC#10: PLT GT 500 with Idiopathic Thrombocytosis for " + tmHelper.getPatientName() + " PLT: " + plt.getValue());
+        DestinationContext destination = new DestinationContext();
+        ContactDetails contact = new ContactDetails();
+        contact.setProvider(pcm);
+        destination.getProviders().add(contact);
+        ContactDetails escalationContact = new ContactDetails();
+        Recommendation recommendation = new Recommendation();
+        recommendation.setBody("<html>UC#10: PLT GT 500 with Idiopathic Thrombocytosis for " + tmHelper.getPatientName() + " PLT: " + plt.getValue() + "</html>");
+        PayloadMeta meta = new PayloadMeta();
+        meta.setType("MedAlert");
+        recommendation.setMetadata(meta);
+        Action action = new Action();
+        action.setActionId("aid1");
+        action.setName("Accept");
+        recommendation.getActions().add(action);
+        tmHelper.sendAlert("UC#10: PLT GT 500 with Idiopathic Thrombocytosis", "Critical", destination, recommendation, null);
+end
+
+rule "UC#13 PLT < 40 and Inpatient"
+    when
+        pltFact: ResultFactType(codedTestType!=null, codedTestType.code=="26515-7", historical==false, resultValue!=null, resultValue.floatValue < 40, plt : resultValue)
+        cohortFact: PatientCohort(admissionStatus == "Inpatient")
+    then
+        System.out.println("UC#13 PLT < 40 and Inpatient for " + tmHelper.getPatientName() + " PLT: " + plt.getValue());
+        DestinationContext destination = new DestinationContext();
+        ContactDetails contact = new ContactDetails();
+        contact.setRole("patient attending");
+        contact.setLocation("123");
+        destination.getProviders().add(contact);
+        Recommendation recommendation = new Recommendation();
+        recommendation.setBody("<html>UC#13 PLT < 40 and Inpatient for " + tmHelper.getPatientName() + "<br>PLT: " + plt.getValue() + "</html>");
+        PayloadMeta meta = new PayloadMeta();
+        meta.setType("MedAlert");
+        recommendation.setMetadata(meta);
+        Action action = new Action();
+        action.setActionId("aid1");
+        action.setName("Accept");
+        recommendation.getActions().add(action);
+        tmHelper.sendAlert("UC#13 PLT < 40 and Inpatient", "Critical", destination, recommendation, null);
+end
+
+rule "WBC Result"
+    when
+        $fact: ResultFactType(codedTestType!=null, codedTestType.code=="6690-2", historical==false, resultValue!=null, $result : resultValue)
+    then
+        System.out.println("WBC Lab result fact received for " + tmHelper.getPatientName() + " WBC: " + $result.getValue());
+end
+
+rule "Normal PLT Result"
+    when
+        $fact: ResultFactType(codedTestType!=null, codedTestType.code=="26515-7", historical==false, resultValue!=null, resultValue.floatValue <= 40, $result : resultValue, $date: specimenDate)
+    then
+        System.out.println("Normal PLT Lab result fact received for " + tmHelper.getPatientName() + " PLT: " + $result.getValue() + " Date: " + $date.toString());
+end
+
+rule "Other Coded Lab Result"
+    when
+        $fact: ResultFactType(codedTestType!=null, codedTestType.code!="6690-2", codedTestType.code!="26515-7", historical==false, $type : codedTestType, resultValue!=null, $result : resultValue, $date: specimenDate)
+    then
+        System.out.println("Other coded lab result fact received for " + tmHelper.getPatientName() + " type: " + $type.getCode() + " result: " + $result.getValue() + " Date: " + $date.toString());
+end
+
+rule "Free-text Lab Result"
+    when
+        $fact: ResultFactType(freeTextTestType!=null, historical==false, $type : freeTextTestType, resultFreeText!=null, $result : resultFreeText, $date: specimenDate)
+    then
+        System.out.println("Free-text lab result fact received for " + tmHelper.getPatientName() + " type: " + $type + " result: " + $result + " Date: " + $date.toString());
+end

@@ -1,0 +1,21 @@
+{
+   "getAppointmentScheduleFacts":{
+      "criteria":{
+         "queryId":"20100411011010",
+         "senderId":"Adapter Assembly Service",
+         "interactionId":"PRSC_IN030101UV",
+         "triggerEventCode":"PRSC_TE030100UV",
+         "scheduleSearchPayload":{
+            "appointmentType":"EST",
+            "slotType":"SOP",
+            "scheduleStartDate":"20110105",
+            "scheduleEndDate":"20110115",
+            "scheduleId":"",
+            "sdlcId":"clinic-FAM",
+            "sdlcName":"FAMILY PRACTICE CLINIC",
+            "performerId":"",
+            "performerName":""
+         }
+      }
+   }
+}

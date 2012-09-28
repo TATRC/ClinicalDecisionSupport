@@ -1,0 +1,22 @@
+<!-- Example alert for insertion into database for AlertLoader util. -->
+<AlertType>
+  <name>Alert Handler A</name>
+  <description>Alert Provider A</description>
+  <specifications>
+    <Specification>
+      <name>alertMethod</name>
+      <value>webService</value>
+      <alertType reference="../../.."/>
+    </Specification>
+    <Specification>
+      <name>wsEndpoint</name>
+      <value>http://localhost/AlertedService/AlertedService_Service?WSDL</value>
+      <alertType reference="../../.."/>
+    </Specification>
+    <Specification>
+      <name>provider</name>
+      <value>123456789</value>
+      <alertType reference="../../.."/>
+    </Specification>
+  </specifications>
+</AlertType>

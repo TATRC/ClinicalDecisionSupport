@@ -1,0 +1,59 @@
+version: 1
+dn: cn=smith.baby,ou=people,dc=socraticgrid,dc=org
+objectClass: person
+objectClass: kmr-orgPerson
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+businessCategory: patient
+carLicense: CA12346
+cn: smith.baby
+departmentNumber: 123.4567.12.3444
+destinationIndicator: 1234.1234.2.34.12.34.1234
+displayName: Baby Smith
+employeeNumber: 21777989-10
+employeeType: pt
+facsimileTelephoneNumber: 619-555-9999
+gender: F
+givenName: Baby
+homePhone: 858-549-0000
+homePostalAddress: 5001 Mt Elbrus Drive$San Diego, CA 92117
+initials: bs
+l: San Diego
+labeledURI: www.homewebpage.com
+mail: babysmith@socraticgrid.org
+manager: 
+mobile: 619-999-999
+ou: dn=123
+pager: 619-999-999
+photo:: 
+postalAddress: 5001 Mt Elbrus Drive$San Diego, CA 92117
+postalCode: 92117
+preferredContactMethod: homePhone
+preferredDeliveryMethod: physical
+preferredLanguage: English
+registeredAddress: Naval Health Research Center$140 Sylvester Rd$San Diego, CA 92126
+roomNumber: A3
+secretary: 
+sn: smith
+st: CA
+street: 5001 Mt Elbrus Drive
+telephoneNumber: 858-549-0000
+title: Ms.
+uid: 30354
+userPassword:: test
+
+dn: cn=PMR.Account,cn=smith.baby,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-account
+objectClass: top
+cn: PMR.Account
+description: Account for PMR portal
+uid: 30354
+
+dn: cn=RPMS.Account,cn=smith.baby,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-account
+objectClass: top
+cn: RPMS.Account
+uid: 30354
+userPassword:: test
+

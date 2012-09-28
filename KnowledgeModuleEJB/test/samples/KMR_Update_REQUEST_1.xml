@@ -1,0 +1,66 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <SOAP-ENV:Body>
+      <!--
+        Request for UPDATE of a pre-existing KM, but with only data changes at
+        the KnowledgeModule level.
+        -->
+      <m:KmUpdateRequest xmlns:m="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <m:request>
+            <m:requestReference>
+               <m:requestId>30088</m:requestId>
+               <m:requestDate>2010-10-22T00:09:55.000-00:05</m:requestDate>
+            </m:requestReference>
+
+            <m:ACL>
+               <User_OrganizationLevel>Local</User_OrganizationLevel>
+               <UR_Name>Providers-Physicians</UR_Name>
+               <AuthorId>9</AuthorId>
+            </m:ACL>
+
+            <m:kms>
+               <m:km>
+                  <m:kmId>9000</m:kmId>
+                  <m:kmName>bobKM UPDATE 1</m:kmName>
+<!--
+                  <m:kmDescription></m:kmDescription>
+                  <m:kmKeywords></m:kmKeywords>
+-->
+                  <m:kmOrganizationLevel>PERSONAL</m:kmOrganizationLevel>
+                  <m:kmType>GUIDELINE</m:kmType>
+                  <m:lastModifiedByAuthorID>9</m:lastModifiedByAuthorID>
+                  <m:lastModifiedByAuthorName>http://getopenid.com/tia</m:lastModifiedByAuthorName>
+                  <!--m:lastModifiedTimestamp>2010-11-16T00:12:22.000-00:22</m:lastModifiedTimestamp-->
+                  <m:originInstitution>NHRC</m:originInstitution>
+                  <m:validationStatus>DRAFT</m:validationStatus>
+                  
+                  <m:SpecialtyList>
+                     <m:KM_Specialty>
+                        <m:TerminologyScheme>HL7</m:TerminologyScheme>
+                        <m:TerminologyCode>PED</m:TerminologyCode>
+                        <m:Comments>none</m:Comments>
+                     </m:KM_Specialty>
+                  </m:SpecialtyList>
+
+                  <m:KmVersionList>
+                     <kmVersion>
+                        <KMV_Name>bobKM KMV 1-UPDATE 1</KMV_Name>
+
+                        <ACL_PermissionList>
+                           <ACL_Permission>
+                              <UR_Permission>RWX</UR_Permission>
+                              <UserRole>
+                                 <UR_Name>Providers-Physicians</UR_Name>
+                                 <UR_Description>Providers-Physicians +RWX</UR_Description>
+                              </UserRole>
+                           </ACL_Permission>
+                        </ACL_PermissionList>
+
+                     </kmVersion>
+                  </m:KmVersionList>
+                  
+               </m:km>
+            </m:kms>
+         </m:request>
+      </m:KmUpdateRequest>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

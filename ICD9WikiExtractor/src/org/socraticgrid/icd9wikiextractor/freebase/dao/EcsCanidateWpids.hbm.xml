@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 23, 2010 3:53:17 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.socraticgrid.icd9wikiextractor.freebase.dao.EcsCanidateWpids" table="ecs_canidate_wpids" schema="public">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="guid" type="string">
+            <column name="guid" length="32" not-null="true" />
+        </property>
+        <property name="wpid" type="int">
+            <column name="wpid" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

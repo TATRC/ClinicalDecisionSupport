@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/PatientCohortQuery.wsdl" uri="src/conf/xml-resources/web-services/PatientCohortQuerytService/wsdl/PatientCohortQuery.wsdl"/>
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/schemas/nhinc/kmr/cohort.xsd" uri="src/conf/xml-resources/web-services/PatientCohortQuerytService/schemas/nhinc/kmr/cohort.xsd"/>
+    <system systemId="http://nhinint03.asu.edu:8080/CommonDataLayerFactService/AdapterFactService?wsdl" uri="wsdl/nhinint03.asu.edu_8080/CommonDataLayerFactService/AdapterFactService.wsdl"/>
+    <system systemId="http://nhinint03.asu.edu:8080/CommonDataLayerFactService/AdapterFactService?xsd=1" uri="wsdl/nhinint03.asu.edu_8080/CommonDataLayerFactService/AdapterFactService.xsd_1.xsd"/>
+    <system systemId="http://nhinint03.asu.edu:8080/CommonDataLayerFactService/AdapterFactService?xsd=2" uri="wsdl/nhinint03.asu.edu_8080/CommonDataLayerFactService/AdapterFactService.xsd_2.xsd"/>
+    <system systemId="http://nhindev01.asu.edu:8080/Registries/RegistriesService?WSDL" uri="wsdl/nhindev01.asu.edu_8080/Registries/RegistriesService.wsdl"/>
+    <system systemId="http://nhindev01.asu.edu:8080/Registries/RegistriesService?xsd=1" uri="wsdl/nhindev01.asu.edu_8080/Registries/RegistriesService.xsd_1.xsd"/>
+</catalog>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-KmrKnowledgeModule" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/KmrKnowledgeModule"/>
+        <property name="wsdl-KmrKnowledgeModule" location="xml-resources/web-service-references/KmrKnowledgeModule/wsdl/nhinint01.asu.edu_8080/KnowledgeModuleService/KmrKnowledgeModule.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/KmrKnowledgeModule" destdir="${build.generated.dir}/jax-wsCache/KmrKnowledgeModule" wsdl="${wsdl-KmrKnowledgeModule}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://nhinint01.asu.edu:8080/KnowledgeModuleService/KmrKnowledgeModule?wsdl" xnocompile="true">
+            <depends file="${wsdl-KmrKnowledgeModule}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/KmrKnowledgeModule"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/KmrKnowledgeModule">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-KmrKnowledgeModule" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/KmrKnowledgeModule"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/gov/hhs/fha/nhinc/kmr/knowledgemodule"/>
+    </target>
+    <target name="wsimport-client-AlertManagerService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/AlertManagerService"/>
+        <property name="wsdl-AlertManagerService" location="xml-resources/web-service-references/AlertManagerService/wsdl/nhinint01.asu.edu_8080/AlertManager/AlertManagerService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/AlertManagerService" destdir="${build.generated.dir}/jax-wsCache/AlertManagerService" wsdl="${wsdl-AlertManagerService}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://nhinint01.asu.edu:8080/AlertManager/AlertManagerService?wsdl" xnocompile="true">
+            <binding dir="xml-resources/web-service-references/AlertManagerService/bindings" includes="DateBinding.xml"/>
+            <depends file="${wsdl-AlertManagerService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/AlertManagerService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/AlertManagerService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-AlertManagerService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/AlertManagerService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/gov/hhs/fha/nhinc/alertmanager"/>
+    </target>
+    <target name="wsimport-client-SessionService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/SessionService"/>
+        <property name="wsdl-SessionService" location="xml-resources/web-service-references/SessionService/wsdl/SessionService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/SessionService" destdir="${build.generated.dir}/jax-wsCache/SessionService" wsdl="${wsdl-SessionService}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/SessionService.wsdl" xnocompile="true">
+            <depends file="${wsdl-SessionService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/SessionService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/SessionService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-SessionService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/SessionService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/gov/hhs/fha/nhinc/kmr/dss"/>
+    </target>
+    <target name="wsimport-client-TaskManager" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/TaskManager"/>
+        <property name="wsdl-TaskManager" location="xml-resources/web-service-references/TaskManager/wsdl/TaskManager.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TaskManager" destdir="${build.generated.dir}/jax-wsCache/TaskManager" wsdl="${wsdl-TaskManager}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/TaskManager.wsdl" xnocompile="true">
+            <depends file="${wsdl-TaskManager}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/TaskManager"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/TaskManager">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-TaskManager" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/TaskManager"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/gov/hhs/fha/nhinc/taskmanager"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-KmrKnowledgeModule, wsimport-client-AlertManagerService, wsimport-client-SessionService, wsimport-client-TaskManager"/>
+</project>

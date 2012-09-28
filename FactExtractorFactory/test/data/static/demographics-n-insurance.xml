@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hl7:PatientDemographics_PRPA_MT201303UVResponse xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+   <hl7:subject classCode="PAT">
+      <hl7:id extension="14484"/>
+      <hl7:id displayable="false" extension="159875364" root="2.16.840.1.113883.4.1"/>
+      <hl7:addr use="HP">
+         <hl7:streetAddressLine>17 Daws Road</hl7:streetAddressLine>
+         <hl7:city>Blue Bell</hl7:city>
+         <hl7:state>MA</hl7:state>
+         <hl7:postalCode>00000</hl7:postalCode>
+         <hl7:country>US</hl7:country>
+      </hl7:addr>
+      <hl7:addr use="WP">
+         <hl7:streetAddressLine>117 Santa Rosa Road</hl7:streetAddressLine>
+         <hl7:city>Santa Rosa</hl7:city>
+         <hl7:state>MA</hl7:state>
+         <hl7:postalCode>10540</hl7:postalCode>
+         <hl7:country>US</hl7:country>
+      </hl7:addr>
+      <hl7:telecom use="HP" value="tel:+1-888-888-8888"/>
+      <hl7:telecom use="WP" value="tel:+1-222-222-2222"/>
+      <hl7:statusCode code="active"/>
+      <hl7:effectiveTime value="20090202000000"/>
+      <hl7:patientPerson>
+         <hl7:name use="L">
+            <hl7:family>Ross</hl7:family>
+            <hl7:given>Josephine</hl7:given>
+         </hl7:name>
+         <hl7:administrativeGenderCode displayName="Female" code="F"/>
+         <hl7:birthTime value="19761212"/>
+         <hl7:maritalStatusCode displayName="Single" codeSystemName="MaritalStatusCode" codeSystem="2.16.840.1.113883.5.2" code="S"/>
+         <hl7:religiousAffiliationCode displayName="Independent" codeSystemName="ReligiousAffiliation" codeSystem="2.16.840.1.113883.5.1076" code="1022"/>
+         <hl7:raceCode displayName="American Indian" codeSystemName="CDC Race and Ethnicity" codeSystem="2.16.840.1.113883.6.238" code="1004-1"/>
+         <hl7:ethnicGroupCode displayName="Latin American" codeSystemName="CDC Race and Ethnicity" codeSystem="2.16.840.1.113883.6.238" code="2178-2"/>
+         <hl7:contactParty classCode="ECON">
+            <hl7:id extension="8712"/>
+            <hl7:code displayName="Father" codeSystemName="RoleCode" codeSystem="2.16.840.1.113883.1.11.19563" code="FTH"/>
+            <hl7:telecom use="HP" value="tel:+1-999-999-9999"/>
+            <hl7:contactPerson>
+               <hl7:name use="L">
+                  <hl7:family>Robert</hl7:family>
+                  <hl7:given>Ross</hl7:given>
+               </hl7:name>
+            </hl7:contactPerson>
+         </hl7:contactParty>
+         <hl7:contactParty classCode="GUARD">
+            <hl7:id extension="8712"/>
+            <hl7:code displayName="Father" codeSystemName="RoleCode" codeSystem="2.16.840.1.113883.1.11.19563" code="FTH"/>
+            <hl7:telecom use="HP" value="tel:+1-999-999-9999"/>
+            <hl7:contactPerson>
+               <hl7:name use="L">
+                  <hl7:family>Robert</hl7:family>
+                  <hl7:given>Ross</hl7:given>
+               </hl7:name>
+            </hl7:contactPerson>
+         </hl7:contactParty>
+         <hl7:languageCommunication>
+            <hl7:templateId root="2.16.840.1.113883.3.88.11.83.2"/>
+            <hl7:languageCode displayName="English" code="en-US"/>
+            <hl7:preferenceInd value="true"/>
+         </hl7:languageCommunication>
+         <hl7:languageCommunication>
+            <hl7:templateId root="2.16.840.1.113883.3.88.11.83.2"/>
+            <hl7:languageCode displayName="French" code="en-FR"/>
+            <hl7:preferenceInd value="false"/>
+         </hl7:languageCommunication>
+      </hl7:patientPerson>
+      <hl7:providerOrganization>
+         <hl7:id root="2.16.840.1.113883.3.198"/>
+         <hl7:name>Department of Defense</hl7:name>
+      </hl7:providerOrganization>
+      <hl7:coveredPartyOf typeCode="COV">
+         <hl7:sequenceNumber value="1"/>
+         <hl7:coverageRecord moodCode="EVN" classCode="COV">
+            <hl7:id extension="coverage-record-id-1" root="2.16.840.1.113883.3.200"/>
+            <hl7:statusCode code="active"/>
+            <hl7:effectiveTime>
+               <hl7:low value="20091020131010.005"/>
+               <hl7:high value="20091020141010.010"/>
+            </hl7:effectiveTime>
+            <hl7:component typeCode="COMP">
+               <hl7:priorityNumber value="1"/>
+               <hl7:policyOrProgram moodCode="EVN" classCode="COV">
+                  <hl7:id assigningAuthorityName="KAISER PERMANENTE" extension="GroupOrContract#"/>
+                  <hl7:code displayName="Individual Policy" codeSystemName="X12N-1336" codeSystem="2.16.840.1.113883.6.255.1336" code="IP"/>
+                  <hl7:coveredParty negationInd="false" typeCode="COV">
+                     <hl7:coveredParty classCode="COVPTY">
+                        <hl7:id assigningAuthorityName="KAISER PERMANENTE" extension="member-id-#"/>
+                        <hl7:code displayName="Self" codeSystemName="RoleCode" codeSystem="2.16.840.1.113883.1.11.18877" code="SELF"/>
+                        <hl7:effectiveTime>
+                           <hl7:low value="20100101"/>
+                           <hl7:high value="20101231"/>
+                        </hl7:effectiveTime>
+                     </hl7:coveredParty>
+                  </hl7:coveredParty>
+                  <hl7:holder typeCode="HLD">
+                     <hl7:policyHolder classCode="POLHOLD">
+                        <hl7:id assigningAuthorityName="KAISER PERMANENTE" extension="policy-id-#"/>
+                        <hl7:addr use="WP">
+                           <hl7:streetAddressLine>123 ANY STREET</hl7:streetAddressLine>
+                           <hl7:city>ANy CITY</hl7:city>
+                           <hl7:state>CA</hl7:state>
+                           <hl7:postalCode>90001</hl7:postalCode>
+                           <hl7:country>USA</hl7:country>
+                        </hl7:addr>
+                        <hl7:telecom use="WP" value="1-800-222-9000"/>
+                        <hl7:policyHolderPerson determinerCode="INSTANCE" classCode="PSN">
+                           <hl7:name use="L">
+                              <hl7:family>Ross</hl7:family>
+                              <hl7:given>Josephine</hl7:given>
+                           </hl7:name>
+                        </hl7:policyHolderPerson>
+                     </hl7:policyHolder>
+                  </hl7:holder>
+                  <hl7:author typeCode="AUT">
+                     <hl7:underwriter classCode="UNDWRT">
+                        <hl7:id assigningAuthorityName="NAIC" extension="60053"/>
+                        <hl7:name>KAISER PERMANENTE</hl7:name>
+                     </hl7:underwriter>
+                  </hl7:author>
+               </hl7:policyOrProgram>
+            </hl7:component>
+         </hl7:coverageRecord>
+      </hl7:coveredPartyOf>
+   </hl7:subject>
+</hl7:PatientDemographics_PRPA_MT201303UVResponse>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package name="gov.hhs.fha.nhinc.kmr.drools"
+    xmlns="http://drools.org/rules"
+    xmlns:java="http://drools.org/semantics/java">
+    
+    <rule name="Platelets Less Than 120 greater than 40">
+        <parameter identifier="labCH">
+            <class>gov.hhs.fha.nhinc.adapter.kmr.factobjects.LabResultFact</class>
+        </parameter>
+        <java:condition>labCH.getLabId().equals("1835-72");</java:condition>
+        <java:condition>labCH.isHistorical() == false</java:condition>
+        <java:condition>labCH.getValue() < 120</java:condition>
+        <java:condition>labCH.getValue() > 40</java:condition>
+        <java:consequence>
+            import gov.hhs.fha.nhinc.adapter.kmr.ruleobjects.RuleExecutionResponse;            
+            RuleExecutionResponse resp = new RuleExecutionResponse();
+            resp.setRuleId("1");
+            resp.setRuleName("Platelets Less Than 120 greater than 40");
+            resp.setMessage("Notify provider 10001 of abnormal result");
+            resp.setTaskId("1");
+            resp.setTaskType("Inbox");
+            resp.setCriticality("Stat");
+            drools.assert(resp);
+            System.out.println("Rule 1 has fired");
+        </java:consequence>
+    </rule>
+</package>

@@ -1,0 +1,14 @@
+MSH|^~\&|CHCS\RX|A1401|DATAGATE|3M|20070726070649.1-0400||RDE^O01|A1401-2610174|P|2.3|||||
+PID|30354||68767^^^F3753|20/408-80-0204|SMITH^BABY GIRL^^^^||20100601140200|F||C|111 TEST AVE^^SPRINGFIELD^OR^97406^US||424.110.0512|424.166.5583|||||608-80-0204|||
+AL1|Id|FA|Code^Shellfish^System|SV|Shock~Flushing|20100616
+AL1|Id|DA|1010^Asprin^HL7|MO|Reaction~Recation2|20100616
+ORC|11|971112-11553^|WI6207142|^|11||||19971112142000|^^^^^^^|^^^^^^^|P7777^QWACK^CALLMEA^J^PA^^^|||19971112142000|^^^^^||^^^^^|P7777^QWACK^CALLMEA^J^PA^^^
+RXO|Drug Code^Drug Name^Name of Coding System|Give Min|Give Max|Giev Units^Give Units Text^Code Sys|Dosage Form Id^Dosage Form Text^Code Sys|Instructions Id^Instructions Txt^Code Sys|Admin Inst Id^Administration Instructions Txt^Code Sys|Point of Care|Allow Subs?|Req Disp Code Id^Req Disp Code Text^Code Sys|Req Disp Amt|Req Disp Unit Id^Req Disp Unit Text|Num Refills|Provider DEA Id Number^Provider Last^Given^MI|Pharmacist Id Number^Pharmacist Last^Given^MI
+RXE|1^SCOM^^19971112142000.2-0500^19971212142000.2-0500^^^TT PP #60 RF0|830^^DOD|800||MG^^^^^|||||60|^^^^^|0|||WI6207142|0||19971112000100.4-0500
+RXR|PO
+NTE|1||Med Type: O<E>
+NTE|2||Dispensing Location:REID DISPENSARY (MOD)<E>
+NTE|3||Days of Supply:30<E>
+NTE|4||RX_CLINIC:EMERGENCY DEPARTMENT,WHMC<E>
+NTE|5||NDC_NUMBER:53746-0137-05<E>
+NTE|6||NONE

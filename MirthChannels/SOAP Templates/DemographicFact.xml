@@ -1,0 +1,254 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dss="http://dss.kmr.socraticgrid.org/" xmlns:urn="urn:gov:hhs:fha:nhinc:adapter:fact">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <dss:storeDemographicsFactEvent><!--Optional:-->
+         <fact>
+            <!--Optional:-->
+            <!--type: string-->
+            <urn:primaryKey>gero et</urn:primaryKey>
+            <!--type: boolean-->
+            <urn:historical>true</urn:historical>
+            <!--1 or more repetitions:-->
+            <urn:id>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>aeoliam venit</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>ventos tempestatesque</urn:codeSystemName>
+               <!--type: string-->
+               <urn:value>temperat iras</urn:value>
+               <!--Optional:-->
+               <!--type: boolean-->
+               <urn:displayable>false</urn:displayable>
+            </urn:id>
+            <urn:legalName>
+               <!--type: string-->
+               <urn:firstName>circum claustra</urn:firstName>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:middleName>nimborum in</urn:middleName>
+               <!--type: string-->
+               <urn:familyName>foedere certo</urn:familyName>
+               <!--Optional:-->
+               <urn:prefix>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystem>profundum quippe ferant</urn:codeSystem>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystemName>et carcere</urn:codeSystemName>
+                  <!--type: string-->
+                  <urn:code>iovis rapidum iaculata</urn:code>
+                  <!--type: string-->
+                  <urn:label>speluncis abdidit</urn:label>
+               </urn:prefix>
+               <!--Optional:-->
+               <urn:suffix>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystem>bella gero et</urn:codeSystem>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystemName>flammas turbine</urn:codeSystemName>
+                  <!--type: string-->
+                  <urn:code>hoc metuens</urn:code>
+                  <!--type: string-->
+                  <urn:label>ac vinclis</urn:label>
+               </urn:suffix>
+               <urn:nameType>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystem>speluncis abdidit</urn:codeSystem>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystemName>aris imponet honorem</urn:codeSystemName>
+                  <!--type: string-->
+                  <urn:code>praeterea aut</urn:code>
+                  <!--type: string-->
+                  <urn:label>claustra fremunt</urn:label>
+               </urn:nameType>
+            </urn:legalName>
+            <!--Zero or more repetitions:-->
+            <urn:otherName>
+               <!--type: string-->
+               <urn:firstName>imperio premit</urn:firstName>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:middleName>quisquam numen</urn:middleName>
+               <!--type: string-->
+               <urn:familyName>ac vinclis</urn:familyName>
+               <!--Optional:-->
+               <urn:prefix>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystem>ac vinclis</urn:codeSystem>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystemName>pectore flammas</urn:codeSystemName>
+                  <!--type: string-->
+                  <urn:code>pectore flammas</urn:code>
+                  <!--type: string-->
+                  <urn:label>annos bella gero</urn:label>
+               </urn:prefix>
+               <!--Optional:-->
+               <urn:suffix>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystem>certo et</urn:codeSystem>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystemName>rates evertitque aequora</urn:codeSystemName>
+                  <!--type: string-->
+                  <urn:code>volutans nimborum in</urn:code>
+                  <!--type: string-->
+                  <urn:label>faciat maria</urn:label>
+               </urn:suffix>
+               <urn:nameType>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystem>et quisquam</urn:codeSystem>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystemName>et soror</urn:codeSystemName>
+                  <!--type: string-->
+                  <urn:code>annos bella gero</urn:code>
+                  <!--type: string-->
+                  <urn:label>ventos tempestatesque sonoras</urn:label>
+               </urn:nameType>
+            </urn:otherName>
+            <!--Optional:-->
+            <!--type: string-->
+            <urn:motherMaidenName>regina iovisque</urn:motherMaidenName>
+            <!--type: string-->
+            <urn:dateOfBirth>rapidum iaculata</urn:dateOfBirth>
+            <!--Optional:-->
+            <urn:maritalStatus>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>insuper altos</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>cum murmure</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>in patriam</urn:code>
+               <!--type: string-->
+               <urn:label>abdidit atris hoc</urn:label>
+            </urn:maritalStatus>
+            <urn:gender>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>insuper altos</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>cum murmure</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>in patriam</urn:code>
+               <!--type: string-->
+               <urn:label>abdidit atris hoc</urn:label>
+            </urn:gender>
+            <!--Optional:-->
+            <urn:race>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>coniunx una cum</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>ipsa iovis</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>frenat illi indignantes</urn:code>
+               <!--type: string-->
+               <urn:label>nimborum in</urn:label>
+            </urn:race>
+            <!--Optional:-->
+            <urn:ethnic>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>mollitque animos</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>montis insuper altos</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>molemque et montis</urn:code>
+               <!--type: string-->
+               <urn:label>gero et</urn:label>
+            </urn:ethnic>
+            <!--Zero or more repetitions:-->
+            <urn:language>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>circum claustra fremunt</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>montis insuper</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>aris imponet</urn:code>
+               <!--type: string-->
+               <urn:label>aris imponet</urn:label>
+            </urn:language>
+            <!--Zero or more repetitions:-->
+            <urn:telecom>
+               <!--type: string-->
+               <urn:value>incedo regina</urn:value>
+               <urn:telecomType>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystem>ac vinclis</urn:codeSystem>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystemName>acuto ast</urn:codeSystemName>
+                  <!--type: string-->
+                  <urn:code>et premere et</urn:code>
+                  <!--type: string-->
+                  <urn:label>dedit qui</urn:label>
+               </urn:telecomType>
+            </urn:telecom>
+            <!--Optional:-->
+            <!--type: boolean-->
+            <urn:multipleBirthInd>false</urn:multipleBirthInd>
+            <!--Optional:-->
+            <!--type: int-->
+            <urn:birthOrder>3</urn:birthOrder>
+            <!--Optional:-->
+            <!--type: int-->
+            <urn:age>3</urn:age>
+            <!--Optional:-->
+            <!--type: string-->
+            <urn:birthPlace>atris hoc metuens</urn:birthPlace>
+            <!--Optional:-->
+            <!--type: string-->
+            <urn:accountNumber>atris hoc</urn:accountNumber>
+            <!--Zero or more repetitions:-->
+            <urn:address>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:streetAddress>animos et temperat</urn:streetAddress>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:city>sonoras imperio</urn:city>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:state>patriam loca</urn:state>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:postalCode>montis circum</urn:postalCode>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:country>laxas sciret dare</urn:country>
+               <urn:addressType>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystem>e nubibus</urn:codeSystem>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystemName>volutans nimborum</urn:codeSystemName>
+                  <!--type: string-->
+                  <urn:code>murmure montis</urn:code>
+                  <!--type: string-->
+                  <urn:label>vinclis et</urn:label>
+               </urn:addressType>
+            </urn:address>
+         </fact>
+      </dss:storeDemographicsFactEvent>
+   </soapenv:Body>
+</soapenv:Envelope>

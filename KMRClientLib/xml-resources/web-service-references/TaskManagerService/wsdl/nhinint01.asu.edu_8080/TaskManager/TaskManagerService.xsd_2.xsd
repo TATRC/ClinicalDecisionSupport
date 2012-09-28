@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.6-hudson-317-. --><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fact="urn:gov:hhs:fha:nhinc:adapter:fact" xmlns:tns="urn:gov:hhs:fha:nhinc:common:task" targetNamespace="urn:gov:hhs:fha:nhinc:common:task" elementFormDefault="qualified">
+    <xsd:import namespace="urn:gov:hhs:fha:nhinc:adapter:fact" schemaLocation="http://nhinint01.asu.edu:8080/TaskManager/TaskManagerService?xsd=1" />
+    <xsd:complexType name="nameValuePair">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string" minOccurs="0" />
+            <xsd:element name="value" type="xsd:string" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="alertAction">
+        <xsd:sequence>
+            <xsd:element name="action" type="xsd:string" />
+            <xsd:element name="providerID" type="xsd:string" />
+            <xsd:element name="providerName" type="xsd:string" />
+            <xsd:element name="message" type="xsd:string" />
+            <xsd:element name="dateTime" type="xsd:dateTime" />
+            <xsd:element name="actionParamaters" type="tns:nameValuePair" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="alertContext">
+        <xsd:sequence>
+            <xsd:element name="ticket" type="xsd:string" />
+            <xsd:element name="type" type="xsd:string" />
+            <xsd:element name="alertName" type="xsd:string" />
+            <xsd:element name="alertDescription" type="xsd:string" />
+            <xsd:element name="alertDateTime" type="xsd:dateTime" />
+            <xsd:element name="actionHistory" type="tns:alertAction" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="contactDetails">
+        <xsd:sequence>
+            <xsd:element name="method" type="xsd:string" />
+            <xsd:element name="provider" type="xsd:string" />
+            <xsd:element name="clinic" type="xsd:string" />
+            <xsd:element name="organization" type="xsd:string" />
+            <xsd:element name="role" type="xsd:string" />
+            <xsd:element name="location" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="destinationContext">
+        <xsd:sequence>
+            <xsd:element name="providers" type="tns:contactDetails" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="escalationProviders" type="tns:contactDetails" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="escalationMinutes" type="xsd:int" />
+            <xsd:element name="deliveryDate" type="xsd:dateTime" />
+            <xsd:element name="completionDate" type="xsd:dateTime" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="patientContext">
+        <xsd:sequence>
+            <xsd:element name="patientUnitNumber" type="xsd:string" />
+            <xsd:element name="patientName" type="xsd:string" />
+            <xsd:element name="patientSex" type="xsd:string" />
+            <xsd:element name="patientFMPSSN" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ruleContext">
+        <xsd:sequence>
+            <xsd:element name="factNCID" type="xsd:string" />
+            <xsd:element name="factName" type="xsd:string" />
+            <xsd:element name="factValue" type="xsd:string" />
+            <xsd:element name="factType" type="xsd:string" />
+            <xsd:element name="actionID" type="xsd:string" />
+            <xsd:element name="actionType" type="xsd:string" />
+            <xsd:element name="ruleID" type="xsd:string" />
+            <xsd:element name="ruleDesc" type="xsd:string" />
+            <xsd:element name="ruleName" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="alertFact">
+        <xsd:sequence>
+            <xsd:element name="ticketId" type="xsd:string" />
+            <xsd:element name="description" type="xsd:string" />
+            <xsd:element name="payload" type="xsd:string" />
+            <xsd:element name="dateCreated" type="xsd:dateTime" />
+            <xsd:element name="priority" type="xsd:string" />
+            <xsd:element name="status" type="xsd:string" />
+            <xsd:element name="patient" type="tns:patientContext" />
+            <xsd:element name="rule" type="tns:ruleContext" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TaskManagerResponseType">
+        <xsd:sequence>
+            <xsd:element name="ticket" type="xsd:string" />
+            <xsd:element name="detail" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="TaskManagerResponse" type="tns:TaskManagerResponseType" />
+    <xsd:complexType name="StartTaskFromRuleRequestType">
+        <xsd:sequence>
+            <xsd:element name="taskID" type="xsd:string" />
+            <xsd:element name="subject" type="xsd:string" />
+            <xsd:element name="message" type="xsd:string" />
+            <xsd:element name="priority" type="xsd:string" />
+            <xsd:element name="destination" type="tns:destinationContext" />
+            <xsd:element name="patient" type="tns:patientContext" />
+            <xsd:element name="rule" type="tns:ruleContext" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="StartTaskFromRuleRequest" type="tns:StartTaskFromRuleRequestType" />
+    <xsd:complexType name="SendMailTaskRequestType">
+        <xsd:sequence>
+            <xsd:element name="taskID" type="xsd:string" />
+            <xsd:element name="fromUser" type="xsd:string" />
+            <xsd:element name="fromUserProvider" type="xsd:boolean" />
+            <xsd:element name="toUser" type="xsd:string" />
+            <xsd:element name="toUserProvider" type="xsd:boolean" />
+            <xsd:element name="subject" type="xsd:string" />
+            <xsd:element name="message" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="SendMailTaskRequest" type="tns:SendMailTaskRequestType" />
+    <xsd:complexType name="RegisterPersonDiseaseRequestType">
+        <xsd:sequence>
+            <xsd:element name="taskID" type="xsd:string" />
+            <xsd:element name="patientId" type="xsd:string" />
+            <xsd:element name="patientName" type="xsd:string" />
+            <xsd:element name="patientDOB" type="xsd:date" />
+            <xsd:element name="diseaseType" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="RegisterPersonDiseaseRequest" type="tns:RegisterPersonDiseaseRequestType" />
+    <xsd:complexType name="UnRegisterPersonDiseaseRequestType">
+        <xsd:sequence>
+            <xsd:element name="taskID" type="xsd:string" />
+            <xsd:element name="patientId" type="xsd:string" />
+            <xsd:element name="diseaseType" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="UnRegisterPersonDiseaseRequest" type="tns:UnRegisterPersonDiseaseRequestType" />
+    <xsd:complexType name="CreateLabOrderRequestType">
+        <xsd:sequence>
+            <xsd:element name="taskID" type="xsd:string" />
+            <xsd:element name="labOrderFact" type="fact:LabOrderFactType" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="CreateLabOrderRequest" type="tns:CreateLabOrderRequestType" />
+    <xsd:complexType name="ScheduleApptRequestType">
+        <xsd:sequence>
+            <xsd:element name="taskID" type="xsd:string" />
+            <xsd:element name="slotRequest" type="fact:SlotRequestType" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="ScheduleApptRequest" type="tns:ScheduleApptRequestType" />
+    <xsd:complexType name="AlertProviderRequestType">
+        <xsd:sequence>
+            <xsd:element name="providerID" type="xsd:string" />
+            <xsd:element name="organizationID" type="xsd:string" />
+            <xsd:element name="clinicID" type="xsd:string" />
+            <xsd:element name="subject" type="xsd:string" />
+            <xsd:element name="message" type="xsd:string" />
+            <xsd:element name="priority" type="xsd:string" />
+            <xsd:element name="escalation" type="xsd:boolean" />
+            <xsd:element name="alert" type="tns:alertContext" />
+            <xsd:element name="patient" type="tns:patientContext" />
+            <xsd:element name="rule" type="tns:ruleContext" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="AlertProviderRequest" type="tns:AlertProviderRequestType" />
+    <xsd:complexType name="AlertProviderResponseType">
+        <xsd:sequence>
+            <xsd:element name="statusCode" type="xsd:int" />
+            <xsd:element name="statusDetail" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="AlertProviderResponse" type="tns:AlertProviderResponseType" />
+    <xsd:complexType name="UpdateAlertRequestType">
+        <xsd:sequence>
+            <xsd:element name="ticket" type="xsd:string" />
+            <xsd:element name="action" type="xsd:string" />
+            <xsd:element name="providerID" type="xsd:string" />
+            <xsd:element name="providerName" type="xsd:string" />
+            <xsd:element name="message" type="xsd:string" />
+            <xsd:element name="actionParamaters" type="tns:nameValuePair" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="UpdateAlertRequest" type="tns:UpdateAlertRequestType" />
+    <xsd:complexType name="UpdateAlertResponseType">
+        <xsd:sequence>
+            <xsd:element name="statusCode" type="xsd:int" />
+            <xsd:element name="statusDetail" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="UpdateAlertResponse" type="tns:UpdateAlertResponseType" />
+    <xsd:complexType name="GetAlertFactsRequestType">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string" />
+            <xsd:element name="userProvider" type="xsd:boolean" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetAlertFactsRequest" type="tns:GetAlertFactsRequestType" />
+    <xsd:complexType name="GetAlertFactsResponseType">
+        <xsd:sequence>
+            <xsd:element name="factObjects" type="tns:alertFact" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="statusCode" type="xsd:int" />
+            <xsd:element name="statusDetail" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetAlertFactsResponse" type="tns:GetAlertFactsResponseType" />
+</xsd:schema>

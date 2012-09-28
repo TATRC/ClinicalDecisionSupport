@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://208.75.163.61:8080/TaskManager/TaskManagerService?wsdl" uri="xml-resources/web-service-references/TaskManagerService/wsdl/208.75.163.61_8080/TaskManager/TaskManagerService.wsdl"/>
+    <system systemId="http://208.75.163.61:8080/TaskManager/TaskManagerService?xsd=1" uri="xml-resources/web-service-references/TaskManagerService/wsdl/208.75.163.61_8080/TaskManager/TaskManagerService.xsd_1.xsd"/>
+</catalog>

@@ -1,0 +1,425 @@
+{
+	"slotFactType": [
+		{
+			"historical": "true",
+			"id": {
+				"codeSystem": "",
+				"codeSystemName": "RPMS Schedule Manager",
+				"value": "slot-2000",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"sourceSystem": "2.16.840.1.113883.3.200",
+			"scheduleId": {
+				"codeSystem": "",
+				"codeSystemName": "RPMS Schedule Mamager",
+				"value": "schedule-FAM",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"codedAppointmentType": {
+				"codeSystem": "2.16.840.1.113883.3.200",
+				"codeSystemName": "RPMS Scheduling Manager",
+				"code": "EST",
+				"label": "ESTABLISHED\/FOLLOW UP APPT"
+			},
+			"startDateTime": "2011-01-05T08:00:00-08:00",
+			"endDateTime": "2011-01-05T09:00:00-08:00",
+			"performerId": {
+				"codeSystem": "",
+				"codeSystemName": "RPMS",
+				"value": "prov-FAM2",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"performer": {
+				"firstName": "Jane",
+				"middleName": "P",
+				"familyName": "PROVIDER",
+				"nameType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "L",
+					"label": "Legal"
+				}
+			},
+			"performerTelecom": [
+				{
+					"value": "1-619-222-2222",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "WP",
+						"label": "Work"
+					}
+				}, {
+					"value": "1-619-203-0130",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "MC",
+						"label": "Mobile"
+					}
+				}, {
+					"value": "Emory.Fry@med.navy.mil",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "NET",
+						"label": "Email"
+					}
+				}
+			],
+			"sdlcId": {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"value": "clinic-FAM",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"sdlcName": "FAMILY PRACTICE CLINIC",
+			"sdlcRole": {
+				"codeSystem": "2.16.840.1.113883.5.111",
+				"codeSystemName": "RoleCode",
+				"code": "FMC",
+				"label": "FAMILY MEDICINE CLINIC"
+			}
+		}, {
+			"historical": "true",
+			"id": {
+				"codeSystem": "",
+				"codeSystemName": "RPMS Schedule Manager",
+				"value": "slot-2001",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"sourceSystem": "2.16.840.1.113883.3.200",
+			"scheduleId": {
+				"codeSystem": "",
+				"codeSystemName": "RPMS Schedule Mamager",
+				"value": "schedule-FAM",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"codedAppointmentType": {
+				"codeSystem": "2.16.840.1.113883.3.200",
+				"codeSystemName": "RPMS Scheduling Manager",
+				"code": "EST",
+				"label": "ESTABLISHED\/FOLLOW UP APPT"
+			},
+			"startDateTime": "2011-01-06T08:00:00-08:00",
+			"endDateTime": "2011-01-06T09:00:00-08:00",
+			"performerId": {
+				"codeSystem": "",
+				"codeSystemName": "RPMS",
+				"value": "prov-FAM2",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"performer": {
+				"firstName": "Jane",
+				"middleName": "P",
+				"familyName": "PROVIDER",
+				"nameType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "L",
+					"label": "Legal"
+				}
+			},
+			"performerTelecom": [
+				{
+					"value": "1-619-222-2222",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "WP",
+						"label": "Work"
+					}
+				}, {
+					"value": "1-619-203-0130",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "MC",
+						"label": "Mobile"
+					}
+				}, {
+					"value": "Emory.Fry@med.navy.mil",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "NET",
+						"label": "Email"
+					}
+				}
+			],
+			"sdlcId": {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"value": "clinic-FAM",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"sdlcName": "FAMILY PRACTICE CLINIC",
+			"sdlcRole": {
+				"codeSystem": "2.16.840.1.113883.5.111",
+				"codeSystemName": "RoleCode",
+				"code": "FMC",
+				"label": "FAMILY MEDICINE CLINIC"
+			}
+		}, {
+			"historical": "true",
+			"id": {
+				"codeSystem": "",
+				"codeSystemName": "RPMS Schedule Manager",
+				"value": "slot-2002",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"sourceSystem": "2.16.840.1.113883.3.200",
+			"scheduleId": {
+				"codeSystem": "",
+				"codeSystemName": "RPMS Schedule Mamager",
+				"value": "schedule-FAM",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"codedAppointmentType": {
+				"codeSystem": "2.16.840.1.113883.3.200",
+				"codeSystemName": "RPMS Scheduling Manager",
+				"code": "EST",
+				"label": "ESTABLISHED\/FOLLOW UP APPT"
+			},
+			"startDateTime": "2011-01-07T08:00:00-08:00",
+			"endDateTime": "2011-01-07T09:00:00-08:00",
+			"performerId": {
+				"codeSystem": "",
+				"codeSystemName": "RPMS",
+				"value": "prov-FAM2",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"performer": {
+				"firstName": "Jane",
+				"middleName": "P",
+				"familyName": "PROVIDER",
+				"nameType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "L",
+					"label": "Legal"
+				}
+			},
+			"performerTelecom": [
+				{
+					"value": "1-619-222-2222",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "WP",
+						"label": "Work"
+					}
+				}, {
+					"value": "1-619-203-0130",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "MC",
+						"label": "Mobile"
+					}
+				}, {
+					"value": "Emory.Fry@med.navy.mil",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "NET",
+						"label": "Email"
+					}
+				}
+			],
+			"sdlcId": {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"value": "clinic-FAM",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"sdlcName": "FAMILY PRACTICE CLINIC",
+			"sdlcRole": {
+				"codeSystem": "2.16.840.1.113883.5.111",
+				"codeSystemName": "RoleCode",
+				"code": "FMC",
+				"label": "FAMILY MEDICINE CLINIC"
+			}
+		}, {
+			"historical": "true",
+			"id": {
+				"codeSystem": "",
+				"codeSystemName": "RPMS Schedule Manager",
+				"value": "slot-2003",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"sourceSystem": "2.16.840.1.113883.3.200",
+			"scheduleId": {
+				"codeSystem": "",
+				"codeSystemName": "RPMS Schedule Mamager",
+				"value": "schedule-FAM",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"codedAppointmentType": {
+				"codeSystem": "2.16.840.1.113883.3.200",
+				"codeSystemName": "RPMS Scheduling Manager",
+				"code": "EST",
+				"label": "ESTABLISHED\/FOLLOW UP APPT"
+			},
+			"startDateTime": "2011-01-08T08:00:00-08:00",
+			"endDateTime": "2011-01-08T09:00:00-08:00",
+			"performerId": {
+				"codeSystem": "",
+				"codeSystemName": "RPMS",
+				"value": "prov-FAM2",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"performer": {
+				"firstName": "Jane",
+				"middleName": "P",
+				"familyName": "PROVIDER",
+				"nameType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "L",
+					"label": "Legal"
+				}
+			},
+			"performerTelecom": [
+				{
+					"value": "1-619-222-2222",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "WP",
+						"label": "Work"
+					}
+				}, {
+					"value": "1-619-203-0130",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "MC",
+						"label": "Mobile"
+					}
+				}, {
+					"value": "Emory.Fry@med.navy.mil",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "NET",
+						"label": "Email"
+					}
+				}
+			],
+			"sdlcId": {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"value": "clinic-FAM",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"sdlcName": "FAMILY PRACTICE CLINIC",
+			"sdlcRole": {
+				"codeSystem": "2.16.840.1.113883.5.111",
+				"codeSystemName": "RoleCode",
+				"code": "FMC",
+				"label": "FAMILY MEDICINE CLINIC"
+			}
+		}, {
+			"historical": "true",
+			"id": {
+				"codeSystem": "",
+				"codeSystemName": "RPMS Schedule Manager",
+				"value": "slot-2004",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"sourceSystem": "2.16.840.1.113883.3.200",
+			"scheduleId": {
+				"codeSystem": "",
+				"codeSystemName": "RPMS Schedule Mamager",
+				"value": "schedule-FAM",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"codedAppointmentType": {
+				"codeSystem": "2.16.840.1.113883.3.200",
+				"codeSystemName": "RPMS Scheduling Manager",
+				"code": "EST",
+				"label": "ESTABLISHED\/FOLLOW UP APPT"
+			},
+			"startDateTime": "2011-01-09T08:00:00-08:00",
+			"endDateTime": "2011-01-09T09:00:00-08:00",
+			"performerId": {
+				"codeSystem": "",
+				"codeSystemName": "RPMS",
+				"value": "prov-FAM2",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"performer": {
+				"firstName": "Jane",
+				"middleName": "P",
+				"familyName": "PROVIDER",
+				"nameType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "L",
+					"label": "Legal"
+				}
+			},
+			"performerTelecom": [
+				{
+					"value": "1-619-222-2222",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "WP",
+						"label": "Work"
+					}
+				}, {
+					"value": "1-619-203-0130",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "MC",
+						"label": "Mobile"
+					}
+				}, {
+					"value": "Emory.Fry@med.navy.mil",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "NET",
+						"label": "Email"
+					}
+				}
+			],
+			"sdlcId": {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"value": "clinic-FAM",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"sdlcName": "FAMILY PRACTICE CLINIC",
+			"sdlcRole": {
+				"codeSystem": "2.16.840.1.113883.5.111",
+				"codeSystemName": "RoleCode",
+				"code": "FMC",
+				"label": "FAMILY MEDICINE CLINIC"
+			}
+		}
+	]
+}

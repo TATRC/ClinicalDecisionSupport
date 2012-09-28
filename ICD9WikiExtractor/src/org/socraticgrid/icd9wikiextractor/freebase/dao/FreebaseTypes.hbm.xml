@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 23, 2010 3:53:17 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.socraticgrid.icd9wikiextractor.freebase.dao.FreebaseTypes" table="freebase_types" schema="public">
+        <composite-id name="id" class="org.socraticgrid.icd9wikiextractor.freebase.dao.FreebaseTypesId">
+            <key-property name="guid" type="string">
+                <column name="guid" length="32" />
+            </key-property>
+            <key-property name="type" type="string">
+                <column name="type" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

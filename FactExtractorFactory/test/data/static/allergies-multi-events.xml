@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+		<hl7:CareRecord_QUPC_IN043200UV01Message xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+			<hl7:response>
+				<hl7:id extension="6858a017-39c1-4153-bbd4-eaedac72a0e7"/>
+				<hl7:creationTime value="20110119222140-0800"/>
+				<hl7:interactionId extension="PRPA_IN900300UV02" root="2.16.840.1.113883.5"/>
+				<hl7:processingCode code="P"/>
+				<hl7:processingModeCode code="R"/>
+				<hl7:acceptAckCode code="AL"/>
+				<hl7:receiver typeCode="RCV">
+					<hl7:device determinerCode="INSTANCE">
+						<hl7:id root="2.16.840.1.113883.3.200"/>
+						<hl7:telecom value="http://localhost:8080/NhinConnect/CommonDataLayerService"/>
+					</hl7:device>
+				</hl7:receiver>
+				<hl7:sender typeCode="SND">
+					<hl7:device determinerCode="INSTANCE">
+						<hl7:id root="2.16.840.1.113883.3.200"/>
+					</hl7:device>
+				</hl7:sender>
+				<hl7:controlActProcess moodCode="EVN" classCode="CACT">
+					<hl7:code code="QUPC_TE043200UV01"/>
+					<hl7:priorityCode code="R"/>
+					<hl7:subject typeCode="SUBJ">
+						<hl7:registrationEvent moodCode="EVN" classCode="REG">
+							<hl7:statusCode code="completed"/>
+							<hl7:custodian typeCode="CST">
+								<hl7:assignedEntity>
+									<hl7:id root="2.16.840.1.113883.3.200"/>
+									<hl7:assignedOrganization classCode="ORG">
+										<hl7:name>NMC Portsmouth</hl7:name>
+									</hl7:assignedOrganization>
+								</hl7:assignedEntity>
+							</hl7:custodian>
+							<hl7:subject2 typeCode="SUBJ">
+								<hl7:careProvisionEvent moodCode="EVN" classCode="PCPR">
+									<hl7:recordTarget typeCode="RCT">
+										<hl7:patient classCode="PAT">
+											<hl7:id extension="7" root="2.16.840.1.113883.3.200"/>
+											<hl7:statusCode code="normal"/>
+											<hl7:patientPerson determinerCode="INSTANCE" classCode="PSN">
+												<hl7:name use="L">
+													<hl7:family>Rossi</hl7:family>
+													<hl7:given>Joe</hl7:given>
+													<hl7:given>A</hl7:given>
+													<hl7:suffix>Sr</hl7:suffix>
+												</hl7:name>
+												<hl7:administrativeGenderCode displayName="Married" codeSystemName="MaritalStatus" codeSystem="2.16.840.1.113883.5.2" code="M"/>
+											</hl7:patientPerson>
+										</hl7:patient>
+									</hl7:recordTarget>
+									<hl7:pertinentInformation3 contextConductionInd="true" typeCode="PERT">
+										<hl7:observation moodCode="EVN" classCode="OBS">
+											<hl7:code displayName="drug allergy" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="416098002"/>
+											<hl7:effectiveTime value="20090119"/>
+											<hl7:sourceOf typeCode="MFST">
+												<hl7:substanceAdministration moodCode="EVN" classCode="SBADM">
+													<hl7:consumable typeCode="CSM">
+														<hl7:administerableMaterial classCode="ADMM">
+															<hl7:administerableMaterial determinerCode="INSTANCE" classCode="MMAT">
+																<hl7:code displayName="GENTRAN 40 IN DEXTROSE 5% (DEXTRAN 40/DEXTROSE 5%-WATER" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" code="12731003"/>
+																<hl7:desc>GENTRAN 40 IN DEXTROSE 5% (DEXTRAN 40/DEXTROSE 5%-WATER</hl7:desc>
+															</hl7:administerableMaterial>
+														</hl7:administerableMaterial>
+													</hl7:consumable>
+												</hl7:substanceAdministration>
+											</hl7:sourceOf>
+											<hl7:sourceOf typeCode="MFST">
+												<hl7:observation moodCode="EVN" classCode="OBS">
+													<hl7:templateId root="2.16.840.1.113883.10.20.1.54"/>
+													<hl7:text>Anaphylaxis</hl7:text>
+													<hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD" displayName="Anaphylaxis" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="39579001"/>
+													<hl7:sourceOf typeCode="SUBJ">
+														<hl7:observation moodCode="EVN" classCode="OBS">
+															<hl7:code displayName="Severity" codeSystemName="ActCode" codeSystem="2.16.840.1.113883.5.4" code="SEV"/>
+															<hl7:text>MODERATE</hl7:text>
+															<hl7:statusCode code="completed"/>
+															<hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD" displayName="MODERATE" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="6736007"/>
+														</hl7:observation>
+													</hl7:sourceOf>
+												</hl7:observation>
+											</hl7:sourceOf>
+										</hl7:observation>
+									</hl7:pertinentInformation3>
+									<hl7:pertinentInformation3 contextConductionInd="true" typeCode="PERT">
+										<hl7:observation moodCode="EVN" classCode="OBS">
+											<hl7:code displayName="drug allergy" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="416098002"/>
+											<hl7:effectiveTime value="20100119"/>
+											<hl7:sourceOf typeCode="MFST">
+												<hl7:substanceAdministration moodCode="EVN" classCode="SBADM">
+													<hl7:consumable typeCode="CSM">
+														<hl7:administerableMaterial classCode="ADMM">
+															<hl7:administerableMaterial determinerCode="INSTANCE" classCode="MMAT">
+																<hl7:code displayName="BOTULISM ANTITOXIN" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" code="1218697"/>
+																<hl7:desc>BOTULISM ANTITOXIN</hl7:desc>
+															</hl7:administerableMaterial>
+														</hl7:administerableMaterial>
+													</hl7:consumable>
+												</hl7:substanceAdministration>
+											</hl7:sourceOf>
+											<hl7:sourceOf typeCode="MFST">
+												<hl7:observation moodCode="EVN" classCode="OBS">
+													<hl7:templateId root="2.16.840.1.113883.10.20.1.54"/>
+													<hl7:text>NAUSEA,VOMITING</hl7:text>
+													<hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD" displayName="NAUSEA,VOMITING" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="39579001"/>
+													<hl7:sourceOf typeCode="SUBJ">
+														<hl7:observation moodCode="EVN" classCode="OBS">
+															<hl7:code displayName="Severity" codeSystemName="ActCode" codeSystem="2.16.840.1.113883.5.4" code="SEV"/>
+															<hl7:text>Severe</hl7:text>
+															<hl7:statusCode code="completed"/>
+															<hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD" displayName="Severe" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="24484000"/>
+														</hl7:observation>
+													</hl7:sourceOf>
+												</hl7:observation>
+											</hl7:sourceOf>
+										</hl7:observation>
+									</hl7:pertinentInformation3>
+									<hl7:pertinentInformation3 contextConductionInd="true" typeCode="PERT">
+										<hl7:observation moodCode="EVN" classCode="OBS">
+											<hl7:code displayName="drug allergy" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="416098002"/>
+											<hl7:effectiveTime value="20100119"/>
+											<hl7:sourceOf typeCode="MFST">
+												<hl7:substanceAdministration moodCode="EVN" classCode="SBADM">
+													<hl7:consumable typeCode="CSM">
+														<hl7:administerableMaterial classCode="ADMM">
+															<hl7:administerableMaterial determinerCode="INSTANCE" classCode="MMAT">
+																<hl7:code displayName="Insulin, Protamine Zinc, Human" codeSystemName="RxNorm" codeSystem="2.16.840.1.113883.6.88" code="1218678"/>
+																<hl7:desc>Insulin, Protamine Zinc, Human</hl7:desc>
+															</hl7:administerableMaterial>
+														</hl7:administerableMaterial>
+													</hl7:consumable>
+												</hl7:substanceAdministration>
+											</hl7:sourceOf>
+											<hl7:sourceOf typeCode="MFST">
+												<hl7:observation moodCode="EVN" classCode="OBS">
+													<hl7:templateId root="2.16.840.1.113883.10.20.1.54"/>
+													<hl7:text>NAUSEA,VOMITING</hl7:text>
+													<hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD" displayName="NAUSEA,VOMITING" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="39579001"/>
+													<hl7:sourceOf typeCode="SUBJ">
+														<hl7:observation moodCode="EVN" classCode="OBS">
+															<hl7:code displayName="Severity" codeSystemName="ActCode" codeSystem="2.16.840.1.113883.5.4" code="SEV"/>
+															<hl7:text>Severe</hl7:text>
+															<hl7:statusCode code="completed"/>
+															<hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD" displayName="Severe" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="24484000"/>
+														</hl7:observation>
+													</hl7:sourceOf>
+												</hl7:observation>
+											</hl7:sourceOf>
+										</hl7:observation>
+									</hl7:pertinentInformation3>
+								</hl7:careProvisionEvent>
+							</hl7:subject2>
+						</hl7:registrationEvent>
+					</hl7:subject>
+					<hl7:queryAck>
+						<hl7:queryId extension="20090920010010"/>
+						<hl7:statusCode code="deliveredResponse"/>
+						<hl7:queryResponseCode code="OK"/>
+					</hl7:queryAck>
+				</hl7:controlActProcess>
+			</hl7:response>
+		</hl7:CareRecord_QUPC_IN043200UV01Message>

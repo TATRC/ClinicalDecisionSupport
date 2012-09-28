@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:GetKmMetaResponse xmlns:ns2="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <ns2:requestReference>
+            <ns2:requestId>96</ns2:requestId>
+            <ns2:requestDate>2010-06-22T00:03:22.000-00:07</ns2:requestDate>
+            <ns2:responseDate>2010-07-10T00:24:57.509-00:07</ns2:responseDate>
+         </ns2:requestReference>
+         <ns2:responseList>
+            <!--
+            ==================================
+              Single or multiple kmIds can
+              be returned at a time, depending
+              on what was requested.
+            ================================== -->
+            <!--
+            <ns2:km>
+               <ns2:id>1</ns2:id>
+               <ns2:title>myKM</ns2:title>
+               <ns2:summary>test KM</ns2:summary>
+               <ns2:created>2010-03-23T02:20:30.000-00:07</ns2:created>
+               <ns2:updated>2010-03-23T02:20:30.000-00:07</ns2:updated>
+            </ns2:km>
+            -->
+            <ns2:km>
+               <ns2:id>2</ns2:id>
+               <ns2:title>myKM 2</ns2:title>
+               <ns2:summary>test KM 2</ns2:summary>
+               <ns2:created>2010-03-24T02:20:30.000-00:07</ns2:created>
+               <ns2:updated>2010-03-24T02:20:30.000-00:07</ns2:updated>
+            </ns2:km>
+         </ns2:responseList>
+      </ns2:GetKmMetaResponse>
+   </S:Body>
+</S:Envelope>

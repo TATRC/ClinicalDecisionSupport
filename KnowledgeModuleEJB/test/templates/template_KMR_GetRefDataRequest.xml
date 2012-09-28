@@ -1,0 +1,23 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <SOAP-ENV:Body>
+      
+      <kmr:GetRefDataRequest xmlns:kmr="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <kmr:request>
+            <kmr:LookupReference>kmtypes</kmr:LookupReference>
+            <!--kmr:LookupReference>orglevel</kmr:LookupReference-->
+            <!--kmr:LookupReference>kmstatus</kmr:LookupReference-->
+            <!--kmr:LookupReference>tasktype</kmr:LookupReference-->
+            <!--kmr:LookupReference>specialtyscheme</kmr:LookupReference-->
+            <!--kmr:LookupReference>specialtycode</kmr:LookupReference-->
+            <!--kmr:LookupReference>facttype</kmr:LookupReference-->
+            <!--kmr:LookupReference>factscheme</kmr:LookupReference-->
+            <!--kmr:LookupReference>factcode</kmr:LookupReference-->
+            <!--kmr:LookupReference>tasktype</kmr:LookupReference-->
+            <!--kmr:LookupReference>demographicscheme</kmr:LookupReference-->
+            <!--kmr:LookupReference>demographiccode</kmr:LookupReference-->
+
+         </kmr:request>
+      </kmr:GetRefDataRequest>
+
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

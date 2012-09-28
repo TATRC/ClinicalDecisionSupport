@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+  <bean id="labtest.extractor" class="gov.hhs.fha.nhinc.adapter.fact.extractor.LabTestFactExtractor" scope="prototype">
+    <constructor-arg ref="Xpath"/>
+    <property name="factBaseXpath" value="//hl7:careProvisionEvent/hl7:pertinentInformation3[#event#]"/>
+    <property name="factClassName" value="gov.hhs.fha.nhinc.adapter.fact.LabTestFactType"/>
+    <property name="factProperties">
+      <map>
+        <entry key="SourceSystem">
+          <ref bean="carerecord.SourceSystem"/>
+        </entry>
+        <entry key="Id">
+          <ref bean="labtest.property.Id"/>
+        </entry>
+        <entry key="PatientId">
+          <ref bean="labtest.property.PatientId"/>
+        </entry>
+        <entry key="SpecimenDate">
+          <ref bean="labtest.property.SpecimenDate"/>
+        </entry>
+        <entry key="FreeTextSpecimen">
+          <ref bean="labtest.property.FreeTextSpecimen"/>
+        </entry>
+        <entry key="CodedBattery">
+          <ref bean="labtest.property.CodedBattery"/>
+        </entry>
+        <entry key="FreeTextBattery">
+          <ref bean="labtest.property.FreeTextBattery"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <!-- Identifier of a lab test -->
+  <bean id="labtest.property.Id" class="gov.hhs.fha.nhinc.adapter.fact.def.ValueTypeListPropertyDefinition">
+    <property name="propertyName" value="Id"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueType"/>
+    <property name="valueXpath" value="hl7:act/hl7:id[#id#]/@extension"/>
+    <property name="codeSystemXpath" value="hl7:act/hl7:id[#id#]/@root"/>
+    <property name="codeSystemNameXpath" value="hl7:act/hl7:id[#id#]/@assigningAuthorityName"/>
+    <property name="indexRef" value="#id#"/>
+    <property name="listSizeXpath" value="count(hl7:act/hl7:id)"/>
+  </bean>
+
+  <bean id="labtest.property.PatientId" class="gov.hhs.fha.nhinc.adapter.fact.def.ValueTypePropertyDefinition">
+    <property name="propertyName" value="PatientId"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueType"/>
+    <property name="valueXpath" value="//hl7:recordTarget/hl7:patient/hl7:id/@extension"/>
+    <property name="codeSystemXpath" value="//hl7:recordTarget/hl7:patient/hl7:id/@root"/>
+    <property name="codeSystemNameXpath" value="//hl7:recordTarget/hl7:patient/hl7:id/@assigningAuthorityName"/>
+  </bean>
+
+  <bean id="labtest.property.SpecimenDate" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="SpecimenDate"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath"
+                value="hl7:act/hl7:effectiveTime/@value"/>
+  </bean>
+
+  <bean id="labtest.property.FreeTextSpecimen" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FreeTextSpecimen"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:act/hl7:subject/hl7:specimen/hl7:specimenNatural/hl7:desc"/>
+  </bean>
+
+  <bean id="labtest.property.CodedBattery" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="CodedBattery"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:act/hl7:code/@code"/>
+    <property name="labelXpath" value="hl7:act/hl7:code/@displayName"/>
+    <property name="codeSystemXpath" value="hl7:act/hl7:code/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="hl7:act/hl7:code/@codeSystemName"/>
+  </bean>
+  
+  <bean id="labtest.property.FreeTextBattery" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FreeTextBattery"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:act/hl7:text | hl7:act/hl7:code/hl7:originalText/hl7:reference/@value"/>
+  </bean>
+</beans>

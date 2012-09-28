@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+    <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/freebase</property>
+    <property name="hibernate.connection.username">postgres</property>
+    <property name="hibernate.connection.password">mekpur</property>
+    <mapping resource="org/socraticgrid/wexcleanup/freebase/dao/EcsIcd9Wpids.hbm.xml"/>
+    <mapping resource="org/socraticgrid/wexcleanup/freebase/dao/FreebaseMedDisease.hbm.xml"/>
+    <mapping resource="org/socraticgrid/wexcleanup/freebase/dao/Sections.hbm.xml"/>
+    <mapping resource="org/socraticgrid/wexcleanup/freebase/dao/FreebaseMedIcd9.hbm.xml"/>
+    <mapping resource="org/socraticgrid/wexcleanup/freebase/dao/FreebaseTypes.hbm.xml"/>
+    <mapping resource="org/socraticgrid/wexcleanup/freebase/dao/Redirects.hbm.xml"/>
+    <mapping resource="org/socraticgrid/wexcleanup/freebase/dao/EcsArticles.hbm.xml"/>
+    <mapping resource="org/socraticgrid/wexcleanup/freebase/dao/CategoryMembers.hbm.xml"/>
+    <mapping resource="org/socraticgrid/wexcleanup/freebase/dao/Articles.hbm.xml"/>
+    <mapping resource="org/socraticgrid/wexcleanup/freebase/dao/FreebaseWpid.hbm.xml"/>
+    <mapping resource="org/socraticgrid/wexcleanup/freebase/dao/TemplateValues.hbm.xml"/>
+    <mapping resource="org/socraticgrid/wexcleanup/freebase/dao/EcsCandidateGuid.hbm.xml"/>
+    <mapping resource="org/socraticgrid/wexcleanup/freebase/dao/TemplateCalls.hbm.xml"/>
+    <mapping resource="org/socraticgrid/wexcleanup/freebase/dao/EcsSections.hbm.xml"/>
+    <mapping resource="org/socraticgrid/wexcleanup/freebase/dao/EcsCandidateWpids.hbm.xml"/>
+    <mapping resource="org/socraticgrid/wexcleanup/freebase/dao/EcsCodesToWpids.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

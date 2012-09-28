@@ -1,0 +1,16 @@
+<change-set xmlns='http://drools.org/drools-5.0/change-set'
+		xmlns:xs='http://www.w3.org/2001/XMLSchema-instance' 
+		xs:schemaLocation='http://drools.org/drools-5.0/change-set.xsd'>
+	<add>
+		<resource source='classpath:rules/kmr-all.drl' type='DRL' />
+		<resource source='classpath:rules/kmr-person.drl' type='DRL' />
+		<!--<resource source='classpath:rules/kmr-allergy.drl' type='DRL' />
+		<resource source='classpath:rules/kmr-medication.drl' type='DRL' />
+		<resource source='classpath:rules/kmr-problem.drl' type='DRL' />
+		<resource source='classpath:rules/kmr-result.drl' type='DRL' />
+-->
+		<resource source='classpath:rules/kmr-dupcheck.drl' type='DRL' />
+		<!--<resource source='file:/home/nhin/drools/davide.drl' type='DRL' />-->
+		<resource source='classpath:rules/kmr-himss.drl' type='DRL' />
+	</add>
+</change-set>

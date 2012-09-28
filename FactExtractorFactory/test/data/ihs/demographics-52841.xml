@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<hl7:PatientDemographics_PRPA_MT201303UVResponse xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+  <hl7:subject classCode="PAT">
+    <hl7:id extension="52841"/>
+    <hl7:id displayable="false" extension="640074871" root="2.16.840.1.113883.4.1"/>
+    <hl7:addr use="HP">
+      <hl7:streetAddressLine>PO BOX 202</hl7:streetAddressLine>
+      <hl7:city>SANTA FE</hl7:city>
+      <hl7:state>NEW MEXICO</hl7:state>
+      <hl7:postalCode>87505</hl7:postalCode>
+      <hl7:country>US</hl7:country>
+    </hl7:addr>
+    <hl7:telecom use="HP" value="555-555-9032"/>
+    <hl7:effectiveTime value="20100701144730-0700"/>
+    <hl7:patientPerson>
+      <hl7:name use="L">
+        <hl7:family>SMITH</hl7:family>
+        <hl7:given>BOBBY VALENTINO</hl7:given>
+      </hl7:name>
+      <hl7:administrativeGenderCode displayName="MALE" code="M"/>
+      <hl7:birthTime value="19880223000000-0800"/>
+      <hl7:maritalStatusCode codeSystem="2.16.840.1.113883.5.2" code="UNK"/>
+      <hl7:contactParty classCode="NOK">
+        <hl7:code displayName="NOK" code="UNK"/>
+        <hl7:contactPerson classCode="PSN">
+          <hl7:name use="L">
+            <hl7:family>SMITH</hl7:family>
+            <hl7:given>MARGIE</hl7:given>
+          </hl7:name>
+        </hl7:contactPerson>
+      </hl7:contactParty>
+      <hl7:contactParty classCode="ECON">
+        <hl7:code displayName="ECON" code="UNK"/>
+        <hl7:contactPerson classCode="PSN">
+          <hl7:name use="L">
+            <hl7:family>SMITH</hl7:family>
+            <hl7:given>MARGIE</hl7:given>
+          </hl7:name>
+        </hl7:contactPerson>
+      </hl7:contactParty>
+      <hl7:languageCommunication>
+        <hl7:languageCode code="en-US"/>
+        <hl7:preferenceInd value="true"/>
+      </hl7:languageCommunication>
+    </hl7:patientPerson>
+    <hl7:providerOrganization>
+      <hl7:id root="2.16.840.1.113883.3.274"/>
+    </hl7:providerOrganization>
+  </hl7:subject>
+</hl7:PatientDemographics_PRPA_MT201303UVResponse>

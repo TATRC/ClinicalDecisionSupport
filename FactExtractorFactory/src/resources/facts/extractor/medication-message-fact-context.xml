@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+  <bean id="med.extractor" class="gov.hhs.fha.nhinc.adapter.fact.extractor.MedicationEventsFactExtractor" scope="prototype">
+    <constructor-arg ref="Xpath"/>
+    <property name="factClassName" value="gov.hhs.fha.nhinc.adapter.fact.MedicationFactType"/>
+    <property name="eventsCountXpath" value="count(//hl7:careProvisionEvent/hl7:pertinentInformation3)"/>
+    <property name="factIndexCharset" value="#event#"/>
+    <property name="factBaseXpath" value="//hl7:careProvisionEvent/hl7:pertinentInformation3[#event#]"/>
+    <property name="orderExtractor" ref="med.order.extractor"/>
+    <property name="factProperties">
+      <map>
+        <entry key="SourceSystem">
+          <ref bean="carerecord.SourceSystem"/>
+        </entry>
+        <entry key="Id">
+          <ref bean="med.Id"/>
+        </entry>
+        <entry key="PatientId">
+          <ref bean="med.PatientId"/>
+        </entry>
+        <entry key="FreeTextProductName">
+          <ref bean="med.FreeTextProductName"/>
+        </entry>
+        <entry key="FreeTextBrandName">
+          <ref bean="med.FreeTextBrandName"/>
+        </entry>
+        <entry key="CodedProductName">
+          <ref bean="med.CodedProductName"/>
+        </entry>
+        <entry key="CodedTypeOfMedication">
+          <ref bean="med.CodedTypeOfMedication"/>
+        </entry>
+        <entry key="CodedStatusOfMedication">
+          <ref bean="med.CodedStatusOfMedication"/>
+        </entry>
+        <entry key="CodedAdministrationUnitCode">
+          <ref bean="med.CodedAdministrationUnitCode"/>
+        </entry>
+        <entry key="FreeTextIndication">
+          <ref bean="med.FreeTextIndication"/>
+        </entry>
+        <entry key="SigFreeText">
+          <ref bean="med.SigFreeText"/>
+        </entry>
+        <entry key="CodedSigRoute">
+          <ref bean="med.CodedSigRoute"/>
+        </entry>
+        <entry key="SigDose">
+          <ref bean="med.SigDose"/>
+        </entry>
+        <entry key="SigMedicationStopped">
+          <ref bean="med.SigMedicationStopped"/>
+        </entry>
+        <entry key="SigFrequency">
+          <ref bean="med.SigFrequency"/>
+        </entry>
+        <entry key="SigDuration">
+          <ref bean="med.SigDuration"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <!-- Identifier of a test event -->
+  <bean id="med.Id" class="gov.hhs.fha.nhinc.adapter.fact.def.ValueTypeListPropertyDefinition">
+    <property name="propertyName" value="Id"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueType"/>
+    <property name="valueXpath" value="hl7:substanceAdministration/hl7:id[#id#]/@extension"/>
+    <property name="codeSystemXpath" value="hl7:substanceAdministration/hl7:id[#id#]/@root"/>
+    <property name="codeSystemNameXpath" value="hl7:substanceAdministration/hl7:id[#id#]/@assigningAuthorityName"/>
+    <property name="indexRef" value="#id#"/>
+    <property name="listSizeXpath" value="count(hl7:substanceAdministration/hl7:id)"/>
+  </bean>
+
+  <bean id="med.PatientId" class="gov.hhs.fha.nhinc.adapter.fact.def.ValueTypePropertyDefinition">
+    <property name="propertyName" value="PatientId"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueType"/>
+    <property name="valueXpath" value="//hl7:recordTarget/hl7:patient/hl7:id/@extension"/>
+    <property name="codeSystemXpath" value="//hl7:recordTarget/hl7:patient/hl7:id/@root"/>
+    <property name="codeSystemNameXpath" value="//hl7:recordTarget/hl7:patient/hl7:id/@assigningAuthorityName"/>
+  </bean>
+
+  <bean id="med.FreeTextProductName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FreeTextProductName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath"
+              value="hl7:substanceAdministration/hl7:consumable/hl7:administerableMaterial/hl7:administerableMaterial/hl7:code/hl7:originalText"/>
+  </bean>
+
+  <bean id="med.FreeTextBrandName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FreeTextBrandName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath"
+              value="hl7:substanceAdministration/hl7:consumable/hl7:administerableMaterial/hl7:administerableMaterial/hl7:desc"/>
+  </bean>
+
+  <bean id="med.CodedProductName" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="CodedProductName"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath"
+                value="hl7:substanceAdministration/hl7:consumable/hl7:administerableMaterial/hl7:administerableMaterial/hl7:code/@code"/>
+    <property name="labelXpath"
+                value="hl7:substanceAdministration/hl7:consumable/hl7:administerableMaterial/hl7:administerableMaterial/hl7:code/@displayName"/>
+    <property name="codeSystemXpath"
+                value="hl7:substanceAdministration/hl7:consumable/hl7:administerableMaterial/hl7:administerableMaterial/hl7:code/@codeSystem"/>
+    <property name="codeSystemNameXpath"
+                value="hl7:substanceAdministration/hl7:consumable/hl7:administerableMaterial/hl7:administerableMaterial/hl7:code/@codeSystemName"/>
+  </bean>
+
+  <bean id="med.CodedTypeOfMedication" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="CodedTypeOfMedication"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath"
+                value="hl7:substanceAdministration/hl7:sourceOf[@typeCode='SUBJ']/hl7:observation/hl7:code/@code"/>
+    <property name="labelXpath"
+                value="hl7:substanceAdministration/hl7:sourceOf[@typeCode='SUBJ']/hl7:observation/hl7:code/@displayName"/>
+    <property name="codeSystemXpath"
+                value="hl7:substanceAdministration/hl7:sourceOf[@typeCode='SUBJ']/hl7:observation/hl7:code/@codeSystem"/>
+    <property name="codeSystemNameXpath"
+                value="hl7:substanceAdministration/hl7:sourceOf[@typeCode='SUBJ']/hl7:observation/hl7:code/@codeSystemName"/>
+  </bean>
+
+  <bean id="med.CodedStatusOfMedication" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="CodedStatusOfMedication"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath"
+                value="hl7:substanceAdministration/hl7:sourceOf[@typeCode='SUBJ']/hl7:observation/hl7:value/@code"/>
+    <property name="labelXpath"
+                value="hl7:substanceAdministration/hl7:sourceOf[@typeCode='SUBJ']/hl7:observation/hl7:value/@displayName"/>
+    <property name="codeSystemXpath"
+                value="hl7:substanceAdministration/hl7:sourceOf[@typeCode='SUBJ']/hl7:observation/hl7:value/@codeSystem"/>
+    <property name="codeSystemNameXpath"
+                value="hl7:substanceAdministration/hl7:sourceOf[@typeCode='SUBJ']/hl7:observation/hl7:value/@codeSystemName"/>
+  </bean>
+
+  <bean id="med.FreeTextIndication" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FreeTextIndication"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath"
+              value="hl7:substanceAdministration/hl7:sourceOf[@typeCode='RSON']/hl7:observation/hl7:text"/>
+  </bean>
+
+  <bean id="med.SigFreeText" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="SigFreeText"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath"
+              value="hl7:substanceAdministration/hl7:text"/>
+  </bean>
+
+  <bean id="med.CodedSigRoute" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="CodedSigRoute"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath"
+                value="hl7:substanceAdministration/hl7:routeCode/@code"/>
+    <property name="labelXpath"
+                value="hl7:substanceAdministration/hl7:routeCode/@displayName"/>
+    <property name="codeSystemXpath"
+                value="hl7:substanceAdministration/hl7:routeCode/@codeSystem"/>
+    <property name="codeSystemNameXpath"
+                value="hl7:substanceAdministration/hl7:routeCode/@codeSystemName"/>
+  </bean>
+
+  <bean id="med.SigDose" class="gov.hhs.fha.nhinc.adapter.fact.def.VUPPropertyDefinition">
+    <property name="propertyName" value="SigDose"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueUnitPair"/>
+    <property name="valueXpath"
+                value="hl7:substanceAdministration/hl7:doseQuantity/@value"/>
+    <property name="unitXpath"
+                value="hl7:substanceAdministration/hl7:doseQuantity/@unit"/>
+  </bean>
+
+  <bean id="med.SigMedicationStopped" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="SigMedicationStopped"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath"
+              value="hl7:substanceAdministration/hl7:effectiveTime[1]/hl7:low/@value"/>
+  </bean>
+
+  <bean id="med.SigFrequency" class="gov.hhs.fha.nhinc.adapter.fact.def.VUPPropertyDefinition">
+    <property name="propertyName" value="SigFrequency"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueUnitPair"/>
+    <property name="valueXpath"
+                value="hl7:substanceAdministration/hl7:effectiveTime[2]/hl7:period/@value"/>
+    <property name="unitXpath"
+                value="hl7:substanceAdministration/hl7:effectiveTime[2]/hl7:period/@unit"/>
+  </bean>
+
+  <bean id="med.SigDuration" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="SigDuration"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath"
+              value="hl7:substanceAdministration/hl7:effectiveTime[3]/@value"/>
+  </bean>
+
+  <bean id="med.CodedAdministrationUnitCode" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="CodedAdministrationUnitCode"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath"
+                value="hl7:substanceAdministration/hl7:administrationUnitCode/@code"/>
+    <property name="labelXpath"
+                value="hl7:substanceAdministration/hl7:administrationUnitCode/@displayName"/>
+    <property name="codeSystemXpath"
+                value="hl7:substanceAdministration/hl7:administrationUnitCode/@codeSystem"/>
+    <property name="codeSystemNameXpath"
+                value="hl7:substanceAdministration/hl7:administrationUnitCode/@codeSystemName"/>
+  </bean>
+
+</beans>

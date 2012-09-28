@@ -1,0 +1,21 @@
+package gov.hhs.fha.nhinc.kmr.drools.drl
+
+import gov.hhs.fha.nhinc.adapter.kmr.drools.test.LabTest;
+import gov.hhs.fha.nhinc.adapter.kmr.stateobjects.RuleExecutionResponse;
+
+global RuleExecutionResponse execResponse
+
+rule "Platelets Less Than 120 greater than 40"
+    dialect "java"
+    when
+        lab: LabTest(labId == "1835-72", value > 40, value < 120)
+    then
+        execResponse.setRuleId("1");
+        execResponse.setRuleName("Platelets Less Than 120 greater than 40");
+        execResponse.setMessage("Notify provider 10001 of abnormal result");
+        execResponse.setTaskId("1");
+        execResponse.setTaskType("Inbox");
+        execResponse.setCriticality("Stat");
+        drools.assert(resp);
+        System.out.println("Rule 1 has fired");
+end

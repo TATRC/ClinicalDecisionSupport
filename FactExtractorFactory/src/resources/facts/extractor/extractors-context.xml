@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+  <bean id="extractor.factory" class="gov.hhs.fha.nhinc.adapter.fact.extractor.FactExtractorFactory">
+    <property name="contextFiles">
+      <list>
+        <value>facts/context/xpath-context.xml</value>
+        <value>facts/context/demographics-fact-context.xml</value>
+        <value>facts/context/allergy-fact-context.xml</value>
+        <value>facts/context/extractors-context.xml</value>
+      </list>
+    </property>
+    <property name="factExtractors">
+      <map>
+        <entry key="InpatientEncounter" value="admission.extractor"/>
+        <entry key="OutpatientEncounter" value="appointment.extractor"/>
+        <entry key="EncounterDetails" value="encounter.extractor"/>
+        <entry key="PatientDemographics" value="demographics.extractor"/>
+        <entry key="PatientSearch" value="ptsearch.extractor"/>
+        <entry key="ProviderSearch" value="docsearch.extractor"/>
+        <entry key="CareRecordAllergy" value="allergy.extractor"/>
+        <entry key="CareRecordProblem" value="problem.extractor"/>
+        <entry key="CareRecordProcedure" value="procedure.extractor"/>
+        <entry key="CareRecordTestResult" value="testresult.extractor"/>
+        <entry key="CareRecordMedication" value="med.extractor"/>
+        <entry key="CareRecordImmunization" value="immunization.extractor"/>
+        <entry key="CareRecordVitals" value="vitals.extractor"/>
+        <entry key="CareRecordImagingResult" value="dximaging.results.extractor"/>
+        <entry key="OrderHistory" value="order.history.extractor"/>
+        <entry key="ResultEventMessage" value="testresultevent.extractor"/>
+        <entry key="ScheduleSearch" value="schedule.extractor"/>
+      </map>
+    </property>
+  </bean>
+
+  <util:map id="demographics.NameTypes" map-class="java.util.HashMap">
+    <entry key="L" value="Legal"/>
+    <entry key="P" value="Alias/Former"/>
+  </util:map>
+
+  <util:map id="support.ContactTypes" map-class="java.util.HashMap">
+    <entry key="NOK" value="Next Of Kin"/>
+    <entry key="ECON" value="Emergency Contact"/>
+    <entry key="AGNT" value="Agent"/>
+    <entry key="GUARD" value="Guardian"/>
+    <entry key="CAREGIVER" value="Caregiver"/>
+    <entry key="PRS" value="Personal"/>
+  </util:map>
+
+  <util:map id="address.UseTypes" map-class="java.util.HashMap">
+    <entry key="H" value="Home"/>
+    <entry key="HP" value="Home"/>
+    <entry key="PST" value="Postal"/>
+    <entry key="WP" value="Work"/>
+    <entry key="TMP" value="Temporary"/>
+  </util:map>
+
+  <util:map id="telecom.UseTypes" map-class="java.util.HashMap">
+    <entry key="H" value="Home"/>
+    <entry key="HP" value="Home"/>
+    <entry key="EC" value="Emergency"/>
+    <entry key="MC" value="Mobile"/>
+    <entry key="PG" value="Pager"/>
+    <entry key="WP" value="Work"/>
+    <entry key="TMP" value="Temporary"/>
+    <entry key="NET" value="Email"/>
+  </util:map>
+</beans>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/E:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/DisplayDataAggregator.wsdl" uri="src/conf/xml-resources/web-services/DisplayDataAggregatorService/wsdl/DisplayDataAggregator.wsdl"/>
+    <system systemId="file:/E:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/DisplayDataComponent.wsdl" uri="wsdl/DisplayDataComponent.wsdl"/>
+    <system systemId="file:/E:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/schemas/nhinc/common/DisplayDataAggregator.xsd" uri="src/conf/xml-resources/web-service-references/DisplayDataComponent/schemas/nhinc/common/DisplayDataAggregator.xsd"/>
+    <system systemId="file:/Z:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/DisplayDataComponent.wsdl" uri="wsdl/DisplayDataComponent.wsdl"/>
+</catalog>

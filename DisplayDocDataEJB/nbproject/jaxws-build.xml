@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xalan="http://xml.apache.org/xslt" xmlns:ejbjarproject2="http://www.netbeans.org/ns/j2ee-ejbjarproject/2" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSGEN SECTION
+                ===================
+            -->
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.dir}/wsimport/client"/>
+        <mkdir dir="${build.generated.dir}/wsimport/service"/>
+        <mkdir dir="${build.generated.dir}/wsimport/binaries"/>
+        <mkdir dir="${classes.dir}"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${j2ee.platform.wsimport.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-check-DocumentManager" depends="wsimport-init">
+        <condition property="wsimport-client-DocumentManager.notRequired">
+            <available file="${build.generated.dir}/wsimport/client/ihe:iti:xds-b:2007/DocumentManager.java"/>
+        </condition>
+    </target>
+    <target name="wsimport-client-DocumentManager" depends="wsimport-init,wsimport-client-check-DocumentManager" unless="wsimport-client-DocumentManager.notRequired">
+        <property name="wsdl-DocumentManager" location="${meta.inf}/xml-resources/web-service-references/DocumentManager/wsdl/DocumentManager.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/wsimport/client" destdir="${build.generated.dir}/wsimport/binaries" wsdl="${wsdl-DocumentManager}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="../../../../META-INF/wsdl/client/DocumentManager/DocumentManager.wsdl" xnocompile="true"/>
+    </target>
+    <target name="wsimport-client-clean-DocumentManager" depends="-init-project">
+        <delete dir="${build.generated.dir}/wsimport/client/ihe:iti:xds-b:2007"/>
+    </target>
+    <target name="wsimport-service-check-DisplayDocDataService" depends="wsimport-init">
+        <condition property="wsimport-service-DisplayDocDataService.notRequired">
+            <available file="${build.generated.dir}/wsimport/service/gov/hhs/fha/nhinc/aggregator/DisplayDataComponent.java"/>
+        </condition>
+    </target>
+    <target name="wsimport-service-DisplayDocDataService" depends="wsimport-init,wsimport-service-check-DisplayDocDataService" unless="wsimport-service-DisplayDocDataService.notRequired">
+        <property name="service-wsdl-DisplayDocDataService" location="${meta.inf}/xml-resources/web-services/DisplayDocDataService/wsdl/DisplayDataComponent.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/wsimport/service" destdir="${build.generated.dir}/wsimport/binaries" wsdl="${service-wsdl-DisplayDocDataService}" catalog="catalog.xml" extension="true" verbose="true" xnocompile="true"/>
+        <property name="targetLocation-DisplayDocDataService" location="${meta.inf}/wsdl/DisplayDocDataService"/>
+        <property name="sourceLocation-DisplayDocDataService" location="${meta.inf}/xml-resources/web-services/DisplayDocDataService/wsdl/"/>
+        <copy todir="${targetLocation-DisplayDocDataService}">
+            <fileset dir="${sourceLocation-DisplayDocDataService}"/>
+        </copy>
+    </target>
+    <target name="wsimport-service-clean-DisplayDocDataService" depends="-init-project">
+        <delete dir="${build.generated.dir}/wsimport/service/gov/hhs/fha/nhinc/aggregator"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-DocumentManager"/>
+    <target name="wsimport-client-compile" depends="wsimport-client-generate">
+        <ejbjarproject2:javac srcdir="${build.generated.dir}/wsimport/client" classpath="${j2ee.platform.wsimport.classpath}:${javac.classpath}" destdir="${classes.dir}"/>
+        <copy todir="${classes.dir}">
+            <fileset dir="${build.generated.dir}/wsimport/binaries" includes="**/*.xml"/>
+        </copy>
+    </target>
+    <target name="wsimport-service-generate" depends="wsimport-service-DisplayDocDataService"/>
+    <target name="wsimport-service-compile" depends="wsimport-service-generate">
+        <ejbjarproject2:javac srcdir="${build.generated.dir}/wsimport/service" classpath="${j2ee.platform.wsimport.classpath}:${javac.classpath}" destdir="${classes.dir}"/>
+    </target>
+</project>

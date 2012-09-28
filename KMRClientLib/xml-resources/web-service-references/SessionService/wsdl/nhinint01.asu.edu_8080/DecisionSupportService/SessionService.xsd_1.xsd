@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.6-hudson-317-. -->
+<xs:schema xmlns:tns="http://dss.kmr.nhinc.fha.hhs.gov/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://dss.kmr.nhinc.fha.hhs.gov/">
+
+  <xs:element name="initKnowledgeSession" type="tns:initKnowledgeSession" />
+
+  <xs:element name="initKnowledgeSessionResponse" type="tns:initKnowledgeSessionResponse" />
+
+  <xs:complexType name="initKnowledgeSession">
+    <xs:sequence>
+      <xs:element name="session" type="tns:knowledgeSession" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="knowledgeSession">
+    <xs:sequence>
+      <xs:element name="patientId" type="xs:string" minOccurs="0" />
+      <xs:element name="sessionId" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="initKnowledgeSessionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

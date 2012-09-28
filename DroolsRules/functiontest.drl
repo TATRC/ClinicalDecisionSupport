@@ -1,0 +1,16 @@
+package gov.hhs.fha.nhinc.kmr
+
+import gov.hhs.fha.nhinc.adapter.fact.ResultFactType;
+ 
+global Result result; 
+ 
+rule "Test average last"
+    dialect "mvel" 
+	when
+		$avg : Number() from accumulate( 
+		    ResultFactType( $sd : specimenDate, $val : resultValue ), 
+		    averageLast( [ 5, $sd, $val.floatValue ] ) ) 
+	then
+		result.value = $avg; 
+end
+

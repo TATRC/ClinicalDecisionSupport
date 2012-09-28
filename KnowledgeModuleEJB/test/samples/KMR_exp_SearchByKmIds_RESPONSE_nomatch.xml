@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:KmIdSearchResponse xmlns:ns2="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <ns2:requestReference>
+            <ns2:requestId>97</ns2:requestId>
+            <ns2:requestDate>2010-03-22T00:03:22.000-00:07</ns2:requestDate>
+         </ns2:requestReference>
+         <ns2:responseList/>
+      </ns2:KmIdSearchResponse>
+   </S:Body>
+</S:Envelope>
+
+<!-- per Request
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <SOAP-ENV:Body>
+      <m:KmIdSearchRequest xmlns:m="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <m:request>
+            <m:requestReference>
+               <m:requestId>97</m:requestId>
+               <m:requestDate>2010-03-22T00:03:22.000-00:07</m:requestDate>
+            </m:requestReference>
+            <m:ACL>
+               <UR_Name>Internal Domain Expert</UR_Name>
+            </m:ACL>
+            <m:kms>
+               <m:kmId>1</m:kmId>
+               <m:kmId>2</m:kmId>
+               <m:kmId>3</m:kmId>
+            </m:kms>
+         </m:request>
+      </m:KmIdSearchRequest>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+-->

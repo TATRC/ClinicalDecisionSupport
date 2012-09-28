@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/Users/jharby/src/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/TaskManager.wsdl" uri="src/conf/xml-resources/web-services/TaskManagerService/wsdl/TaskManager.wsdl"/>
+    <system systemId="file:/Users/jharby/src/NHINC/Current/Product/Production/Common/Interfaces/src/schemas/nhinc/common/Task.xsd" uri="src/conf/xml-resources/web-services/TaskManagerService/schemas/nhinc/common/Task.xsd"/>
+    <system systemId="file:/Users/jharby/src/NHINC/Current/Product/Production/Common/Interfaces/src/schemas/nhinc/adapter/Facts.xsd" uri="src/conf/xml-resources/web-services/TaskManagerService/schemas/nhinc/adapter/Facts.xsd"/>
+    <system systemId="file:/Users/jharby/src/NHINC/Current/Product/Production/KMR/Interfaces/src/wsdl/RegistriesService.wsdl" uri="src/conf/xml-resources/web-service-references/RegistriesService/wsdl/RegistriesService.wsdl"/>
+    <system systemId="file:/Users/jharby/src/NHINC/Current/Product/Production/KMR/Interfaces/src/schemas/nhinc/kmr/registries.xsd" uri="src/conf/xml-resources/web-service-references/RegistriesService/schemas/nhinc/kmr/registries.xsd"/>
+    <system systemId="http://smsgateway.ca/SendSMS.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/SendSMS/wsdl/smsgateway.ca/SendSMS.asmx.wsdl"/>
+</catalog>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxws:bindings  node="wsdl:definitions/wsdl:types/xsd:schema"
+	xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" wsdlLocation="../wsdl/localhost_8080/DateProject/DateWebServiceService.wsdl">
+	<jaxb:globalBindings>
+		<jaxb:serializable/>
+		<jaxb:javaType name="java.util.Date" xmlType="xsd:dateTime"/>
+	</jaxb:globalBindings>
+</jaxws:bindings>

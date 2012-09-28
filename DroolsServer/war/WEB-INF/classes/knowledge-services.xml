@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:drools="http://drools.org/schema/drools-spring"       
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                           http://drools.org/schema/drools-spring http://anonsvn.jboss.org/repos/labs/labs/jbossrules/trunk/drools-container/drools-spring/src/main/resources/org/drools/container/spring/drools-spring-1.0.0.xsd">
+	
+	<drools:execution-node id="node1" />
+
+	<drools:kbase id="kbase0" node="node1">
+	    <drools:resources>
+		<drools:resource source="classpath:changesets/change-set-kmr-selector.xml" type="CHANGE_SET" />
+	    </drools:resources>
+	</drools:kbase>
+
+	<drools:kbase id="kbase1" node="node1">
+	    <drools:resources>
+		<drools:resource source="classpath:changesets/change-set-kmr-clinical.xml" type="CHANGE_SET" />
+	    </drools:resources>
+	</drools:kbase>
+
+	<drools:ksession id="ks00000" type="stateful" kbase="kbase0" node="node1"/>
+	<drools:ksession id="ks6" type="stateful" kbase="kbase1" node="node1"/>
+	<drools:ksession id="ks7" type="stateful" kbase="kbase1" node="node1"/>
+	<drools:ksession id="ks11428" type="stateful" kbase="kbase1" node="node1"/>
+	<drools:ksession id="ks14484" type="stateful" kbase="kbase1" node="node1"/>
+	<drools:ksession id="ks30197" type="stateful" kbase="kbase1" node="node1"/>
+	<drools:ksession id="ks30354" type="stateful" kbase="kbase1" node="node1"/>
+	<drools:ksession id="ks40056" type="stateful" kbase="kbase1" node="node1"/>
+	<drools:ksession id="ks53009" type="stateful" kbase="kbase1" node="node1"/>
+	<drools:ksession id="ks99990070" type="stateful" kbase="kbase1" node="node1"/>
+
+	<bean id="monitor" class="org.drools.management.DroolsManagementAgentBean" init-method="start">
+	   <property name="knowledgeBases">
+	      <list>
+	         <ref local="kbase0"/>
+	         <ref local="kbase1"/>
+	      </list>
+	   </property>
+	   <property name="statefulKnowledgeSessions">
+	      <list>
+	         <ref local="ks00000"/>
+	         <ref local="ks6"/>
+	         <ref local="ks7"/>
+	         <ref local="ks11428"/>
+	         <ref local="ks14484"/>
+	         <ref local="ks30197"/>
+	         <ref local="ks30354"/>
+	         <ref local="ks40056"/>
+	         <ref local="ks53009"/>
+	         <ref local="ks99990070"/>
+	      </list>
+	   </property>
+	</bean>
+</beans>

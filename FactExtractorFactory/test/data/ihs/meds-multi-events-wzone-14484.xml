@@ -1,0 +1,469 @@
+<?xml version="1.0" ?>
+<hl7:CareRecord_QUPC_IN043200UV01Message xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+  <hl7:response>
+    <hl7:id extension="6ef1e672-fbff-3861-8a5c-8133546b4b1a"/>
+    <hl7:creationTime value="20100629201410.806-0700"/>
+    <hl7:interactionId extension="PRPA_IN900300UV02"/>
+    <hl7:processingCode code="P"/>
+    <hl7:processingModeCode code="R"/>
+    <hl7:acceptAckCode code="RCV"/>
+    <hl7:receiver typeCode="RCV">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+        <hl7:telecom value="http://localhost:8080/NhinConnect/CommonDataLayerService"/>
+      </hl7:device>
+    </hl7:receiver>
+    <hl7:sender typeCode="SND">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+      </hl7:device>
+    </hl7:sender>
+    <hl7:controlActProcess moodCode="EVN" classCode="CACT">
+      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CS" code="QUPC_TE043200UV01"/>
+      <hl7:priorityCode code="R"/>
+      <hl7:subject typeCode="SUBJ">
+        <hl7:registrationEvent moodCode="EVN" classCode="REG">
+          <hl7:statusCode code="active"/>
+          <hl7:custodian typeCode="CST">
+            <hl7:assignedEntity classCode="ASSIGNED">
+              <hl7:id assigningAuthorityName="OpenRPMS" root="2.16.840.1.113883.3.274"/>
+            </hl7:assignedEntity>
+          </hl7:custodian>
+          <hl7:subject2 typeCode="SUBJ">
+            <hl7:careProvisionEvent moodCode="EVN" classCode="ENC">
+              <hl7:recordTarget typeCode="RCT">
+                <hl7:patient classCode="PAT">
+                  <hl7:id extension="14484" root="2.16.840.1.113883.3.200"/>
+                  <hl7:statusCode code="normal"/>
+                  <hl7:patientPerson determinerCode="INSTANCE" classCode="PSN">
+                    <hl7:name use="L">
+                      <hl7:family>SMITH</hl7:family>
+                      <hl7:given>BENINA</hl7:given>
+                      <hl7:given>J</hl7:given>
+                    </hl7:name>
+                    <hl7:administrativeGenderCode displayName="FEMALE" code="F"/>
+                    <hl7:birthTime value="19560622000000-0700"/>
+                  </hl7:patientPerson>
+                </hl7:patient>
+              </hl7:recordTarget>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="1"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id/>
+                  <hl7:text>TAKE THREE TABLETS BY MOUTH WEEKLY FOR ARTHRITIS</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090617-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="METHOTREXATE 2.5MG TAB" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="00378-0014-01">
+                          <hl7:originalText>METHOTREXATE 2.5MG TAB</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>METHOTREXATE 2.5MG TAB</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="PENDING" code="UNK"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="1668405" root="2.16.840.1.113883.3.274"/>
+                      <hl7:repeatNumber value="11"/>
+                      <hl7:quantity value="12"/>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf inversionInd="true" typeCode="SUBJ">
+                    <hl7:act moodCode="INT" classCode="ACT">
+                      <hl7:code displayName="Annotation Comment" codeSystemName="IHEActCode" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" code="PINSTRUCT"/>
+                      <hl7:text></hl7:text>
+                    </hl7:act>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="2"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id/>
+                  <hl7:text>TAKE 40MG BY MOUTH EVERY DAY FOR HIGH BLOOD PRESSURE CONTROL OR TO </hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090617-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                    <hl7:period unit="d" value="1"/>
+                  </hl7:effectiveTime>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="LISINOPRIL 40MG TAB" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="00904-5810-80">
+                          <hl7:originalText>LISINOPRIL 40MG TAB</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>LISINOPRIL 40MG TAB</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="PENDING" code="UNK"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="1668404" root="2.16.840.1.113883.3.274"/>
+                      <hl7:repeatNumber value="11"/>
+                      <hl7:quantity value="30"/>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf inversionInd="true" typeCode="SUBJ">
+                    <hl7:act moodCode="INT" classCode="ACT">
+                      <hl7:code displayName="Annotation Comment" codeSystemName="IHEActCode" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" code="PINSTRUCT"/>
+                      <hl7:text></hl7:text>
+                    </hl7:act>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="3"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id/>
+                  <hl7:text>TAKE ONE TABLET BY MOUTH AT BEDTIME TO LOWER CHOLESTEROL</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090617-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="SIMVASTATIN 40MG TABLET" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="24658-0213-10">
+                          <hl7:originalText>SIMVASTATIN 40MG TABLET</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>SIMVASTATIN 40MG TABLET</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="PENDING" code="UNK"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="1668403" root="2.16.840.1.113883.3.274"/>
+                      <hl7:repeatNumber value="11"/>
+                      <hl7:quantity value="30"/>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf inversionInd="true" typeCode="SUBJ">
+                    <hl7:act moodCode="INT" classCode="ACT">
+                      <hl7:code displayName="Annotation Comment" codeSystemName="IHEActCode" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" code="PINSTRUCT"/>
+                      <hl7:text></hl7:text>
+                    </hl7:act>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="4"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id/>
+                  <hl7:text>TAKE ONE TABLET BY MOUTH EVERY DAY FOR VITAMIN SUPPLEMENT</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090617-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                    <hl7:period unit="d" value="1"/>
+                  </hl7:effectiveTime>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="FOLIC ACID 1MG TAB" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="00182-0507-10">
+                          <hl7:originalText>FOLIC ACID 1MG TAB</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>FOLIC ACID 1MG TAB</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="PENDING" code="UNK"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="1668400" root="2.16.840.1.113883.3.274"/>
+                      <hl7:repeatNumber value="11"/>
+                      <hl7:quantity value="30"/>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf inversionInd="true" typeCode="SUBJ">
+                    <hl7:act moodCode="INT" classCode="ACT">
+                      <hl7:code displayName="Annotation Comment" codeSystemName="IHEActCode" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" code="PINSTRUCT"/>
+                      <hl7:text></hl7:text>
+                    </hl7:act>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="5"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id/>
+                  <hl7:text>TAKE ONE TABLET BY MOUTH TWICE A DAY WITH MEALS FOR ARTHRITIS</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090617-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                    <hl7:period unit="h" value="12"/>
+                  </hl7:effectiveTime>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="HYDROXYCHLOROQUINE 200MG " codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="00955-0790-05">
+                          <hl7:originalText>HYDROXYCHLOROQUINE 200MG </hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>HYDROXYCHLOROQUINE 200MG </hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="PENDING" code="UNK"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="1668399" root="2.16.840.1.113883.3.274"/>
+                      <hl7:repeatNumber value="11"/>
+                      <hl7:quantity value="60"/>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf inversionInd="true" typeCode="SUBJ">
+                    <hl7:act moodCode="INT" classCode="ACT">
+                      <hl7:code displayName="Annotation Comment" codeSystemName="IHEActCode" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" code="PINSTRUCT"/>
+                      <hl7:text></hl7:text>
+                    </hl7:act>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="6"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id/>
+                  <hl7:text>TAKE ONE TABLET BY MOUTH EVERY DAY FOR HIGH BLOOD PRESSURE</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090617-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                    <hl7:period unit="d" value="1"/>
+                  </hl7:effectiveTime>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="AMLODIPINE BESYLATE 5MG TAB" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="00378-5209-05">
+                          <hl7:originalText>AMLODIPINE BESYLATE 5MG TAB</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>AMLODIPINE BESYLATE 5MG TAB</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="PENDING" code="UNK"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="1668397" root="2.16.840.1.113883.3.274"/>
+                      <hl7:repeatNumber value="11"/>
+                      <hl7:quantity value="30"/>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf inversionInd="true" typeCode="SUBJ">
+                    <hl7:act moodCode="INT" classCode="ACT">
+                      <hl7:code displayName="Annotation Comment" codeSystemName="IHEActCode" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" code="PINSTRUCT"/>
+                      <hl7:text></hl7:text>
+                    </hl7:act>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="7"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id/>
+                  <hl7:text>TAKE ONE TABLET BY MOUTH EVERY DAY FOR VITAMIN SUPPLEMENT</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090617-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                    <hl7:period unit="d" value="1"/>
+                  </hl7:effectiveTime>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="FOLIC ACID 1MG TAB" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="00182-0507-10">
+                          <hl7:originalText>FOLIC ACID 1MG TAB</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>FOLIC ACID 1MG TAB</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="PENDING" code="UNK"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="1668396" root="2.16.840.1.113883.3.274"/>
+                      <hl7:repeatNumber value="11"/>
+                      <hl7:quantity value="30"/>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf inversionInd="true" typeCode="SUBJ">
+                    <hl7:act moodCode="INT" classCode="ACT">
+                      <hl7:code displayName="Annotation Comment" codeSystemName="IHEActCode" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" code="PINSTRUCT"/>
+                      <hl7:text></hl7:text>
+                    </hl7:act>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="8"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="2179147"/>
+                  <hl7:text>TAKE ONE-HALF (1/2) TABLET BY MOUTH AS DIRECTED AT ONSET OF HEADACHE. </hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090528-0700"/>
+                    <hl7:low value="20100529-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="ORAL" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C38288"/>
+                  <hl7:doseQuantity unit="MG" value="2.5"/>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="ZOLMITRIPTAN 5MG TAB" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="00310-0211-25">
+                          <hl7:originalText>ZOLMITRIPTAN 5MG TAB</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>ZOLMITRIPTAN 5MG TAB</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="1657941" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20100529-0700"/>
+                      <hl7:repeatNumber value="1"/>
+                      <hl7:quantity value="3"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090528-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="2122"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>HUYENTRANG</hl7:given>
+                              <hl7:family>WILSON</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf inversionInd="true" typeCode="SUBJ">
+                    <hl7:act moodCode="INT" classCode="ACT">
+                      <hl7:code displayName="Annotation Comment" codeSystemName="IHEActCode" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" code="PINSTRUCT"/>
+                      <hl7:text>2.5 MG</hl7:text>
+                    </hl7:act>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+            </hl7:careProvisionEvent>
+          </hl7:subject2>
+        </hl7:registrationEvent>
+      </hl7:subject>
+      <hl7:queryAck>
+        <hl7:queryId extension="20090920011010.005"/>
+        <hl7:statusCode code="deliveredResponse"/>
+        <hl7:queryResponseCode code="OK"/>
+        <hl7:resultTotalQuantity value="8"/>
+      </hl7:queryAck>
+    </hl7:controlActProcess>
+  </hl7:response>
+</hl7:CareRecord_QUPC_IN043200UV01Message>

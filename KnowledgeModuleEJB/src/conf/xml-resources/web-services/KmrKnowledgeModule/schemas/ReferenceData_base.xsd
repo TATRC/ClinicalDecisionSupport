@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
+	<!-- ============================================================
+    REQUEST for REFERENCE DATA
+   
+    LookupReference
+      * Can be:   orglevel
+                  kmstatus
+                  
+
+                  specialtyscheme
+                  specialtycode
+
+                  facttype
+                  factscheme
+                  factcode
+
+                  demographictype
+                  demographicscheme
+                  demographiccode
+                  demographicvalue
+
+    StartingRecNumber (DEFAULT=0)
+      * is the starting row number (non-inclusive), that will be returned.
+        This means that if StartingRecNumber=2, then the matching records to be
+        returned will start from row number 3, and the last record to be
+        returned will be row number 23.
+
+    PartialValue (OPTIONAL)
+      * For facttype , this will be wildcard checked against the facttype field.
+      * For factscheme , this will be wildcard checked against the schemename field.
+      * For factcode , this will be wildcard checked against the concept_code field.
+      * For demographicscheme , this will be wildcard checked against the schemename field.
+      * For demographiccode , this will be wildcard checked against the concept_code field.
+      
+    ============================================================ -->
+	<xs:complexType name="ReferenceData.LookupRefType_Type">
+		<xs:sequence>
+         <xs:element name="CodeType" type="xs:string" minOccurs="1" nillable="true"/>
+		</xs:sequence>
+	</xs:complexType>
+   
+   <xs:complexType name="ReferenceData.LookupRefType_System">
+		<xs:sequence>
+         <xs:element name="CodeType" type="xs:string" nillable="true"/>
+         <xs:element name="CodeSystem" type="xs:string" nillable="true"/>
+		</xs:sequence>
+	</xs:complexType>
+
+   <xs:complexType name="ReferenceData.LookupRefType_Code">
+		<xs:sequence>
+         <xs:element name="CodeType" type="xs:string" nillable="true"/>
+         <xs:element name="CodeSystem" type="xs:string" nillable="true"/>
+         <xs:element name="ContentCode" type="xs:string" nillable="true"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+   <!-- 
+   NOTE:
+      * Reference = ( facts, demographics, specialties, tasks )
+      * How to do conditional so that each lookup types can be singular?
+   -->
+	<xs:complexType name="ReferenceData.LookupType">
+		<xs:sequence>
+			<xs:element name="Lookup_Type" type="ReferenceData.LookupRefType_Type" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="Lookup_System" type="ReferenceData.LookupRefType_System" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="Lookup_Code" type="ReferenceData.LookupRefType_Code" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+      <xs:attribute name="StartingRecNumber" type="xs:int" default="0" use="optional" />
+      <xs:attribute name="Reference" type="xs:string" use="required" />
+      <xs:attribute name="MaxRecordsToShow" type="xs:int" default="200" use="optional" />
+	</xs:complexType>
+
+
+
+	<xs:complexType name="ReferenceData.RefRequestType">
+		<xs:sequence>
+			<xs:element name="Lookup" type="ReferenceData.LookupType" />
+		</xs:sequence>
+	</xs:complexType>
+
+   <!-- ============================================================
+    RESPONSE for REFERENCE DATA 
+    ============================================================ -->
+	<xs:complexType name="ReferenceData.RefDataType">
+		<xs:sequence>
+         <xs:element name="id" type="xs:int"/>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="descr" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+   <!--xs:complexType name="ReferenceData.RefDataListType">
+		<xs:sequence>
+			<xs:element name="refData" type="ReferenceData.RefDataType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType-->
+
+   <xs:complexType name="ReferenceData.ResponseType">
+		<xs:sequence>
+			<!--xs:element name="reference" type="ReferenceData.RefDataListType"/-->
+         <xs:element name="refData" type="ReferenceData.RefDataType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+      <xs:attribute name="TotalReferencesFound" type="xs:int" use="required"/>
+      <xs:attribute name="Reference" type="xs:string" use="required" />
+	</xs:complexType>
+
+   <xs:complexType name="ReferenceData.RefResponseType">
+		<xs:sequence>
+			<xs:element name="response" type="ReferenceData.ResponseType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+</xs:schema>

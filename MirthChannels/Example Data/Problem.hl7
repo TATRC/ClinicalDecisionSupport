@@ -1,0 +1,10 @@
+MSH|^~\&|7edit.com||7edit.com||20100616171147||PPR^PC1|MSG00001|P|2.6||||||WINDOWS-1252
+PID|||40056||SMITH^BARBARA^F||19601002|M||||||||||123456
+PV1|||NER|||||||GSU||||||||E||||||||||||||||||||||||||19951002174900|19951006
+PRB|ActionCode||ProbId1(eg ICD)^ProbText1^CodingSystem|Uniq ProblemId|||20100617144143||20100617152009|ClassId^Class^CodeSystem|||statusid^status^Codesys|||20100617144250|Onset|^Problem Rank||75||^Prognosis1|||SensitivityId^Sensitivity^CodeSystem|SeverityCd^Servity^CodeSystem||MoodCode^Mode^CodeSystem
+NTE|||Comment (Free Test)
+OBX|||ObservationId^Test^CodingSystem||Observation Value|||||||||20100617143656||^Observer^Given^^^^^^^^^^^^^^^^20100617144115^20100617144122||||||MoodCd^Mood^CodingSystem|Perform Org Name^Type Code^Id Num
+ORC|ControlId|Placer Order Num|||OrderStatus||||||||||20100617143854||||||Organization||||||||TypeCode^Text^Code System
+PRB|||ProbId2^ProbText2|||||||||||||||^Problem Rank||||^Prognosis2
+NTE
+OBX|||ObservationId^Test^CodingSystem||Observation Value|||||||||20100617143656||^Observer^Given^^^^^^^^^^^^^^^^20100617144115^20100617144122||||||MoodCd^Mood^CodingSystem

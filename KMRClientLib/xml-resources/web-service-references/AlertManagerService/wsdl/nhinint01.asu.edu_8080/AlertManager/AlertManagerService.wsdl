@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.6-hudson-317-. --><!-- 
+  Adapter Policy Engine WSDL
+  --><definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:task="urn:gov:hhs:fha:nhinc:common:task" xmlns:tns="urn:gov:hhs:fha:nhinc:alertmanager" name="AlertManager" targetNamespace="urn:gov:hhs:fha:nhinc:alertmanager">
+  <documentation>Alert Manager</documentation>
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="urn:gov:hhs:fha:nhinc:common:task" schemaLocation="http://nhinint01.asu.edu:8080/AlertManager/AlertManagerService?xsd=2" />
+    </xsd:schema>
+  </types>
+  
+  <message name="UpdateAlertRequestMessage">
+    <part name="UpdateAlertRequest" element="task:UpdateAlertRequest" />
+  </message>
+  <message name="UpdateAlertResponseMessage">
+    <part name="UpdateAlertResponse" element="task:UpdateAlertResponse" />
+  </message>
+  <message name="GetAlertFactsRequestMessage">
+    <part name="GetAlertFactsRequest" element="task:GetAlertFactsRequest" />
+  </message>
+  <message name="GetAlertFactsResponseMessage">
+    <part name="GetAlertFactsResponse" element="task:GetAlertFactsResponse" />
+  </message>
+
+  <portType name="AlertManagerPortType">
+    <operation name="UpdateAlert">
+      <input name="UpdateAlertRequest" message="tns:UpdateAlertRequestMessage" />
+      <output name="UpdateAlertResponse" message="tns:UpdateAlertResponseMessage" />
+    </operation>
+    <operation name="GetAlertFacts">
+      <input name="GetAlertFactsRequest" message="tns:GetAlertFactsRequestMessage" />
+      <output name="GetAlertFactsResponse" message="tns:GetAlertFactsResponseMessage" />
+    </operation>
+  </portType>
+  
+  <binding name="AlertManagerBindingSoap11" type="tns:AlertManagerPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="UpdateAlert">
+      <soap:operation soapAction="urn:UpdateAlert" />
+      <input name="UpdateAlertRequest">
+        <soap:body use="literal" />
+      </input>
+      <output name="UpdateAlertResponse">
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetAlertFacts">
+      <soap:operation soapAction="urn:GetAlertFacts" />
+      <input name="GetAlertFactsRequest">
+        <soap:body use="literal" />
+      </input>
+      <output name="GetAlertFactsResponse">
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  
+  <service name="AlertManager">
+    <port name="AlertManagerPortSoap11" binding="tns:AlertManagerBindingSoap11">
+      <soap:address location="http://nhinint01.asu.edu:8080/AlertManager/AlertManagerService" />
+    </port>
+  </service>
+  <plnk:partnerLinkType name="AlertManager">
+    <!-- A partner link type is automatically generated when a new port type is added. 
+         Partner link types are used by BPEL processes. In a BPEL process, a partner 
+         link represents the interaction between the BPEL process and a partner service. 
+         Each partner link is associated with a partner link type. A partner link type 
+         characterizes the conversational relationship between two services. The 
+         partner link type can have one or two roles.-->
+    <plnk:role name="AlertManagerPortTypeRole" portType="tns:AlertManagerPortType" />
+  </plnk:partnerLinkType>
+  
+</definitions>

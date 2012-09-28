@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+<!--
+The OrderFactExtractor is the main extractor.  It calls sub extractors as needed
+to handle the appropriate order history type.
+-->
+  <bean id="order.history.extractor" class="gov.hhs.fha.nhinc.adapter.fact.extractor.OrderFactExtractor" scope="prototype">
+    <constructor-arg ref="Xpath"/>
+    <property name="factClassName" value="gov.hhs.fha.nhinc.adapter.fact.GenericOrderFactType"/>
+    <property name="factsCountXpath" value="count(//hl7:CareRecord_QUPC_IN043200UV01Message/hl7:response/hl7:controlActProcess/hl7:subject/hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:pertinentInformation3)"/>
+    <property name="factBaseXpath" value="//hl7:CareRecord_QUPC_IN043200UV01Message/hl7:response/hl7:controlActProcess/hl7:subject/hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:pertinentInformation3[#fact#]"/>
+    <property name="factIndexCharset" value="#fact#"/>
+    <property name="labOrderExtractor" ref="lab.order.history.extractor"/>
+    <property name="medOrderExtractor" ref="med.order.history.extractor"/>
+  </bean>
+
+<!--
+List of definitions for order history that is shared between medication
+orders, lab orders, and any other order which shares GenericOrderFactType
+-->
+  <bean id="generic.order.Id" class="gov.hhs.fha.nhinc.adapter.fact.def.ValueTypeListPropertyDefinition">
+    <property name="propertyName" value="Id"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueType"/>
+    <property name="valueXpath" value="hl7:act/hl7:id[#id#]/@extension"/>
+    <property name="codeSystemXpath" value="hl7:act/hl7:id[#id#]/@root"/>
+    <property name="codeSystemNameXpath" value="hl7:act/hl7:id[#id#]/@assigningAuthorityName"/>
+    <property name="indexRef" value="#id#"/>
+    <property name="listSizeXpath" value="count(hl7:act/hl7:id)"/>
+  </bean>
+
+  <bean id="generic.order.PatientId" class="gov.hhs.fha.nhinc.adapter.fact.def.ValueTypePropertyDefinition">
+    <property name="propertyName" value="PatientId"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueType"/>
+    <property name="valueXpath" value="//hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:recordTarget/hl7:patient/hl7:id/@extension"/>
+    <property name="codeSystemXpath" value="//hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:recordTarget/hl7:patient/hl7:id/@root"/>
+    <property name="codeSystemNameXpath" value="//hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:recordTarget/hl7:patient/hl7:id/@assigningAuthorityName"/>
+  </bean>
+
+  <bean id="generic.order.Patient" class="gov.hhs.fha.nhinc.adapter.fact.def.ComplexPropertyDefinition">
+    <property name="propertyName" value="Patient"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.NameFactType"/>
+    <property name="objectProperties">
+      <map>
+        <entry key="NameType">
+          <ref bean="generic.order.Patient.NameType"/>
+        </entry>
+        <entry key="FamilyName">
+          <ref bean="generic.order.Patient.FamilyName"/>
+        </entry>
+        <entry key="FirstName">
+          <ref bean="generic.order.Patient.FirstName"/>
+        </entry>
+        <entry key="MiddleName">
+          <ref bean="generic.order.Patient.MiddleName"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="generic.order.Patient.NameType" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="NameType"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="//hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:recordTarget/hl7:patient/hl7:patientPerson/hl7:name/@use"/>
+  </bean>
+
+  <bean id="generic.order.Patient.FamilyName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FamilyName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="//hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:recordTarget/hl7:patient/hl7:patientPerson/hl7:name/hl7:family/text()"/>
+  </bean>
+
+  <bean id="generic.order.Patient.FirstName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FirstName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="//hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:recordTarget/hl7:patient/hl7:patientPerson/hl7:name/hl7:given[1]/text()"/>
+  </bean>
+
+  <bean id="generic.order.Patient.MiddleName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="MiddleName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="//hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:recordTarget/hl7:patient/hl7:patientPerson/hl7:name/hl7:given[2]/text()"/>
+  </bean>
+
+  <bean id="generic.order.PatientClass" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="PatientClass"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="//hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:code/@code"/>
+    <property name="labelXpath" value="//hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:code/@displayName"/>
+    <property name="codeSystemXpath" value="//hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:code/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="//hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:code/@codeSystemName"/>
+  </bean>
+
+<!--
+  <bean id="generic.order.OrderGroupNumber" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="OrderGroupNumber"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="//todo"/>
+  </bean>
+
+  <bean id="generic.order.ParentOrderNumber" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="ParentOrderNumber"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="//todo"/>
+  </bean>
+  -->
+
+  <bean id="generic.order.OrderStatus" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="OrderStatus"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:act/hl7:statusCode/@code"/>
+  </bean>
+
+  <bean id="generic.order.OrderDateTime" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="OrderDateTime"/>
+    <property name="propertyClassName" value="java.util.Date"/>
+    <property name="propertyXpath" value="hl7:act/hl7:author/hl7:time/@value"/>
+  </bean>
+
+  <bean id="generic.order.OrderStartDateTime" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="OrderStartDateTime"/>
+    <property name="propertyClassName" value="java.util.Date"/>
+    <property name="propertyXpath" value="hl7:act/hl7:effectiveTime/hl7:low/@value"/>
+  </bean>
+
+  <bean id="generic.order.OrderExpirationDateTime" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="OrderExpirationDateTime"/>
+    <property name="propertyClassName" value="java.util.Date"/>
+    <property name="propertyXpath" value="hl7:act/hl7:effectiveTime/hl7:high/@value"/>
+  </bean>
+
+  <bean id="generic.order.OrderEnteredBy" class="gov.hhs.fha.nhinc.adapter.fact.def.ComplexPropertyDefinition">
+    <property name="propertyName" value="OrderEnteredBy"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.PersonFactType"/>
+    <property name="objectProperties">
+      <map>
+        <entry key="LegalName">
+          <ref bean="generic.order.OrderEnteredBy.LegalName"/>
+        </entry>
+        <entry key="Id">
+          <ref bean="generic.order.OrderEnteredBy.Id"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="generic.order.OrderEnteredBy.LegalName" class="gov.hhs.fha.nhinc.adapter.fact.def.ComplexPropertyDefinition">
+    <property name="propertyName" value="LegalName"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.NameFactType"/>
+    <property name="objectProperties">
+      <map>
+        <entry key="NameType">
+          <ref bean="generic.order.OrderEnteredBy.NameType"/>
+        </entry>
+        <entry key="FamilyName">
+          <ref bean="generic.order.OrderEnteredBy.FamilyName"/>
+        </entry>
+        <entry key="FirstName">
+          <ref bean="generic.order.OrderEnteredBy.FirstName"/>
+        </entry>
+        <entry key="MiddleName">
+          <ref bean="generic.order.OrderEnteredBy.MiddleName"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="generic.order.OrderEnteredBy.NameType" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="NameType"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:act/hl7:dataEnterer/hl7:assignedEntity/hl7:assignedPerson/hl7:name/@use"/>
+  </bean>
+
+  <bean id="generic.order.OrderEnteredBy.FamilyName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FamilyName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:act/hl7:dataEnterer/hl7:assignedEntity/hl7:assignedPerson/hl7:name/hl7:family/text()"/>
+  </bean>
+
+  <bean id="generic.order.OrderEnteredBy.FirstName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FirstName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:act/hl7:dataEnterer/hl7:assignedEntity/hl7:assignedPerson/hl7:name/hl7:given[1]/text()"/>
+  </bean>
+
+  <bean id="generic.order.OrderEnteredBy.MiddleName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="MiddleName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:act/hl7:dataEnterer/hl7:assignedEntity/hl7:assignedPerson/hl7:name/hl7:given[2]/text()"/>
+  </bean>
+
+  <bean id="generic.order.OrderEnteredBy.Id" class="gov.hhs.fha.nhinc.adapter.fact.def.ValueTypeListPropertyDefinition">
+    <property name="propertyName" value="Id"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueType"/>
+    <property name="valueXpath" value="hl7:act/hl7:dataEnterer/hl7:assignedEntity/hl7:id[#id#]/@extension"/>
+    <property name="displayIndXpath" value="hl7:act/hl7:dataEnterer/hl7:assignedEntity/hl7:id[#id#]/@displayable"/>
+    <property name="codeSystemXpath" value="hl7:act/hl7:dataEnterer/hl7:assignedEntity/hl7:id[#id#]/@root"/>
+    <property name="codeSystemNameXpath" value="hl7:act/hl7:dataEnterer/hl7:assignedEntity/hl7:id[#id#]/@assigningAuthorityName"/>
+    <property name="indexRef" value="#id#"/>
+    <property name="listSizeXpath" value="count(hl7:act/hl7:dataEnterer/hl7:assignedEntity/hl7:id)"/>
+  </bean>
+
+  <bean id="generic.order.OrderVerifiedBy" class="gov.hhs.fha.nhinc.adapter.fact.def.ComplexPropertyDefinition">
+    <property name="propertyName" value="OrderVerifiedBy"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.PersonFactType"/>
+    <property name="objectProperties">
+      <map>
+        <entry key="LegalName">
+          <ref bean="generic.order.OrderVerifiedBy.LegalName"/>
+        </entry>
+        <entry key="Id">
+          <ref bean="generic.order.OrderVerifiedBy.Id"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="generic.order.OrderVerifiedBy.LegalName" class="gov.hhs.fha.nhinc.adapter.fact.def.ComplexPropertyDefinition">
+    <property name="propertyName" value="LegalName"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.NameFactType"/>
+    <property name="objectProperties">
+      <map>
+        <entry key="NameType">
+          <ref bean="generic.order.OrderVerifiedBy.NameType"/>
+        </entry>
+        <entry key="FamilyName">
+          <ref bean="generic.order.OrderVerifiedBy.FamilyName"/>
+        </entry>
+        <entry key="FirstName">
+          <ref bean="generic.order.OrderVerifiedBy.FirstName"/>
+        </entry>
+        <entry key="MiddleName">
+          <ref bean="generic.order.OrderVerifiedBy.MiddleName"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="generic.order.OrderVerifiedBy.NameType" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="NameType"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:act/hl7:verifier/hl7:assignedEntity/hl7:assignedPerson/hl7:name/@use"/>
+  </bean>
+
+  <bean id="generic.order.OrderVerifiedBy.FamilyName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FamilyName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:act/hl7:verifier/hl7:assignedEntity/hl7:assignedPerson/hl7:name/hl7:family/text()"/>
+  </bean>
+
+  <bean id="generic.order.OrderVerifiedBy.FirstName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FirstName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:act/hl7:verifier/hl7:assignedEntity/hl7:assignedPerson/hl7:name/hl7:given[1]/text()"/>
+  </bean>
+
+  <bean id="generic.order.OrderVerifiedBy.MiddleName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="MiddleName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:act/hl7:verifier/hl7:assignedEntity/hl7:assignedPerson/hl7:name/hl7:given[2]/text()"/>
+  </bean>
+
+  <bean id="generic.order.OrderVerifiedBy.Id" class="gov.hhs.fha.nhinc.adapter.fact.def.ValueTypeListPropertyDefinition">
+    <property name="propertyName" value="Id"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueType"/>
+    <property name="valueXpath" value="hl7:act/hl7:verifier/hl7:assignedEntity/hl7:id[#id#]/@extension"/>
+    <property name="displayIndXpath" value="hl7:act/hl7:verifier/hl7:assignedEntity/hl7:id[#id#]/@displayable"/>
+    <property name="codeSystemXpath" value="hl7:act/hl7:verifier/hl7:assignedEntity/hl7:id[#id#]/@root"/>
+    <property name="codeSystemNameXpath" value="hl7:act/hl7:verifier/hl7:assignedEntity/hl7:id[#id#]/@assigningAuthorityName"/>
+    <property name="indexRef" value="#id#"/>
+    <property name="listSizeXpath" value="count(hl7:act/hl7:verifier/hl7:assignedEntity/hl7:id)"/>
+  </bean>
+
+  <bean id="generic.order.OrderSettingType" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="OrderSettingType"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="//todo/hl7:code/@code"/>
+    <property name="labelXpath" value="//todo/hl7:code/@displayName"/>
+    <property name="codeSystemXpath" value="//todo/hl7:code/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="//todo/hl7:code/@codeSystemName"/>
+  </bean>
+
+  <bean id="generic.order.OrderPriority" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="OrderPriority"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:act/hl7:priorityCode/@code"/>
+    <property name="labelXpath" value="hl7:act/hl7:priorityCode/@displayName"/>
+    <property name="codeSystemXpath" value="hl7:act/hl7:priorityCode/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="hl7:act/hl7:priorityCode/@codeSystemName"/>
+  </bean>
+
+  <bean id="generic.order.PlacerOrderNumber" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="PlacerOrderNumber"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="//todo"/>
+  </bean>
+
+  <bean id="generic.order.FillerOrderNumber" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FillerOrderNumber"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:act/hl7:id/@extension"/>
+  </bean>
+
+  <bean id="generic.order.OrderingProvider" class="gov.hhs.fha.nhinc.adapter.fact.def.ComplexPropertyDefinition">
+    <property name="propertyName" value="OrderingProvider"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.PersonFactType"/>
+    <property name="objectProperties">
+      <map>
+        <entry key="LegalName">
+          <ref bean="generic.order.OrderingProvider.LegalName"/>
+        </entry>
+        <entry key="Id">
+          <ref bean="generic.order.OrderingProvider.Id"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="generic.order.OrderingProvider.LegalName" class="gov.hhs.fha.nhinc.adapter.fact.def.ComplexPropertyDefinition">
+    <property name="propertyName" value="LegalName"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.NameFactType"/>
+    <property name="objectProperties">
+      <map>
+        <entry key="NameType">
+          <ref bean="generic.order.OrderingProvider.NameType"/>
+        </entry>
+        <entry key="FamilyName">
+          <ref bean="generic.order.OrderingProvider.FamilyName"/>
+        </entry>
+        <entry key="FirstName">
+          <ref bean="generic.order.OrderingProvider.FirstName"/>
+        </entry>
+        <entry key="MiddleName">
+          <ref bean="generic.order.OrderingProvider.MiddleName"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="generic.order.OrderingProvider.NameType" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="NameType"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:act/hl7:author/hl7:assignedEntity1/hl7:assignedPerson/hl7:name/@use"/>
+  </bean>
+
+  <bean id="generic.order.OrderingProvider.FamilyName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FamilyName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:act/hl7:author/hl7:assignedEntity1/hl7:assignedPerson/hl7:name/hl7:family/text()"/>
+  </bean>
+
+  <bean id="generic.order.OrderingProvider.FirstName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FirstName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:act/hl7:author/hl7:assignedEntity1/hl7:assignedPerson/hl7:name/hl7:given[1]/text()"/>
+  </bean>
+
+  <bean id="generic.order.OrderingProvider.MiddleName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="MiddleName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:act/hl7:author/hl7:assignedEntity1/hl7:assignedPerson/hl7:name/hl7:given[2]/text()"/>
+  </bean>
+
+  <bean id="generic.order.OrderingProvider.Id" class="gov.hhs.fha.nhinc.adapter.fact.def.ValueTypeListPropertyDefinition">
+    <property name="propertyName" value="Id"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueType"/>
+    <property name="valueXpath" value="hl7:act/hl7:author/hl7:assignedEntity1/hl7:id[#id#]/@extension"/>
+    <property name="displayIndXpath" value="hl7:act/hl7:author/hl7:assignedEntity1/hl7:id[#id#]/@displayable"/>
+    <property name="codeSystemXpath" value="hl7:act/hl7:author/hl7:assignedEntity1/hl7:id[#id#]/@root"/>
+    <property name="codeSystemNameXpath" value="hl7:act/hl7:author/hl7:assignedEntity1/hl7:id[#id#]/@assigningAuthorityName"/>
+    <property name="indexRef" value="#id#"/>
+    <property name="listSizeXpath" value="count(hl7:act/hl7:author/hl7:assignedEntity1/hl7:id)"/>
+  </bean>
+
+</beans>

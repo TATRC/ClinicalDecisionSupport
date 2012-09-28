@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<schemas xmlns='http://xml.netbeans.org/schema/JAXBWizConfig' destdir='build/generated-sources/jaxb' projectName='RegistriesManagerDAO' version='1.0'>
+	<schema type='-xmlschema' package='mil.navy.med.dzreg.types' name='RegistryTypes'>
+		<xjc-options>
+			<xjc-option name='-npa' value='true'/>
+			<xjc-option name='-verbose' value='true'/>
+			<xjc-option name='-nv' value='true'/>
+		</xjc-options>
+		<schema-sources>
+			<schema-source location='src/conf/xml-resources/jaxb/RegistryTypes/RegistryTypes.xsd' origLocation='../Interfaces/src/schemas/nhinc/kmr/RegistryTypes.xsd'/>
+		</schema-sources>
+		<bindings>
+			<binding origLocation='src/conf/xml-resources/jaxb/RegistryTypes/datebindings.xjb' location='src/conf/xml-resources/jaxb/RegistryTypes/datebindings.xjb'/>
+		</bindings>
+		<catalog/>
+	</schema>
+</schemas>

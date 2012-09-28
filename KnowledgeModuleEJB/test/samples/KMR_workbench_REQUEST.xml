@@ -1,0 +1,48 @@
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <SOAP-ENV:Body>
+      <m:KmRecordRequest xmlns:m="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <m:request>
+            <m:requestReference>
+               <m:requestId>98</m:requestId>
+               <m:requestDate>2010-03-22T00:03:22.000-00:07</m:requestDate>
+            </m:requestReference>
+            <m:km>
+                    <!--m:kmId>1</m:kmId-->
+                    <!--m:kmName>myKM 2</m:kmName-->
+                    <!--m:validationStatus>APPROVED</m:validationStatus-->
+                    <!--m:Specialty>
+                            <TerminologyScheme>AMA123</TerminologyScheme>
+                            <TerminologyCode>207Q00000X</TerminologyCode>
+                    </m:Specialty-->
+                    <!--m:Fact>
+                            <Type>LAB</Type>
+                            <TerminologyScheme>100</TerminologyScheme>
+                            <TerminologyCode>26453-1</TerminologyCode>
+                    </m:Fact-->
+                    <!--m:PopulationDependency>
+                            <TerminologyScheme>200</TerminologyScheme>
+                            <TerminologyCode>900-1</TerminologyCode>
+                    </m:PopulationDependency-->
+                   <!--m:Inference>
+                      <TerminologyCode>DR2.2</TerminologyCode>
+                   </m:Inference-->
+               <m:Task>
+                  <TD_Type>ALERT</TD_Type>
+                        <!--TerminologyScheme>task scheme 1</TerminologyScheme-->
+               </m:Task>
+
+                    <!-- Use with Task filter to show filtering OUT -->
+                    <!--m:ACL>
+                      <UR_Name>Internal Domain Expert</UR_Name>
+                    </m:ACL-->
+                    <!-- Use with Task filter to show filtering IN -->
+               <m:ACL>
+                  <UR_Name>Providers-Physicians</UR_Name>
+               </m:ACL>
+               
+            </m:km>
+         </m:request>
+      </m:KmRecordRequest>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

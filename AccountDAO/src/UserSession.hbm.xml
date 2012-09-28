@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 11, 2011 1:15:12 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="usermgmt" name="gov.hhs.fha.nhinc.account.model.UserSession" table="UserSession">
+    <id name="token" type="string">
+      <column length="256" name="Token"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="userId" type="string">
+      <column length="45" name="User_ID"/>
+    </property>
+    <property name="providerId" type="string">
+      <column length="45" name="Provider_ID"/>
+    </property>
+    <property name="loginTime" type="timestamp">
+      <column length="19" name="Login_Time"/>
+    </property>
+    <property name="lastUpdateTime" type="timestamp">
+      <column length="19" name="Last_Update_Time"/>
+    </property>
+  </class>
+</hibernate-mapping>

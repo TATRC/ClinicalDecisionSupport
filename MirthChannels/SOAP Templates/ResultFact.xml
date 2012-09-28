@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-16"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema xmlns:urn="urn:gov:hhs:fha:nhinc:adapter:fact">
+<soap:Body>
+  <storeResultFactEvent xmlns="http://dss.kmr.socraticgrid.org/">
+         <fact>
+            <!--Optional:-->
+            <!--type: string-->
+            <urn:primaryKey>gero et</urn:primaryKey>
+            <!--type: boolean-->
+            <urn:historical>false</urn:historical>
+            <!--1 or more repetitions:-->
+            <urn:id>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>aeoliam venit</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>ventos tempestatesque</urn:codeSystemName>
+               <!--type: string-->
+               <urn:value>${patientien}</urn:value>
+               <!--Optional:-->
+               <!--type: boolean-->
+               <urn:displayable>false</urn:displayable>
+            </urn:id>
+            <urn:patientId>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>circum claustra</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>nimborum in</urn:codeSystemName>
+               <!--type: string-->
+               <urn:value>${patientien}</urn:value>
+               <!--Optional:-->
+               <!--type: boolean-->
+               <urn:displayable>false</urn:displayable>
+            </urn:patientId>
+            <!--type: string-->
+            <urn:specimen>turbine corripuit scopuloque</urn:specimen>
+            <!--type: string-->
+
+            <!--type: string-->
+            <urn:resultDate>${labchobservdate}</urn:resultDate>
+            <urn:codedTestType>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>turbine corripuit scopuloque</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>flammato secum dea</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>${labchtesttype}</urn:code>
+               <!--type: string-->
+               <urn:label>nubibus ignem disiecitque</urn:label>
+            </urn:codedTestType>
+            <!--type: string-->
+            <urn:freeTextTestType>ac vinclis et</urn:freeTextTestType>
+            <urn:resultStatus>${labchresultstatus}</urn:resultStatus>
+            <urn:resultValue>
+               <!--type: string-->
+               <urn:value>arce sceptra</urn:value>
+               <!--type: string-->
+               <urn:unit>circum claustra fremunt</urn:unit>
+            </urn:resultValue>
+            <!--type: string-->
+            <urn:resultText>certo et premere</urn:resultText>
+            <urn:codedResultInterpretation>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>et montis</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>feta furentibus</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>sed pater</urn:code>
+               <!--type: string-->
+               <urn:label>talia flammato secum</urn:label>
+            </urn:codedResultInterpretation>
+            <urn:lowReferenceRange>
+               <!--type: string-->
+               <urn:value>austris aeoliam</urn:value>
+               <!--type: string-->
+               <urn:unit>sciret dare</urn:unit>
+            </urn:lowReferenceRange>
+            <urn:hiReferenceRange>
+               <!--type: string-->
+               <urn:value>dare iussus</urn:value>
+               <!--type: string-->
+               <urn:unit>bella gero</urn:unit>
+            </urn:hiReferenceRange>
+            <urn:codedRefRangeInterpretationCode>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>dedit qui foedere</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>magno cum</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>ac terras</urn:code>
+               <!--type: string-->
+               <urn:label>regemque dedit</urn:label>
+            </urn:codedRefRangeInterpretationCode>
+            <!--Zero or more repetitions:-->
+            <urn:refRangePrecondition>
+               <urn:codedCriterionCode>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystem>infixit acuto</urn:codeSystem>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystemName>tenens mollitque animos</urn:codeSystemName>
+                  <!--type: string-->
+                  <urn:code>montis insuper</urn:code>
+                  <!--type: string-->
+                  <urn:label>habenas ipsa</urn:label>
+               </urn:codedCriterionCode>
+               <!--Optional:-->
+               <urn:codedCriterionValue>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystem>mollitque animos</urn:codeSystem>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystemName>iovisque et</urn:codeSystemName>
+                  <!--type: string-->
+                  <urn:code>soror et coniunx</urn:code>
+                  <!--type: string-->
+                  <urn:label>iunonis adorat</urn:label>
+               </urn:codedCriterionValue>
+               <!--Optional:-->
+               <urn:criterionLowValue>
+                  <!--type: string-->
+                  <urn:value>adorat praeterea</urn:value>
+                  <!--type: string-->
+                  <urn:unit>illum exspirantem transfixo</urn:unit>
+               </urn:criterionLowValue>
+               <!--Optional:-->
+               <urn:criterionHiValue>
+                  <!--type: string-->
+                  <urn:value>aris imponet honorem</urn:value>
+                  <!--type: string-->
+                  <urn:unit>aris imponet</urn:unit>
+               </urn:criterionHiValue>
+            </urn:refRangePrecondition>
+            <urn:codedPanelType>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>premere et</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>insuper altos</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>ferant rapidi secum</urn:code>
+               <!--type: string-->
+               <urn:label>nimborum in</urn:label>
+            </urn:codedPanelType>
+            <urn:freeTextPanelType>nimborum in</urn:freeTextPanelType>
+         </fact>
+  </storeResultFactEvent>
+</soap:Body>
+</soap:Envelope>

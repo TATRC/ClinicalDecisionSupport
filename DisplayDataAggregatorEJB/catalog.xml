@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://208.75.163.61:8080/DisplayDataComponent/DisplayAlertDataService?xsd=1" uri="src/conf/xml-resources/web-service-references/DisplayAlertDataService/wsdl/208.75.163.61_8080/DisplayDataComponent/DisplayAlertDataService.xsd_1.xsd"/>
+    <system systemId="http://208.75.163.61:8080/DisplayDataComponent/DisplayAlertDataService?wsdl" uri="src/conf/xml-resources/web-service-references/DisplayAlertDataService/wsdl/208.75.163.61_8080/DisplayDataComponent/DisplayAlertDataService.wsdl"/>
+    <system systemId="http://208.75.163.61:8080/DisplayDataComponent/DisplayMailDataService?xsd=1" uri="src/conf/xml-resources/web-service-references/DisplayAlertDataService/wsdl/208.75.163.61_8080/DisplayDataComponent/DisplayMailDataService.xsd_1.xsd"/>
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/DisplayDataAggregator.wsdl" uri="src/conf/xml-resources/web-services/DisplayDataAggregatorService/wsdl/DisplayDataAggregator.wsdl"/>
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/DisplayDataComponent.wsdl" uri="src/conf/xml-resources/web-service-references/DisplayDataComponent/wsdl/DisplayDataComponent.wsdl"/>
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/schemas/nhinc/common/DisplayDataAggregator.xsd" uri="src/conf/xml-resources/web-service-references/DisplayDataComponent/schemas/nhinc/common/DisplayDataAggregator.xsd"/>
+</catalog>

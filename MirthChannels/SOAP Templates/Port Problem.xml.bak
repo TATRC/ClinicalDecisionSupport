@@ -1,0 +1,126 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dss="http://dss.kmr.socraticgrid.org/" xmlns:urn="urn:gov:hhs:fha:nhinc:adapter:fact">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <dss:storeProblemFactEvent>
+#foreach( $problem in $problems )
+         <fact>
+            <urn:primaryKey>$patientien</urn:primaryKey>
+            <urn:historical>false</urn:historical>
+            <urn:id>
+               <urn:codeSystem>Local</urn:codeSystem>
+               <urn:codeSystemName>Local</urn:codeSystemName>
+               <urn:value>$problem.id</urn:value>
+               <urn:displayable>true</urn:displayable>
+            </urn:id>
+            <urn:patientId>
+               <urn:codeSystem>IEN</urn:codeSystem>
+               <urn:codeSystemName></urn:codeSystemName>
+               <urn:value>$patientien</urn:value>
+               <urn:displayable>false</urn:displayable>
+            </urn:patientId>
+            <urn:problemType>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>$problem.classidcodesys</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>$problem.classidcodesys</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>$problem.classid</urn:code>
+               <!--type: string-->
+               <urn:label>$problem.classtext</urn:label>
+            </urn:problemType>
+            <urn:codedProblem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>$problem.idcodesystemid</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>$problem.idcodesystemid</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>$problem.id</urn:code>
+               <!--type: string-->
+               <urn:label>$problem.idtext</urn:label>
+            </urn:codedProblem>
+            <!--type: string-->
+            <urn:freeTextProblem>$problem.text</urn:freeTextProblem>
+            <!--type: string-->
+            <urn:problemDate>$problem.startdate</urn:problemDate>
+            <!--type: string-->
+            <urn:resolutionDate>$problem.resolvedate</urn:resolutionDate>
+            <urn:codedProblemStatus>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>$problem.confstatusidcodesys</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>$problem.confstatusidcodesys</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>$problem.confstatusid</urn:code>
+               <!--type: string-->
+               <urn:label>$problem.confstatustext</urn:label>
+            </urn:codedProblemStatus>
+            <!--type: int-->
+            <urn:diagnosisPriority>$problem.probabiloty</urn:diagnosisPriority>
+            <!--type: int-->
+            <urn:onsetAge>$problem.ageatonset</urn:onsetAge>
+            <!--Zero or more repetitions:-->
+            <urn:treatingProvider>
+               <!--type: string-->
+               <urn:firstName></urn:firstName>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:middleName></urn:middleName>
+               <!--type: string-->
+               <urn:familyName></urn:familyName>
+               <!--Optional:-->
+               <urn:prefix>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystem></urn:codeSystem>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystemName></urn:codeSystemName>
+                  <!--type: string-->
+                  <urn:code></urn:code>
+                  <!--type: string-->
+                  <urn:label></urn:label>
+               </urn:prefix>
+               <!--Optional:-->
+               <urn:suffix>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystem></urn:codeSystem>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystemName></urn:codeSystemName>
+                  <!--type: string-->
+                  <urn:code></urn:code>
+                  <!--type: string-->
+                  <urn:label></urn:label>
+               </urn:suffix>
+               <urn:nameType>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystem></urn:codeSystem>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystemName></urn:codeSystemName>
+                  <!--type: string-->
+                  <urn:code></urn:code>
+                  <!--type: string-->
+                  <urn:label></urn:label>
+               </urn:nameType>
+            </urn:treatingProvider>
+            <!--Optional:-->
+            <!--type: string-->
+            <urn:causeOfDeath></urn:causeOfDeath>
+            <!--Optional:-->
+            <!--type: int-->
+            <urn:ageAtDeath></urn:ageAtDeath>
+            <urn:freeTextPanelType></urn:freeTextPanelType>
+         </fact>
+#end
+      </dss:storeProblemFactEvent>
+   </soapenv:Body>
+</soapenv:Envelope>

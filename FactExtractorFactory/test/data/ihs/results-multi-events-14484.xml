@@ -1,0 +1,1168 @@
+<?xml version="1.0" ?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Body>
+    <CareRecord_QUPC_IN043200UV01Message xmlns="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+      <response>
+        <id extension="5d1771da-73ec-3538-83b1-98ca7bfd47c5"/>
+        <creationTime value="20100616184424.375"/>
+        <interactionId extension="PRPA_IN900300UV02"/>
+        <processingCode code="P"/>
+        <processingModeCode code="R"/>
+        <acceptAckCode code="RCV"/>
+        <receiver typeCode="RCV">
+          <device determinerCode="INSTANCE">
+            <id root="2.16.840.1.113883.3.200"/>
+            <telecom value="http://localhost:8080/NhinConnect/CommonDataLayerService"/>
+          </device>
+        </receiver>
+        <sender typeCode="SND">
+          <device determinerCode="INSTANCE">
+            <id root="2.16.840.1.113883.3.200"/>
+          </device>
+        </sender>
+        <controlActProcess moodCode="EVN" classCode="CACT">
+          <code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CS" code="QUPC_TE043200UV01"/>
+          <priorityCode code="R"/>
+          <subject typeCode="SUBJ">
+            <registrationEvent moodCode="EVN" classCode="REG">
+              <statusCode code="completed"/>
+              <custodian typeCode="CST">
+                <assignedEntity classCode="ASSIGNED">
+                  <id assigningAuthorityName="OpenRPMS" root="2.16.840.1.113883.3.274"/>
+                </assignedEntity>
+              </custodian>
+              <subject2 typeCode="SUBJ">
+                <careProvisionEvent moodCode="EVN" classCode="ENC">
+                  <recordTarget typeCode="RCT">
+                    <patient classCode="PAT">
+                      <id extension="14484" root="2.16.840.1.113883.3.200"/>
+                      <statusCode code="normal"/>
+                      <patientPerson determinerCode="INSTANCE" classCode="PSN">
+                        <name>
+                          <family>SMITH</family>
+                          <given>BENINA</given>
+                          <given>J</given>
+                        </name>
+                        <administrativeGenderCode displayName="FEMALE" code="F"/>
+                        <birthTime value="19560622000000"/>
+                      </patientPerson>
+                    </patient>
+                  </recordTarget>
+                  <inFulfillmentOf contextConductionInd="false">
+                    <careProvisionRequestOrPromise>
+                      <id extension="20658.0"/>
+                    </careProvisionRequestOrPromise>
+                  </inFulfillmentOf>
+                  <inFulfillmentOf contextConductionInd="false">
+                    <careProvisionRequestOrPromise>
+                      <id extension="20657.0"/>
+                    </careProvisionRequestOrPromise>
+                  </inFulfillmentOf>
+                  <inFulfillmentOf contextConductionInd="false">
+                    <careProvisionRequestOrPromise>
+                      <id extension="13139.0"/>
+                    </careProvisionRequestOrPromise>
+                  </inFulfillmentOf>
+                  <reference>
+                    <encounter>
+                      <id extension="JUN 04, 2009@13:37"/>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20090604133700"/>
+                      <subject>
+                        <patient classCode="PAT">
+                          <id extension="14484" root="2.16.840.1.113883.3.200"/>
+                          <statusCode code="normal"/>
+                          <patientPerson determinerCode="INSTANCE" classCode="PSN">
+                            <name>
+                              <family>SMITH</family>
+                              <given>BENINA</given>
+                              <given>J</given>
+                            </name>
+                            <administrativeGenderCode displayName="FEMALE" code="F"/>
+                            <birthTime value="19560622000000"/>
+                          </patientPerson>
+                        </patient>
+                      </subject>
+                      <location>
+                        <time value="20090604133700"/>
+                        <serviceDeliveryLocation>
+                          <serviceProviderOrganization>
+                            <name>
+                              <additionalLocator>
+                                <reference value="LABORATORY SERVICES"/>
+                              </additionalLocator>
+                            </name>
+                          </serviceProviderOrganization>
+                        </serviceDeliveryLocation>
+                      </location>
+                    </encounter>
+                  </reference>
+                  <reference>
+                    <encounter>
+                      <id extension="JUN 05, 2009@08:46"/>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20090605084600"/>
+                      <subject>
+                        <patient classCode="PAT">
+                          <id extension="14484" root="2.16.840.1.113883.3.200"/>
+                          <statusCode code="normal"/>
+                          <patientPerson determinerCode="INSTANCE" classCode="PSN">
+                            <name>
+                              <family>SMITH</family>
+                              <given>BENINA</given>
+                              <given>J</given>
+                            </name>
+                            <administrativeGenderCode displayName="FEMALE" code="F"/>
+                            <birthTime value="19560622000000"/>
+                          </patientPerson>
+                        </patient>
+                      </subject>
+                      <location>
+                        <time value="20090605084600"/>
+                        <serviceDeliveryLocation>
+                          <serviceProviderOrganization>
+                            <name>
+                              <additionalLocator>
+                                <reference value="LABORATORY SERVICES"/>
+                              </additionalLocator>
+                            </name>
+                          </serviceProviderOrganization>
+                        </serviceDeliveryLocation>
+                      </location>
+                    </encounter>
+                  </reference>
+                  <reference>
+                    <encounter>
+                      <id extension="APR 06, 2009@12:33"/>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20090406123300"/>
+                      <subject>
+                        <patient classCode="PAT">
+                          <id extension="14484" root="2.16.840.1.113883.3.200"/>
+                          <statusCode code="normal"/>
+                          <patientPerson determinerCode="INSTANCE" classCode="PSN">
+                            <name>
+                              <family>SMITH</family>
+                              <given>BENINA</given>
+                              <given>J</given>
+                            </name>
+                            <administrativeGenderCode displayName="FEMALE" code="F"/>
+                            <birthTime value="19560622000000"/>
+                          </patientPerson>
+                        </patient>
+                      </subject>
+                      <location>
+                        <time value="20090406123300"/>
+                        <serviceDeliveryLocation>
+                          <serviceProviderOrganization>
+                            <name>
+                              <additionalLocator>
+                                <reference value="LABORATORY SERVICES"/>
+                              </additionalLocator>
+                            </name>
+                          </serviceProviderOrganization>
+                        </serviceDeliveryLocation>
+                      </location>
+                    </encounter>
+                  </reference>
+                  <pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                    <sequenceNumber value="1"/>
+                    <act>
+                      <id extension="SCC 0629 2"/>
+                      <code displayName="CHEMISTRY STUDIES" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="18719-5"/>
+                      <statusCode code="completed"/>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="GUAIAC SFSU-1 Card" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2335-8"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090629144357"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="NEGATIVE"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="" value="UNK"/>
+                                <high/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                    </act>
+                  </pertinentInformation3>
+                  <pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                    <sequenceNumber value="2"/>
+                    <act>
+                      <id extension="CHEM 0605 20"/>
+                      <code displayName="LIPID PANEL-SFIH" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" code="80061"/>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20090605084647"/>
+                      <subject typeCode="SPC">
+                        <specimen classCode="SPEC">
+                          <id extension="7566738"/>
+                          <code displayName="Specimen Collection" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33882-2"/>
+                          <specimenNatural determinerCode="INSTANCE" classCode="PSN">
+                            <code>
+                              <originalText>
+                                <reference value="BLOOD (SST)"/>
+                              </originalText>
+                            </code>
+                          </specimenNatural>
+                        </specimen>
+                      </subject>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="TRIGLYCERIDE-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2571-8"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090604140900"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="297"/>
+                          <interpretationCode displayName="High" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="H"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="mg/dL" value="30"/>
+                                <high unit="mg/dL" value="200"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="CHOLESTEROL-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2093-3"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090604140900"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="220"/>
+                          <interpretationCode displayName="High" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="H"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low/>
+                                <high unit="mg/dL" value="200"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="HDL CHOLESTEROL-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2085-9"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090604140900"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="38"/>
+                          <interpretationCode displayName="Low" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="L"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="mg/dL" value="40"/>
+                                <high unit="mg/dL" value="60"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName=" LDL CHOLESTEROL,CALC" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2089-1"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090604140900"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="122.6"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="mg/dL" value="0"/>
+                                <high unit="mg/dL" value="170"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="Cholesterol/HDL Ratio" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="9830-1"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090604140900"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="5.8"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="" value="UNK"/>
+                                <high/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                    </act>
+                  </pertinentInformation3>
+                  <pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                    <sequenceNumber value="3"/>
+                    <act>
+                      <id extension="UR 0406 10"/>
+                      <code displayName="URINALYSIS (DIPSTICK ONLY)-SF/SC" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" code="81001"/>
+                      <statusCode code="completed"/>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="COLOR,URINE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="5778-6"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="YELLOW"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="APPEARANCE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="5767-9"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="CLEAR"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="GLUCOSE,URINE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="5792-7"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="NEGATIVE"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="mg/dL" value="NEG"/>
+                                <high unit="mg/dL" value="99"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="BILIRUBIN,URINE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="5770-3"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="NEGATIVE"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="" value="UNK"/>
+                                <high/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="KETONES,URINE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="5797-6"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="NEGATIVE"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="mg/dL" value="NEG"/>
+                                <high unit="mg/dL" value="0"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="SPECIFIC GRAVITY" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2965-2"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="1.020"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="" value="UNK"/>
+                                <high unit="" value="UNK"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="BLOOD,URINE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="5794-3"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="NEGATIVE"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="" value="UNK"/>
+                                <high unit="" value="UNK"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="PH,URINE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2756-5"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="UNITS" value="6.5"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="UNITS" value="5"/>
+                                <high unit="UNITS" value="9"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="PROTEIN UA,URINE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="5804-0"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="NEGATIVE"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="mg/dL" value="NEG"/>
+                                <high/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="UROBILINOGEN" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="5818-0"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="E.U./dL" value="0.2"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="E.U./dL" value="NORM"/>
+                                <high unit="E.U./dL" value="1"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="NITRITE,URINE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="5802-4"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="NEGATIVE"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="" value="UNK"/>
+                                <high/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="LEUKOCYTE ESTERASE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="5799-2"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="NEGATIVE"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="" value="UNK"/>
+                                <high/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                    </act>
+                  </pertinentInformation3>
+                  <pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                    <sequenceNumber value="4"/>
+                    <act>
+                      <id extension="CHEM 0406 103"/>
+                      <code displayName="CHEMISTRY STUDIES" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="18719-5"/>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20090406155401"/>
+                      <subject typeCode="SPC">
+                        <specimen classCode="SPEC">
+                          <id extension="7483421"/>
+                          <code displayName="Specimen Collection" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33882-2"/>
+                          <specimenNatural determinerCode="INSTANCE" classCode="PSN">
+                            <code>
+                              <originalText>
+                                <reference value="BLOOD (SST)"/>
+                              </originalText>
+                            </code>
+                          </specimenNatural>
+                        </specimen>
+                      </subject>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="C-REACTIVE PROTEIN-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="1988-5"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="comment"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="mg/dL" value="0"/>
+                                <high unit="mg/dL" value=".9"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                    </act>
+                  </pertinentInformation3>
+                  <pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                    <sequenceNumber value="5"/>
+                    <act>
+                      <id extension="CHEM 0406 102"/>
+                      <code displayName="CMP-COMPREHENSIVE METABOLIC PANEL-SFIH" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" code="80053"/>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20090406155401"/>
+                      <subject typeCode="SPC">
+                        <specimen classCode="SPEC">
+                          <id extension="7483403"/>
+                          <code displayName="Specimen Collection" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33882-2"/>
+                          <specimenNatural determinerCode="INSTANCE" classCode="PSN">
+                            <code>
+                              <originalText>
+                                <reference value="BLOOD (SST)"/>
+                              </originalText>
+                            </code>
+                          </specimenNatural>
+                        </specimen>
+                      </subject>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="GLUCOSE, RANDOM-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="6777-7"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="90"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="mg/dL" value="70"/>
+                                <high unit="mg/dL" value="200"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="UREA NITROGEN" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="3094-0"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="15"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="mg/dL" value="7"/>
+                                <high unit="mg/dL" value="18"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="CREATININE-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2160-0"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="1.0"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="mg/dL" value=".6"/>
+                                <high unit="mg/dL" value="1"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="SODIUM" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2951-2"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mmol/L" value="140"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="mmol/L" value="136"/>
+                                <high unit="mmol/L" value="145"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="POTASSIUM" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2823-3"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mmol/L" value="4.4"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="mmol/L" value="3.5"/>
+                                <high unit="mmol/L" value="5.1"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="CHLORIDE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2075-0"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mmol/L" value="103"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="mmol/L" value="98"/>
+                                <high unit="mmol/L" value="107"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="CO2" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2028-9"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mmol/L" value="25.0"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="mmol/L" value="22"/>
+                                <high unit="mmol/L" value="29"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="PROTEIN,TOTAL(SERUM)-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2885-2"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="gm/dL" value="8.0"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="gm/dL" value="6.4"/>
+                                <high unit="gm/dL" value="8.2"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="ALBUMIN-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="1751-7"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="gm/dL" value="4.2"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="gm/dL" value="3.4"/>
+                                <high unit="gm/dL" value="5"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="ALKALINE PHOSPHATASE-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="6768-6"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="U/L" value="101"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="U/L" value="50"/>
+                                <high unit="U/L" value="136"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="SGOT/AST" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="1920-8"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="U/L" value="25"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="U/L" value="15"/>
+                                <high unit="U/L" value="37"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="SGPT/ALT" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="1742-6"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="U/L" value="54"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="U/L" value="30"/>
+                                <high unit="U/L" value="65"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="BILIRUBIN,TOTAL-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="1975-2"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="0.32"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="mg/dL" value="0"/>
+                                <high unit="mg/dL" value="1"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="CHOLESTEROL-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2093-3"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="249"/>
+                          <interpretationCode displayName="High" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="H"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low/>
+                                <high unit="mg/dL" value="200"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="CALCIUM-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="17861-6"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="9.8"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="mg/dL" value="8.8"/>
+                                <high unit="mg/dL" value="10.5"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="PHOSPHORUS-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2777-1"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="4.0"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="mg/dL" value="2.5"/>
+                                <high unit="mg/dL" value="4.9"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code>
+                            <originalText>
+                              <reference value="ESTIMATED GFR"/>
+                            </originalText>
+                          </code>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mL/min" value="&gt;60"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low/>
+                                <high unit="mL/min" value="60"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                    </act>
+                  </pertinentInformation3>
+                  <pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                    <sequenceNumber value="6"/>
+                    <act>
+                      <id extension="HEMA 0406 32"/>
+                      <code displayName="CHEMISTRY STUDIES" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="18719-5"/>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20090406155401"/>
+                      <subject typeCode="SPC">
+                        <specimen classCode="SPEC">
+                          <id extension="7483402"/>
+                          <code displayName="Specimen Collection" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33882-2"/>
+                          <specimenNatural determinerCode="INSTANCE" classCode="PSN">
+                            <code>
+                              <originalText>
+                                <reference value="BLOOD (EDTA)"/>
+                              </originalText>
+                            </code>
+                          </specimenNatural>
+                        </specimen>
+                      </subject>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="WESTERGREN ESR-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="4537-7"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mm/hr" value="12"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="mm/hr" value="0"/>
+                                <high unit="mm/hr" value="20"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                    </act>
+                  </pertinentInformation3>
+                  <pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                    <sequenceNumber value="7"/>
+                    <act>
+                      <id extension="HEMA 0406 32"/>
+                      <code displayName=" ELECTRONIC DIFF" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" code="85025"/>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20090406155401"/>
+                      <subject typeCode="SPC">
+                        <specimen classCode="SPEC">
+                          <id extension="7483396"/>
+                          <code displayName="Specimen Collection" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33882-2"/>
+                          <specimenNatural determinerCode="INSTANCE" classCode="PSN">
+                            <code>
+                              <originalText>
+                                <reference value="BLOOD (EDTA)"/>
+                              </originalText>
+                            </code>
+                          </specimenNatural>
+                        </specimen>
+                      </subject>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName=" NE %" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="770-8"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="50.5"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="" value="UNK"/>
+                                <high unit="" value="UNK"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName=" LYM %" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="26478-8"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="37.2"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="" value="UNK"/>
+                                <high unit="" value="UNK"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName=" MONO %" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="26485-3"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="8.9"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="" value="UNK"/>
+                                <high unit="" value="UNK"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName=" EO %" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="26450-7"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="3.1"/>
+                          <interpretationCode displayName="High" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="H"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="" value="UNK"/>
+                                <high unit="" value="UNK"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName=" BA %" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="706-2"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" value="0.3"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="" value="UNK"/>
+                                <high unit="" value="UNK"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                    </act>
+                  </pertinentInformation3>
+                  <pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                    <sequenceNumber value="8"/>
+                    <act>
+                      <id extension="HEMA 0406 32"/>
+                      <code displayName=" CBC ONLY (NO ELECTRONIC DIFF)" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" code="85025"/>
+                      <statusCode code="completed"/>
+                      <effectiveTime value="20090406155401"/>
+                      <subject typeCode="SPC">
+                        <specimen classCode="SPEC">
+                          <id extension="7483386"/>
+                          <code displayName="Specimen Collection" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33882-2"/>
+                          <specimenNatural determinerCode="INSTANCE" classCode="PSN">
+                            <code>
+                              <originalText>
+                                <reference value="BLOOD (EDTA)"/>
+                              </originalText>
+                            </code>
+                          </specimenNatural>
+                        </specimen>
+                      </subject>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName=" WBC" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="6690-2"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="K/cmm" value="7.8"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="K/cmm" value="4.4"/>
+                                <high unit="K/cmm" value="10.5"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="HGB-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="718-7"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="g/dL" value="16.0"/>
+                          <interpretationCode displayName="High" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="H"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="g/dL" value="11.8"/>
+                                <high unit="g/dL" value="15.9"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName="HCT-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="20570-8"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="%" value="46.7"/>
+                          <interpretationCode displayName="High" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="H"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="%" value="35"/>
+                                <high unit="%" value="44"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName=" MCV" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="787-2"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="fl" value="91.6"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="fl" value="83"/>
+                                <high unit="fl" value="99"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName=" MCH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="28539-5"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="pg" value="31.4"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="pg" value="28.1"/>
+                                <high unit="pg" value="32.5"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName=" MCHC" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="28540-3"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="gm/dL" value="34.3"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="gm/dL" value="32.5"/>
+                                <high unit="gm/dL" value="35"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName=" RDW" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="788-0"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="%" value="11.8"/>
+                          <interpretationCode displayName="Low" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="L"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="%" value="12"/>
+                                <high unit="%" value="16"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                      <sourceOf typeCode="RSON">
+                        <observation>
+                          <code displayName=" PLT" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="26515-7"/>
+                          <statusCode code="completed"/>
+                          <effectiveTime value="20090406155100"/>
+                          <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="K/cmm" value="355"/>
+                          <interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                          <referenceRange typeCode="REFV">
+                            <observationRange moodCode="ENV.CRT" classCode="OBS">
+                              <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                                <low unit="K/cmm" value="150"/>
+                                <high unit="K/cmm" value="400"/>
+                              </value>
+                            </observationRange>
+                          </referenceRange>
+                        </observation>
+                      </sourceOf>
+                    </act>
+                  </pertinentInformation3>
+                </careProvisionEvent>
+              </subject2>
+            </registrationEvent>
+          </subject>
+          <queryAck>
+            <queryId extension="6858a017-39c1-4153-bbd4-eaedac72a0e7"/>
+            <statusCode code="deliveredResponse"/>
+            <queryResponseCode code="OK"/>
+            <resultTotalQuantity value="9"/>
+          </queryAck>
+        </controlActProcess>
+      </response>
+    </CareRecord_QUPC_IN043200UV01Message>
+  </S:Body>
+</S:Envelope>

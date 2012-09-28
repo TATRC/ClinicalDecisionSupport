@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- ====================================== -->
+	<xs:complexType name="UserRoleType">
+		<xs:sequence>
+			<xs:element name="UR_Name" type="xs:string"/>
+			<xs:element name="UR_Description" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ACL_PermissionType">
+		<xs:sequence>
+			<xs:element name="UR_Permission" type="xs:string"/>
+			<xs:element name="UserRole" type="UserRoleType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KMV_AccessControlListType">
+		<xs:sequence>
+			<xs:element name="ACL_Name" type="xs:string"/>
+			<xs:element name="ACL_Description" type="xs:string"/>
+			<xs:element name="ACL_PermissionList" type="ACL_PermissionListType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ACL_SimpleType">
+		<xs:sequence>
+			<xs:element name="User_OrganizationLevel" type="xs:string"/>
+			<xs:element name="UR_Name" type="xs:string"/>
+			<xs:element name="AuthorId" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ====================================== -->
+	<xs:complexType name="KM_SpecialtyType">
+		<xs:sequence>
+			<xs:element name="TerminologyScheme" type="xs:string"/>
+			<xs:element name="TerminologyCode" type="xs:string"/>
+			<xs:element name="Comments" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KM_Specialty_SimpleType">
+		<xs:sequence>
+			<xs:element name="TerminologyScheme" type="xs:string" minOccurs="0" />
+			<xs:element name="TerminologyCode" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ====================================== -->
+	<xs:complexType name="PopulationSpecificationType">
+		<xs:sequence>
+			<xs:element name="TerminologyScheme" type="xs:string"/>
+			<xs:element name="TerminologyCode" type="xs:string"/>
+			<xs:element name="TerminologyValue" type="xs:string"/>
+			<xs:element name="Type" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KMV_PopulationDependencyType">
+		<xs:sequence>
+			<xs:element name="PD_Status" type="xs:string"/>
+			<xs:element name="PD_Scope" type="xs:string"/>
+			<xs:element name="PD_Name" type="xs:string"/>
+			<xs:element name="PD_Description" type="xs:string"/>
+			<xs:element name="PopulationSpecification" type="PopulationSpecificationType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KMV_PopulationDependency_SimpleType">
+		<xs:sequence>
+			<xs:element name="PD_Status" type="xs:string" minOccurs="0" />
+			<xs:element name="PD_Scope" type="xs:string" minOccurs="0" />
+			<xs:element name="PD_Name" type="xs:string" minOccurs="0" />
+			<xs:element name="TerminologyScheme" type="xs:string" minOccurs="0" />
+			<xs:element name="TerminologyCode" type="xs:string" minOccurs="0" />
+			<xs:element name="TerminologyValue" type="xs:string" minOccurs="0" />
+         <xs:element name="Type" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ====================================== -->
+	<xs:complexType name="FactSpecificationType">
+		<xs:sequence>
+			<xs:element name="TerminologyScheme" type="xs:string"/>
+			<xs:element name="TerminologyCode" type="xs:string"/>
+			<xs:element name="Comments" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KMV_FactDependencyType">
+		<xs:sequence>
+			<xs:element name="Type" type="xs:string"/>
+			<xs:element name="Description" type="xs:string"/>
+			<xs:element name="FactSpecification" type="FactSpecificationType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KMV_FactDependency_SimpleType">
+		<xs:sequence>
+			<xs:element name="Type" type="xs:string" minOccurs="0" />
+			<xs:element name="TerminologyScheme" type="xs:string" minOccurs="0" />
+			<xs:element name="TerminologyCode" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ====================================== -->
+	<xs:complexType name="KMV_InferenceEngineDependencyType">
+		<xs:sequence>
+			<xs:element name="TerminologyScheme" type="xs:string"/>
+			<xs:element name="TerminologyCode" type="xs:string"/>
+			<xs:element name="Comments" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KMV_InferenceEngineDependency_SimpleType">
+		<xs:sequence>
+			<xs:element name="TerminologyScheme" type="xs:string"/>
+			<xs:element name="TerminologyCode" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ====================================== -->
+	<xs:complexType name="TT_SpecificationType">
+		<xs:sequence>
+			<xs:element name="TerminologyScheme" type="xs:string"/>
+			<xs:element name="TerminologyCode" type="xs:string"/>
+			<xs:element name="Comments" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KMV_TaskDependencyType">
+		<xs:sequence>
+			<xs:element name="TD_Type" type="xs:string"/>
+			<xs:element name="TT_Specification" type="TT_SpecificationType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KMV_TaskDependency_SimpleType">
+		<xs:sequence>
+			<xs:element name="TD_Type" type="xs:string" minOccurs="0"/>
+			<xs:element name="TerminologyScheme" type="xs:string" minOccurs="0" />
+			<xs:element name="TerminologyCode" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ======================================
+        ====================================== -->
+	<xs:complexType name="KMV_OperationalConstraintDependencyType">
+		<xs:sequence>
+			<xs:element name="KM_VersionNum" type="xs:int"/>
+			<xs:element name="OC_ID" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KMV_QualityAssessmentType">
+		<xs:sequence>
+			<xs:element name="KM_ID" type="xs:int"/>
+			<xs:element name="KM_VersionNum" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KMV_SupportingReferenceType">
+		<xs:sequence>
+			<xs:element name="KM_ID" type="xs:int"/>
+			<xs:element name="KM_VersionNum" type="xs:int"/>
+			<xs:element name="SR_ID" type="xs:int"/>
+			<xs:element name="SR_Name" type="xs:string"/>
+			<xs:element name="SR_Type" type="xs:string"/>
+			<xs:element name="SR_Description" type="xs:string"/>
+			<xs:element name="SR_Reference" type="xs:string"/>
+			<xs:element name="SR_Document" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KMV_UsageStatisticType">
+		<xs:sequence>
+			<xs:element name="KM_ID" type="xs:int"/>
+			<xs:element name="KM_VersionNum" type="xs:int"/>
+			<xs:element name="UST_ID" type="xs:int"/>
+			<xs:element name="UST_Value" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KMV_UserCommentType">
+		<xs:sequence>
+			<xs:element name="KM_ID" type="xs:int"/>
+			<xs:element name="KM_VersionNum" type="xs:int"/>
+			<xs:element name="UC_ID" type="xs:int"/>
+			<xs:element name="UC_UserRole" type="xs:string"/>
+			<xs:element name="UC_UserName" type="xs:string"/>
+			<xs:element name="UC_UserID" type="xs:string"/>
+			<xs:element name="UC_UserAffiliation" type="xs:string"/>
+			<xs:element name="UC_UserContact" type="xs:string"/>
+			<xs:element name="UC_CreatedTimestamp" type="xs:dateTime"/>
+			<xs:element name="UC_Comment" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OperationalConstraintType">
+		<xs:sequence>
+			<xs:element name="OC_ID" type="xs:int"/>
+			<xs:element name="OC_Name" type="xs:string"/>
+			<xs:element name="OC_Type" type="xs:string"/>
+			<xs:element name="OC_Description" type="xs:string"/>
+			<xs:element name="OC_Keywords" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OperationalConstraintElementType">
+		<xs:sequence>
+			<xs:element name="OC_ID" type="xs:int"/>
+			<xs:element name="OCE_ID" type="xs:int"/>
+			<xs:element name="OCE_Name" type="xs:string"/>
+			<xs:element name="OCE_Type" type="xs:string"/>
+			<xs:element name="OCE_Description" type="xs:string"/>
+			<xs:element name="OCE_Interpretation" type="xs:string"/>
+			<xs:element name="OCE_AttributeName" type="xs:string"/>
+			<xs:element name="OCE_Comparator" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>&amp;gt;; &amp;lt;; between; = </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OCE_AttributeValues" type="xs:string"/>
+			<xs:element name="OCE_UnitOfMeasure" type="xs:string"/>
+			<xs:element name="OperationalConstraint" type="OperationalConstraintType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="UsageStatisticTypeType">
+		<xs:sequence>
+			<xs:element name="UST_ID" type="xs:int"/>
+			<xs:element name="UST_Name" type="xs:string"/>
+			<xs:element name="UST_Description" type="xs:string"/>
+			<xs:element name="UST_UnitOfMeasure" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ============  LIST TYPES ========================================= -->
+	<xs:complexType name="ACL_PermissionListType">
+		<xs:sequence>
+			<xs:element name="ACL_Permission" type="ACL_PermissionType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TaskListType">
+		<xs:sequence>
+			<xs:element name="KMV_TaskDependency" type="KMV_TaskDependencyType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InferenceListType">
+		<xs:sequence>
+			<xs:element name="KMV_InferenceEngineDependency" type="KMV_InferenceEngineDependencyType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FactSpecificationListType">
+		<xs:sequence>
+			<xs:element name="KMV_FactDependency" type="KMV_FactDependencyType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PopulationDependencyListType">
+		<xs:sequence>
+			<xs:element name="KMV_PopulationDependency" type="KMV_PopulationDependencyType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SpecialtyListType">
+		<xs:sequence>
+			<xs:element name="KM_Specialty" type="KM_SpecialtyType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KmVersionListType">
+		<xs:sequence>
+			<xs:element name="kmVersion" type="KMVersionType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ============  PRIMARY ========================================= -->
+	<xs:complexType name="KMVersionType">
+		<xs:sequence>
+			<xs:element name="KM_VersionNum" type="xs:int"/>
+			<xs:element name="KMV_Name" type="xs:string"/>
+			<xs:element name="CreatedBy_AuthorID" type="xs:string"/>
+			<xs:element name="CreatedBy_AuthorName" type="xs:string"/>
+			<xs:element name="CreatedTimestamp" type="xs:dateTime"/>
+			<xs:element name="LastModifiedTimestamp" type="xs:dateTime"/>
+			<xs:element name="ValidationStatus" type="xs:string"/>
+			<xs:element name="AuthorComments" type="xs:string"/>
+			<xs:element name="LMT_ID" type="xs:int"/>
+			<xs:element name="Logic_IntermediateForm" type="xs:string"/>
+			<xs:element name="Logic_NativeForm" type="xs:string"/>
+			<xs:element name="Logic_BinaryForm" type="xs:base64Binary"/>
+			<xs:element name="FactSpecificationList" type="FactSpecificationListType"/>
+			<xs:element name="PopulationDependencyList" type="PopulationDependencyListType"/>
+			<xs:element name="InferenceList" type="InferenceListType"/>
+			<xs:element name="TaskList" type="TaskListType"/>
+			<xs:element name="ACL_PermissionList" type="ACL_PermissionListType"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

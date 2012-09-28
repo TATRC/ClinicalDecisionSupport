@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="gov.hhs.fha.nhinc.addrbook.model">
+  <class name="AddressItem" table="addrbook">
+    <id column="ADDR_ID" name="addressId" type="long">
+      <generator class="increment"/>
+    </id>
+    <property column="User_ID" length="50" name="userId" not-null="true" type="string"/>
+    <property column="Class_ID" length="50" name="classId" not-null="true" type="string"/>
+    <property column="Name" length="100" name="name" type="string"/>
+    <property column="Contact_ID" length="100" name="contactId" type="string"/>
+    <property column="Last_Updated" name="lastUpdated" not-null="true" type="timestamp"/>
+  </class>
+</hibernate-mapping>

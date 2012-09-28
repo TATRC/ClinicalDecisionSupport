@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.6-hudson-317-. --><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:gov:hhs:fha:nhinc:common:dda" targetNamespace="urn:gov:hhs:fha:nhinc:common:dda" elementFormDefault="qualified">
+    <xsd:complexType name="serviceError">
+        <xsd:sequence>
+            <xsd:element name="code" type="xsd:int" minOccurs="0" />
+            <xsd:element name="text" type="xsd:string" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="nameValuesPair">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string" minOccurs="0" />
+            <xsd:element name="values" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="summaryData">
+        <xsd:sequence>
+            <xsd:element name="itemId" type="xsd:string" />
+            <xsd:element name="dataSource" type="xsd:string" />
+            <xsd:element name="author" type="xsd:string" />
+            <xsd:element name="patient" type="xsd:string" />
+            <xsd:element name="description" type="xsd:string" />
+            <xsd:element name="dateCreated" type="xsd:dateTime" />
+            <xsd:element name="itemValues" type="tns:nameValuesPair" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="detailData">
+        <xsd:sequence>
+            <xsd:element name="itemId" type="xsd:string" />
+            <xsd:element name="dataSource" type="xsd:string" />
+            <xsd:element name="author" type="xsd:string" />
+            <xsd:element name="patient" type="xsd:string" />
+            <xsd:element name="description" type="xsd:string" />
+            <xsd:element name="dateCreated" type="xsd:dateTime" />
+            <xsd:element name="data" type="xsd:string" />
+            <xsd:element name="itemValues" type="tns:nameValuesPair" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="GetSummaryDataRequestType">
+        <xsd:sequence>
+            <xsd:element name="dataSources" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="providerId" type="xsd:string" />
+            <xsd:element name="patientId" type="xsd:string" />
+            <xsd:element name="groupId" type="xsd:string" />
+            <xsd:element name="locationId" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetSummaryDataRequest" type="tns:GetSummaryDataRequestType" />
+    <xsd:complexType name="GetSummaryDataResponseType">
+        <xsd:sequence>
+            <xsd:element name="summaryObjects" type="tns:summaryData" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="errorList" type="tns:serviceError" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetSummaryDataResponse" type="tns:GetSummaryDataResponseType" />
+    <xsd:complexType name="GetAvailableSourcesRequestType">
+        <xsd:sequence>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetAvailableSourcesRequest" type="tns:GetAvailableSourcesRequestType" />
+    <xsd:complexType name="GetAvailableSourcesResponseType">
+        <xsd:sequence>
+            <xsd:element name="return" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetAvailableSourcesResponse" type="tns:GetAvailableSourcesResponseType" />
+    <xsd:complexType name="GetDetailDataRequestType">
+        <xsd:sequence>
+            <xsd:element name="dataSource" type="xsd:string" />
+            <xsd:element name="itemId" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetDetailDataRequest" type="tns:GetDetailDataRequestType" />
+    <xsd:complexType name="GetDetailDataResponseType">
+        <xsd:sequence>
+            <xsd:element name="detailObject" type="tns:detailData" />
+            <xsd:element name="errorList" type="tns:serviceError" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetDetailDataResponse" type="tns:GetDetailDataResponseType" />
+    <xsd:complexType name="GetDataSourceNameRequestType">
+        <xsd:sequence>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetDataSourceNameRequest" type="tns:GetDataSourceNameRequestType" />
+    <xsd:complexType name="GetDataSourceNameResponseType">
+        <xsd:sequence>
+            <xsd:element name="return" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetDataSourceNameResponse" type="tns:GetDataSourceNameResponseType" />
+    <xsd:complexType name="GetComponentSummaryDataRequestType">
+        <xsd:sequence>
+            <xsd:element name="providerId" type="xsd:string" />
+            <xsd:element name="patientId" type="xsd:string" />
+            <xsd:element name="groupId" type="xsd:string" />
+            <xsd:element name="locationId" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetComponentSummaryDataRequest" type="tns:GetComponentSummaryDataRequestType" />
+    <xsd:complexType name="GetComponentSummaryDataResponseType">
+        <xsd:sequence>
+            <xsd:element name="summaryObjects" type="tns:summaryData" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="errorList" type="tns:serviceError" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetComponentSummaryDataResponse" type="tns:GetComponentSummaryDataResponseType" />
+    <xsd:complexType name="GetComponentDetailDataRequestType">
+        <xsd:sequence>
+            <xsd:element name="itemId" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetComponentDetailDataRequest" type="tns:GetComponentDetailDataRequestType" />
+    <xsd:complexType name="GetComponentDetailDataResponseType">
+        <xsd:sequence>
+            <xsd:element name="detailObject" type="tns:detailData" />
+            <xsd:element name="errorList" type="tns:serviceError" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetComponentDetailDataResponse" type="tns:GetComponentDetailDataResponseType" />
+</xsd:schema>

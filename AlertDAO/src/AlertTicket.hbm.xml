@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="gov.hhs.fha.nhinc.alertmanager.model">
+  <class name="AlertTicket" table="alertticket">
+    <id column="AT_TicketID" name="ticketId" type="long">
+      <generator class="increment"/>
+    </id>
+    <property column="TicketUniqueId" length="100" name="ticketUniqueId" not-null="true" type="string"/>
+    <property column="AT_ID" name="alertId" not-null="true" type="long"/>
+    <property column="Type" length="50" name="type" type="string"/>
+    <property column="Description" length="255" name="description" type="string"/>
+    <property column="AlertOriginator" length="50" name="alertOriginator" type="string"/>
+    <property column="AlertTimestamp" name="alertTimestamp" not-null="true" type="timestamp"/>
+    <property column="EscalationPeriod" name="escalationPeriod" not-null="true" type="integer"/>
+    <property column="Payload" length="50000" name="payload" type="string"/>
+    <property column="Priority" length="50" name="priority" type="string"/>
+    <property column="PtUnitNumber" length="50" name="patientUnitNumber" type="string"/>
+    <property column="PtName" length="50" name="patientName" type="string"/>
+    <property column="PtSex" length="50" name="patientSex" type="string"/>
+    <property column="PtFMPSSN" length="50" name="patientFMPSSN" type="string"/>
+    <property column="FactNCID" length="50" name="factNCID" type="string"/>
+    <property column="FactName" length="50" name="factName" type="string"/>
+    <property column="FactValue" length="50" name="factValue" type="string"/>
+    <property column="FactType" length="50" name="factType" type="string"/>
+    <property column="ActionID" length="50" name="actionId" type="string"/>
+    <property column="ActionType" length="50" name="actionType" type="string"/>
+    <property column="RuleID" length="50" name="ruleId" type="string"/>
+    <property column="RuleDescription" length="255" name="ruleDesc" type="string"/>
+    <property column="RuleName" length="50" name="ruleName" type="string"/>
+    <set cascade="all-delete-orphan" inverse="true" lazy="false" name="providers">
+      <key column="AT_TicketID"/>
+      <one-to-many class="AlertContact"/>
+    </set>
+    <set cascade="all-delete-orphan" inverse="true" lazy="false" name="escalationProviders">
+      <key column="AT_TicketID"/>
+      <one-to-many class="AlertEscalationContact"/>
+    </set>
+    <set cascade="all-delete-orphan" inverse="true" lazy="false" name="actionHistory" sort="natural">
+      <key column="AT_TicketID"/>
+      <one-to-many class="AlertAction"/>
+    </set>
+    <set cascade="all-delete-orphan" inverse="true" lazy="false" name="status">
+      <key column="AT_TicketID"/>
+      <one-to-many class="AlertStatus"/>
+    </set>
+  </class>
+</hibernate-mapping>

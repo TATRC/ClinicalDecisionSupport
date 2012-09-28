@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="urn:gov:hhs:fha:nhinc:common:account"
+            xmlns:tns="urn:gov:hhs:fha:nhinc:common:account"
+            elementFormDefault="qualified">
+    <xsd:complexType name="Response">
+        <xsd:sequence>
+            <xsd:element name="success" type="xsd:boolean">		</xsd:element>
+            <xsd:element name="text" type="xsd:string" 	minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="name">
+        <xsd:sequence>
+            <xsd:element name="firstName" type="xsd:string"></xsd:element>
+            <xsd:element name="middleName" type="xsd:string"></xsd:element>
+            <xsd:element name="lastName" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="address">
+        <xsd:sequence>
+            <xsd:element name="address1" type="xsd:string"></xsd:element>
+            <xsd:element name="address2" type="xsd:string"></xsd:element>
+            <xsd:element name="city" type="xsd:string"></xsd:element>
+            <xsd:element name="state" type="xsd:string"></xsd:element>
+            <xsd:element name="zipCode" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+        <xsd:complexType name="phoneNumber">
+        <xsd:sequence>
+            <xsd:element name="homeNumber" type="xsd:string"></xsd:element>
+            <xsd:element name="mobileNumber" type="xsd:string"></xsd:element>
+            <xsd:element name="workNumber" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CreateAccountRequestType">
+        <xsd:sequence>
+            <xsd:element name="userName" type="xsd:string"></xsd:element>
+            <xsd:element name="password" type="xsd:string"></xsd:element>
+            <xsd:element name="emailAddress" type="xsd:string"></xsd:element>
+            <xsd:element name="ssn" type="xsd:string"></xsd:element>
+            <xsd:element name="name" type="tns:name"></xsd:element>
+            <xsd:element name="address" type="tns:address"></xsd:element>
+            <xsd:element name="phoneNumber" type="tns:phoneNumber"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="UpdateAccountRequestType">
+        <xsd:sequence>
+             <xsd:element name="password" type="xsd:string"></xsd:element>
+             <xsd:element name="emailAddress" type="xsd:string"></xsd:element>
+             <xsd:element name="address" type="tns:address"></xsd:element>
+             <xsd:element name="phoneNumber" type="tns:phoneNumber"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="CreateAccountRequest" type="tns:CreateAccountRequestType"></xsd:element>
+    <xsd:element name="CreateAccountResponse" type="tns:Response"></xsd:element>
+    <xsd:element name="UpdateAccountRequest" type="tns:UpdateAccountRequestType"></xsd:element>
+    <xsd:element name="UpdateAccountResponse" type="tns:Response"></xsd:element>
+</xsd:schema>

@@ -1,0 +1,123 @@
+<?xml version="1.0" ?>
+<hl7:CareRecord_QUPC_IN043200UV01Message xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+  <hl7:response>
+    <hl7:id extension="7ec62d0e-cb1c-32a2-a690-1b4e6947f8b9"/>
+    <hl7:creationTime value="20110114230516.627-0800"/>
+    <hl7:interactionId extension="PRPA_IN900300UV02"/>
+    <hl7:processingCode code="P"/>
+    <hl7:processingModeCode code="R"/>
+    <hl7:acceptAckCode code="RCV"/>
+    <hl7:receiver typeCode="RCV">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+        <hl7:telecom value="http://localhost:8080/NhinConnect/CommonDataLayerService"/>
+      </hl7:device>
+    </hl7:receiver>
+    <hl7:sender typeCode="SND">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+      </hl7:device>
+    </hl7:sender>
+    <hl7:controlActProcess moodCode="EVN" classCode="CACT">
+      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CS" code="TE304001UV01"/>
+      <hl7:priorityCode code="R"/>
+      <hl7:subject typeCode="SUBJ">
+        <hl7:registrationEvent moodCode="EVN" classCode="REG">
+          <hl7:statusCode code="active"/>
+          <hl7:custodian typeCode="CST">
+            <hl7:assignedEntity classCode="ASSIGNED">
+              <hl7:id assigningAuthorityName="OpenVista" root="2.16.840.1.113883.3.274"/>
+            </hl7:assignedEntity>
+          </hl7:custodian>
+          <hl7:subject2 typeCode="SUBJ">
+            <hl7:careProvisionEvent moodCode="EVN" classCode="ENC">
+              <hl7:recordTarget typeCode="RCT">
+                <hl7:patient classCode="PAT">
+                  <hl7:id extension="7" root="2.16.840.1.113883.3.200"/>
+                  <hl7:statusCode code="normal"/>
+                  <hl7:patientPerson determinerCode="INSTANCE" classCode="PSN">
+                    <hl7:name use="L">
+                      <hl7:family>PATIENT</hl7:family>
+                      <hl7:given>PHARMACY</hl7:given>
+                    </hl7:name>
+                    <hl7:administrativeGenderCode displayName="FEMALE" code="F"/>
+                    <hl7:birthTime value="19750115000000-0800"/>
+                  </hl7:patientPerson>
+                </hl7:patient>
+              </hl7:recordTarget>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="2"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="5"/>
+                  <hl7:text>250MG/50ML of LEVOFLOXACIN 250MG/DEXTROSE IJ BAG 50ML</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090430112300-0700"/>
+                    <hl7:low value="20090508000000-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                    <hl7:period unit="h" value="12"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="~IV" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="ML" value="50"/>
+                  <hl7:administrationUnitCode displayName="1000 ML" codeSystemName="DoseForm" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:desc>LEVOFLOXACIN 250MG/DEXTROSE INJ</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="367;2" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090508000000-0700"/>
+                      <hl7:quantity value="100 ml/hr"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090430112300-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf inversionInd="true" typeCode="SUBJ">
+                    <hl7:act moodCode="INT" classCode="ACT">
+                      <hl7:code displayName="Annotation Comment" codeSystemName="IHEActCode" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" code="PINSTRUCT"/>
+                      <hl7:text>50 ML</hl7:text>
+                    </hl7:act>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+            </hl7:careProvisionEvent>
+          </hl7:subject2>
+        </hl7:registrationEvent>
+      </hl7:subject>
+      <hl7:queryAck>
+        <hl7:queryId extension="20090920011010.005"/>
+        <hl7:statusCode code="deliveredResponse"/>
+        <hl7:queryResponseCode code="OK"/>
+        <hl7:resultTotalQuantity value="29"/>
+      </hl7:queryAck>
+    </hl7:controlActProcess>
+  </hl7:response>
+</hl7:CareRecord_QUPC_IN043200UV01Message>

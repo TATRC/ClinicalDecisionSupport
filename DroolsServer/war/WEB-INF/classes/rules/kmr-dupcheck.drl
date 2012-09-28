@@ -1,0 +1,39 @@
+#created on: Jun 23, 2010
+package gov.hhs.fha.nhinc.kmr
+
+import gov.hhs.fha.nhinc.adapter.fact.FactType;
+
+rule "Duplicate Seperate Source"
+	salience 100
+    when
+        newFact: FactType(historical==false)
+        existingFact: FactType(historical==true, factHash==newFact.factHash, sourceSystem!=newFact.sourceSystem)
+    then
+        System.out.println(newFact.getFactHash() + " is a duplicate from a different source.");
+        System.out.println("Source of existing fact: " + existingFact.getSourceSystem());
+        System.out.println("Source of new fact: " + newFact.getSourceSystem());
+        retract(existingFact);
+end
+
+rule "Duplicate Same Source"
+	salience 100
+    when
+        newFact: FactType(historical==false)
+        existingFact: FactType(historical==true, factHash==newFact.factHash, sourceSystem==newFact.sourceSystem)
+    then
+        System.out.println(newFact.getFactHash() + " is a duplicate from the same source: " + newFact.getSourceSystem());
+        retract(newFact);
+end
+
+rule "Update"
+	salience 100
+    when
+        newFact: FactType(historical==false)
+        existingFact: FactType(historical==true, factHash!=newFact.factHash, idHash==newFact.idHash)
+    then
+        System.out.println(newFact.getFactHash() + " is an update from " + existingFact.getFactHash());
+        org.drools.runtime.rule.FactHandle existingFactHandle = kcontext.getKnowledgeRuntime().getFactHandle(existingFact);
+        FactType updatedFact = newFact; // Update helper function will be used here
+        kcontext.getKnowledgeRuntime().update(existingFactHandle, updatedFact);
+        retract(newFact);
+end

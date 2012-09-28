@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services/>
+  <clients>
+    <client name="AdapterFactService">
+      <wsdl-url>http://nhinint03.asu.edu:8080/CommonDataLayerFactService/AdapterFactService?WSDL</wsdl-url>
+      <local-wsdl-file>nhinint03.asu.edu_8080/CommonDataLayerFactService/AdapterFactService.wsdl</local-wsdl-file>
+      <package-name>gov.hhs.fha.nhinc.adapter.factservice</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <binding>
+        <file-name>DateBinding.xml</file-name>
+      </binding>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://nhinint03.asu.edu:8080/CommonDataLayerFactService/AdapterFactService?WSDL</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
+  </clients>
+  <jsr109>false</jsr109>
+</jax-ws>

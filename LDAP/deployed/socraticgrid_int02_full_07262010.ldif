@@ -1,0 +1,1148 @@
+version: 1
+dn: dc=socraticgrid,dc=org
+objectClass: domain
+objectClass: top
+dc: socraticgrid
+
+dn: dc=templates,dc=socraticgrid,dc=org
+objectClass: domain
+objectClass: top
+dc: templates
+
+dn: dc=equipment,dc=templates,dc=socraticgrid,dc=org
+objectClass: domain
+objectClass: top
+dc: equipment
+
+dn: dc=facilities,dc=equipment,dc=templates,dc=socraticgrid,dc=org
+objectClass: domain
+objectClass: top
+dc: facilities
+
+dn: dc=org units,dc=templates,dc=socraticgrid,dc=org
+objectClass: domain
+objectClass: top
+dc: org units
+
+dn: o=organization,dc=org units,dc=templates,dc=socraticgrid,dc=org
+objectClass: top
+objectClass: organization
+o: organization
+
+dn: ou=directorate,o=organization,dc=org units,dc=templates,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: directorate
+
+dn: ou=department,ou=directorate,o=organization,dc=org units,dc=templates,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+
+dn: ou=division,ou=department,ou=directorate,o=organization,dc=org units,dc=templates,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=department,ou=directorate,o=organization,dc=org units,dc=templates,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: dc=roles,dc=templates,dc=socraticgrid,dc=org
+objectClass: domain
+objectClass: top
+dc: roles
+
+dn: ou=role,dc=roles,dc=templates,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: role
+ou: role
+
+dn: dc=locations,dc=templates,dc=socraticgrid,dc=org
+objectClass: domain
+objectClass: top
+dc: locations
+
+dn: ou=campus,dc=locations,dc=templates,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: campus
+
+dn: ou=building,ou=campus,dc=locations,dc=templates,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: building
+
+dn: ou=floor,ou=building,ou=campus,dc=locations,dc=templates,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: floor
+
+dn: ou=area,ou=floor,ou=building,ou=campus,dc=locations,dc=templates,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: area
+
+dn: ou=room,ou=area,ou=floor,ou=building,ou=campus,dc=locations,dc=templates,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: room
+
+dn: ou=equipment,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: equipment
+
+dn: cn=abgmonitor,ou=equipment,dc=socraticgrid,dc=org
+objectClass: device
+objectClass: top
+cn: abgmonitor
+description:: QXJ0ZXJpYWwgQmxvb2QgR2FzIE1hY2hpbmUg
+ou: neontal icu
+
+dn: ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: business units
+
+dn: o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: top
+objectClass: organization
+o: medical center
+
+dn: ou=quality management,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: quality management
+
+dn: ou=department,ou=quality management,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+
+dn: ou=division,ou=department,ou=quality management,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=department,ou=quality management,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=surgical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: surgical services
+
+dn: ou=department,ou=surgical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+
+dn: ou=division,ou=department,ou=surgical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=department,ou=surgical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=nursing,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: nursing
+
+dn: ou=department,ou=nursing,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+
+dn: ou=division,ou=department,ou=nursing,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=department,ou=nursing,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: medical services
+
+dn: ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+businessCategory: department
+ou: pediatrics
+
+dn: ou=pediatric icu,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: pediatric icu
+
+dn: ou=medical director,ou=pediatric icu,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: medical director
+ou: medical director
+roleOccupant: uid=123,dc=people,dc=socraticgrid,dc=org
+
+dn: ou=neonatal icu,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: neonatal icu
+
+dn: ou=medical director,ou=neonatal icu,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: medical director
+ou: medical director
+roleOccupant: cn=fry.emory,dc=people,dc=socraticgrid,dc=org
+
+dn: ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: subspecialty
+
+dn: ou=cardiology,ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: cardiology
+
+dn: ou=clinic,ou=cardiology,ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=pulmonology,ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: pulmonology
+
+dn: ou=clinic,ou=pulmonology,ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=infectious disease,ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: infectious disease
+
+dn: ou=clinic,ou=infectious disease,ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=developmental  peds,ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: developmental  peds
+
+dn: ou=clinic,ou=developmental  peds,ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=genetics,ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: genetics
+
+dn: ou=clinic,ou=genetics,ou=subspecialty,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=general pediatrics,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+businessCategory: division
+ou: general pediatrics
+
+dn: ou=clinic,ou=general pediatrics,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=medical director,ou=pediatrics,ou=medical services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: medical director
+ou: medical director
+roleOccupant: cn=fry.emory,dc=people,dc=socraticgrid,dc=org
+
+dn: ou=information technology,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: directorate
+ou: information technology
+
+dn: ou=department,ou=information technology,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+
+dn: ou=division,ou=department,ou=information technology,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=department,ou=information technology,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=education-training,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: education-training
+
+dn: ou=department,ou=education-training,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+
+dn: ou=division,ou=department,ou=education-training,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=department,ou=education-training,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=ancillary services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: ancillary services
+
+dn: ou=department,ou=ancillary services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+
+dn: ou=division,ou=department,ou=ancillary services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=department,ou=ancillary services,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=administration,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: administration
+
+dn: ou=department,ou=administration,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+
+dn: ou=division,ou=department,ou=administration,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=department,ou=administration,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=human resources,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: human resources
+
+dn: ou=department,ou=human resources,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+
+dn: ou=division,ou=department,ou=human resources,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=department,ou=human resources,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=executive steering committee,o=medical center,ou=business units,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+description: Excutive leadership concil for the medical center.
+destinationIndicator: 12341.1234..2134.1234.1234
+l: 123.21341.43.1234.12.34.43
+ou: executive steering committee
+telephoneNumber: 888-888-3333
+
+dn: ou=people,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: people
+
+dn: cn=fry.emory,ou=people,dc=socraticgrid,dc=org
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: kmr-orgPerson
+objectClass: top
+businessCategory: patient
+carLicense: CA12345
+cn: fry.emory
+departmentNumber: 123.4567.12.3444
+destinationIndicator: 1234.1234.2.34.12.34.1234
+displayName: Emory A Fry, MD
+employeeNumber: 21777989-09
+employeeType: md
+facsimileTelephoneNumber: 619-555-9999
+gender: M
+givenName: Emory
+homePhone: 858-268-1232
+homePostalAddress: 4911 Mt Elbrus Drive$San Diego, CA 92117
+initials: eaf
+l: San Diego
+labeledURI: www.homewebpage.com
+mail: eafry@gmx.com
+manager: cn=fry.emory
+mobile: 858-395-7317
+ou: dn=123
+pager: 619-999-999
+photo:: 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
+postalAddress: 4920 Mt Elbrus Drive$San Diego, CA 92117
+postalCode: 92117
+preferredContactMethod: homePhone
+preferredDeliveryMethod: physical
+preferredLanguage: English
+registeredAddress: Naval Health Research Center$140 Sylvester Rd$San Diego, CA 92126
+roomNumber: A3
+secretary: cn=fry.emory
+sn: fry
+st: CA
+street: 4920 Mt Elbrus Drive
+telephoneNumber: 619-553-8464
+title: Mr.
+uid: 456
+userPassword:: e1NTSEF9NW9xNks4dlBLcUhaWlFtLzlaeFNMT216YWJURDlHVFgwT2Exb2c9P
+ Q==
+
+dn: cn=CA.MedicalLicense,cn=fry.emory,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-document
+objectClass: document
+objectClass: top
+cn: CA.MedicalLicense
+description: Physician and Surgeon
+documentExpirationTime: 20110930002323.687Z
+documentIdentifier: G 77967
+documentLocation: California
+documentPublisher: California Medical License Board
+documentStatus: renewed & current
+documentTitle: Medical License
+
+dn: cn=PMR.Account,cn=fry.emory,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-account
+objectClass: top
+cn: PMR.Account
+description: Account for PMR portal
+uid: eafry
+
+dn: cn=RPMS.Account,cn=fry.emory,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-account
+objectClass: top
+cn: RPMS.Account
+uid: eafry
+userPassword:: e1NTSEF9dXlJWmZlUERWODVock9wdjJzRlVPbTJhcDNRNUhHRWdpcWRUOWc9P
+ Q==
+
+dn: cn=lfr.bruno,ou=people,dc=socraticgrid,dc=org
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+cn: lfr.bruno
+givenName: Bruno
+mail: lfr.bruno@liferay.com
+sn: Lfr
+title: Administrator
+uid: 10162
+userPassword:: e1NTSEF9alJmRkpsSmNSRS8weWdOM0p3cS9ENUl2ajdRcHcvWlpkSExTd0E9P
+ Q==
+
+dn: cn=joe.bloggs,ou=people,dc=socraticgrid,dc=org
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: kmr-orgPerson
+objectClass: top
+cn: joe.bloggs
+givenName: Joe
+mail: joe.bloggs@liferay.com
+sn: Bloggs
+title: Administrator
+userPassword:: e1NTSEF9SUllREgreFRRWUlLR3VOQm1qVm5GYXREUzFmL2ZMMVpGTnNDSnc9P
+ Q==
+
+dn: cn=smith.baby,ou=people,dc=socraticgrid,dc=org
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: kmr-orgPerson
+objectClass: top
+businessCategory: patient
+carLicense: CA12346
+cn: smith.baby
+departmentNumber: 123.4567.12.3444
+destinationIndicator: 1234.1234.2.34.12.34.1234
+displayName: Baby Smith
+employeeNumber: 21777989-10
+employeeType: pt
+facsimileTelephoneNumber: 619-555-9999
+gender: F
+givenName: Baby
+homePhone: 858-549-0000
+homePostalAddress: 5001 Mt Elbrus Drive$San Diego, CA 92117
+initials: bs
+l: San Diego
+labeledURI: www.homewebpage.com
+mail: babysmith@socraticgrid.org
+manager: 
+mobile: 619-999-999
+ou: dn=123
+pager: 619-999-999
+photo:: 
+postalAddress: 5001 Mt Elbrus Drive$San Diego, CA 92117
+postalCode: 92117
+preferredContactMethod: homePhone
+preferredDeliveryMethod: physical
+preferredLanguage: English
+registeredAddress: Naval Health Research Center$140 Sylvester Rd$San Diego, CA 92126
+roomNumber: A3
+secretary: 
+sn: smith
+st: CA
+street: 5001 Mt Elbrus Drive
+telephoneNumber: 858-549-0000
+title: Ms.
+uid: 30354
+userPassword:: e1NTSEF9MG9oVnRTcnhpN0ZrZjVhamlUK1hvcnduWnlMY0V5YS8xL3B1ZUE9P
+ Q==
+
+dn: cn=PMR.Account,cn=smith.baby,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-account
+objectClass: top
+cn: PMR.Account
+description: Account for PMR portal
+uid: 30354
+
+dn: cn=RPMS.Account,cn=smith.baby,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-account
+objectClass: top
+cn: RPMS.Account
+uid: 30354
+userPassword:: e1NTSEF9a1B1dDFuRUltMnRscnV2M1FFcnRua2R5UWlRTFl2WUlqSmV6bFE9P
+ Q==
+
+dn: cn=smith.barbara,ou=people,dc=socraticgrid,dc=org
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: kmr-orgPerson
+objectClass: top
+businessCategory: patient
+carLicense: CA12347
+cn: smith.baby
+cn: smith.barbara
+departmentNumber: 123.4567.12.3444
+destinationIndicator: 1234.1234.2.34.12.34.1234
+displayName: Barbara Smith
+employeeNumber: 21777989-12
+employeeType: pt
+facsimileTelephoneNumber: 619-555-9999
+gender: F
+givenName: Barbara
+homePhone: 858-549-0000
+homePostalAddress: 5001 Mt Elbrus Drive$San Diego, CA 92117
+initials: bs
+l: San Diego
+labeledURI: www.homewebpage.com
+mail: barbarasmith@liferay.com
+manager: 
+mobile: 619-999-999
+ou: dn=123
+pager: 619-999-999
+photo:: 
+postalAddress: 5001 Mt Elbrus Drive$San Diego, CA 92117
+postalCode: 92117
+preferredContactMethod: homePhone
+preferredDeliveryMethod: physical
+preferredLanguage: English
+registeredAddress: Naval Health Research Center$140 Sylvester Rd$San Diego, CA 92126
+roomNumber: A3
+secretary: 
+sn: smith
+st: CA
+street: 5001 Mt Elbrus Drive
+telephoneNumber: 858-549-0000
+title: Ms.
+uid: 40056
+userPassword:: e1NTSEF9bCtocEY2U0JlSS9Ddk55OC9uaXNVS2I1VjNMUVVKMStsNUlVN0E9P
+ Q==
+
+dn: cn=PMR.Account,cn=smith.barbara,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-account
+objectClass: top
+cn: PMR.Account
+description: Account for PMR portal
+uid: 40056
+
+dn: cn=RPMS.Account,cn=smith.barbara,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-account
+objectClass: top
+cn: RPMS.Account
+uid: 40056
+userPassword:: e1NTSEF9bDFWNGZ6SWpSUWluN3FMakJkQjhqbWE3VmlqT3hwcUJldFBkYUE9P
+ Q==
+
+dn: cn=wilson.huyentrang,ou=people,dc=socraticgrid,dc=org
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: kmr-orgPerson
+objectClass: top
+businessCategory: patient
+carLicense: CA12348
+cn: wilson.huyentrang
+departmentNumber: 123.4567.12.3444
+destinationIndicator: 1234.1234.2.34.12.34.1234
+displayName: Huyen Trang Wilson, MD
+employeeNumber: 21777989-09
+employeeType: md
+facsimileTelephoneNumber: 619-555-9999
+gender: F
+givenName: HuyenTrang
+homePhone: 858-666-0000
+homePostalAddress: 5003 Mt Elbrus Drive$San Diego, CA 92117
+initials: htw
+l: San Diego
+labeledURI: www.homewebpage.com
+mail: wilson.huyentrang@gmx.com
+manager: cn=fry.emory
+mobile: 801-244-8026
+ou: dn=123
+pager: 619-999-999
+photo:: 
+postalAddress: 5003 Mt Elbrus Drive$San Diego, CA 92117
+postalCode: 92117
+preferredContactMethod: homePhone
+preferredDeliveryMethod: physical
+preferredLanguage: English
+registeredAddress: Naval Health Research Center$140 Sylvester Rd$San Diego, CA 92126
+roomNumber: A3
+secretary: 
+sn: Wilson
+st: CA
+street: 5003 Mt Elbrus Drive
+telephoneNumber: 858-666-0000
+title: Ms.
+uid: 2122
+userPassword:: e1NTSEF9RnpIRWhvd2VYU3ZUTW96cllCQXM5RE9aV0ZGSnZheTZvRklvc3c9P
+ Q==
+
+dn: cn=CA.MedicalLicense,cn=wilson.huyentrang,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-document
+objectClass: document
+objectClass: top
+cn: CA.MedicalLicense
+description: Physician and Surgeon
+documentExpirationTime: 20120930002323.687Z
+documentIdentifier: G 99999
+documentLocation: California
+documentPublisher: California Medical License Board
+documentStatus: renewed & current
+documentTitle: Medical License
+
+dn: cn=PMR.Account,cn=wilson.huyentrang,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-account
+objectClass: top
+cn: PMR.Account
+description: Account for PMR portal
+uid: 2122
+
+dn: cn=RPMS.Account,cn=wilson.huyentrang,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-account
+objectClass: top
+cn: RPMS.Account
+uid: 2122
+userPassword:: e1NTSEF9NmUwaE8zSTZTRUJTQldabmxZWUd2ajU3dEpUNnpLVGNXSWNJTGc9P
+ Q==
+
+dn: cn=adam.adam,ou=people,dc=socraticgrid,dc=org
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: kmr-orgPerson
+objectClass: top
+businessCategory: Physician
+carLicense: CA12345
+cn: adam.adam
+departmentNumber: 123.4567.12.3444
+destinationIndicator: 1234.1234.2.34.12.34.1234
+displayName: Adam Adam
+employeeNumber: 21777989-11
+employeeType: md
+facsimileTelephoneNumber: 619-555-9999
+gender: M
+givenName: Adam
+homePhone: 858-549-0000
+homePostalAddress: 5002 Mt Elbrus Drive$San Diego, CA 92117
+initials: aa
+l: San Diego
+labeledURI: www.homewebpage.com
+mail: adamadam@liferay.com
+manager: 
+mobile: 801-244-8026
+ou: dn=123
+pager: 619-999-999
+photo:: 
+postalAddress: 5002 Mt Elbrus Drive$San Diego, CA 92117
+postalCode: 92117
+preferredContactMethod: homePhone
+preferredDeliveryMethod: physical
+preferredLanguage: English
+registeredAddress: Naval Health Research Center$140 Sylvester Rd$San Diego, CA 92126
+roomNumber: A3
+secretary: 
+sn: adam
+st: CA
+street: 5002 Mt Elbrus Drive
+telephoneNumber: 858-549-0000
+title: Mr.
+uid: 1
+userPassword:: e1NTSEF9cTRvdjJueXcxNVY2SUhyMWJ2ZC9iZXhUVUhvZWVBNlZOK3hMZ2c9P
+ Q==
+
+dn: cn=CA.MedicalLicense,cn=adam.adam,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-document
+objectClass: document
+objectClass: top
+cn: CA.MedicalLicense
+description: Physician and Surgeon
+documentExpirationTime: 20121030002323.687Z
+documentIdentifier: G 99998
+documentLocation: California
+documentPublisher: California Medical License Board
+documentStatus: renewed & current
+documentTitle: Medical License
+
+dn: cn=PMR.Account,cn=adam.adam,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-account
+objectClass: top
+cn: PMR.Account
+description: Account for PMR portal
+uid: 1
+
+dn: cn=RPMS.Account,cn=adam.adam,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-account
+objectClass: top
+cn: RPMS.Account
+uid: 1
+userPassword:: e1NTSEF9bjdDMVFHZ0cwcWlzVHR5bXA1Z0ZlVVk1d0hSdFZFWDNQZkJsY3c9P
+ Q==
+
+dn: ou=roles,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: roles
+ou: roles
+
+dn: ou=neonatal icu,ou=roles,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: attending
+ou: neonatal icu
+
+dn: ou=charge nurse,ou=roles,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: charge nurse
+description: charge nurse
+destinationIndicator: 123.2234.2342.34.4234.
+ou: charge nurse
+roleOccupant: cn=fry.emory
+telephoneNumber: 619-888-9090
+
+dn: ou=division head,ou=roles,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: division head
+ou: division head
+
+dn: ou=nurse,ou=roles,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: nurse
+ou: nurse
+
+dn: ou=physical therapist,ou=roles,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: physical therapist
+ou: physical therapist
+
+dn: ou=physician,ou=roles,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: physician
+ou: physician
+
+dn: ou=supervisor,ou=roles,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: supervisor
+ou: supervisor
+
+dn: ou=medical director,ou=roles,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: attending
+ou: medical director
+
+dn: cn=nicu medical director,ou=medical director,ou=roles,dc=socraticgrid,dc=org
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+cn: nicu medical director
+ou: neonatal icu
+sn: nicu medical director
+
+dn: ou=locations,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: locations
+
+dn: ou=campus,ou=locations,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: campus
+
+dn: ou=building,ou=campus,ou=locations,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: building
+
+dn: ou=floor,ou=building,ou=campus,ou=locations,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: floor
+
+dn: ou=area,ou=floor,ou=building,ou=campus,ou=locations,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: area
+
+dn: ou=room,ou=area,ou=floor,ou=building,ou=campus,ou=locations,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: room
+
+dn: o=navy medicine,dc=socraticgrid,dc=org
+objectClass: top
+objectClass: organization
+o: navy medicine
+
+dn: ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: navmedwest
+
+dn: ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: nmcsd
+
+dn: ou=administration,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: administration
+
+dn: ou=department,ou=administration,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+
+dn: ou=division,ou=department,ou=administration,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=department,ou=administration,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: ancillary services
+
+dn: ou=radiology,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: radiology
+
+dn: ou=division,ou=radiology,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=radiology,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=pathology,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: pathology
+
+dn: ou=division,ou=pathology,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=pathology,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=physical therapy,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: radiology
+ou: physical therapy
+
+dn: ou=division,ou=physical therapy,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=physical therapy,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=Copy of radiology,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: radiology
+ou: Copy of radiology
+
+dn: ou=division,ou=Copy of radiology,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=Copy of radiology,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=occupational,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: radiology
+ou: physical therapy
+ou: occupational
+
+dn: ou=division,ou=occupational,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=occupational,ou=ancillary services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=resources,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: resources
+
+dn: ou=finance,ou=resources,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: finance
+
+dn: ou=division,ou=finance,ou=resources,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=finance,ou=resources,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=purchasing,ou=resources,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: finance
+ou: purchasing
+
+dn: ou=division,ou=purchasing,ou=resources,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=purchasing,ou=resources,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=executive steering committee,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+description: Excutive leadership concil for the medical center.
+destinationIndicator: 12341.1234..2134.1234.1234
+l: 123.21341.43.1234.12.34.43
+ou: executive steering committee
+telephoneNumber: 888-888-3333
+
+dn: ou=graduate medical education,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: graduate medical education
+
+dn: ou=department,ou=graduate medical education,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+
+dn: ou=division,ou=department,ou=graduate medical education,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=department,ou=graduate medical education,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=information technology,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: directorate
+ou: information technology
+
+dn: ou=department,ou=information technology,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: department
+
+dn: ou=division,ou=department,ou=information technology,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: division
+
+dn: ou=clinic,ou=division,ou=department,ou=information technology,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: clinic
+
+dn: ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: medical services
+
+dn: ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+businessCategory: department
+ou: pediatrics
+
+dn: ou=pediatric icu,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: pediatric icu
+
+dn: ou=medical director,ou=pediatric icu,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: medical director
+ou: medical director
+roleOccupant: uid=123,dc=people,dc=socraticgrid,dc=org
+
+dn: ou=neonatal icu,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: neonatal icu
+
+dn: ou=medical director,ou=neonatal icu,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalRole
+objectClass: top
+cn: medical director
+ou: medical director
+roleOccupant: cn=fry.emory,dc=people,dc=socraticgrid,dc=org
+
+dn: ou=subspecialty,ou=pediatrics,ou=medical services,ou=nmcsd,ou=navmedwest,o=navy medicine,dc=socraticgrid,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: subspecialty
+

@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:KmRecordResponse xmlns:ns2="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <ns2:requestReference>
+            <ns2:requestId>98</ns2:requestId>
+            <ns2:requestDate>2010-03-22T00:03:22.000-00:07</ns2:requestDate>
+         </ns2:requestReference>
+         <ns2:responseList>
+            <ns2:km>
+               <ns2:kmId>1</ns2:kmId>
+               <ns2:kmName>myKM</ns2:kmName>
+               <ns2:kmDescription>test KM</ns2:kmDescription>
+               <ns2:kmKeywords>test KM</ns2:kmKeywords>
+               <ns2:kmOrganizationLevel>PERSONAL</ns2:kmOrganizationLevel>
+               <ns2:kmType>VALIDATION</ns2:kmType>
+               <ns2:lastModifiedByAuthorID>99</ns2:lastModifiedByAuthorID>
+               <ns2:lastModifiedByAuthorName>tmn</ns2:lastModifiedByAuthorName>
+               <ns2:lastModifiedTimestamp>Tue Mar 23 14:20:30 PDT 2010</ns2:lastModifiedTimestamp>
+               <ns2:createdByAuthorID>99</ns2:createdByAuthorID>
+               <ns2:createdByAuthorName>tmn</ns2:createdByAuthorName>
+               <ns2:createdTimestamp>Tue Mar 23 14:20:30 PDT 2010</ns2:createdTimestamp>
+               <ns2:isCheckedOut>false</ns2:isCheckedOut>
+               <ns2:originInstitution>NHRC</ns2:originInstitution>
+               <ns2:parentKMId>0</ns2:parentKMId>
+               <ns2:latestVersionNum>4</ns2:latestVersionNum>
+               <ns2:productionVersionNum>3</ns2:productionVersionNum>
+               <ns2:validationStatus>UNDER REVIEW</ns2:validationStatus>
+               <ns2:SpecialtyList>
+                  <KM_Specialty>
+                     <TerminologyScheme>AMA123</TerminologyScheme>
+                     <TerminologyCode>207Q00000X</TerminologyCode>
+                     <Comments>Family Medicine</Comments>
+                  </KM_Specialty>
+                  <KM_Specialty>
+                     <TerminologyScheme>AMA123</TerminologyScheme>
+                     <TerminologyCode>207QA0401X</TerminologyCode>
+                     <Comments>Addiction Medicine</Comments>
+                  </KM_Specialty>
+                  <KM_Specialty>
+                     <TerminologyScheme>AMA123</TerminologyScheme>
+                     <TerminologyCode>207QA0505X</TerminologyCode>
+                     <Comments>Adult Medicine</Comments>
+                  </KM_Specialty>
+                  <KM_Specialty>
+                     <TerminologyScheme>AMA456</TerminologyScheme>
+                     <TerminologyCode>207Q00009X</TerminologyCode>
+                     <Comments>Family Medicine 2</Comments>
+                  </KM_Specialty>
+               </ns2:SpecialtyList>
+               <ns2:KmVersionList>
+                  <kmVersion>
+                     <KM_VersionNum>1</KM_VersionNum>
+                     <KMV_Name>myKM - v1</KMV_Name>
+                     <CreatedBy_AuthorID>99</CreatedBy_AuthorID>
+                     <CreatedBy_AuthorName>tmn</CreatedBy_AuthorName>
+                     <CreatedTimestamp>2010-03-22T00:03:22.000-00:07</CreatedTimestamp>
+                     <LastModifiedTimestamp>2010-03-22T00:00:00.000-00:07</LastModifiedTimestamp>
+                     <ValidationStatus>DRAFT</ValidationStatus>
+                     <AuthorComments>no comment</AuthorComments>
+                     <LMT_ID>0</LMT_ID>
+                     <Logic_IntermediateForm>intermediate form - A</Logic_IntermediateForm>
+                     <Logic_NativeForm>bmF0aXZlIGZvcm0gLSBEUk9PTFMgLSBB</Logic_NativeForm>
+                     <FactSpecificationList>
+                        <KMV_FactDependency>
+                           <Type>LAB</Type>
+                           <Description>A Lab Fact</Description>
+                           <FactSpecification>
+                              <TerminologyScheme>100</TerminologyScheme>
+                              <TerminologyCode>26453-1</TerminologyCode>
+                              <Comments>LOINC - Erythrocytes</Comments>
+                           </FactSpecification>
+                        </KMV_FactDependency>
+                     </FactSpecificationList>
+                     <InferenceList>
+                        <KMV_InferenceEngineDependency>
+                           <TerminologyScheme>DROOLS EXPERT</TerminologyScheme>
+                           <TerminologyCode>DR2.0</TerminologyCode>
+                           <Comments>myKM v1 - Drools Expert Engine version 2.0</Comments>
+                        </KMV_InferenceEngineDependency>
+                     </InferenceList>
+                     <TaskList>
+                        <KMV_TaskDependency>
+                           <TD_Type>ALERT</TD_Type>
+                           <TT_Specification>
+                              <TerminologyScheme>task scheme 1</TerminologyScheme>
+                              <TerminologyCode>task code 1-3</TerminologyCode>
+                              <Comments>Task Spec for Task 1</Comments>
+                           </TT_Specification>
+                        </KMV_TaskDependency>
+                        <KMV_TaskDependency>
+                           <TD_Type>TELECOM</TD_Type>
+                           <TT_Specification>
+                              <TerminologyScheme>task scheme 1</TerminologyScheme>
+                              <TerminologyCode>task code 1-9</TerminologyCode>
+                              <Comments>Task Spec for Task 2</Comments>
+                           </TT_Specification>
+                        </KMV_TaskDependency>
+                     </TaskList>
+                  </kmVersion>
+                  <kmVersion>
+                     <KM_VersionNum>2</KM_VersionNum>
+                     <KMV_Name>myKM - v2</KMV_Name>
+                     <CreatedBy_AuthorID>99</CreatedBy_AuthorID>
+                     <CreatedBy_AuthorName>tmn</CreatedBy_AuthorName>
+                     <CreatedTimestamp>2010-03-22T01:00:00.000-00:07</CreatedTimestamp>
+                     <LastModifiedTimestamp>2010-03-22T01:00:00.000-00:07</LastModifiedTimestamp>
+                     <ValidationStatus>APPROVED</ValidationStatus>
+                     <AuthorComments>no comment</AuthorComments>
+                     <LMT_ID>0</LMT_ID>
+                     <Logic_IntermediateForm>intermediate form - B</Logic_IntermediateForm>
+                     <Logic_NativeForm>bmF0aXZlIGZvcm0gLSBEUk9PTFMgLSBC</Logic_NativeForm>
+                     <FactSpecificationList>
+                        <KMV_FactDependency>
+                           <Type>LAB</Type>
+                           <Description>A Lab Fact</Description>
+                           <FactSpecification>
+                              <TerminologyScheme>100</TerminologyScheme>
+                              <TerminologyCode>20570-8</TerminologyCode>
+                              <Comments>LOINC - Hematocrit</Comments>
+                           </FactSpecification>
+                           <FactSpecification>
+                              <TerminologyScheme>100</TerminologyScheme>
+                              <TerminologyCode>26453-1</TerminologyCode>
+                              <Comments>LOINC - Erythrocytes</Comments>
+                           </FactSpecification>
+                           <FactSpecification>
+                              <TerminologyScheme>100</TerminologyScheme>
+                              <TerminologyCode>26464-8</TerminologyCode>
+                              <Comments>LOINC - Leukocytes</Comments>
+                           </FactSpecification>
+                           <FactSpecification>
+                              <TerminologyScheme>100</TerminologyScheme>
+                              <TerminologyCode>718-7</TerminologyCode>
+                              <Comments>LOINC - Hemoglobin</Comments>
+                           </FactSpecification>
+                        </KMV_FactDependency>
+                     </FactSpecificationList>
+                     <PopulationDependencyList>
+                        <KMV_PopulationDependency>
+                           <PD_Status>draft</PD_Status>
+                           <PD_Scope>enterprise</PD_Scope>
+                           <PD_Name>Disease,Gender,Age</PD_Name>
+                           <PD_Description>Disease,Gender,and Age</PD_Description>
+                           <PopulationSpecification>
+                              <TerminologyScheme>101</TerminologyScheme>
+                              <TerminologyCode>900-1</TerminologyCode>
+                              <TerminologyValue>F</TerminologyValue>
+                              <Comments>HL7 - Gender</Comments>
+                           </PopulationSpecification>
+                           <PopulationSpecification>
+                              <TerminologyScheme>102</TerminologyScheme>
+                              <TerminologyCode>2900-1</TerminologyCode>
+                              <TerminologyValue>250.1</TerminologyValue>
+                              <Comments>ICD9 - Diabetes</Comments>
+                           </PopulationSpecification>
+                           <PopulationSpecification>
+                              <TerminologyScheme>200</TerminologyScheme>
+                              <TerminologyCode>800-1</TerminologyCode>
+                              <TerminologyValue>20</TerminologyValue>
+                              <Comments>UDS - Age Minimum</Comments>
+                           </PopulationSpecification>
+                           <PopulationSpecification>
+                              <TerminologyScheme>200</TerminologyScheme>
+                              <TerminologyCode>800-2</TerminologyCode>
+                              <TerminologyValue>30</TerminologyValue>
+                              <Comments>UDS - Age Maximum</Comments>
+                           </PopulationSpecification>
+                        </KMV_PopulationDependency>
+                     </PopulationDependencyList>
+                     <InferenceList>
+                        <KMV_InferenceEngineDependency>
+                           <TerminologyScheme>DROOLS EXPERT</TerminologyScheme>
+                           <TerminologyCode>DR2.0</TerminologyCode>
+                           <Comments>myKM v2 - Drools Expert Engine version 2.0</Comments>
+                        </KMV_InferenceEngineDependency>
+                     </InferenceList>
+                     <TaskList>
+                        <KMV_TaskDependency>
+                           <TD_Type>ALERT</TD_Type>
+                        </KMV_TaskDependency>
+                     </TaskList>
+                  </kmVersion>
+               </ns2:KmVersionList>
+            </ns2:km>
+         </ns2:responseList>
+      </ns2:KmRecordResponse>
+   </S:Body>
+</S:Envelope>
+
+
+<!-- per REQUEST
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <SOAP-ENV:Body>
+      <m:KmRecordRequest xmlns:m="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <m:request>
+            <m:requestReference>
+               <m:requestId>98</m:requestId>
+               <m:requestDate>2010-03-22T00:03:22.000-00:07</m:requestDate>
+            </m:requestReference>
+            <m:km>
+
+               <m:Task>
+                  <TD_Type>ALERT</TD_Type>
+               </m:Task>
+
+               <m:ACL>
+                  <UR_Name>Providers-Physicians</UR_Name>
+               </m:ACL>
+
+            </m:km>
+         </m:request>
+      </m:KmRecordRequest>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+-->

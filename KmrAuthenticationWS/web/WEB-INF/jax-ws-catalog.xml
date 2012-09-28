@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/C:/DSS/KMR/MedSphereAuthWS/MSCAuthenticationService.wsdl" uri="wsdl/MSCAuthenticationService.wsdl"/>
+    <system systemId="http://kmrdev.medsphere.com:8080/MSCServiceApp/MSCAuthenticationService?xsd=1" uri="wsdl/kmrdev.medsphere.com_8080/MSCServiceApp/MSCAuthenticationService.xsd_1.xsd"/>
+</catalog>
+
+

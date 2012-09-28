@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+<hl7:CareRecord_QUPC_IN043200UV01Message xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+  <hl7:response>
+    <hl7:id extension="267747d8-d14e-3152-85ff-781dc4e5dc61"/>
+    <hl7:creationTime value="20100616163229.453"/>
+    <hl7:interactionId extension="PRPA_IN900300UV02"/>
+    <hl7:processingCode code="P"/>
+    <hl7:processingModeCode code="R"/>
+    <hl7:acceptAckCode code="RCV"/>
+    <hl7:receiver typeCode="RCV">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+        <hl7:telecom value="http://localhost:8080/NhinConnect/CommonDataLayerService"/>
+      </hl7:device>
+    </hl7:receiver>
+    <hl7:sender typeCode="SND">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+      </hl7:device>
+    </hl7:sender>
+    <hl7:controlActProcess moodCode="EVN" classCode="CACT">
+      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CS" code="QUPC_TE043200UV01"/>
+      <hl7:priorityCode code="R"/>
+      <hl7:subject typeCode="SUBJ">
+        <hl7:registrationEvent moodCode="EVN" classCode="REG">
+          <hl7:statusCode code="completed"/>
+          <hl7:custodian typeCode="CST">
+            <hl7:assignedEntity classCode="ASSIGNED">
+              <hl7:id assigningAuthorityName="OpenRPMS" root="2.16.840.1.113883.3.274"/>
+            </hl7:assignedEntity>
+          </hl7:custodian>
+          <hl7:subject2 typeCode="SUBJ">
+            <hl7:careProvisionEvent moodCode="EVN" classCode="ENC">
+              <hl7:recordTarget typeCode="RCT">
+                <hl7:patient classCode="PAT">
+                  <hl7:id extension="41519" root="2.16.840.1.113883.3.200"/>
+                  <hl7:statusCode code="normal"/>
+                  <hl7:patientPerson determinerCode="INSTANCE" classCode="PSN">
+                    <hl7:name>
+                      <hl7:family>SMITH</hl7:family>
+                      <hl7:given>BEVERLY</hl7:given>
+                      <hl7:given>ELIZABETH</hl7:given>
+                    </hl7:name>
+                    <hl7:administrativeGenderCode displayName="FEMALE" code="F"/>
+                    <hl7:birthTime value="19800116000000"/>
+                  </hl7:patientPerson>
+                </hl7:patient>
+              </hl7:recordTarget>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="1"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:templateId root="2.16.840.1.113883.3.88.11.83.6"/>
+                  <hl7:id extension="9429"/>
+                  <hl7:code displayName="Drug Allergy" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="416098002">
+                    <hl7:originalText>
+                      <hl7:reference value="DRUG"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:effectiveTime value="20080430163400"/>
+                  <hl7:sourceOf typeCode="MFST">
+                    <hl7:substanceAdministration moodCode="EVN" classCode="SBADM">
+                      <hl7:consumable typeCode="CSM">
+                        <hl7:administerableMaterial classCode="ADMM">
+                          <hl7:administerableMaterial determinerCode="INSTANCE" classCode="MMAT">
+                            <hl7:code>
+                              <hl7:originalText>MORPHINE</hl7:originalText>
+                            </hl7:code>
+                            <hl7:desc>MORPHINE</hl7:desc>
+                          </hl7:administerableMaterial>
+                        </hl7:administerableMaterial>
+                      </hl7:consumable>
+                    </hl7:substanceAdministration>
+                  </hl7:sourceOf>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="2"/>
+                <hl7:observation moodCode="EVN" classCode="OBS">
+                  <hl7:templateId root="2.16.840.1.113883.3.88.11.83.6"/>
+                  <hl7:id extension="9430"/>
+                  <hl7:code displayName="Drug Allergy" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="416098002">
+                    <hl7:originalText>
+                      <hl7:reference value="DRUG"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:effectiveTime value="20080430163400"/>
+                  <hl7:sourceOf typeCode="MFST">
+                    <hl7:substanceAdministration moodCode="EVN" classCode="SBADM">
+                      <hl7:consumable typeCode="CSM">
+                        <hl7:administerableMaterial classCode="ADMM">
+                          <hl7:administerableMaterial determinerCode="INSTANCE" classCode="MMAT">
+                            <hl7:code>
+                              <hl7:originalText>HYDROCODONE</hl7:originalText>
+                            </hl7:code>
+                            <hl7:desc>HYDROCODONE</hl7:desc>
+                          </hl7:administerableMaterial>
+                        </hl7:administerableMaterial>
+                      </hl7:consumable>
+                    </hl7:substanceAdministration>
+                  </hl7:sourceOf>
+                </hl7:observation>
+              </hl7:pertinentInformation3>
+            </hl7:careProvisionEvent>
+          </hl7:subject2>
+        </hl7:registrationEvent>
+      </hl7:subject>
+      <hl7:queryAck>
+        <hl7:queryId extension="20090920011010.005"/>
+        <hl7:statusCode code="deliveredResponse"/>
+        <hl7:queryResponseCode code="OK"/>
+        <hl7:resultTotalQuantity value="2"/>
+      </hl7:queryAck>
+    </hl7:controlActProcess>
+  </hl7:response>
+</hl7:CareRecord_QUPC_IN043200UV01Message>

@@ -1,0 +1,162 @@
+package gov.hhs.fha.nhinc.kmr;
+
+global gov.hhs.fha.nhinc.kmr.TaskManagerHelper tmHelper;
+
+import gov.hhs.fha.nhinc.alertpayload.Action;
+import gov.hhs.fha.nhinc.alertpayload.ActionParam;
+import gov.hhs.fha.nhinc.alertpayload.PayloadMeta;
+import gov.hhs.fha.nhinc.alertpayload.Recommendation;
+import gov.hhs.fha.nhinc.common.task.ContactDetails;
+import gov.hhs.fha.nhinc.common.task.DestinationContext;
+import gov.hhs.fha.nhinc.common.task.RuleContext;
+import gov.hhs.fha.nhinc.adapter.fact.FactType;
+import gov.hhs.fha.nhinc.adapter.fact.MedicationFactType;
+import gov.hhs.fha.nhinc.adapter.fact.ProblemFactType;
+import gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair;
+import gov.hhs.fha.nhinc.kmr.InclusionTable;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PatientCohort;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PopulationRegistriesType;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PopulationType;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PreferencesType;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PreferenceType;
+import gov.hhs.fha.nhinc.kmr.TaskManagerHelper;
+
+rule "UC#11.3: Diabetes Inclusion Med"
+    when
+        fact: MedicationFactType(name: freeTextProductName,
+        						 freeTextProductName != null,
+								 historical==false)
+        cohort: PatientCohort(pops: populationRegistries.populations,
+        					  populationRegistries != null, populationRegistries.populations != null)
+        table: InclusionTable(domain=="medications",
+        					  inclusionType=="diabetes",
+        					  codes: codes)
+        not( PopulationType ( code == "1", status==true ) from pops )
+        exists( CodeLabelPair ( label == name ) from codes )
+    then
+        System.out.println("UC#11.3: Diabetes Inclusion Med for " + tmHelper.getPatientName() + " Medication: " + fact.getFreeTextProductName());
+end
+
+rule "UC#11.4a: Diabetes Med with diagnostic exclusions"
+    when
+        inclusionTable: InclusionTable(domain=="medications",
+        							   inclusionType=="diabetes",
+        							   meds: codes)
+        exclusionTable: InclusionTable(domain=="problems",
+        							   inclusionType=="insulin resistance",
+        							   problems: codes)
+        newFact: MedicationFactType(name: freeTextProductName,
+        						 freeTextProductName != null,
+								 historical==false)
+        cohort: PatientCohort(pcm: primaryCareManagerId, pops: populationRegistries.populations,
+        					  populationRegistries != null, populationRegistries.populations != null)
+        exists( CodeLabelPair ( label == name ) from meds )
+        not( PopulationType ( code == "1", status==true ) from pops )
+        not( ProblemFactType(histProblemCode: codedProblem.code, historical==true) and
+			 CodeLabelPair ( code == histProblemCode ) from problems )
+    then
+        System.out.println("UC#11.4a: Diabetes Med with diagnostic exclusions for " + tmHelper.getPatientName() + " Medication: " + newFact.getFreeTextProductName());
+end
+
+rule "UC#11.4b: Diabetes Med with diagnostic exclusions"
+    when
+        inclusionTable: InclusionTable(domain=="medications",
+        							   inclusionType=="diabetes",
+        							   meds: codes)
+        exclusionTable1: InclusionTable(domain=="problems",
+        							   inclusionType=="pcos",
+        							   problems1: codes)
+        exclusionTable2: InclusionTable(domain=="problems",
+        							   inclusionType=="gestational diabetes",
+        							   problems2: codes)
+        newFact: MedicationFactType(name: freeTextProductName,
+        						 freeTextProductName != null,
+								 historical==false)
+        cohort: PatientCohort(pcm: primaryCareManagerId, pops: populationRegistries.populations,
+        					  populationRegistries != null, populationRegistries.populations != null)
+        exists( CodeLabelPair ( label == name ) from meds )
+        not( PopulationType ( code == "1", status==true ) from pops )
+        not( ProblemFactType(histProblemCode: codedProblem.code, historical==true) and
+			 ( CodeLabelPair ( code == histProblemCode ) from problems1 or
+			   CodeLabelPair ( code == histProblemCode ) from problems2 ) )
+    then
+        System.out.println("UC#11.4b: Diabetes Med with diagnostic exclusions for " + tmHelper.getPatientName() + " Medication: " + newFact.getFreeTextProductName());
+end
+
+rule "UC#11.5a: Metformin without insulin resistance"
+    when
+        inclusionTable: InclusionTable(domain=="medications",
+        							   inclusionType=="metformin",
+        							   meds: codes)
+        exclusionTable: InclusionTable(domain=="problems",
+        							   inclusionType=="insulin resistance",
+        							   problems: codes)
+        newFact: MedicationFactType(name: freeTextProductName,
+        						 freeTextProductName != null,
+								 historical==false)
+        cohort: PatientCohort(pcm: primaryCareManagerId, pops: populationRegistries.populations,
+        					  populationRegistries != null, populationRegistries.populations != null)
+        exists( CodeLabelPair ( label == name ) from meds )
+        not( PopulationType ( code == "1", status==true ) from pops )
+        not( ProblemFactType(histProblemCode: codedProblem.code, historical==true) and
+			 CodeLabelPair ( code == histProblemCode ) from problems )
+    then
+        System.out.println("UC#11.5a: Metformin without insulin resistance for " + tmHelper.getPatientName() + " Medication: " + newFact.getFreeTextProductName());
+        DestinationContext destination = new DestinationContext();
+        ContactDetails contact = new ContactDetails();
+        contact.setProvider(pcm);
+        destination.getProviders().add(contact);
+        Recommendation recommendation = new Recommendation();
+        recommendation.setBody("<html>UC#11.5a: Metformin without insulin resistance for " + tmHelper.getPatientName() + "<br>Medication: " + newFact.getFreeTextProductName() + "</html>");
+        PayloadMeta meta = new PayloadMeta();
+        meta.setType("MedAlert");
+        recommendation.setMetadata(meta);
+        Action action = new Action();
+        action.setActionId("aid1");
+        action.setName("Accept");
+        recommendation.getActions().add(action);
+        //tmHelper.registerPersonDisease("1");
+        //tmHelper.sendAlert("UC#11.5a: Metformin without insulin resistance", "Critical", destination, recommendation, null);
+end
+
+rule "UC#11.5b: Diabetes Med other than Metformin"
+    when
+        inclusionTable: InclusionTable(domain=="medications",
+        							   inclusionType=="diabetes",
+        							   incMeds: codes)
+        exclusionTable: InclusionTable(domain=="medications",
+        							   inclusionType=="metformin",
+        							   exMeds: codes)
+        newFact: MedicationFactType(name: freeTextProductName,
+        						 freeTextProductName != null,
+								 historical==false)
+        cohort: PatientCohort(pcm: primaryCareManagerId, pops: populationRegistries.populations,
+        					  populationRegistries != null, populationRegistries.populations != null)
+        exists( CodeLabelPair ( label == name ) from incMeds )
+        not( CodeLabelPair ( label == name ) from exMeds )
+        not( PopulationType ( code == "1", status==true ) from pops )
+    then
+        System.out.println("UC#11.5b: Diabetes Med other than Metformin for " + tmHelper.getPatientName() + " Medication: " + newFact.getFreeTextProductName());
+        DestinationContext destination = new DestinationContext();
+        ContactDetails contact = new ContactDetails();
+        contact.setProvider(pcm);
+        destination.getProviders().add(contact);
+        Recommendation recommendation = new Recommendation();
+        recommendation.setBody("<html>UC#11.5b: Diabetes Med other than Metformin for " + tmHelper.getPatientName() + "<br>Medication: " + newFact.getFreeTextProductName() + "</html>");
+        PayloadMeta meta = new PayloadMeta();
+        meta.setType("MedAlert");
+        recommendation.setMetadata(meta);
+        Action action = new Action();
+        action.setActionId("aid1");
+        action.setName("Accept");
+        recommendation.getActions().add(action);
+        //tmHelper.registerPersonDisease("1");
+        //tmHelper.sendAlert("UC#11.5b: Diabetes Med other than Metformin", "Critical", destination, recommendation, null);
+end
+
+rule "Medication"
+    when
+        $fact: MedicationFactType(name: freeTextProductName, freeTextProductName != null, historical==false)
+    then
+        System.out.println("Medication fact received for " + tmHelper.getPatientName() + " : " + name);
+end

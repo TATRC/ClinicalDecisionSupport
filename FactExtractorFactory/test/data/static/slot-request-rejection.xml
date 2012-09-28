@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hl7:SlotResponse_Message xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+  <hl7:SlotRejection_PRSC_IN030103UVMessage>
+    <hl7:message>
+      <hl7:id extension="8e42bb26-831a-46c9-8345-b361b5624cd7"/>
+      <hl7:creationTime value="20100519184407-0700"/>
+      <hl7:interactionId extension="PRSC_IN030102UV"/>
+      <hl7:processingCode code="R"/>
+      <hl7:processingModeCode/>
+      <hl7:acceptAckCode code="NE"/>
+      <hl7:receiver typeCode="RCV">
+        <hl7:device determinerCode="INSTANCE" classCode="DEV">
+          <hl7:id extension="Common Data Layer Service"/>
+        </hl7:device>
+      </hl7:receiver>
+      <hl7:sender typeCode="SND">
+        <hl7:device determinerCode="INSTANCE" classCode="DEV">
+          <hl7:id extension="Adapter Assembly Service"/>
+        </hl7:device>
+      </hl7:sender>
+      <hl7:controlActProcess classCode="CACT" moodCode="EVN">
+        <hl7:id extension="8e42bb26-831a-46c9-8345-b361b562ecd2"/>
+        <hl7:code code="PRSC_TE030200UV"/>
+        <hl7:subject typeCode="SUBJ">
+          <hl7:appointmentRequest classCode="ACT" moodCode="ARQ">
+            <hl7:id extension="6858a017-39c1-4153-bbd4-eaedac72a0e7"/>
+            <hl7:subject typeCode="SBJ">
+              <hl7:patient classCode="PAT">
+                <hl7:id/>
+                <hl7:patientPerson classCode="PSN">
+                  <hl7:id extension="PAT123" root="2.16.840.1.113883.3.200"/>
+                  <hl7:name use="L">
+                    <hl7:family>Stanton</hl7:family>
+                    <hl7:given>John</hl7:given>
+                  </hl7:name>
+                </hl7:patientPerson>
+              </hl7:patient>
+            </hl7:subject>
+            <hl7:reference typeCode="REFR">
+              <hl7:schedule classCode="ACT" moodCode="SLOT">
+                <hl7:id extension="schedule-id"/>
+                <hl7:component typeCode="COMP">
+                  <hl7:resourceSlot classCode="ACT" moodCode="SLOT">
+												<!-- Unique identifier of the appointment slot -->
+                    <hl7:id extension="slot-id"/>
+												<!-- Appointment type -->
+                    <hl7:code code="EST" displayName="ESTABLISHED/FOLLOW UP APPT" codeSystem="2.16.840.1.113883.3.200" codeSystemName="ICDB"/>
+												<!-- The current status of this slot -->
+                    <hl7:statusCode code="Held"/>
+												<!-- The time frame of this slot -->
+                    <hl7:effectiveTime value="20100812093000"/>
+                    <hl7:effectiveTime value="20100812100000"/>
+                  </hl7:resourceSlot>
+                </hl7:component>
+              </hl7:schedule>
+            </hl7:reference>
+          </hl7:appointmentRequest>
+        </hl7:subject>
+        <hl7:reasonOf typeCode="DIAG">
+          <hl7:detectedIssueEvent classCode="ALRT" moodCode="EVN">
+            <hl7:code code="BLK" displayName="Unexpected Block (of Schedule)" codeSystem="2.16.840.1.113883.1.11.20345" codeSystemName="SchedulingActReasonCode"/>
+            <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD_explicit" nullFlavor="UNK">
+              <hl7:originalText>Slot reserved for Diabetes patient only</hl7:originalText>
+            </hl7:value>
+          </hl7:detectedIssueEvent>
+        </hl7:reasonOf>
+      </hl7:controlActProcess>
+    </hl7:message>
+  </hl7:SlotRejection_PRSC_IN030103UVMessage>
+</hl7:SlotResponse_Message>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 6, 2010 5:46:31 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="org.socraticgrid.wexcleanup.freebase.dao.TemplateCalls" schema="public" table="template_calls">
+    <id name="id" type="long">
+      <column name="id"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="articleWpid" type="int">
+      <column name="article_wpid" not-null="true"/>
+    </property>
+    <property name="sectionId" type="java.lang.Long">
+      <column name="section_id"/>
+    </property>
+    <property name="templateArticleName" type="string">
+      <column name="template_article_name" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

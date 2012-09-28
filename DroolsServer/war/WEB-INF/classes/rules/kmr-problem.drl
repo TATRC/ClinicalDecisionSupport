@@ -1,0 +1,193 @@
+package gov.hhs.fha.nhinc.kmr;
+
+global gov.hhs.fha.nhinc.kmr.TaskManagerHelper tmHelper;
+
+import gov.hhs.fha.nhinc.alertpayload.Action;
+import gov.hhs.fha.nhinc.alertpayload.ActionParam;
+import gov.hhs.fha.nhinc.alertpayload.PayloadMeta;
+import gov.hhs.fha.nhinc.alertpayload.Recommendation;
+import gov.hhs.fha.nhinc.common.task.ContactDetails;
+import gov.hhs.fha.nhinc.common.task.DestinationContext;
+import gov.hhs.fha.nhinc.common.task.RuleContext;
+import gov.hhs.fha.nhinc.adapter.fact.FactType;
+import gov.hhs.fha.nhinc.adapter.fact.ProblemFactType;
+import gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair;
+import gov.hhs.fha.nhinc.kmr.InclusionTable;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PatientCohort;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PopulationRegistriesType;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PopulationType;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PreferencesType;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PreferenceType;
+import gov.hhs.fha.nhinc.kmr.TaskManagerHelper;
+
+rule "UC#11.1: Diabetic Inclusion Diagnosis"
+    when
+        newFact: ProblemFactType(newProblemCode: codedProblem.code,
+        						 codedProblem != null, codedProblem.code != null,
+								 historical==false)
+        histFact: ProblemFactType(histProblemCode: codedProblem.code,
+        						  codedProblem.code != newProblemCode,
+								  codedProblem != null, codedProblem.code != null,
+        						  historical==true)
+        cohort: PatientCohort(pops: populationRegistries.populations,
+        					  populationRegistries != null, populationRegistries.populations != null)
+        table: InclusionTable(domain=="problems",
+        					  inclusionType=="diabetes",
+        					  codes: codes)
+        not( PopulationType ( code == "1", status==true ) from pops )
+        exists( CodeLabelPair ( code == newProblemCode ) from codes )
+        exists( CodeLabelPair ( code == histProblemCode ) from codes )
+    then
+        System.out.println("UC#11.1: Diabetic Inclusion Diagnosis for " + tmHelper.getPatientName() + " Diagnosis: " + newFact.getCodedProblem().getLabel());
+end
+
+rule "UC#11.2: Diabetic Inclusion Diagnosis"
+    when
+        newFact: ProblemFactType(newProblemCode: codedProblem.code,
+        						 codedProblem != null, codedProblem.code != null,
+								 historical==false)
+        histFact: ProblemFactType(histProblemCode: codedProblem.code,
+        						  codedProblem.code != newProblemCode,
+								  codedProblem != null, codedProblem.code != null,
+        						  historical==true)
+        cohort: PatientCohort(pcm: primaryCareManagerId, 
+        					  pops: populationRegistries.populations,
+        					  admissionStatus == "Inpatient",
+        					  populationRegistries != null, populationRegistries.populations != null)
+        table: InclusionTable(domain=="problems",
+        					  inclusionType=="diabetes",
+        					  codes: codes)
+        not( PopulationType ( code == "1", status==true ) from pops )
+        exists( CodeLabelPair ( code == newProblemCode ) from codes )
+        exists( CodeLabelPair ( code == histProblemCode ) from codes )
+    then
+        System.out.println("UC#11.2: Diabetic Inclusion Diagnosis for " + tmHelper.getPatientName() + " Diagnosis: " + newFact.getCodedProblem().getLabel());
+        DestinationContext destination = new DestinationContext();
+        ContactDetails contact = new ContactDetails();
+        contact.setProvider(pcm);
+        destination.getProviders().add(contact);
+        Recommendation recommendation = new Recommendation();
+        recommendation.setBody("<html>UC#11.2: Diabetic Inclusion Diagnosis for " + tmHelper.getPatientName() + "<br>Diagnosis: " + newFact.getCodedProblem().getLabel() + "</html>");
+        PayloadMeta meta = new PayloadMeta();
+        meta.setType("MedAlert");
+        recommendation.setMetadata(meta);
+        Action action = new Action();
+        action.setActionId("aid1");
+        action.setName("Accept");
+        recommendation.getActions().add(action);
+        //tmHelper.registerPersonDisease("1");
+        //tmHelper.sendAlert("UC#11.2: Diabetic Inclusion Med", "Critical", destination, recommendation, null);
+end
+
+rule "UC#16: Pregnant child"
+    when
+        newFact: ProblemFactType(newProblemCode: codedProblem.code,
+        						 codedProblem != null, codedProblem.code != null,
+								 historical==false)
+        table: InclusionTable(domain=="problems",
+        					  inclusionType=="pregnancy",
+        					  codes: codes)
+        cohort: PatientCohort(pops: populationRegistries.populations,
+        					  pcm: primaryCareManagerId,
+        					  ageClassification == "Child",
+        					  populationRegistries != null, populationRegistries.populations != null)
+        not( PopulationType ( code == "6", status==true ) from pops )
+        exists( CodeLabelPair ( code == newProblemCode ) from codes )
+    then
+        System.out.println("UC#16: Pregnant child: " + tmHelper.getPatientName() + " Diagnosis: " + newFact.getCodedProblem().getLabel());
+        DestinationContext destination = new DestinationContext();
+        ContactDetails contact = new ContactDetails();
+        contact.setProvider(pcm);
+        destination.getProviders().add(contact);
+        Recommendation recommendation = new Recommendation();
+        recommendation.setBody("<html>UC#16: Pregnant child: " + tmHelper.getPatientName() + "<br>Diagnosis: " + newFact.getCodedProblem().getLabel() + "</html>");
+        PayloadMeta meta = new PayloadMeta();
+        meta.setType("MedAlert");
+        recommendation.setMetadata(meta);
+        Action action = new Action();
+        action.setActionId("aid1");
+        action.setName("Accept");
+        recommendation.getActions().add(action);
+        //tmHelper.sendAlert("UC#16: Pregnant child", "Critical", destination, recommendation, null);
+end
+
+rule "UC#17: Pregnant unemancipated minor"
+    when
+        newFact: ProblemFactType(newProblemCode: codedProblem.code,
+        						 codedProblem != null, codedProblem.code != null,
+								 historical==false)
+        table: InclusionTable(domain=="problems",
+        					  inclusionType=="pregnancy",
+        					  codes: codes)
+        cohort: PatientCohort(pops: populationRegistries.populations,
+        					  pcm: primaryCareManagerId,
+        					  ageClassification == "Adolescent",
+        					  populationRegistries != null, populationRegistries.populations != null)
+        not( PopulationType ( code == "6", status==true ) from pops )
+        exists( CodeLabelPair ( code == newProblemCode ) from codes )
+    then
+        System.out.println("UC#17: Pregnant unemancipated minor: " + tmHelper.getPatientName() + " Diagnosis: " + newFact.getCodedProblem().getLabel());
+        DestinationContext destination = new DestinationContext();
+        ContactDetails contact = new ContactDetails();
+        contact.setProvider(pcm);
+        destination.getProviders().add(contact);
+        Recommendation recommendation = new Recommendation();
+        recommendation.setBody("<html>UC#17: Pregnant unemancipated minor: " + tmHelper.getPatientName() + "<br>Diagnosis: " + newFact.getCodedProblem().getLabel() + "</html>");
+        PayloadMeta meta = new PayloadMeta();
+        meta.setType("MedAlert");
+        recommendation.setMetadata(meta);
+        Action action = new Action();
+        action.setActionId("aid1");
+        action.setName("Accept");
+        recommendation.getActions().add(action);
+        //tmHelper.sendAlert("UC#17: Pregnant unemancipated minor", "Critical", destination, recommendation, null);
+end
+
+rule "UC#18: Pregnant emancipated minor"
+    when
+        newFact: ProblemFactType(problemCode: codedProblem.code,
+        						 codedProblem != null, codedProblem.code != null,
+								 historical==false)
+        table: InclusionTable(domain=="problems",
+        					  inclusionType=="pregnancy",
+        					  codes: codes)
+        cohort: PatientCohort(pops: populationRegistries.populations,
+        					  pcm: primaryCareManagerId,
+        					  ageClassification == "Adolescent",
+        					  populationRegistries != null, populationRegistries.populations != null)
+        exists( PopulationType ( code == "6", status==true ) from pops )
+        exists( CodeLabelPair ( code == problemCode ) from codes )
+    then
+        System.out.println("UC#18: Pregnant emancipated minor: " + tmHelper.getPatientName() + " Diagnosis: " + newFact.getCodedProblem().getLabel());
+        DestinationContext destination = new DestinationContext();
+        ContactDetails contact = new ContactDetails();
+        contact.setProvider(pcm);
+        destination.getProviders().add(contact);
+        Recommendation recommendation = new Recommendation();
+        recommendation.setBody("<html>UC#18: Pregnant emancipated minor: " + tmHelper.getPatientName() + "<br>Diagnosis: " + newFact.getCodedProblem().getLabel() + "</html>");
+        PayloadMeta meta = new PayloadMeta();
+        meta.setType("MedAlert");
+        recommendation.setMetadata(meta);
+        Action action = new Action();
+        action.setActionId("aid1");
+        action.setName("Accept");
+        recommendation.getActions().add(action);
+        //tmHelper.sendAlert("UC#18: Pregnant emancipated minor", "Critical", destination, recommendation, null);
+        //tmHelper.sendAlert("UC#18: Pregnant emancipated minor", "Critical", null, recommendation, null);
+end
+
+rule "Coded Problem"
+    when
+        $fact: ProblemFactType(codedProblem != null, codedProblem.code != null,
+        			problemCode: codedProblem.code, problemLabel: codedProblem.label)
+    then
+        System.out.println("Problem fact received for " + tmHelper.getPatientName() + " : " + problemCode + ", " + problemLabel);
+end
+
+rule "Freetext Problem"
+    when
+        $fact: ProblemFactType(freeTextProblem != null, codedProblem == null,
+        			problemText: freeTextProblem, historical==false)
+    then
+        System.out.println("Problem fact received for " + tmHelper.getPatientName() + " : " + problemText);
+end

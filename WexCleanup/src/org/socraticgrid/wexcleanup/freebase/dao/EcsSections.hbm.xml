@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 6, 2010 5:46:31 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="org.socraticgrid.wexcleanup.freebase.dao.EcsSections" schema="public" table="ecs_sections">
+    <id name="id" type="long">
+      <column name="id"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="parentId" type="java.lang.Long">
+      <column name="parent_id"/>
+    </property>
+    <property name="ordinal" type="short">
+      <column name="ordinal" not-null="true"/>
+    </property>
+    <property name="articleWpid" type="int">
+      <column name="article_wpid" not-null="true"/>
+    </property>
+    <property name="name" type="string">
+      <column name="name" not-null="true"/>
+    </property>
+    <property name="xml" type="string">
+      <column name="xml"/>
+    </property>
+    <property name="disable" type="java.lang.Boolean">
+      <column name="disable"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,142 @@
+body1 {
+	font-family:'Times New Roman';
+	font-size:14px
+}
+
+.highlight {
+	background-color: #ffff99;
+}
+.highlightoperator{
+	background-color: #ffdddd;
+}
+.highlightnegative{
+	background-color: #ffdddd;
+}
+.highlightuncertain{
+	background-color: #ffddff;
+}
+.highlightred{
+	background-color: #ffff99;
+	color:red;
+}
+
+.big { 
+	font-family:Arial; 
+	font-size:12pt; 
+	font-weight:bold 
+}
+.little { 
+	font-family:Arial; 
+	font-size:8pt; 
+	font-weight:normal 
+}
+
+a { 
+	color:blue
+}
+a:hover { 
+	background-color: #ffffcc 
+}
+a:visited { 
+	color:blue
+}
+a.shown { 
+	color:black
+}
+a.shown:hover { 
+	background-color: silver 
+}
+		
+.banner-navtop {
+	color : #333333;
+	border-right : 1px solid #999999;
+	padding : 0 8px 0 2px;
+	font : normal 8pt verdana, sans-serif; 
+}
+
+a.banner-navbot, a.banner-navbot:visited {
+	color : #ffffff;
+	background : transparent url(/common/images/bar-divider-rst.gif) repeat-y center right;
+	padding : 0 8px 0 8px;
+	border-right : 1px solid #999999;
+	font : bold 8pt verdana, sans-serif; 
+	text-decoration : none;
+}
+a.banner-navbot:hover, a.banner-navbot:active {
+	text-decoration : underline;
+}
+		
+sub {
+	background-color: #ffb9b9; 
+	color: #563d52; 
+	text-decoration: none; 
+	font-weight: bold; 
+	font-size: 6pt; 
+	cursor: default; 
+}
+
+.posconcept { 
+	background-color: white; 
+	font-weight:bold 
+}
+.negconcept { 
+	background-color: white; 
+	font-weight:bold; 
+	color:red 
+}
+.uncrtconcept { 
+	background-color: white; 
+	font-weight:bold; 
+	color:green 
+}
+.negconceptOld{ 
+	background-color: #ffe0e0; 
+	font-weight:bold 
+}
+.negconceptOld1{ 
+	background-color: #ffe0f0; 
+	font-weight:bold 
+}
+.uncrtconceptold{ 
+	background-color: #ffffe0; 
+	font-weight:bold 
+}
+
+.operator{ 
+	background-color: #ffff99; 
+	color: #dd0000;
+	text-decoration: none;
+	font-weight: normal;
+}
+.negoperator{ 
+	background-color: #ffff99;
+	color: #dd0000;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+.wordsign{ 
+	text-decoration: none;
+	font-weight: normal;
+	color:black
+}
+
+.darkTable {
+	background-color:#bfbfbf; 
+	font-weight:bold 
+}
+.lightTable {
+	background-color:#e6e6e6; 
+	font-weight:bold 
+}
+
+#dhtmltooltip{
+position: absolute;
+width: 200px;
+border: 1px solid gray;
+padding: 4px;
+background-color: lightyellow;
+visibility: hidden;
+z-index: 100;
+filter: progid:DXImageTransform.Microsoft.Shadow(color=silver,direction=135);
+}

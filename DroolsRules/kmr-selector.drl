@@ -1,0 +1,70 @@
+package gov.hhs.fha.nhinc.kmr;
+
+global String dssURL;
+global gov.hhs.fha.nhinc.kmr.DSSHelper dssHelper;
+
+import gov.hhs.fha.nhinc.adapter.fact.FactType;
+import gov.hhs.fha.nhinc.adapter.fact.NameFactType;
+import gov.hhs.fha.nhinc.adapter.fact.PersonFactType;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PatientCohort;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PopulationRegistriesType;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PopulationType;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PreferencesType;
+import gov.hhs.fha.nhinc.kmr.patientcohort.PreferenceType;
+import gov.hhs.fha.nhinc.kmr.DSSHelper;
+import gov.hhs.fha.nhinc.kmr.dss.KnowledgeSession;
+
+rule "Person"
+    when
+        $fact: PersonFactType(historical==false, $name: legalName, $gender: gender)
+    then
+        System.out.println("Demographic fact received - primaryKey: " + $fact.getPrimaryKey() + " Name: " + $name.getFirstName() + " " + $name.getFamilyName() + " Gender: " + $gender.getLabel());
+        KnowledgeSession session = new KnowledgeSession();
+        session.setPatientId($fact.getPrimaryKey());
+        session.setSessionId("ks"+$fact.getPrimaryKey());
+        System.out.println("KnowledgeSession class set with patient ID: " + session.getPatientId() + " and session ID: " + session.getSessionId());
+        if (kcontext.getKnowledgeRuntime().getGlobal("dssHelper") != null)
+        {
+            System.out.println("DSSHelper already instantiated.");
+            dssHelper.initSession(session);
+        }
+        else
+        {
+            //drools.getKnowledgeRuntime().addEventListener( new KMRAgendaEventListener() );
+            //drools.getKnowledgeRuntime().addEventListener( new KMRWorkingMemoryEventListener() );
+            DSSHelper myHelper = new gov.hhs.fha.nhinc.kmr.DSSHelper(dssURL);
+            System.out.println("DSSHelper instantiated with " + dssURL);
+            kcontext.getKnowledgeRuntime().setGlobal("dssHelper",  myHelper);
+
+            myHelper.initSession(session);
+        }
+end
+
+rule "PatientCohort"
+    when
+        $fact: PatientCohort($patientId: patientId, $preferences: preferences, $registries: populationRegistries)
+    then
+        System.out.println("PatientCohort fact received - patientId: " + $patientId);
+        System.out.println("Age classification: " + $fact.getAgeClassification());
+        System.out.println("Gender: " + $fact.getGender());
+        System.out.println("Preferences: " + $preferences.getPreferences().size());
+        System.out.println("Registries: " + $registries.getPopulations().size());
+        KnowledgeSession session = new KnowledgeSession();
+        session.setPatientId($patientId);
+        System.out.println("KnowledgeSession class set with patient ID: " + session.getPatientId());
+        if (kcontext.getKnowledgeRuntime().getGlobal("dssHelper") != null)
+        {
+            System.out.println("DSSHelper already instantiated.");
+            dssHelper.initSession(session);
+        }
+        else
+        {
+            //drools.getKnowledgeRuntime().addEventListener( new KMRAgendaEventListener() );
+            //drools.getKnowledgeRuntime().addEventListener( new KMRWorkingMemoryEventListener() );
+            DSSHelper myHelper = new gov.hhs.fha.nhinc.kmr.DSSHelper(dssURL);
+            System.out.println("DSSHelper instantiated with " + dssURL);
+            kcontext.getKnowledgeRuntime().setGlobal("dssHelper",  myHelper);
+            System.out.println("Global variable dssHelper has been set: "+kcontext.getKnowledgeRuntime().getGlobal("dssHelper"));
+            myHelper.initSession(session);
+        }
+end

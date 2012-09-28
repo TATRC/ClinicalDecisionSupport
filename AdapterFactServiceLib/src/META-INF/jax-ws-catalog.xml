@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/E:/Workspaces/Netbeans6.7.1/NHINC/Current/Product/Production/Adapters/Framework/Interfaces/src/wsdl/AdapterFactsService.wsdl" uri="wsdl/AdapterFactsService.wsdl"/>
+    <system systemId="file:/E:/Workspaces/Netbeans6.7.1/NHINC/Current/Product/Production/Adapters/Framework/Interfaces/src/schemas/nhinc/common/CommonDataLayerFact.xsd" uri="xml-resources/web-service-references/AdapterFactsService/schemas/nhinc/common/CommonDataLayerFact.xsd"/>
+    <system systemId="file:/E:/Workspaces/Netbeans6.7.1/NHINC/Current/Product/Production/Adapters/Framework/Interfaces/src/schemas/nhinc/common/CommonDataLayerFactTypes.xsd" uri="xml-resources/web-service-references/AdapterFactsService/schemas/nhinc/common/CommonDataLayerFactTypes.xsd"/>
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/AdapterFactsService.wsdl" uri="wsdl/AdapterFactsService.wsdl"/>
+</catalog>
+
+
+

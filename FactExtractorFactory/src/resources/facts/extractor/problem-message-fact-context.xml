@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+  <bean id="problem.extractor" class="gov.hhs.fha.nhinc.adapter.fact.extractor.ProblemEventsFactExtractor" scope="prototype">
+    <constructor-arg ref="Xpath"/>
+    <property name="factClassName" value="gov.hhs.fha.nhinc.adapter.fact.ProblemFactType"/>
+    <property name="eventsCountXpath" value="count(//hl7:careProvisionEvent/hl7:pertinentInformation3)"/>
+    <property name="factIndexCharset" value="#event#"/>
+    <property name="factBaseXpath" value="//hl7:careProvisionEvent/hl7:pertinentInformation3[#event#]"/>
+    <property name="factProperties">
+      <map>
+        <entry key="SourceSystem">
+          <ref bean="carerecord.SourceSystem"/>
+        </entry>
+        <entry key="Id">
+          <ref bean="problem.Id"/>
+        </entry>
+        <entry key="PatientId">
+          <ref bean="problem.PatientId"/>
+        </entry>
+        <entry key="ProblemDate">
+          <ref bean="problem.ProblemDate"/>
+        </entry>
+        <entry key="ResolutionDate">
+          <ref bean="problem.ResolutionDate"/>
+        </entry>
+        <entry key="ProblemType">
+          <ref bean="problem.ProblemType"/>
+        </entry>
+        <entry key="FreeTextProblem">
+          <ref bean="problem.FreeTextProblem"/>
+        </entry>
+        <entry key="CodedProblem">
+          <ref bean="problem.CodedProblem"/>
+        </entry>
+        <entry key="CodedProblemStatus">
+          <ref bean="problem.CodedProblemStatus"/>
+        </entry>
+            <!--
+            <entry key="DiagnosisPriority">
+               <ref bean="fact.property.diagnosispriority"/>
+            </entry>
+            <entry key="OnsetAge">
+               <ref bean="fact.property.onsetage"/>
+            </entry>
+            -->
+        <entry key="TreatingProvider">
+          <ref bean="problem.TreatingProvider"/>
+        </entry>
+            <!--
+            <entry key="CauseOfDeath">
+               <ref bean="fact.property.causeofdeath"/>
+            </entry>
+            <entry key="AgeAtDeath">
+               <ref bean="fact.property.ageatdeath"/>
+            </entry>
+            -->
+      </map>
+    </property>
+  </bean>
+
+  <bean id="problem.Id" class="gov.hhs.fha.nhinc.adapter.fact.def.ValueTypeListPropertyDefinition">
+    <property name="propertyName" value="Id"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueType"/>
+    <property name="valueXpath" value="hl7:observation/hl7:id[#id#]/@extension"/>
+    <property name="codeSystemXpath" value="hl7:observation/hl7:id[#id#]/@root"/>
+    <property name="codeSystemNameXpath" value="hl7:observation/hl7:id[#id#]/@assigningAuthorityName"/>
+    <property name="indexRef" value="#id#"/>
+    <property name="listSizeXpath" value="count(hl7:observation/hl7:id)"/>
+  </bean>
+
+  <bean id="problem.PatientId" class="gov.hhs.fha.nhinc.adapter.fact.def.ValueTypePropertyDefinition">
+    <property name="propertyName" value="PatientId"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueType"/>
+    <property name="valueXpath" value="//hl7:recordTarget/hl7:patient/hl7:id/@extension"/>
+    <property name="codeSystemXpath" value="//hl7:recordTarget/hl7:patient/hl7:id/@root"/>
+    <property name="codeSystemNameXpath" value="//hl7:recordTarget/hl7:patient/hl7:id/@assigningAuthorityName"/>
+  </bean>
+   
+  <bean id="problem.ProblemDate" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="ProblemDate"/>
+    <property name="propertyClassName" value="java.util.Date"/>
+    <property name="propertyXpath" value="hl7:observation/hl7:effectiveTime[1]/@value"/>
+  </bean>
+
+  <bean id="problem.ResolutionDate" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="ResolutionDate"/>
+    <property name="propertyClassName" value="java.util.Date"/>
+    <property name="propertyXpath" value="hl7:observation/hl7:effectiveTime[2]/@value"/>
+  </bean>
+
+  <bean id="problem.FreeTextProblem" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FreeTextProblem"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:observation/hl7:text"/>
+  </bean>
+
+  <bean id="problem.ProblemType" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="ProblemType"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:observation/hl7:code/@code"/>
+    <property name="labelXpath" value="hl7:observation/hl7:code/@displayName"/>
+    <property name="codeSystemXpath" value="hl7:observation/hl7:code/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="hl7:observation/hl7:code/@codeSystemName"/>
+  </bean>
+
+  <bean id="problem.CodedProblem" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="CodedProblem"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:observation/hl7:value/@code"/>
+    <property name="labelXpath" value="hl7:observation/hl7:value/@displayName"/>
+    <property name="codeSystemXpath" value="hl7:observation/hl7:value/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="hl7:observation/hl7:value/@codeSystemName"/>
+  </bean>
+
+  <bean id="problem.CodedProblemStatus" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="CodedProblemStatus"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="propertyXpath" value="hl7:observation/hl7:statusCode/@code"/>
+    <property name="codeXpath" value="hl7:observation/hl7:statusCode/@code"/>
+    <property name="labelXpath" value="hl7:observation/hl7:statusCode/@displayName"/>
+  </bean>
+
+  <bean id="problem.TreatingProvider" class="gov.hhs.fha.nhinc.adapter.fact.def.ComplexListPropertyDefinition">
+    <property name="propertyName" value="TreatingProvider"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.NameFactType"/>
+    <property name="listSizeXpath"
+                value="count(hl7:observation/hl7:performer)"/>
+    <property name="indexRef" value="#prov#"/>
+    <property name="objectProperties">
+      <map>
+        <entry key="NameType">
+          <ref bean="problem.TreatingProvider.NameType"/>
+        </entry>
+        <entry key="FamilyName">
+          <ref bean="problem.TreatingProvider.FamilyName"/>
+        </entry>
+        <entry key="FirstName">
+          <ref bean="problem.TreatingProvider.FirstName"/>
+        </entry>
+        <entry key="MiddleName">
+          <ref bean="problem.TreatingProvider.MiddleName"/>
+        </entry>
+        <entry key="Prefix">
+          <ref bean="problem.TreatingProvider.Prefix"/>
+        </entry>
+        <entry key="Suffix">
+          <ref bean="problem.TreatingProvider.Suffix"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="problem.TreatingProvider.NameType" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="NameType"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:observation/hl7:performer[#prov#]/hl7:assignedEntity1/hl7:assignedPerson/hl7:name/@use"/>
+  </bean>
+
+  <bean id="problem.TreatingProvider.FamilyName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FamilyName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:observation/hl7:performer[#prov#]/hl7:assignedEntity1/hl7:assignedPerson/hl7:name/hl7:family/text()"/>
+  </bean>
+
+  <bean id="problem.TreatingProvider.FirstName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FirstName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:observation/hl7:performer[#prov#]/hl7:assignedEntity1/hl7:assignedPerson/hl7:name/hl7:given[1]/text()"/>
+  </bean>
+
+  <bean id="problem.TreatingProvider.MiddleName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="MiddleName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:observation/hl7:performer[#prov#]/hl7:assignedEntity1/hl7:assignedPerson/hl7:name/hl7:given[2]/text()"/>
+  </bean>
+
+  <bean id="problem.TreatingProvider.Prefix" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="Prefix"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:observation/hl7:performer[#prov#]/hl7:assignedEntity1/hl7:assignedPerson/hl7:name/hl7:prefix"/>
+  </bean>
+
+  <bean id="problem.TreatingProvider.Suffix" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="Suffix"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:observation/hl7:performer[#prov#]/hl7:assignedEntity1/hl7:assignedPerson/hl7:name/hl7:suffix"/>
+  </bean>
+
+</beans>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+  <bean id="imagingresult.extractor" class="gov.hhs.fha.nhinc.adapter.fact.extractor.ResultFactExtractor" scope="prototype">
+    <constructor-arg ref="Xpath"/>
+    <property name="factsCountXpath" value="count(//hl7:pertinentInformation3[#event#]/hl7:procedure/hl7:sourceOf)"/>
+    <property name="factBaseXpath" value="//hl7:careProvisionEvent/hl7:pertinentInformation3[#event#]"/>
+    <property name="factIndexCharset" value="#result#"/>
+    <property name="factClassName" value="gov.hhs.fha.nhinc.adapter.fact.ImagingResultFactType"/>
+    <property name="factProperties">
+      <map>
+        <entry key="SourceSystem">
+          <ref bean="carerecord.SourceSystem"/>
+        </entry>
+        <entry key="ResultDate">
+          <ref bean="imagingresult.ResultDate"/>
+        </entry>
+        <entry key="CodedObservationType">
+          <ref bean="imagingresult.CodedObservationType"/>
+        </entry>
+        <entry key="FreeTextImpressions">
+          <ref bean="imagingresult.FreeTextImpressions"/>
+        </entry>
+        <entry key="CodedImpressions">
+          <ref bean="imagingresult.CodedImpressions"/>
+        </entry>
+        <entry key="ReferenceImage">
+          <ref bean="imagingresult.ReferenceImage"/>
+        </entry>
+        <entry key="ReportStatus">
+          <ref bean="imagingresult.ReportStatus"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="imagingresult.ResultDate" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="ResultDate"/>
+    <property name="propertyClassName" value="java.util.Date"/>
+    <property name="propertyXpath" value="hl7:procedure/hl7:sourceOf[#result#]/hl7:observation/hl7:effectiveTime/@value"/>
+  </bean>
+
+  <bean id="imagingresult.CodedObservationType" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="CodedObservationType"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:procedure/hl7:sourceOf[#result#]/hl7:observation/hl7:code/@code"/>
+    <property name="labelXpath" value="hl7:procedure/hl7:sourceOf[#result#]/hl7:observation/hl7:code/@displayName"/>
+    <property name="codeSystemXpath" value="hl7:procedure/hl7:sourceOf[#result#]/hl7:observation/hl7:code/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="hl7:procedure/hl7:sourceOf[#result#]/hl7:observation/hl7:code/@codeSystemName"/>
+  </bean>
+
+  <bean id="imagingresult.FreeTextImpressions" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FreeTextImpressions"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:procedure/hl7:sourceOf[#result#]/hl7:observation/hl7:text"/>
+  </bean>
+
+  <bean id="imagingresult.CodedImpressions" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="CodedImpressions"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:procedure/hl7:sourceOf[#result#]/hl7:observation/hl7:value/@code"/>
+    <property name="labelXpath" value="hl7:procedure/hl7:sourceOf[#result#]/hl7:observation/hl7:value/@displayName"/>
+    <property name="codeSystemXpath" value="hl7:procedure/hl7:sourceOf[#result#]/hl7:observation/hl7:value/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="hl7:procedure/hl7:sourceOf[#result#]/hl7:observation/hl7:value/@codeSystemName"/>
+  </bean>
+
+  <bean id="imagingresult.ReferenceImage" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="ReferenceImage"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:procedure/hl7:sourceOf[#result#]/hl7:observation/hl7:value/hl7:originalText/hl7:reference/@value"/>
+  </bean>
+
+  <bean id="imagingresult.ReportStatus" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="ReportStatus"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:procedure/hl7:sourceOf[#result#]/hl7:observation/hl7:statusCode/@code"/>
+  </bean>
+
+</beans>

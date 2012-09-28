@@ -1,0 +1,925 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.smsgateway.ca/sendsms.asmx" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.smsgateway.ca/sendsms.asmx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.smsgateway.ca/sendsms.asmx">
+      <s:element name="SendMessageWithReference">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CellNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MessageBody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Reference" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageWithReferenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMessageWithReferenceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageWithPriority">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CellNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MessageBody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Reference" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Priority" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageWithPriorityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMessageWithPriorityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageWithReferenceExtended">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CellNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MessageBody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Reference" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageWithReferenceExtendedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendMessageWithReferenceExtendedResult" type="tns:SMSSendMessageResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SMSSendMessageResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MessagesRemaining" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MessageID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="QueuedSuccessfully" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendMessageWithPriorityExtended">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CellNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MessageBody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Reference" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Priority" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageWithPriorityExtendedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendMessageWithPriorityExtendedResult" type="tns:SMSSendMessageResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageExtended">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CellNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MessageBody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageExtendedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendMessageExtendedResult" type="tns:SMSSendMessageResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSentMessages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MessageCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSentMessagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSentMessagesResult" type="tns:ArrayOfSMSOutgoingMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSMSOutgoingMessage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SMSOutgoingMessage" nillable="true" type="tns:SMSOutgoingMessage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SMSOutgoingMessage">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CreditsDeducted" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reference" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sent" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="QueueDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="MessageID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CellNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSentMessagesAfterID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MessageNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSentMessagesAfterIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSentMessagesAfterIDResult" type="tns:ArrayOfSMSOutgoingMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSentMessagesAfterIDSimple">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MessageNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSentMessagesAfterIDSimpleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSentMessagesAfterIDSimpleResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CellNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MessageBody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMessageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIncomingMessagesByReference">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MessageCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Reference" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIncomingMessagesByReferenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIncomingMessagesByReferenceResult" type="tns:ArrayOfSMSIncomingMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSMSIncomingMessage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SMSIncomingMessage" nillable="true" type="tns:SMSIncomingMessage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SMSIncomingMessage">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OutgoingMessageID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reference" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MessageNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceivedDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetIncomingMessages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MessageCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIncomingMessagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIncomingMessagesResult" type="tns:ArrayOfSMSIncomingMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIncomingMessagesByReferenceAfterID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MessageNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Reference" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIncomingMessagesByReferenceAfterIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIncomingMessagesByReferenceAfterIDResult" type="tns:ArrayOfSMSIncomingMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIncomingMessagesAfterID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MessageNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIncomingMessagesAfterIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIncomingMessagesAfterIDResult" type="tns:ArrayOfSMSIncomingMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGrextIncomingMessagesAfterID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MessageNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGrextIncomingMessagesAfterIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGrextIncomingMessagesAfterIDResult" type="tns:ArrayOfSMSIncomingMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRemainingMessageCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRemainingMessageCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRemainingMessageCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOutgoingMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="messageID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOutgoingMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOutgoingMessageResult" type="tns:SMSOutgoingMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendBulkMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MessageBody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Reference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CellNumbers" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendBulkMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendBulkMessageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestSendMessageWithReference">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CellNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MessageBody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Reference" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestSendMessageWithReferenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestSendMessageWithReferenceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestSendBulkMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MessageBody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Reference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CellNumbers" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestSendBulkMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestSendBulkMessageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendMessageWithReferenceSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMessageWithReference" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageWithReferenceSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMessageWithReferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageWithPrioritySoapIn">
+    <wsdl:part name="parameters" element="tns:SendMessageWithPriority" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageWithPrioritySoapOut">
+    <wsdl:part name="parameters" element="tns:SendMessageWithPriorityResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageWithReferenceExtendedSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMessageWithReferenceExtended" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageWithReferenceExtendedSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMessageWithReferenceExtendedResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageWithPriorityExtendedSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMessageWithPriorityExtended" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageWithPriorityExtendedSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMessageWithPriorityExtendedResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageExtendedSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMessageExtended" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageExtendedSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMessageExtendedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSentMessagesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSentMessages" />
+  </wsdl:message>
+  <wsdl:message name="GetSentMessagesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSentMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSentMessagesAfterIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSentMessagesAfterID" />
+  </wsdl:message>
+  <wsdl:message name="GetSentMessagesAfterIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSentMessagesAfterIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSentMessagesAfterIDSimpleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSentMessagesAfterIDSimple" />
+  </wsdl:message>
+  <wsdl:message name="GetSentMessagesAfterIDSimpleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSentMessagesAfterIDSimpleResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomingMessagesByReferenceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIncomingMessagesByReference" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomingMessagesByReferenceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIncomingMessagesByReferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomingMessagesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIncomingMessages" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomingMessagesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIncomingMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomingMessagesByReferenceAfterIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIncomingMessagesByReferenceAfterID" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomingMessagesByReferenceAfterIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIncomingMessagesByReferenceAfterIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomingMessagesAfterIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIncomingMessagesAfterID" />
+  </wsdl:message>
+  <wsdl:message name="GetIncomingMessagesAfterIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIncomingMessagesAfterIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGrextIncomingMessagesAfterIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGrextIncomingMessagesAfterID" />
+  </wsdl:message>
+  <wsdl:message name="GetGrextIncomingMessagesAfterIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGrextIncomingMessagesAfterIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRemainingMessageCountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRemainingMessageCount" />
+  </wsdl:message>
+  <wsdl:message name="GetRemainingMessageCountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRemainingMessageCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOutgoingMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOutgoingMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetOutgoingMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOutgoingMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendBulkMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:SendBulkMessage" />
+  </wsdl:message>
+  <wsdl:message name="SendBulkMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:SendBulkMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestSendMessageWithReferenceSoapIn">
+    <wsdl:part name="parameters" element="tns:TestSendMessageWithReference" />
+  </wsdl:message>
+  <wsdl:message name="TestSendMessageWithReferenceSoapOut">
+    <wsdl:part name="parameters" element="tns:TestSendMessageWithReferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestSendBulkMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:TestSendBulkMessage" />
+  </wsdl:message>
+  <wsdl:message name="TestSendBulkMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:TestSendBulkMessageResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SendSMSSoap">
+    <wsdl:operation name="SendMessageWithReference">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sends an SMS message to the given phone number. Returns 'Message queued successfully' on success, or an error message on fail.</wsdl:documentation>
+      <wsdl:input message="tns:SendMessageWithReferenceSoapIn" />
+      <wsdl:output message="tns:SendMessageWithReferenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageWithPriority">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">** Available only on our Professional and Enterprise Service Plans.  Sends an SMS message to the given phone number. Queue priority is set based on Priority parameter - 1 gives high priority, 2 is normal, 3 gives low priority. Returns 'Message queued successfully' on success, or an error message on fail.</wsdl:documentation>
+      <wsdl:input message="tns:SendMessageWithPrioritySoapIn" />
+      <wsdl:output message="tns:SendMessageWithPrioritySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageWithReferenceExtended">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sends an SMS message to the given phone number. Returns an instance of an SMSSendMessageResponse</wsdl:documentation>
+      <wsdl:input message="tns:SendMessageWithReferenceExtendedSoapIn" />
+      <wsdl:output message="tns:SendMessageWithReferenceExtendedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageWithPriorityExtended">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">** Available only on our Professional and Enterprise Service Plans.  Sends an SMS message to the given phone number. Queue priority is set based on Priority parameter - 1 gives high priority, 2 is normal, 3 gives low priority. Returns an instance of an SMSSendMessageResponse</wsdl:documentation>
+      <wsdl:input message="tns:SendMessageWithPriorityExtendedSoapIn" />
+      <wsdl:output message="tns:SendMessageWithPriorityExtendedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageExtended">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sends an SMS message to the given phone number. Returns an instance of an SMSSendMessageResponse</wsdl:documentation>
+      <wsdl:input message="tns:SendMessageExtendedSoapIn" />
+      <wsdl:output message="tns:SendMessageExtendedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSentMessages">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an array of the X most recently sent SMS Messages</wsdl:documentation>
+      <wsdl:input message="tns:GetSentMessagesSoapIn" />
+      <wsdl:output message="tns:GetSentMessagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSentMessagesAfterID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an array of (at most 1000) sent SMS Messages with IDs greater than the given one.</wsdl:documentation>
+      <wsdl:input message="tns:GetSentMessagesAfterIDSoapIn" />
+      <wsdl:output message="tns:GetSentMessagesAfterIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSentMessagesAfterIDSimple">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an array of (at most 1000) sent SMS Messages with IDs greater than the given one in strings with fields separated by the tilde (~) character.  Field order is MessageID~CellNumber~MessageBody~SentDate~Success~Reference.</wsdl:documentation>
+      <wsdl:input message="tns:GetSentMessagesAfterIDSimpleSoapIn" />
+      <wsdl:output message="tns:GetSentMessagesAfterIDSimpleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sends an SMS message to the given phone number. Returns 'Message queued successfully' on success, or an error message on fail.</wsdl:documentation>
+      <wsdl:input message="tns:SendMessageSoapIn" />
+      <wsdl:output message="tns:SendMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomingMessagesByReference">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of incoming messages which match the given reference</wsdl:documentation>
+      <wsdl:input message="tns:GetIncomingMessagesByReferenceSoapIn" />
+      <wsdl:output message="tns:GetIncomingMessagesByReferenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomingMessages">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of incoming messages</wsdl:documentation>
+      <wsdl:input message="tns:GetIncomingMessagesSoapIn" />
+      <wsdl:output message="tns:GetIncomingMessagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomingMessagesByReferenceAfterID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of incoming messages with the given Reference which arrived after the message with the given ID.</wsdl:documentation>
+      <wsdl:input message="tns:GetIncomingMessagesByReferenceAfterIDSoapIn" />
+      <wsdl:output message="tns:GetIncomingMessagesByReferenceAfterIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomingMessagesAfterID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of incoming messages which arrived after the message with the given ID.</wsdl:documentation>
+      <wsdl:input message="tns:GetIncomingMessagesAfterIDSoapIn" />
+      <wsdl:output message="tns:GetIncomingMessagesAfterIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGrextIncomingMessagesAfterID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a list of incoming messages which arrived as responses to messages sent with Grext after the message with the given ID.</wsdl:documentation>
+      <wsdl:input message="tns:GetGrextIncomingMessagesAfterIDSoapIn" />
+      <wsdl:output message="tns:GetGrextIncomingMessagesAfterIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRemainingMessageCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a count of remaining messages</wsdl:documentation>
+      <wsdl:input message="tns:GetRemainingMessageCountSoapIn" />
+      <wsdl:output message="tns:GetRemainingMessageCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutgoingMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the status of an outgoing message by suppying the message ID and account key</wsdl:documentation>
+      <wsdl:input message="tns:GetOutgoingMessageSoapIn" />
+      <wsdl:output message="tns:GetOutgoingMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendBulkMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">** Available only on our Professional and Enterprise Service Plans.  Sends an SMS message to all the cell numbers provided.  Returns the number of messages successfully queued, or an error message on failure.</wsdl:documentation>
+      <wsdl:input message="tns:SendBulkMessageSoapIn" />
+      <wsdl:output message="tns:SendBulkMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestSendMessageWithReference">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">No messages will be sent by this method - for testing only.  Returns 'Message queued successfully' on success, or an error message on fail.</wsdl:documentation>
+      <wsdl:input message="tns:TestSendMessageWithReferenceSoapIn" />
+      <wsdl:output message="tns:TestSendMessageWithReferenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestSendBulkMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">** Available only on our Professional and Enterprise Service Plans.  No messages will be sent by this method - for testing only.  Returns the number of messages successfully tested, or an error message on failure.</wsdl:documentation>
+      <wsdl:input message="tns:TestSendBulkMessageSoapIn" />
+      <wsdl:output message="tns:TestSendBulkMessageSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SendSMSSoap" type="tns:SendSMSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendMessageWithReference">
+      <soap:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/SendMessageWithReference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageWithPriority">
+      <soap:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/SendMessageWithPriority" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageWithReferenceExtended">
+      <soap:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/SendMessageWithReferenceExtended" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageWithPriorityExtended">
+      <soap:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/SendMessageWithPriorityExtended" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageExtended">
+      <soap:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/SendMessageExtended" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSentMessages">
+      <soap:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/GetSentMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSentMessagesAfterID">
+      <soap:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/GetSentMessagesAfterID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSentMessagesAfterIDSimple">
+      <soap:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/GetSentMessagesAfterIDSimple" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/SendMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomingMessagesByReference">
+      <soap:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/GetIncomingMessagesByReference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomingMessages">
+      <soap:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/GetIncomingMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomingMessagesByReferenceAfterID">
+      <soap:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/GetIncomingMessagesByReferenceAfterID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomingMessagesAfterID">
+      <soap:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/GetIncomingMessagesAfterID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGrextIncomingMessagesAfterID">
+      <soap:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/GetGrextIncomingMessagesAfterID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemainingMessageCount">
+      <soap:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/GetRemainingMessageCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutgoingMessage">
+      <soap:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/GetOutgoingMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBulkMessage">
+      <soap:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/SendBulkMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestSendMessageWithReference">
+      <soap:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/TestSendMessageWithReference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestSendBulkMessage">
+      <soap:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/TestSendBulkMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SendSMSSoap12" type="tns:SendSMSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendMessageWithReference">
+      <soap12:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/SendMessageWithReference" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageWithPriority">
+      <soap12:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/SendMessageWithPriority" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageWithReferenceExtended">
+      <soap12:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/SendMessageWithReferenceExtended" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageWithPriorityExtended">
+      <soap12:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/SendMessageWithPriorityExtended" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageExtended">
+      <soap12:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/SendMessageExtended" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSentMessages">
+      <soap12:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/GetSentMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSentMessagesAfterID">
+      <soap12:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/GetSentMessagesAfterID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSentMessagesAfterIDSimple">
+      <soap12:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/GetSentMessagesAfterIDSimple" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap12:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/SendMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomingMessagesByReference">
+      <soap12:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/GetIncomingMessagesByReference" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomingMessages">
+      <soap12:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/GetIncomingMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomingMessagesByReferenceAfterID">
+      <soap12:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/GetIncomingMessagesByReferenceAfterID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncomingMessagesAfterID">
+      <soap12:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/GetIncomingMessagesAfterID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGrextIncomingMessagesAfterID">
+      <soap12:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/GetGrextIncomingMessagesAfterID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemainingMessageCount">
+      <soap12:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/GetRemainingMessageCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutgoingMessage">
+      <soap12:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/GetOutgoingMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBulkMessage">
+      <soap12:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/SendBulkMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestSendMessageWithReference">
+      <soap12:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/TestSendMessageWithReference" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestSendBulkMessage">
+      <soap12:operation soapAction="http://www.smsgateway.ca/sendsms.asmx/TestSendBulkMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SendSMS">
+    <wsdl:port name="SendSMSSoap" binding="tns:SendSMSSoap">
+      <soap:address location="http://smsgateway.ca/SendSMS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SendSMSSoap12" binding="tns:SendSMSSoap12">
+      <soap12:address location="http://smsgateway.ca/SendSMS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hl7:CareRecord_QUPC_IN043200UV01Message xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+	<hl7:response>
+		<!-- unique identifier for this response -->
+		<hl7:id extension="6858a017-39c1-4153-bbd4-eaedac72a0e7"/>
+		<!-- date/time this response is created -->
+		<hl7:creationTime value="20091221011010.005"/>
+		<hl7:interactionId extension="PRPA_IN900300UV02"/>
+		<hl7:processingCode code="P"/>
+		<hl7:processingModeCode code="R"/>
+		<hl7:acceptAckCode code="AL"/>
+		<hl7:receiver typeCode="RCV">
+			<hl7:device determinerCode="INSTANCE">
+				<hl7:id root="2.16.840.1.113883.3.200"/>
+				<hl7:telecom value="http://localhost:8080/NhinConnect/CommonDataLayerService"/>
+			</hl7:device>
+		</hl7:receiver>
+		<hl7:sender typeCode="SND">
+			<hl7:device determinerCode="INSTANCE">
+				<hl7:id root="2.16.840.1.113883.3.200"/>
+			</hl7:device>
+		</hl7:sender>
+		<hl7:controlActProcess classCode="CACT" moodCode="EVN">
+			<!-- This trigger event - shall be default to "QUPC_TE043200UV01" (Get Care Record Profile Response) -->
+			<hl7:code code="QUPC_TE043200UV01"/>
+			<!-- Default to “R” for routine -->
+			<hl7:priorityCode code="R"/>
+			<!-- Data Records - one hl7:subject for each record -->
+			<hl7:subject typeCode="SUBJ">
+				<hl7:registrationEvent classCode="REG" moodCode="EVN">
+					<!-- status of the data record - queries always return active records -->
+					<hl7:statusCode code="completed"/>
+					<!-- records the data repository that is the custodian, or "owner", of the data record -->
+					<hl7:custodian typeCode="CST">
+						<hl7:assignedEntity>
+							<hl7:id root="2.16.840.1.113883.3.200"/>
+							<!-- name of the organization that is the custodian of the data records -->
+							<hl7:assignedOrganization>
+								<hl7:name>Department of Defense</hl7:name>
+							</hl7:assignedOrganization>
+						</hl7:assignedEntity>
+					</hl7:custodian>
+					<!-- data content requested from the query -->
+					<hl7:subject2 typeCode="SUBJ">
+						<hl7:careProvisionEvent classCode="PCPR" moodCode="EVN">
+							<hl7:recordTarget typeCode="RCT">
+								<hl7:patient classCode="PAT">
+									<hl7:id extension="8237363"/>
+									<hl7:statusCode/>
+									<hl7:patientPerson classCode="PSN" determinerCode="INSTANCE"/>
+								</hl7:patient>
+							</hl7:recordTarget>
+							<!-- domain content: allergy entry #1 -->
+							<hl7:pertinentInformation3 typeCode="PERT" contextConductionInd="true">
+								<hl7:observation classCode="OBS" moodCode="EVN">
+									<hl7:code code="416098002" displayName="drug allergy" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+									<hl7:effectiveTime value="20090119"/>
+									<!-- Product -->
+									<hl7:sourceOf typeCode="MFST">
+										<hl7:substanceAdministration classCode="SBADM" moodCode="EVN">
+											<hl7:consumable typeCode="CSM">
+												<hl7:administerableMaterial classCode="ADMM">
+													<hl7:administerableMaterial classCode="MMAT" determinerCode="INSTANCE">
+														<hl7:code code="70618" displayName="Penicillin" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm"/>
+														<hl7:desc>Penicillin</hl7:desc>
+													</hl7:administerableMaterial>
+												</hl7:administerableMaterial>
+											</hl7:consumable>
+										</hl7:substanceAdministration>
+									</hl7:sourceOf>
+									<!-- Reactions (repeatable) -->
+									<hl7:sourceOf typeCode="MFST">
+										<hl7:observation classCode="OBS" moodCode="EVN">
+											<hl7:templateId root="2.16.840.1.113883.10.20.1.54"/>
+											<hl7:text>Anaphylaxis</hl7:text>
+											<hl7:value code="39579001" displayName="Anaphylaxis" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" type="hl7:CD" xmlns="http://www.w3.org/2001/XMLSchema-instance"/>
+											<!-- Severity (repeatable) -->
+											<hl7:sourceOf typeCode="SUBJ">
+												<hl7:observation classCode="OBS" moodCode="EVN">
+													<hl7:code code="SEV" displayName="Severity" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+													<hl7:text>Very Severe</hl7:text>
+													<hl7:statusCode code="completed"/>
+													<hl7:value code="24484000" displayName="Very Severe" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" type="hl7:CD" xmlns="http://www.w3.org/2001/XMLSchema-instance"/>
+												</hl7:observation>
+											</hl7:sourceOf>
+										</hl7:observation>
+									</hl7:sourceOf>									
+								</hl7:observation>
+							</hl7:pertinentInformation3>
+							<!-- domain content: allergy entry #2 -->
+							<hl7:pertinentInformation3 typeCode="PERT" contextConductionInd="true">
+								<hl7:observation classCode="OBS" moodCode="EVN">
+									<hl7:code code="416098002" displayName="drug allergy2" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+									<hl7:effectiveTime value="20090119"/>
+									<!-- Product -->
+									<hl7:sourceOf typeCode="MFST">
+										<hl7:substanceAdministration classCode="SBADM" moodCode="EVN">
+											<hl7:consumable typeCode="CSM">
+												<hl7:administerableMaterial classCode="ADMM">
+													<hl7:administerableMaterial classCode="MMAT" determinerCode="INSTANCE">
+														<hl7:code code="12731003" displayName="GENTRAN 40 IN DEXTROSE 5% (DEXTRAN 40/DEXTROSE 5%-WATER" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm"/>
+														<hl7:desc>GENTRAN 40 IN DEXTROSE 5% (DEXTRAN 40/DEXTROSE 5%-WATER</hl7:desc>
+													</hl7:administerableMaterial>
+												</hl7:administerableMaterial>
+											</hl7:consumable>
+										</hl7:substanceAdministration>
+									</hl7:sourceOf>
+									<!-- Reactions (repeatable) -->
+									<hl7:sourceOf typeCode="MFST">
+										<hl7:observation classCode="OBS" moodCode="EVN">
+											<hl7:templateId root="2.16.840.1.113883.10.20.1.54"/>
+											<hl7:text>Rash</hl7:text>											
+											<hl7:value code="247472004" displayName="Rash" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" type="hl7:CD" xmlns="http://www.w3.org/2001/XMLSchema-instance"/>
+											<hl7:sourceOf typeCode="SUBJ">
+												<hl7:observation classCode="OBS" moodCode="EVN">
+                                       <hl7:code code="SEV" displayName="Severity" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+													<hl7:text>Severe</hl7:text>
+													<hl7:statusCode code="completed"/>
+													<hl7:value code="24484000" displayName="Severe" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" type="hl7:CD" xmlns="http://www.w3.org/2001/XMLSchema-instance"/>
+												</hl7:observation>
+											</hl7:sourceOf>
+										</hl7:observation>
+									</hl7:sourceOf>
+                           <hl7:sourceOf typeCode="MFST">
+										<hl7:observation classCode="OBS" moodCode="EVN">
+											<hl7:templateId root="2.16.840.1.113883.10.20.1.54"/>
+											<hl7:text>Urticaria</hl7:text>											
+											<hl7:value code="82859" displayName="Urticaria" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" type="hl7:CD" xmlns="http://www.w3.org/2001/XMLSchema-instance"/>
+											<hl7:sourceOf typeCode="SUBJ">
+												<hl7:observation classCode="OBS" moodCode="EVN">
+													<hl7:code code="SEV" displayName="Severity" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+													<hl7:text>Severe2</hl7:text>
+													<hl7:statusCode code="completed"/>
+													<hl7:value code="24484000" displayName="Severe2" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" type="hl7:CD" xmlns="http://www.w3.org/2001/XMLSchema-instance"/>
+												</hl7:observation>
+											</hl7:sourceOf>
+										</hl7:observation>
+									</hl7:sourceOf>									
+								</hl7:observation>
+							</hl7:pertinentInformation3>
+						</hl7:careProvisionEvent>
+					</hl7:subject2>
+				</hl7:registrationEvent>
+			</hl7:subject>			
+			<hl7:queryAck>
+				<!-- identifier that was used in the original query message -->
+				<hl7:queryId extension="6858a017-39c1-4153-bbd4-eaedac72a0e7"/>
+				<hl7:statusCode code="'deliveredResponse"/>
+				<hl7:queryResponseCode code="OK"/>
+			</hl7:queryAck>
+		</hl7:controlActProcess>
+	</hl7:response>
+</hl7:CareRecord_QUPC_IN043200UV01Message>

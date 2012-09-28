@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://nhinint01.asu.edu:8080/KnowledgeModuleService/KmrKnowledgeModule?wsdl" uri="wsdl/nhinint01.asu.edu_8080/KnowledgeModuleService/KmrKnowledgeModule.wsdl"/>
+    <system systemId="http://nhinint01.asu.edu:8080/KnowledgeModuleService/KmrKnowledgeModule?xsd=2" uri="wsdl/nhinint01.asu.edu_8080/KnowledgeModuleService/KmrKnowledgeModule.xsd_2.xsd"/>
+    <system systemId="http://nhinint01.asu.edu:8080/KnowledgeModuleService/KmrKnowledgeModule?xsd=1" uri="wsdl/nhinint01.asu.edu_8080/KnowledgeModuleService/KmrKnowledgeModule.xsd_1.xsd"/>
+    <system systemId="http://nhinint01.asu.edu:8080/TaskManager/TaskManagerService?wsdl" uri="wsdl/nhinint01.asu.edu_8080/TaskManager/TaskManagerService.wsdl"/>
+    <system systemId="http://nhinint01.asu.edu:8080/TaskManager/TaskManagerService?xsd=1" uri="wsdl/nhinint01.asu.edu_8080/TaskManager/TaskManagerService.xsd_1.xsd"/>
+    <system systemId="http://nhinint01.asu.edu:8080/TaskManager/TaskManagerService?xsd=2" uri="wsdl/nhinint01.asu.edu_8080/TaskManager/TaskManagerService.xsd_2.xsd"/>
+    <system systemId="http://nhinint01.asu.edu:8080/AlertManager/AlertManagerService?wsdl" uri="wsdl/nhinint01.asu.edu_8080/AlertManager/AlertManagerService.wsdl"/>
+    <system systemId="http://nhinint01.asu.edu:8080/AlertManager/AlertManagerService?xsd=2" uri="wsdl/nhinint01.asu.edu_8080/AlertManager/AlertManagerService.xsd_2.xsd"/>
+    <system systemId="http://nhinint01.asu.edu:8080/AlertManager/AlertManagerService?xsd=1" uri="wsdl/nhinint01.asu.edu_8080/AlertManager/AlertManagerService.xsd_1.xsd"/>
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/SessionService.wsdl" uri="wsdl/SessionService.wsdl"/>
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/TaskManager.wsdl" uri="wsdl/TaskManager.wsdl"/>
+</catalog>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

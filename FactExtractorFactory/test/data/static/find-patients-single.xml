@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hl7:FindPatients_PRPA_MT201310UVResponse xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+   <hl7:subject classCode="PAT">
+      <hl7:id extension="8237363"/>
+      <hl7:id displayable="false" extension="745034030" root="2.16.840.1.113883.4.1"/>
+      <hl7:addr use="HP">
+         <hl7:streetAddressLine>POB 164</hl7:streetAddressLine>
+         <hl7:city>SAN JUAN</hl7:city>
+         <hl7:state>NEW MEXICO</hl7:state>
+         <hl7:postalCode>87566</hl7:postalCode>
+         <hl7:country>US</hl7:country>
+      </hl7:addr>
+      <hl7:addr use="WP">
+         <hl7:streetAddressLine>17 Santa Rosa Road</hl7:streetAddressLine>
+         <hl7:city>Santa Rosa</hl7:city>
+         <hl7:state>MA</hl7:state>
+         <hl7:postalCode>13409</hl7:postalCode>
+         <hl7:country>US</hl7:country>
+      </hl7:addr>
+      <hl7:telecom use="HP" value="555-555-7704"/>
+      <hl7:telecom use="WP" value="555-999-9386"/>
+      <hl7:statusCode code="active"/>
+      <hl7:effectiveTime value="20100506150701"/>
+      <hl7:patientPerson classCode="PSN" determinerCode="INSTANCE">
+         <hl7:name use="P">
+            <hl7:family>SMITH</hl7:family>
+            <hl7:given>ANA ISABEL</hl7:given>
+         </hl7:name>
+         <hl7:administrativeGenderCode code="F" displayName="Female"/>
+         <hl7:birthTime value="19560622"/>
+         <hl7:raceCode codeSystemName="CDC Race and Ethnicity" codeSystem="2.16.840.1.113883.6.238" code="2"/>
+         <hl7:contactParty classCode="NOK">
+            <hl7:id extension="11484"/>
+            <hl7:code code="STPDAU" displayName="Step-Daughter" codeSystem="2.16.840.1.113883.5.111" codeSystemName="RoleCode"/>
+            <hl7:telecom use="WP" value="555-999-9386"/>
+            <hl7:contactPerson classCode="PSN" determinerCode="INSTANCE">
+               <hl7:name use="L">
+                  <hl7:family>QUINTANA</hl7:family>
+                  <hl7:given>LYNN</hl7:given>
+               </hl7:name>
+            </hl7:contactPerson>
+         </hl7:contactParty>
+         <hl7:guardian classCode="GUARD">
+            <hl7:id extension="11484"/>
+            <hl7:guardianPerson classCode="PSN" determinerCode="INSTANCE">
+               <hl7:name>
+                  <hl7:family>QUINTANA</hl7:family>
+                  <hl7:given>LYNN</hl7:given>
+               </hl7:name>
+            </hl7:guardianPerson>
+         </hl7:guardian>
+         <hl7:languageCommunication>
+            <hl7:languageCode code="en-US"/>
+            <hl7:preferenceInd value="true"/>
+         </hl7:languageCommunication>
+      </hl7:patientPerson>
+   </hl7:subject>
+</hl7:FindPatients_PRPA_MT201310UVResponse>

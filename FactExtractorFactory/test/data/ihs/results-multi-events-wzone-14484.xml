@@ -1,0 +1,1231 @@
+<?xml version="1.0" ?>
+<hl7:CareRecord_QUPC_IN043200UV01Message xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+  <hl7:response>
+    <hl7:id extension="30dae5d7-6e7f-3e65-9cdb-c74233826127"/>
+    <hl7:creationTime value="20100701194058.947-0700"/>
+    <hl7:interactionId extension="PRPA_IN900300UV02"/>
+    <hl7:processingCode code="P"/>
+    <hl7:processingModeCode code="R"/>
+    <hl7:acceptAckCode code="RCV"/>
+    <hl7:receiver typeCode="RCV">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+        <hl7:telecom value="http://localhost:8080/NhinConnect/CommonDataLayerService"/>
+      </hl7:device>
+    </hl7:receiver>
+    <hl7:sender typeCode="SND">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+      </hl7:device>
+    </hl7:sender>
+    <hl7:controlActProcess moodCode="EVN" classCode="CACT">
+      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CS" code="QUPC_TE043200UV01"/>
+      <hl7:priorityCode code="R"/>
+      <hl7:subject typeCode="SUBJ">
+        <hl7:registrationEvent moodCode="EVN" classCode="REG">
+          <hl7:statusCode code="completed"/>
+          <hl7:custodian typeCode="CST">
+            <hl7:assignedEntity classCode="ASSIGNED">
+              <hl7:id assigningAuthorityName="OpenRPMS" root="2.16.840.1.113883.3.274"/>
+            </hl7:assignedEntity>
+          </hl7:custodian>
+          <hl7:subject2 typeCode="SUBJ">
+            <hl7:careProvisionEvent moodCode="EVN" classCode="ENC">
+              <hl7:recordTarget typeCode="RCT">
+                <hl7:patient classCode="PAT">
+                  <hl7:id extension="14484" root="2.16.840.1.113883.3.200"/>
+                  <hl7:statusCode code="normal"/>
+                  <hl7:patientPerson determinerCode="INSTANCE" classCode="PSN">
+                    <hl7:name use="L">
+                      <hl7:family>SMITH</hl7:family>
+                      <hl7:given>BENINA</hl7:given>
+                      <hl7:given>J</hl7:given>
+                    </hl7:name>
+                    <hl7:administrativeGenderCode displayName="FEMALE" code="F"/>
+                    <hl7:birthTime value="19560622000000-0700"/>
+                  </hl7:patientPerson>
+                </hl7:patient>
+              </hl7:recordTarget>
+              <hl7:inFulfillmentOf contextConductionInd="false">
+                <hl7:careProvisionRequestOrPromise>
+                  <hl7:id extension="20658.0"/>
+                </hl7:careProvisionRequestOrPromise>
+              </hl7:inFulfillmentOf>
+              <hl7:inFulfillmentOf contextConductionInd="false">
+                <hl7:careProvisionRequestOrPromise>
+                  <hl7:id extension="20657.0"/>
+                </hl7:careProvisionRequestOrPromise>
+              </hl7:inFulfillmentOf>
+              <hl7:inFulfillmentOf contextConductionInd="false">
+                <hl7:careProvisionRequestOrPromise>
+                  <hl7:id extension="13139.0"/>
+                </hl7:careProvisionRequestOrPromise>
+              </hl7:inFulfillmentOf>
+              <hl7:reference>
+                <hl7:encounter>
+                  <hl7:id extension="JUN 04, 2009@13:37"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime value="20090604133700-0700"/>
+                  <hl7:subject>
+                    <hl7:patient classCode="PAT">
+                      <hl7:id extension="14484" root="2.16.840.1.113883.3.200"/>
+                      <hl7:statusCode code="normal"/>
+                      <hl7:patientPerson determinerCode="INSTANCE" classCode="PSN">
+                        <hl7:name use="L">
+                          <hl7:family>SMITH</hl7:family>
+                          <hl7:given>BENINA</hl7:given>
+                          <hl7:given>J</hl7:given>
+                        </hl7:name>
+                        <hl7:administrativeGenderCode displayName="FEMALE" code="F"/>
+                        <hl7:birthTime value="19560622000000-0700"/>
+                      </hl7:patientPerson>
+                    </hl7:patient>
+                  </hl7:subject>
+                  <hl7:location>
+                    <hl7:time value="20090604133700-0700"/>
+                    <hl7:serviceDeliveryLocation>
+                      <hl7:serviceProviderOrganization>
+                        <hl7:name>
+                          <hl7:additionalLocator>
+                            <hl7:reference value="LABORATORY SERVICES"/>
+                          </hl7:additionalLocator>
+                        </hl7:name>
+                      </hl7:serviceProviderOrganization>
+                    </hl7:serviceDeliveryLocation>
+                  </hl7:location>
+                </hl7:encounter>
+              </hl7:reference>
+              <hl7:reference>
+                <hl7:encounter>
+                  <hl7:id extension="JUN 05, 2009@08:46"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime value="20090605084600-0700"/>
+                  <hl7:subject>
+                    <hl7:patient classCode="PAT">
+                      <hl7:id extension="14484" root="2.16.840.1.113883.3.200"/>
+                      <hl7:statusCode code="normal"/>
+                      <hl7:patientPerson determinerCode="INSTANCE" classCode="PSN">
+                        <hl7:name use="L">
+                          <hl7:family>SMITH</hl7:family>
+                          <hl7:given>BENINA</hl7:given>
+                          <hl7:given>J</hl7:given>
+                        </hl7:name>
+                        <hl7:administrativeGenderCode displayName="FEMALE" code="F"/>
+                        <hl7:birthTime value="19560622000000-0700"/>
+                      </hl7:patientPerson>
+                    </hl7:patient>
+                  </hl7:subject>
+                  <hl7:location>
+                    <hl7:time value="20090605084600-0700"/>
+                    <hl7:serviceDeliveryLocation>
+                      <hl7:serviceProviderOrganization>
+                        <hl7:name>
+                          <hl7:additionalLocator>
+                            <hl7:reference value="LABORATORY SERVICES"/>
+                          </hl7:additionalLocator>
+                        </hl7:name>
+                      </hl7:serviceProviderOrganization>
+                    </hl7:serviceDeliveryLocation>
+                  </hl7:location>
+                </hl7:encounter>
+              </hl7:reference>
+              <hl7:reference>
+                <hl7:encounter>
+                  <hl7:id extension="APR 06, 2009@12:33"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime value="20090406123300-0700"/>
+                  <hl7:subject>
+                    <hl7:patient classCode="PAT">
+                      <hl7:id extension="14484" root="2.16.840.1.113883.3.200"/>
+                      <hl7:statusCode code="normal"/>
+                      <hl7:patientPerson determinerCode="INSTANCE" classCode="PSN">
+                        <hl7:name use="L">
+                          <hl7:family>SMITH</hl7:family>
+                          <hl7:given>BENINA</hl7:given>
+                          <hl7:given>J</hl7:given>
+                        </hl7:name>
+                        <hl7:administrativeGenderCode displayName="FEMALE" code="F"/>
+                        <hl7:birthTime value="19560622000000-0700"/>
+                      </hl7:patientPerson>
+                    </hl7:patient>
+                  </hl7:subject>
+                  <hl7:location>
+                    <hl7:time value="20090406123300-0700"/>
+                    <hl7:serviceDeliveryLocation>
+                      <hl7:serviceProviderOrganization>
+                        <hl7:name>
+                          <hl7:additionalLocator>
+                            <hl7:reference value="LABORATORY SERVICES"/>
+                          </hl7:additionalLocator>
+                        </hl7:name>
+                      </hl7:serviceProviderOrganization>
+                    </hl7:serviceDeliveryLocation>
+                  </hl7:location>
+                </hl7:encounter>
+              </hl7:reference>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="1"/>
+                <hl7:act moodCode="EVN" classCode="ACT">
+                  <hl7:id extension="SCC 0629 2"/>
+                  <hl7:code displayName="CHEMISTRY STUDIES" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="18719-5"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="GUAIAC SFSU-1 Card" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2335-8"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090629144357-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ED">
+                        <hl7:reference value="NEGATIVE"/>
+                      </hl7:value>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low value="NEG"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                </hl7:act>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="2"/>
+                <hl7:act moodCode="EVN" classCode="ACT">
+                  <hl7:id extension="CHEM 0605 20"/>
+                  <hl7:code>
+                    <hl7:originalText>
+                      <hl7:reference value="LIPID PANEL-SFIH"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime value="20090605084647-0700"/>
+                  <hl7:subject typeCode="SPC">
+                    <hl7:specimen classCode="SPEC">
+                      <hl7:id extension="7566738"/>
+                      <hl7:code displayName="Specimen Collection" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33882-2"/>
+                      <hl7:specimenNatural determinerCode="INSTANCE" classCode="ENT">
+                        <hl7:code/>
+                        <hl7:desc>BLOOD (SST)</hl7:desc>
+                      </hl7:specimenNatural>
+                    </hl7:specimen>
+                  </hl7:subject>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="TRIGLYCERIDE-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2571-8"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090604140900-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="297"/>
+                      <hl7:interpretationCode displayName="High" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="H"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="mg/dL" value="30"/>
+                            <hl7:high unit="mg/dL" value="200"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="High" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="H"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="CHOLESTEROL-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2093-3"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090604140900-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="220"/>
+                      <hl7:interpretationCode displayName="High" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="H"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:high unit="mg/dL" value="200"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="High" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="H"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="HDL CHOLESTEROL-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2085-9"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090604140900-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="38"/>
+                      <hl7:interpretationCode displayName="Low" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="L"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="mg/dL" value="40"/>
+                            <hl7:high unit="mg/dL" value="60"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Low" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="L"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName=" LDL CHOLESTEROL,CALC" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2089-1"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090604140900-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="122.6"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="mg/dL" value="0"/>
+                            <hl7:high unit="mg/dL" value="170"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Cholesterol/HDL Ratio" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="9830-1"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090604140900-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="%" value="5.8"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low value="See Interptn"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                </hl7:act>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="3"/>
+                <hl7:act moodCode="EVN" classCode="ACT">
+                  <hl7:id extension="UR 0406 10"/>
+                  <hl7:code>
+                    <hl7:originalText>
+                      <hl7:reference value="URINALYSIS (DIPSTICK ONLY)-SF/SC"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="COLOR,URINE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="5778-6"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ED">
+                        <hl7:reference value="YELLOW"/>
+                      </hl7:value>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="APPEARANCE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="5767-9"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ED">
+                        <hl7:reference value="CLEAR"/>
+                      </hl7:value>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="GLUCOSE,URINE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="5792-7"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="NEGATIVE"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="mg/dL" value="NEG"/>
+                            <hl7:high unit="mg/dL" value="99"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="BILIRUBIN,URINE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="5770-3"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ED">
+                        <hl7:reference value="NEGATIVE"/>
+                      </hl7:value>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low value="NEG"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="KETONES,URINE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="5797-6"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="NEGATIVE"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="mg/dL" value="NEG"/>
+                            <hl7:high unit="mg/dL" value="0"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="SPECIFIC GRAVITY" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2965-2"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ED">
+                        <hl7:reference value="1.020"/>
+                      </hl7:value>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low value="1.005"/>
+                            <hl7:high value="1.029"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="BLOOD,URINE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="5794-3"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ED">
+                        <hl7:reference value="NEGATIVE"/>
+                      </hl7:value>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low value="NEG"/>
+                            <hl7:high value="LARGE"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="PH,URINE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2756-5"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="UNITS" value="6.5"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="UNITS" value="5"/>
+                            <hl7:high unit="UNITS" value="9"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="PROTEIN UA,URINE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="5804-0"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="NEGATIVE"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="mg/dL" value="NEG"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="UROBILINOGEN" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="5818-0"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="E.U./dL" value="0.2"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="E.U./dL" value="NORM"/>
+                            <hl7:high unit="E.U./dL" value="1"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="NITRITE,URINE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="5802-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ED">
+                        <hl7:reference value="NEGATIVE"/>
+                      </hl7:value>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low value="NEG"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="LEUKOCYTE ESTERASE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="5799-2"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ED">
+                        <hl7:reference value="NEGATIVE"/>
+                      </hl7:value>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low value="NEG"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                </hl7:act>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="4"/>
+                <hl7:act moodCode="EVN" classCode="ACT">
+                  <hl7:id extension="CHEM 0406 103"/>
+                  <hl7:code displayName="CHEMISTRY STUDIES" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="18719-5"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime value="20090406155401-0700"/>
+                  <hl7:subject typeCode="SPC">
+                    <hl7:specimen classCode="SPEC">
+                      <hl7:id extension="7483421"/>
+                      <hl7:code displayName="Specimen Collection" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33882-2"/>
+                      <hl7:specimenNatural determinerCode="INSTANCE" classCode="ENT">
+                        <hl7:code/>
+                        <hl7:desc>BLOOD (SST)</hl7:desc>
+                      </hl7:specimenNatural>
+                    </hl7:specimen>
+                  </hl7:subject>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="C-REACTIVE PROTEIN-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="1988-5"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="comment"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="mg/dL" value="0"/>
+                            <hl7:high unit="mg/dL" value=".9"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                </hl7:act>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="5"/>
+                <hl7:act moodCode="EVN" classCode="ACT">
+                  <hl7:id extension="CHEM 0406 102"/>
+                  <hl7:code>
+                    <hl7:originalText>
+                      <hl7:reference value="CMP-COMPREHENSIVE METABOLIC PANEL-SFIH"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime value="20090406155401-0700"/>
+                  <hl7:subject typeCode="SPC">
+                    <hl7:specimen classCode="SPEC">
+                      <hl7:id extension="7483403"/>
+                      <hl7:code displayName="Specimen Collection" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33882-2"/>
+                      <hl7:specimenNatural determinerCode="INSTANCE" classCode="ENT">
+                        <hl7:code/>
+                        <hl7:desc>BLOOD (SST)</hl7:desc>
+                      </hl7:specimenNatural>
+                    </hl7:specimen>
+                  </hl7:subject>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="GLUCOSE, RANDOM-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="6777-7"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="90"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="mg/dL" value="70"/>
+                            <hl7:high unit="mg/dL" value="200"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="UREA NITROGEN" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="3094-0"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="15"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="mg/dL" value="7"/>
+                            <hl7:high unit="mg/dL" value="18"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="CREATININE-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2160-0"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="1.0"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="mg/dL" value=".6"/>
+                            <hl7:high unit="mg/dL" value="1"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="SODIUM" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2951-2"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mmol/L" value="140"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="mmol/L" value="136"/>
+                            <hl7:high unit="mmol/L" value="145"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="POTASSIUM" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2823-3"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mmol/L" value="4.4"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="mmol/L" value="3.5"/>
+                            <hl7:high unit="mmol/L" value="5.1"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="CHLORIDE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2075-0"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mmol/L" value="103"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="mmol/L" value="98"/>
+                            <hl7:high unit="mmol/L" value="107"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="CO2" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2028-9"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mmol/L" value="25.0"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="mmol/L" value="22"/>
+                            <hl7:high unit="mmol/L" value="29"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="PROTEIN,TOTAL(SERUM)-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2885-2"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="gm/dL" value="8.0"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="gm/dL" value="6.4"/>
+                            <hl7:high unit="gm/dL" value="8.2"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="ALBUMIN-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="1751-7"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="gm/dL" value="4.2"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="gm/dL" value="3.4"/>
+                            <hl7:high unit="gm/dL" value="5"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="ALKALINE PHOSPHATASE-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="6768-6"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="U/L" value="101"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="U/L" value="50"/>
+                            <hl7:high unit="U/L" value="136"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="SGOT/AST" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="1920-8"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="U/L" value="25"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="U/L" value="15"/>
+                            <hl7:high unit="U/L" value="37"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="SGPT/ALT" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="1742-6"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="U/L" value="54"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="U/L" value="30"/>
+                            <hl7:high unit="U/L" value="65"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="BILIRUBIN,TOTAL-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="1975-2"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="0.32"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="mg/dL" value="0"/>
+                            <hl7:high unit="mg/dL" value="1"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="CHOLESTEROL-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2093-3"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="249"/>
+                      <hl7:interpretationCode displayName="High" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="H"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:high unit="mg/dL" value="200"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="High" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="H"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="CALCIUM-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="17861-6"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="9.8"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="mg/dL" value="8.8"/>
+                            <hl7:high unit="mg/dL" value="10.5"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="PHOSPHORUS-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="2777-1"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mg/dL" value="4.0"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="mg/dL" value="2.5"/>
+                            <hl7:high unit="mg/dL" value="4.9"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code>
+                        <hl7:originalText>
+                          <hl7:reference value="ESTIMATED GFR"/>
+                        </hl7:originalText>
+                      </hl7:code>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mL/min" value="&gt;60"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:high unit="mL/min" value="60"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                </hl7:act>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="6"/>
+                <hl7:act moodCode="EVN" classCode="ACT">
+                  <hl7:id extension="HEMA 0406 32"/>
+                  <hl7:code displayName="CHEMISTRY STUDIES" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="18719-5"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime value="20090406155401-0700"/>
+                  <hl7:subject typeCode="SPC">
+                    <hl7:specimen classCode="SPEC">
+                      <hl7:id extension="7483402"/>
+                      <hl7:code displayName="Specimen Collection" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33882-2"/>
+                      <hl7:specimenNatural determinerCode="INSTANCE" classCode="ENT">
+                        <hl7:code/>
+                        <hl7:desc>BLOOD (EDTA)</hl7:desc>
+                      </hl7:specimenNatural>
+                    </hl7:specimen>
+                  </hl7:subject>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="WESTERGREN ESR-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="4537-7"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="mm/hr" value="12"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="mm/hr" value="0"/>
+                            <hl7:high unit="mm/hr" value="20"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                </hl7:act>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="7"/>
+                <hl7:act moodCode="EVN" classCode="ACT">
+                  <hl7:id extension="HEMA 0406 32"/>
+                  <hl7:code>
+                    <hl7:originalText>
+                      <hl7:reference value=" ELECTRONIC DIFF"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime value="20090406155401-0700"/>
+                  <hl7:subject typeCode="SPC">
+                    <hl7:specimen classCode="SPEC">
+                      <hl7:id extension="7483396"/>
+                      <hl7:code displayName="Specimen Collection" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33882-2"/>
+                      <hl7:specimenNatural determinerCode="INSTANCE" classCode="ENT">
+                        <hl7:code/>
+                        <hl7:desc>BLOOD (EDTA)</hl7:desc>
+                      </hl7:specimenNatural>
+                    </hl7:specimen>
+                  </hl7:subject>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName=" NE %" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="770-8"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ED">
+                        <hl7:reference value="50.5"/>
+                      </hl7:value>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low value="45"/>
+                            <hl7:high value="75"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName=" LYM %" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="26478-8"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ED">
+                        <hl7:reference value="37.2"/>
+                      </hl7:value>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low value="20.5"/>
+                            <hl7:high value="45.5"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName=" MONO %" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="26485-3"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ED">
+                        <hl7:reference value="8.9"/>
+                      </hl7:value>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low value="5.5"/>
+                            <hl7:high value="11.7"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName=" EO %" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="26450-7"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ED">
+                        <hl7:reference value="3.1"/>
+                      </hl7:value>
+                      <hl7:interpretationCode displayName="High" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="H"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low value=".9"/>
+                            <hl7:high value="2.9"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="High" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="H"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName=" BA %" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="706-2"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ED">
+                        <hl7:reference value="0.3"/>
+                      </hl7:value>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low value="0"/>
+                            <hl7:high value="1"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                </hl7:act>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="8"/>
+                <hl7:act moodCode="EVN" classCode="ACT">
+                  <hl7:id extension="HEMA 0406 32"/>
+                  <hl7:code>
+                    <hl7:originalText>
+                      <hl7:reference value=" CBC ONLY (NO ELECTRONIC DIFF)"/>
+                    </hl7:originalText>
+                  </hl7:code>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime value="20090406155401-0700"/>
+                  <hl7:subject typeCode="SPC">
+                    <hl7:specimen classCode="SPEC">
+                      <hl7:id extension="7483386"/>
+                      <hl7:code displayName="Specimen Collection" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33882-2"/>
+                      <hl7:specimenNatural determinerCode="INSTANCE" classCode="ENT">
+                        <hl7:code/>
+                        <hl7:desc>BLOOD (EDTA)</hl7:desc>
+                      </hl7:specimenNatural>
+                    </hl7:specimen>
+                  </hl7:subject>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName=" WBC" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="6690-2"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="K/cmm" value="7.8"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="K/cmm" value="4.4"/>
+                            <hl7:high unit="K/cmm" value="10.5"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="HGB-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="718-7"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="g/dL" value="16.0"/>
+                      <hl7:interpretationCode displayName="High" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="H"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="g/dL" value="11.8"/>
+                            <hl7:high unit="g/dL" value="15.9"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="High" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="H"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="HCT-SFIH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="20570-8"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="%" value="46.7"/>
+                      <hl7:interpretationCode displayName="High" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="H"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="%" value="35"/>
+                            <hl7:high unit="%" value="44"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="High" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="H"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName=" MCV" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="787-2"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="fl" value="91.6"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="fl" value="83"/>
+                            <hl7:high unit="fl" value="99"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName=" MCH" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="28539-5"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="pg" value="31.4"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="pg" value="28.1"/>
+                            <hl7:high unit="pg" value="32.5"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName=" MCHC" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="28540-3"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="gm/dL" value="34.3"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="gm/dL" value="32.5"/>
+                            <hl7:high unit="gm/dL" value="35"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName=" RDW" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="788-0"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="%" value="11.8"/>
+                      <hl7:interpretationCode displayName="Low" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="L"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="%" value="12"/>
+                            <hl7:high unit="%" value="16"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Low" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="L"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName=" PLT" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="26515-7"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:effectiveTime value="20090406155100-0700"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="K/cmm" value="355"/>
+                      <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                      <hl7:referenceRange typeCode="REFV">
+                        <hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+                          <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_PQ">
+                            <hl7:low unit="K/cmm" value="150"/>
+                            <hl7:high unit="K/cmm" value="400"/>
+                          </hl7:value>
+                          <hl7:interpretationCode displayName="Normal" codeSystemName="C32" codeSystem="2.16.840.1.113883.5.83" code="N"/>
+                        </hl7:observationRange>
+                      </hl7:referenceRange>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                </hl7:act>
+              </hl7:pertinentInformation3>
+            </hl7:careProvisionEvent>
+          </hl7:subject2>
+        </hl7:registrationEvent>
+      </hl7:subject>
+      <hl7:queryAck>
+        <hl7:queryId extension="6858a017-39c1-4153-bbd4-eaedac72a0e7"/>
+        <hl7:statusCode code="deliveredResponse"/>
+        <hl7:queryResponseCode code="OK"/>
+        <hl7:resultTotalQuantity value="9"/>
+      </hl7:queryAck>
+    </hl7:controlActProcess>
+  </hl7:response>
+</hl7:CareRecord_QUPC_IN043200UV01Message>

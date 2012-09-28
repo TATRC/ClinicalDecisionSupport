@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="gov.hhs.fha.nhinc.alertmanager.model">
+  <class name="AlertSpec" table="at_specification">
+    <id column="AT_SpecificationID" name="specificationId" type="long">
+      <generator class="increment"/>
+    </id>
+    <many-to-one column="AT_ID" lazy="false" name="alertType" not-null="true"/>
+    <property column="AT_AttributeName" length="50" name="name" not-null="false" type="string"/>
+    <property column="AT_AttributeValue" length="255" name="value" not-null="false" type="string"/>
+  </class>
+</hibernate-mapping>

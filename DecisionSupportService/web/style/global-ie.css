@@ -1,0 +1,8 @@
+
+.dataTables_wrapper {
+	zoom: 1;
+}
+
+table.display td {
+	border:			none;
+}

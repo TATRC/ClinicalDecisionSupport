@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-KService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/KService"/>
+        <property name="wsdl-KService" location="xml-resources/web-service-references/KService/wsdl/KService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/KService" destdir="${build.generated.dir}/jax-wsCache/KService" wsdl="${wsdl-KService}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="file:/E:/Workspaces/Netbeans6.7.1/NHINC/Current/Product/Production/KMR/Interfaces/src/wsdl/KService.wsdl" xnocompile="true">
+            <depends file="${wsdl-KService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/KService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/KService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-KService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/KService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/org/drools/jax/soap"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-KService"/>
+</project>

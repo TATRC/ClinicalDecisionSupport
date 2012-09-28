@@ -1,0 +1,338 @@
+{
+	"testResultFact": [
+		{
+			"historical": "true",
+			"id": {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"value": "HEMA 0908 11",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"sourceSystem": "2.16.840.1.113883.3.200",
+			"patientId": {
+				"codeSystem": "2.16.840.1.113883.3.200",
+				"codeSystemName": "",
+				"value": "8237363",
+				"floatValue": "8237363.0",
+				"displayable": "true"
+			},
+			"specimenDate": "2010-01-20T07:00:00-08:00",
+			"specimen": "BLOOD",
+			"resultDate": "2010-01-20T08:04:00-08:00",
+			"codedTestType": {
+				"codeSystem": "2.16.840.1.113883.6.1",
+				"codeSystemName": "LOINC",
+				"code": "718-7",
+				"label": "HGB-SFIH"
+			},
+			"freeTextTestType": "HGB-SFIH",
+			"resultStatus": "completed",
+			"resultValue": {
+				"value": "13.5",
+				"floatValue": "13.5",
+				"unit": "g\/dL"
+			},
+			"codedResultInterpretation": {
+				"codeSystem": "2.16.840.1.113883.5.83",
+				"codeSystemName": "",
+				"code": "N",
+				"label": "Normal"
+			},
+			"lowReferenceRange": {
+				"value": "11.8",
+				"floatValue": "11.8",
+				"unit": "g\/dL"
+			},
+			"hiReferenceRange": {
+				"value": "15.9",
+				"floatValue": "15.9",
+				"unit": "g\/dL"
+			},
+			"codedPanelType": {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"code": "UNK",
+				"label": "HGB SCREEN-SFIH"
+			},
+			"freeTextPanelType": "HGB SCREEN-SFIH",
+			"orderingProvider": {
+				"firstName": "Jane",
+				"middleName": "P",
+				"familyName": "PROVIDER",
+				"suffix": "MD",
+				"nameType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "L",
+					"label": "Legal"
+				}
+			}
+		}, {
+			"historical": "true",
+			"id": {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"value": "HEMA 0908 11",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"sourceSystem": "2.16.840.1.113883.3.200",
+			"patientId": {
+				"codeSystem": "2.16.840.1.113883.3.200",
+				"codeSystemName": "",
+				"value": "8237363",
+				"floatValue": "8237363.0",
+				"displayable": "true"
+			},
+			"specimenDate": "2010-01-20T07:00:00-08:00",
+			"specimen": "BLOOD",
+			"resultDate": "2010-01-20T08:04:00-08:00",
+			"codedTestType": {
+				"codeSystem": "2.16.840.1.113883.6.1",
+				"codeSystemName": "LOINC",
+				"code": "20570-8",
+				"label": "HCT-SFIH"
+			},
+			"freeTextTestType": "HCT-SFIH",
+			"resultStatus": "completed",
+			"resultValue": {
+				"value": "39.1",
+				"floatValue": "39.1",
+				"unit": "%"
+			},
+			"codedResultInterpretation": {
+				"codeSystem": "2.16.840.1.113883.5.83",
+				"codeSystemName": "",
+				"code": "H",
+				"label": "High"
+			},
+			"lowReferenceRange": {
+				"value": "35",
+				"floatValue": "35.0",
+				"unit": "%"
+			},
+			"hiReferenceRange": {
+				"value": "44",
+				"floatValue": "44.0",
+				"unit": "%"
+			},
+			"codedPanelType": {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"code": "UNK",
+				"label": "HGB SCREEN-SFIH"
+			},
+			"freeTextPanelType": "HGB SCREEN-SFIH",
+			"orderingProvider": {
+				"firstName": "Jane",
+				"middleName": "P",
+				"familyName": "PROVIDER",
+				"suffix": "MD",
+				"nameType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "L",
+					"label": "Legal"
+				}
+			}
+		}, {
+			"historical": "true",
+			"id": {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"value": "HEMA 0908 11",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"sourceSystem": "2.16.840.1.113883.3.200",
+			"patientId": {
+				"codeSystem": "2.16.840.1.113883.3.200",
+				"codeSystemName": "",
+				"value": "8237363",
+				"floatValue": "8237363.0",
+				"displayable": "true"
+			},
+			"specimenDate": "2010-01-20T07:00:00-08:00",
+			"specimen": "BLOOD",
+			"resultDate": "2010-01-20T08:04:00-08:00",
+			"codedTestType": {
+				"codeSystem": "2.16.840.1.113883.6.1",
+				"codeSystemName": "LOINC",
+				"code": "788-0",
+				"label": "RDW"
+			},
+			"freeTextTestType": "RDW",
+			"resultStatus": "completed",
+			"resultValue": {
+				"value": "13.2",
+				"floatValue": "13.2",
+				"unit": "%"
+			},
+			"codedResultInterpretation": {
+				"codeSystem": "2.16.840.1.113883.5.83",
+				"codeSystemName": "",
+				"code": "N",
+				"label": "Normal"
+			},
+			"lowReferenceRange": {
+				"value": "12",
+				"floatValue": "12.0",
+				"unit": "%"
+			},
+			"hiReferenceRange": {
+				"value": "16",
+				"floatValue": "16.0",
+				"unit": "%"
+			},
+			"codedPanelType": {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"code": "UNK",
+				"label": "HGB SCREEN-SFIH"
+			},
+			"freeTextPanelType": "HGB SCREEN-SFIH",
+			"orderingProvider": {
+				"firstName": "Jane",
+				"middleName": "P",
+				"familyName": "PROVIDER",
+				"suffix": "MD",
+				"nameType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "L",
+					"label": "Legal"
+				}
+			}
+		}, {
+			"historical": "true",
+			"id": {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"value": "HEMA 0908 11",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"sourceSystem": "2.16.840.1.113883.3.200",
+			"patientId": {
+				"codeSystem": "2.16.840.1.113883.3.200",
+				"codeSystemName": "",
+				"value": "8237363",
+				"floatValue": "8237363.0",
+				"displayable": "true"
+			},
+			"specimenDate": "2010-01-20T07:00:00-08:00",
+			"specimen": "BLOOD",
+			"resultDate": "2010-01-20T08:04:00-08:00",
+			"codedTestType": {
+				"codeSystem": "2.16.840.1.113883.6.1",
+				"codeSystemName": "LOINC",
+				"code": "787-2",
+				"label": "MCV"
+			},
+			"freeTextTestType": "MCV",
+			"resultStatus": "completed",
+			"resultValue": {
+				"value": "83.7",
+				"floatValue": "83.7",
+				"unit": "fl"
+			},
+			"codedResultInterpretation": {
+				"codeSystem": "2.16.840.1.113883.5.83",
+				"codeSystemName": "",
+				"code": "N",
+				"label": "Normal"
+			},
+			"lowReferenceRange": {
+				"value": "83",
+				"floatValue": "83.0",
+				"unit": "fl"
+			},
+			"hiReferenceRange": {
+				"value": "99",
+				"floatValue": "99.0",
+				"unit": "fl"
+			},
+			"codedPanelType": {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"code": "UNK",
+				"label": "HGB SCREEN-SFIH"
+			},
+			"freeTextPanelType": "HGB SCREEN-SFIH",
+			"orderingProvider": {
+				"firstName": "Jane",
+				"middleName": "P",
+				"familyName": "PROVIDER",
+				"suffix": "MD",
+				"nameType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "L",
+					"label": "Legal"
+				}
+			}
+		}, {
+			"historical": "true",
+			"id": {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"value": "HEMA 0908 12",
+				"floatValue": "0.0",
+				"displayable": "true"
+			},
+			"sourceSystem": "2.16.840.1.113883.3.200",
+			"patientId": {
+				"codeSystem": "2.16.840.1.113883.3.200",
+				"codeSystemName": "",
+				"value": "8237363",
+				"floatValue": "8237363.0",
+				"displayable": "true"
+			},
+			"specimenDate": "2009-06-04T11:09:00-07:00",
+			"specimen": "BLOOD",
+			"resultDate": "2009-06-04T14:09:00-07:00",
+			"codedTestType": {
+				"codeSystem": "2.16.840.1.113883.6.1",
+				"codeSystemName": "LOINC",
+				"code": "2089-1",
+				"label": "LDL CHOLESTEROL,CALC"
+			},
+			"freeTextTestType": "LDL CHOLESTEROL,CALC",
+			"resultStatus": "completed",
+			"resultValue": {
+				"value": "177",
+				"floatValue": "177.0",
+				"unit": "mg\/dL"
+			},
+			"codedResultInterpretation": {
+				"codeSystem": "2.16.840.1.113883.5.83",
+				"codeSystemName": "",
+				"code": "H",
+				"label": "High"
+			},
+			"lowReferenceRange": {
+				"value": "0",
+				"floatValue": "0.0",
+				"unit": "mg\/dL"
+			},
+			"hiReferenceRange": {
+				"value": "170",
+				"floatValue": "170.0",
+				"unit": "mg\/dL"
+			},
+			"orderingProvider": {
+				"firstName": "JOE",
+				"middleName": "A",
+				"familyName": "PROVIDER",
+				"suffix": "MD",
+				"nameType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "L",
+					"label": "Legal"
+				}
+			}
+		}
+	]
+}

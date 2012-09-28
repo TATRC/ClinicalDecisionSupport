@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:util="http://www.springframework.org/schema/util"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                          http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+  <bean id="cal.client" class="gov.hhs.fha.nhinc.adapter.commondatalayer.client.CommonDataLayerServiceClient">
+    <property name="hl7Props">
+      <props>
+        <prop key="ORGANIZATION_OID">1.1</prop>
+        <prop key="ORGANIZATION_NAME">1.1</prop>
+      </props>
+    </property>
+    <property name="objectFactory" ref="hl7.object.factory"/>
+    <property name="prefixMapper" ref="hl7.namespace.prefix"/>
+      <!--
+      <property name="jaxbContext" ref="hl7.jaxbContext.factory"/>
+      <property name="serviceEndpoint" value="#{cal.service.endpoint}"/>
+      -->
+    <property name="serviceEndpoint">
+      <!--
+      <value>http://nhindev01.asu.edu:8080/CommonDataLayerService/AdapterCommonDataLayer?wsdl</value>
+      <value>http://nhinint01.asu.edu:8080/CommonDataLayerService/AdapterCommonDataLayer?wsdl</value>
+      -->
+      <value>http://kmrdev.medsphere.com:8080/CommonDataLayerService/AdapterCommonDataLayer?wsdl</value>
+    </property>
+  </bean>
+
+   <!--
+   <bean id="configurer" class="net.wuenschenswert.spring.ReloadingPropertyPlaceholderConfigurer">
+      <property name="properties" ref="service.properties"/>
+   </bean>
+
+   <bean id="service.properties" class="gov.hhs.fha.nhinc.adapter.commondatalayer.util.ServiceReloadableProperties">
+      <property name="properties">
+        <props>
+          <prop key="cal.service.endpoint">http://nhinint01.asu.edu:8080/CommonDataLayerService/AdapterCommonDataLayer?wsdl</prop>
+          <prop key="ORGANIZATION_OID">1.1</prop>
+          <prop key="ORGANIZATION_NAME">1.1</prop>
+        </props>
+      </property>
+   </bean>
+   -->
+
+   <!--
+   <bean id="hl7.jaxbContext.factory" class="javax.xml.bind.JAXBContext" factory-method="newInstance">
+     <constructor-arg index="0" type="java.lang.String" value="org.hl7.v3"/>
+   </bean>
+
+   <bean id="jaxbContext.factory" class="javax.xml.bind.JAXBContext" factory-method="newInstance" />
+
+   <bean id="fact.object.factory" class="gov.hhs.fha.nhinc.adapter.fact.ObjectFactory"/>
+   -->
+
+  <bean id="hl7.object.factory" class="org.hl7.v3.ObjectFactory"/>
+
+  <bean id="extractor.factory" class="gov.hhs.fha.nhinc.adapter.fact.extractor.FactExtractorFactory"/>
+
+  <bean id="hl7.namespace.prefix" class="gov.hhs.fha.nhinc.adapter.commondatalayer.xml.HL7NamespacePrefixMapper"/>
+
+  <util:map id="extractor.types" map-class="java.util.HashMap">
+    <entry key="getAdmissionFacts" value="InpatientEncounter"/>
+    <entry key="getAppointmentFacts" value="OutpatientEncounter"/>
+    <entry key="getEncounterFacts" value="EncounterDetails"/>
+    <entry key="getDemographicsFact" value="PatientDemographics"/>
+    <entry key="getPatientFacts" value="PatientSearch"/>
+    <entry key="getProviderFacts" value="ProviderSearch"/>
+    <entry key="getAllergyFacts" value="CareRecordAllergy"/>
+    <entry key="getImmunizationFacts" value="CareRecordImmunization"/>
+    <entry key="getOrderFacts" value="OrderHistory"/>
+    <entry key="getProblemFacts" value="CareRecordProblem"/>
+    <entry key="getProcedureFacts" value="CareRecordProcedure"/>
+    <entry key="getTestResultFacts" value="CareRecordTestResult"/>
+    <entry key="getTestResultEventFacts" value="ResultEventMessage"/>
+    <entry key="getMedicationFacts" value="CareRecordMedication"/>
+    <entry key="getVitalsFacts" value="CareRecordVitals"/>
+    <entry key="getImagingResultFacts" value="CareRecordImagingResult"/>
+    <entry key="getAppointmentScheduleFacts" value="ScheduleSearch"/>
+  </util:map>
+
+  <util:map id="registry.property" map-class="java.util.HashMap">
+    <entry key="endpoint" value="http://nhinint01.asu.edu:8080/Registries/RegistriesService?WSDL"/>
+  </util:map>
+
+</beans>

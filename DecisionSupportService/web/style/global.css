@@ -1,0 +1,279 @@
+body {
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  background-color: #E2E2E2;
+  background-image: url(../images/bg.gif);
+}
+
+body,td,th {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.menu-text {
+  color: #FFFFFF;
+  padding-right: 25px;
+  padding-left: 25px;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.menu-text-selected {
+  color: #FFFFFF;
+  padding-right: 25px;
+  padding-left: 25px;
+  cursor: pointer;
+  cursor: hand;
+  background-image: url(../images/menu-bg-selected.gif);
+}
+
+.menu-text:hover {
+  background-image: url(../images/menu-bg-selected.gif);
+}
+
+.breadcrumbs {
+  padding-left: 1px;
+  padding-right: 1px;
+  font-size: 12px;
+}
+
+.breadcrumbs a {
+  color: #000000;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  font-size: 18px;
+  color: #006600;
+  font-weight: bold;
+}
+
+.sub-header {
+  font-weight: bold;
+}
+
+.option-link {
+  color: #000000;
+}
+
+.option-link:hover {
+  color: #0000CC;
+  text-decoration: none;
+}
+
+.option-link-small {
+  color: #000000;
+  font-size: 12px;
+}
+
+.option-link-small:hover {
+  color: #0000CC;
+  text-decoration: none;
+}
+
+.content-header {
+  font-size: 16px;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 28px;
+}
+
+
+.inactive {
+  color: #666666;
+}
+
+.result-header {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.result-0 {
+  background-color: #EBEBEB;
+}
+
+.all-records-link {
+  font-size: 12px;
+  font-style: italic;
+}
+
+.required {
+  color: #FF0000;
+}
+
+.error {
+  color: #FF0000;
+}
+
+.notice {
+  color: #0000FF;
+}
+
+.template-result-0 {
+  background-color: #EBEBEB;
+}
+
+.template-header {
+  font-weight: bold;
+}
+
+.template-label {
+  color: #666666;
+}
+
+.template-caption {
+  font-style: italic;
+}
+
+.template-error {
+  color: #FF0000;
+}
+
+.template-source {
+  font-size: 12px;
+  color: #666666;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables features
+ */
+
+.dataTables_wrapper {
+	font-size: 12px;
+	position: relative;
+	margin-bottom:	40px;
+	clear: both;
+}
+
+.dataTables_processing {
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	width: 250px;
+	margin-left: -125px;
+	border: 1px solid #dddddd;
+	text-align: center;
+	color: #999999;
+	font-size: 11px;
+	padding: 2px 0;
+}
+
+.dataTables_length {
+	width: 40%;
+	float: left;
+}
+
+.dataTables_filter {
+	width: 50%;
+	float: right;
+	text-align: right;
+}
+
+.dataTables_info {
+	width: 60%;
+	float: left;
+}
+
+.dataTables_paginate {
+	width: 44px;
+	float: right;
+	text-align: right;
+}
+
+/* Pagination nested */
+.paginate_disabled_previous, .paginate_enabled_previous, .paginate_disabled_next, .paginate_enabled_next {
+	height: 19px;
+	width: 19px;
+	margin-left: 3px;
+	float: left;
+}
+
+.paginate_disabled_previous {
+	background-image: url('../images/back_disabled.jpg');
+}
+
+.paginate_enabled_previous {
+	background-image: url('../images/back_enabled.jpg');
+}
+
+.paginate_disabled_next {
+	background-image: url('../images/forward_disabled.jpg');
+}
+
+.paginate_enabled_next {
+	background-image: url('../images/forward_enabled.jpg');
+}
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables display
+ */
+table.display {
+	font-size: 12px;
+	width: 100%;
+	clear: both;
+	border-collapse:	collapse;
+	border-bottom: 1px solid #000000;
+}
+
+table.display thead th {
+	font-size: 12px;
+	text-align: center;
+	padding: 3px 10px;
+	border-bottom: 1px solid #000000;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+table.display tfoot th {
+	font-size: 12px;
+	padding: 3px 10px;
+	border-top: 1px solid #000000;
+	font-weight: bold;
+}
+
+table.display tr.heading2 td {
+	border-bottom: 1px solid #aaaaaa;
+}
+
+table.display td {
+	font-size: 12px;
+	border:			thin dotted #000000;
+	padding: 3px 10px;
+}
+
+table.display td.center {
+	text-align: center;
+}
+
+table.display tr.even { background-color: #eeeeee; }
+table.display tr.odd { background-color: #dddddd; }
+table.display tr.highlight { background: #FAFAD2; }
+table.display tr.selected { background: #ffff66; }
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables sorting
+ */
+
+.sorting_asc {
+	background: url('../images/sort_asc.jpg') no-repeat center right;
+}
+
+.sorting_desc {
+	background: url('../images/sort_desc.jpg') no-repeat center right;
+}
+
+.sorting {
+	background: url('../images/sort_both.jpg') no-repeat center right;
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="gov.hhs.fha.nhinc.alertmanager.model">
+  <class name="AlertServiceRef" table="alertserviceref">
+    <id column="ASR_ID" name="alertServiceRefId" type="long">
+      <generator class="increment"/>
+    </id>
+    <property column="ASR_Name" length="50" name="name" not-null="true" type="string"/>
+    <property column="ASR_Description" length="255" name="description" not-null="true" type="string"/>
+    <property column="ASR_Type" length="50" name="type" not-null="true" type="string"/>
+    <property column="ASR_Location" length="128" name="location" not-null="true" type="string"/>
+    <property column="ASR_Param1" length="128" name="serviceParam1" type="string"/>
+    <property column="ASR_Param2" length="128" name="serviceParam2" type="string"/>
+    <property column="ASR_Param3" length="128" name="serviceParam3" type="string"/>
+    <property column="ASR_Param4" length="128" name="serviceParam4" type="string"/>
+  </class>
+</hibernate-mapping>

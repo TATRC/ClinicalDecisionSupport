@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hl7:CareRecord_QUPC_IN043200UV01Message xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+  <hl7:response>
+    <hl7:id extension="6858a017-39c1-4153-bbd4-eaedac72a0e7"/>
+    <hl7:creationTime value="20101117234403.300"/>
+    <hl7:interactionId extension="PRPA_IN201308UV02"/>
+    <hl7:processingCode code="P"/>
+    <hl7:processingModeCode code="R"/>
+    <hl7:acceptAckCode code="RCV"/>
+    <hl7:receiver typeCode="RCV">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+        <hl7:telecom value="http://localhost:8080/NhinConnect/CommonDataLayerService"/>
+      </hl7:device>
+    </hl7:receiver>
+    <hl7:sender typeCode="SND">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+      </hl7:device>
+    </hl7:sender>
+    <hl7:controlActProcess classCode="CACT" moodCode="EVN">
+      <hl7:id/>
+      <hl7:code/>
+      <hl7:subject typeCode="SUBJ" contextConductionInd="true">
+        <hl7:registrationEvent classCode="REG" moodCode="EVN">
+          <hl7:statusCode code="completed"/>
+          <hl7:custodian typeCode="CST">
+            <hl7:assignedEntity classCode="ASSIGNED">
+              <hl7:id extension="AHLTA" root="2.16.840.1.113883.3.200"/>
+              <hl7:assignedOrganization classCode="ORG" determinerCode="INSTANCE">
+                <hl7:name>department of Defense</hl7:name>
+              </hl7:assignedOrganization>
+            </hl7:assignedEntity>
+          </hl7:custodian>
+          <hl7:subject2 typeCode="SUBJ" contextConductionInd="true">
+            <hl7:careProvisionEvent classCode="PCPR" moodCode="EVN">
+              <hl7:recordTarget typeCode="RCT" contextControlCode="OP">
+                <hl7:patient classCode="PAT">
+                  <hl7:id extension="8237363"/>
+                  <hl7:statusCode code="active"/>
+                  <hl7:patientPerson classCode="PSN" determinerCode="INSTANCE"/>
+                </hl7:patient>
+              </hl7:recordTarget>
+              <hl7:pertinentInformation3 typeCode="PERT" contextConductionInd="true">
+                <hl7:act classCode="PCPR" moodCode="RQO">
+											<!-- order number -->
+                  <hl7:id extension="order-number-#"/>
+											<!-- A code value identifying the type of order to be fulfilled by the clinical service -->
+                  <hl7:code code="MEDOE" displayName="Medication Order" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
+											<!-- contain particular instructions pertaining to this order -->
+                  <hl7:text>particular instructions pertaining to this order</hl7:text>
+											<!-- order status -->
+                  <hl7:statusCode code="completed"/>
+											<!-- order effective time -->
+                  <hl7:effectiveTime>
+                    <hl7:low value="20101201090000"/>
+                    <hl7:high value="20101205090000"/>
+                  </hl7:effectiveTime>
+											<!-- order priority -->
+                  <hl7:priorityCode code="P" displayName="Preop" codeSystem="2.16.840.1.113883.3.88.12.80.71" codeSystemName="ActPriority"/>
+											<!-- The person that wrote this order (may include both a name and an identifier). -->
+                  <hl7:author typeCode="AUT" contextControlCode="OP">
+												<!-- order date and time -->
+                    <hl7:time value="20101122100000"/>
+                    <hl7:assignedEntity1 classCode="ASSIGNED">
+                      <hl7:id extension="ordering-provider-id"/>
+                      <hl7:assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                        <hl7:name>
+                          <hl7:family>PROVIDER</hl7:family>
+                          <hl7:given>ORDERING</hl7:given>
+                          <hl7:prefix>Dr</hl7:prefix>
+                        </hl7:name>
+                      </hl7:assignedPerson>
+                    </hl7:assignedEntity1>
+                  </hl7:author>
+											<!-- The identity of the person who actually keyed the request into the order application (may include both a name and/or an identifier) -->
+                  <hl7:dataEnterer typeCode="ENT" contextControlCode="OP">
+                    <hl7:time value="20101122100000"/>
+                    <hl7:assignedEntity classCode="ASSIGNED">
+                      <hl7:assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                        <hl7:name>
+                          <hl7:family>PROVIDER</hl7:family>
+                          <hl7:given>ORDERING</hl7:given>
+                          <hl7:prefix>Dr</hl7:prefix>
+                        </hl7:name>
+                      </hl7:assignedPerson>
+                    </hl7:assignedEntity>
+                  </hl7:dataEnterer>
+											<!-- The identity of the person who verified the accuracy of the entered request may include both a name and/or an identifier) -->
+                  <hl7:verifier typeCode="VRF" contextControlCode="OP">
+                    <hl7:time value="20101122100000"/>
+                    <hl7:assignedEntity classCode="ASSIGNED">
+                      <hl7:id extension="ordering-provider-id"/>
+                      <hl7:assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                        <hl7:name>
+                          <hl7:family>PROVIDER</hl7:family>
+                          <hl7:given>ORDERING</hl7:given>
+                          <hl7:prefix>Dr</hl7:prefix>
+                        </hl7:name>
+                      </hl7:assignedPerson>
+                    </hl7:assignedEntity>
+                  </hl7:verifier>
+                  <hl7:sourceOf typeCode="COMP">
+                    <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                      <hl7:id extension="pharm-med-id-#"/>
+                      <hl7:text>TAKE ONE TABLET BY MOUTH AT BEDTIME TO LOWER CHOLESTEROL</hl7:text>
+                      <hl7:doseQuantity value="1" unit="{TABLET}"/>
+                      <hl7:consumable typeCode="CSM">
+                        <hl7:administerableMaterial classCode="ADMM">
+                          <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                            <hl7:code displayName="SIMVASTATIN 40MG TABLET" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="24658-0213-10">
+                              <hl7:originalText>SIMVASTATIN 40MG TABLET</hl7:originalText>
+                            </hl7:code>
+                            <hl7:desc>SIMVASTATIN 40MG TABLET</hl7:desc>
+                          </hl7:administerableMaterial>
+                        </hl7:administerableMaterial>
+                      </hl7:consumable>
+                    </hl7:substanceAdministration>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="UNK"></hl7:id>
+													<!-- The number of times that this medication is to be dispense by the pharmacy -->
+                      <hl7:repeatNumber value="3"/>
+                      <hl7:quantity value="30"/>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:act>
+              </hl7:pertinentInformation3>
+            </hl7:careProvisionEvent>
+          </hl7:subject2>
+        </hl7:registrationEvent>
+      </hl7:subject>
+      <hl7:queryAck>
+        <hl7:queryResponseCode/>
+      </hl7:queryAck>
+    </hl7:controlActProcess>
+  </hl7:response>
+</hl7:CareRecord_QUPC_IN043200UV01Message>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+  <bean id="vitals.extractor" class="gov.hhs.fha.nhinc.adapter.fact.extractor.VitalsFactExtractor" scope="prototype">
+    <constructor-arg ref="Xpath"/>
+    <property name="factBaseXpath" value="//hl7:careProvisionEvent/hl7:pertinentInformation3[#event#]"/>
+    <property name="eventsCountXpath" value="count(//hl7:careProvisionEvent/hl7:pertinentInformation3)"/>
+    <property name="factIndexCharset" value="#event#"/>
+    <property name="factClassName" value="gov.hhs.fha.nhinc.adapter.fact.VitalFactType"/>
+    <property name="factProperties">
+      <map>
+        <entry key="SourceSystem">
+          <ref bean="carerecord.SourceSystem"/>
+        </entry>
+        <entry key="Id">
+          <ref bean="vitals.Id"/>
+        </entry>
+        <entry key="PatientId">
+          <ref bean="vitals.PatientId"/>
+        </entry>
+        <entry key="CodedResultType">
+          <ref bean="vitals.CodedResultType"/>
+        </entry>
+        <entry key="FreeTextResultType">
+          <ref bean="vitals.FreeTextResultType"/>
+        </entry>
+        <entry key="ResultDate">
+          <ref bean="vitals.ResultDate"/>
+        </entry>
+        <entry key="ResultStatus">
+          <ref bean="vitals.ResultStatus"/>
+        </entry>
+        <entry key="ResultValue">
+          <ref bean="vitals.ResultValue"/>
+        </entry>
+        <entry key="FreeTextResultValue">
+          <ref bean="vitals.FreeTextResultValue"/>
+        </entry>
+        <entry key="CodedResultInterpretation">
+          <ref bean="vitals.CodedResultInterpretation"/>
+        </entry>
+        <entry key="LowReferenceRange">
+          <ref bean="vitals.LowReferenceRange"/>
+        </entry>
+        <entry key="HiReferenceRange">
+          <ref bean="vitals.HiReferenceRange"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="vitals.Id" class="gov.hhs.fha.nhinc.adapter.fact.def.ValueTypeListPropertyDefinition">
+    <property name="propertyName" value="Id"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueType"/>
+    <property name="valueXpath" value="hl7:observation/hl7:id[#id#]/@extension"/>
+    <property name="codeSystemXpath" value="hl7:observation/hl7:id[#id#]/@root"/>
+    <property name="codeSystemNameXpath" value="hl7:observation/hl7:id[#id#]/@assigningAuthorityName"/>
+    <property name="indexRef" value="#id#"/>
+    <property name="listSizeXpath" value="count(hl7:observation/hl7:id)"/>
+  </bean>
+
+  <bean id="vitals.PatientId" class="gov.hhs.fha.nhinc.adapter.fact.def.ValueTypePropertyDefinition">
+    <property name="propertyName" value="PatientId"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueType"/>
+    <property name="valueXpath" value="//hl7:recordTarget/hl7:patient/hl7:id/@extension"/>
+    <property name="codeSystemXpath" value="//hl7:recordTarget/hl7:patient/hl7:id/@root"/>
+    <property name="codeSystemNameXpath" value="//hl7:recordTarget/hl7:patient/hl7:id/@assigningAuthorityName"/>
+  </bean>
+   
+  <bean id="vitals.CodedResultType" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="CodedResultType"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:observation[@classCode='OBS']/hl7:code/@code"/>
+    <property name="labelXpath" value="hl7:observation[@classCode='OBS']/hl7:code/@displayName"/>
+    <property name="codeSystemXpath" value="hl7:observation[@classCode='OBS']/hl7:code/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="hl7:observation[@classCode='OBS']/hl7:code/@codeSystemName"/>
+  </bean>
+
+  <bean id="vitals.FreeTextResultType" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FreeTextResultType"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:observation[@classCode='OBS']/hl7:text"/>
+  </bean>
+
+  <bean id="vitals.ResultDate" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="ResultDate"/>
+    <property name="propertyClassName" value="java.util.Date"/>
+    <property name="propertyXpath" value="hl7:observation[@classCode='OBS']/hl7:effectiveTime/@value"/>
+  </bean>
+
+  <bean id="vitals.ResultStatus" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="ResultStatus"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:observation[@classCode='OBS']/hl7:statusCode/@code"/>
+  </bean>
+
+  <bean id="vitals.ResultValue" class="gov.hhs.fha.nhinc.adapter.fact.def.VUPPropertyDefinition">
+    <property name="propertyName" value="ResultValue"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueUnitPair"/>
+    <property name="valueXpath" value="hl7:observation[@classCode='OBS']/hl7:value/@value"/>
+    <property name="unitXpath" value="hl7:observation[@classCode='OBS']/hl7:value/@unit"/>
+  </bean>
+
+  <bean id="vitals.FreeTextResultValue" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FreeTextResultValue"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:observation[@classCode='OBS']/hl7:value/@value"/>
+  </bean>
+
+  <bean id="vitals.CodedResultInterpretation" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="CodedResultInterpretation"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:observation[@classCode='OBS']/hl7:interpretationCode/@code"/>
+    <property name="labelXpath" value="hl7:observation[@classCode='OBS']/hl7:interpretationCode/@displayName"/>
+    <property name="codeSystemXpath" value="hl7:observation[@classCode='OBS']/hl7:interpretationCode/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="hl7:observation[@classCode='OBS']/hl7:interpretationCode/@codeSystemName"/>
+  </bean>
+
+  <bean id="vitals.LowReferenceRange" class="gov.hhs.fha.nhinc.adapter.fact.def.VUPPropertyDefinition">
+    <property name="propertyName" value="LowReferenceRange"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueUnitPair"/>
+    <property name="valueXpath" value="hl7:observation[@classCode='OBS']/hl7:referenceRange[@typeCode='REFV']/hl7:observation[@classCode='OBS']/hl7:value/hl7:low/@value"/>
+    <property name="unitXpath" value="hl7:observation[@classCode='OBS']/hl7:referenceRange[@typeCode='REFV']/hl7:observation[@classCode='OBS']/hl7:value/hl7:low/@unit"/>
+  </bean>
+
+  <bean id="vitals.HiReferenceRange" class="gov.hhs.fha.nhinc.adapter.fact.def.VUPPropertyDefinition">
+    <property name="propertyName" value="HiReferenceRange"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueUnitPair"/>
+    <property name="valueXpath" value="hl7:observation[@classCode='OBS']/hl7:referenceRange[@typeCode='REFV']/hl7:observation[@classCode='OBS']/hl7:value/hl7:high/@value"/>
+    <property name="unitXpath" value="hl7:observation[@classCode='OBS']/hl7:referenceRange[@typeCode='REFV']/hl7:observation[@classCode='OBS']/hl7:value/hl7:high/@unit"/>
+  </bean>
+
+</beans>

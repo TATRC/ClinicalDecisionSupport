@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:util="http://www.springframework.org/schema/util"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                          http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+   <!--
+      serviceEndpoint = the Medsphere Authentication WS endpoint
+      inboxURL = the KMR Inbox URL. Filtering parameters will be appended via service.
+   -->
+   <util:map id="authenservice.client" map-class="java.util.HashMap">
+      <entry key="serviceEndpoint" value="http://kmrdev.medsphere.com:8080/MSCServiceApp/MSCAuthenticationService?wsdl"/>
+      <entry key="inboxURL" value="http://208.75.163.61:8080/UniversalInboxGUI/inbox.iface?"/>
+   </util:map>
+
+</beans>

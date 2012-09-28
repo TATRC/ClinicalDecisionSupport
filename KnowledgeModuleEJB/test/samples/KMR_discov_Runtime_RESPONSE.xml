@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:KmRuntimeRecordResponse xmlns:ns2="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <ns2:requestReference>
+            <ns2:requestId>99</ns2:requestId>
+            <ns2:requestDate>2010-03-22T00:03:22.000-00:07</ns2:requestDate>
+         </ns2:requestReference>
+         <ns2:responseList>
+            <ns2:km>
+               <ns2:kmId>1</ns2:kmId>
+               <ns2:kmName>myKM</ns2:kmName>
+               <ns2:latestVersionNum>0</ns2:latestVersionNum>
+               <ns2:validationStatus>UNDER REVIEW</ns2:validationStatus>
+               <ns2:KmVersionList>
+                  <kmVersion>
+                     <KM_VersionNum>1</KM_VersionNum>
+                     <KMV_Name>myKM - v1</KMV_Name>
+                     <ValidationStatus>DRAFT</ValidationStatus>
+                     <LMT_ID>0</LMT_ID>
+                     <Logic_IntermediateForm>intermediate form - A</Logic_IntermediateForm>
+                     <Logic_NativeForm>bmF0aXZlIGZvcm0gLSBEUk9PTFMgLSBB</Logic_NativeForm>
+                  </kmVersion>
+                  <kmVersion>
+                     <KM_VersionNum>2</KM_VersionNum>
+                     <KMV_Name>myKM - v2</KMV_Name>
+                     <ValidationStatus>APPROVED</ValidationStatus>
+                     <LMT_ID>0</LMT_ID>
+                     <Logic_IntermediateForm>intermediate form - B</Logic_IntermediateForm>
+                     <Logic_NativeForm>bmF0aXZlIGZvcm0gLSBEUk9PTFMgLSBC</Logic_NativeForm>
+                  </kmVersion>
+                  <kmVersion>
+                     <KM_VersionNum>4</KM_VersionNum>
+                     <KMV_Name>myKM - v4</KMV_Name>
+                     <ValidationStatus>DRAFT</ValidationStatus>
+                     <LMT_ID>0</LMT_ID>
+                     <Logic_IntermediateForm>intermediate form - D</Logic_IntermediateForm>
+                     <Logic_NativeForm>bmF0aXZlIGZvcm0gLSBEUk9PTFMgLSBE</Logic_NativeForm>
+                  </kmVersion>
+                  <kmVersion>
+                     <KM_VersionNum>3</KM_VersionNum>
+                     <KMV_Name>myKM - v3</KMV_Name>
+                     <ValidationStatus>PRODUCTION</ValidationStatus>
+                     <LMT_ID>0</LMT_ID>
+                     <Logic_IntermediateForm>intermediate form - C</Logic_IntermediateForm>
+                     <Logic_NativeForm>bmF0aXZlIGZvcm0gLSBEUk9PTFMgLSBD</Logic_NativeForm>
+                  </kmVersion>
+               </ns2:KmVersionList>
+            </ns2:km>
+            <ns2:km>
+               <ns2:kmId>2</ns2:kmId>
+               <ns2:kmName>myKM 2</ns2:kmName>
+               <ns2:latestVersionNum>0</ns2:latestVersionNum>
+               <ns2:validationStatus>PRODUCTION</ns2:validationStatus>
+               <ns2:KmVersionList>
+                  <kmVersion>
+                     <KM_VersionNum>1</KM_VersionNum>
+                     <KMV_Name>myKM2 - v1</KMV_Name>
+                     <ValidationStatus>PRODUCTION</ValidationStatus>
+                     <LMT_ID>0</LMT_ID>
+                     <Logic_IntermediateForm>intermediate form - E</Logic_IntermediateForm>
+                     <Logic_NativeForm>bmF0aXZlIGZvcm0gLSBEUk9PTFMgLSBF</Logic_NativeForm>
+                  </kmVersion>
+                  <kmVersion>
+                     <KM_VersionNum>2</KM_VersionNum>
+                     <KMV_Name>myKM4 - v2</KMV_Name>
+                     <ValidationStatus>DRAFT</ValidationStatus>
+                     <LMT_ID>0</LMT_ID>
+                     <Logic_NativeForm>bmF0aXZlIGZvcm0gLSBEUk9PTFMgLSBG</Logic_NativeForm>
+                     <Logic_BinaryForm>QUJDMTIzYWJj</Logic_BinaryForm>
+                  </kmVersion>
+               </ns2:KmVersionList>
+            </ns2:km>
+         </ns2:responseList>
+      </ns2:KmRuntimeRecordResponse>
+   </S:Body>
+</S:Envelope>
+
+
+<!-- per REQUEST: RUNTIME
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <SOAP-ENV:Body>
+      <m:KmRuntimeRecordRequest xmlns:m="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <m:request>
+            <m:requestReference>
+               <m:requestId>99</m:requestId>
+               <m:requestDate>2010-03-22T00:03:22.000-00:07</m:requestDate>
+            </m:requestReference>
+            <m:km>
+               <m:ACL>
+                  <UR_Name>Providers-Physicians</UR_Name>
+               </m:ACL>
+            </m:km>
+         </m:request>
+      </m:KmRuntimeRecordRequest>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+-->

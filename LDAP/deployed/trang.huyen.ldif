@@ -1,0 +1,72 @@
+version: 1
+dn: cn=wilson.huyentrang,ou=people,dc=socraticgrid,dc=org
+objectClass: person
+objectClass: kmr-orgPerson
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+businessCategory: patient
+carLicense: CA12348
+cn: wilson.huyentrang
+departmentNumber: 123.4567.12.3444
+destinationIndicator: 1234.1234.2.34.12.34.1234
+displayName: Huyen Trang Wilson, MD
+employeeNumber: 21777989-09
+employeeType: md
+facsimileTelephoneNumber: 619-555-9999
+gender: F
+givenName: HuyenTrang
+homePhone: 858-666-0000
+homePostalAddress: 5003 Mt Elbrus Drive$San Diego, CA 92117
+initials: htw
+l: San Diego
+labeledURI: www.homewebpage.com
+mail: wilson.huyentrang@gmx.com
+manager: cn=fry.emory
+mobile: 801-244-8026
+ou: dn=123
+pager: 619-999-999
+photo:: 
+postalAddress: 5003 Mt Elbrus Drive$San Diego, CA 92117
+postalCode: 92117
+preferredContactMethod: homePhone
+preferredDeliveryMethod: physical
+preferredLanguage: English
+registeredAddress: Naval Health Research Center$140 Sylvester Rd$San Diego, CA 92126
+roomNumber: A3
+secretary: 
+sn: Wilson
+st: CA
+street: 5003 Mt Elbrus Drive
+telephoneNumber: 858-666-0000
+title: Ms.
+uid: 2122
+userPassword:: test
+
+dn: cn=CA.MedicalLicense,cn=wilson.huyentrang,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-document
+objectClass: document
+objectClass: top
+cn: CA.MedicalLicense
+description: Physician and Surgeon
+documentExpirationTime: 20120930002323.687Z
+documentIdentifier: G 99999
+documentLocation: California
+documentPublisher: California Medical License Board
+documentStatus: renewed & current
+documentTitle: Medical License
+
+dn: cn=PMR.Account,cn=wilson.huyentrang,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-account
+objectClass: top
+cn: PMR.Account
+description: Account for PMR portal
+uid: 2122
+
+dn: cn=RPMS.Account,cn=wilson.huyentrang,ou=people,dc=socraticgrid,dc=org
+objectClass: kmr-account
+objectClass: top
+cn: RPMS.Account
+uid: 2122
+userPassword:: test
+

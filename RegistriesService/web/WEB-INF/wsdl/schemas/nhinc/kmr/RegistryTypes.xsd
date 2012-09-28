@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:tns="urn:mil:navy:med:dzreg:types" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:mil:navy:med:dzreg:types" elementFormDefault="qualified">
+	<xs:complexType name="PersonRegistryProfileRequestType">
+		<xs:sequence>
+			<xs:element name="id" type="xs:long"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RegisterPersonRequestType">
+		<xs:sequence>
+			<xs:element name="person" type="tns:PersonType"/>
+			<!-- A list of registries -->
+			<xs:element name="registry" type="tns:RegistryType" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="dataSource" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>	
+	<xs:complexType name="PersonRegistryProfileResponseType">
+		<xs:sequence>
+			<xs:element name="profile" type="tns:PersonRegistryProfileType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>	
+	<xs:complexType name="RegistryTypeResponseType">
+		<xs:sequence>
+			<xs:element name="registry" type="tns:RegistryType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AckType">
+		<xs:sequence>
+			<!-- allowable values:  OK, AE (Application Error) -->
+			<xs:element name="responseCode" type="xs:string"/>
+			<xs:element name="detectedIssueText" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>	
+	<xs:complexType name="PersonRegistryProfileType">
+		<xs:sequence>
+			<xs:element name="person" type="tns:PersonType"/>
+			<!-- A list of registry profile(s) -->
+			<xs:element name="registry" type="tns:RegistryProfileType" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="dataSource" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RegistryProfileType">
+		<xs:complexContent>
+			<xs:extension base="tns:RegistryType">
+				<xs:sequence>
+					<xs:element name="registeredDate" type="xs:dateTime"/>
+					<xs:element name="active" type="xs:boolean"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RegistryType">
+		<xs:sequence>
+			<xs:element name="registryId" type="xs:int"/>
+			<xs:element name="registryDesc" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PersonType">
+		<xs:sequence>
+			<xs:element name="id" type="xs:long"/>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="eligibilityIdentifier" type="xs:long" minOccurs="0"/>
+			<xs:element name="fmpssn" type="xs:string" minOccurs="0"/>
+			<xs:element name="dateOfBirth" type="xs:dateTime"/>
+			<xs:element name="address" type="tns:AddressType" nillable="true" minOccurs="0"/>
+			<xs:element name="homePhone" type="xs:string" minOccurs="0"/>
+			<xs:element name="officePhone" type="xs:string" minOccurs="0"/>
+			<xs:element name="dataSource" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AddressType">
+		<xs:sequence>
+			<xs:element name="streetAddress" type="xs:string"/>
+			<xs:element name="streetAddress2" type="xs:string" minOccurs="0"/>
+			<xs:element name="city" type="xs:string"/>
+			<xs:element name="state" type="xs:string"/>
+			<xs:element name="postalCode" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PersonRegistryProfileRequest" type="tns:PersonRegistryProfileRequestType"/>
+	<xs:element name="RegisterPersonRequest" type="tns:RegisterPersonRequestType"/>
+	<xs:element name="UnregisterPersonRequest" type="tns:RegisterPersonRequestType"/>
+	<xs:element name="ResponseAck" type="tns:AckType"/>
+	<xs:element name="PersonRegistryProfileResponse" type="tns:PersonRegistryProfileResponseType"/>
+	<xs:element name="RegistryTypeResponse" type="tns:RegistryTypeResponseType"/>
+</xs:schema>

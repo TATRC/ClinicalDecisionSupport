@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<hl7:FindPatients_PRPA_MT201310UVResponse xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+   <hl7:subject classCode="PAT">
+      <hl7:id extension="7"/>
+      <hl7:id extension="TST900000105" root="2.16.840.1.113883.4.1"/>
+      <hl7:id displayable="false" extension="000000007" root="2.16.840.1.113883.4.1"/>
+      <hl7:addr use="HP">
+         <hl7:country>US</hl7:country>
+      </hl7:addr>
+      <hl7:statusCode code="active"/>
+      <hl7:effectiveTime value="20101111220848-0800"/>
+      <hl7:patientPerson classCode="PSN">
+         <hl7:name use="L">
+            <hl7:family>PATIENT</hl7:family>
+            <hl7:given>PHARMACY</hl7:given>
+         </hl7:name>
+         <hl7:administrativeGenderCode displayName="FEMALE" code="F"/>
+         <hl7:birthTime value="19750115000000-0800"/>
+         <hl7:languageCommunication>
+            <hl7:languageCode code="en-US"/>
+            <hl7:preferenceInd value="true"/>
+         </hl7:languageCommunication>
+      </hl7:patientPerson>
+   </hl7:subject>
+   <hl7:subject classCode="PAT">
+      <hl7:id extension="8"/>
+      <hl7:id extension="TST900000106" root="2.16.840.1.113883.4.1"/>
+      <hl7:id displayable="false" extension="000000008" root="2.16.840.1.113883.4.1"/>
+      <hl7:addr use="HP">
+         <hl7:country>US</hl7:country>
+      </hl7:addr>
+      <hl7:statusCode code="active"/>
+      <hl7:effectiveTime value="20101111220848-0800"/>
+      <hl7:patientPerson classCode="PSN">
+         <hl7:name use="L">
+            <hl7:family>PATIENT</hl7:family>
+            <hl7:given>PEDIATRIC</hl7:given>
+         </hl7:name>
+         <hl7:administrativeGenderCode displayName="MALE" code="M"/>
+         <hl7:birthTime value="20030601000000-0700"/>
+         <hl7:languageCommunication>
+            <hl7:languageCode code="en-US"/>
+            <hl7:preferenceInd value="true"/>
+         </hl7:languageCommunication>
+      </hl7:patientPerson>
+   </hl7:subject>
+</hl7:FindPatients_PRPA_MT201310UVResponse>

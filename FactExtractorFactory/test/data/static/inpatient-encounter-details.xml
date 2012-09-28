@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hl7:CareRecord_QUPC_IN040200UV01Message xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+  <hl7:response>
+    <hl7:id extension="6858a017-39c1-4153-bbd4-eaedac72a0e7"/>
+    <hl7:creationTime value="20101130122043-0800"/>
+    <hl7:interactionId extension="QUPC_IN040200UV01"/>
+    <hl7:processingCode code="P"/>
+    <hl7:processingModeCode code="R"/>
+    <hl7:acceptAckCode code="AL"/>
+    <hl7:receiver typeCode="RCV">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+        <hl7:telecom value="http://localhost:8080/NhinConnect/CommonDataLayerService"/>
+      </hl7:device>
+    </hl7:receiver>
+    <hl7:sender typeCode="SND">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+      </hl7:device>
+    </hl7:sender>
+    <hl7:controlActProcess moodCode="EVN" classCode="CACT">
+      <hl7:code code="QUPC_TE040200UV01"/>
+      <hl7:priorityCode code="R"/>
+      <hl7:subject typeCode="SUBJ">
+        <hl7:registrationEvent moodCode="EVN" classCode="REG">
+          <hl7:statusCode code="active"/>
+          <hl7:custodian typeCode="CST">
+            <hl7:assignedEntity classCode="ASSIGNED">
+              <hl7:id extension="AHLTA" root="2.16.840.1.113883.3.200"/>
+              <hl7:assignedOrganization classCode="ORG">
+                <hl7:name>Department of Defense</hl7:name>
+              </hl7:assignedOrganization>
+            </hl7:assignedEntity>
+          </hl7:custodian>
+          <hl7:subject2 typeCode="SUBJ">
+            <hl7:careProvisionEvent moodCode="EVN" classCode="PCPR">
+              <hl7:id extension="care-record-id-2"/>
+              <hl7:code displayName="Inpatient Encounter" codeSystemName="ActEncounterCode" codeSystem="2.16.840.1.113883.5.4" code="IMP"/>
+              <hl7:text>Patient reported having chest pain</hl7:text>
+              <hl7:statusCode code="active"/>
+              <hl7:reference contextControlCode="OP" typeCode="REFR">
+                <hl7:encounter moodCode="EVN" classCode="ENC">
+                  <hl7:id extension="encounter-id-100"/>
+                  <hl7:code displayName="Initial Observation Care" codeSystemName="CPT-4" codeSystem="2.16.840.1.113883.6.12" code="99218"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime>
+                    <hl7:low value="20101020131010.005"/>
+                    <hl7:high value="20101023141010.010"/>
+                  </hl7:effectiveTime>
+                  <hl7:priorityCode displayName="Emergency" codeSystemName="ActPriority" codeSystem="2.16.840.1.113883.5.7" code="EM"/>
+                  <hl7:admissionReferralSourceCode displayName="Physician referral" code="UNK"/>
+                  <hl7:lengthOfStayQuantity unit="day" value="5"/>
+                  <hl7:dischargeDispositionCode displayName="Routine" codeSystemName="Uniform Bill Patient Discharge Status" codeSystem="2.16.840.1.113883.3.88.12.80.33" code="01"/>
+                  <hl7:preAdmitTestInd value="true"/>
+                  <hl7:subject typeCode="SBJ">
+                    <hl7:patient classCode="PAT">
+                      <hl7:id extension="83452"/>
+                      <hl7:statusCode code="normal"/>
+                      <hl7:patientPerson determinerCode="INSTANCE" classCode="PSN">
+                        <hl7:name use="L">
+                          <hl7:family>Johnson</hl7:family>
+                          <hl7:given>Shawnee</hl7:given>
+                          <hl7:given>N</hl7:given>
+                        </hl7:name>
+                      </hl7:patientPerson>
+                    </hl7:patient>
+                  </hl7:subject>
+                  <hl7:responsibleParty typeCode="RESP">
+                    <hl7:time>
+                      <hl7:low value="20101020131010.005"/>
+                      <hl7:high value="20101023141010.010"/>
+                    </hl7:time>
+                    <hl7:assignedOrganization classCode="ASSIGNED">
+                      <hl7:id root="2.16.840.1.113883.3.200"/>
+                      <hl7:assignedOrganization classCode="ORG">
+                        <hl7:name>Navel Medical Center San Diego</hl7:name>
+                      </hl7:assignedOrganization>
+                    </hl7:assignedOrganization>
+                  </hl7:responsibleParty>
+                  <hl7:admitter typeCode="ADM">
+                    <hl7:time value="20091020131010.005"/>
+                    <hl7:assignedPerson classCode="PSN">
+                      <hl7:id extension="prov-id-9"/>
+                      <hl7:code displayName="eneral Physician" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="59058001"/>
+                      <hl7:assignedPerson determinerCode="INSTANCE" classCode="PSN">
+                        <hl7:name use="L">
+                          <hl7:family>Smith</hl7:family>
+                          <hl7:given>Jonas</hl7:given>
+                          <hl7:suffix>Dr</hl7:suffix>
+                        </hl7:name>
+                      </hl7:assignedPerson>
+                    </hl7:assignedPerson>
+                  </hl7:admitter>
+                  <hl7:attender typeCode="ATND">
+                    <hl7:time value="20101020131010.005"/>
+                    <hl7:assignedPerson classCode="PSN">
+                      <hl7:id extension="prov-id-9"/>
+                      <hl7:code displayName="eneral Physician" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="59058001"/>
+                      <hl7:assignedPerson determinerCode="INSTANCE" classCode="PSN">
+                        <hl7:name use="L">
+                          <hl7:family>Smith</hl7:family>
+                          <hl7:given>Jonas</hl7:given>
+                          <hl7:suffix>Dr</hl7:suffix>
+                        </hl7:name>
+                      </hl7:assignedPerson>
+                    </hl7:assignedPerson>
+                  </hl7:attender>
+                  <hl7:discharger typeCode="DIS">
+                    <hl7:time value="20101023131010.005"/>
+                    <hl7:assignedPerson classCode="PSN">
+                      <hl7:id extension="prov-id-9"/>
+                      <hl7:code displayName="eneral Physician" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="59058001"/>
+                      <hl7:assignedPerson determinerCode="INSTANCE" classCode="PSN">
+                        <hl7:name use="L">
+                          <hl7:family>Smith</hl7:family>
+                          <hl7:given>Jonas</hl7:given>
+                          <hl7:suffix>Dr</hl7:suffix>
+                        </hl7:name>
+                      </hl7:assignedPerson>
+                    </hl7:assignedPerson>
+                  </hl7:discharger>
+                  <hl7:referrer typeCode="REFR">
+                    <hl7:time value="20101019131010"/>
+                    <hl7:assignedEntity classCode="ASSIGNED">
+                      <hl7:id extension="prov-id-8"/>
+                      <hl7:code displayName="eneral Physician" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="59058001"/>
+                      <hl7:assignedPerson determinerCode="INSTANCE" classCode="PSN">
+                        <hl7:name use="L">
+                          <hl7:family>Jackson</hl7:family>
+                          <hl7:given>John</hl7:given>
+                          <hl7:suffix>Dr</hl7:suffix>
+                        </hl7:name>
+                      </hl7:assignedPerson>
+                    </hl7:assignedEntity>
+                  </hl7:referrer>
+                  <hl7:notificationContact typeCode="NOT">
+                    <hl7:responsibleParty xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                  </hl7:notificationContact>
+                  <hl7:location typeCode="LOC">
+                    <hl7:time value="20101020131010"/>
+                    <hl7:serviceDeliveryLocation classCode="SDLOC">
+                      <hl7:id extension="722-D"/>
+                      <hl7:code displayName="Hospital Unit" codeSystemName="ServiceDeliveryLocationRoleType" codeSystem="2.16.840.1.113883.1.11.17660" code="HU"/>
+                      <hl7:location determinerCode="INSTANCE" classCode="PLC">
+                        <hl7:id extension="7A GEN MED"/>
+                        <hl7:name>GENERAL MEDICINE WARD 7EAST</hl7:name>
+                      </hl7:location>
+                      <hl7:serviceProviderOrganization classCode="ORG">
+                        <hl7:id root="2.16.840.1.113883.3.200"/>
+                        <hl7:name>Naval Medical Center San Diego</hl7:name>
+                      </hl7:serviceProviderOrganization>
+                    </hl7:serviceDeliveryLocation>
+                  </hl7:location>
+                  <hl7:inFulfillmentOf typeCode="FLFS">
+                    <hl7:appointment moodCode="APT" classCode="ACT">
+                      <hl7:referencedOrder typeCode="OREF">
+                        <hl7:actRequest moodCode="RQO" classCode="ACT">
+                          <hl7:id extension="order-id-12"/>
+                        </hl7:actRequest>
+                      </hl7:referencedOrder>
+                      <hl7:scheduleRequest typeCode="SCH">
+                        <hl7:actAppointmentRequest moodCode="ARQ" classCode="ACT">
+                          <hl7:id extension="admission-id-200"/>
+                        </hl7:actAppointmentRequest>
+                      </hl7:scheduleRequest>
+                    </hl7:appointment>
+                  </hl7:inFulfillmentOf>
+                  <hl7:pertinentInformation1 typeCode="PERT">
+                    <hl7:priorityNumber value="1"/>
+                    <hl7:observationDx moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Primary Diagnosis" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="27515-6"/>
+                      <hl7:value displayName="Acute Myocardial Infarction s/p CABG" codeSystemName="CD-9-CM" codeSystem="2.16.840.1.113883.6.103" code="410.2">
+                        <hl7:originalText>Acute Myocardial Infarction s/p CABG</hl7:originalText>
+                      </hl7:value>
+                    </hl7:observationDx>
+                  </hl7:pertinentInformation1>
+                </hl7:encounter>
+              </hl7:reference>
+            </hl7:careProvisionEvent>
+          </hl7:subject2>
+        </hl7:registrationEvent>
+      </hl7:subject>
+      <hl7:queryAck>
+        <hl7:queryId extension="2c748172-7cc2-4902-8af0-23A105c4401b"/>
+        <hl7:statusCode code="deliveredResponse"/>
+        <hl7:queryResponseCode code="OK"/>
+      </hl7:queryAck>
+    </hl7:controlActProcess>
+  </hl7:response>
+</hl7:CareRecord_QUPC_IN040200UV01Message>

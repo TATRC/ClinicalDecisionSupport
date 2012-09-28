@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="gov.hhs.fha.nhinc.alertmanager.model">
+  <class name="AlertStatus" table="alertstatus">
+    <id column="AT_StatusID" name="statusId" type="long">
+      <generator class="increment"/>
+    </id>
+    <property column="UserId" length="50" name="userId" type="string"/>
+    <property column="CreateTimeStamp" length="100" name="createTimeStamp" not-null="true" type="timestamp"/>
+    <property column="Flagged" name="flagged" type="boolean"/>
+    <property column="Archive" name="archive" type="boolean"/>
+    <many-to-one column="AT_TicketID" lazy="false" name="ticket" not-null="true"/>
+  </class>
+</hibernate-mapping>
+

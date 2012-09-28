@@ -1,0 +1,1669 @@
+<?xml version="1.0" ?>
+<hl7:CareRecord_QUPC_IN043200UV01Message xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+  <hl7:response>
+    <hl7:id extension="7ec62d0e-cb1c-32a2-a690-1b4e6947f8b9"/>
+    <hl7:creationTime value="20110114230516.627-0800"/>
+    <hl7:interactionId extension="PRPA_IN900300UV02"/>
+    <hl7:processingCode code="P"/>
+    <hl7:processingModeCode code="R"/>
+    <hl7:acceptAckCode code="RCV"/>
+    <hl7:receiver typeCode="RCV">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+        <hl7:telecom value="http://localhost:8080/NhinConnect/CommonDataLayerService"/>
+      </hl7:device>
+    </hl7:receiver>
+    <hl7:sender typeCode="SND">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+      </hl7:device>
+    </hl7:sender>
+    <hl7:controlActProcess moodCode="EVN" classCode="CACT">
+      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CS" code="TE304001UV01"/>
+      <hl7:priorityCode code="R"/>
+      <hl7:subject typeCode="SUBJ">
+        <hl7:registrationEvent moodCode="EVN" classCode="REG">
+          <hl7:statusCode code="active"/>
+          <hl7:custodian typeCode="CST">
+            <hl7:assignedEntity classCode="ASSIGNED">
+              <hl7:id assigningAuthorityName="OpenVista" root="2.16.840.1.113883.3.274"/>
+            </hl7:assignedEntity>
+          </hl7:custodian>
+          <hl7:subject2 typeCode="SUBJ">
+            <hl7:careProvisionEvent moodCode="EVN" classCode="ENC">
+              <hl7:recordTarget typeCode="RCT">
+                <hl7:patient classCode="PAT">
+                  <hl7:id extension="7" root="2.16.840.1.113883.3.200"/>
+                  <hl7:statusCode code="normal"/>
+                  <hl7:patientPerson determinerCode="INSTANCE" classCode="PSN">
+                    <hl7:name use="L">
+                      <hl7:family>PATIENT</hl7:family>
+                      <hl7:given>PHARMACY</hl7:given>
+                    </hl7:name>
+                    <hl7:administrativeGenderCode displayName="FEMALE" code="F"/>
+                    <hl7:birthTime value="19750115000000-0800"/>
+                  </hl7:patientPerson>
+                </hl7:patient>
+              </hl7:recordTarget>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="1"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="4"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090430122100-0700"/>
+                    <hl7:low value="20090531000000-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="LEVOFLOXACIN 250MG DEXTROSE 50 ML" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="ML" value="50"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:desc>DEXTROSE 5% INJ,SOLN</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="368;2" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090531000000-0700"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090430122100-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="2"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="5"/>
+                  <hl7:text>250MG/50ML of LEVOFLOXACIN 250MG/DEXTROSE IJ BAG 50ML</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090430112300-0700"/>
+                    <hl7:low value="20090508000000-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                    <hl7:period unit="h" value="12"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="~IV" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="ML" value="50"/>
+                  <hl7:administrationUnitCode displayName="1000 ML" codeSystemName="DoseForm" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:desc>LEVOFLOXACIN 250MG/DEXTROSE INJ</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="367;2" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090508000000-0700"/>
+                      <hl7:quantity value="100 ml/hr"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090430112300-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf inversionInd="true" typeCode="SUBJ">
+                    <hl7:act moodCode="INT" classCode="ACT">
+                      <hl7:code displayName="Annotation Comment" codeSystemName="IHEActCode" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" code="PINSTRUCT"/>
+                      <hl7:text>50 ML</hl7:text>
+                    </hl7:act>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="3"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="3"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090416103500-0700"/>
+                    <hl7:low value="20090430122436-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="CEFAZOLIN [I] 1 GM" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="ML" value="1000"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:desc>DEXTROSE 5% LACTATED RINGER'S INJ,SOLN</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="363;2" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090430122436-0700"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090416103500-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="4"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="2"/>
+                  <hl7:text>1 GM of </hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090324120300-0700"/>
+                    <hl7:low value="20090330000000-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="false" operator="A">
+                    <hl7:period unit="H" value="8"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="\ Q8H INFUSE OVER 30 MIN." codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="GM" value="1"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:desc>ceFAZolin INJ</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="297;1" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090330000000-0700"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090324120300-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf inversionInd="true" typeCode="SUBJ">
+                    <hl7:act moodCode="INT" classCode="ACT">
+                      <hl7:code displayName="Annotation Comment" codeSystemName="IHEActCode" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" code="PINSTRUCT"/>
+                      <hl7:text>1 GM</hl7:text>
+                    </hl7:act>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="5"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="1"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090320064000-0700"/>
+                    <hl7:low value="20090324120109-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="false" operator="A">
+                    <hl7:period unit="H" value="8"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="\ Q8H INFUSE OVER 30 MIN." codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="GM" value="1"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:desc>ceFAZolin INJ</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="296;2" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090324120109-0700"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090320064000-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="6"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="92"/>
+                  <hl7:text>50MG</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS" nullFlavor="UNK"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                    <hl7:period unit="h" value="12"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="50"/>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="ACARBOSE TAB 50MG [GEQ: PRECOSE]" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000026-2861-48">
+                          <hl7:originalText>ACARBOSE TAB 50MG [GEQ: PRECOSE]</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>ACARBOSE TAB 50MG [GEQ: PRECOSE]</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="PENDING" code="UNK"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="678;1" root="2.16.840.1.113883.3.274"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20110114230517-0800"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="7"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="91"/>
+                  <hl7:text>20MG</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS" nullFlavor="UNK"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="false" operator="A">
+                    <hl7:period unit="H" value="12"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="20"/>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="SIMVASTATIN TAB 20MG [GEQ: ZOCOR]" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000006-0740-28">
+                          <hl7:originalText>SIMVASTATIN TAB 20MG [GEQ: ZOCOR]</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>SIMVASTATIN TAB 20MG [GEQ: ZOCOR]</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="PENDING" code="UNK"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="676;1" root="2.16.840.1.113883.3.274"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20110114230517-0800"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="8"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="90"/>
+                  <hl7:text>4MG</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS" nullFlavor="UNK"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                    <hl7:period unit="h" value="12"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="4"/>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="ROSIGLITAZONE TAB 4MG [GEQ: AVANDIA]" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000029-3159-13">
+                          <hl7:originalText>ROSIGLITAZONE TAB 4MG [GEQ: AVANDIA]</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>ROSIGLITAZONE TAB 4MG [GEQ: AVANDIA]</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="PENDING" code="UNK"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="675;1" root="2.16.840.1.113883.3.274"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20110114230517-0800"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="9"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="89"/>
+                  <hl7:text>50MG</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS" nullFlavor="UNK"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                    <hl7:period unit="h" value="12"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="50"/>
+                  <hl7:administrationUnitCode displayName="TAB,ORAL" codeSystemName="DoseForm" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="FLUVOXAMINE TAB,ORAL 50MG [GEQ: LUVOX]" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000032-4205-01">
+                          <hl7:originalText>FLUVOXAMINE TAB,ORAL 50MG [GEQ: LUVOX]</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>FLUVOXAMINE TAB,ORAL 50MG [GEQ: LUVOX]</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="PENDING" code="UNK"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="674;1" root="2.16.840.1.113883.3.274"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20110114230517-0800"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="10"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="87"/>
+                  <hl7:text>25MG</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS" nullFlavor="UNK"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                    <hl7:period unit="h" value="8"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="25"/>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="HYDROCHLOROTHIAZIDE TAB 25MG [GEQ:" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000006-0042-68">
+                          <hl7:originalText>HYDROCHLOROTHIAZIDE TAB 25MG [GEQ:</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>HYDROCHLOROTHIAZIDE TAB 25MG [GEQ:</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="PENDING" code="UNK"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="672;1" root="2.16.840.1.113883.3.274"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20110114230517-0800"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="11"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="22"/>
+                  <hl7:text>20MG</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090623124600-0700"/>
+                    <hl7:low value="20090623124600-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="20"/>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="FUROSEMIDE TAB 40MG [GEQ: LASIX]" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000054-4299-25">
+                          <hl7:originalText>FUROSEMIDE TAB 40MG [GEQ: LASIX]</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>FUROSEMIDE TAB 40MG [GEQ: LASIX]</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="506;1" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090623124600-0700"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090623124600-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="12"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="21"/>
+                  <hl7:text>325MG</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090622073200-0700"/>
+                    <hl7:low value="20090622073200-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="325"/>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="ACETAMINOPHEN TAB 325MG [GEQ: TYLENOL]" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="057480-0100-01">
+                          <hl7:originalText>ACETAMINOPHEN TAB 325MG [GEQ: TYLENOL]</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>ACETAMINOPHEN TAB 325MG [GEQ: TYLENOL]</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="503;1" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090622073200-0700"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090622073200-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="13"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="24"/>
+                  <hl7:text>10MG</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090527131500-0700"/>
+                    <hl7:low value="20090610131500-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                    <hl7:period unit="h" value="12"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="10"/>
+                  <hl7:administrationUnitCode displayName="TAB,ORAL" codeSystemName="DoseForm" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="LORATADINE TAB,ORAL 10MG [GEQ: CLARITIN]" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000085-0458-04">
+                          <hl7:originalText>LORATADINE TAB,ORAL 10MG [GEQ: CLARITIN]</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>LORATADINE TAB,ORAL 10MG [GEQ: CLARITIN]</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="482;1" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090610131500-0700"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090527131500-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="14"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="20"/>
+                  <hl7:text>20MG</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090527131500-0700"/>
+                    <hl7:low value="20090610131500-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                    <hl7:period unit="d" value="1"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="20"/>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="ATORVASTATIN TAB 20MG [GEQ: LIPITOR]" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000071-0156-23">
+                          <hl7:originalText>ATORVASTATIN TAB 20MG [GEQ: LIPITOR]</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>ATORVASTATIN TAB 20MG [GEQ: LIPITOR]</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="480;1" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090610131500-0700"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090527131500-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="15"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="16"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090527124900-0700"/>
+                    <hl7:low value="20090610124900-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                    <hl7:period unit="d" value="1"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="0.25"/>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="DIGOXIN TAB 0.25MG [GEQ: LANOXIN]" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000173-0249-56">
+                          <hl7:originalText>DIGOXIN TAB 0.25MG [GEQ: LANOXIN]</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>DIGOXIN TAB 0.25MG [GEQ: LANOXIN]</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="476" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090610124900-0700"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090527124900-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="16"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="19"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090527125300-0700"/>
+                    <hl7:low value="20090527133201-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="10"/>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="DIAZEPAM TAB 10MG [GEQ: VALIUM]" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000140-0006-01">
+                          <hl7:originalText>DIAZEPAM TAB 10MG [GEQ: VALIUM]</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>DIAZEPAM TAB 10MG [GEQ: VALIUM]</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="478" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090527133201-0700"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090527125300-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="17"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="18"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090527125000-0700"/>
+                    <hl7:low value="20090527125107-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="50"/>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="METOPROLOL TARTRATE TAB 50MG [GEQ:" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="051079-0801-20">
+                          <hl7:originalText>METOPROLOL TARTRATE TAB 50MG [GEQ:</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>METOPROLOL TARTRATE TAB 50MG [GEQ:</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="477" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090527125107-0700"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090527125000-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="18"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="15"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090329102400-0700"/>
+                    <hl7:low value="20090412102400-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                    <hl7:period unit="h" value="12"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="325"/>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="ASPIRIN TAB 325MG [GEQ: ASA]" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000677-0771-01">
+                          <hl7:originalText>ASPIRIN TAB 325MG [GEQ: ASA]</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>ASPIRIN TAB 325MG [GEQ: ASA]</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="325" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090412102400-0700"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090329102400-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="19"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="14"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090320064000-0700"/>
+                    <hl7:low value="20090320064200-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="15"/>
+                  <hl7:administrationUnitCode displayName="CAPSULE" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C25158"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="TEMAZEPAM CAP,ORAL 15MG [GEQ: RESTORIL]" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000078-0098-08">
+                          <hl7:originalText>TEMAZEPAM CAP,ORAL 15MG [GEQ: RESTORIL]</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>TEMAZEPAM CAP,ORAL 15MG [GEQ: RESTORIL]</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="276" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090320064200-0700"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090320064000-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="20"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="13"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090320064000-0700"/>
+                    <hl7:low value="20090320064200-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                    <hl7:period unit="h" value="12"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="10"/>
+                  <hl7:administrationUnitCode displayName="TAB,SA" codeSystemName="DoseForm" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="FELODIPINE TAB,SA 10MG [GEQ: PLENDIL]" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000186-0452-31">
+                          <hl7:originalText>FELODIPINE TAB,SA 10MG [GEQ: PLENDIL]</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>FELODIPINE TAB,SA 10MG [GEQ: PLENDIL]</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="275" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090320064200-0700"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090320064000-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="21"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="12"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090320063200-0700"/>
+                    <hl7:low value="20090320063200-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                    <hl7:period unit="h" value="12"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="40"/>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="ATORVASTATIN TAB 20MG [GEQ: LIPITOR]" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000071-0156-23">
+                          <hl7:originalText>ATORVASTATIN TAB 20MG [GEQ: LIPITOR]</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>ATORVASTATIN TAB 20MG [GEQ: LIPITOR]</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="274" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090320063200-0700"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090320063200-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="22"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="11"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090320063200-0700"/>
+                    <hl7:low value="20090320063200-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                    <hl7:period unit="d" value="1"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="40"/>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="FUROSEMIDE TAB 40MG [GEQ: LASIX]" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000054-4299-25">
+                          <hl7:originalText>FUROSEMIDE TAB 40MG [GEQ: LASIX]</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>FUROSEMIDE TAB 40MG [GEQ: LASIX]</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="273" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090320063200-0700"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090320063200-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="23"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="10"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090320063100-0700"/>
+                    <hl7:low value="20090320063200-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="650"/>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="ACETAMINOPHEN TAB 325MG [GEQ: TYLENOL]" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="057480-0100-01">
+                          <hl7:originalText>ACETAMINOPHEN TAB 325MG [GEQ: TYLENOL]</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>ACETAMINOPHEN TAB 325MG [GEQ: TYLENOL]</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="272" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090320063200-0700"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090320063100-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="24"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="9"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090320063100-0700"/>
+                    <hl7:low value="20090320063200-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                    <hl7:period unit="d" value="1"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="0.25"/>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="DIGOXIN TAB 0.25MG [GEQ: LANOXIN]" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000173-0249-56">
+                          <hl7:originalText>DIGOXIN TAB 0.25MG [GEQ: LANOXIN]</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>DIGOXIN TAB 0.25MG [GEQ: LANOXIN]</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="271" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090320063200-0700"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090320063100-0700"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="25"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="8"/>
+                  <hl7:text>10MG/1ML</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090224141700-0800"/>
+                    <hl7:low value="20090310141700-0700"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="IV" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity value="10MG/1ML"/>
+                  <hl7:administrationUnitCode displayName="INJECTION" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42946"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="MORPHINE INJ 10MG/ML [GEQ: DURAMORPH]" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000641-1180-35">
+                          <hl7:originalText>MORPHINE INJ 10MG/ML [GEQ: DURAMORPH]</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>MORPHINE INJ 10MG/ML [GEQ: DURAMORPH]</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="230;1" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090310141700-0700"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090224141700-0800"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="26"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="7"/>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090123080800-0800"/>
+                    <hl7:low value="20090206080800-0800"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="10"/>
+                  <hl7:administrationUnitCode displayName="TAB,SA" codeSystemName="DoseForm" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="FELODIPINE TAB,SA 10MG [GEQ: PLENDIL]" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000186-0452-31">
+                          <hl7:originalText>FELODIPINE TAB,SA 10MG [GEQ: PLENDIL]</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>FELODIPINE TAB,SA 10MG [GEQ: PLENDIL]</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="182" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090206080800-0800"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090123080800-0800"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="27"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="6"/>
+                  <hl7:text>81MG</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                    <hl7:high value="20090106071500-0800"/>
+                    <hl7:low value="20090120071500-0800"/>
+                  </hl7:effectiveTime>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                    <hl7:period unit="d" value="1"/>
+                  </hl7:effectiveTime>
+                  <hl7:routeCode displayName="PO" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:doseQuantity unit="MG" value="81"/>
+                  <hl7:administrationUnitCode displayName="TAB,EC" codeSystemName="DoseForm" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="ASPIRIN TAB,EC 81MG [GEQ: ECOTRIN]" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000904-7704-18">
+                          <hl7:originalText>ASPIRIN TAB,EC 81MG [GEQ: ECOTRIN]</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>ASPIRIN TAB,EC 81MG [GEQ: ECOTRIN]</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="No Longer Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="73425007"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="154;1" root="2.16.840.1.113883.3.274"/>
+                      <hl7:effectiveTime value="20090120071500-0800"/>
+                      <hl7:author typeCode="AUT">
+                        <hl7:time value="20090106071500-0800"/>
+                        <hl7:assignedEntity1>
+                          <hl7:id extension="30"/>
+                          <hl7:assignedPerson>
+                            <hl7:name use="L">
+                              <hl7:given>ROY</hl7:given>
+                              <hl7:family>GRYSKEVICH</hl7:family>
+                            </hl7:name>
+                          </hl7:assignedPerson>
+                        </hl7:assignedEntity1>
+                      </hl7:author>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="28"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="4"/>
+                  <hl7:text>AS DIRECTED AFFECTED AREA TWICE A DAY</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS" nullFlavor="UNK"/>
+                  <hl7:routeCode displayName="MISCELLANEOUS" codeSystemName="RouteOfAdministration" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:administrationUnitCode displayName="POWDER" codeSystemName="DoseForm" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="ACACIA POWDER" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000395-0001-94">
+                          <hl7:originalText>ACACIA POWDER</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>ACACIA POWDER</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="On Hold" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="421139008"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="595" root="2.16.840.1.113883.3.274"/>
+                      <hl7:quantity value="N/A"/>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf inversionInd="true" typeCode="SUBJ">
+                    <hl7:act moodCode="INT" classCode="ACT">
+                      <hl7:code displayName="Annotation Comment" codeSystemName="IHEActCode" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" code="PINSTRUCT"/>
+                      <hl7:text></hl7:text>
+                    </hl7:act>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+              <hl7:pertinentInformation3 contextConductionInd="true" contextControlCode="OP" typeCode="PERT">
+                <hl7:sequenceNumber value="29"/>
+                <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+                  <hl7:id extension="2"/>
+                  <hl7:text>60MG MOUTH AT BEDTIME</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS" nullFlavor="UNK"/>
+                  <hl7:administrationUnitCode displayName="TABLET" codeSystemName="NCI THESAURUS" codeSystem="2.16.840.1.113883.3.26.1.1" code="C42998"/>
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial determinerCode="KIND" classCode="MMAT">
+                        <hl7:code displayName="GINKGO EXT 60MG TAB" codeSystemName="NDC" codeSystem="2.16.840.1.113883.6.88" code="000394-0217-60">
+                          <hl7:originalText>GINKGO EXT 60MG TAB</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>GINKGO EXT 60MG TAB</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Prescription" codeSystem="2.16.840.1.113883.6.96" code="73639000"/>
+                      <hl7:statusCode code="completed"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="SUBJ">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code displayName="Status" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="33999-4"/>
+                      <hl7:statusCode code="completed"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="Active" codeSystemName="SNOMED CT" codeSystem="2.16.840.1.113883.6.96" code="55561003"/>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf typeCode="REFR">
+                    <hl7:supply moodCode="INT" classCode="SPLY">
+                      <hl7:id extension="484" root="2.16.840.1.113883.3.274"/>
+                      <hl7:quantity value="N/A"/>
+                    </hl7:supply>
+                  </hl7:sourceOf>
+                  <hl7:sourceOf inversionInd="true" typeCode="SUBJ">
+                    <hl7:act moodCode="INT" classCode="ACT">
+                      <hl7:code displayName="Annotation Comment" codeSystemName="IHEActCode" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" code="PINSTRUCT"/>
+                      <hl7:text></hl7:text>
+                    </hl7:act>
+                  </hl7:sourceOf>
+                </hl7:substanceAdministration>
+              </hl7:pertinentInformation3>
+            </hl7:careProvisionEvent>
+          </hl7:subject2>
+        </hl7:registrationEvent>
+      </hl7:subject>
+      <hl7:queryAck>
+        <hl7:queryId extension="20090920011010.005"/>
+        <hl7:statusCode code="deliveredResponse"/>
+        <hl7:queryResponseCode code="OK"/>
+        <hl7:resultTotalQuantity value="29"/>
+      </hl7:queryAck>
+    </hl7:controlActProcess>
+  </hl7:response>
+</hl7:CareRecord_QUPC_IN043200UV01Message>

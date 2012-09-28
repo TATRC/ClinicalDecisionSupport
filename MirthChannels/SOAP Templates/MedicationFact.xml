@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-16"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<soap:Body>
+  <storeMedicationFactEvent xmlns="http://dss.kmr.socraticgrid.org/">
+         <fact>
+            <!--Optional:-->
+            <!--type: string-->
+            <urn:primaryKey>gero et</urn:primaryKey>
+            <!--type: boolean-->
+            <urn:historical>false</urn:historical>
+            <!--1 or more repetitions:-->
+            <urn:id>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>aeoliam venit</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>ventos tempestatesque</urn:codeSystemName>
+               <!--type: string-->
+               <urn:value>temperat iras</urn:value>
+               <!--Optional:-->
+               <!--type: boolean-->
+               <urn:displayable>false</urn:displayable>
+            </urn:id>
+            <urn:patientId>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>circum claustra</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>nimborum in</urn:codeSystemName>
+               <!--type: string-->
+               <urn:value>foedere certo</urn:value>
+               <!--Optional:-->
+               <!--type: boolean-->
+               <urn:displayable>false</urn:displayable>
+            </urn:patientId>
+            <!--type: string-->
+            <urn:freeTextProductName>sceptra tenens</urn:freeTextProductName>
+            <!--Optional:-->
+            <!--type: string-->
+            <urn:freeTextBrandName>turbine corripuit scopuloque</urn:freeTextBrandName>
+            <!--Optional:-->
+            <urn:codedProductName>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>flammato secum dea</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>profundum quippe ferant</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>nubibus ignem disiecitque</urn:code>
+               <!--type: string-->
+               <urn:label>ac vinclis et</urn:label>
+            </urn:codedProductName>
+            <!--Optional:-->
+            <urn:codedBrandName>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>rapidum iaculata e</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>caelumque profundum</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>circum claustra</urn:code>
+               <!--type: string-->
+               <urn:label>coniunx una</urn:label>
+            </urn:codedBrandName>
+            <!--Optional:-->
+            <!--type: string-->
+            <urn:drugManufacturer>arce sceptra</urn:drugManufacturer>
+            <!--Optional:-->
+            <!--type: string-->
+            <urn:productConcentration>circum claustra fremunt</urn:productConcentration>
+            <urn:codedTypeOfMedication>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>certo et premere</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>et montis</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>feta furentibus</urn:code>
+               <!--type: string-->
+               <urn:label>sed pater</urn:label>
+            </urn:codedTypeOfMedication>
+            <urn:codedStatusOfMedication>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>talia flammato secum</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>austris aeoliam</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>sciret dare</urn:code>
+               <!--type: string-->
+               <urn:label>dare iussus</urn:label>
+            </urn:codedStatusOfMedication>
+            <!--Optional:-->
+            <!--type: string-->
+            <urn:sigFreeText>regemque dedit</urn:sigFreeText>
+            <!--Optional:-->
+            <urn:codedSigRoute>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>infixit acuto</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>tenens mollitque animos</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>montis insuper</urn:code>
+               <!--type: string-->
+               <urn:label>habenas ipsa</urn:label>
+            </urn:codedSigRoute>
+            <!--Optional:-->
+            <urn:sigDose>
+               <!--type: string-->
+               <urn:value>mollitque animos</urn:value>
+               <!--type: string-->
+               <urn:unit>iovisque et</urn:unit>
+            </urn:sigDose>
+            <!--Optional:-->
+            <!--type: string-->
+            <urn:sigMedicationStopped>soror et coniunx</urn:sigMedicationStopped>
+            <!--Optional:-->
+            <!--type: string-->
+            <urn:freeTextIndication>iunonis adorat</urn:freeTextIndication>
+            <!--Optional:-->
+            <!--type: string-->
+            <urn:patientInstructions>adorat praeterea</urn:patientInstructions>
+            <!--Optional:-->
+            <!--type: string-->
+            <urn:reaction>illum exspirantem transfixo</urn:reaction>
+            <!--Zero or more repetitions:-->
+            <urn:sigCodedVehicle>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystem>aris imponet honorem</urn:codeSystem>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:codeSystemName>aris imponet</urn:codeSystemName>
+               <!--type: string-->
+               <urn:code>premere et</urn:code>
+               <!--type: string-->
+               <urn:label>insuper altos</urn:label>
+            </urn:sigCodedVehicle>
+            <!--Zero or more repetitions:-->
+            <!--type: string-->
+            <urn:sigDoseIndicator>ferant rapidi secum</urn:sigDoseIndicator>
+            <urn:order>
+               <!--type: string-->
+               <urn:orderNumber>nimborum in</urn:orderNumber>
+               <!--type: int-->
+               <urn:fills>3</urn:fills>
+               <!--type: int-->
+               <urn:reFills>3</urn:reFills>
+               <urn:quantityOrdered>
+                  <!--type: string-->
+                  <urn:value>vasto rex</urn:value>
+                  <!--type: string-->
+                  <urn:unit>flammato secum</urn:unit>
+               </urn:quantityOrdered>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:orderExpirationDateTime>tempestatesque sonoras</urn:orderExpirationDateTime>
+               <!--type: string-->
+               <urn:orderDateTime>tenens mollitque</urn:orderDateTime>
+               <!--Optional:-->
+               <urn:orderingProvider>
+                  <!--type: string-->
+                  <urn:firstName>premit ac</urn:firstName>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:middleName>iras ni</urn:middleName>
+                  <!--type: string-->
+                  <urn:familyName>nubibus ignem</urn:familyName>
+                  <!--Optional:-->
+                  <urn:prefix>
+                     <!--Optional:-->
+                     <!--type: string-->
+                     <urn:codeSystem>austris aeoliam venit</urn:codeSystem>
+                     <!--Optional:-->
+                     <!--type: string-->
+                     <urn:codeSystemName>qui foedere</urn:codeSystemName>
+                     <!--type: string-->
+                     <urn:code>atris hoc metuens</urn:code>
+                     <!--type: string-->
+                     <urn:label>atris hoc</urn:label>
+                  </urn:prefix>
+                  <!--Optional:-->
+                  <urn:suffix>
+                     <!--Optional:-->
+                     <!--type: string-->
+                     <urn:codeSystem>animos et temperat</urn:codeSystem>
+                     <!--Optional:-->
+                     <!--type: string-->
+                     <urn:codeSystemName>sonoras imperio</urn:codeSystemName>
+                     <!--type: string-->
+                     <urn:code>patriam loca</urn:code>
+                     <!--type: string-->
+                     <urn:label>montis circum</urn:label>
+                  </urn:suffix>
+                  <urn:nameType>
+                     <!--Optional:-->
+                     <!--type: string-->
+                     <urn:codeSystem>laxas sciret dare</urn:codeSystem>
+                     <!--Optional:-->
+                     <!--type: string-->
+                     <urn:codeSystemName>e nubibus</urn:codeSystemName>
+                     <!--type: string-->
+                     <urn:code>volutans nimborum</urn:code>
+                     <!--type: string-->
+                     <urn:label>murmure montis</urn:label>
+                  </urn:nameType>
+               </urn:orderingProvider>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:fullfillmentInstructions>vinclis et</urn:fullfillmentInstructions>
+            </urn:order>
+            <!--1 or more repetitions:-->
+            <urn:fullfillment>
+               <!--type: string-->
+               <urn:prescriptionNumber>rapidi secum</urn:prescriptionNumber>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:dispensingPharmacy>antro luctantis ventos</urn:dispensingPharmacy>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:dispensingPharmacyLocation>sciret dare</urn:dispensingPharmacyLocation>
+               <!--Optional:-->
+               <!--type: string-->
+               <urn:dispenseDate>luctantis ventos</urn:dispenseDate>
+               <urn:quantityDispensed>
+                  <!--type: string-->
+                  <urn:value>ipsa iovis</urn:value>
+                  <!--type: string-->
+                  <urn:unit>aris imponet</urn:unit>
+               </urn:quantityDispensed>
+               <!--Optional:-->
+               <!--type: int-->
+               <urn:fillNumber>3</urn:fillNumber>
+               <!--Optional:-->
+               <urn:fillStatus>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystem>imperio premit</urn:codeSystem>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <urn:codeSystemName>arce sceptra tenens</urn:codeSystemName>
+                  <!--type: string-->
+                  <urn:code>ni faciat</urn:code>
+                  <!--type: string-->
+                  <urn:label>circum claustra fremunt</urn:label>
+               </urn:fillStatus>
+            </urn:fullfillment>
+         </fact>
+  </storeMedicationFactEvent>
+</soap:Body>
+</soap:Envelope>

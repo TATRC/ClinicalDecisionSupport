@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+  <persistence-unit name="KnowledgeModuleEJBPU" transaction-type="JTA">
+    <!--persistence-unit name="KnowledgeModuleEJBPU" transaction-type="RESOURCE_LOCAL"-->
+    <!--provider>oracle.toplink.essentials.PersistenceProvider</provider-->
+    <jta-data-source>jdbc/kmrDB</jta-data-source>
+    <class>gov.hhs.fha.nhinc.kmr.model.ACLPermission</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.FactSpecification</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.KMSpecialty</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.KMVAccessControlList</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.KMVFactDependency</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.KMVInferenceEngineDependency</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.KMVPopulationDependency</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.KMVSupportingReference</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.KMVTaskDependency</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.KMVUsageStatistic</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.KMVUserComment</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.KMVersion</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.KnowledgeModule</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.OperationalConstraint</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.OperationalConstraintElement</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.PopulationSpecification</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.RefFactType</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.RefFactScheme</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.RefFactSchemeType</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.RefFactCode</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.RefSpecialtyScheme</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.RefSpecialtyCode</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.RefCodeSimple</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.TTSpecification</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.UsageStatisticType</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.UserRole</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.RefDictionary</class>
+    <class>gov.hhs.fha.nhinc.kmr.model.RefTaxonomyCode</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+      <!-- COMMENT OUT DB specifics FOR PRODUCTION -->
+      <!--property name="toplink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="toplink.jdbc.url" value="jdbc:mysql://localhost:3306/kmr"/>
+      <property name="toplink.jdbc.user" value="nhincuser"/>
+      <property name="toplink.jdbc.password" value="nhincpass"/-->
+      <property name="toplink.logging.level" value="FINEST"/>
+    </properties>
+  </persistence-unit>
+</persistence>

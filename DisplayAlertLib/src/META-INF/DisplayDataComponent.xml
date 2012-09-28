@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Display Data Component WSDL
+-->
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+   xmlns="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+   xmlns:dda="urn:gov:hhs:fha:nhinc:common:dda"
+   name="DisplayDataComponent"
+   targetNamespace="urn:gov:hhs:fha:nhinc:aggregator"
+   xmlns:tns="urn:gov:hhs:fha:nhinc:aggregator">
+  <documentation>Display Data Component</documentation>
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="urn:gov:hhs:fha:nhinc:common:dda"
+                  schemaLocation="../schemas/nhinc/common/DisplayDataAggregator.xsd"/>
+    </xsd:schema>
+  </types>
+  
+  <message name="GetDataSourceNameRequestMessage">
+    <part name="GetDataSourceNameRequest"
+          element="dda:GetDataSourceNameRequest"/>
+  </message>
+  <message name="GetDataSourceNameResponseMessage">
+    <part name="GetDataSourceNameResponse"
+          element="dda:GetDataSourceNameResponse"/>
+  </message>
+  <message name="GetComponentDetailDataRequestMessage">
+    <part name="GetComponentDetailDataRequest"
+          element="dda:GetComponentDetailDataRequest"/>
+  </message>
+  <message name="GetComponentDetailDataResponseMessage">
+    <part name="GetComponentDetailDataResponse"
+          element="dda:GetComponentDetailDataResponse"/>
+  </message>
+  <message name="GetComponentSummaryDataRequestMessage">
+    <part name="GetComponentSummaryDataRequest"
+          element="dda:GetComponentSummaryDataRequest"/>
+  </message>
+  <message name="GetComponentSummaryDataResponseMessage">
+    <part name="GetComponentSummaryDataResponse"
+          element="dda:GetComponentSummaryDataResponse"/>
+  </message>
+
+  <portType name="DisplayDataComponentPortType">
+    <operation name="GetDataSourceName">
+      <input name="GetDataSourceNameRequest"
+             message="tns:GetDataSourceNameRequestMessage" />
+      <output name="GetDataSourceNameResponse"
+              message="tns:GetDataSourceNameResponseMessage" />
+    </operation>
+    <operation name="GetComponentDetailData">
+      <input name="GetComponentDetailDataRequest"
+             message="tns:GetComponentDetailDataRequestMessage" />
+      <output name="GetComponentDetailDataResponse"
+              message="tns:GetComponentDetailDataResponseMessage" />
+    </operation>
+    <operation name="GetComponentSummaryData">
+      <input name="GetComponentSummaryDataRequest"
+             message="tns:GetComponentSummaryDataRequestMessage" />
+      <output name="GetComponentSummaryDataResponse"
+              message="tns:GetComponentSummaryDataResponseMessage" />
+    </operation>
+  </portType>
+  
+  <binding name="DisplayDataComponentBindingSoap11" type="tns:DisplayDataComponentPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="GetDataSourceName">
+      <soap:operation soapAction="urn:GetDataSourceName"/>
+      <input name="GetDataSourceNameRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="GetDataSourceNameResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetComponentDetailData">
+      <soap:operation soapAction="urn:GetComponentDetailData"/>
+      <input name="GetComponentDetailDataRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="GetComponentDetailDataResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetComponentSummaryData">
+      <soap:operation soapAction="urn:GetComponentSummaryData"/>
+      <input name="GetComponentSummaryDataRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="GetComponentSummaryDataResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  
+  <service name="DisplayDataComponent">
+    <port name="DisplayDataComponentPortSoap11"
+          binding="tns:DisplayDataComponentBindingSoap11">
+      <soap:address 
+         location="http://localhost:${HttpDefaultPort}/DisplayDataComponent/DisplayDataComponent_Service" />
+    </port>
+  </service>
+  <plnk:partnerLinkType name="DisplayDataComponent">
+    <!-- A partner link type is automatically generated when a new port type is added. 
+         Partner link types are used by BPEL processes. In a BPEL process, a partner 
+         link represents the interaction between the BPEL process and a partner service. 
+         Each partner link is associated with a partner link type. A partner link type 
+         characterizes the conversational relationship between two services. The 
+         partner link type can have one or two roles.-->
+    <plnk:role name="DisplayDataComponentPortTypeRole"
+               portType="tns:DisplayDataComponentPortType"/>
+  </plnk:partnerLinkType>
+  
+</definitions>

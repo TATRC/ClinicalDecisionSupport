@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+  
+  <bean id="appointment.extractor" class="gov.hhs.fha.nhinc.adapter.fact.extractor.GenericFactExtractor" scope="prototype">
+    <constructor-arg ref="Xpath"/>
+    <property name="factClassName" value="gov.hhs.fha.nhinc.adapter.fact.AppointmentFactType"/>
+    <property name="factsCountXpath" value="count(//hl7:FindEncounters_PRPA_IN900350UV02Message/hl7:message/hl7:controlActProcess/hl7:subject)"/>
+    <property name="factBaseXpath" value="//hl7:FindEncounters_PRPA_IN900350UV02Message/hl7:message/hl7:controlActProcess/hl7:subject[#encounter#]"/>
+    <property name="factIndexCharset" value="#encounter#"/>
+    <property name="factProperties">
+      <map>
+        <entry key="SourceSystem">
+          <ref bean="carerecord.SourceSystem"/>
+        </entry>
+        <entry key="Id">
+          <ref bean="encounter.summary.Id"/>
+        </entry>
+        <entry key="PatientId">
+          <ref bean="encounter.summary.PatientId"/>
+        </entry>
+        <entry key="Patient">
+          <ref bean="encounter.summary.Patient"/>
+        </entry>
+<!--
+        <entry key="ChiefComplaint">
+          <ref bean="encounter.summary.ChiefComplaint"/>
+        </entry>
+-->
+        <entry key="StatusCode">
+          <ref bean="encounter.summary.StatusCode"/>
+        </entry>
+        <entry key="StartDateTime">
+          <ref bean="encounter.summary.StartDateTime"/>
+        </entry>
+        <entry key="EndDateTime">
+          <ref bean="encounter.summary.EndDateTime"/>
+        </entry>
+        <entry key="AppointmentType">
+          <ref bean="encounter.summary.AppointmentType"/>
+        </entry>
+        <entry key="Performer">
+          <ref bean="encounter.summary.Performer"/>
+        </entry>
+        <entry key="Author">
+          <ref bean="encounter.summary.Author"/>
+        </entry>
+<!--
+        <entry key="CodedLocation">
+          <ref bean="encounter.summary.CodedLocation"/>
+        </entry>
+-->
+        <entry key="FreeTextLocation">
+          <ref bean="encounter.summary.FreeTextLocation"/>
+        </entry>
+<!--
+        <entry key="OrderNumber">
+          <ref bean="encounter.summary.OrderNumber"/>
+        </entry>
+-->
+      </map>
+    </property>
+  </bean>
+
+  <bean id="encounter.summary.Id" class="gov.hhs.fha.nhinc.adapter.fact.def.ValueTypeListPropertyDefinition">
+    <property name="propertyName" value="Id"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueType"/>
+    <property name="valueXpath" value="hl7:encounterEvent/hl7:id[#id#]/@extension"/>
+    <property name="codeSystemXpath" value="hl7:encounterEvent/hl7:id[#id#]/@root"/>
+    <property name="codeSystemNameXpath" value="hl7:encounterEvent/hl7:id[#id#]/@assigningAuthorityName"/>
+    <property name="indexRef" value="#id#"/>
+    <property name="listSizeXpath" value="count(hl7:encounterEvent/hl7:id)"/>
+  </bean>
+
+  <bean id="encounter.summary.PatientId" class="gov.hhs.fha.nhinc.adapter.fact.def.ValueTypePropertyDefinition">
+    <property name="propertyName" value="PatientId"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueType"/>
+    <property name="valueXpath" value="hl7:encounterEvent/hl7:subject/hl7:patient/hl7:id/@extension"/>
+    <property name="codeSystemXpath" value="hl7:encounterEvent/hl7:subject/hl7:patient/hl7:id/@root"/>
+    <property name="codeSystemNameXpath" value="hl7:encounterEvent/hl7:subject/hl7:patient/hl7:id/@assigningAuthorityName"/>
+  </bean>
+
+  <bean id="encounter.summary.Patient" class="gov.hhs.fha.nhinc.adapter.fact.def.ComplexPropertyDefinition">
+    <property name="propertyName" value="Patient"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.NameFactType"/>
+    <property name="objectProperties">
+      <map>
+        <entry key="NameType">
+          <ref bean="encounter.summary.Patient.NameType"/>
+        </entry>
+        <entry key="FamilyName">
+          <ref bean="encounter.summary.Patient.FamilyName"/>
+        </entry>
+        <entry key="FirstName">
+          <ref bean="encounter.summary.Patient.FirstName"/>
+        </entry>
+        <entry key="MiddleName">
+          <ref bean="encounter.summary.Patient.MiddleName"/>
+        </entry>
+        <entry key="Prefix">
+          <ref bean="encounter.summary.Patient.Prefix"/>
+        </entry>
+        <entry key="Suffix">
+          <ref bean="encounter.summary.Patient.Suffix"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="encounter.summary.Patient.NameType" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="NameType"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:encounterEvent/hl7:subject/hl7:patient/hl7:patientPerson/hl7:name/@use"/>
+  </bean>
+
+  <bean id="encounter.summary.Patient.FamilyName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FamilyName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:encounterEvent/hl7:subject/hl7:patient/hl7:patientPerson/hl7:name/hl7:family/text()"/>
+  </bean>
+
+  <bean id="encounter.summary.Patient.FirstName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FirstName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:encounterEvent/hl7:subject/hl7:patient/hl7:patientPerson/hl7:name/hl7:given[1]/text()"/>
+  </bean>
+
+  <bean id="encounter.summary.Patient.MiddleName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="MiddleName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:encounterEvent/hl7:subject/hl7:patient/hl7:patientPerson/hl7:name/hl7:given[2]/text()"/>
+  </bean>
+
+  <bean id="encounter.summary.Patient.Prefix" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="Prefix"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:encounterEvent/hl7:subject/hl7:patient/hl7:patientPerson/hl7:name/hl7:prefix"/>
+  </bean>
+
+  <bean id="encounter.summary.Patient.Suffix" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="Suffix"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:encounterEvent/hl7:subject/hl7:patient/hl7:patientPerson/hl7:name/hl7:suffix"/>
+  </bean>
+  
+<!--
+  <bean id="encounter.summary.ChiefComplaint" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="ChiefComplaint"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:encounterEvent/hl7:subject/hl7:patient"/>
+  </bean>
+-->
+
+  <bean id="encounter.summary.StatusCode" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="StatusCode"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:encounterEvent/hl7:statusCode/@code"/>
+  </bean>
+
+  <bean id="encounter.summary.StartDateTime" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="StartDateTime"/>
+    <property name="propertyClassName" value="java.util.Date"/>
+    <property name="propertyXpath" value="hl7:encounterEvent/hl7:effectiveTime/hl7:low/@value"/>
+  </bean>
+
+  <bean id="encounter.summary.EndDateTime" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="EndDateTime"/>
+    <property name="propertyClassName" value="java.util.Date"/>
+    <property name="propertyXpath" value="hl7:encounterEvent/hl7:effectiveTime/hl7:high/@value"/>
+  </bean>
+
+  <bean id="encounter.summary.AppointmentType" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="AppointmentType"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:encounterEvent/hl7:code/@code"/>
+    <property name="labelXpath" value="hl7:encounterEvent/hl7:code/@displayName"/>
+    <property name="codeSystemXpath" value="hl7:encounterEvent/hl7:code/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="hl7:encounterEvent/hl7:code/@codeSystemName"/>
+  </bean>
+
+  <bean id="encounter.summary.Performer" class="gov.hhs.fha.nhinc.adapter.fact.def.ComplexPropertyDefinition">
+    <property name="propertyName" value="Performer"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.NameFactType"/>
+    <property name="objectProperties">
+      <map>
+        <entry key="NameType">
+          <ref bean="encounter.summary.Performer.NameType"/>
+        </entry>
+        <entry key="FamilyName">
+          <ref bean="encounter.summary.Performer.FamilyName"/>
+        </entry>
+        <entry key="FirstName">
+          <ref bean="encounter.summary.Performer.FirstName"/>
+        </entry>
+        <entry key="MiddleName">
+          <ref bean="encounter.summary.Performer.MiddleName"/>
+        </entry>
+        <entry key="Prefix">
+          <ref bean="encounter.summary.Performer.Prefix"/>
+        </entry>
+        <entry key="Suffix">
+          <ref bean="encounter.summary.Performer.Suffix"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="encounter.summary.Performer.NameType" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="NameType"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:encounterEvent/hl7:admitter/hl7:assignedPerson/hl7:assignedPerson/hl7:name/@use"/>
+  </bean>
+
+  <bean id="encounter.summary.Performer.FamilyName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FamilyName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:encounterEvent/hl7:admitter/hl7:assignedPerson/hl7:assignedPerson/hl7:name/hl7:family/text()"/>
+  </bean>
+
+  <bean id="encounter.summary.Performer.FirstName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FirstName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:encounterEvent/hl7:admitter/hl7:assignedPerson/hl7:assignedPerson/hl7:name/hl7:given[1]/text()"/>
+  </bean>
+
+  <bean id="encounter.summary.Performer.MiddleName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="MiddleName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:encounterEvent/hl7:admitter/hl7:assignedPerson/hl7:assignedPerson/hl7:name/hl7:given[2]/text()"/>
+  </bean>
+
+  <bean id="encounter.summary.Performer.Prefix" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="Prefix"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:encounterEvent/hl7:admitter/hl7:assignedPerson/hl7:assignedPerson/hl7:name/hl7:prefix"/>
+  </bean>
+
+  <bean id="encounter.summary.Performer.Suffix" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="Suffix"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:encounterEvent/hl7:admitter/hl7:assignedPerson/hl7:assignedPerson/hl7:name/hl7:suffix"/>
+  </bean>
+
+  <bean id="encounter.summary.Author" class="gov.hhs.fha.nhinc.adapter.fact.def.ComplexPropertyDefinition">
+    <property name="propertyName" value="Author"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.NameFactType"/>
+    <property name="objectProperties">
+      <map>
+        <entry key="NameType">
+          <ref bean="encounter.summary.Author.NameType"/>
+        </entry>
+        <entry key="FamilyName">
+          <ref bean="encounter.summary.Author.FamilyName"/>
+        </entry>
+        <entry key="FirstName">
+          <ref bean="encounter.summary.Author.FirstName"/>
+        </entry>
+        <entry key="MiddleName">
+          <ref bean="encounter.summary.Author.MiddleName"/>
+        </entry>
+        <entry key="Prefix">
+          <ref bean="encounter.summary.Author.Prefix"/>
+        </entry>
+        <entry key="Suffix">
+          <ref bean="encounter.summary.Author.Suffix"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="encounter.summary.Author.NameType" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="NameType"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:encounterEvent/hl7:attender/hl7:assignedPerson/hl7:assignedPerson/hl7:name/@use"/>
+  </bean>
+
+  <bean id="encounter.summary.Author.FamilyName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FamilyName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:encounterEvent/hl7:attender/hl7:assignedPerson/hl7:assignedPerson/hl7:name/hl7:family/text()"/>
+  </bean>
+
+  <bean id="encounter.summary.Author.FirstName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FirstName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:encounterEvent/hl7:attender/hl7:assignedPerson/hl7:assignedPerson/hl7:name/hl7:given[1]/text()"/>
+  </bean>
+
+  <bean id="encounter.summary.Author.MiddleName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="MiddleName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:encounterEvent/hl7:attender/hl7:assignedPerson/hl7:assignedPerson/hl7:name/hl7:given[2]/text()"/>
+  </bean>
+
+  <bean id="encounter.summary.Author.Prefix" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="Prefix"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:encounterEvent/hl7:attender/hl7:assignedPerson/hl7:assignedPerson/hl7:name/hl7:prefix"/>
+  </bean>
+
+  <bean id="encounter.summary.Author.Suffix" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="Suffix"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:encounterEvent/hl7:attender/hl7:assignedPerson/hl7:assignedPerson/hl7:name/hl7:suffix"/>
+  </bean>
+
+<!--
+  <bean id="encounter.summary.CodedLocation" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="CodedLocation"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:encounterEvent/hl7:code/@code"/>
+    <property name="labelXpath" value="hl7:encounterEvent/hl7:code/@displayName"/>
+    <property name="codeSystemXpath" value="hl7:encounterEvent/hl7:code/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="hl7:encounterEvent/hl7:code/@codeSystemName"/>
+  </bean>
+-->
+
+  <bean id="encounter.summary.FreeTextLocation" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FreeTextLocation"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:encounterEvent/hl7:responsibleParty/hl7:assignedOrganization/hl7:assignedOrganization/hl7:name"/>
+  </bean>
+
+<!--
+  <bean id="encounter.summary.OrderNumber" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="OrderNumber"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:encounterEvent"/>
+  </bean>
+-->
+
+</beans>

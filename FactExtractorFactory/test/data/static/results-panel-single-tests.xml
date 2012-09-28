@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hl7:CareRecord_QUPC_IN043200UV01Message xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 C:\projects\NHINC\Current\Product\Production\Common\Interfaces\src\schemas\nhinc\hl7\HL7CommonDataLayerMessages.xsd">
+	<hl7:response>
+		<hl7:id extension="6858a017-39c1-4153-bbd4-eaedac72a0e7"/>
+		<hl7:creationTime value="20091221011010.005"/>
+		<hl7:interactionId extension="PRPA_IN900300UV02"/>
+		<hl7:processingCode code="P"/>
+		<hl7:processingModeCode code="R"/>
+		<hl7:acceptAckCode code="AL"/>
+		<hl7:receiver typeCode="RCV">
+			<hl7:device determinerCode="INSTANCE">
+				<hl7:id root="2.16.840.1.113883.3.200"/>
+				<hl7:telecom value="http://localhost:8080/NhinConnect/CommonDataLayerService"/>
+			</hl7:device>
+		</hl7:receiver>
+		<hl7:sender typeCode="SND">
+			<hl7:device determinerCode="INSTANCE">
+				<hl7:id root="2.16.840.1.113883.3.200"/>
+			</hl7:device>
+		</hl7:sender>
+		<hl7:controlActProcess moodCode="EVN" classCode="CACT">
+			<hl7:code xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="hl7:CS" code="QUPC_TE043200UV01"/>
+			<hl7:priorityCode code="R"/>
+			<hl7:subject typeCode="SUBJ">
+				<hl7:registrationEvent moodCode="EVN" classCode="REG">
+					<hl7:statusCode code="completed"/>
+					<hl7:custodian typeCode="CST">
+						<hl7:assignedEntity>
+							<hl7:id root="2.16.840.1.113883.3.200"/>
+							<hl7:assignedOrganization>
+								<hl7:name>Department of Defense</hl7:name>
+							</hl7:assignedOrganization>
+						</hl7:assignedEntity>
+					</hl7:custodian>
+					<hl7:subject2 typeCode="SUBJ">
+						<hl7:careProvisionEvent moodCode="EVN" classCode="ENC">
+							<hl7:recordTarget typeCode="RCT">
+								<hl7:patient classCode="PAT">
+									<hl7:id extension="8237363" root="2.16.840.1.113883.3.200"/>
+									<hl7:statusCode code="normal"/>
+									<hl7:patientPerson determinerCode="INSTANCE" classCode="PSN">
+										<hl7:name>
+											<hl7:family>Johnson</hl7:family>
+											<hl7:given>SHAWN</hl7:given>
+											<hl7:given>N</hl7:given>
+										</hl7:name>
+										<hl7:administrativeGenderCode codeSystem="2.16.840.1.113883.5.1" code="F"/>
+									</hl7:patientPerson>
+								</hl7:patient>
+							</hl7:recordTarget>
+							<hl7:inFulfillmentOf contextConductionInd="true" typeCode="SCH">
+								<hl7:careProvisionRequestOrPromise moodCode="RQO" classCode="ENC">
+									<hl7:id extension="ORDER-20100110"/>
+								</hl7:careProvisionRequestOrPromise>
+							</hl7:inFulfillmentOf>
+							<hl7:reference typeCode="REFR">
+								<hl7:encounter moodCode="EVN" classCode="ENC">
+									<hl7:id extension="ENC20100110-001"/>
+									<hl7:statusCode code="completed"/>
+									<hl7:effectiveTime>
+										<hl7:low value="20091020131010.005"/>
+									</hl7:effectiveTime>
+									<hl7:subject typeCode="SBJ">
+										<hl7:patient classCode="PAT">
+											<hl7:id extension="8237363" root="2.16.840.1.113883.3.200"/>
+											<hl7:statusCode/>
+											<hl7:patientPerson determinerCode="INSTANCE" classCode="PSN"/>
+										</hl7:patient>
+									</hl7:subject>
+									<hl7:location typeCode="LOC">
+										<hl7:time value="20100119111000.0000-0500"/>
+										<hl7:serviceDeliveryLocation classCode="SDLOC">
+											<hl7:serviceProviderOrganization>
+												<hl7:id extension="CLINIC-999"/>
+												<hl7:name>INTERNAL MEDICINE</hl7:name>
+											</hl7:serviceProviderOrganization>
+										</hl7:serviceDeliveryLocation>
+									</hl7:location>
+								</hl7:encounter>
+							</hl7:reference>
+							<hl7:pertinentInformation3 contextConductionInd="true" typeCode="SUBJ">
+								<hl7:act moodCode="EVN" classCode="ACT">
+									<hl7:id extension="000905 HE 1141"/>
+									<hl7:code code="18719-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="CHEMISTRY STUDIES"/>
+									<hl7:performer typeCode="PRF">
+										<hl7:time value="20100123211000.007-0500"/>
+										<hl7:assignedEntity1 classCode="ASSIGNED">
+											<hl7:id extension="td83747"/>
+											<hl7:assignedPerson determinerCode="INSTANCE" classCode="PSN">
+												<hl7:name use="L">
+													<hl7:family>Trenton</hl7:family>
+													<hl7:given>Douglas</hl7:given>
+													<hl7:suffix>Dr.</hl7:suffix>
+												</hl7:name>
+											</hl7:assignedPerson>
+										</hl7:assignedEntity1>
+									</hl7:performer>
+									<hl7:sourceOf typeCode="RSON">
+										<hl7:observation moodCode="EVN" classCode="OBS">
+											<hl7:code displayName="ERYTHROCYTE SEDIMENTATION RATE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="11273-0"/>
+											<hl7:statusCode code="completed"/>
+											<hl7:effectiveTime value="201001173000-0500"/>
+											<hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="hl7:PQ" unit="mm/hr" value="51.0"/>
+											<hl7:interpretationCode codeSystem="2.16.840.1.113883.5.83" code="N"/>
+											<hl7:referenceRange typeCode="REFV">
+												<hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+													<hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="hl7:IVL_PQ">
+														<hl7:low unit="mm/hr" value="0.0"/>
+														<hl7:high unit="mm/hr" value="20.0"/>
+													</hl7:value>
+													<hl7:interpretationCode codeSystem="2.16.840.1.113883.5.83" code="N"/>
+													<hl7:precondition typeCode="PRCN">
+														<hl7:criterion moodCode="EVN.CRT" classCode="COND">
+															<hl7:code code="AGE"/>
+															<hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="hl7:IVL_PQ">
+																<hl7:low value="45" unit="Y"/>
+																<hl7:high value="55" unit="Y"/>
+															</hl7:value>
+															<hl7:interpretationCode/>
+														</hl7:criterion>
+													</hl7:precondition>
+												</hl7:observationRange>
+											</hl7:referenceRange>
+										</hl7:observation>
+									</hl7:sourceOf>
+								</hl7:act>
+							</hl7:pertinentInformation3>
+							<hl7:pertinentInformation3 contextConductionInd="true" typeCode="SUBJ">
+								<hl7:act moodCode="EVN" classCode="ACT">
+									<hl7:id extension="001121 HE 1109"/>
+									<hl7:code displayName="CHEMISTRY STUDIES" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="18723-7"/>
+									<hl7:performer typeCode="PRF">
+										<hl7:time value="20100123211000.007-0500"/>
+										<hl7:assignedEntity1 classCode="ASSIGNED">
+											<hl7:id extension="td83747"/>
+											<hl7:assignedPerson determinerCode="INSTANCE" classCode="PSN">
+												<hl7:name use="L">
+													<hl7:family>Trenton</hl7:family>
+													<hl7:given>Douglas</hl7:given>
+													<hl7:suffix>Dr.</hl7:suffix>
+												</hl7:name>
+											</hl7:assignedPerson>
+										</hl7:assignedEntity1>
+									</hl7:performer>
+									<hl7:sourceOf typeCode="RSON">
+										<hl7:observation moodCode="EVN" classCode="OBS">
+											<hl7:code displayName="HEMATOCRIT" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="16931-8"/>
+											<hl7:statusCode code="completed"/>
+											<hl7:effectiveTime value="201001173000-0500"/>
+											<hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="hl7:PQ" unit="%" value="36.7"/>
+											<hl7:interpretationCode codeSystem="2.16.840.1.113883.5.83" code="N"/>
+											<hl7:referenceRange typeCode="REFV">
+												<hl7:observationRange moodCode="EVN.CRT" classCode="OBS">
+													<hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="hl7:IVL_PQ">
+														<hl7:low unit="%" value="37"/>
+														<hl7:high unit="%" value="51"/>
+													</hl7:value>
+													<hl7:interpretationCode codeSystem="2.16.840.1.113883.5.83" code="N"/>
+													<hl7:precondition typeCode="PRCN">
+														<hl7:criterion moodCode="EVN.CRT" classCode="COND">
+															<hl7:code code="SEX"/>
+															<hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="hl7:CD" codeSystem="2.16.840.1.113883.5.1" code="F"/>
+															<hl7:interpretationCode/>
+														</hl7:criterion>
+													</hl7:precondition>
+												</hl7:observationRange>
+											</hl7:referenceRange>
+										</hl7:observation>
+									</hl7:sourceOf>
+								</hl7:act>
+							</hl7:pertinentInformation3>
+						</hl7:careProvisionEvent>
+					</hl7:subject2>
+				</hl7:registrationEvent>
+			</hl7:subject>
+			<hl7:queryAck>
+				<hl7:queryId extension="6858a017-39c1-4153-bbd4-eaedac72a0e7"/>
+				<hl7:statusCode code="deliveredResponse"/>
+				<hl7:queryResponseCode code="OK"/>
+			</hl7:queryAck>
+		</hl7:controlActProcess>
+	</hl7:response>
+</hl7:CareRecord_QUPC_IN043200UV01Message>

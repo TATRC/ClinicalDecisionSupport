@@ -1,0 +1,650 @@
+<com.webreach.mirth.model.Channel>
+  <id>a9efa853-8273-4f17-9966-6e8b6fe913cb</id>
+  <name>CDS Chem Lab</name>
+  <description></description>
+  <enabled>false</enabled>
+  <version>1.8.2.4472</version>
+  <lastModified>
+    <time>1276299291725</time>
+    <timezone>America/Los_Angeles</timezone>
+  </lastModified>
+  <revision>4</revision>
+  <sourceConnector>
+    <name>sourceConnector</name>
+    <properties>
+      <property name="DataType">Channel Reader</property>
+    </properties>
+    <transformer>
+      <steps/>
+      <inboundProtocol>HL7V2</inboundProtocol>
+      <outboundProtocol>HL7V2</outboundProtocol>
+      <inboundProperties>
+        <property name="handleRepetitions">false</property>
+        <property name="stripNamespaces">true</property>
+        <property name="convertLFtoCR">true</property>
+        <property name="useStrictValidation">false</property>
+        <property name="useStrictParser">false</property>
+      </inboundProperties>
+      <outboundProperties>
+        <property name="handleRepetitions">false</property>
+        <property name="stripNamespaces">true</property>
+        <property name="convertLFtoCR">true</property>
+        <property name="useStrictValidation">false</property>
+        <property name="useStrictParser">false</property>
+      </outboundProperties>
+    </transformer>
+    <filter>
+      <rules/>
+    </filter>
+    <transportName>Channel Reader</transportName>
+    <mode>SOURCE</mode>
+    <enabled>true</enabled>
+  </sourceConnector>
+  <destinationConnectors>
+    <com.webreach.mirth.model.Connector>
+      <name>Destination 1</name>
+      <properties>
+        <property name="method">storeAllergyFactEvent</property>
+        <property name="wsdlUrl">http://nhinint01.asu.edu:8080/DecisionSupportService/EventHandlerService?wsdl</property>
+        <property name="attachmentNames">&lt;list/&gt;</property>
+        <property name="replyChannelId">sink</property>
+        <property name="definition">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</property>
+        <property name="attachmentContents">&lt;list/&gt;</property>
+        <property name="soapEnvelope">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;
+&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:soapenc=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+&lt;soap:Body&gt;&#x0D;
+  &lt;storeAllergyFactEvent xmlns=&quot;http://dss.kmr.socraticgrid.org/&quot;&gt;&#x0D;
+    &lt;fact xmlns=&quot;&quot;/&gt;&#x0D;
+  &lt;/storeAllergyFactEvent&gt;&#x0D;
+&lt;/soap:Body&gt;&#x0D;
+&lt;/soap:Envelope&gt;</property>
+        <property name="DataType">SOAP Sender</property>
+        <property name="serviceEndpoint">http://nhinint01.asu.edu:8080/DecisionSupportService/EventHandlerService</property>
+        <property name="usePersistentQueues">0</property>
+        <property name="rotateQueue">0</property>
+        <property name="soapActionURI"></property>
+        <property name="reconnectMillisecs">10000</property>
+        <property name="attachmentTypes">&lt;list/&gt;</property>
+        <property name="host">axis:http://nhinint01.asu.edu:8080/DecisionSupportService/EventHandlerService?method=storeAllergyFactEvent</property>
+        <property name="soapGenerateEnvelope">1</property>
+      </properties>
+      <transformer>
+        <steps>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>0</sequenceNumber>
+            <name>labchsendingapp</name>
+            <script>channelMap.put(&apos;labchsendingapp&apos;, validate(msg[&apos;MSH&apos;][&apos;MSH.3&apos;][&apos;MSH.3.1&apos;].toString(), &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>labchsendingapp</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;MSH&apos;][&apos;MSH.3&apos;][&apos;MSH.3.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>1</sequenceNumber>
+            <name>labchsendingfacilty</name>
+            <script>channelMap.put(&apos;labchsendingfacilty&apos;, validate(msg[&apos;MSH&apos;][&apos;MSH.4&apos;][&apos;MSH.4.1&apos;].toString(), &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>labchsendingfacilty</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;MSH&apos;][&apos;MSH.4&apos;][&apos;MSH.4.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>2</sequenceNumber>
+            <name>labchdatetime</name>
+            <script>channelMap.put(&apos;labchdatetime&apos;, validate(msg[&apos;MSH&apos;][&apos;MSH.7&apos;][&apos;MSH.7.1&apos;].toString(), &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>labchdatetime</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;MSH&apos;][&apos;MSH.7&apos;][&apos;MSH.7.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>3</sequenceNumber>
+            <name>patientien</name>
+            <script>channelMap.put(&apos;patientien&apos;, validate(msg[&apos;PID&apos;][&apos;PID.3&apos;][&apos;PID.3.1&apos;].toString(), &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>patientien</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;PID&apos;][&apos;PID.3&apos;][&apos;PID.3.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>4</sequenceNumber>
+            <name>patientlastname</name>
+            <script>channelMap.put(&apos;patientlastname&apos;, validate(msg[&apos;PID&apos;][&apos;PID.5&apos;][&apos;PID.5.1&apos;].toString(), &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>patientlastname</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;PID&apos;][&apos;PID.5&apos;][&apos;PID.5.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>5</sequenceNumber>
+            <name>patientfirstname</name>
+            <script>channelMap.put(&apos;patientfirstname&apos;, validate(msg[&apos;PID&apos;][&apos;PID.5&apos;][&apos;PID.5.2&apos;].toString(), &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>patientfirstname</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;PID&apos;][&apos;PID.5&apos;][&apos;PID.5.2&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>6</sequenceNumber>
+            <name>labchtestid</name>
+            <script>channelMap.put(&apos;labchtestid&apos;, validate(msg[&apos;OBX&apos;][&apos;OBX.3&apos;][&apos;OBX.3.1&apos;].toString(), &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>labchtestid</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;OBX&apos;][&apos;OBX.3&apos;][&apos;OBX.3.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>7</sequenceNumber>
+            <name>labchtestname</name>
+            <script>channelMap.put(&apos;labchtestname&apos;, validate(msg[&apos;OBX&apos;][&apos;OBX.3&apos;][&apos;OBX.3.2&apos;].toString(), &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>labchtestname</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;OBX&apos;][&apos;OBX.3&apos;][&apos;OBX.3.2&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>8</sequenceNumber>
+            <name>labchtestsubid</name>
+            <script>channelMap.put(&apos;labchtestsubid&apos;, validate(msg[&apos;OBX&apos;][&apos;OBX.3&apos;][&apos;OBX.3.3&apos;].toString(), &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>labchtestsubid</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;OBX&apos;][&apos;OBX.3&apos;][&apos;OBX.3.3&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>9</sequenceNumber>
+            <name>labchtesttype</name>
+            <script>channelMap.put(&apos;labchtesttype&apos;, validate(msg[&apos;OBX&apos;][&apos;OBX.3&apos;][&apos;OBX.3.5&apos;].toString(), &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>labchtesttype</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;OBX&apos;][&apos;OBX.3&apos;][&apos;OBX.3.5&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>10</sequenceNumber>
+            <name>labchtestresult</name>
+            <script>channelMap.put(&apos;labchtestresult&apos;, validate(msg[&apos;OBX&apos;][&apos;OBX.5&apos;][&apos;OBX.5.1&apos;].toString(), &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>labchtestresult</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;OBX&apos;][&apos;OBX.5&apos;][&apos;OBX.5.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>11</sequenceNumber>
+            <name>labchunitofmeasure</name>
+            <script>channelMap.put(&apos;labchunitofmeasure&apos;, validate(msg[&apos;OBX&apos;][&apos;OBX.6&apos;][&apos;OBX.6.1&apos;].toString(), &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>labchunitofmeasure</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;OBX&apos;][&apos;OBX.6&apos;][&apos;OBX.6.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>12</sequenceNumber>
+            <name>labchrefrange</name>
+            <script>channelMap.put(&apos;labchrefrange&apos;, validate(msg[&apos;OBX&apos;][&apos;OBX.7&apos;][&apos;OBX.7.1&apos;].toString(), &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>labchrefrange</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;OBX&apos;][&apos;OBX.7&apos;][&apos;OBX.7.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>13</sequenceNumber>
+            <name>labchabnormalflag</name>
+            <script>channelMap.put(&apos;labchabnormalflag&apos;, validate(msg[&apos;OBX&apos;][&apos;OBX.10&apos;][&apos;OBX.10.1&apos;].toString(), &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>labchabnormalflag</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;OBX&apos;][&apos;OBX.10&apos;][&apos;OBX.10.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>14</sequenceNumber>
+            <name>labchresultstatus</name>
+            <script>channelMap.put(&apos;labchresultstatus&apos;, validate(msg[&apos;OBR&apos;][&apos;OBR.25&apos;][&apos;OBR.25.1&apos;].toString(), &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>labchresultstatus</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;OBR&apos;][&apos;OBR.25&apos;][&apos;OBR.25.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>15</sequenceNumber>
+            <name>labchrequestdate</name>
+            <script>channelMap.put(&apos;labchrequestdate&apos;, validate(msg[&apos;OBR&apos;][&apos;OBR.6&apos;][&apos;OBR.6.1&apos;].toString(), &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>labchrequestdate</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;OBR&apos;][&apos;OBR.6&apos;][&apos;OBR.6.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>16</sequenceNumber>
+            <name>labchobservdate</name>
+            <script>channelMap.put(&apos;labchobservdate&apos;, validate(msg[&apos;OBR&apos;][&apos;OBR.7&apos;][&apos;OBR.7.1&apos;].toString(), &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>labchobservdate</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;OBR&apos;][&apos;OBR.7&apos;][&apos;OBR.7.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>17</sequenceNumber>
+            <name>eventid</name>
+            <script>channelMap.put(&apos;eventid&apos;, validate(msg[&apos;MSH&apos;][&apos;MSH.10&apos;][&apos;MSH.10.1&apos;].toString(), &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>eventid</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;MSH&apos;][&apos;MSH.10&apos;][&apos;MSH.10.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+          <com.webreach.mirth.model.Step>
+            <sequenceNumber>18</sequenceNumber>
+            <name>priority</name>
+            <script>channelMap.put(&apos;priority&apos;, validate(msg[&apos;OBR&apos;][&apos;OBR.5&apos;][&apos;OBR.5.1&apos;].toString(), &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>priority</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;OBR&apos;][&apos;OBR.5&apos;][&apos;OBR.5.1&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </com.webreach.mirth.model.Step>
+        </steps>
+        <inboundTemplate>MSH|^~\&amp;|CHCS\LABCH|N00183|DATAGATE|3M|20070521115441.1-0400||ORU^R01|N00183-1143592|P|2.3|||||&#x0D;PID|1|^^^^^|411309^^^N00183^^N00183|20-390-71-8085^^^^FMPSSN~390718085^^^^SPONSSN~20^^^^FMP~A8085^^^^LNSPSSN~A8085^^^^LNSSN|AKE^ALBERT^^^^||19710113|M|^^^^^||1111 VIRGINIA DRIVE^^NEW YORK^NEW YORK^10111^^^||319-282-1234|319.600.0777|||No Preference|E411309|390-71-8085&#x0D;OBR|1|070521-00001^|070521 PCH 693|1835^GLUCOSE^^^^|ROUTINE||20070521115400.2-0400|||^^^^^^^||||20070521115412.1-0400|72&amp;SERUM&amp;99LRP&amp;&amp;&amp;18||||||||||F&#x0D;NTE|1||PROVIDER: 11546 CENTER, SUPPORT &#x0D;NTE|2||PRIORITY:ROUTINE&#x0D;NTE|3||SPECIMEN:SERUM&#x0D;NTE|4||DATE_ORDERED:20070521115300&#x0D;NTE|5||DATE_RESULTED:20070521115438.1-0400&#x0D;NTE|6||COLLECT_SAMPLE:BLOOD&#x0D;OBX|1|TX|1835-72^GLUCOSE^99LRT^^CH^||75|MG/DL^^^^^| (70-120)||||F&#x0D;NTE|1||DATE_RESULTED:20070521115438.1-0400&#x0D;</inboundTemplate>
+        <outboundTemplate></outboundTemplate>
+        <inboundProtocol>HL7V2</inboundProtocol>
+        <outboundProtocol>HL7V2</outboundProtocol>
+        <inboundProperties>
+          <property name="handleRepetitions">false</property>
+          <property name="stripNamespaces">true</property>
+          <property name="convertLFtoCR">true</property>
+          <property name="useStrictValidation">false</property>
+          <property name="useStrictParser">false</property>
+        </inboundProperties>
+        <outboundProperties>
+          <property name="stripNamespaces">true</property>
+          <property name="convertLFtoCR">true</property>
+        </outboundProperties>
+      </transformer>
+      <filter>
+        <rules/>
+      </filter>
+      <transportName>SOAP Sender</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+    </com.webreach.mirth.model.Connector>
+  </destinationConnectors>
+  <properties>
+    <property name="initialState">started</property>
+    <property name="synchronous">true</property>
+    <property name="store_messages">true</property>
+    <property name="encryptData">false</property>
+    <property name="transactional">false</property>
+    <property name="max_message_age">2</property>
+    <property name="dont_store_filtered">false</property>
+    <property name="error_messages_only">false</property>
+  </properties>
+  <preprocessingScript>// Modify the message variable below to pre process data
+return message;</preprocessingScript>
+  <postprocessingScript>// This script executes once after a message has been processed
+return;</postprocessingScript>
+  <deployScript>// This script executes once when the mule engine is started
+// You only have access to the globalMap here to persist data
+return;</deployScript>
+  <shutdownScript>// This script executes once when the mule engine is stopped
+// You only have access to the globalMap here to persist data
+return;</shutdownScript>
+</com.webreach.mirth.model.Channel>

@@ -1,0 +1,44 @@
+<!-- These examples assume the default namespace is ´urn:hl7-org:v3´ -->
+<text>
+Penicillin Allergy on February 2, 2001
+<content ID=´severity-1´>Severe</content> <content ID=´reaction-1´>Hives</content>
+</text>
+<entry>
+	<act classCode=´ACT´ moodCode=´EVN´>
+	<templateId root=´2.16.840.1.113883.10.20.1.27´/>
+	<templateId root=´2.16.840.1.113883.3.88.11.83.6´/>
+	<id root=´2C748172-7CC2-4902-8AF0-23A105C4401B´/>
+	<code nullFlavor=´NA´/>
+	<entryRelationship typeCode=´SUBJ´>
+	<observation classCode=´OBS´ moodCode=´EVN´>
+	<templateId root=´2.16.840.1.113883.10.20.1.18´/>
+	<code code=´416098002´ displayName=´drug allergy´ codeSystem=´2.16.840.1.113883.6.96´ codeSystemName=´SNOMED CT´/>
+	<effectiveTime>
+		<low value=´20010209´/>
+	</effectiveTime>
+	<participant typeCode=´CSM´>
+		<participantRole classCode=´MANU´>
+			<playingEntity classCode=´MMAT´>
+				<code code=´70618´ displayName=´Penicillin´ codeSystem=´2.16.840.1.113883.6.88´ codeSystemName=´RxNorm´/>
+				<name>Penicillin</name>
+			</playingEntity>
+		</participantRole>
+	</participant>
+	<entryRelationship typeCode=´MFST´ inversionInd=´true´>
+	<templateId root=´2.16.840.1.113883.10.20.1.54´/>
+	<text><reference value=´#reaction-1´/></text>
+	<value xsi:type=´CD´ code=´247472004´ displayName=´Weal´ codeSystem=´2.16.840.1.113883.6.96´ codeSystemName=´SNOMED CT´ />
+	<entryRelationship typeCode=´SUBJ´ inversionInd=´true´>
+	<observation classCode=´OBS´ moodCode=´EVN´>
+	<templateId root=´2.16.840.1.113883.10.20.1.55´/>
+	<code code=´SEV´ displayName=´Severity´ codeSystem=´2.16.840.1.113883.5.4´ codeSystemName=´ActCode´ />
+	<text><reference value=´#severity-1´/></text>
+	<statusCode code=´completed´/>
+	<value xsi:type=´CD´ code=´24484000´ displayName=´Severe´ codeSystem=´2.16.840.1.113883.6.96´ codeSystemName=´SNOMED CT´ />
+	</observation>
+	</entryRelationship>
+	</entryRelationship>
+	</observation>
+	</entryRelationship>
+	</act>
+</entry> 

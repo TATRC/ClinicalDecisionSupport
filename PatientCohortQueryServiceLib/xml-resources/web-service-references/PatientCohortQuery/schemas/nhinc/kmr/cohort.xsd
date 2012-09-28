@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:tns="urn:gov:hhs:fha:nhinc:kmr:patientcohort"
+            targetNamespace="urn:gov:hhs:fha:nhinc:kmr:patientcohort"
+            elementFormDefault="qualified">
+
+    <xsd:complexType name="PopulationType">
+        <xsd:sequence>
+            <xsd:element name="code" type="xsd:string"/>
+            <xsd:element name="text" type="xsd:string"/>
+            <xsd:element name="status" type="xsd:boolean"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="PopulationRegistriesType">
+        <xsd:sequence>
+            <xsd:element name="Populations" maxOccurs="unbounded" type="tns:PopulationType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="PreferenceType">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="code" type="xsd:string"/>
+            <xsd:element name="value" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="PreferencesType">
+        <xsd:sequence>
+            <xsd:element name="Preferences" maxOccurs="unbounded" type="tns:PreferenceType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="PopulationRegistries" type="tns:PopulationRegistriesType"/>
+
+    <xsd:complexType name="PatientCohort">
+        <xsd:sequence>
+            <xsd:element name="patientId" type="xsd:string"/>
+            <xsd:element name="primaryCareManagerId" type="xsd:string"/>
+            <xsd:element name="primaryCareTeamId" type="xsd:string"/>
+            <xsd:element name="admissionStatus" type="xsd:string"/>
+            <xsd:element name="gender" type="xsd:string"/>
+            <xsd:element name="patientLocation" type="xsd:string"/>
+            <xsd:element name="patientLocationId" type="xsd:string"/>
+            <xsd:element name="ageClassification" type="xsd:string"/>
+            <xsd:element name="alive" type="xsd:boolean"/>
+            <xsd:element name="populationRegistries" type="tns:PopulationRegistriesType"/>
+            <xsd:element name="preferences" type="tns:PreferencesType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    
+    <xsd:complexType name="PatientCohortQueryRequestType">
+        <xsd:sequence>
+            <xsd:element name="patientId" type="xsd:string" maxOccurs="1" minOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="PatientCohortQueryRequest" type="tns:PatientCohortQueryRequestType"/>
+
+    <xsd:element name="PatientCohortQueryResponse" type="tns:PatientCohort"/>
+</xsd:schema>

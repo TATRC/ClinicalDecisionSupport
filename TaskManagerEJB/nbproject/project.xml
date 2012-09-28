@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>org.netbeans.modules.j2ee.ejbjarproject</type>
+    <configuration>
+        <buildExtensions xmlns="http://www.netbeans.org/ns/ant-build-extender/1">
+            <extension file="jaxws-build.xml" id="jaxws">
+                <dependency dependsOn="wsimport-service-compile" target="-do-compile"/>
+                <dependency dependsOn="wsimport-client-compile" target="-do-compile"/>
+                <dependency dependsOn="wsimport-service-compile" target="-do-compile-single"/>
+                <dependency dependsOn="wsimport-client-compile" target="-do-compile-single"/>
+                <dependency dependsOn="wsimport-service-generate" target="-pre-pre-compile"/>
+                <dependency dependsOn="wsimport-client-generate" target="-pre-pre-compile"/>
+            </extension>
+        </buildExtensions>
+        <data xmlns="http://www.netbeans.org/ns/j2ee-ejbjarproject/3">
+            <name>TaskManagerEJB</name>
+            <minimum-ant-version>1.6.5</minimum-ant-version>
+            <included-library>file.reference.commons-logging-1.1.1.jar</included-library>
+            <included-library>file.reference.log4j-1.2.15.jar</included-library>
+            <included-library>reference.TaskManagerClient.jar</included-library>
+            <included-library>reference.TaskDAO.jar</included-library>
+            <included-library>file.reference.org.restlet.jar</included-library>
+            <included-library>file.reference.com.noelios.restlet.ext.servlet_2.5.jar</included-library>
+            <included-library>file.reference.com.noelios.restlet.jar</included-library>
+            <included-library>reference.LdapDAO.jar</included-library>
+            <included-library>file.reference.commons-codec-1.4.jar</included-library>
+            <included-library>reference.KMRCommonLib.jar</included-library>
+            <included-library>file.reference.activation.jar</included-library>
+            <included-library>file.reference.mail.jar</included-library>
+            <web-service-clients>
+                <web-service-client>
+                    <web-service-client-name>MirthOrders</web-service-client-name>
+                    <web-service-stub-type>jaxrpc_static_client</web-service-stub-type>
+                    <client-source-url>C:\projects\NHINC\Current\Product\Production\Common\Interfaces\src\wsdl\MirthOrders.wsdl</client-source-url>
+                </web-service-client>
+            </web-service-clients>
+            <source-roots>
+                <root id="src.dir" name="Source Packages"/>
+            </source-roots>
+            <test-roots>
+                <root id="test.src.dir" name="Test Packages"/>
+            </test-roots>
+        </data>
+        <references xmlns="http://www.netbeans.org/ns/ant-project-references/1">
+            <reference>
+                <foreign-project>KMRCommonLib</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>jar</target>
+                <clean-target>clean</clean-target>
+                <id>jar</id>
+            </reference>
+            <reference>
+                <foreign-project>LdapDAO</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>jar</target>
+                <clean-target>clean</clean-target>
+                <id>jar</id>
+            </reference>
+            <reference>
+                <foreign-project>TaskDAO</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>jar</target>
+                <clean-target>clean</clean-target>
+                <id>jar</id>
+            </reference>
+            <reference>
+                <foreign-project>TaskManagerClient</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>jar</target>
+                <clean-target>clean</clean-target>
+                <id>jar</id>
+            </reference>
+        </references>
+    </configuration>
+</project>

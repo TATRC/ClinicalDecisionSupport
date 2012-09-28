@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="gov.hhs.fha.nhinc.taskmanager.model">
+  <class name="Specification" table="tt_specification">
+    <id name="specificationId" column="TT_SpecificationID" type="long">
+      <generator class="increment" />
+    </id>
+    <many-to-one name="taskType" column="TT_ID" not-null="true" lazy="false" />
+    <property name="name" column="TT_AttributeName" type="string" length="50" not-null="false" />
+    <property name="value" column="TT_AttributeValue" type="string" length="255" not-null="false"/>
+  </class>
+</hibernate-mapping>

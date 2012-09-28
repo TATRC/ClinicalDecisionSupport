@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hl7:SlotsQueryResponse_PRSC_IN030102UVMessage xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+  <hl7:message>
+    <hl7:id extension="6858a017-39c1-4153-bbd4-eaedac72a0e7"/>
+    <hl7:creationTime value="20101216012152-0800"/>
+    <hl7:interactionId extension="PRSC_IN030102UV" root="2.16.840.1.113883.5"/>
+    <hl7:processingCode code="P"/>
+    <hl7:processingModeCode code="R"/>
+    <hl7:acceptAckCode code="AL"/>
+    <hl7:receiver typeCode="RCV">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+        <hl7:telecom value="http://localhost:8080/NhinConnect/CommonDataLayerService"/>
+      </hl7:device>
+    </hl7:receiver>
+    <hl7:sender typeCode="SND">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+      </hl7:device>
+    </hl7:sender>
+    <hl7:controlActProcess moodCode="EVN" classCode="CACT">
+      <hl7:code code="PRSC_TE030200UV"/>
+      <hl7:priorityCode code="R"/>
+      <hl7:subject typeCode="SUBJ">
+        <hl7:appointment moodCode="APT" classCode="ACT">
+          <hl7:id assigningAuthorityName="RPMS Schedule Manager" extension="slot-2000"/>
+          <hl7:code displayName="ESTABLISHED/FOLLOW UP APPT" codeSystemName="RPMS Scheduling Manager" codeSystem="2.16.840.1.113883.3.200" code="EST"/>
+          <hl7:statusCode code="active"/>
+          <hl7:effectiveTime value="20101220080000-0800"/>
+          <hl7:effectiveTime value="20101220090000-0800"/>
+          <hl7:subject typeCode="SBJ">
+            <hl7:patient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          </hl7:subject>
+          <hl7:performer typeCode="PRF">
+            <hl7:modeCode displayName="Physical Presence" codeSystemName="ParticipationMode" codeSystem="2.16.840.1.113883.5.1064" code="PHYSICAL"/>
+            <hl7:assignedPerson classCode="ASSIGNED">
+              <hl7:id extension="provider-id-#"/>
+              <hl7:telecom use="WP" value="1-888-888-8888"/>
+              <hl7:assignedPerson determinerCode="INSTANCE" classCode="PSN">
+                <hl7:name use="L">
+                  <hl7:family>JACKSON</hl7:family>
+                  <hl7:given>SHARON</hl7:given>
+                  <hl7:given>A</hl7:given>
+                  <hl7:suffix>Sr</hl7:suffix>
+                  <hl7:prefix>Dr.</hl7:prefix>
+                </hl7:name>
+              </hl7:assignedPerson>
+            </hl7:assignedPerson>
+          </hl7:performer>
+          <hl7:location typeCode="LOC">
+            <hl7:serviceDeliveryLocation classCode="SDLOC">
+              <hl7:id root="2.16.840.1.113883.3.200" extension="clinic-id" assigningAuthorityName="RPMS"/>
+              <hl7:code code="FMC" displayName="Family medicine clinic" codeSystem="2.16.840.1.113883.5.111" codeSystemName="RoleCode"/>
+              <hl7:location classCode="PLC" determinerCode="INSTANCE">
+                <hl7:name>ADULT FAMILY CARE CLINIC</hl7:name>
+              </hl7:location>
+              <hl7:serviceProviderOrganization classCode="ORG" determinerCode="INSTANCE">
+                <hl7:id root="2.16.840.1.113883.3.200"/>
+                <hl7:name>Department of Defense</hl7:name>
+              </hl7:serviceProviderOrganization>
+            </hl7:serviceDeliveryLocation>
+          </hl7:location>
+          <hl7:reference typeCode="REFR">
+            <hl7:schedule moodCode="SCH" classCode="ACT">
+              <hl7:id assigningAuthorityName="ROMS Schedule Mamager" extension="schedule-id-#"/>
+            </hl7:schedule>
+          </hl7:reference>
+        </hl7:appointment>
+      </hl7:subject>
+      <hl7:subject typeCode="SUBJ">
+        <hl7:appointment moodCode="APT" classCode="ACT">
+          <hl7:id assigningAuthorityName="RPMS Schedule Manager" extension="slot-2001"/>
+          <hl7:code displayName="ESTABLISHED/FOLLOW UP APPT" codeSystemName="RPMS Scheduling Manager" codeSystem="2.16.840.1.113883.3.200" code="EST"/>
+          <hl7:statusCode code="active"/>
+          <hl7:effectiveTime value="20101221080000-0800"/>
+          <hl7:effectiveTime value="20101221090000-0800"/>
+          <hl7:subject typeCode="SBJ">
+            <hl7:patient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          </hl7:subject>
+          <hl7:performer typeCode="PRF">
+            <hl7:modeCode displayName="Physical Presence" codeSystemName="ParticipationMode" codeSystem="2.16.840.1.113883.5.1064" code="PHYSICAL"/>
+            <hl7:assignedPerson classCode="ASSIGNED">
+              <hl7:id extension="provider-id-#"/>
+              <hl7:telecom use="WP" value="1-888-888-8888"/>
+              <hl7:assignedPerson determinerCode="INSTANCE" classCode="PSN">
+                <hl7:name use="L">
+                  <hl7:family>JACKSON</hl7:family>
+                  <hl7:given>SHARON</hl7:given>
+                  <hl7:given>A</hl7:given>
+                  <hl7:suffix>Sr</hl7:suffix>
+                  <hl7:prefix>Dr.</hl7:prefix>
+                </hl7:name>
+              </hl7:assignedPerson>
+            </hl7:assignedPerson>
+          </hl7:performer>
+          <hl7:location typeCode="LOC">
+            <hl7:serviceDeliveryLocation classCode="SDLOC">
+              <hl7:id root="2.16.840.1.113883.3.200" extension="clinic-id" assigningAuthorityName="RPMS"/>
+              <hl7:code code="FMC" displayName="Family medicine clinic" codeSystem="2.16.840.1.113883.5.111" codeSystemName="RoleCode"/>
+              <hl7:location classCode="PLC" determinerCode="INSTANCE">
+                <hl7:name>ADULT FAMILY CARE CLINIC</hl7:name>
+              </hl7:location>
+              <hl7:serviceProviderOrganization classCode="ORG" determinerCode="INSTANCE">
+                <hl7:id root="2.16.840.1.113883.3.200"/>
+                <hl7:name>Department of Defense</hl7:name>
+              </hl7:serviceProviderOrganization>
+            </hl7:serviceDeliveryLocation>
+          </hl7:location>
+          <hl7:reference typeCode="REFR">
+            <hl7:schedule moodCode="SCH" classCode="ACT">
+              <hl7:id assigningAuthorityName="ROMS Schedule Mamager" extension="schedule-id-#"/>
+            </hl7:schedule>
+          </hl7:reference>
+        </hl7:appointment>
+      </hl7:subject>
+      <hl7:subject typeCode="SUBJ">
+        <hl7:appointment moodCode="APT" classCode="ACT">
+          <hl7:id assigningAuthorityName="RPMS Schedule Manager" extension="slot-2002"/>
+          <hl7:code displayName="ESTABLISHED/FOLLOW UP APPT" codeSystemName="RPMS Scheduling Manager" codeSystem="2.16.840.1.113883.3.200" code="EST"/>
+          <hl7:statusCode code="active"/>
+          <hl7:effectiveTime value="20101222080000-0800"/>
+          <hl7:effectiveTime value="20101222090000-0800"/>
+          <hl7:subject typeCode="SBJ">
+            <hl7:patient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          </hl7:subject>
+          <hl7:performer typeCode="PRF">
+            <hl7:modeCode displayName="Physical Presence" codeSystemName="ParticipationMode" codeSystem="2.16.840.1.113883.5.1064" code="PHYSICAL"/>
+            <hl7:assignedPerson classCode="ASSIGNED">
+              <hl7:id extension="provider-id-#"/>
+              <hl7:telecom use="WP" value="1-888-888-8888"/>
+              <hl7:assignedPerson determinerCode="INSTANCE" classCode="PSN">
+                <hl7:name use="L">
+                  <hl7:family>JACKSON</hl7:family>
+                  <hl7:given>SHARON</hl7:given>
+                  <hl7:given>A</hl7:given>
+                  <hl7:suffix>Sr</hl7:suffix>
+                  <hl7:prefix>Dr.</hl7:prefix>
+                </hl7:name>
+              </hl7:assignedPerson>
+            </hl7:assignedPerson>
+          </hl7:performer>
+          <hl7:location typeCode="LOC">
+           <hl7:serviceDeliveryLocation classCode="SDLOC">
+              <hl7:id root="2.16.840.1.113883.3.200" extension="clinic-id" assigningAuthorityName="RPMS"/>
+              <hl7:code code="FMC" displayName="Family medicine clinic" codeSystem="2.16.840.1.113883.5.111" codeSystemName="RoleCode"/>
+              <hl7:location classCode="PLC" determinerCode="INSTANCE">
+                <hl7:name>ADULT FAMILY CARE CLINIC</hl7:name>
+              </hl7:location>
+              <hl7:serviceProviderOrganization classCode="ORG" determinerCode="INSTANCE">
+                <hl7:id root="2.16.840.1.113883.3.200"/>
+                <hl7:name>Department of Defense</hl7:name>
+              </hl7:serviceProviderOrganization>
+            </hl7:serviceDeliveryLocation>
+          </hl7:location>
+          <hl7:reference typeCode="REFR">
+            <hl7:schedule moodCode="SCH" classCode="ACT">
+              <hl7:id assigningAuthorityName="ROMS Schedule Mamager" extension="schedule-id-#"/>
+            </hl7:schedule>
+          </hl7:reference>
+        </hl7:appointment>
+      </hl7:subject>
+      <hl7:subject typeCode="SUBJ">
+        <hl7:appointment moodCode="APT" classCode="ACT">
+          <hl7:id assigningAuthorityName="RPMS Schedule Manager" extension="slot-2003"/>
+          <hl7:code displayName="ESTABLISHED/FOLLOW UP APPT" codeSystemName="RPMS Scheduling Manager" codeSystem="2.16.840.1.113883.3.200" code="EST"/>
+          <hl7:statusCode code="active"/>
+          <hl7:effectiveTime value="20101223080000-0800"/>
+          <hl7:effectiveTime value="20101223090000-0800"/>
+          <hl7:subject typeCode="SBJ">
+            <hl7:patient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          </hl7:subject>
+          <hl7:performer typeCode="PRF">
+            <hl7:modeCode displayName="Physical Presence" codeSystemName="ParticipationMode" codeSystem="2.16.840.1.113883.5.1064" code="PHYSICAL"/>
+            <hl7:assignedPerson classCode="ASSIGNED">
+              <hl7:id extension="provider-id-#"/>
+              <hl7:telecom use="WP" value="1-888-888-8888"/>
+              <hl7:assignedPerson determinerCode="INSTANCE" classCode="PSN">
+                <hl7:name use="L">
+                  <hl7:family>JACKSON</hl7:family>
+                  <hl7:given>SHARON</hl7:given>
+                  <hl7:given>A</hl7:given>
+                  <hl7:suffix>Sr</hl7:suffix>
+                  <hl7:prefix>Dr.</hl7:prefix>
+                </hl7:name>
+              </hl7:assignedPerson>
+            </hl7:assignedPerson>
+          </hl7:performer>
+          <hl7:location typeCode="LOC">
+            <hl7:serviceDeliveryLocation classCode="SDLOC">
+              <hl7:id root="2.16.840.1.113883.3.200" extension="clinic-id" assigningAuthorityName="RPMS"/>
+              <hl7:code code="FMC" displayName="Family medicine clinic" codeSystem="2.16.840.1.113883.5.111" codeSystemName="RoleCode"/>
+              <hl7:location classCode="PLC" determinerCode="INSTANCE">
+                <hl7:name>ADULT FAMILY CARE CLINIC</hl7:name>
+              </hl7:location>
+              <hl7:serviceProviderOrganization classCode="ORG" determinerCode="INSTANCE">
+                <hl7:id root="2.16.840.1.113883.3.200"/>
+                <hl7:name>Department of Defense</hl7:name>
+              </hl7:serviceProviderOrganization>
+            </hl7:serviceDeliveryLocation>
+          </hl7:location>
+          <hl7:reference typeCode="REFR">
+            <hl7:schedule moodCode="SCH" classCode="ACT">
+              <hl7:id assigningAuthorityName="ROMS Schedule Mamager" extension="schedule-id-#"/>
+            </hl7:schedule>
+          </hl7:reference>
+        </hl7:appointment>
+      </hl7:subject>
+      <hl7:subject typeCode="SUBJ">
+        <hl7:appointment moodCode="APT" classCode="ACT">
+          <hl7:id assigningAuthorityName="RPMS Schedule Manager" extension="slot-2004"/>
+          <hl7:code displayName="ESTABLISHED/FOLLOW UP APPT" codeSystemName="RPMS Scheduling Manager" codeSystem="2.16.840.1.113883.3.200" code="EST"/>
+          <hl7:statusCode code="active"/>
+          <hl7:effectiveTime value="20101224080000-0800"/>
+          <hl7:effectiveTime value="20101224090000-0800"/>
+          <hl7:subject typeCode="SBJ">
+            <hl7:patient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+          </hl7:subject>
+          <hl7:performer typeCode="PRF">
+            <hl7:modeCode displayName="Physical Presence" codeSystemName="ParticipationMode" codeSystem="2.16.840.1.113883.5.1064" code="PHYSICAL"/>
+            <hl7:assignedPerson classCode="ASSIGNED">
+              <hl7:id extension="provider-id-#"/>
+              <hl7:telecom use="WP" value="1-888-888-8888"/>
+              <hl7:assignedPerson determinerCode="INSTANCE" classCode="PSN">
+                <hl7:name use="L">
+                  <hl7:family>JACKSON</hl7:family>
+                  <hl7:given>SHARON</hl7:given>
+                  <hl7:given>A</hl7:given>
+                  <hl7:suffix>Sr</hl7:suffix>
+                  <hl7:prefix>Dr.</hl7:prefix>
+                </hl7:name>
+              </hl7:assignedPerson>
+            </hl7:assignedPerson>
+          </hl7:performer>
+          <hl7:location typeCode="LOC">
+            <hl7:serviceDeliveryLocation classCode="SDLOC">
+              <hl7:id root="2.16.840.1.113883.3.200" extension="clinic-id" assigningAuthorityName="RPMS"/>
+              <hl7:code code="FMC" displayName="Family medicine clinic" codeSystem="2.16.840.1.113883.5.111" codeSystemName="RoleCode"/>
+              <hl7:location classCode="PLC" determinerCode="INSTANCE">
+                <hl7:name>ADULT FAMILY CARE CLINIC</hl7:name>
+              </hl7:location>
+              <hl7:serviceProviderOrganization classCode="ORG" determinerCode="INSTANCE">
+                <hl7:id root="2.16.840.1.113883.3.200"/>
+                <hl7:name>Department of Defense</hl7:name>
+              </hl7:serviceProviderOrganization>
+            </hl7:serviceDeliveryLocation>
+          </hl7:location>
+          <hl7:reference typeCode="REFR">
+            <hl7:schedule moodCode="SCH" classCode="ACT">
+              <hl7:id assigningAuthorityName="ROMS Schedule Mamager" extension="schedule-id-#"/>
+            </hl7:schedule>
+          </hl7:reference>
+        </hl7:appointment>
+      </hl7:subject>
+    </hl7:controlActProcess>
+  </hl7:message>
+</hl7:SlotsQueryResponse_PRSC_IN030102UVMessage>

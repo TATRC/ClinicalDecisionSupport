@@ -1,0 +1,17 @@
+package gov.hhs.fha.nhinc.kmr;
+
+global gov.hhs.fha.nhinc.kmr.TaskManagerHelper tmHelper;
+
+import gov.hhs.fha.nhinc.common.task.DestinationContext;
+import gov.hhs.fha.nhinc.common.task.RuleContext;
+import gov.hhs.fha.nhinc.adapter.fact.FactType;
+import gov.hhs.fha.nhinc.adapter.fact.AllergyFactType;
+import gov.hhs.fha.nhinc.kmr.TaskManagerHelper;
+
+rule "Allergy"
+    when
+        $fact: AllergyFactType(codedProduct != null, codedProduct.code != null,
+        			allergyCode: codedProduct.code, allergyLabel: codedProduct.label)
+    then
+        System.out.println("Allergy fact received for " + tmHelper.getPatientName() + " : " + allergyCode + ", " + allergyLabel);
+end

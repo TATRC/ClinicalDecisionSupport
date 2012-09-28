@@ -1,0 +1,32 @@
+package gov.hhs.fha.nhinc.kmr;
+
+global String tmURL;
+global gov.hhs.fha.nhinc.kmr.TaskManagerHelper tmHelper;
+
+import gov.hhs.fha.nhinc.common.task.PatientContext;
+import gov.hhs.fha.nhinc.adapter.fact.FactType;
+import gov.hhs.fha.nhinc.adapter.fact.NameFactType;
+import gov.hhs.fha.nhinc.adapter.fact.PersonFactType;
+import gov.hhs.fha.nhinc.kmr.TaskManagerHelper;
+//import gov.hhs.fha.nhinc.kmr.KMRAgendaEventListener;
+//import gov.hhs.fha.nhinc.kmr.KMRWorkingMemoryEventListener;
+import org.plugtree.drools.metrics.api.listener.impl.FactCounterWorkingMemoryListener;
+import org.plugtree.drools.metrics.api.EventListenerManagementAgent;
+
+rule "Person"
+    when
+        $fact: PersonFactType($name: legalName, $gender: gender)
+    then
+        int ksessionId = ((org.drools.impl.StatefulKnowledgeSessionImpl)kcontext.getKnowledgeRuntime()).getId();
+        FactCounterWorkingMemoryListener factListener = new FactCounterWorkingMemoryListener(ksessionId);
+        EventListenerManagementAgent.getInstance().register(factListener);  
+        drools.getKnowledgeRuntime().addEventListener( factListener );
+        //drools.getKnowledgeRuntime().addEventListener( new KMRAgendaEventListener() );
+        //drools.getKnowledgeRuntime().addEventListener( new KMRWorkingMemoryEventListener() );
+        
+        System.out.println("Demographic fact received - primaryKey: " + $fact.getPrimaryKey() + " Name: " + $name.getFirstName() + " " + $name.getFamilyName() + " Gender: " + $gender.getLabel());
+        TaskManagerHelper myHelper = new gov.hhs.fha.nhinc.kmr.TaskManagerHelper($fact, tmURL);
+        System.out.println("TaskManagerHelper instantiated with " + myHelper.getPatientName() + " and " + tmURL);
+        kcontext.getKnowledgeRuntime().setGlobal("tmHelper",  myHelper);
+        System.out.println("Global variable tmHelper has been set: "+kcontext.getKnowledgeRuntime().getGlobal("tmHelper"));
+end

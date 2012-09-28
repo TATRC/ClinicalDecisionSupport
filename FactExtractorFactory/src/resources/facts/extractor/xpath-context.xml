@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+  <bean id="carerecord.SourceSystem" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="SourceSystem"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="//hl7:sender/hl7:device/hl7:id/@root"/>
+  </bean>
+
+  <bean id="demographics.SourceSystem" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="SourceSystem"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="//hl7:subject/hl7:providerOrganization/hl7:id/@root"/>
+  </bean>
+  
+   <bean id="Xpath" factory-bean="xpathFactory" factory-method="newXPath">
+      <property name="namespaceContext" ref="hl7NamespaceContext" />
+   </bean>
+
+   <bean id="xpathFactory" class="javax.xml.xpath.XPathFactory" factory-method="newInstance" />
+
+   <!-- //xmlns="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon" -->
+   <bean id="hl7NamespaceContext" class="gov.hhs.fha.nhinc.adapter.fact.xml.HL7NamespaceContext">
+      <!-- prefixes (key), namespaces (value) -->
+      <constructor-arg>
+      <map>
+        <entry>
+          <key><value>hl7</value></key>
+          <value>urn:hl7-org:v3</value>
+        </entry>
+        <entry>
+          <key><value>ns2</value></key>
+          <value>urn:gov:hhs:fha:nhinc:common:nhinccommon</value>
+        </entry>
+      </map>
+    </constructor-arg>
+   </bean>
+
+</beans>

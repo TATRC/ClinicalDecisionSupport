@@ -1,0 +1,570 @@
+{
+	"personFact": {
+		"historical": "true",
+		"id": [
+			{
+				"codeSystem": "",
+				"codeSystemName": "",
+				"value": "8237363",
+				"floatValue": "8237363.0",
+				"displayable": "true"
+			}, {
+				"codeSystem": "2.16.840.1.113883.4.1",
+				"codeSystemName": "",
+				"value": "123456781",
+				"floatValue": "1.23456784E8",
+				"displayable": "false"
+			}
+		],
+		"sourceSystem": "2.16.840.1.113883.3.198",
+		"legalName": {
+			"firstName": "Joe",
+			"middleName": "A",
+			"familyName": "Rossi",
+			"suffix": "Sr",
+			"nameType": {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"code": "L",
+				"label": "Legal"
+			}
+		},
+		"dateOfBirth": "1940-09-06T00:00:00-08:00",
+		"gender": {
+			"codeSystem": "2.16.840.1.113883.5.1",
+			"codeSystemName": "AdministrativeGenderCode",
+			"code": "M",
+			"label": "Male"
+		},
+		"maritalStatus": {
+			"codeSystem": "2.16.840.1.113883.5.2",
+			"codeSystemName": "MaritalStatus",
+			"code": "M",
+			"label": "Married"
+		},
+		"race": {
+			"codeSystem": "2.16.840.1.113883.6.238",
+			"codeSystemName": "CDC Race and Ethnicity",
+			"code": "2106-3",
+			"label": "White"
+		},
+		"ethnic": {
+			"codeSystem": "2.16.840.1.113883.6.238",
+			"codeSystemName": "CDC Race and Ethnicity",
+			"code": "2114-7",
+			"label": "Italian"
+		},
+		"language": [
+			{
+				"codeSystem": "",
+				"codeSystemName": "",
+				"code": "en-US",
+				"label": "English"
+			}, {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"code": "FR",
+				"label": "French"
+			}
+		],
+		"telecom": [
+			{
+				"value": "1-888-888-8888",
+				"telecomType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "HP",
+					"label": "Home"
+				}
+			}, {
+				"value": "1-888-888-8888",
+				"telecomType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "WP",
+					"label": "Work"
+				}
+			}, {
+				"value": "joe.rossi@anyemail.net",
+				"telecomType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "NET",
+					"label": "Email"
+				}
+			}
+		],
+		"age": {
+			"value": "70",
+			"floatValue": "70.0",
+			"unit": "yrs"
+		},
+		"address": [
+			{
+				"streetAddress": "17 Daws Road",
+				"city": "Blue Bell",
+				"state": "MA",
+				"postalCode": "00000",
+				"country": "US",
+				"addressType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "HP",
+					"label": "Home"
+				}
+			}, {
+				"streetAddress": "117 Santa Rosa Road",
+				"city": "Santa Rosa",
+				"state": "MA",
+				"postalCode": "10540",
+				"country": "US",
+				"addressType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "WP",
+					"label": "Work"
+				}
+			}
+		]
+	},
+	"supportContactFact": [
+		{
+			"sourceSystem": "2.16.840.1.113883.3.198",
+			"contactOfPatient": {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"value": "8237363",
+				"floatValue": "8237363.0",
+				"displayable": "true"
+			},
+			"codedContactType": {
+				"codeSystem": "2.16.840.1.113883.3.88.12.3221.3.2",
+				"codeSystemName": "HL7 Role Class",
+				"code": "ECON",
+				"label": "Emergency Contact"
+			},
+			"codedRelationship": {
+				"codeSystem": "2.16.840.1.113883.1.11.19563",
+				"codeSystemName": "RoleCode",
+				"code": "SPS",
+				"label": "Spouse"
+			},
+			"legalName": {
+				"firstName": "Patty",
+				"middleName": "E",
+				"familyName": "Rossi",
+				"nameType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "L",
+					"label": "Legal"
+				}
+			},
+			"telecom": [
+				{
+					"value": "1-888-888-8888",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "HP",
+						"label": "Home"
+					}
+				}, {
+					"value": "1-123-999-6782",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "WP",
+						"label": "Work"
+					}
+				}, {
+					"value": "1-858-395-7317",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "MC",
+						"label": "Mobile"
+					}
+				}, {
+					"value": "patty.rossi@anyemail.net",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "NET",
+						"label": "Email"
+					}
+				}
+			],
+			"address": [
+				{
+					"streetAddress": "17 Daws Road",
+					"city": "Blue Bell",
+					"state": "MA",
+					"postalCode": "00000",
+					"country": "US",
+					"addressType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "HP",
+						"label": "Home"
+					}
+				}, {
+					"streetAddress": "6868 WORKPLACE STREET",
+					"city": "ANY CITY",
+					"state": "CA",
+					"postalCode": "90001",
+					"country": "USA",
+					"addressType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "WP",
+						"label": "Work"
+					}
+				}
+			],
+			"dateOfBirth": "1944-05-06T10:00:00-07:00",
+			"age": {
+				"value": "66",
+				"floatValue": "66.0",
+				"unit": "yrs"
+			},
+			"gender": {
+				"codeSystem": "2.16.840.1.113883.5.1",
+				"codeSystemName": "AdministrativeGenderCode",
+				"code": "F",
+				"label": "Female"
+			}
+		}, {
+			"sourceSystem": "2.16.840.1.113883.3.198",
+			"contactOfPatient": {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"value": "8237363",
+				"floatValue": "8237363.0",
+				"displayable": "true"
+			},
+			"codedContactType": {
+				"codeSystem": "2.16.840.1.113883.3.88.12.3221.3.2",
+				"codeSystemName": "HL7 Role Class",
+				"code": "ECON",
+				"label": "Emergency Contact"
+			},
+			"codedRelationship": {
+				"codeSystem": "2.16.840.1.113883.1.11.19563",
+				"codeSystemName": "RoleCode",
+				"code": "MTH",
+				"label": "Mother"
+			},
+			"legalName": {
+				"firstName": "Maria",
+				"middleName": "E",
+				"familyName": "Rossi",
+				"nameType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "L",
+					"label": "Legal"
+				}
+			},
+			"address": {
+				"streetAddress": "99977 Blue Bell Rd",
+				"city": "Worcester",
+				"state": "MA",
+				"postalCode": "01606",
+				"country": "US",
+				"addressType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "HP",
+					"label": "Home"
+				}
+			},
+			"dateOfBirth": "1926-12-05T09:00:00-08:00",
+			"age": {
+				"value": "84",
+				"floatValue": "84.0",
+				"unit": "yrs"
+			},
+			"gender": {
+				"codeSystem": "2.16.840.1.113883.5.1",
+				"codeSystemName": "AdministrativeGenderCode",
+				"code": "F",
+				"label": "Female"
+			}
+		}, {
+			"sourceSystem": "2.16.840.1.113883.3.198",
+			"contactOfPatient": {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"value": "8237363",
+				"floatValue": "8237363.0",
+				"displayable": "true"
+			},
+			"codedContactType": {
+				"codeSystem": "2.16.840.1.113883.3.88.12.3221.3.2",
+				"codeSystemName": "HL7 Role Class",
+				"code": "NOK",
+				"label": "Next Of Kin"
+			},
+			"codedRelationship": {
+				"codeSystem": "2.16.840.1.113883.1.11.19563",
+				"codeSystemName": "RoleCode",
+				"code": "SPS",
+				"label": "Spouse"
+			},
+			"legalName": {
+				"firstName": "Patty",
+				"middleName": "E",
+				"familyName": "Rossi",
+				"nameType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "L",
+					"label": "Legal"
+				}
+			},
+			"telecom": [
+				{
+					"value": "1-888-888-8888",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "HP",
+						"label": "Home"
+					}
+				}, {
+					"value": "1-123-999-6782",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "WP",
+						"label": "Work"
+					}
+				}, {
+					"value": "1-858-395-7317",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "MC",
+						"label": "Mobile"
+					}
+				}, {
+					"value": "patty.rossi@anyemail.net",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "NET",
+						"label": "Email"
+					}
+				}
+			],
+			"address": [
+				{
+					"streetAddress": "17 Daws Road",
+					"city": "Blue Bell",
+					"state": "MA",
+					"postalCode": "00000",
+					"country": "US",
+					"addressType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "HP",
+						"label": "Home"
+					}
+				}, {
+					"streetAddress": "6868 WORKPLACE STREET",
+					"city": "ANY CITY",
+					"state": "CA",
+					"postalCode": "90001",
+					"country": "USA",
+					"addressType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "WP",
+						"label": "Work"
+					}
+				}
+			],
+			"dateOfBirth": "1944-05-06T10:00:00-07:00",
+			"age": {
+				"value": "66",
+				"floatValue": "66.0",
+				"unit": "yrs"
+			},
+			"gender": {
+				"codeSystem": "2.16.840.1.113883.5.1",
+				"codeSystemName": "AdministrativeGenderCode",
+				"code": "F",
+				"label": "Female"
+			}
+		}, {
+			"sourceSystem": "2.16.840.1.113883.3.198",
+			"contactOfPatient": {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"value": "8237363",
+				"floatValue": "8237363.0",
+				"displayable": "true"
+			},
+			"codedContactType": {
+				"codeSystem": "2.16.840.1.113883.3.88.12.3221.3.2",
+				"codeSystemName": "HL7 Role Class",
+				"code": "NOK",
+				"label": "Next Of Kin"
+			},
+			"codedRelationship": {
+				"codeSystem": "2.16.840.1.113883.1.11.19563",
+				"codeSystemName": "RoleCode",
+				"code": "SON",
+				"label": "Son"
+			},
+			"legalName": {
+				"firstName": "Sam",
+				"middleName": "A",
+				"familyName": "Rossi",
+				"nameType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "L",
+					"label": "Legal"
+				}
+			},
+			"telecom": [
+				{
+					"value": "1-888-888-8888",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "HP",
+						"label": "Home"
+					}
+				}, {
+					"value": "1-619-203-0130",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "MC",
+						"label": "Mobile"
+					}
+				}, {
+					"value": "sam.rossi@anyemail.net",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "NET",
+						"label": "Email"
+					}
+				}
+			],
+			"address": {
+				"streetAddress": "17 Daws Road",
+				"city": "Blue Bell",
+				"state": "MA",
+				"postalCode": "00000",
+				"country": "US",
+				"addressType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "HP",
+					"label": "Home"
+				}
+			},
+			"dateOfBirth": "1972-06-15T10:00:00-07:00",
+			"age": {
+				"value": "38",
+				"floatValue": "38.0",
+				"unit": "yrs"
+			},
+			"gender": {
+				"codeSystem": "2.16.840.1.113883.5.1",
+				"codeSystemName": "AdministrativeGenderCode",
+				"code": "M",
+				"label": "Male"
+			}
+		}, {
+			"sourceSystem": "2.16.840.1.113883.3.198",
+			"contactOfPatient": {
+				"codeSystem": "",
+				"codeSystemName": "",
+				"value": "8237363",
+				"floatValue": "8237363.0",
+				"displayable": "true"
+			},
+			"codedContactType": {
+				"codeSystem": "2.16.840.1.113883.3.88.12.3221.3.2",
+				"codeSystemName": "HL7 Role Class",
+				"code": "NOK",
+				"label": "Next Of Kin"
+			},
+			"codedRelationship": {
+				"codeSystem": "2.16.840.1.113883.1.11.19563",
+				"codeSystemName": "RoleCode",
+				"code": "DAU",
+				"label": "Daughter"
+			},
+			"legalName": {
+				"firstName": "Kelly",
+				"middleName": "E",
+				"familyName": "Rossi",
+				"nameType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "L",
+					"label": "Legal"
+				}
+			},
+			"telecom": [
+				{
+					"value": "1-888-888-8888",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "HP",
+						"label": "Home"
+					}
+				}, {
+					"value": "1-619-203-0130",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "MC",
+						"label": "Mobile"
+					}
+				}, {
+					"value": "kelly.rossi@anyemail.net",
+					"telecomType": {
+						"codeSystem": "",
+						"codeSystemName": "",
+						"code": "NET",
+						"label": "Email"
+					}
+				}
+			],
+			"address": {
+				"streetAddress": "17 Daws Road",
+				"city": "Blue Bell",
+				"state": "MA",
+				"postalCode": "00000",
+				"country": "US",
+				"addressType": {
+					"codeSystem": "",
+					"codeSystemName": "",
+					"code": "HP",
+					"label": "Home"
+				}
+			},
+			"dateOfBirth": "1970-03-05T09:00:00-08:00",
+			"age": {
+				"value": "40",
+				"floatValue": "40.0",
+				"unit": "yrs"
+			},
+			"gender": {
+				"codeSystem": "2.16.840.1.113883.5.1",
+				"codeSystemName": "AdministrativeGenderCode",
+				"code": "F",
+				"label": "Female"
+			}
+		}
+	]
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 9, 2010 10:16:51 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="org.socraticgrid.wexcleanup.freebase.dao.EcsCandidateGuid" schema="public" table="ecs_candidate_guid">
+    <id name="id" type="int">
+      <column name="id"/>
+      <generator class="sequence">
+          <param name="sequence">ecs_candidateguid_seq</param>
+       </generator>
+    </id>
+    <property name="guid" type="string">
+      <column name="guid" not-null="true"/>
+    </property>
+    <property name="name" type="string">
+      <column name="name" not-null="true"/>
+    </property>
+    <property name="source" type="string">
+      <column name="source" not-null="true"/>
+    </property>
+    <property name="scheme" type="string">
+      <column name="scheme" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="DisplayDataAggregatorServiceService" targetNamespace="http://displaydataaggregator.nhinc.fha.hhs.gov/" xmlns:tns="http://displaydataaggregator.nhinc.fha.hhs.gov/"
+ >
+    <portType name="DisplayDataAggregatorService"/>
+    <binding name="DisplayDataAggregatorServicePortBinding" type="tns:DisplayDataAggregatorService"/>
+    <service name="DisplayDataAggregatorServiceService">
+        <port name="DisplayDataAggregatorServicePort" binding="tns:DisplayDataAggregatorServicePortBinding"/>
+    </service>
+</definitions>

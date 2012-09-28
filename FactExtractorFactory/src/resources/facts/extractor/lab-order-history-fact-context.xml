@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+  <bean id="lab.order.history.extractor" class="gov.hhs.fha.nhinc.adapter.fact.extractor.GenericFactExtractor" scope="prototype">
+    <constructor-arg ref="Xpath"/>
+    <property name="factClassName" value="gov.hhs.fha.nhinc.adapter.fact.LabOrderFactType"/>
+    <property name="factsCountXpath" value="set by order history extractor"/>
+    <property name="factBaseXpath" value="set by order history extractor"/>
+    <property name="factIndexCharset" value="#fact#"/>
+    <property name="factProperties">
+      <map>
+        <entry key="SourceSystem">
+          <ref bean="carerecord.SourceSystem"/>
+        </entry>
+        <entry key="Id">
+          <ref bean="generic.order.Id"/>
+        </entry>
+        <entry key="PatientId">
+          <ref bean="generic.order.PatientId"/>
+        </entry>
+        <entry key="Patient">
+          <ref bean="generic.order.Patient"/>
+        </entry>
+        <entry key="PatientClass">
+          <ref bean="generic.order.PatientClass"/>
+        </entry>
+        <!--
+        <entry key="OrderGroupNumber">
+          <ref bean="generic.order.OrderGroupNumber"/>
+        </entry>
+        <entry key="ParentOrderNumber">
+          <ref bean="generic.order.ParentOrderNumber"/>
+        </entry>
+        -->
+        <entry key="OrderStatus">
+          <ref bean="generic.order.OrderStatus"/>
+        </entry>
+        <entry key="OrderDateTime">
+          <ref bean="generic.order.OrderDateTime"/>
+        </entry>
+        <entry key="OrderStartDateTime">
+          <ref bean="generic.order.OrderStartDateTime"/>
+        </entry>
+        <entry key="OrderExpirationDateTime">
+          <ref bean="generic.order.OrderExpirationDateTime"/>
+        </entry>
+        <entry key="OrderEnteredBy">
+          <ref bean="generic.order.OrderEnteredBy"/>
+        </entry>
+        <entry key="OrderVerifiedBy">
+          <ref bean="generic.order.OrderVerifiedBy"/>
+        </entry>
+        <!--
+        <entry key="OrderSettingType">
+          <ref bean="generic.order.OrderSettingType"/>
+        </entry>
+        -->
+        <entry key="OrderPriority">
+          <ref bean="generic.order.OrderPriority"/>
+        </entry>
+        <!--
+        <entry key="PlacerOrderNumber">
+          <ref bean="generic.order.PlacerOrderNumber"/>
+        </entry>
+        -->
+        <entry key="FillerOrderNumber">
+          <ref bean="generic.order.FillerOrderNumber"/>
+        </entry>
+        <entry key="OrderingProvider">
+          <ref bean="generic.order.OrderingProvider"/>
+        </entry>
+        <entry key="OrderCode">
+          <ref bean="lab.order.history.OrderCode"/>
+        </entry>
+        <!--
+        <entry key="SpecimenAction">
+          <ref bean="lab.order.history.SpecimenAction"/>
+        </entry>
+        -->
+      </map>
+    </property>
+  </bean>
+
+  <bean id="lab.order.history.OrderCode" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="OrderCode"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:act/hl7:code/@code"/>
+    <property name="labelXpath" value="hl7:act/hl7:code/@displayName"/>
+    <property name="codeSystemXpath" value="hl7:act/hl7:code/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="hl7:act/hl7:code/@codeSystemName"/>
+  </bean>
+
+<!--
+  <bean id="lab.order.history.SpecimenAction" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="SpecimenAction"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="//todo"/>
+  </bean>
+  -->
+
+</beans>

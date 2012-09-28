@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 9, 2011 2:47:04 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="org.socraticgrid.ecs.hibernate.dao.EcsSectionAlias" schema="public" table="ecs_section_alias">
+    <id column="id" name="id" type="long" unsaved-value="null">
+      <generator class="sequence">
+        <param name="sequence">ecs_section_alias_id_seq</param>
+      </generator>
+    </id>
+    <property name="scheme" type="string">
+      <column name="scheme"/>
+    </property>
+    <property name="section" type="string">
+      <column name="section"/>
+    </property>
+    <property name="alias" type="string">
+      <column name="alias"/>
+    </property>
+    <property name="language" type="java.lang.Character">
+      <column length="1" name="language"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:FindKmIdsResponse xmlns:ns2="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <ns2:requestReference>
+            <ns2:requestId>96</ns2:requestId>
+            <ns2:requestDate>2010-03-22T00:03:22.000-00:07</ns2:requestDate>
+         </ns2:requestReference>
+         <ns2:response>
+            <ns2:kms>
+               <ns2:kmId>1</ns2:kmId>
+            </ns2:kms>
+         </ns2:response>
+      </ns2:FindKmIdsResponse>
+   </S:Body>
+</S:Envelope>
+
+<!-- per REQUEST 
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <SOAP-ENV:Body>
+      <m:FindKmIdsRequest xmlns:m="urn:gov:hhs:fha:nhinc:kmr:kmtypes">
+         <m:request>
+            <m:requestReference>
+               <m:requestId>96</m:requestId>
+               <m:requestDate>2010-03-22T00:03:22.000-00:07</m:requestDate>
+            </m:requestReference>
+            <m:km>
+
+               <m:Task>
+                  <TD_Type>TELECOM</TD_Type>
+               </m:Task>
+
+               <m:ACL>
+                  <UR_Name>Providers-Physicians</UR_Name>
+               </m:ACL>
+
+            </m:km>
+         </m:request>
+      </m:FindKmIdsRequest>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+-->

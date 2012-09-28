@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hl7:CareRecord_QUPC_IN043200UV01Response xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+  <hl7:careRecord typeCode="SUBJ">
+    <hl7:registrationEvent classCode="REG" moodCode="EVN">
+      <hl7:statusCode code="active"/>
+      <hl7:custodian typeCode="CST">
+        <hl7:assignedEntity classCode="ASSIGNED">
+          <hl7:id extension="AHLTA" root="1.1"/>
+        </hl7:assignedEntity>
+      </hl7:custodian>
+      <hl7:subject2 typeCode="SUBJ">
+        <hl7:careProvisionEvent classCode="ENC" moodCode="EVN">
+          <hl7:recordTarget typeCode="RCT">
+            <hl7:patient classCode="PAT">
+              <hl7:id extension="679236"/>
+              <hl7:patientPerson classCode="PSN" determinerCode="INSTANCE"/>
+            </hl7:patient>
+          </hl7:recordTarget>
+          <hl7:pertinentInformation3 contextConductionInd="false"
+            contextControlCode="OP" typeCode="SUBJ">
+            <hl7:sequenceNumber value="1"/>
+            <hl7:observation classCode="OBS" moodCode="EVN">
+              <hl7:templateId root="2.16.840.1.113883.3.88.11.83.6"/>
+              <hl7:code code="416098002"
+                codeSystem="2.16.840.1.113883.6.96"
+                codeSystemName="SNOMED CT" displayName="drug allergy"/>
+              <hl7:effectiveTime value="20090119"/>
+              <hl7:sourceOf typeCode="MFST">
+                <hl7:substanceAdministration classCode="SABM" moodCode="EVN">
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial classCode="MMAT" determinerCode="INSTANCE">
+                        <hl7:code code="70618"
+                          codeSystem="2.16.840.1.113883.6.88"
+                          codeSystemName="RxNorm" displayName="PENICILLIN VK 500 MG">
+                          <hl7:originalText>PENICILLIN VK 500 MG</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>Penicillin</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                </hl7:substanceAdministration>
+              </hl7:sourceOf>
+              <hl7:sourceOf typeCode="MFST">
+                <hl7:observation classCode="OBS" moodCode="EVN">
+                  <hl7:templateId root="2.16.840.1.113883.10.20.1.54"/>
+                  <hl7:text>Hives</hl7:text>
+                  <hl7:value code="247472004"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="Hives"
+                    type="hl7:CD" xmlns="http://www.w3.org/2001/XMLSchema-instance"/>
+                </hl7:observation>
+              </hl7:sourceOf>
+              <hl7:sourceOf typeCode="MFST">
+                <hl7:observation classCode="OBS" moodCode="EVN">
+                  <hl7:templateId root="2.16.840.1.113883.10.20.1.54"/>
+                  <hl7:text>Urticaria</hl7:text>
+                  <hl7:value code="82859"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="Urticaria"
+                    type="hl7:CD" xmlns="http://www.w3.org/2001/XMLSchema-instance"/>
+                </hl7:observation>
+              </hl7:sourceOf>
+              <hl7:sourceOf typeCode="SUBJ">
+                <hl7:observation classCode="OBS" moodCode="EVN">
+                  <hl7:templateId root="2.16.840.1.113883.10.20.1.55"/>
+                  <hl7:templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.1"/>
+                  <hl7:code code="SEV"
+                    codeSystem="2.16.840.1.113883.5.4"
+                    codeSystemName="ActCode" displayName="Severity"/>
+                  <hl7:text>Very Severe</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value code="24484000"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="24484000"
+                    type="hl7:CD" xmlns="http://www.w3.org/2001/XMLSchema-instance"/>
+                </hl7:observation>
+              </hl7:sourceOf>
+            </hl7:observation>
+          </hl7:pertinentInformation3>
+          <hl7:pertinentInformation3 contextConductionInd="false"
+            contextControlCode="OP" typeCode="SUBJ">
+            <hl7:sequenceNumber value="2"/>
+            <hl7:observation classCode="OBS" moodCode="EVN">
+              <hl7:templateId root="2.16.840.1.113883.3.88.11.83.6"/>
+              <hl7:code code="416098002"
+                codeSystem="2.16.840.1.113883.6.96"
+                codeSystemName="SNOMED CT" displayName="drug allergy"/>
+              <hl7:effectiveTime value="20100110"/>
+              <hl7:sourceOf typeCode="MFST">
+                <hl7:substanceAdministration classCode="SABM" moodCode="EVN">
+                  <hl7:consumable typeCode="CSM">
+                    <hl7:administerableMaterial classCode="ADMM">
+                      <hl7:administerableMaterial classCode="MMAT" determinerCode="INSTANCE">
+                        <hl7:code code="12731003"
+                          codeSystem="2.16.840.1.113883.6.88"
+                          codeSystemName="RxNorm" displayName="GENTRAN 40 IN DEXTROSE 5% (DEXTRAN 40/DEXTROSE 5%-WATER">
+                          <hl7:originalText>GENTRAN 40 IN DEXTROSE 5% (DEXTRAN 40/DEXTROSE 5%-WATER</hl7:originalText>
+                        </hl7:code>
+                        <hl7:desc>GENTRAN 40 IN DEXTROSE 5% (DEXTRAN 40/DEXTROSE 5%-WATER</hl7:desc>
+                      </hl7:administerableMaterial>
+                    </hl7:administerableMaterial>
+                  </hl7:consumable>
+                </hl7:substanceAdministration>
+              </hl7:sourceOf>
+              <hl7:sourceOf typeCode="MFST">
+                <hl7:observation classCode="OBS" moodCode="EVN">
+                  <hl7:templateId root="2.16.840.1.113883.10.20.1.54"/>
+                  <hl7:text>Absence of therapeutic response</hl7:text>
+                  <hl7:value code="247472004"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="Rash"
+                    type="hl7:CD" xmlns="http://www.w3.org/2001/XMLSchema-instance"/>
+                </hl7:observation>
+              </hl7:sourceOf>
+              <hl7:sourceOf typeCode="MFST">
+                <hl7:observation classCode="OBS" moodCode="EVN">
+                  <hl7:templateId root="2.16.840.1.113883.10.20.1.54"/>
+                  <hl7:text>Urticaria</hl7:text>
+                  <hl7:value code="82859"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="Urticaria"
+                    type="hl7:CD" xmlns="http://www.w3.org/2001/XMLSchema-instance"/>
+                </hl7:observation>
+              </hl7:sourceOf>
+              <hl7:sourceOf typeCode="SUBJ">
+                <hl7:observation classCode="OBS" moodCode="EVN">
+                  <hl7:templateId root="2.16.840.1.113883.10.20.1.55"/>
+                  <hl7:templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.1"/>
+                  <hl7:code code="SEV"
+                    codeSystem="2.16.840.1.113883.5.4"
+                    codeSystemName="ActCode" displayName="Severity"/>
+                  <hl7:text>Very Severe</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:value code="24484000"
+                    codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="24484000"
+                    type="hl7:CD" xmlns="http://www.w3.org/2001/XMLSchema-instance"/>
+                </hl7:observation>
+              </hl7:sourceOf>
+            </hl7:observation>
+          </hl7:pertinentInformation3>
+        </hl7:careProvisionEvent>
+      </hl7:subject2>
+    </hl7:registrationEvent>
+  </hl7:careRecord>
+</hl7:CareRecord_QUPC_IN043200UV01Response>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://nhinint01.asu.edu:8080/KnowledgeModuleService/KmrKnowledgeModule?wsdl" uri="xml-resources/web-service-references/KmrKnowledgeModule/wsdl/nhinint01.asu.edu_8080/KnowledgeModuleService/KmrKnowledgeModule.wsdl"/>
+    <system systemId="http://nhinint01.asu.edu:8080/KnowledgeModuleService/KmrKnowledgeModule?xsd=2" uri="xml-resources/web-service-references/KmrKnowledgeModule/wsdl/nhinint01.asu.edu_8080/KnowledgeModuleService/KmrKnowledgeModule.xsd_2.xsd"/>
+    <system systemId="http://nhinint01.asu.edu:8080/KnowledgeModuleService/KmrKnowledgeModule?xsd=1" uri="xml-resources/web-service-references/KmrKnowledgeModule/wsdl/nhinint01.asu.edu_8080/KnowledgeModuleService/KmrKnowledgeModule.xsd_1.xsd"/>
+    <system systemId="http://nhinint01.asu.edu:8080/KnowledgeModuleService/KmrKnowledgeModule?xsd=3" uri="xml-resources/web-service-references/KmrKnowledgeModule/wsdl/nhinint01.asu.edu_8080/KnowledgeModuleService/KmrKnowledgeModule.xsd_3.xsd"/>
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/TaskManager?wsdl" uri="xml-resources/web-service-references/TaskManagerService/wsdl/nhinint01.asu.edu_8080/TaskManager/TaskManagerService.wsdl"/>
+    <system systemId="http://nhinint01.asu.edu:8080/DecisionSupportService/SessionService?wsdl" uri="xml-resources/web-service-references/SessionService/wsdl/nhinint01.asu.edu_8080/DecisionSupportService/SessionService.wsdl"/>
+    <system systemId="http://nhinint01.asu.edu:8080/DecisionSupportService/SessionService?xsd=1" uri="xml-resources/web-service-references/SessionService/wsdl/nhinint01.asu.edu_8080/DecisionSupportService/SessionService.xsd_1.xsd"/>
+    <system systemId="http://nhinint01.asu.edu:8080/AlertManager/AlertManagerService?wsdl" uri="xml-resources/web-service-references/AlertManagerService/wsdl/nhinint01.asu.edu_8080/AlertManager/AlertManagerService.wsdl"/>
+    <system systemId="http://nhinint01.asu.edu:8080/AlertManager/AlertManagerService?xsd=2" uri="xml-resources/web-service-references/AlertManagerService/wsdl/nhinint01.asu.edu_8080/AlertManager/AlertManagerService.xsd_2.xsd"/>
+    <system systemId="http://nhinint01.asu.edu:8080/AlertManager/AlertManagerService?xsd=1" uri="xml-resources/web-service-references/AlertManagerService/wsdl/nhinint01.asu.edu_8080/AlertManager/AlertManagerService.xsd_1.xsd"/>
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/SessionService.wsdl" uri="xml-resources/web-service-references/SessionService/wsdl/SessionService.wsdl"/>
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/schemas/kmr/DecisionSupportService/SessionService.xsd" uri="xml-resources/web-service-references/SessionService/schemas/kmr/DecisionSupportService/SessionService.xsd"/>
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/TaskManager.wsdl" uri="xml-resources/web-service-references/TaskManager/wsdl/TaskManager.wsdl"/>
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/schemas/nhinc/common/Task.xsd" uri="xml-resources/web-service-references/TaskManager/schemas/nhinc/common/Task.xsd"/>
+    <system systemId="file:/C:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/schemas/nhinc/common/CommonDataLayerFactTypes.xsd" uri="xml-resources/web-service-references/TaskManager/schemas/nhinc/common/CommonDataLayerFactTypes.xsd"/>
+</catalog>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

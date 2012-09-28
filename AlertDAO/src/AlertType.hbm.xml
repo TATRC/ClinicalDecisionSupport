@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="gov.hhs.fha.nhinc.alertmanager.model">
+  <class name="AlertType" table="alerttype">
+    <id column="AT_ID" name="alertTypeId" type="long">
+      <generator class="increment"/>
+    </id>
+    <property column="AT_Name" length="50" name="name" not-null="true" type="string"/>
+    <property column="AT_Description" length="255" name="description" not-null="true" type="string"/>
+    <set cascade="all-delete-orphan" inverse="true" lazy="false" name="specifications">
+      <key column="AT_ID"/>
+      <one-to-many class="AlertSpec"/>
+    </set>
+  </class>
+</hibernate-mapping>

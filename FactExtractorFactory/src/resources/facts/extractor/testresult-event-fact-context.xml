@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+  <bean id="testresultevent.extractor" class="gov.hhs.fha.nhinc.adapter.fact.extractor.TestEventsFactExtractor" scope="prototype">
+    <constructor-arg ref="Xpath"/>
+    <property name="factClassName" value="gov.hhs.fha.nhinc.adapter.fact.ResultFactType"/>
+    <property name="eventsCountXpath" value="count(//hl7:subject/hl7:observationBattery | //hl7:subject/hl7:observationEvent)"/>
+    <property name="factIndexCharset" value="#event#"/>
+    <property name="factBaseXpath" value="//hl7:subject/hl7:observationBattery[#event#] | //hl7:subject/hl7:observationEvent[#event#]"/>
+    <property name="labTestExtractor" ref="labtestevent.extractor"/>
+    <property name="resultExtractor" ref="labresultevent.extractor"/>
+  </bean>
+
+</beans>

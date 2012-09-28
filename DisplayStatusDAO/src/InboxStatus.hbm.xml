@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="gov.hhs.fha.nhinc.displaymanager.model">
+  <class name="InboxStatus" table="inboxstatus">
+    <id column="STATUS_ID" name="statusId" type="long">
+      <generator class="increment"/>
+    </id>
+    <property column="USER" length="50" name="user" not-null="true" type="string"/>
+    <property column="SOURCE" length="128" name="source" not-null="true" type="string"/>
+    <property column="ITEM" length="128" name="item" not-null="true" type="string"/>
+    <property column="HAS_READ" name="read" not-null="true" type="boolean"/>
+  </class>
+</hibernate-mapping>

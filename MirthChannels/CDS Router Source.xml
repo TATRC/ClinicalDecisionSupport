@@ -1,0 +1,53 @@
+<com.webreach.mirth.model.Connector>
+  <name>sourceConnector</name>
+  <properties>
+    <property name="validateConnections">1</property>
+    <property name="DataType">File Reader</property>
+    <property name="pollingFrequency">1000</property>
+    <property name="scheme">file</property>
+    <property name="moveToDirectory">c:/data/hl7/output</property>
+    <property name="passive">1</property>
+    <property name="secure">1</property>
+    <property name="moveToErrorDirectory"></property>
+    <property name="fileFilter">*.*</property>
+    <property name="username">anonymous</property>
+    <property name="password">anonymous</property>
+    <property name="binary">0</property>
+    <property name="FTPAnonymous">1</property>
+    <property name="regex">0</property>
+    <property name="processBatchFiles">1</property>
+    <property name="autoDelete">0</property>
+    <property name="charsetEncoding">DEFAULT_ENCODING</property>
+    <property name="moveToPattern">processed</property>
+    <property name="sortAttribute">date</property>
+    <property name="fileAge">0</property>
+    <property name="host">c:/data/hl7/input</property>
+    <property name="checkFileAge">0</property>
+    <property name="pollingType">interval</property>
+  </properties>
+  <transformer>
+    <steps/>
+    <inboundProtocol>HL7V2</inboundProtocol>
+    <outboundProtocol>HL7V2</outboundProtocol>
+    <inboundProperties>
+      <property name="useStrictParser">false</property>
+      <property name="stripNamespaces">true</property>
+      <property name="convertLFtoCR">true</property>
+      <property name="handleRepetitions">false</property>
+      <property name="useStrictValidation">false</property>
+    </inboundProperties>
+    <outboundProperties>
+      <property name="useStrictParser">false</property>
+      <property name="stripNamespaces">true</property>
+      <property name="convertLFtoCR">true</property>
+      <property name="handleRepetitions">false</property>
+      <property name="useStrictValidation">false</property>
+    </outboundProperties>
+  </transformer>
+  <filter>
+    <rules/>
+  </filter>
+  <transportName>File Reader</transportName>
+  <mode>SOURCE</mode>
+  <enabled>true</enabled>
+</com.webreach.mirth.model.Connector>

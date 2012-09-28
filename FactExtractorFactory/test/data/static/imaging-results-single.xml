@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hl7:CareRecord_QUPC_IN043200UV01Message xmlns:hl7="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon">
+  <hl7:response>
+    <hl7:id extension="6858a017-39c1-4153-bbd4-eaedac72a0e7"/>
+    <hl7:creationTime value="20091221011010.005"/>
+    <hl7:interactionId extension="PRPA_IN900300UV02" root="2.16.840.1.113883.5"/>
+    <hl7:processingCode code="P"/>
+    <hl7:processingModeCode code="R"/>
+    <hl7:acceptAckCode code="AL"/>
+    <hl7:receiver typeCode="RCV">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+        <hl7:telecom value="http://localhost:8080/NhinConnect/CommonDataLayerService"/>
+      </hl7:device>
+    </hl7:receiver>
+    <hl7:sender typeCode="SND">
+      <hl7:device determinerCode="INSTANCE">
+        <hl7:id root="2.16.840.1.113883.3.200"/>
+      </hl7:device>
+    </hl7:sender>
+    <hl7:controlActProcess moodCode="EVN" classCode="CACT">
+      <hl7:code code="QUPC_TE043200UV01"/>
+      <hl7:priorityCode code="R"/>
+      <hl7:subject typeCode="SUBJ">
+        <hl7:registrationEvent moodCode="EVN" classCode="REG">
+          <hl7:statusCode code="completed"/>
+          <hl7:custodian typeCode="CST">
+            <hl7:assignedEntity classCode="ASSIGNED">
+              <hl7:id extension="AHLTA" root="2.16.840.1.113883.3.200"/>
+              <hl7:assignedOrganization classCode="ORG">
+                <hl7:name>Department of Defense</hl7:name>
+              </hl7:assignedOrganization>
+            </hl7:assignedEntity>
+          </hl7:custodian>
+          <hl7:subject2 typeCode="SUBJ">
+            <hl7:careProvisionEvent moodCode="EVN" classCode="ENC">
+              <hl7:recordTarget typeCode="RCT">
+                <hl7:patient classCode="PAT">
+                  <hl7:id extension="8237363" root="2.16.840.1.113883.3.200"/>
+                  <hl7:statusCode code="normal"/>
+                  <hl7:patientPerson determinerCode="INSTANCE" classCode="PSN">
+                    <hl7:name use="L">
+                      <hl7:family>Johnson</hl7:family>
+                      <hl7:given>SHAWN</hl7:given>
+                      <hl7:given>N</hl7:given>
+                    </hl7:name>
+                    <hl7:administrativeGenderCode displayName="Female" codeSystem="2.16.840.1.113883.5.1" code="F"/>
+                  </hl7:patientPerson>
+                </hl7:patient>
+              </hl7:recordTarget>
+              <hl7:pertinentInformation3 contextConductionInd="true" typeCode="SUBJ">
+                <hl7:procedure moodCode="EVN" classCode="PROC">
+                  <hl7:id extension="rad-proc-id#"/>
+                  <hl7:code displayName="Chest X-ray, PA" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" code="22031-9"/>
+                  <hl7:text>Chest X-ray, PA</hl7:text>
+                  <hl7:statusCode code="completed"/>
+                  <hl7:effectiveTime value="20100213170821"/>
+                  <hl7:targetSiteCode code="RAC" displayName="Right Anterior Chest" codeSystem="2.16.840.1.113883.12.163" codeSystemName="ActSite"/>
+                  <hl7:performer typeCode="PRF">
+                    <hl7:assignedEntity1 classCode="ASSIGNED">
+                      <hl7:id extension="performer-id-#"/>
+                      <hl7:addr use="WP">
+                        <hl7:streetAddressLine>21 Dawn Road</hl7:streetAddressLine>
+                        <hl7:city>Blue Bell</hl7:city>
+                        <hl7:state>MA</hl7:state>
+                        <hl7:postalCode>00000</hl7:postalCode>
+                        <hl7:country>US</hl7:country>
+                      </hl7:addr>
+                      <hl7:telecom use="WP" value="tel:+1-888-345-8888"/>
+                      <hl7:assignedPerson determinerCode="INSTANCE" classCode="PSN">
+                        <hl7:name use="L">
+                          <hl7:family>Smith</hl7:family>
+                          <hl7:given>Jonas</hl7:given>
+                          <hl7:given>R</hl7:given>
+                        </hl7:name>
+                      </hl7:assignedPerson>
+                      <hl7:representedOrganization classCode="ORG">
+                        <hl7:id root="2.16.840.1.113883.3.198"/>
+                        <hl7:name>NMC Portsmouth</hl7:name>
+                      </hl7:representedOrganization>
+                    </hl7:assignedEntity1>
+                  </hl7:performer>
+                  <hl7:author typeCode="AUT">
+                    <hl7:assignedEntity classCode="ASSIGNED">
+                      <hl7:id extension="author-id-#"/>
+                      <hl7:assignedPerson determinerCode="INSTANCE" classCode="PSN">
+                        <hl7:name use="L">
+                          <hl7:family>BEIGNETS</hl7:family>
+                          <hl7:given>ARTHUR</hl7:given>
+                          <hl7:given>L</hl7:given>
+                        </hl7:name>
+                      </hl7:assignedPerson>
+                      <hl7:representedOrganization classCode="ORG">
+                        <hl7:id root="2.16.840.1.113883.3.198"/>
+                        <hl7:name>NMC Portsmouth</hl7:name>
+                      </hl7:representedOrganization>
+                    </hl7:assignedEntity>
+                  </hl7:author>
+                  <hl7:sourceOf contextControlCode="ON" typeCode="COMP">
+                    <hl7:observation moodCode="EVN" classCode="OBS">
+                      <hl7:code code="19005-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Radiology Imaging study (narrative)"/>
+                      <hl7:text>The film shows disseminated left lower lobe infiltrates consistent with pneumonia.</hl7:text>
+                      <hl7:statusCode code="F"/>
+                      <hl7:effectiveTime value="20100214170821"/>
+                      <hl7:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" displayName="pneumonia (disorder)" codeSystemName="ICD9" codeSystem="2.16.840.1.113883.6.103" code="233604007">
+                        <hl7:originalText mediaType="DICOM">
+                          <hl7:reference value="http://host:port/4030012_chest_xray_image_file"/>
+                        </hl7:originalText>
+                      </hl7:value>
+                    </hl7:observation>
+                  </hl7:sourceOf>
+                </hl7:procedure>
+              </hl7:pertinentInformation3>
+            </hl7:careProvisionEvent>
+          </hl7:subject2>
+        </hl7:registrationEvent>
+      </hl7:subject>
+      <hl7:queryAck>
+        <hl7:queryId extension="20090920010010"/>
+        <hl7:statusCode code="deliveredResponse"/>
+        <hl7:queryResponseCode code="OK"/>
+      </hl7:queryAck>
+    </hl7:controlActProcess>
+  </hl7:response>
+</hl7:CareRecord_QUPC_IN043200UV01Message>

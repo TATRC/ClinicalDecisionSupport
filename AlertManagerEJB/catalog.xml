@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/E:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/TaskManager.wsdl" uri="src/conf/xml-resources/web-service-references/TaskManager/wsdl/TaskManager.wsdl"/>
+    <system systemId="file:/E:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/AlertedComponent.wsdl" uri="src/conf/xml-resources/web-service-references/AlertedComponent/wsdl/AlertedComponent.wsdl"/>
+    <system systemId="file:/E:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/wsdl/AlertManager.wsdl" uri="src/conf/xml-resources/web-services/AlertManagerService/wsdl/AlertManager.wsdl"/>
+    <system systemId="file:/E:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/schemas/nhinc/common/Task.xsd" uri="src/conf/xml-resources/web-services/AlertManagerService/schemas/nhinc/common/Task.xsd"/>
+    <system systemId="file:/E:/projects/NHINC/Current/Product/Production/Common/Interfaces/src/schemas/nhinc/adapter/Facts.xsd" uri="src/conf/xml-resources/web-services/AlertManagerService/schemas/nhinc/adapter/Facts.xsd"/>
+</catalog>

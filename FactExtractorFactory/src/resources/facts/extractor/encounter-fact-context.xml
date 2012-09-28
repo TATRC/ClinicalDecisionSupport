@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+  <bean id="encounter.extractor" class="gov.hhs.fha.nhinc.adapter.fact.extractor.GenericFactExtractor" scope="prototype">
+    <constructor-arg ref="Xpath"/>
+    <property name="factClassName" value="gov.hhs.fha.nhinc.adapter.fact.EncounterFactType"/>
+    <property name="factsCountXpath" value="count(//hl7:CareRecord_QUPC_IN040200UV01Message/hl7:response/hl7:controlActProcess/hl7:subject)"/>
+    <property name="factBaseXpath" value="//hl7:CareRecord_QUPC_IN040200UV01Message/hl7:response/hl7:controlActProcess/hl7:subject[#fact#]"/>
+    <property name="factIndexCharset" value="#fact#"/>
+    <property name="factProperties">
+      <map>
+        <entry key="SourceSystem">
+          <ref bean="carerecord.SourceSystem"/>
+        </entry>
+        <entry key="Id">
+          <ref bean="encounter.detail.Id"/>
+        </entry>
+        <entry key="PatientId">
+          <ref bean="encounter.detail.PatientId"/>
+        </entry>
+        <entry key="CodedEncounterType">
+          <ref bean="encounter.detail.CodedEncounterType"/>
+        </entry>
+        <entry key="FreeTextEncounterType">
+          <ref bean="encounter.detail.FreeTextEncounterType"/>
+        </entry>
+        <entry key="EncounterStatus">
+          <ref bean="encounter.detail.EncounterStatus"/>
+        </entry>
+        <entry key="EncounterStartTime">
+          <ref bean="encounter.detail.EncounterStartTime"/>
+        </entry>
+        <entry key="EncounterEndTime">
+          <ref bean="encounter.detail.EncounterEndTime"/>
+        </entry>
+        <entry key="EncounterProvider">
+          <ref bean="encounter.detail.EncounterProvider"/>
+        </entry>
+        <entry key="CodedAdmissionSource">
+          <ref bean="encounter.detail.CodedAdmissionSource"/>
+        </entry>
+        <entry key="FreeTextAdmissionSource">
+          <ref bean="encounter.detail.FreeTextAdmissionSource"/>
+        </entry>
+        <entry key="CodedAdmissionType">
+          <ref bean="encounter.detail.CodedAdmissionType"/>
+        </entry>
+        <entry key="FreeTextAdmissionType">
+          <ref bean="encounter.detail.FreeTextAdmissionType"/>
+        </entry>
+        <entry key="CodedDischargeDisposition">
+          <ref bean="encounter.detail.CodedDischargeDisposition"/>
+        </entry>
+        <entry key="CodedPatientClass">
+          <ref bean="encounter.detail.CodedPatientClass"/>
+        </entry>
+        <entry key="PatientLocation">
+          <ref bean="encounter.detail.PatientLocation"/>
+        </entry>
+        <entry key="ReasonForVisit">
+          <ref bean="encounter.detail.ReasonForVisit"/>
+        </entry>
+        <entry key="ArrivalDateTime">
+          <ref bean="encounter.detail.ArrivalDateTime"/>
+        </entry>
+        <entry key="DepartureDateTime">
+          <ref bean="encounter.detail.DepartureDateTime"/>
+        </entry>
+        <entry key="ServiceDeliveryLocationId">
+          <ref bean="encounter.detail.ServiceDeliveryLocationId"/>
+        </entry>
+        <entry key="ServiceDeliveryLocationName">
+          <ref bean="encounter.detail.ServiceDeliveryLocationName"/>
+        </entry>
+        <entry key="CodedServiceDeliveryLocation">
+          <ref bean="encounter.detail.CodedServiceDeliveryLocation"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="encounter.detail.Id" class="gov.hhs.fha.nhinc.adapter.fact.def.ValueTypeListPropertyDefinition">
+    <property name="propertyName" value="Id"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueType"/>
+    <property name="valueXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:id[#id#]/@extension"/>
+    <property name="codeSystemXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:id[#id#]/@root"/>
+    <property name="codeSystemNameXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:id[#id#]/@assigningAuthorityName"/>
+    <property name="indexRef" value="#id#"/>
+    <property name="listSizeXpath" value="count(hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:id)"/>
+  </bean>
+
+  <bean id="encounter.detail.PatientId" class="gov.hhs.fha.nhinc.adapter.fact.def.ValueTypePropertyDefinition">
+    <property name="propertyName" value="PatientId"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.ValueType"/>
+    <property name="valueXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:subject/hl7:patient/hl7:id/@extension"/>
+    <property name="codeSystemXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:subject/hl7:patient/hl7:id/@root"/>
+    <property name="codeSystemNameXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:subject/hl7:patient/hl7:id/@assigningAuthorityName"/>
+  </bean>
+
+  <bean id="encounter.detail.CodedEncounterType" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="CodedEncounterType"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:code/@code"/>
+    <property name="labelXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:code/@displayName"/>
+    <property name="codeSystemXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:code/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:code/@codeSystemName"/>
+  </bean>
+
+  <bean id="encounter.detail.FreeTextEncounterType" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FreeTextEncounterType"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:code/@displayName"/>
+  </bean>
+
+  <bean id="encounter.detail.EncounterStatus" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="EncounterStatus"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:statusCode/@code"/>
+  </bean>
+
+  <bean id="encounter.detail.EncounterStartTime" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="EncounterStartTime"/>
+    <property name="propertyClassName" value="java.util.Date"/>
+    <property name="propertyXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:effectiveTime/hl7:low/@value"/>
+  </bean>
+
+  <bean id="encounter.detail.EncounterEndTime" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="EncounterEndTime"/>
+    <property name="propertyClassName" value="java.util.Date"/>
+    <property name="propertyXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:effectiveTime/hl7:high/@value"/>
+  </bean>
+
+  <bean id="encounter.detail.EncounterProvider" class="gov.hhs.fha.nhinc.adapter.fact.def.ComplexPropertyDefinition">
+    <property name="propertyName" value="EncounterProvider"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.NameFactType"/>
+    <property name="objectProperties">
+      <map>
+        <entry key="NameType">
+          <ref bean="encounter.detail.EncounterProvider.NameType"/>
+        </entry>
+        <entry key="FamilyName">
+          <ref bean="encounter.detail.EncounterProvider.FamilyName"/>
+        </entry>
+        <entry key="FirstName">
+          <ref bean="encounter.detail.EncounterProvider.FirstName"/>
+        </entry>
+        <entry key="MiddleName">
+          <ref bean="encounter.detail.EncounterProvider.MiddleName"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="encounter.detail.EncounterProvider.NameType" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="NameType"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:attender/hl7:assignedPerson/hl7:assignedPerson/hl7:name/@use"/>
+  </bean>
+
+  <bean id="encounter.detail.EncounterProvider.FamilyName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FamilyName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:attender/hl7:assignedPerson/hl7:assignedPerson/hl7:name/hl7:family/text()"/>
+  </bean>
+
+  <bean id="encounter.detail.EncounterProvider.FirstName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FirstName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:attender/hl7:assignedPerson/hl7:assignedPerson/hl7:name/hl7:given[1]/text()"/>
+  </bean>
+
+  <bean id="encounter.detail.EncounterProvider.MiddleName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="MiddleName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:attender/hl7:assignedPerson/hl7:assignedPerson/hl7:name/hl7:given[2]/text()"/>
+  </bean>
+
+  <bean id="encounter.detail.CodedAdmissionSource" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="CodedAdmissionSource"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:admissionReferralSourceCode/@code"/>
+    <property name="labelXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:admissionReferralSourceCode/@displayName"/>
+    <property name="codeSystemXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:admissionReferralSourceCode/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:admissionReferralSourceCode/@codeSystemName"/>
+  </bean>
+
+  <bean id="encounter.detail.FreeTextAdmissionSource" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FreeTextAdmissionSource"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:admissionReferralSourceCode/@displayName"/>
+  </bean>
+
+  <bean id="encounter.detail.CodedAdmissionType" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="CodedAdmissionType"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:priorityCode/@code"/>
+    <property name="labelXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:priorityCode/@displayName"/>
+    <property name="codeSystemXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:priorityCode/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:priorityCode/@codeSystemName"/>
+  </bean>
+
+  <bean id="encounter.detail.FreeTextAdmissionType" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="FreeTextAdmissionType"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:priorityCode/@displayName"/>
+  </bean>
+
+  <bean id="encounter.detail.CodedDischargeDisposition" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="CodedDischargeDisposition"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:dischargeDispositionCode/@code"/>
+    <property name="labelXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:dischargeDispositionCode/@displayName"/>
+    <property name="codeSystemXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:dischargeDispositionCode/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:dischargeDispositionCode/@codeSystemName"/>
+  </bean>
+
+  <bean id="encounter.detail.CodedPatientClass" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="CodedPatientClass"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:code/@code"/>
+    <property name="labelXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:code/@displayName"/>
+    <property name="codeSystemXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:code/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:code/@codeSystemName"/>
+  </bean>
+
+  <bean id="encounter.detail.PatientLocation" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="PatientLocation"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:location/hl7:serviceProviderOrganization/hl7:name"/>
+  </bean>
+
+  <bean id="encounter.detail.ReasonForVisit" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="ReasonForVisit"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:text"/>
+  </bean>
+
+  <bean id="encounter.detail.ArrivalDateTime" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="ArrivalDateTime"/>
+    <property name="propertyClassName" value="java.util.Date"/>
+    <property name="propertyXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:responsibleParty/hl7:time/hl7:low/@value"/>
+  </bean>
+
+  <bean id="encounter.detail.DepartureDateTime" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="DepartureDateTime"/>
+    <property name="propertyClassName" value="java.util.Date"/>
+    <property name="propertyXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:responsibleParty/hl7:time/hl7:high/@value"/>
+  </bean>
+
+  <bean id="encounter.detail.ServiceDeliveryLocationId" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="ServiceDeliveryLocationId"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:location/hl7:serviceDeliveryLocation/hl7:id/@extension"/>
+  </bean>
+
+  <bean id="encounter.detail.ServiceDeliveryLocationName" class="gov.hhs.fha.nhinc.adapter.fact.def.SimplePropertyDefinition">
+    <property name="propertyName" value="ServiceDeliveryLocationName"/>
+    <property name="propertyClassName" value="java.lang.String"/>
+    <property name="propertyXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:location/hl7:serviceDeliveryLocation/hl7:location/hl7:name"/>
+  </bean>
+
+  <bean id="encounter.detail.CodedServiceDeliveryLocation" class="gov.hhs.fha.nhinc.adapter.fact.def.CLPPropertyDefinition">
+    <property name="propertyName" value="CodedServiceDeliveryLocation"/>
+    <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+    <property name="codeXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:location/hl7:serviceDeliveryLocation/hl7:code/@code"/>
+    <property name="labelXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:location/hl7:serviceDeliveryLocation/hl7:code/@displayName"/>
+    <property name="codeSystemXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:location/hl7:serviceDeliveryLocation/hl7:code/@codeSystem"/>
+    <property name="codeSystemNameXpath" value="hl7:registrationEvent/hl7:subject2/hl7:careProvisionEvent/hl7:reference/hl7:encounter/hl7:location/hl7:serviceDeliveryLocation/hl7:code/@codeSystemName"/>
+  </bean>
+
+</beans>

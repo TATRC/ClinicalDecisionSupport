@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Adapter Policy Engine WSDL
+  -->
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+   xmlns="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+   xmlns:task="urn:gov:hhs:fha:nhinc:common:task"
+   name="TaskManager"
+   targetNamespace="urn:gov:hhs:fha:nhinc:taskmanager"
+   xmlns:tns="urn:gov:hhs:fha:nhinc:taskmanager">
+  <documentation>Task Manager</documentation>
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="urn:gov:hhs:fha:nhinc:common:task"
+                  schemaLocation="../schemas/nhinc/common/Task.xsd"/>
+    </xsd:schema>
+  </types>
+  
+  <message name="TaskManagerResponseMessage">
+    <part name="TaskManagerResponse"
+          element="task:TaskManagerResponse"/>
+  </message>
+  <message name="StartTaskFromRuleRequestMessage">
+    <part name="StartTaskFromRuleRequest"
+          element="task:StartTaskFromRuleRequest"/>
+  </message>
+  <message name="SendMailTaskRequestMessage">
+    <part name="SendMailTaskRequest"
+          element="task:SendMailTaskRequest"/>
+  </message>
+  <message name="RegisterPersonDiseaseRequestMessage">
+    <part name="RegisterPersonDiseaseRequest"
+          element="task:RegisterPersonDiseaseRequest"/>
+  </message>
+  <message name="UnRegisterPersonDiseaseRequestMessage">
+    <part name="UnRegisterPersonDiseaseRequest"
+          element="task:UnRegisterPersonDiseaseRequest"/>
+  </message>
+  <message name="CreateLabOrderRequestMessage">
+    <part name="CreateLabOrderRequest"
+          element="task:CreateLabOrderRequest"/>
+  </message>
+  <message name="ScheduleApptRequestMessage">
+    <part name="ScheduleApptRequest"
+          element="task:ScheduleApptRequest"/>
+  </message>
+
+  <portType name="TaskManagerPortType">
+    <operation name="StartTaskFromRule">
+      <input name="StartTaskFromRuleRequest"
+             message="tns:StartTaskFromRuleRequestMessage" />
+      <output name="StartTaskFromRuleResponse"
+              message="tns:TaskManagerResponseMessage" />
+    </operation>
+    <operation name="SendMailTask">
+      <input name="SendMailTaskRequest"
+             message="tns:SendMailTaskRequestMessage" />
+      <output name="SendMailTaskResponse"
+              message="tns:TaskManagerResponseMessage" />
+    </operation>
+    <operation name="RegisterPersonDisease">
+      <input name="RegisterPersonDiseaseRequest"
+             message="tns:RegisterPersonDiseaseRequestMessage" />
+      <output name="RegisterPersonDiseaseResponse"
+              message="tns:TaskManagerResponseMessage" />
+    </operation>
+    <operation name="UnRegisterPersonDisease">
+      <input name="UnRegisterPersonDiseaseRequest"
+             message="tns:UnRegisterPersonDiseaseRequestMessage" />
+      <output name="UnRegisterPersonDiseaseResponse"
+              message="tns:TaskManagerResponseMessage" />
+    </operation>
+    <operation name="CreateLabOrder">
+      <input name="CreateLabOrderRequest"
+             message="tns:CreateLabOrderRequestMessage" />
+      <output name="CreateLabOrderResponse"
+              message="tns:TaskManagerResponseMessage" />
+    </operation>
+    <operation name="ScheduleAppt">
+      <input name="ScheduleApptRequest"
+             message="tns:ScheduleApptRequestMessage" />
+      <output name="ScheduleApptResponse"
+              message="tns:TaskManagerResponseMessage" />
+    </operation>
+  </portType>
+  
+  <binding name="TaskManagerBindingSoap11" type="tns:TaskManagerPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="StartTaskFromRule">
+      <soap:operation soapAction="urn:StartTaskFromRule"/>
+      <input name="StartTaskFromRuleRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="StartTaskFromRuleResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="SendMailTask">
+      <soap:operation soapAction="urn:SendMailTask"/>
+      <input name="SendMailTaskRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="SendMailTaskResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RegisterPersonDisease">
+      <soap:operation soapAction="urn:RegisterPersonDisease"/>
+      <input name="RegisterPersonDiseaseRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="RegisterPersonDiseaseResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="UnRegisterPersonDisease">
+      <soap:operation soapAction="urn:UnRegisterPersonDisease"/>
+      <input name="UnRegisterPersonDiseaseRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="UnRegisterPersonDiseaseResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="CreateLabOrder">
+      <soap:operation soapAction="urn:CreateLabOrder"/>
+      <input name="CreateLabOrderRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="CreateLabOrderResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ScheduleAppt">
+      <soap:operation soapAction="urn:ScheduleAppt"/>
+      <input name="ScheduleApptRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="ScheduleApptResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  
+  <service name="TaskManager">
+    <port name="TaskManagerPortSoap11"
+          binding="tns:TaskManagerBindingSoap11">
+      <soap:address 
+         location="http://localhost:${HttpDefaultPort}/TaskManager/TaskManager_Service" />
+    </port>
+  </service>
+  <plnk:partnerLinkType name="TaskManager">
+    <!-- A partner link type is automatically generated when a new port type is added. 
+         Partner link types are used by BPEL processes. In a BPEL process, a partner 
+         link represents the interaction between the BPEL process and a partner service. 
+         Each partner link is associated with a partner link type. A partner link type 
+         characterizes the conversational relationship between two services. The 
+         partner link type can have one or two roles.-->
+    <plnk:role name="TaskManagerPortTypeRole"
+               portType="tns:TaskManagerPortType"/>
+  </plnk:partnerLinkType>
+  
+</definitions>

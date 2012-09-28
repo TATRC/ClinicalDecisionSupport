@@ -1,0 +1,366 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.7-hudson-48-. -->
+<xs:schema xmlns:tns="urn:gov:hhs:fha:nhinc:adapter:factservice" xmlns:ns1="urn:gov:hhs:fha:nhinc:adapter:fact" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="urn:gov:hhs:fha:nhinc:adapter:factservice">
+
+   <xs:import namespace="urn:gov:hhs:fha:nhinc:adapter:fact" schemaLocation="../../../schemas/nhinc/common/CommonDataLayerFactTypes.xsd"/>
+
+   <xs:element name="FaultMessage" nillable="true" type="tns:fault" />
+
+   <xs:element name="GetAdmissionFacts" type="tns:GetAdmissionFacts" />
+
+   <xs:element name="GetAdmissionFactsResponse" type="tns:GetAdmissionFactsResponse" />
+
+   <xs:element name="GetAllergyFacts" type="tns:GetAllergyFacts" />
+
+   <xs:element name="GetAllergyFactsResponse" type="tns:GetAllergyFactsResponse" />
+
+   <xs:element name="GetAppointmentFacts" type="tns:GetAppointmentFacts" />
+
+   <xs:element name="GetAppointmentFactsResponse" type="tns:GetAppointmentFactsResponse" />
+
+   <xs:element name="GetAppointmentScheduleFacts" type="tns:GetAppointmentScheduleFacts" />
+
+   <xs:element name="GetAppointmentScheduleFactsResponse" type="tns:GetAppointmentScheduleFactsResponse" />
+
+   <xs:element name="GetDemographicsFact" type="tns:GetDemographicsFact" />
+
+   <xs:element name="GetDemographicsFactResponse" type="tns:GetDemographicsFactResponse" />
+
+   <xs:element name="GetEncounterDetailFacts" type="tns:GetEncounterDetailFacts" />
+
+   <xs:element name="GetEncounterDetailFactsResponse" type="tns:GetEncounterDetailFactsResponse" />
+
+   <xs:element name="GetEncounterFacts" type="tns:GetEncounterFacts" />
+
+   <xs:element name="GetEncounterFactsResponse" type="tns:GetEncounterFactsResponse" />
+
+   <xs:element name="GetImagingResultFacts" type="tns:GetImagingResultFacts" />
+
+   <xs:element name="GetImagingResultFactsResponse" type="tns:GetImagingResultFactsResponse" />
+
+   <xs:element name="GetImmunizationFacts" type="tns:GetImmunizationFacts" />
+
+   <xs:element name="GetImmunizationFactsResponse" type="tns:GetImmunizationFactsResponse" />
+
+   <xs:element name="GetInsuranceFacts" type="tns:GetInsuranceFacts" />
+
+   <xs:element name="GetInsuranceFactsResponse" type="tns:GetInsuranceFactsResponse" />
+
+   <xs:element name="GetMedicationFacts" type="tns:GetMedicationFacts" />
+
+   <xs:element name="GetMedicationFactsResponse" type="tns:GetMedicationFactsResponse" />
+
+   <xs:element name="GetOrderFacts" type="tns:GetOrderFacts" />
+
+   <xs:element name="GetOrderFactsResponse" type="tns:GetOrderFactsResponse" />
+
+   <xs:element name="GetPatientFacts" type="tns:GetPatientFacts" />
+
+   <xs:element name="GetPatientFactsResponse" type="tns:GetPatientFactsResponse" />
+
+   <xs:element name="GetProblemFacts" type="tns:GetProblemFacts" />
+
+   <xs:element name="GetProblemFactsResponse" type="tns:GetProblemFactsResponse" />
+
+   <xs:element name="GetProcedureFacts" type="tns:GetProcedureFacts" />
+
+   <xs:element name="GetProcedureFactsResponse" type="tns:GetProcedureFactsResponse" />
+
+   <xs:element name="GetProviderFacts" type="tns:GetProviderFacts" />
+
+   <xs:element name="GetProviderFactsResponse" type="tns:GetProviderFactsResponse" />
+
+   <xs:element name="GetRegistryFacts" type="tns:GetRegistryFacts" />
+
+   <xs:element name="GetRegistryFactsResponse" type="tns:GetRegistryFactsResponse" />
+
+   <xs:element name="GetSupportContactFacts" type="tns:GetSupportContactFacts" />
+
+   <xs:element name="GetSupportContactFactsResponse" type="tns:GetSupportContactFactsResponse" />
+
+   <xs:element name="GetTestResultEventFacts" type="tns:GetTestResultEventFacts" />
+
+   <xs:element name="GetTestResultEventFactsResponse" type="tns:GetTestResultEventFactsResponse" />
+
+   <xs:element name="GetTestResultFacts" type="tns:GetTestResultFacts" />
+
+   <xs:element name="GetTestResultFactsResponse" type="tns:GetTestResultFactsResponse" />
+
+   <xs:element name="GetVitalsFacts" type="tns:GetVitalsFacts" />
+
+   <xs:element name="GetVitalsFactsResponse" type="tns:GetVitalsFactsResponse" />
+
+   <xs:element name="RecordLabOrder" type="tns:RecordLabOrder" />
+
+   <xs:element name="RecordLabOrderResponse" type="tns:RecordLabOrderResponse" />
+
+   <xs:complexType name="GetOrderFacts">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetOrderFactsResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="fault">
+      <xs:sequence>
+         <xs:element name="faultCode" type="xs:string" minOccurs="0" />
+         <xs:element name="faultMessage" type="xs:string" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetTestResultEventFacts">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetTestResultEventFactsResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetPatientFacts">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetPatientFactsResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetImagingResultFacts">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetImagingResultFactsResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetAllergyFacts">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetAllergyFactsResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="RecordLabOrder">
+      <xs:sequence>
+         <xs:element ref="ns1:RecordOrderRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="RecordLabOrderResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:RecordOrderResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetEncounterFacts">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetEncounterFactsResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetAdmissionFacts">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetAdmissionFactsResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetProcedureFacts">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetProcedureFactsResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetRegistryFacts">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetRegistryFactsResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetInsuranceFacts">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetInsuranceFactsResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetProviderFacts">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetProviderFactsResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetEncounterDetailFacts">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetEncounterDetailFactsResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetDemographicsFact">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetDemographicsFactResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetAppointmentScheduleFacts">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetAppointmentScheduleFactsResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetProblemFacts">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetProblemFactsResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetTestResultFacts">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetTestResultFactsResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetImmunizationFacts">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetImmunizationFactsResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetVitalsFacts">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetVitalsFactsResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetAppointmentFacts">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetAppointmentFactsResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetMedicationFacts">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetMedicationFactsResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetSupportContactFacts">
+      <xs:sequence>
+         <xs:element ref="ns1:FactsQueryRequest" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="GetSupportContactFactsResponse">
+      <xs:sequence>
+         <xs:element ref="ns1:FactQueryResponse" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

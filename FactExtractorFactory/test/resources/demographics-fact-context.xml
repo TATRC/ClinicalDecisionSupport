@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+   <bean id="demographics.extractor" class="gov.hhs.fha.nhinc.adapter.fact.extractor.FactExtractorImpl">
+      <constructor-arg ref="Xpath"/>
+      <property name="factClassName" value="gov.hhs.fha.nhinc.adapter.fact.DemographicsFact"/>
+      <property name="factProperties">
+         <map>
+            <entry key="LastName">
+               <ref bean="fact.property.lastname"/>
+            </entry>
+            <entry key="FirstName">
+               <ref bean="fact.property.firstname"/>
+            </entry>
+            <entry key="MiddleName">
+               <ref bean="fact.property.middlename"/>
+            </entry>
+            <entry key="DateOfBirth">
+               <ref bean="fact.property.dateofbirth"/>
+            </entry>
+            <entry key="ArrayOfIds">
+               <ref bean="fact.property.ids"/>
+            </entry>
+            <entry key="MaritalStatus">
+               <ref bean="fact.property.maritalstatus"/>
+            </entry>
+            <entry key="Race">
+               <ref bean="fact.property.race"/>
+            </entry>
+            <entry key="Ethnic">
+               <ref bean="fact.property.ethnic"/>
+            </entry>
+            <entry key="Language">
+               <ref bean="fact.property.language"/>
+            </entry>
+         </map>
+      </property>
+   </bean>
+
+   <bean id="fact.property.lastname" class="gov.hhs.fha.nhinc.adapter.fact.def.PropertyDefinition">
+      <property name="propertyName" value="LastName"/>
+      <property name="propertyClassName" value="java.lang.String"/>
+      <property name="xpathExpression" value="//hl7:subject/hl7:patientPerson/hl7:name/hl7:family/text()"/>
+   </bean>
+
+   <bean id="fact.property.firstname" class="gov.hhs.fha.nhinc.adapter.fact.def.PropertyDefinition">
+      <property name="propertyName" value="FirstName"/>
+      <property name="propertyClassName" value="java.lang.String"/>
+      <property name="xpathExpression" value="//hl7:subject/hl7:patientPerson/hl7:name/hl7:given[1]/text()"/>
+   </bean>
+
+   <bean id="fact.property.middlename" class="gov.hhs.fha.nhinc.adapter.fact.def.PropertyDefinition">
+      <property name="propertyName" value="MiddleName"/>
+      <property name="propertyClassName" value="java.lang.String"/>
+      <property name="xpathExpression" value="//hl7:subject/hl7:patientPerson/hl7:name/hl7:given[2]/text()"/>
+   </bean>
+
+   <bean id="fact.property.dateofbirth" class="gov.hhs.fha.nhinc.adapter.fact.def.PropertyDefinition">
+      <property name="propertyName" value="DateOfBirth"/>
+      <property name="propertyClassName" value="java.lang.String"/>
+      <property name="xpathExpression" value="//hl7:subject/hl7:patientPerson/hl7:birthTime/@value"/>
+   </bean>
+
+   <!--
+      Property of type "code/label":
+      For this property type, "xpathExpression" will not be use.  Rather, we will use
+         "codeXpathExpression" to define the xpath expression for the "code" part of the property
+         "labelXpathExpression" to define the xpath expression for the "label" part of the property
+   -->
+   <bean id="fact.property.maritalstatus" class="gov.hhs.fha.nhinc.adapter.fact.def.PropertyCodeLabelDefinition">
+      <property name="propertyName" value="MaritalStatus"/>
+      <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+      <property name="codeXpathExpression" value="//hl7:subject/hl7:patientPerson/hl7:maritalStatusCode/@code"/>
+      <property name="labelXpathExpression" value="//hl7:subject/hl7:patientPerson/hl7:maritalStatusCode/@displayName"/>
+   </bean>
+
+   <bean id="fact.property.race" class="gov.hhs.fha.nhinc.adapter.fact.def.PropertyCodeLabelDefinition">
+      <property name="propertyName" value="Race"/>
+      <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+      <property name="codeXpathExpression" value="//hl7:subject/hl7:patientPerson/hl7:raceCode/@code"/>
+      <property name="labelXpathExpression" value="//hl7:subject/hl7:patientPerson/hl7:raceCode/@displayName"/>
+   </bean>
+
+   <bean id="fact.property.language" class="gov.hhs.fha.nhinc.adapter.fact.def.PropertyCodeLabelDefinition">
+      <property name="propertyName" value="Language"/>
+      <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+      <property name="codeXpathExpression" value="//hl7:subject/hl7:patientPerson/hl7:languageCommunication/hl7:languageCode/@code"/>
+      <property name="labelXpathExpression" value="//hl7:subject/hl7:patientPerson/hl7:languageCommunication/hl7:languageCode/@displayName"/>
+   </bean>
+
+   <bean id="fact.property.ethnic" class="gov.hhs.fha.nhinc.adapter.fact.def.PropertyCodeLabelDefinition">
+      <property name="propertyName" value="Ethnic"/>
+      <property name="propertyClassName" value="gov.hhs.fha.nhinc.adapter.fact.CodeLabelPair"/>
+      <property name="codeXpathExpression" value="//hl7:subject/hl7:patientPerson/hl7:ethnicGroupCode/@code"/>
+      <property name="labelXpathExpression" value="//hl7:subject/hl7:patientPerson/hl7:ethnicGroupCode/@displayName"/>
+   </bean>
+
+   <!--
+      Property of type "list":
+      For this property type
+         "propertyClassName" will represent the class type of the object within the list and not the list itself
+         "propertyName" will represent the name of the "list"
+   -->
+   <bean id="fact.property.ids" class="gov.hhs.fha.nhinc.adapter.fact.def.PropertyListDefinition">
+      <property name="propertyName" value="ArrayOfIds"/>
+      <property name="propertyClassName" value="java.lang.String"/>
+      <property name="xpathExpression" value="//hl7:subject[@classCode='PAT']/hl7:id[xxx]/@extension"/>
+      <property name="sizeXpathExpression" value="count(//hl7:subject[@classCode='PAT']/hl7:id)"/>
+   </bean>
+   
+</beans>
